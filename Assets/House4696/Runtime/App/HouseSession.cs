@@ -18,6 +18,7 @@ namespace House4696.App
     public sealed class HouseSession
     {
         const int UndoDepth = 30;
+        public const uint HouseRenderingLayer = 1u, SiteRenderingLayer = 2u;
 
         public readonly ProjectStore Store;
         public string ProjectId { get; private set; }
@@ -103,6 +104,10 @@ namespace House4696.App
                 p.refreshMode = ReflectionProbeRefreshMode.ViaScripting;
                 p.timeSlicingMode = ReflectionProbeTimeSlicingMode.NoTimeSlicing;
             }
+            // realtime GI only for the house: the garden (grass blades, trees) would double its cost for no
+            // visible gain — the GI volume's rendering-layer mask takes layer 1, the garden moves to layer 2
+            if (Result.Site != null)
+                foreach (var r in Result.Site.GetComponentsInChildren<Renderer>(true)) r.renderingLayerMask = SiteRenderingLayer;
             var site = Doc.Site ?? new SiteDef();
             if (RenderSettings.sun != null)
                 RenderSettings.sun.transform.rotation = Quaternion.Euler(EnvironmentBuilder.SunFrom(site.SunAzimuth, site.SunElevation));

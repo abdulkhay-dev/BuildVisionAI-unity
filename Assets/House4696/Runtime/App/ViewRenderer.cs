@@ -63,6 +63,11 @@ namespace House4696.App
             // between, its centre would jump every frame and the lighting would never converge — pause it meanwhile
             bool mainWasEnabled = main != null && main.enabled;
             if (q.Mode != RenderMode.Plan && main != null) main.enabled = false;
+            // stills for the AI can afford the full sample count the interactive view saves
+            SurfaceCacheGIVolumeOverride gi = null;
+            House4696.Core.HouseContent.Load().RealtimeGIProfile?.TryGet(out gi);
+            int samples = gi != null ? gi.sampleCount.value : 0;
+            if (gi != null && q.Mode != RenderMode.Plan) gi.sampleCount.Override(Mathf.Max(samples, 8));
             try
             {
                 int frames = Mathf.Clamp(q.Frames, 1, 240), hideWait = 0;
@@ -126,6 +131,7 @@ namespace House4696.App
             finally
             {
                 if (main != null) main.enabled = mainWasEnabled;
+                if (gi != null) gi.sampleCount.Override(samples);
                 foreach (var r in hidden) if (r != null) r.forceRenderingOff = false;
                 cam.targetTexture = null;
                 rt.Release();

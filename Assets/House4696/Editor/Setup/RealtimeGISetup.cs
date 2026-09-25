@@ -71,19 +71,36 @@ namespace House4696.Setup
             return list.arraySize - 1;
         }
 
+        /// <summary>
+        /// Interactive defaults measured on an Apple M4 in the player (house 10×10 m, 1470×816 window): 8 samples and
+        /// the garden in the GI cost ~125 ms GPU; garden excluded ~57 ms; + 4 samples ~29 ms; 2 samples ~20 ms with
+        /// visibly the same converged result. Renders for the AI temporarily raise the samples (ViewRenderer).
+        /// </summary>
+        static void ApplyDefaults(SurfaceCacheGIVolumeOverride gi)
+        {
+            gi.multiBounce.Override(true);
+            gi.sampleCount.Override(4);
+            gi.volumeSize.Override(48f);
+            gi.volumeResolution.Override(64);
+            gi.volumeCascadeCount.Override(4);
+            gi.renderingLayerMask.Override((RenderingLayerMask)1u);   // house only (garden = layer 2)
+        }
+
         public static VolumeProfile EnsureProfile()
         {
             var profile = AssetDatabase.LoadAssetAtPath<VolumeProfile>(ProfilePath);
-            if (profile != null) return profile;
+            if (profile != null)
+            {
+                if (profile.TryGet<SurfaceCacheGIVolumeOverride>(out var existing)) ApplyDefaults(existing);
+                EditorUtility.SetDirty(profile);
+                return profile;
+            }
             AssetPaths.Ensure(Dir);
             profile = ScriptableObject.CreateInstance<VolumeProfile>();
             AssetDatabase.CreateAsset(profile, ProfilePath);
             var gi = profile.Add<SurfaceCacheGIVolumeOverride>(true);
             gi.name = nameof(SurfaceCacheGIVolumeOverride);
-            gi.multiBounce.Override(true);
-            gi.sampleCount.Override(8);
-            gi.volumeSize.Override(48f);
-            gi.volumeResolution.Override(64);
+            ApplyDefaults(gi);
             AssetDatabase.AddObjectToAsset(gi, profile);
             EditorUtility.SetDirty(profile);
             AssetDatabase.SaveAssets();

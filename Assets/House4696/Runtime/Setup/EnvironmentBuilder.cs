@@ -47,6 +47,7 @@ namespace House4696.Setup
             sun.shadowStrength = 1f;
             var lightData = sunGo.AddComponent<UniversalAdditionalLightData>();
             lightData.usePipelineSettings = false;
+            lightData.renderingLayers = uint.MaxValue;   // the sun lights every rendering layer (the garden sits on its own)
             sun.shadowBias = 0.25f;
             sun.shadowNormalBias = 0.35f;
 

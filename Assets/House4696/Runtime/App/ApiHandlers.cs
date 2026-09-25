@@ -58,6 +58,15 @@ namespace House4696.App
                     c.Done.SetResult(Changed(new List<string> { _s.Undo() ? "последнее изменение отменено" : "отменять нечего" }));
                     return;
                 case "render": RequireProject(); _host.StartCoroutine(Render(a, c)); return;
+                case "tune": c.Done.SetResult(PerfProbe.Tune(a, _s)); return;
+                case "measure":
+                    _host.StartCoroutine(PerfProbe.Measure(a["warmup"] != null ? (int)a["warmup"] : 120, a["frames"] != null ? (int)a["frames"] : 120,
+                        r => c.Done.TrySetResult(r)));
+                    return;
+                case "perf":
+                    _host.StartCoroutine(PerfProbe.Sweep(_s, House4696.Core.HouseContent.Load().RealtimeGIRendererIndex,
+                        a["frames"] != null ? (int)a["frames"] : 90, r => c.Done.TrySetResult(r)));
+                    return;
                 default: throw new ArgumentException($"неизвестная команда '{c.Command}'");
             }
         }

@@ -48,6 +48,7 @@ namespace House4696.Build
             PlayerSettings.bundleVersion = App.HouseBootstrap.Version;
             PlayerSettings.runInBackground = true;          // the AI edits while another app has focus
             PlayerSettings.visibleInBackground = true;
+            PlayerSettings.enableFrameTimingStats = true;   // GPU frame times for the perf diagnostics
             PlayerSettings.fullScreenMode = FullScreenMode.Windowed;
             PlayerSettings.resizableWindow = true;
             PlayerSettings.defaultScreenWidth = 1600;
