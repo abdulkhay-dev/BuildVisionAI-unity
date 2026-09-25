@@ -30,14 +30,15 @@ namespace House4696.Setup
     {
         public static readonly Vector3 SunEuler = new Vector3(33f, -5f, 0f); // near-frontal sun: matches shadow lengths/sides in the reference
 
-        public static GameObject Build(MaterialLibrary m, VolumeProfile postProfile)
+        /// <param name="sunEuler">Sun rotation (elevation, yaw); null keeps the calibrated 46-96 sun.</param>
+        public static GameObject Build(MaterialLibrary m, VolumeProfile postProfile, Vector3? sunEuler = null)
         {
             var root = new GameObject("Environment");
 
             // --- sun
             var sunGo = new GameObject("Sun");
             sunGo.transform.SetParent(root.transform, false);
-            sunGo.transform.rotation = Quaternion.Euler(SunEuler);
+            sunGo.transform.rotation = Quaternion.Euler(sunEuler ?? SunEuler);
             var sun = sunGo.AddComponent<Light>();
             sun.type = LightType.Directional;
             sun.color = new Color(1f, 0.96f, 0.91f);
@@ -100,9 +101,12 @@ namespace House4696.Setup
             data.antialiasingQuality = AntialiasingQuality.High;
             data.dithering = true;
             data.renderShadows = true;
-            camGo.AddComponent<HouseViewer>().Configure(TourSpec.Pivot, TourSpec.Walk(), TourSpec.Orbit());
+            camGo.AddComponent<HouseViewer>(); // tours come from the house document (the caller configures it)
             return root;
         }
+
+        /// <summary>Sun rotation for a site: azimuth = compass direction the sun shines from (0 = north/+Z, clockwise).</summary>
+        public static Vector3 SunFrom(float azimuth, float elevation) => new Vector3(elevation, azimuth - 180f, 0f);
 
         public static void ApplyCamera(Camera cam)
         {

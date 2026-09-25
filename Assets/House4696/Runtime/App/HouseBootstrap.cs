@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Diagnostics;
+using System.IO;
 using House4696.Core;
-using House4696.House;
-using House4696.Landscape;
+using House4696.Generation;
+using House4696.Model;
+using House4696.Runtime;
 using House4696.Setup;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -12,18 +14,21 @@ using Debug = UnityEngine.Debug;
 namespace House4696.App
 {
     /// <summary>
-    /// Stage-0 prototype entry point: generates the house, garden and environment inside the player (no editor,
-    /// no baked data) and lights them with realtime Surface Cache GI. Reflection probes are captured once the GI
-    /// has had time to converge.
+    /// App entry point (prototype): loads a house document, generates the house, site and environment inside the
+    /// player (no editor, no baked data) and lights them with realtime Surface Cache GI. Reflection probes are
+    /// captured once the GI has had time to converge.
     /// </summary>
     public sealed class HouseBootstrap : MonoBehaviour
     {
         [SerializeField] Camera loadingCamera;
+        [Tooltip("House document, relative to StreamingAssets (or an absolute path).")]
+        [SerializeField] string project = "Samples/46-96.house.json";
         [Tooltip("Frames to let the realtime GI converge before the reflection probes are captured.")]
         [SerializeField] int giWarmupFrames = 90;
         [SerializeField] bool showStats = true;
 
-        public GameObject House { get; private set; }
+        public HouseDocument Document { get; private set; }
+        public HouseBuildResult Result { get; private set; }
         public bool IsReady { get; private set; }
         public string BuildReport { get; private set; } = "";
 
@@ -34,25 +39,29 @@ namespace House4696.App
         {
             yield return null; // show the loading frame before the main thread is busy
             var sw = Stopwatch.StartNew();
+            string path = Path.IsPathRooted(project) ? project : Path.Combine(Application.streamingAssetsPath, project);
+            try { Document = HouseJson.Deserialize(File.ReadAllText(path)); }
+            catch (System.Exception e)
+            {
+                _status = "Не удалось открыть проект: " + e.Message;
+                Debug.LogError("[HouseBootstrap] " + e);
+                yield break;
+            }
             var content = HouseContent.Load();
             var mats = MaterialLibrary.Create();
-            long tMats = sw.ElapsedMilliseconds;
+            long tLoad = sw.ElapsedMilliseconds;
 
-            var writer = new SceneWriter();
-            House = new HouseGenerator(mats, writer).Build();
+            Result = HouseBuilder.Build(Document, mats, new SceneWriter());
             long tHouse = sw.ElapsedMilliseconds;
-            var landscape = new LandscapeGenerator(mats, writer, CameraSpec.Position, CameraSpec.Forward).Build();
-            long tLand = sw.ElapsedMilliseconds;
-            int colliders = CollisionSetup.Apply(House, landscape);
-            var env = EnvironmentBuilder.Build(mats, content.PostProcessProfile);
-            long tEnv = sw.ElapsedMilliseconds;
-
-            SetupReflections(House, env);
+            var site = Document.Site;
+            var env = EnvironmentBuilder.Build(mats, content.PostProcessProfile, EnvironmentBuilder.SunFrom(site.SunAzimuth, site.SunElevation));
+            ConfigureViewer();
+            SetupReflections(Result.House, env);
             SetupRealtimeGI(content);
             if (loadingCamera != null) Destroy(loadingCamera.gameObject);
 
-            BuildReport = $"materials {tMats} ms, house {tHouse - tMats} ms, garden {tLand - tHouse} ms, " +
-                          $"colliders+env {tEnv - tLand} ms ({colliders} colliders)";
+            BuildReport = $"{Document.Meta.Name}: load {tLoad} ms, build {tHouse - tLoad} ms, {Result.Colliders} colliders" +
+                          (Result.Warnings.Count > 0 ? $", {Result.Warnings.Count} warnings" : "");
             Debug.Log("[HouseBootstrap] built: " + BuildReport);
 
             _status = "Расчёт освещения…";
@@ -64,9 +73,19 @@ namespace House4696.App
             Debug.Log($"[HouseBootstrap] ready in {sw.ElapsedMilliseconds} ms");
         }
 
+        /// <summary>Tour stops and orbit presets of the document (the viewer keeps its defaults when there are none).</summary>
+        void ConfigureViewer()
+        {
+            var cam = Camera.main;
+            var viewer = cam != null ? cam.GetComponent<HouseViewer>() : null;
+            if (viewer == null) return;
+            var walk = Result.Walk.Length > 0 ? Result.Walk : new[] { new WalkPoint { Name = "Вход", Feet = new Vector3(Result.Footprint.center.x, 0.05f, Result.Footprint.yMin - 3f) } };
+            viewer.Configure(Result.Pivot, walk, Result.Orbit);
+        }
+
         /// <summary>
-        /// Same split as the editor build: the house lives on its own layer that the garden probe skips (the
-        /// glazing must not reflect the house itself). Probes render in realtime, on demand.
+        /// The house lives on its own layer that the garden probe skips (the glazing must not reflect the house
+        /// itself). Probes render in realtime, on demand.
         /// </summary>
         static void SetupReflections(GameObject house, GameObject env)
         {

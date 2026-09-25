@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using House4696.Core;
-using House4696.House;
 using UnityEngine;
 
 namespace House4696.Landscape
@@ -20,6 +19,9 @@ namespace House4696.Landscape
         readonly Vector3 _cameraFwd;
         Transform _root;
         readonly List<(Vector2 p, float r)> _keepOut = new List<(Vector2, float)>();
+
+        // project 46-96 reference dimensions (the garden is hand-placed around that house)
+        const float HouseWidth = 14.62f, FloorY = 0.30f;
 
         public LandscapeGenerator(MaterialLibrary m, SceneWriter w, Vector3 cameraPos, Vector3 cameraForward)
         {
@@ -58,7 +60,7 @@ namespace House4696.Landscape
             const float gy = 0.022f;
             gravel.Box(new Vector3(-1.4f, 0, -3.35f), new Vector3(26f, gy, 0f), top);            // front band incl. path bed
             gravel.Box(new Vector3(-1.0f, 0, 0f), new Vector3(0f, gy, 10.9f), top);             // left side
-            gravel.Box(new Vector3(HouseSpec.Width, 0, 0f), new Vector3(15.6f, gy, 10.9f), top); // right side
+            gravel.Box(new Vector3(HouseWidth, 0, 0f), new Vector3(15.6f, gy, 10.9f), top); // right side
             gravel.Box(new Vector3(-1.0f, 0, 10.35f), new Vector3(15.6f, gy, 12.1f), top);      // rear
             gravel.Box(new Vector3(1.7f, 0, -19f), new Vector3(3.8f, gy, -3.35f), top);          // strip of the entrance walk
             _w.Emit("Gravel", _root, gravel, castShadows: false, probeStatic: true);
@@ -212,14 +214,14 @@ namespace House4696.Landscape
         {
             var g = _w.Group("Porch_Planters", _root);
             var pots = new MeshBuilder();
-            HouseGenerator.Cylinder(pots, new Vector3(12.75f, HouseSpec.FloorY, 1.12f), 0.21f, 0.5f, 24, _m.FurnitureDark);
-            HouseGenerator.Cylinder(pots, new Vector3(13.28f, HouseSpec.FloorY, 1.16f), 0.16f, 0.24f, 24, _m.Pot);
-            HouseGenerator.Cylinder(pots, new Vector3(13.28f, HouseSpec.FloorY + 0.24f, 1.16f), 0.165f, 0.2f, 24, _m.FurnitureDark);
+            Cylinder(pots, new Vector3(12.75f, FloorY, 1.12f), 0.21f, 0.5f, 24, _m.FurnitureDark);
+            Cylinder(pots, new Vector3(13.28f, FloorY, 1.16f), 0.16f, 0.24f, 24, _m.Pot);
+            Cylinder(pots, new Vector3(13.28f, FloorY + 0.24f, 1.16f), 0.165f, 0.2f, 24, _m.FurnitureDark);
             _w.Emit("Pots", g, pots);
             var a = _w.Emit("Pot_Grass_A", g, _veg.GrassClump(0.18f, 0.42f, 90, 4, 9, 0.75f, 301, plumeSize: 0.2f));
-            if (a != null) a.transform.position = new Vector3(12.75f, HouseSpec.FloorY + 0.48f, 1.12f);
+            if (a != null) a.transform.position = new Vector3(12.75f, FloorY + 0.48f, 1.12f);
             var b = _w.Emit("Pot_Grass_B", g, _veg.GrassClump(0.14f, 0.34f, 80, 5, 0, 0, 302));
-            if (b != null) b.transform.position = new Vector3(13.28f, HouseSpec.FloorY + 0.42f, 1.16f);
+            if (b != null) b.transform.position = new Vector3(13.28f, FloorY + 0.42f, 1.16f);
         }
 
         // ------------------------------------------------------------------ timber bollard lights
@@ -337,6 +339,26 @@ namespace House4696.Landscape
             }
             var mb = _veg.LawnBlades(Density, area, 77, 230000);
             _w.Emit("Lawn_Blades", _root, mb, castShadows: false);
+        }
+
+        static void Cylinder(MeshBuilder mb, Vector3 baseCenter, float r, float h, int sides, Material m, bool caps = true)
+        {
+            for (int i = 0; i < sides; i++)
+            {
+                float a0 = i * Mathf.PI * 2 / sides, a1 = (i + 1) * Mathf.PI * 2 / sides;
+                Vector3 d0 = new Vector3(Mathf.Cos(a0), 0, Mathf.Sin(a0)), d1 = new Vector3(Mathf.Cos(a1), 0, Mathf.Sin(a1));
+                Vector3 p0 = baseCenter + d0 * r, p1 = baseCenter + d1 * r;
+                Vector3 up = Vector3.up * h;
+                float u0 = a0 * r, u1 = a1 * r;
+                mb.Triangle(p0, p0 + up, p1 + up, d0, d0, d1, new Vector2(u0, 0), new Vector2(u0, h), new Vector2(u1, h), m);
+                mb.Triangle(p0, p1 + up, p1, d0, d1, d1, new Vector2(u0, 0), new Vector2(u1, h), new Vector2(u1, 0), m);
+                if (caps)
+                {
+                    Vector3 top = baseCenter + up;
+                    mb.Triangle(top, p1 + up, p0 + up, Vector3.up, Vector3.up, Vector3.up,
+                        new Vector2(top.x, top.z), new Vector2(p1.x, p1.z), new Vector2(p0.x, p0.z), m);
+                }
+            }
         }
     }
 }

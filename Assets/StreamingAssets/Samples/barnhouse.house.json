@@ -1,0 +1,1075 @@
+{
+  "format": "house/1",
+  "meta": {
+    "name": "Барнхаус 120",
+    "description": "Одноэтажный барнхаус 14×8,6 м: двускатная кровля 35°, срезанный угол со стеклом, гостиная-кухня, две спальни, терраса",
+    "author": "sample",
+    "created": "2026-09-25"
+  },
+  "site": {
+    "landscape": "garden",
+    "sunAzimuth": 200,
+    "sunElevation": 38
+  },
+  "levels": [
+    {
+      "id": "ground",
+      "name": "1 этаж",
+      "elevation": 0.45,
+      "height": 2.8,
+      "slab": 0.45
+    }
+  ],
+  "walls": [
+    {
+      "id": "front",
+      "level": "ground",
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        12,
+        0
+      ],
+      "outside": "wood",
+      "plinth": 0.45
+    },
+    {
+      "id": "corner",
+      "level": "ground",
+      "a": [
+        12,
+        0
+      ],
+      "b": [
+        14,
+        2
+      ],
+      "outside": "stucco",
+      "plinth": 0.45
+    },
+    {
+      "id": "right",
+      "level": "ground",
+      "a": [
+        14,
+        2
+      ],
+      "b": [
+        14,
+        8.6
+      ],
+      "outside": "wood",
+      "plinth": 0.45
+    },
+    {
+      "id": "back",
+      "level": "ground",
+      "a": [
+        14,
+        8.6
+      ],
+      "b": [
+        0,
+        8.6
+      ],
+      "outside": "wood",
+      "plinth": 0.45
+    },
+    {
+      "id": "left",
+      "level": "ground",
+      "a": [
+        0,
+        8.6
+      ],
+      "b": [
+        0,
+        0
+      ],
+      "outside": "stucco",
+      "plinth": 0.45
+    },
+    {
+      "id": "p_living",
+      "level": "ground",
+      "kind": "interior",
+      "a": [
+        8.0,
+        0.4
+      ],
+      "b": [
+        8.0,
+        8.2
+      ]
+    },
+    {
+      "id": "p_corridor",
+      "level": "ground",
+      "kind": "interior",
+      "a": [
+        9.4,
+        0.4
+      ],
+      "b": [
+        9.4,
+        8.2
+      ]
+    },
+    {
+      "id": "p_rooms",
+      "level": "ground",
+      "kind": "interior",
+      "a": [
+        9.4,
+        4.3
+      ],
+      "b": [
+        13.6,
+        4.3
+      ]
+    },
+    {
+      "id": "p_bath",
+      "level": "ground",
+      "kind": "interior",
+      "a": [
+        11.6,
+        4.3
+      ],
+      "b": [
+        11.6,
+        8.2
+      ]
+    }
+  ],
+  "openings": [
+    {
+      "id": "living_glazing",
+      "wall": "front",
+      "type": "glazing",
+      "at": 0.8,
+      "width": 3.0,
+      "sill": 0,
+      "height": 2.4,
+      "columns": 3,
+      "curtain": "full"
+    },
+    {
+      "id": "kitchen_window",
+      "wall": "front",
+      "at": 5.4,
+      "width": 1.6,
+      "sill": 0.9,
+      "height": 1.4,
+      "columns": 2
+    },
+    {
+      "id": "entry",
+      "wall": "front",
+      "type": "entryDoor",
+      "at": 8.15,
+      "width": 1.05,
+      "sill": 0,
+      "height": 2.3
+    },
+    {
+      "id": "bedroom_window",
+      "wall": "front",
+      "at": 10.0,
+      "width": 1.3,
+      "sill": 0.8,
+      "height": 1.5,
+      "curtain": "left"
+    },
+    {
+      "id": "corner_glazing",
+      "wall": "corner",
+      "type": "glazing",
+      "at": 0.3,
+      "width": 2.2,
+      "sill": 0,
+      "height": 2.4,
+      "columns": 2
+    },
+    {
+      "id": "bedroom_side",
+      "wall": "right",
+      "at": 0.6,
+      "width": 1.2,
+      "sill": 0.8,
+      "height": 1.5
+    },
+    {
+      "id": "bath_window",
+      "wall": "back",
+      "at": 0.9,
+      "width": 0.8,
+      "sill": 1.4,
+      "height": 0.8
+    },
+    {
+      "id": "kids_window",
+      "wall": "back",
+      "at": 2.8,
+      "width": 1.2,
+      "sill": 0.8,
+      "height": 1.5,
+      "curtain": "right"
+    },
+    {
+      "id": "terrace_door",
+      "wall": "back",
+      "type": "glazing",
+      "at": 8.6,
+      "width": 2.4,
+      "sill": 0,
+      "height": 2.4,
+      "columns": 2
+    },
+    {
+      "id": "gable_glazing",
+      "wall": "left",
+      "type": "glazing",
+      "at": 2.3,
+      "width": 4.0,
+      "sill": 0,
+      "height": 2.4,
+      "columns": 4,
+      "transoms": [
+        2.1
+      ]
+    },
+    {
+      "id": "living_passage",
+      "wall": "p_living",
+      "type": "hole",
+      "at": 1.6,
+      "width": 1.4,
+      "sill": 0,
+      "height": 2.4
+    },
+    {
+      "id": "bedroom_door",
+      "wall": "p_corridor",
+      "type": "door",
+      "at": 0.8,
+      "width": 0.8,
+      "sill": 0,
+      "height": 2.1,
+      "swing": -1
+    },
+    {
+      "id": "kids_door",
+      "wall": "p_corridor",
+      "type": "door",
+      "at": 5.1,
+      "width": 0.8,
+      "sill": 0,
+      "height": 2.1,
+      "swing": -1
+    },
+    {
+      "id": "bath_door",
+      "wall": "p_rooms",
+      "type": "door",
+      "at": 2.6,
+      "width": 0.8,
+      "sill": 0,
+      "height": 2.1,
+      "hinge": "end"
+    }
+  ],
+  "rooms": [
+    {
+      "id": "living",
+      "name": "Гостиная-кухня",
+      "level": "ground",
+      "type": "living",
+      "outline": [
+        [
+          0.4,
+          0.4
+        ],
+        [
+          8.0,
+          0.4
+        ],
+        [
+          8.0,
+          8.2
+        ],
+        [
+          0.4,
+          8.2
+        ]
+      ]
+    },
+    {
+      "id": "corridor",
+      "name": "Прихожая",
+      "level": "ground",
+      "type": "hall",
+      "floor": "tile",
+      "outline": [
+        [
+          8.0,
+          0.4
+        ],
+        [
+          9.4,
+          0.4
+        ],
+        [
+          9.4,
+          8.2
+        ],
+        [
+          8.0,
+          8.2
+        ]
+      ]
+    },
+    {
+      "id": "bedroom",
+      "name": "Спальня",
+      "level": "ground",
+      "type": "bedroom",
+      "outline": [
+        [
+          9.4,
+          0.4
+        ],
+        [
+          11.834,
+          0.4
+        ],
+        [
+          13.6,
+          2.166
+        ],
+        [
+          13.6,
+          4.3
+        ],
+        [
+          9.4,
+          4.3
+        ]
+      ]
+    },
+    {
+      "id": "kids",
+      "name": "Детская",
+      "level": "ground",
+      "type": "bedroom",
+      "outline": [
+        [
+          9.4,
+          4.3
+        ],
+        [
+          11.6,
+          4.3
+        ],
+        [
+          11.6,
+          8.2
+        ],
+        [
+          9.4,
+          8.2
+        ]
+      ]
+    },
+    {
+      "id": "bath",
+      "name": "Ванная",
+      "level": "ground",
+      "type": "bathroom",
+      "outline": [
+        [
+          11.6,
+          4.3
+        ],
+        [
+          13.6,
+          4.3
+        ],
+        [
+          13.6,
+          8.2
+        ],
+        [
+          11.6,
+          8.2
+        ]
+      ]
+    }
+  ],
+  "roofs": [
+    {
+      "id": "main",
+      "type": "gable",
+      "outline": [
+        [
+          0,
+          0
+        ],
+        [
+          14,
+          0
+        ],
+        [
+          14,
+          8.6
+        ],
+        [
+          0,
+          8.6
+        ]
+      ],
+      "base": 3.55,
+      "thickness": 0.25,
+      "overhang": 0.5,
+      "pitch": 35,
+      "material": "coping",
+      "gable": "wood"
+    }
+  ],
+  "elements": [
+    {
+      "id": "terrace",
+      "type": "platform",
+      "min": [
+        2.0,
+        0,
+        8.6
+      ],
+      "max": [
+        7.0,
+        0.45,
+        11.0
+      ],
+      "material": "step_riser",
+      "top": "porcelain",
+      "bottom": "none"
+    },
+    {
+      "id": "terrace_step",
+      "type": "platform",
+      "min": [
+        3.5,
+        0,
+        11.0
+      ],
+      "max": [
+        5.5,
+        0.22,
+        11.4
+      ],
+      "material": "step_riser",
+      "top": "porcelain",
+      "bottom": "none"
+    },
+    {
+      "id": "porch",
+      "type": "platform",
+      "min": [
+        7.6,
+        0,
+        -1.4
+      ],
+      "max": [
+        10.2,
+        0.45,
+        0
+      ],
+      "material": "step_riser",
+      "top": "porcelain",
+      "bottom": "none"
+    },
+    {
+      "id": "porch_step",
+      "type": "platform",
+      "min": [
+        7.6,
+        0,
+        -1.8
+      ],
+      "max": [
+        10.2,
+        0.22,
+        -1.4
+      ],
+      "material": "step_riser",
+      "top": "porcelain",
+      "bottom": "none"
+    }
+  ],
+  "items": [
+    {
+      "id": "sofa",
+      "model": "sofa",
+      "level": "ground",
+      "position": [
+        3.4,
+        0,
+        4.3
+      ],
+      "rotation": 270.0,
+      "params": {
+        "length": 2.8,
+        "fabric": "linen",
+        "accent": "sage"
+      }
+    },
+    {
+      "id": "rug",
+      "model": "rug",
+      "level": "ground",
+      "position": [
+        2.2,
+        0,
+        4.3
+      ],
+      "params": {
+        "width": 2.4,
+        "depth": 3.0,
+        "material": "rug",
+        "border": "rug_dark"
+      },
+      "rotation": 180.0
+    },
+    {
+      "id": "coffee_table",
+      "model": "round_table",
+      "level": "ground",
+      "position": [
+        2.1,
+        0,
+        4.3
+      ],
+      "params": {
+        "radius": 0.5,
+        "height": 0.34,
+        "material": "walnut"
+      },
+      "rotation": 180.0
+    },
+    {
+      "id": "armchair",
+      "model": "armchair",
+      "level": "ground",
+      "position": [
+        1.3,
+        0,
+        2.4
+      ],
+      "rotation": 20.0,
+      "params": {
+        "fabric": "boucle",
+        "wood": "oak_light"
+      }
+    },
+    {
+      "id": "floor_lamp",
+      "model": "floor_lamp",
+      "level": "ground",
+      "position": [
+        3.9,
+        0,
+        6.3
+      ],
+      "rotation": 180.0
+    },
+    {
+      "id": "olive",
+      "model": "plant_tree",
+      "level": "ground",
+      "position": [
+        0.9,
+        0,
+        7.6
+      ],
+      "params": {
+        "height": 2.0,
+        "radius": 0.6,
+        "seed": 7
+      },
+      "rotation": 180.0
+    },
+    {
+      "id": "kitchen",
+      "model": "kitchen_base",
+      "level": "ground",
+      "position": [
+        7.94,
+        0,
+        5.9
+      ],
+      "rotation": 270.0,
+      "params": {
+        "length": 3.2,
+        "sink_at": 0.6
+      }
+    },
+    {
+      "id": "tall",
+      "model": "tall_units",
+      "level": "ground",
+      "position": [
+        7.94,
+        0,
+        7.6
+      ],
+      "rotation": 270.0,
+      "params": {
+        "length": 1.2,
+        "height": 2.8
+      }
+    },
+    {
+      "id": "island",
+      "model": "kitchen_island",
+      "level": "ground",
+      "position": [
+        6.2,
+        0,
+        5.9
+      ],
+      "rotation": 270.0,
+      "params": {
+        "length": 2.0,
+        "width": 0.9
+      }
+    },
+    {
+      "id": "stool_1",
+      "model": "bar_stool",
+      "level": "ground",
+      "position": [
+        5.45,
+        0,
+        5.3
+      ],
+      "rotation": 180.0
+    },
+    {
+      "id": "stool_2",
+      "model": "bar_stool",
+      "level": "ground",
+      "position": [
+        5.45,
+        0,
+        5.9
+      ],
+      "rotation": 180.0
+    },
+    {
+      "id": "stool_3",
+      "model": "bar_stool",
+      "level": "ground",
+      "position": [
+        5.45,
+        0,
+        6.5
+      ],
+      "rotation": 180.0
+    },
+    {
+      "id": "dining",
+      "model": "dining_table",
+      "level": "ground",
+      "position": [
+        5.6,
+        0,
+        2.2
+      ],
+      "params": {
+        "length": 2.0,
+        "width": 0.9
+      },
+      "rotation": 180.0
+    },
+    {
+      "id": "chair_1",
+      "model": "dining_chair",
+      "level": "ground",
+      "position": [
+        5.0,
+        0,
+        1.55
+      ],
+      "rotation": 180.0
+    },
+    {
+      "id": "chair_2",
+      "model": "dining_chair",
+      "level": "ground",
+      "position": [
+        6.2,
+        0,
+        1.55
+      ],
+      "rotation": 180.0
+    },
+    {
+      "id": "chair_3",
+      "model": "dining_chair",
+      "level": "ground",
+      "position": [
+        5.0,
+        0,
+        2.85
+      ],
+      "rotation": 0.0
+    },
+    {
+      "id": "chair_4",
+      "model": "dining_chair",
+      "level": "ground",
+      "position": [
+        6.2,
+        0,
+        2.85
+      ],
+      "rotation": 0.0
+    },
+    {
+      "id": "dining_pendant",
+      "model": "linear_pendant",
+      "level": "ground",
+      "position": [
+        5.6,
+        2.8,
+        2.2
+      ],
+      "params": {
+        "drop": 1.1,
+        "length": 1.4
+      },
+      "rotation": 180.0
+    },
+    {
+      "id": "island_pendant_1",
+      "model": "pendant_globe",
+      "level": "ground",
+      "position": [
+        6.2,
+        2.8,
+        5.4
+      ],
+      "params": {
+        "drop": 1.0
+      },
+      "rotation": 180.0
+    },
+    {
+      "id": "island_pendant_2",
+      "model": "pendant_globe",
+      "level": "ground",
+      "position": [
+        6.2,
+        2.8,
+        6.4
+      ],
+      "params": {
+        "drop": 1.0
+      },
+      "rotation": 180.0
+    },
+    {
+      "id": "bed",
+      "model": "bed",
+      "level": "ground",
+      "position": [
+        11.4,
+        0,
+        4.24
+      ],
+      "params": {
+        "width": 1.6,
+        "length": 2.0,
+        "headboard": "linen",
+        "throw": "terracotta"
+      },
+      "rotation": 180.0
+    },
+    {
+      "id": "night_1",
+      "model": "nightstand",
+      "level": "ground",
+      "position": [
+        10.3,
+        0,
+        4.24
+      ],
+      "rotation": 180.0
+    },
+    {
+      "id": "night_2",
+      "model": "nightstand",
+      "level": "ground",
+      "position": [
+        12.5,
+        0,
+        4.24
+      ],
+      "rotation": 180.0
+    },
+    {
+      "id": "wardrobe",
+      "model": "wardrobe",
+      "level": "ground",
+      "position": [
+        9.46,
+        0,
+        2.2
+      ],
+      "rotation": 90.0,
+      "params": {
+        "length": 1.6,
+        "height": 2.4,
+        "front": "gloss_white",
+        "handles": false
+      }
+    },
+    {
+      "id": "bedroom_rug",
+      "model": "rug",
+      "level": "ground",
+      "position": [
+        11.4,
+        0,
+        2.9
+      ],
+      "params": {
+        "width": 2.2,
+        "depth": 1.6,
+        "material": "rug_dark"
+      },
+      "rotation": 180.0
+    },
+    {
+      "id": "kids_bed",
+      "model": "bed",
+      "level": "ground",
+      "position": [
+        10.3,
+        0,
+        8.14
+      ],
+      "params": {
+        "width": 1.2,
+        "length": 2.0,
+        "headboard": "sage",
+        "throw": "linen",
+        "seed": 3
+      },
+      "rotation": 180.0
+    },
+    {
+      "id": "kids_desk",
+      "model": "desk",
+      "level": "ground",
+      "position": [
+        11.5,
+        0,
+        5.4
+      ],
+      "rotation": 270.0,
+      "params": {
+        "length": 1.2
+      }
+    },
+    {
+      "id": "kids_shelf",
+      "model": "cubby_shelf",
+      "level": "ground",
+      "position": [
+        9.46,
+        0,
+        6.8
+      ],
+      "rotation": 90.0,
+      "params": {
+        "width": 0.9,
+        "height": 1.8,
+        "seed": 9
+      }
+    },
+    {
+      "id": "vanity",
+      "model": "vanity",
+      "level": "ground",
+      "position": [
+        12.6,
+        0,
+        4.36
+      ],
+      "rotation": 0.0,
+      "params": {
+        "length": 1.0
+      }
+    },
+    {
+      "id": "toilet",
+      "model": "toilet",
+      "level": "ground",
+      "position": [
+        13.54,
+        0,
+        5.6
+      ],
+      "rotation": 270.0
+    },
+    {
+      "id": "shower",
+      "model": "shower",
+      "level": "ground",
+      "position": [
+        11.66,
+        0,
+        7.0
+      ],
+      "params": {
+        "width": 1.2,
+        "depth": 1.14,
+        "height": 2.8
+      },
+      "rotation": 180.0
+    },
+    {
+      "id": "towel",
+      "model": "towel_rail",
+      "level": "ground",
+      "position": [
+        13.54,
+        0,
+        7.4
+      ],
+      "rotation": 270.0
+    },
+    {
+      "id": "hall_grass",
+      "model": "plant_grass",
+      "level": "ground",
+      "position": [
+        8.7,
+        0,
+        7.6
+      ],
+      "params": {
+        "seed": 5
+      },
+      "rotation": 180.0
+    },
+    {
+      "id": "hall_rug",
+      "model": "rug",
+      "level": "ground",
+      "position": [
+        8.7,
+        0,
+        3.0
+      ],
+      "params": {
+        "width": 0.9,
+        "depth": 3.0,
+        "material": "rug_dark"
+      },
+      "rotation": 180.0
+    },
+    {
+      "id": "terrace_set",
+      "model": "bistro_set",
+      "level": "ground",
+      "position": [
+        4.5,
+        0,
+        9.9
+      ],
+      "rotation": 180.0
+    },
+    {
+      "id": "terrace_chair",
+      "model": "rattan_lounge_chair",
+      "level": "ground",
+      "position": [
+        2.8,
+        0,
+        9.9
+      ],
+      "rotation": 0.0
+    }
+  ],
+  "views": [
+    {
+      "name": "Гостиная",
+      "type": "walk",
+      "position": [
+        6.8,
+        0.5,
+        0.9
+      ],
+      "yaw": 300,
+      "pitch": 4
+    },
+    {
+      "name": "Кухня",
+      "type": "walk",
+      "position": [
+        2.0,
+        0.5,
+        6.5
+      ],
+      "yaw": 110,
+      "pitch": 6
+    },
+    {
+      "name": "Прихожая",
+      "type": "walk",
+      "position": [
+        8.7,
+        0.5,
+        0.8
+      ],
+      "yaw": 0,
+      "pitch": 5
+    },
+    {
+      "name": "Спальня",
+      "type": "walk",
+      "position": [
+        10.0,
+        0.5,
+        1.0
+      ],
+      "yaw": 50,
+      "pitch": 5
+    },
+    {
+      "name": "Фасад",
+      "type": "orbit",
+      "yaw": 25,
+      "pitch": 8,
+      "distance": 24
+    },
+    {
+      "name": "Угол со стеклом",
+      "type": "orbit",
+      "yaw": -40,
+      "pitch": 6,
+      "distance": 22
+    },
+    {
+      "name": "Терраса",
+      "type": "orbit",
+      "yaw": 160,
+      "pitch": 10,
+      "distance": 24
+    }
+  ]
+}

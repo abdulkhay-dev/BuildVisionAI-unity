@@ -22,7 +22,7 @@ namespace House4696.Core
         {
             TextureFactory.GenerateAll(false);
             MaterialLibrary.Source = new AssetMaterialSource();
-            new House.Interior.InteriorMaterials(MaterialLibrary.Create());
+            new Catalog.InteriorMaterials(MaterialLibrary.Create());
             if (AssetDatabase.LoadAssetAtPath<VolumeProfile>(PostProfilePath) == null) EnvironmentSetup.CreateProfile();
             Debug.Log(Rebuild());
         }

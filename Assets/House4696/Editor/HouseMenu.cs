@@ -2,8 +2,9 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using House4696.Core;
-using House4696.House;
-using House4696.Landscape;
+using House4696.Generation;
+using House4696.Model;
+using House4696.Runtime;
 using House4696.Setup;
 using UnityEditor;
 using UnityEditor.SceneManagement;
@@ -13,11 +14,13 @@ using Debug = UnityEngine.Debug;
 namespace House4696
 {
     /// <summary>
-    /// Entry points: rebuild the whole scene from code (house + garden + lighting) and render the
-    /// calibrated reference view to a PNG for side-by-side comparison with the source image.
+    /// Entry points: rebuild the baked showcase scene of project 46-96 from its house document (house + garden +
+    /// baked lighting) and render the calibrated reference view to a PNG for comparison with the source image.
     /// </summary>
     public static class HouseMenu
     {
+        public const string Sample4696 = "Assets/StreamingAssets/Samples/46-96.house.json";
+
         [MenuItem("House 46-96/Rebuild Scene", priority = 0)]
         public static void RebuildMenu() => Debug.Log(Build(false));
 
@@ -49,13 +52,18 @@ namespace House4696
             long tTex = sw.ElapsedMilliseconds;
             MaterialLibrary.Source = new AssetMaterialSource();
             var mats = MaterialLibrary.Create();
+            var doc = HouseJson.Deserialize(File.ReadAllText(Sample4696));
 
             var scene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
             var writer = new SceneWriter(new AssetSceneWriterHooks(AssetPaths.Meshes + "/SceneMeshes.asset"));
-            var house = new HouseGenerator(mats, writer).Build();
-            var landscape = new LandscapeGenerator(mats, writer, CameraSpec.Position, CameraSpec.Forward).Build();
-            int colliders = CollisionSetup.Apply(house, landscape);
-            var env = EnvironmentSetup.Build(mats);
+            var result = HouseBuilder.Build(doc, mats, writer);
+            var house = result.House;
+            var landscape = result.Site;
+            int colliders = result.Colliders;
+            var env = EnvironmentSetup.Build(mats, EnvironmentBuilder.SunFrom(doc.Site.SunAzimuth, doc.Site.SunElevation));
+            Camera.main.GetComponent<HouseViewer>().Configure(result.Pivot, result.Walk, result.Orbit);
+            // the editor scene bakes its probes (the generator makes realtime ones for the player)
+            foreach (var p in house.GetComponentsInChildren<ReflectionProbe>(true)) p.mode = UnityEngine.Rendering.ReflectionProbeMode.Baked;
             ReflectionSetup.Apply(house, env.GetComponentInChildren<ReflectionProbe>());
             AssetDatabase.SaveAssets();
             AssetPaths.Ensure(AssetPaths.Scenes);
@@ -70,7 +78,8 @@ namespace House4696
             string content = HouseContentBuilder.Rebuild();
 
             int verts = Object.FindObjectsByType<MeshFilter>().Sum(f => f.sharedMesh != null ? f.sharedMesh.vertexCount : 0);
-            return $"[House4696] built in {sw.ElapsedMilliseconds} ms (textures {tTex} ms, geometry {tGeo - tTex} ms); {bake}; colliders: {colliders}; vertices in scene: {verts:N0}; {content}";
+            string warn = result.Warnings.Count > 0 ? "; warnings: " + string.Join(" | ", result.Warnings) : "";
+            return $"[House4696] built in {sw.ElapsedMilliseconds} ms (textures {tTex} ms, geometry {tGeo - tTex} ms); {bake}; colliders: {colliders}; vertices in scene: {verts:N0}; {content}{warn}";
         }
 
         static void AddToBuildSettings(string scenePath)

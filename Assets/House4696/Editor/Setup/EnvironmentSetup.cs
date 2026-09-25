@@ -48,7 +48,7 @@ namespace House4696.Setup
             AssetDatabase.SaveAssets();
         }
 
-        public static GameObject Build(MaterialLibrary m) => EnvironmentBuilder.Build(m, CreateProfile());
+        public static GameObject Build(MaterialLibrary m, Vector3? sunEuler = null) => EnvironmentBuilder.Build(m, CreateProfile(), sunEuler);
 
         public static void ApplyCamera(Camera cam) => EnvironmentBuilder.ApplyCamera(cam);
 
