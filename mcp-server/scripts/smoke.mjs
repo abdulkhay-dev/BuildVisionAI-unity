@@ -8,7 +8,9 @@ const out = new URL("../smoke-out/", import.meta.url);
 mkdirSync(out, { recursive: true });
 
 const client = new Client({ name: "house-smoke", version: "1.0.0" });
-await client.connect(new StdioClientTransport({ command: process.execPath, args: [new URL("../dist/index.js", import.meta.url).pathname] }));
+// HOUSE_MCP_BIN=/path/to/house-mcp tests the single-executable build (e.g. the one inside House.app)
+const bin = process.env.HOUSE_MCP_BIN;
+await client.connect(new StdioClientTransport(bin ? { command: bin, args: [] } : { command: process.execPath, args: [new URL("../dist/index.js", import.meta.url).pathname] }));
 
 const { tools } = await client.listTools();
 console.log(`tools (${tools.length}): ${tools.map((t) => t.name).join(", ")}`);

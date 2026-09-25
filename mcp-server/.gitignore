@@ -3,3 +3,4 @@ dist/
 src/guide.generated.ts
 smoke-out/
 smoke.log
+build/

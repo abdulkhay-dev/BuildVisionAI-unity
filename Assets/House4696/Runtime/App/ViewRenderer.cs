@@ -59,6 +59,10 @@ namespace House4696.App
             var rt = new RenderTexture(w, h, 24, RenderTextureFormat.ARGB32, RenderTextureReadWrite.sRGB);
             cam.targetTexture = rt;
             var hidden = new List<Renderer>();
+            // the surface-cache GI volume follows the camera being rendered; with the viewer camera rendering in
+            // between, its centre would jump every frame and the lighting would never converge — pause it meanwhile
+            bool mainWasEnabled = main != null && main.enabled;
+            if (q.Mode != RenderMode.Plan && main != null) main.enabled = false;
             try
             {
                 int frames = Mathf.Clamp(q.Frames, 1, 240), hideWait = 0;
@@ -121,6 +125,7 @@ namespace House4696.App
             }
             finally
             {
+                if (main != null) main.enabled = mainWasEnabled;
                 foreach (var r in hidden) if (r != null) r.forceRenderingOff = false;
                 cam.targetTexture = null;
                 rt.Release();

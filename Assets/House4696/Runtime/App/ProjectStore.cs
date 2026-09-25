@@ -28,9 +28,40 @@ namespace House4696.App
 
         public ProjectStore(string root = null)
         {
-            Root = root ?? Path.Combine(Application.persistentDataPath, "Projects");
+            Root = root ?? DefaultRoot();
+            bool fresh = !Directory.Exists(Root);
             Directory.CreateDirectory(Root);
+            if (fresh && root == null) MigrateFrom(Path.Combine(Application.persistentDataPath, "Projects"));
             SeedSamples();
+        }
+
+        /// <summary>
+        /// One projects folder for the editor and every build (it must not depend on the product name):
+        /// macOS ~/Library/Application Support/House/Projects, Windows %APPDATA%\House\Projects.
+        /// </summary>
+        public static string DefaultRoot()
+        {
+            string home = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+            string baseDir = Application.platform == RuntimePlatform.OSXPlayer || Application.platform == RuntimePlatform.OSXEditor
+                ? Path.Combine(home, "Library", "Application Support")
+                : Application.platform == RuntimePlatform.WindowsPlayer || Application.platform == RuntimePlatform.WindowsEditor
+                    ? Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)
+                    : Path.Combine(home, ".local", "share");
+            return Path.Combine(baseDir, "House", "Projects");
+        }
+
+        /// <summary>Copies projects from an older location (the per-product persistentDataPath) on first use.</summary>
+        void MigrateFrom(string old)
+        {
+            if (!Directory.Exists(old) || Path.GetFullPath(old) == Path.GetFullPath(Root)) return;
+            foreach (var dir in Directory.GetDirectories(old))
+            {
+                string src = Path.Combine(dir, FileName), id = Path.GetFileName(dir);
+                if (!File.Exists(src) || Directory.Exists(Path.Combine(Root, id))) continue;
+                Directory.CreateDirectory(Path.Combine(Root, id));
+                File.Copy(src, Path.Combine(Root, id, FileName));
+            }
+            Debug.Log($"[ProjectStore] migrated projects from {old}");
         }
 
         string Dir(string id) => Path.Combine(Root, id);

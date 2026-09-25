@@ -55,4 +55,7 @@ function http(port: number): void {
 
 const i = process.argv.indexOf("--http");
 if (i >= 0) http(Number(process.argv[i + 1] ?? 47961));
-else await stdio();
+else stdio().catch((e) => {
+  console.error(e);
+  process.exit(1);
+});
