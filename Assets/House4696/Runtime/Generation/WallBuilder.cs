@@ -61,7 +61,7 @@ namespace House4696.Generation
 
         Clad CladOf(string finish)
         {
-            switch (MaterialResolver.Key(finish))
+            switch (MaterialResolver.Key(MaterialResolver.BaseName(finish)))
             {
                 case "stone": case "stonecladding": return Clad.Stone;
                 case "plinth": return Clad.Plinth;
@@ -76,6 +76,7 @@ namespace House4696.Generation
         Material CladMat(Clad c, string finish)
         {
             var L = _c.Lib;
+            if (finish != null && finish.IndexOf('#') > 0 && c != Clad.Wood) return _c.Mats.Get(finish, L.Stucco);
             switch (c)
             {
                 case Clad.Stone: return L.Stone;

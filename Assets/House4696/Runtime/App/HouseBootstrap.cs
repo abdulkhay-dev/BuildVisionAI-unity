@@ -1,114 +1,82 @@
 using System.Collections;
-using System.Diagnostics;
-using System.IO;
 using House4696.Core;
-using House4696.Generation;
-using House4696.Model;
-using House4696.Runtime;
 using House4696.Setup;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
-using Debug = UnityEngine.Debug;
 
 namespace House4696.App
 {
     /// <summary>
-    /// App entry point (prototype): loads a house document, generates the house, site and environment inside the
-    /// player (no editor, no baked data) and lights them with realtime Surface Cache GI. Reflection probes are
-    /// captured once the GI has had time to converge.
+    /// App composition root: project store, the open-project session, the environment (sun, sky, post, viewer
+    /// camera with realtime GI) and the local API the MCP server drives. Opens the last project on start and
+    /// re-captures reflection probes after every rebuild once the realtime GI has settled.
     /// </summary>
     public sealed class HouseBootstrap : MonoBehaviour
     {
+        public const string Version = "0.2.0";
+
         [SerializeField] Camera loadingCamera;
-        [Tooltip("House document, relative to StreamingAssets (or an absolute path).")]
-        [SerializeField] string project = "Samples/46-96.house.json";
+        [Tooltip("Project opened when nothing was opened before (id in the project store).")]
+        [SerializeField] string defaultProject = "46-96";
         [Tooltip("Frames to let the realtime GI converge before the reflection probes are captured.")]
-        [SerializeField] int giWarmupFrames = 90;
+        [SerializeField] int giWarmupFrames = 60;
         [SerializeField] bool showStats = true;
+        [SerializeField] bool enableApi = true;
 
-        public HouseDocument Document { get; private set; }
-        public HouseBuildResult Result { get; private set; }
-        public bool IsReady { get; private set; }
-        public string BuildReport { get; private set; } = "";
+        public HouseSession Session { get; private set; }
+        public LocalApi Api { get; private set; }
 
-        string _status = "Сборка дома…";
+        ApiHandlers _handlers;
+        string _status = "Загрузка…";
         float _fps;
+        int _probeCountdown = -1;
 
         IEnumerator Start()
         {
-            yield return null; // show the loading frame before the main thread is busy
-            var sw = Stopwatch.StartNew();
-            string path = Path.IsPathRooted(project) ? project : Path.Combine(Application.streamingAssetsPath, project);
-            try { Document = HouseJson.Deserialize(File.ReadAllText(path)); }
-            catch (System.Exception e)
-            {
-                _status = "Не удалось открыть проект: " + e.Message;
-                Debug.LogError("[HouseBootstrap] " + e);
-                yield break;
-            }
+            Application.runInBackground = true;      // the AI edits the house while another window has focus
+            yield return null;                       // show the loading frame first
+
             var content = HouseContent.Load();
             var mats = MaterialLibrary.Create();
-            long tLoad = sw.ElapsedMilliseconds;
-
-            Result = HouseBuilder.Build(Document, mats, new SceneWriter());
-            long tHouse = sw.ElapsedMilliseconds;
-            var site = Document.Site;
-            var env = EnvironmentBuilder.Build(mats, content.PostProcessProfile, EnvironmentBuilder.SunFrom(site.SunAzimuth, site.SunElevation));
-            ConfigureViewer();
-            SetupReflections(Result.House, env);
+            EnvironmentBuilder.Build(mats, content.PostProcessProfile);
             SetupRealtimeGI(content);
+            var garden = GameObject.Find("ReflectionProbe_Garden")?.GetComponent<ReflectionProbe>();
+            int layer = LayerMask.NameToLayer("House");
+            if (garden != null)
+            {
+                garden.mode = ReflectionProbeMode.Realtime;
+                garden.refreshMode = ReflectionProbeRefreshMode.ViaScripting;
+                if (layer >= 0) garden.cullingMask = ~(1 << layer);
+            }
+            DynamicGI.UpdateEnvironment();
+
+            Session = new HouseSession(new ProjectStore(), mats);
+            Session.Rebuilt += () => _probeCountdown = giWarmupFrames;
+            string last = PlayerPrefs.GetString("house.lastProject", defaultProject);
+            if (!Session.Store.Exists(last)) last = Session.Store.Exists(defaultProject) ? defaultProject : Session.Store.List().Find(p => p.Id != null)?.Id;
+            if (last != null)
+            {
+                try { Session.Open(last); }
+                catch (System.Exception e) { Debug.LogError("[App] open failed: " + e); }
+            }
             if (loadingCamera != null) Destroy(loadingCamera.gameObject);
 
-            BuildReport = $"{Document.Meta.Name}: load {tLoad} ms, build {tHouse - tLoad} ms, {Result.Colliders} colliders" +
-                          (Result.Warnings.Count > 0 ? $", {Result.Warnings.Count} warnings" : "");
-            Debug.Log("[HouseBootstrap] built: " + BuildReport);
-
-            _status = "Расчёт освещения…";
-            for (int i = 0; i < giWarmupFrames; i++) yield return null;
-            foreach (var p in FindObjectsByType<ReflectionProbe>()) p.RenderProbe();
-            yield return null;
-            _status = null;
-            IsReady = true;
-            Debug.Log($"[HouseBootstrap] ready in {sw.ElapsedMilliseconds} ms");
-        }
-
-        /// <summary>Tour stops and orbit presets of the document (the viewer keeps its defaults when there are none).</summary>
-        void ConfigureViewer()
-        {
-            var cam = Camera.main;
-            var viewer = cam != null ? cam.GetComponent<HouseViewer>() : null;
-            if (viewer == null) return;
-            var walk = Result.Walk.Length > 0 ? Result.Walk : new[] { new WalkPoint { Name = "Вход", Feet = new Vector3(Result.Footprint.center.x, 0.05f, Result.Footprint.yMin - 3f) } };
-            viewer.Configure(Result.Pivot, walk, Result.Orbit);
-        }
-
-        /// <summary>
-        /// The house lives on its own layer that the garden probe skips (the glazing must not reflect the house
-        /// itself). Probes render in realtime, on demand.
-        /// </summary>
-        static void SetupReflections(GameObject house, GameObject env)
-        {
-            int layer = LayerMask.NameToLayer("House");
-            if (layer >= 0)
-                foreach (var t in house.GetComponentsInChildren<Transform>(true)) t.gameObject.layer = layer;
-            foreach (var p in FindObjectsByType<ReflectionProbe>())
+            if (enableApi)
             {
-                p.mode = ReflectionProbeMode.Realtime;
-                p.refreshMode = ReflectionProbeRefreshMode.ViaScripting;
-                p.timeSlicingMode = ReflectionProbeTimeSlicingMode.NoTimeSlicing;
+                Api = new LocalApi();
+                Api.Start(Version);
+                _handlers = new ApiHandlers(Session, new ViewRenderer(Session, content.RealtimeGIRendererIndex), this, Version);
             }
-            var garden = env.GetComponentInChildren<ReflectionProbe>();
-            if (garden != null && layer >= 0) garden.cullingMask = ~(1 << layer);
-            DynamicGI.UpdateEnvironment();
+            _status = null;
+            Debug.Log($"[App] ready: project '{Session.ProjectId}', built in {Session.LastBuildMs} ms, api port {Api?.Port}");
         }
 
         static void SetupRealtimeGI(HouseContent content)
         {
             if (content.RealtimeGIProfile != null)
             {
-                var go = new GameObject("RealtimeGI_Volume");
-                var vol = go.AddComponent<Volume>();
+                var vol = new GameObject("RealtimeGI_Volume").AddComponent<Volume>();
                 vol.isGlobal = true;
                 vol.priority = 10;
                 vol.sharedProfile = content.RealtimeGIProfile;
@@ -121,7 +89,13 @@ namespace House4696.App
         void Update()
         {
             if (Time.unscaledDeltaTime > 0f) _fps = Mathf.Lerp(_fps, 1f / Time.unscaledDeltaTime, 0.05f);
+            Api?.Pump(_handlers.Execute);
+            if (_probeCountdown > 0 && --_probeCountdown == 0)
+                foreach (var p in FindObjectsByType<ReflectionProbe>()) p.RenderProbe();
         }
+
+        void OnDestroy() => Api?.Dispose();
+        void OnApplicationQuit() => Api?.Dispose();
 
         void OnGUI()
         {
@@ -130,9 +104,11 @@ namespace House4696.App
                 var style = new GUIStyle(GUI.skin.label) { fontSize = 28, alignment = TextAnchor.MiddleCenter };
                 GUI.Label(new Rect(0, 0, Screen.width, Screen.height), _status, style);
             }
-            else if (showStats)
+            else if (showStats && Session != null)
             {
-                GUI.Label(new Rect(12, Screen.height - 28, 900, 24), $"{_fps:F0} FPS · {BuildReport}");
+                string project = Session.HasProject ? $"{Session.Doc.Meta?.Name} ({Session.ProjectId})" : "проект не открыт";
+                string api = Api != null ? $" · MCP API :{Api.Port}" : "";
+                GUI.Label(new Rect(12, Screen.height - 28, 1000, 24), $"{_fps:F0} FPS · {project} · сборка {Session.LastBuildMs} мс{api}");
             }
         }
     }

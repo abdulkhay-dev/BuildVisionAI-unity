@@ -14,7 +14,7 @@ namespace House4696.Generation
     /// </summary>
     public sealed class RoomBuilder
     {
-        const float CeilingPlate = 0.03f;
+        const float CeilingPlate = 0.1f;   // thick enough that the sun's shadow bias cannot leak light through it
         readonly HouseContext _c;
         public RoomBuilder(HouseContext c) { _c = c; }
 

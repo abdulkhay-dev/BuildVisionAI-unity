@@ -27,6 +27,8 @@ namespace House4696.Generation
             { "tiles", "tile" },
             { "membrane", "coping" },
             { "roofmetal", "coping" },
+            { "render", "plaster" },          // light exterior render (tint it: "render#e8e2d6")
+            { "facadeplaster", "plaster" },
         };
 
         public readonly MaterialLibrary Lib;
@@ -52,17 +54,46 @@ namespace House4696.Generation
 
         public static string Key(string name) => name?.Replace("_", "").Replace("-", "").Replace(" ", "").ToLowerInvariant() ?? "";
 
-        public bool Has(string name) => !string.IsNullOrEmpty(name) && Lookup(Key(name)) != null;
+        /// <summary>Material name without a colour suffix: "plaster#e8e2d6" → "plaster".</summary>
+        public static string BaseName(string name)
+        {
+            int i = name?.IndexOf('#') ?? -1;
+            return i > 0 ? name.Substring(0, i) : name;
+        }
 
-        /// <summary>Material by name, or <paramref name="fallback"/> (with a one-time warning) when unknown or empty.</summary>
+        readonly Dictionary<string, Material> _tinted = new Dictionary<string, Material>();
+
+        public bool Has(string name) => !string.IsNullOrEmpty(name) && Lookup(Key(BaseName(name))) != null;
+
+        /// <summary>
+        /// Material by name, or <paramref name="fallback"/> (with a one-time warning) when unknown or empty.
+        /// "name#rrggbb" gives a copy of the material with that base colour (the texture keeps its pattern).
+        /// </summary>
         public Material Get(string name, Material fallback)
         {
             if (string.IsNullOrEmpty(name)) return fallback;
-            var m = Lookup(Key(name));
-            if (m != null) return m;
-            if (_missing.Add(name)) Debug.LogWarning($"[House] unknown material '{name}', using {fallback?.name}");
-            return fallback;
+            string baseName = BaseName(name);
+            var m = Lookup(Key(baseName)) ?? (baseName != name ? fallback : null);
+            if (m == null)
+            {
+                if (_missing.Add(name)) Debug.LogWarning($"[House] unknown material '{name}', using {fallback?.name}");
+                return fallback;
+            }
+            if (baseName == name) return m;
+            if (_tinted.TryGetValue(name, out var t)) return t;
+            if (!ColorUtility.TryParseHtmlString(name.Substring(baseName.Length), out var col))
+            {
+                if (_missing.Add(name)) Debug.LogWarning($"[House] bad colour in '{name}' (expected #rrggbb)");
+                return m;
+            }
+            t = new Material(m) { name = m.name + "_" + name.Substring(baseName.Length + 1) };
+            t.SetColor("_BaseColor", col);
+            _tinted[name] = t;
+            return t;
         }
+
+        /// <summary>Tinted copies created for this house (destroyed with it).</summary>
+        public IEnumerable<Material> Created => _tinted.Values;
 
         Material Lookup(string key)
         {

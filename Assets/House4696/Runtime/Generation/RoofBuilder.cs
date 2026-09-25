@@ -13,6 +13,7 @@ namespace House4696.Generation
     public sealed class RoofBuilder
     {
         const float ParapetT = 0.25f;
+        const float WallSeat = 0.4f;   // typical exterior wall thickness: where the roof bears on the walls
         readonly HouseContext _c;
         public RoofBuilder(HouseContext c) { _c = c; }
 
@@ -100,6 +101,10 @@ namespace House4696.Generation
             // the roof rests on the walls: its underside passes through the wall tops (Base) on the outer wall
             // line, so the top surface is one vertical slab thickness higher; the eave drops with the overhang
             float lift = t / Mathf.Cos(pitch);
+            // the underside meets the wall top on the wall's inner face (~0.4 m in), so the outer part of the wall
+            // and its cladding run into the roof slab instead of leaving a slit under it
+            float seat = WallSeat * tan;
+            lift -= seat;
             float ye = r.Base - oh * tan + lift;          // top surface at the overhang edge
             float wallTop = r.Base;
             float zc = (z0 + z1) * 0.5f;
@@ -112,7 +117,7 @@ namespace House4696.Generation
                     Slab(mb, new[] { V(X0, ye, Z0), V(X1, ye, Z0), V(X1, yr, zc), V(X0, yr, zc) }, t, top, soffit, fascia);
                     Slab(mb, new[] { V(X1, ye, Z1), V(X0, ye, Z1), V(X0, yr, zc), V(X1, yr, zc) }, t, top, soffit, fascia);
                     foreach (float x in new[] { x0, x1 })
-                        EndWall(mb, x, x == x0 ? 1 : -1, new[] { new Vector2(z0, wallTop), new Vector2(z1, wallTop), new Vector2(zc, yr - lift) }, gable);
+                        EndWall(mb, x, x == x0 ? 1 : -1, new[] { new Vector2(z0, wallTop), new Vector2(z1, wallTop), new Vector2(zc, yr - lift - seat) }, gable);
                     break;
                 }
                 case RoofType.Shed:

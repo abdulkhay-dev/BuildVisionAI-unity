@@ -20,6 +20,10 @@ namespace House4696.Core
     {
         readonly ISceneWriterHooks _hooks;
         readonly HashSet<string> _names = new HashSet<string>();
+        readonly List<Mesh> _runtimeMeshes = new List<Mesh>();
+
+        /// <summary>Meshes created without editor hooks (in memory): the owner destroys them when the house is rebuilt.</summary>
+        public IReadOnlyList<Mesh> RuntimeMeshes => _runtimeMeshes;
 
         public SceneWriter(ISceneWriterHooks hooks = null) { _hooks = hooks; }
 
@@ -37,7 +41,7 @@ namespace House4696.Core
             int i = 1;
             while (!_names.Add(n)) n = mesh.name + "_" + (++i);
             mesh.name = n;
-            _hooks?.StoreMesh(mesh);
+            if (_hooks != null) _hooks.StoreMesh(mesh); else _runtimeMeshes.Add(mesh);
             return mesh;
         }
 

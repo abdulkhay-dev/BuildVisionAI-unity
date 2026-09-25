@@ -17,6 +17,8 @@ namespace House4696.Generation
         public WalkPoint[] Walk;
         public OrbitPoint[] Orbit;
         public int Colliders;
+        /// <summary>Materials created for this house (tinted variants); the owner destroys them with the house.</summary>
+        public List<Material> CreatedMaterials = new List<Material>();
     }
 
     /// <summary>
@@ -60,7 +62,7 @@ namespace House4696.Generation
             {
                 House = root, Site = site, Warnings = c.Warnings, Footprint = footprint, Colliders = colliders,
                 Pivot = new Vector3(footprint.center.x, TopHeight(c) * 0.45f, footprint.center.y),
-                Walk = WalkViews(doc), Orbit = OrbitViews(doc),
+                Walk = WalkViews(doc), Orbit = OrbitViews(doc), CreatedMaterials = new List<Material>(c.Mats.Created),
             };
         }
 
