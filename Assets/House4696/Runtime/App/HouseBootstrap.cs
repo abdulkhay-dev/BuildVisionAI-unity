@@ -9,12 +9,13 @@ namespace House4696.App
 {
     /// <summary>
     /// App composition root: project store, the open-project session, the environment (sun, sky, post, viewer
-    /// camera with realtime GI) and the local API the MCP server drives. Opens the last project on start and
-    /// re-captures reflection probes after every rebuild once the realtime GI has settled.
+    /// camera), the lighting (GI baked on the GPU after every rebuild, realtime GI as the fallback) and the local API
+    /// the MCP server drives. Opens the last project on start and re-captures reflection probes once the lighting of
+    /// a rebuild is ready.
     /// </summary>
     public sealed class HouseBootstrap : MonoBehaviour
     {
-        public const string Version = "0.2.0";
+        public const string Version = "0.3.0";
 
         [SerializeField] Camera loadingCamera;
         [Tooltip("Project opened when nothing was opened before (id in the project store).")]
@@ -26,6 +27,7 @@ namespace House4696.App
 
         public HouseSession Session { get; private set; }
         public LocalApi Api { get; private set; }
+        public HouseLighting Lighting { get; private set; }
 
         ApiHandlers _handlers;
         string _status = "Загрузка…";
@@ -52,7 +54,14 @@ namespace House4696.App
             DynamicGI.UpdateEnvironment();
 
             Session = new HouseSession(new ProjectStore(), mats);
-            Session.Rebuilt += () => _probeCountdown = giWarmupFrames;
+            Lighting = new HouseLighting(this, Session, content);
+            // reflections are captured with the finished lighting: after the bake, or after the realtime GI settled
+            Lighting.Baked += () => _probeCountdown = 2;
+            Session.Rebuilt += () =>
+            {
+                Lighting.Rebake();
+                if (!Lighting.CanBake) _probeCountdown = giWarmupFrames;
+            };
             string last = PlayerPrefs.GetString("house.lastProject", defaultProject);
             if (!Session.Store.Exists(last)) last = Session.Store.Exists(defaultProject) ? defaultProject : Session.Store.List().Find(p => p.Id != null)?.Id;
             if (last != null)
@@ -66,7 +75,7 @@ namespace House4696.App
             {
                 Api = new LocalApi();
                 Api.Start(Version);
-                _handlers = new ApiHandlers(Session, new ViewRenderer(Session, content.RealtimeGIRendererIndex), this, Version);
+                _handlers = new ApiHandlers(Session, new ViewRenderer(Session, content.RealtimeGIRendererIndex), Lighting, this, Version);
             }
             _status = null;
             Debug.Log($"[App] ready: project '{Session.ProjectId}', built in {Session.LastBuildMs} ms, api port {Api?.Port}");
@@ -108,7 +117,7 @@ namespace House4696.App
             {
                 string project = Session.HasProject ? $"{Session.Doc.Meta?.Name} ({Session.ProjectId})" : "проект не открыт";
                 string api = Api != null ? $" · MCP API :{Api.Port}" : "";
-                GUI.Label(new Rect(12, Screen.height - 28, 1000, 24), $"{_fps:F0} FPS · {project} · сборка {Session.LastBuildMs} мс{api}");
+                GUI.Label(new Rect(12, Screen.height - 28, 1200, 24), $"{_fps:F0} FPS · {project} · сборка {Session.LastBuildMs} мс · {Lighting?.StatusText()}{api}");
             }
         }
     }

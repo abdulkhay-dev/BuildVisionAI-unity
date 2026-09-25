@@ -28,6 +28,8 @@ namespace House4696.Core
         public VolumeProfile RealtimeGIProfile;
         [Tooltip("Index of the renderer (in the pipeline asset) that has the Surface Cache GI feature.")]
         public int RealtimeGIRendererIndex = -1;
+        [Tooltip("Shaders and textures of the runtime GI baker (the lighting of a house is baked in the player).")]
+        public House4696.Lighting.ProbeBakeResources BakedGI;
 
         Dictionary<string, Material> _byName;
 

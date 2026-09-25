@@ -47,6 +47,8 @@ namespace House4696.Core
             content.PostProcessProfile = AssetDatabase.LoadAssetAtPath<VolumeProfile>(PostProfilePath);
             content.RealtimeGIProfile = RealtimeGISetup.EnsureProfile();
             content.RealtimeGIRendererIndex = RealtimeGISetup.EnsureRenderer();
+            content.BakedGI = BakedGISetup.EnsureResources();
+            BakedGISetup.EnsureFeature(content.BakedGI);
             EditorUtility.SetDirty(content);
             AssetDatabase.SaveAssets();
             return $"[House4696] runtime content: {content.Materials.Count} materials, GI renderer #{content.RealtimeGIRendererIndex}";

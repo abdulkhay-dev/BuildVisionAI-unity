@@ -184,3 +184,4 @@ MonoBehaviour:
   PostProcessProfile: {fileID: 11400000, guid: 704b5761a539340569732e100a08c468, type: 2}
   RealtimeGIProfile: {fileID: 11400000, guid: a64f3d228c3074feeab26c99ccb70b90, type: 2}
   RealtimeGIRendererIndex: 1
+  BakedGI: {fileID: 11400000, guid: 4d45995de4c9040f6822dc4b994d8003, type: 2}

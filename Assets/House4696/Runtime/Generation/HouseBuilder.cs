@@ -87,7 +87,9 @@ namespace House4696.Generation
             try { model.Build(b); }
             catch (System.Exception ex) { c.Warn($"item '{id}' ({model.Id}) failed: {ex.Message}"); return; }
             c.W.Emit("Furniture_" + id, go.transform, b.F);
-            c.W.Emit("Decor_" + id, go.transform, b.D, castShadows: true);
+            // light fittings glow themselves: their globes and shades casting shadows of the lamps' own lights put
+            // dark discs on the ceiling (a chandelier's globes shadow each other's bulbs)
+            c.W.Emit("Decor_" + id, go.transform, b.D, castShadows: model.Category != "lighting");
             for (int i = 0; i < b.Plants.Count; i++)
             {
                 var p = c.W.Emit("Plant_" + id + (i > 0 ? "_" + i : ""), go.transform, b.Plants[i].mb);

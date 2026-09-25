@@ -1,0 +1,113 @@
+// Screen-space resolve of the baked probe volume: for every opaque pixel, interpolates the 8 surrounding probes
+// (skipping probes inside walls and behind the surface) and evaluates the L2 SH for the pixel normal. The result
+// feeds URP's _ScreenSpaceIrradiance path, which Lit shaders use as their baked GI.
+#pragma only_renderers d3d11 vulkan metal glcore
+#pragma kernel Resolve
+
+#include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
+#include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/GBufferCommon.hlsl"
+
+Texture2D<float> _Depths;
+Texture2D<float3> _Normals;
+RWTexture2D<float4> _Output;
+
+Texture3D<float4> _SH0, _SH1, _SH2, _SH3, _SH4, _SH5, _SH6;   // SHAr, SHAg, SHAb, SHBr, SHBg, SHBb, SHC
+Texture3D<float> _Validity;
+
+float4x4 _ClipToWorld;
+float3 _VolumeOrigin;
+float _VolumeSpacing;
+int3 _VolumeSize;
+float _NormalBias;
+float _ViewBias;
+float _FadeDistance;
+float3 _CameraPos;
+float4 _Ambient[7];   // fallback outside the volume: RenderSettings.ambientProbe in the same packing
+
+struct SHCoeffs { float4 c[7]; };
+
+float3 EvalSH(SHCoeffs s, float3 n)
+{
+    float4 n4 = float4(n, 1.0);
+    float3 l01 = float3(dot(s.c[0], n4), dot(s.c[1], n4), dot(s.c[2], n4));
+    float4 vB = n.xyzz * n.yzzx;
+    float3 l2 = float3(dot(s.c[3], vB), dot(s.c[4], vB), dot(s.c[5], vB));
+    float vC = n.x * n.x - n.y * n.y;
+    return l01 + l2 + s.c[6].rgb * vC;
+}
+
+[numthreads(8, 8, 1)]
+void Resolve(uint2 pix : SV_DispatchThreadID)
+{
+    uint2 size;
+    _Depths.GetDimensions(size.x, size.y);
+    if (any(pix >= size)) return;
+
+    float depth = _Depths[pix];
+#if UNITY_REVERSED_Z
+    if (depth == 0.0) { _Output[pix] = 0; return; }
+#else
+    if (depth == 1.0) { _Output[pix] = 0; return; }
+    depth = depth * 2.0 - 1.0;
+#endif
+    float2 uv = (float2(pix) + 0.5) / float2(size);
+    float3 posWS = ComputeWorldSpacePosition(uv, depth, _ClipToWorld);
+    float3 n = normalize(UnpackGBufferNormal(_Normals[pix]));
+    float3 toCam = normalize(_CameraPos - posWS);
+
+    SHCoeffs ambient;
+    [unroll] for (int k = 0; k < 7; k++) ambient.c[k] = _Ambient[k];
+
+    // biased sample point: off the surface along the normal and towards the viewer (as APV does)
+    float3 p = posWS + n * _NormalBias + toCam * _ViewBias;
+    float3 g = (p - _VolumeOrigin) / _VolumeSpacing;
+    float3 maxG = float3(_VolumeSize - 1);
+
+    // blend to the ambient fallback near and beyond the volume border
+    float3 outside = max(-g, g - maxG) * _VolumeSpacing;
+    float borderDist = max(outside.x, max(outside.y, outside.z));
+    float inside = saturate(1.0 - (borderDist + _FadeDistance) / _FadeDistance);
+
+    float3 result = EvalSH(ambient, n);
+    if (inside > 0.0)
+    {
+        float3 gc = clamp(g, 0.0, maxG);
+        int3 i0 = min(int3(floor(gc)), _VolumeSize - 2);
+        float3 f = gc - float3(i0);
+
+        SHCoeffs acc = (SHCoeffs)0;
+        SHCoeffs accAny = (SHCoeffs)0;
+        float wSum = 0.0, wAnySum = 0.0;
+        [unroll] for (int c = 0; c < 8; c++)
+        {
+            int3 o = int3(c & 1, (c >> 1) & 1, (c >> 2) & 1);
+            int3 idx = i0 + o;
+            float3 tw = lerp(1.0 - f, f, float3(o));
+            float w = tw.x * tw.y * tw.z;
+            float3 probePos = _VolumeOrigin + float3(idx) * _VolumeSpacing;
+            // probes behind the surface see the other side of the wall
+            float facing = dot(normalize(probePos - posWS + n * 1e-3), n);
+            float side = saturate(facing * 0.5 + 0.55);
+            float valid = _Validity[idx];
+            float wValid = w * valid * side * side;
+
+            SHCoeffs s;
+            s.c[0] = _SH0[idx]; s.c[1] = _SH1[idx]; s.c[2] = _SH2[idx]; s.c[3] = _SH3[idx];
+            s.c[4] = _SH4[idx]; s.c[5] = _SH5[idx]; s.c[6] = _SH6[idx];
+            [unroll] for (int k2 = 0; k2 < 7; k2++)
+            {
+                acc.c[k2] += s.c[k2] * wValid;
+                accAny.c[k2] += s.c[k2] * w;
+            }
+            wSum += wValid;
+            wAnySum += w;
+        }
+        SHCoeffs chosen = accAny;
+        float norm = wAnySum;
+        if (wSum > 1e-4) { chosen = acc; norm = wSum; }
+        [unroll] for (int k3 = 0; k3 < 7; k3++) chosen.c[k3] /= max(norm, 1e-6);
+        result = lerp(result, EvalSH(chosen, n), inside);
+    }
+
+    _Output[pix] = float4(max(result, 0.0), 1.0);
+}

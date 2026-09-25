@@ -25,8 +25,8 @@ namespace House4696.App
 
     /// <summary>
     /// Renders views of the current house into PNGs for the AI (so it can see what it built). Perspective views go
-    /// through the realtime-GI renderer and accumulate a few dozen frames, a few per app frame with GPU syncs so
-    /// neither the app nor the GPU queue stalls. Plans are orthographic from above, without GI, with everything
+    /// through the GI renderer: with baked lighting a few frames suffice, with the realtime fallback they accumulate
+    /// a few dozen frames, a few per app frame with GPU syncs so neither the app nor the GPU queue stalls. Plans are orthographic from above, without GI, with everything
     /// above the cut height (ceilings, upper floors, roofs) hidden.
     /// </summary>
     public sealed class ViewRenderer
@@ -71,6 +71,8 @@ namespace House4696.App
             try
             {
                 int frames = Mathf.Clamp(q.Frames, 1, 240), hideWait = 0;
+                // baked lighting needs no accumulation: a few frames settle shadows and exposure
+                if (House4696.Lighting.BakedGIVolume.Active != null) frames = Mathf.Min(frames, 4);
                 switch (q.Mode)
                 {
                     case RenderMode.Plan:

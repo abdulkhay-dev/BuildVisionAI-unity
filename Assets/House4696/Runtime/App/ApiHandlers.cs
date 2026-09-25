@@ -23,12 +23,13 @@ namespace House4696.App
 
         readonly HouseSession _s;
         readonly ViewRenderer _renderer;
+        readonly HouseLighting _lighting;
         readonly MonoBehaviour _host;
         readonly string _version;
 
-        public ApiHandlers(HouseSession session, ViewRenderer renderer, MonoBehaviour host, string version)
+        public ApiHandlers(HouseSession session, ViewRenderer renderer, HouseLighting lighting, MonoBehaviour host, string version)
         {
-            _s = session; _renderer = renderer; _host = host; _version = version;
+            _s = session; _renderer = renderer; _lighting = lighting; _host = host; _version = version;
         }
 
         public void Execute(LocalApi.Call c)
@@ -57,15 +58,15 @@ namespace House4696.App
                     RequireProject();
                     c.Done.SetResult(Changed(new List<string> { _s.Undo() ? "последнее изменение отменено" : "отменять нечего" }));
                     return;
-                case "render": RequireProject(); _host.StartCoroutine(Render(a, c)); return;
+                case "render": RequireProject(); _host.StartCoroutine(Guarded(Render(a, c), c)); return;
                 case "tune": c.Done.SetResult(PerfProbe.Tune(a, _s)); return;
                 case "measure":
-                    _host.StartCoroutine(PerfProbe.Measure(a["warmup"] != null ? (int)a["warmup"] : 120, a["frames"] != null ? (int)a["frames"] : 120,
-                        r => c.Done.TrySetResult(r)));
+                    _host.StartCoroutine(Guarded(PerfProbe.Measure(a["warmup"] != null ? (int)a["warmup"] : 120, a["frames"] != null ? (int)a["frames"] : 120,
+                        r => c.Done.TrySetResult(r)), c));
                     return;
                 case "perf":
-                    _host.StartCoroutine(PerfProbe.Sweep(_s, House4696.Core.HouseContent.Load().RealtimeGIRendererIndex,
-                        a["frames"] != null ? (int)a["frames"] : 90, r => c.Done.TrySetResult(r)));
+                    _host.StartCoroutine(Guarded(PerfProbe.Sweep(_s, House4696.Core.HouseContent.Load().RealtimeGIRendererIndex,
+                        a["frames"] != null ? (int)a["frames"] : 90, r => c.Done.TrySetResult(r)), c));
                     return;
                 default: throw new ArgumentException($"неизвестная команда '{c.Command}'");
             }
@@ -77,7 +78,36 @@ namespace House4696.App
             ["app"] = "house", ["version"] = _version, ["project"] = _s.ProjectId, ["name"] = _s.Doc?.Meta?.Name,
             ["undo"] = _s.UndoCount, ["issues"] = _s.Issues.Count, ["buildMs"] = _s.LastBuildMs, ["projectsDir"] = _s.Store.Root,
             ["samples"] = new JArray(ProjectStore.Samples().Keys),
+            ["lighting"] = _lighting?.ToJson(),
         };
+
+        /// <summary>
+        /// Runs a long command as a coroutine; an exception inside it answers the call with the error instead of
+        /// leaving the client waiting for the timeout.
+        /// </summary>
+        static System.Collections.IEnumerator Guarded(System.Collections.IEnumerator work, LocalApi.Call c)
+        {
+            // nested enumerators are stepped here too, so an exception at any depth reaches the catch
+            var stack = new Stack<System.Collections.IEnumerator>();
+            stack.Push(work);
+            while (stack.Count > 0)
+            {
+                object current;
+                try
+                {
+                    if (!stack.Peek().MoveNext()) { stack.Pop(); continue; }
+                    current = stack.Peek().Current;
+                }
+                catch (Exception e)
+                {
+                    Debug.LogException(e);
+                    c.Done.TrySetException(e is ArgumentException || e is InvalidOperationException ? e : new InvalidOperationException(e.Message, e));
+                    yield break;
+                }
+                if (current is System.Collections.IEnumerator nested) { stack.Push(nested); continue; }
+                yield return current;
+            }
+        }
 
         JObject CreateProject(JObject a)
         {
@@ -220,6 +250,8 @@ namespace House4696.App
                 q.Position = p.Count >= 3 ? new Vector3((float)p[0], y, (float)p[2]) : new Vector3((float)p[0], y, (float)p[1]);
             }
             if (q.Mode == RenderMode.Walk && a["position"] == null) { c.Done.SetException(new ArgumentException("walk: нужен position [x, z] (и level) или [x, y, z]")); yield break; }
+            // the AI must see the finished lighting of what it just built
+            if (_lighting != null && q.Mode != RenderMode.Plan) yield return _lighting.WaitForBake(120f);
             yield return _renderer.Render(q,
                 png => c.Done.TrySetResult(new JObject { ["png"] = Convert.ToBase64String(png), ["width"] = q.Width, ["height"] = q.Height, ["mode"] = mode }),
                 err => c.Done.TrySetException(new InvalidOperationException(err)));

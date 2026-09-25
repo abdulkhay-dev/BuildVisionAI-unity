@@ -1,0 +1,26 @@
+{
+    "name": "Assembly-CSharp-Editor-testable",
+    "rootNamespace": "House4696.Lighting",
+    "references": [
+        "Unity.RenderPipelines.Core.Runtime",
+        "Unity.PathTracing.Runtime",
+        "Unity.UnifiedRayTracing.Runtime",
+        "Unity.RenderPipelines.Universal.Runtime",
+        "Unity.Mathematics",
+        "Unity.Collections"
+    ],
+    "includePlatforms": [
+        "Editor",
+        "macOSStandalone",
+        "WindowsStandalone64",
+        "LinuxStandalone64"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

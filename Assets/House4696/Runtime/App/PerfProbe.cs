@@ -57,36 +57,46 @@ namespace House4696.App
             var profile = House4696.Core.HouseContent.Load().RealtimeGIProfile;
             SurfaceCacheGIVolumeOverride gi = null;
             profile?.TryGet(out gi);
-            // GI stays on until the last run: switching its renderer off and back stops the camera rendering
             yield return Measure("baseline", null, null);
             yield return Measure("render scale 0.5", () => urp.renderScale = 0.5f, () => urp.renderScale = scale);
             yield return Measure("render scale 0.7", () => urp.renderScale = 0.7f, () => urp.renderScale = scale);
             if (ssao.Count > 0) yield return Measure("no SSAO", () => ssao.ForEach(f => f.SetActive(false)), () => ssao.ForEach(f => f.SetActive(true)));
             yield return Measure("MSAA off", () => urp.msaaSampleCount = 1, () => urp.msaaSampleCount = msaa);
             var site = session.Result?.Site;
-            if (site != null) yield return Measure("no garden", () => site.SetActive(false), () => site.SetActive(true));
-            if (gi != null)
+            if (site != null)
             {
-                int sc = gi.sampleCount.value, res = gi.volumeResolution.value, cas = gi.volumeCascadeCount.value, look = gi.lookupSampleCount.value, up = gi.upsamplingSampleCount.value;
-                bool mb = gi.multiBounce.value, sf = gi.spatialFilterEnabled.value;
-                result["gi"] = $"samples {sc}, resolution {res}, cascades {cas}, lookup {look}, upsampling {up}, multiBounce {mb}, spatial {sf}";
-                yield return Measure("GI samples 2", () => gi.sampleCount.Override(2), () => gi.sampleCount.Override(sc));
-                yield return Measure("GI resolution 32", () => gi.volumeResolution.Override(32), () => gi.volumeResolution.Override(res));
-                yield return Measure("GI cascades 2", () => gi.volumeCascadeCount.Override(2), () => gi.volumeCascadeCount.Override(cas));
-                yield return Measure("GI single bounce", () => gi.multiBounce.Override(false), () => gi.multiBounce.Override(mb));
-                yield return Measure("GI lookup 1 + upsampling 2", () => { gi.lookupSampleCount.Override(1); gi.upsamplingSampleCount.Override(2); },
-                    () => { gi.lookupSampleCount.Override(look); gi.upsamplingSampleCount.Override(up); });
-                yield return Measure("GI cheap: samples 2, res 32, cascades 2, lookup 1, up 2 + scale 0.7", () =>
-                {
-                    gi.sampleCount.Override(2); gi.volumeResolution.Override(32); gi.volumeCascadeCount.Override(2);
-                    gi.lookupSampleCount.Override(1); gi.upsamplingSampleCount.Override(2); urp.renderScale = 0.7f;
-                }, () =>
-                {
-                    gi.sampleCount.Override(sc); gi.volumeResolution.Override(res); gi.volumeCascadeCount.Override(cas);
-                    gi.lookupSampleCount.Override(look); gi.upsamplingSampleCount.Override(up); urp.renderScale = scale;
-                });
+                yield return Measure("no garden", () => site.SetActive(false), () => site.SetActive(true));
+                var siteRenderers = site.GetComponentsInChildren<Renderer>().ToList();
+                var casting = siteRenderers.Select(r => r.shadowCastingMode).ToList();
+                yield return Measure("garden casts no shadows", () => siteRenderers.ForEach(r => r.shadowCastingMode = ShadowCastingMode.Off),
+                    () => { for (int i = 0; i < siteRenderers.Count; i++) siteRenderers[i].shadowCastingMode = casting[i]; });
+                var grass = siteRenderers.Where(r => r.sharedMaterial != null && r.sharedMaterial.name.Contains("Grass")).ToList();
+                if (grass.Count > 0)
+                    yield return Measure($"no grass blades ({grass.Count})", () => grass.ForEach(r => r.enabled = false), () => grass.ForEach(r => r.enabled = true));
+                var trees = siteRenderers.Where(r => r.transform.parent != null && r.transform.parent.name == "Trees").ToList();
+                if (trees.Count > 0)
+                    yield return Measure($"no trees ({trees.Count})", () => trees.ForEach(r => r.enabled = false), () => trees.ForEach(r => r.enabled = true));
             }
-            yield return Measure("no realtime GI", () => data.SetRenderer(0), () => data.SetRenderer(giRenderer));
+            var baked = House4696.Lighting.BakedGIVolume.Active;
+            if (baked != null)
+                yield return Measure("no baked GI (resolve pass off)", () => House4696.Lighting.BakedGIVolume.Active = null, () => House4696.Lighting.BakedGIVolume.Active = baked);
+            var punctual = Object.FindObjectsByType<Light>().Where(l => l.type != LightType.Directional && l.shadows != LightShadows.None).ToList();
+            if (punctual.Count > 0)
+            {
+                var modes = punctual.Select(l => l.shadows).ToList();
+                yield return Measure($"no lamp shadows ({punctual.Count})", () => punctual.ForEach(l => l.shadows = LightShadows.None),
+                    () => { for (int i = 0; i < punctual.Count; i++) punctual[i].shadows = modes[i]; });
+            }
+            var lamps = Object.FindObjectsByType<Light>().Where(l => l.type != LightType.Directional && l.enabled).ToList();
+            if (lamps.Count > 0)
+                yield return Measure($"no lamps ({lamps.Count})", () => lamps.ForEach(l => l.enabled = false), () => lamps.ForEach(l => l.enabled = true));
+            if (gi != null && gi.enabled.value)
+            {
+                int sc = gi.sampleCount.value;
+                result["gi"] = $"surface cache on: samples {sc}, resolution {gi.volumeResolution.value}, cascades {gi.volumeCascadeCount.value}";
+                yield return Measure("surface cache GI samples 2", () => gi.sampleCount.Override(2), () => gi.sampleCount.Override(sc));
+            }
+            // no renderer switching: taking the camera off its renderer and back stops it rendering
             done(result);
         }
 
