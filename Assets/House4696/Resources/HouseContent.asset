@@ -1,0 +1,186 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce93b7f862878412c8a285d5d6f58f28, type: 3}
+  m_Name: HouseContent
+  m_EditorClassIdentifier: Assembly-CSharp::House4696.Core.HouseContent
+  Materials:
+  - Name: M_BarkBirch
+    Material: {fileID: 2100000, guid: 7ecbb1d082aca4dd7a17785e36a2012b, type: 2}
+  - Name: M_BarkSpruce
+    Material: {fileID: 2100000, guid: a09e58d15efde40ed92f2e7256418852, type: 2}
+  - Name: M_BirchLeaves
+    Material: {fileID: 2100000, guid: 8769ce9d5d724467897935ee71a74fc6, type: 2}
+  - Name: M_BollardCap
+    Material: {fileID: 2100000, guid: b661a4b26c8264f88b4f6157307c3f57, type: 2}
+  - Name: M_BollardLight
+    Material: {fileID: 2100000, guid: 02b1d79a8e4844411b91700a84f4f487, type: 2}
+  - Name: M_BollardWood
+    Material: {fileID: 2100000, guid: 65bb5bd9bd0b94b63b430e72285a39dd, type: 2}
+  - Name: M_Boulder
+    Material: {fileID: 2100000, guid: 66c7ace2c042242db83c3fe609979ee0, type: 2}
+  - Name: M_BoxwoodTuft
+    Material: {fileID: 2100000, guid: c41c36fc06a484f4088f6ab4c0f54a61, type: 2}
+  - Name: M_ConcreteSlab
+    Material: {fileID: 2100000, guid: ffd78932cc3074230b79a52e51fbca22, type: 2}
+  - Name: M_ConiferCore
+    Material: {fileID: 2100000, guid: 3f05768214ef34f6a88ed9c4ac4e360d, type: 2}
+  - Name: M_CurtainSheer
+    Material: {fileID: 2100000, guid: c4b20797e1408484e8f92f22708fe27f, type: 2}
+  - Name: M_Cushion
+    Material: {fileID: 2100000, guid: c11c7aaf083e24a8ea6f9dee771976de, type: 2}
+  - Name: M_DeciduousLeaves
+    Material: {fileID: 2100000, guid: fc143791331f742bcbe3e727462b8bc8, type: 2}
+  - Name: M_FrameAnthracite
+    Material: {fileID: 2100000, guid: f65346497eeb14842aa090511ac25eb7, type: 2}
+  - Name: M_FurnitureDark
+    Material: {fileID: 2100000, guid: 23322e858caee4400940acf3edea1ef5, type: 2}
+  - Name: M_Glass
+    Material: {fileID: 2100000, guid: 93951574af8dd49d79c8dbcfbf966933, type: 2}
+  - Name: M_GlassDoorDark
+    Material: {fileID: 2100000, guid: 5e7cfc6d3367b4ea8995048cead52b36, type: 2}
+  - Name: M_GlassInner
+    Material: {fileID: 2100000, guid: 71be0295eb7454c658e86f7a31b195d4, type: 2}
+  - Name: M_GlassRailing
+    Material: {fileID: 2100000, guid: ee81db1ec7ca34f438f000960e994c2f, type: 2}
+  - Name: M_GrassBlades
+    Material: {fileID: 2100000, guid: 5b86c0dc81ea44ab0888bbaa647fd8c6, type: 2}
+  - Name: M_GrassPlume
+    Material: {fileID: 2100000, guid: 2ad419bb2d049440f98a5dbc2438711c, type: 2}
+  - Name: M_GravelWhite
+    Material: {fileID: 2100000, guid: ecf9c7626ce7c4e3fa6002dd7388934f, type: 2}
+  - Name: M_HedgeBoxwood
+    Material: {fileID: 2100000, guid: 9062ea68e7f1c41daa823cc39d70c1a3, type: 2}
+  - Name: M_IntArt
+    Material: {fileID: 2100000, guid: 4e47564d1adba4347aa7c0aa9f3586fb, type: 2}
+  - Name: M_IntBedding
+    Material: {fileID: 2100000, guid: ec24fcd77a42f4a75800bad9961f7105, type: 2}
+  - Name: M_IntBlackGlass
+    Material: {fileID: 2100000, guid: 3062f0843ca324be9a9b9aa6cb08909c, type: 2}
+  - Name: M_IntBlackMetal
+    Material: {fileID: 2100000, guid: f30737a77d9ac45628bc1abce3f27ac1, type: 2}
+  - Name: M_IntBoucle
+    Material: {fileID: 2100000, guid: a409ad95dd29a434d82566e6898fef65, type: 2}
+  - Name: M_IntBrass
+    Material: {fileID: 2100000, guid: 73fecc04918894936a76a1800ec150b2, type: 2}
+  - Name: M_IntCeramic
+    Material: {fileID: 2100000, guid: 797ba0a2b765f47d1958c76d13ab3523, type: 2}
+  - Name: M_IntCharcoal
+    Material: {fileID: 2100000, guid: 69588dcaefbfb4b34b98025c32ffc519, type: 2}
+  - Name: M_IntChrome
+    Material: {fileID: 2100000, guid: 994df1f759d474cbb935fbd9f777afdb, type: 2}
+  - Name: M_IntCloth
+    Material: {fileID: 2100000, guid: 6d1c5fd7ac47247aa9ad55e12723bf34, type: 2}
+  - Name: M_IntDownlight
+    Material: {fileID: 2100000, guid: 31429dabeb965430ab5a1ace16053d5a, type: 2}
+  - Name: M_InteriorCeiling
+    Material: {fileID: 2100000, guid: 092f12ff4f60b4cadb1af4b957657d57, type: 2}
+  - Name: M_InteriorDark
+    Material: {fileID: 2100000, guid: a8a7072f2404b483996fd42159d252f5, type: 2}
+  - Name: M_InteriorFloor
+    Material: {fileID: 2100000, guid: 41cdc7aeef0ef4b4c836c19e26d19074, type: 2}
+  - Name: M_InteriorWall
+    Material: {fileID: 2100000, guid: 8afeda5a26f204689aa4f8256fef64f0, type: 2}
+  - Name: M_IntFelt
+    Material: {fileID: 2100000, guid: 3b66a6a93505644efb51fea1eb689edd, type: 2}
+  - Name: M_IntFire
+    Material: {fileID: 2100000, guid: e8824c5eadee9460f95bbc6df391cd9f, type: 2}
+  - Name: M_IntGlass
+    Material: {fileID: 2100000, guid: 168939b275e17499984c308c17ff8536, type: 2}
+  - Name: M_IntGlobe
+    Material: {fileID: 2100000, guid: dfe93bd47d9774d19a784cd786d4054b, type: 2}
+  - Name: M_IntGlossWhite
+    Material: {fileID: 2100000, guid: e1202130e805540b2bd178f022126a3b, type: 2}
+  - Name: M_IntLampShade
+    Material: {fileID: 2100000, guid: 1fe1b1a907cbf482cac761849f5c9b8c, type: 2}
+  - Name: M_IntLeather
+    Material: {fileID: 2100000, guid: 02957afc84ed946e6b36e169eb2c6ae8, type: 2}
+  - Name: M_IntLeatherWhite
+    Material: {fileID: 2100000, guid: 021b456a3e1134e7a823bbc19c13535f, type: 2}
+  - Name: M_IntLed
+    Material: {fileID: 2100000, guid: 0d390213196bd48eeb97b2c3e1480455, type: 2}
+  - Name: M_IntLinen
+    Material: {fileID: 2100000, guid: aa9830ac617ad46ec9530b6773a2cd93, type: 2}
+  - Name: M_IntMarble
+    Material: {fileID: 2100000, guid: d0453e22e36e14458939d30901588657, type: 2}
+  - Name: M_IntMirror
+    Material: {fileID: 2100000, guid: 1104465a97ddd4f7fb5fe3fb4418565b, type: 2}
+  - Name: M_IntOak
+    Material: {fileID: 2100000, guid: b47f9606aa0364cbc9ea7e5835573d8f, type: 2}
+  - Name: M_IntRug
+    Material: {fileID: 2100000, guid: c0c15368f5bac43adb83ffd7e8df0e3e, type: 2}
+  - Name: M_IntRugDark
+    Material: {fileID: 2100000, guid: c4e51ce85e8414976bb03544afa5b9e8, type: 2}
+  - Name: M_IntSage
+    Material: {fileID: 2100000, guid: 0792c29aade424c589d8d66094eaef1a, type: 2}
+  - Name: M_IntScreen
+    Material: {fileID: 2100000, guid: 0acc6a28f3ff247beacc578c17833970, type: 2}
+  - Name: M_IntSlatWood
+    Material: {fileID: 2100000, guid: 006b5f6d7309f4282a10b6f1a504cd2c, type: 2}
+  - Name: M_IntSoftWhite
+    Material: {fileID: 2100000, guid: 6ae8be1f19e4d49f7a127bfebdf0c6aa, type: 2}
+  - Name: M_IntStoneware
+    Material: {fileID: 2100000, guid: 73e363c2d6e9d4a54b09219a1d893b75, type: 2}
+  - Name: M_IntTerracotta
+    Material: {fileID: 2100000, guid: 2f3d6dcc8b9c643fcad83ebd860dd1a1, type: 2}
+  - Name: M_IntTile
+    Material: {fileID: 2100000, guid: 39b8aa68897214c2c8db4aea7c0de703, type: 2}
+  - Name: M_IntTileDark
+    Material: {fileID: 2100000, guid: dd46afa35a5c94b1e8d19e241faca378, type: 2}
+  - Name: M_IntTowel
+    Material: {fileID: 2100000, guid: 17269bd80e2f04113b77f2f7d372376b, type: 2}
+  - Name: M_IntTravertine
+    Material: {fileID: 2100000, guid: fdad8e3f7afd744009b5e389800f2be8, type: 2}
+  - Name: M_IntWalnut
+    Material: {fileID: 2100000, guid: 033eaf0911bd045d5bb79c471a6d99d3, type: 2}
+  - Name: M_IntWhiteMetal
+    Material: {fileID: 2100000, guid: ce56b6c89881341fdbdf272dd949b0d7, type: 2}
+  - Name: M_Lawn
+    Material: {fileID: 2100000, guid: 36ec2fa3fe2a0445fb23e297ad9fca9f, type: 2}
+  - Name: M_MetalCoping
+    Material: {fileID: 2100000, guid: feb9d4be078604ce1b684f44bcff279b, type: 2}
+  - Name: M_Mulch
+    Material: {fileID: 2100000, guid: bc2eefc168fd04a56a12b8d487665bd3, type: 2}
+  - Name: M_PineSurface
+    Material: {fileID: 2100000, guid: 77a386d8023194ccb8a4abda46ea8a0f, type: 2}
+  - Name: M_PineTuft
+    Material: {fileID: 2100000, guid: b5c7241ceca2945218d1d804f70fb907, type: 2}
+  - Name: M_PlanterConcrete
+    Material: {fileID: 2100000, guid: 0f7298f6242c244b4b08ec30ec6b4ccb, type: 2}
+  - Name: M_Plinth
+    Material: {fileID: 2100000, guid: e11bfcfcc88914b8d880bce6e9f34d53, type: 2}
+  - Name: M_PorcelainLight
+    Material: {fileID: 2100000, guid: 4e5a19635e01f4a6d8066e8c8264f8ff, type: 2}
+  - Name: M_Rattan
+    Material: {fileID: 2100000, guid: 58cdf0828d2384695af0b0868d9b24aa, type: 2}
+  - Name: M_Sky
+    Material: {fileID: 2100000, guid: 482754098431d425c90fd05f375f5a42, type: 2}
+  - Name: M_SlatBacking
+    Material: {fileID: 2100000, guid: 21eae079db7f7497799d74d49eed22f2, type: 2}
+  - Name: M_Soil
+    Material: {fileID: 2100000, guid: 8a5500b6af0fa47dea216d78351788e7, type: 2}
+  - Name: M_SpruceBranch
+    Material: {fileID: 2100000, guid: 33a046657044f40648dad78a9d865cbe, type: 2}
+  - Name: M_Steel
+    Material: {fileID: 2100000, guid: 5f7aa536c51d9406e92b9dd5986eee48, type: 2}
+  - Name: M_SteelEdging
+    Material: {fileID: 2100000, guid: 8b82f5a08db054502baa0ba4e94035ea, type: 2}
+  - Name: M_StoneCladding
+    Material: {fileID: 2100000, guid: c85d4deffa2ce4c76bd90cdfaf1512a9, type: 2}
+  - Name: M_StuccoAnthracite
+    Material: {fileID: 2100000, guid: e3ca52a56324641a6be853c7421f42d7, type: 2}
+  - Name: M_StuccoSoffit
+    Material: {fileID: 2100000, guid: a6e13ab5d31864ac8880c6d21f60ece3, type: 2}
+  - Name: M_WoodBattens
+    Material: {fileID: 2100000, guid: cf55313a59e094481b7c6995eed8856f, type: 2}
+  PostProcessProfile: {fileID: 11400000, guid: 704b5761a539340569732e100a08c468, type: 2}
+  RealtimeGIProfile: {fileID: 11400000, guid: a64f3d228c3074feeab26c99ccb70b90, type: 2}
+  RealtimeGIRendererIndex: 1

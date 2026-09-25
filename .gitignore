@@ -1,0 +1,35 @@
+# Unity generated
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+/[Bb]uild/
+/[Bb]uilds/
+/[Mm]emoryCaptures/
+/[Rr]ecordings/
+
+# IDE / OS
+.vs/
+.idea/
+.vscode/
+*.csproj
+*.sln
+*.slnx
+*.user
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+.DS_Store
+.consulo/
+
+# Review renders (regenerated on demand)
+/Renders/
+
+# Procedural mesh container (~300 MB, rebuilt by House 46-96 → Rebuild Scene)
+/Assets/House4696/Generated/Meshes/SceneMeshes.asset
+/Assets/House4696/Generated/Meshes/SceneMeshes.asset.meta
