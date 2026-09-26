@@ -41,6 +41,10 @@ namespace House4696.Model
         /// <summary>Round-trips a document (deep copy).</summary>
         public static HouseDocument Clone(HouseDocument doc) => Deserialize(Serialize(doc));
 
+        /// <summary>Deep copy of a part of a document (an item, a level…) through the same JSON form.</summary>
+        public static T Copy<T>(T part) where T : class =>
+            part == null ? null : JsonConvert.DeserializeObject<T>(JsonConvert.SerializeObject(part, Settings), Settings);
+
         sealed class CompactResolver : CamelCasePropertyNamesContractResolver
         {
             protected override JsonProperty CreateProperty(MemberInfo member, MemberSerialization memberSerialization)

@@ -10,6 +10,8 @@ namespace House4696.App.UI
         Plan, Pin, Camera, FrameCorners, Help, Undo, More, ChevronLeft, ChevronRight, ChevronUp,
         MouseLeft, MouseRight, MouseWheel, Keyboard, Sort, Layers, Refresh, Duplicate, Door, Stairs, Bed, Sofa, Bath, Kitchen,
         EyeOff, Maximize, ArrowUpRight,
+        // furniture library: categories and item commands
+        Table, Wardrobe, Lamp, Picture, Rug, SlatPanel, Leaf, Tree, Washer, RotateCw, RotateCcw, Move,
     }
 
     /// <summary>
@@ -363,6 +365,78 @@ namespace House4696.App.UI
                 case IconKind.Expand:
                     Line(4, 9, 4, 4, 9, 4); Line(15, 4, 20, 4, 20, 9);
                     Line(20, 15, 20, 20, 15, 20); Line(9, 20, 4, 20, 4, 15);
+                    break;
+                case IconKind.Table:            // top and two legs, seen from the front
+                    Rect(2.5f, 6.5f, 19, 3.5f, 1f);
+                    Line(5.5f, 10, 5.5f, 19.5f); Line(18.5f, 10, 18.5f, 19.5f);
+                    break;
+                case IconKind.Wardrobe:         // two doors with handles on short feet
+                    Rect(5, 3, 14, 16.5f, 1.5f);
+                    Line(12, 3, 12, 19.5f);
+                    Line(10, 10, 10, 12.5f); Line(14, 10, 14, 12.5f);
+                    Line(7, 19.5f, 7, 21.5f); Line(17, 19.5f, 17, 21.5f);
+                    break;
+                case IconKind.Lamp:             // shade, stem, foot
+                    Poly(false, 8.5f, 3.5f, 15.5f, 3.5f, 19, 11, 5, 11);
+                    Line(12, 11, 12, 19.5f);
+                    Line(8, 20, 16, 20);
+                    break;
+                case IconKind.Picture:          // frame with hills and a sun
+                    Rect(3.5f, 4.5f, 17, 15, 2f);
+                    Line(6.5f, 16.5f, 10.5f, 12, 13.5f, 15, 15.5f, 13, 17.5f, 16.5f);
+                    Circle(15.5f, 8.8f, 1.4f);
+                    break;
+                case IconKind.Rug:              // a rug with fringes at both ends
+                    Rect(6, 4.5f, 12, 15, 1f);
+                    Rect(9, 8, 6, 8, 0.5f);
+                    for (int i = 0; i < 4; i++)
+                    {
+                        float x = 7.5f + i * 3f;
+                        Line(x, 2.2f, x, 4.5f); Line(x, 19.5f, x, 21.8f);
+                    }
+                    break;
+                case IconKind.SlatPanel:        // wall panel of vertical slats
+                    Rect(3.5f, 3.5f, 17, 17, 2f);
+                    Line(8, 3.5f, 8, 20.5f); Line(12, 3.5f, 12, 20.5f); Line(16, 3.5f, 16, 20.5f);
+                    break;
+                case IconKind.Leaf:
+                    p.BeginPath();
+                    p.MoveTo(P(5, 19));
+                    p.BezierCurveTo(P(4, 10), P(10, 4), P(20, 4));
+                    p.BezierCurveTo(P(20, 14), P(14, 20), P(5, 19));
+                    p.ClosePath();
+                    p.Stroke();
+                    Line(5, 19, 13.5f, 10.5f);
+                    break;
+                case IconKind.Tree:             // round crown on a trunk
+                    Circle(12, 9, 6.2f);
+                    Line(12, 15.2f, 12, 21);
+                    Line(12, 17.5f, 14.5f, 15.5f);
+                    break;
+                case IconKind.Washer:           // washing machine
+                    Rect(4.5f, 3, 15, 18, 2f);
+                    Line(4.5f, 7, 19.5f, 7);
+                    Circle(12, 14, 4f);
+                    Circle(7.8f, 5, 0.8f, true);
+                    break;
+                case IconKind.RotateCcw:        // ↺: three quarters of a circle, arrow at the top left
+                    p.BeginPath();
+                    p.Arc(P(12, 12), 8.5f * s, Angle.Degrees(180f), Angle.Degrees(-135f), ArcDirection.CounterClockwise);
+                    p.LineTo(P(3.5f, 8.5f));
+                    p.Stroke();
+                    Line(3.5f, 3.5f, 3.5f, 8.5f, 8.5f, 8.5f);
+                    break;
+                case IconKind.RotateCw:         // ↻: the mirror image
+                    p.BeginPath();
+                    p.Arc(P(12, 12), 8.5f * s, Angle.Degrees(0f), Angle.Degrees(315f), ArcDirection.Clockwise);
+                    p.LineTo(P(20.5f, 8.5f));
+                    p.Stroke();
+                    Line(20.5f, 3.5f, 20.5f, 8.5f, 15.5f, 8.5f);
+                    break;
+                case IconKind.Move:             // four-way arrow
+                    Line(12, 3, 12, 21); Line(3, 12, 21, 12);
+                    Line(9.5f, 5.5f, 12, 3, 14.5f, 5.5f); Line(9.5f, 18.5f, 12, 21, 14.5f, 18.5f);
+                    Line(5.5f, 9.5f, 3, 12, 5.5f, 14.5f); Line(18.5f, 9.5f, 21, 12, 18.5f, 14.5f);
                     break;
             }
         }

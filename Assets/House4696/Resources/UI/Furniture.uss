@@ -1,0 +1,170 @@
+/* House v2 — furniture: the library panel (lib-) on the left and the overlay of the 3D view (fo-): item boxes, the action
+   bar above the selected item, the hint at the pointer. Opaque colours only; sizes are panel px at 1600×940. */
+
+/* ================================================================== library panel */
+/* below the project pill (16 + 44 + 12), full height to the bottom gutter; 440 wide */
+.lib-host { position: absolute; left: 16px; top: 72px; bottom: 16px; width: 440px; }
+.lib { flex-grow: 1; flex-direction: column; padding: 4px; }
+
+.lib-head { flex-direction: row; align-items: center; height: 44px; padding: 0 4px 0 12px; flex-shrink: 0; }
+.lib-titles { flex-grow: 1; flex-shrink: 1; min-width: 0; flex-direction: row; align-items: baseline; }
+.lib-count { margin-left: 8px; font-size: 12px; color: var(--text-3); }
+.lib-head > .lib-close { color: var(--text-2); }
+.lib-head > .lib-close:hover { background-color: var(--hover-1); color: var(--text-1); }
+
+.lib-search { margin: 4px 11px 10px 11px; flex-shrink: 0; }
+
+.lib-body { flex-direction: row; flex-grow: 1; flex-shrink: 1; min-height: 0; }
+
+/* ------------------------------------------------------------------ categories rail */
+.lib-rail { width: 150px; flex-shrink: 0; padding: 0 2px 0 4px; }
+.lib-cat {
+    flex-direction: row;
+    align-items: center;
+    height: 32px;
+    padding: 0 8px;
+    margin-bottom: 1px;
+    border-radius: 8px;
+    color: var(--text-2);
+    flex-shrink: 0;
+    transition-property: background-color, color;
+    transition-duration: 0.09s;
+    transition-timing-function: ease-out;
+}
+.lib-cat:hover { background-color: var(--hover-1); color: var(--text-1); }
+.lib-cat:active { background-color: var(--press); }
+.lib-cat.selected { background-color: var(--selected); color: var(--text-1); }
+.lib-cat > .lib-cat-icon { color: var(--text-3); margin-right: 9px; }
+.lib-cat:hover > .lib-cat-icon, .lib-cat.selected > .lib-cat-icon { color: var(--text-1); }
+.lib-cat-name {
+    flex-grow: 1;
+    flex-shrink: 1;
+    min-width: 0;
+    font-size: 13px;
+    -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Medium.ttf");
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.lib-cat-count { flex-shrink: 0; margin-left: 6px; font-size: 11px; color: var(--text-3); }
+/* while searching the rail is a way back, not the current filter */
+.lib-rail-search > .lib-cat { color: var(--text-3); }
+
+/* ------------------------------------------------------------------ cards */
+.lib-content { flex-grow: 1; flex-shrink: 1; min-width: 0; position: relative; }
+.lib-scroll { flex-grow: 1; }
+.lib-grid { flex-direction: row; flex-wrap: wrap; padding: 0 4px 8px 2px; }
+.lib-section { width: 100%; flex-direction: row; align-items: center; height: 26px; padding: 0 6px; margin-top: 2px; }
+.lib-section-title {
+    flex-grow: 1;
+    font-size: 12px;
+    color: var(--text-3);
+    -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Medium.ttf");
+}
+.lib-section-count { font-size: 11px; color: var(--text-3); }
+
+.lib-card {
+    width: 50%;
+    padding: 4px 4px 8px 4px;
+    border-radius: 10px;
+    flex-shrink: 0;
+    transition-property: background-color, scale;
+    transition-duration: 0.09s, 0.08s;
+    transition-timing-function: ease-out;
+}
+.lib-card:hover { background-color: var(--hover-1); }
+.lib-card.pressed { background-color: var(--press); scale: 0.98 0.98; }
+.lib-card.active { background-color: var(--accent-halo); }
+.lib-thumb {
+    height: 100px;
+    border-radius: 8px;
+    background-color: #23262C;
+    -unity-background-scale-mode: scale-to-fit;
+    align-items: center;
+    justify-content: center;
+    border-width: 1px;
+    border-color: #23262C;
+    transition-property: border-color;
+    transition-duration: 0.09s;
+}
+.lib-card:hover > .lib-thumb { border-color: var(--border-strong); }
+.lib-card.active > .lib-thumb { border-color: var(--accent); }
+.lib-thumb-icon { color: var(--text-3); }
+.lib-name {
+    margin: 7px 4px 0 4px;
+    font-size: 12px;
+    color: var(--text-1);
+    -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Medium.ttf");
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.lib-size { margin: 2px 4px 0 4px; font-size: 11px; color: var(--text-3); white-space: nowrap; }
+
+.lib-empty { position: absolute; left: 0; top: 0; right: 0; bottom: 0; align-items: center; justify-content: center; padding: 0 20px 40px 20px; }
+.lib-empty > .lib-empty-icon { color: var(--text-3); margin-bottom: 12px; }
+.lib-empty-title {
+    font-size: 13px;
+    color: var(--text-1);
+    -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Medium.ttf");
+    -unity-text-align: middle-center;
+}
+.lib-empty-text { margin-top: 4px; font-size: 12px; color: var(--text-3); -unity-text-align: middle-center; white-space: normal; }
+
+/* ------------------------------------------------------------------ footer */
+.lib-foot {
+    flex-shrink: 0;
+    padding: 10px 14px 8px 14px;
+    border-top-width: 1px;
+    border-color: var(--divider);
+}
+.lib-foot-text { font-size: 12px; color: var(--text-2); white-space: normal; }
+
+/* ================================================================== overlay of the 3D view */
+.fo-bar-wrap { position: absolute; }
+.fo-bar {
+    flex-direction: row;
+    align-items: center;
+    height: 44px;
+    padding: 3px;
+    background-color: var(--surface-1);
+    border-width: 1px;
+    border-color: var(--border);
+    border-top-color: var(--border-top);
+    border-radius: 12px;
+}
+.fo-titles { flex-direction: column; justify-content: center; padding: 0 10px 0 10px; max-width: 220px; }
+.fo-name {
+    font-size: 13px;
+    color: var(--text-1);
+    -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Medium.ttf");
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.fo-size { font-size: 11px; color: var(--text-3); margin-top: 1px; white-space: nowrap; }
+.fo-warn { width: 28px; height: 28px; align-items: center; justify-content: center; color: var(--warning); border-radius: 8px; }
+.fo-warn:hover { background-color: var(--warning-soft); }
+.fo-bar > .divider-v { margin: 0 4px; }
+.fo-bar > .fo-btn { color: var(--text-2); }
+.fo-bar > .fo-btn:hover { background-color: var(--hover-1); color: var(--text-1); }
+.fo-bar > .fo-btn:active { background-color: var(--press); }
+.fo-bar > .fo-btn.fo-danger:hover { background-color: var(--danger-soft); color: var(--danger); }
+.fo-bar > .fo-btn:disabled { opacity: 0.35; }
+
+.fo-hint {
+    position: absolute;
+    flex-direction: row;
+    align-items: center;
+    height: 28px;
+    padding: 0 10px 0 8px;
+    border-radius: 8px;
+    background-color: var(--danger-soft);
+    border-width: 1px;
+    border-color: #4A2326;
+}
+.fo-hint > .fo-hint-icon { color: var(--danger); margin-right: 6px; }
+.fo-hint-text { font-size: 12px; color: var(--text-1); -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Medium.ttf"); white-space: nowrap; }
+/* guidance (where to point) rather than a refusal */
+.fo-hint.fo-hint-info { background-color: var(--surface-2); border-color: var(--border-strong); }
+.fo-hint.fo-hint-info > .fo-hint-icon { color: var(--text-2); }

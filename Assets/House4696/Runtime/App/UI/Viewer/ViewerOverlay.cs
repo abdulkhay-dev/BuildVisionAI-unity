@@ -15,7 +15,7 @@ namespace House4696.App.UI
     /// </summary>
     public sealed class ViewerOverlay
     {
-        enum Coach { None, LookWalk, LookFly, StripOrbit, StripWalk, StripFly }
+        enum Coach { None, LookWalk, LookFly, StripOrbit, StripWalk, StripFly, StripFurniture, StripPlacing }
 
         const float LookDelay = 0.6f, StripSeconds = 6f, StripMinSeconds = 1.5f;
         const float AiLoopSeconds = 1.1f, AiSegmentShare = 0.3f, FpsEvery = 0.25f, PickEvery = 0.1f;
@@ -38,7 +38,7 @@ namespace House4696.App.UI
         // chrome part
         readonly VisualElement _aiLine, _aiSeg;
         readonly VisualElement _coachHost, _coachWrap;
-        readonly VisualElement[] _coachItems = new VisualElement[6];
+        readonly VisualElement[] _coachItems = new VisualElement[8];
         readonly VisualElement _emptyHost, _emptyConnect, _emptyStatus;
         readonly PulseDot _emptyDot;
         readonly Label _emptyStatusText;
@@ -59,7 +59,7 @@ namespace House4696.App.UI
         int _fpsFrames, _fpsValue = -1;
         string _prompt;
 
-        Coach _coachShown = Coach.None;
+        Coach _coachShown = Coach.None, _stripOverride = Coach.None;
         float _coachFreeAt, _stripAt, _stripUntil, _sceneSince = -1f, _nextPick;
         HouseViewer.Mode _stripMode;
         bool _pointerOnScene, _flyLooked;
@@ -90,6 +90,8 @@ namespace House4696.App.UI
             _coachItems[(int)Coach.StripOrbit] = Strip(("MouseLeft", "вращать"), ("MouseRight", "сдвиг"), ("MouseWheel", "масштаб"), ("F", "к дому"));
             _coachItems[(int)Coach.StripWalk] = Strip(("W A S D", "идти"), ("Shift", "бег"), ("E", "дверь"), ("C", "присесть"), ("Esc", "отпустить мышь"));
             _coachItems[(int)Coach.StripFly] = Strip(("W A S D", "лететь"), ("E Q", "вверх/вниз"), ("Shift", "быстрее"));
+            _coachItems[(int)Coach.StripFurniture] = Strip(("MouseLeft", "выбрать и двигать"), ("R", "повернуть"), ("⌫", "удалить"), ("MouseRight", "осмотреться"));
+            _coachItems[(int)Coach.StripPlacing] = Strip(("MouseLeft", "поставить"), ("R", "повернуть"), ("MouseWheel", "точнее"), ("Esc", "отмена"));
             for (int i = 1; i < _coachItems.Length; i++)
             {
                 coach.Add(_coachItems[i]);
@@ -212,10 +214,20 @@ namespace House4696.App.UI
             Ui.Show(_fps, fps);
         }
 
+        /// <summary>The furniture library opened: its controls show in the coach slot (as after a mode switch).</summary>
+        public void ShowFurnitureHints()
+        {
+            if (!_showHints) return;
+            _stripOverride = Coach.StripFurniture;
+            _stripAt = Time.unscaledTime;
+            _stripUntil = _stripAt + StripSeconds;
+        }
+
         void OnModeChanged(HouseViewer.Mode mode)
         {
             _flyLooked = false;
             _sceneSince = -1f;
+            _stripOverride = Coach.None;
             if (!_showHints) return;
             _stripMode = mode;
             _stripAt = Time.unscaledTime;
@@ -400,8 +412,13 @@ namespace House4696.App.UI
                     _flyLooked = true;
                 // the hint strip stays at least 1.5 s, then leaves on the first camera input
                 if (_stripUntil > now && now - _stripAt >= StripMinSeconds && CameraInput(v)) _stripUntil = 0f;
-                if (can && _stripUntil > now) want = StripFor(_stripMode);
-                else if (can && LookWanted(v, now)) want = v.CurrentMode == HouseViewer.Mode.Walk ? Coach.LookWalk : Coach.LookFly;
+                // placing a model: its keys stay while the model follows the pointer
+                var fe = _ui.Furniture;
+                bool placing = fe != null && fe.Current == FurnitureEditor.State.Placing && !fe.PlacingByDrag;
+                if (can && placing && _showHints) want = Coach.StripPlacing;
+                else if (can && _stripUntil > now) want = _stripOverride != Coach.None ? _stripOverride : StripFor(_stripMode);
+                // arranging furniture: the look hint would nag while the pointer works on the items
+                else if (can && !ViewerInput.PointerTool && LookWanted(v, now)) want = v.CurrentMode == HouseViewer.Mode.Walk ? Coach.LookWalk : Coach.LookFly;
                 else if (!can) _sceneSince = -1f;
             }
             ApplyCoach(want, now);

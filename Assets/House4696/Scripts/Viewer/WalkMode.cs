@@ -47,7 +47,8 @@ namespace House4696.Runtime
             "Esc — освободить курсор, клик — вернуть",
         };
         public override string Prompt => _lookDoor == null ? null : _lookDoor.IsOpen ? "E — закрыть дверь" : "E — открыть дверь";
-        public override bool CapturesCursor => true;
+        /// <summary>Mouse look captures the cursor, except while a pointer tool uses the left button (then the right button looks).</summary>
+        public override bool CapturesCursor => !ViewerInput.PointerTool;
 
         public Vector3 Feet => _cc != null ? _cc.transform.position : Vector3.zero;
 
@@ -97,7 +98,7 @@ namespace House4696.Runtime
 
         public override void Tick(float dt)
         {
-            if (Cursor.lockState == CursorLockMode.Locked)
+            if (Cursor.lockState == CursorLockMode.Locked || (ViewerInput.PointerTool && ViewerInput.RightHeld))
             {
                 Vector2 d = ViewerInput.MouseDelta * lookSensitivity;
                 _yaw += d.x;

@@ -42,7 +42,7 @@ namespace House4696.App.UI
     [DefaultExecutionOrder(-100)]
     public sealed class AppUI : MonoBehaviour
     {
-        static readonly string[] Sheets = { "UI/Tokens", "UI/Components", "UI/Chrome", "UI/Viewer", "UI/Plan", "UI/Home", "UI/Dialogs" };
+        static readonly string[] Sheets = { "UI/Tokens", "UI/Components", "UI/Chrome", "UI/Viewer", "UI/Plan", "UI/Home", "UI/Dialogs", "UI/Furniture" };
 
         public AppServices S { get; private set; }
         public AiStatus Ai { get; private set; }
@@ -56,6 +56,10 @@ namespace House4696.App.UI
         public PlanPanel Plan { get; private set; }
         public HomeScreen Home { get; private set; }
         public Veil Veil { get; private set; }
+        /// <summary>The furniture library (B): open = the 3D view arranges furniture (<see cref="Furniture"/>).</summary>
+        public LibraryPanel Library { get; private set; }
+        public FurnitureEditor Furniture { get; private set; }
+        FurnitureOverlay _furnitureOverlay;
 
         /// <summary>Plans of the open house, one per level, lowest first (rebuilt after every change).</summary>
         public IReadOnlyList<PlanGeometry> Plans => _plans;
@@ -81,6 +85,9 @@ namespace House4696.App.UI
 
         public bool ModalOpen => _modals.Count > 0;
         public bool PopoverOpen => _popHost != null;
+        /// <summary>This frame's click only closed a popover (it must not also select or deselect in the view).</summary>
+        public bool PopoverClosedThisFrame => _popClosedFrame == Time.frameCount;
+        int _popClosedFrame = -1;
         public bool HomeOpen => Home != null && Home.IsOpen;
         public bool VeilVisible => Veil != null && Veil.Visible;
         public bool Typing { get; private set; }
@@ -169,12 +176,17 @@ namespace House4696.App.UI
             }
             RebuildPlans();
 
+            Furniture = new FurnitureEditor(this);
+            _furnitureOverlay = new FurnitureOverlay(this, Furniture);
+            Library = new LibraryPanel(this, Furniture);
             Overlay = new ViewerOverlay(this);
             Plan = new PlanPanel(this);
             Toolbar = new Toolbar(this);
             ProjectPill = new ProjectPill(this);
             StatusPill = new StatusPill(this);
+            _chromeLayer.Add(_furnitureOverlay.Element);
             _chromeLayer.Add(Overlay.Element);
+            _chromeLayer.Add(Library.Element);
             _chromeLayer.Add(Plan.Element);
             _chromeLayer.Add(Toolbar.Element);
             _chromeLayer.Add(ProjectPill.Element);
@@ -185,6 +197,7 @@ namespace House4696.App.UI
 
             S.Session.ProjectChanged += OnProjectChanged;
             S.Session.Rebuilt += OnRebuilt;
+            S.Session.ItemsChanged += Refresh;
             Ai.CallFinished += OnAiCallFinished;
             Ai.FirstCallEver += () => Toast("ИИ-ассистент подключился", IconKind.Sparkle, ToastKind.Ai);
 
@@ -258,6 +271,7 @@ namespace House4696.App.UI
             Toolbar?.Refresh();
             Overlay?.Refresh();
             Plan?.Refresh();
+            Library?.Refresh();
             if (HomeOpen) Home.Refresh();
         }
 
@@ -623,7 +637,7 @@ namespace House4696.App.UI
             }).ExecuteLater(70);
         }
 
-        /// <summary>One step back in the project history (the AI's last change).</summary>
+        /// <summary>One step back in the project history (the last change, the AI's or the user's).</summary>
         public void Undo()
         {
             if (!S.Session.HasProject) return;
@@ -647,6 +661,35 @@ namespace House4696.App.UI
 
         public void ToggleFullscreen() => Screen.fullScreen = !Screen.fullScreen;
 
+        // ------------------------------------------------------------------ furniture
+        /// <summary>
+        /// The library just opened: the hints for arranging furniture show under the view; from outside (orbit) a toast offers
+        /// to walk in — furniture is arranged from the inside.
+        /// </summary>
+        public void OnLibraryOpened()
+        {
+            Overlay?.ShowFurnitureHints();
+            if (S.Viewer == null || S.Viewer.CurrentMode != HouseViewer.Mode.Orbit) return;
+            var room = MainRoom(out var plan);
+            if (room == null) return;
+            Toast("Мебель удобнее расставлять изнутри", IconKind.Walk, ToastKind.Info, "Войти в дом", () => GoToRoom(plan, room));
+        }
+
+        /// <summary>The largest room of the lowest floor that has rooms (not a terrace).</summary>
+        PlanGeometry.Room MainRoom(out PlanGeometry plan)
+        {
+            plan = null;
+            PlanGeometry.Room best = null;
+            foreach (var p in _plans)
+            {
+                if (p.Elevation < -0.5f) continue;          // basements
+                foreach (var r in p.Rooms)
+                    if (r.Type != RoomType.Terrace && (best == null || r.Area > best.Area)) { best = r; plan = p; }
+                if (best != null) break;
+            }
+            return best;
+        }
+
         /// <summary>Retries a failed lighting bake.</summary>
         public void RetryLighting() => S.Lighting?.Rebake();
 
@@ -660,6 +703,7 @@ namespace House4696.App.UI
             }
             Ai.Tick();
             UpdateInputOwnership();
+            Furniture.Tick();           // before the camera: it claims the left button, the wheel and the arrows it uses
             HandleKeys();
             UpdateLocation();
             WatchLighting();
@@ -669,6 +713,8 @@ namespace House4696.App.UI
             Toolbar.Tick();
             Overlay.Tick();
             Plan.Tick();
+            Library.Tick();
+            _furnitureOverlay.Tick();
             if (HomeOpen) Home.Tick();
             Veil.Tick();
             Toasts.Tick();
@@ -721,7 +767,11 @@ namespace House4696.App.UI
             // a drag that started on the 3D view keeps the camera even when the pointer crosses a panel
             if (anyDown) _sceneDrag = !over && !blocking && !PopoverOpen;
             else if (!anyHeld) _sceneDrag = false;
-            if (anyDown && _popHost != null && !OverPopover()) ClosePopover();
+            if (anyDown && _popHost != null && !OverPopover())
+            {
+                ClosePopover();
+                _popClosedFrame = Time.frameCount;
+            }
 
             ViewerInput.PointerBlocked = blocking || PopoverOpen || (over && !_sceneDrag);
             var focused = Root.panel.focusController?.focusedElement as VisualElement;
@@ -743,7 +793,19 @@ namespace House4696.App.UI
         public bool PointerOverUI()
         {
             if (Root.panel == null) return false;
-            var picked = Root.panel.Pick(PointerPanelPosition());
+            return PickedUI(PointerPanelPosition());
+        }
+
+        /// <summary>A screen point (px, origin at the bottom left) is over a pickable UI element.</summary>
+        public bool PointerOverUI(Vector2 screen)
+        {
+            if (Root.panel == null) return false;
+            return PickedUI(RuntimePanelUtils.ScreenToPanel(Root.panel, new Vector2(screen.x, Screen.height - screen.y)));
+        }
+
+        bool PickedUI(Vector2 panelPos)
+        {
+            var picked = Root.panel.Pick(panelPos);
             return picked != null && picked != Root && picked != _doc.rootVisualElement;
         }
 
@@ -797,6 +859,7 @@ namespace House4696.App.UI
                 if (HomeOpen) { Home.OnKey(kb, true, shift); return; }
                 if (Down(Key.Comma)) { StatusPill.ToggleSettings(); return; }
                 if (Down(Key.Z) && !Typing) { Undo(); return; }
+                if (!Typing && Furniture.OnCommandKey(kb)) return;
                 if (Down(Key.S) && shift) { TakeSnapshot(); return; }
                 if (Down(Key.Digit1)) { SwitchMode(HouseViewer.Mode.Orbit); return; }
                 if (Down(Key.Digit2)) { SwitchMode(HouseViewer.Mode.Walk); return; }
@@ -817,6 +880,11 @@ namespace House4696.App.UI
                 else if (Down(Key.PageDown)) Plan.LevelStep(-1);
                 return;
             }
+
+            // furniture: B opens the library; while it is open R, ⌫ and the arrows edit the selected item
+            bool alt = kb.leftAltKey.isPressed || kb.rightAltKey.isPressed;
+            if (Down(Key.B)) { Library.Toggle(); return; }
+            if (Library.IsOpen && Furniture.OnKey(kb, shift, alt)) return;
 
             // viewer shortcuts (need viewer focus)
             var v = S.Viewer;
@@ -861,7 +929,10 @@ namespace House4696.App.UI
             return from;
         }
 
-        /// <summary>Esc: menu/popover → dialog/large plan → veil → release cursor → leave clean view → close Home.</summary>
+        /// <summary>
+        /// Esc: menu/popover → dialog/large plan → veil → text field → placing/dragging/selection → library → release cursor
+        /// → leave clean view → close Home.
+        /// </summary>
         void Escape()
         {
             if (_popHost != null) { ClosePopover(); return; }
@@ -869,6 +940,8 @@ namespace House4696.App.UI
             if (Plan != null && Plan.LargeOpen) { Plan.CloseLarge(); return; }
             if (VeilVisible) { Veil.Skip(); return; }
             if (Typing) { Root.panel.focusController?.focusedElement?.Blur(); return; }
+            if (Furniture != null && Furniture.Escape()) return;
+            if (Library != null && Library.IsOpen) { Library.Close(); return; }
             if (UnityEngine.Cursor.lockState == CursorLockMode.Locked) return;   // the viewer releases it this frame
             if (CleanView) { SetCleanView(false); return; }
             if (HomeOpen) { CloseHome(); return; }
@@ -879,10 +952,15 @@ namespace House4696.App.UI
             ViewerInput.PointerBlocked = false;
             ViewerInput.KeyboardBlocked = false;
             Tooltips.Suppressed = false;
+            ViewerInput.PointerTool = false;
+            ViewerInput.LeftClaimed = false;
+            ViewerInput.ArrowsClaimed = false;
+            ViewerInput.WheelClaimed = false;
             if (S?.Session != null)
             {
                 S.Session.ProjectChanged -= OnProjectChanged;
                 S.Session.Rebuilt -= OnRebuilt;
+                S.Session.ItemsChanged -= Refresh;
             }
         }
     }

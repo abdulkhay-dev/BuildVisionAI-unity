@@ -13,6 +13,8 @@ namespace House4696.Generation
     {
         public ItemDef Def;
         public string Model, Category;
+        /// <summary>The built object ("Item_…"): its transform places the item, its meshes are what it renders.</summary>
+        public GameObject Object;
         /// <summary>Everything the item renders (canopies, throws, lamp shades included) — its visual size.</summary>
         public Bounds Local;
         /// <summary>The solid body only (furniture meshes and library models, no soft decor or foliage) — what collides with walls and doorways.</summary>
@@ -35,7 +37,7 @@ namespace House4696.Generation
             var solid = SolidFilters(go);
             var b = new ItemBox
             {
-                Def = def, Model = model.Id, Category = model.Category, Local = LocalBounds(go, null),
+                Def = def, Model = model.Id, Category = model.Category, Local = LocalBounds(go, null), Object = go,
                 Position = go.transform.position, Yaw = go.transform.eulerAngles.y, FloorY = floorY,
             };
             b.Solid = solid.Count > 0 ? LocalBounds(go, solid) : b.Local;

@@ -5,6 +5,7 @@ using House4696.Generation;
 using House4696.Model;
 using House4696.Runtime;
 using House4696.Setup;
+using Newtonsoft.Json.Linq;
 using UnityEngine;
 using UnityEngine.Rendering;
 using Object = UnityEngine.Object;
@@ -29,6 +30,11 @@ namespace House4696.App
         /// <summary>Set after a rebuild: the reflection probes should be re-captured once the GI has settled.</summary>
         public bool ProbesDirty { get; set; }
         public event Action Rebuilt;
+        /// <summary>
+        /// Raised after only catalogue items changed and just they were rebuilt (<see cref="ApplyItems"/>, or an edit/undo
+        /// that touched items only): the rest of the house — and the objects of the other items — stayed in place.
+        /// </summary>
+        public event Action ItemsChanged;
         /// <summary>Raised after a project was opened, created or closed (by the UI or by the AI).</summary>
         public event Action ProjectChanged;
         public const string LastProjectPref = "house.lastProject";
@@ -119,25 +125,138 @@ namespace House4696.App
             if (current) Close();
         }
 
-        /// <summary>Makes <paramref name="next"/> the current document (saved, rebuilt); the old one goes to the undo stack.</summary>
+        /// <summary>
+        /// Makes <paramref name="next"/> the current document (saved, rebuilt); the old one goes to the undo stack. When only
+        /// catalogue items differ, just those items are rebuilt (<see cref="ItemsChanged"/>), otherwise the whole house.
+        /// </summary>
         public List<Issue> Apply(HouseDocument next)
         {
             if (!HasProject) throw new InvalidOperationException("нет открытого проекта — открой или создай проект");
-            _undo.Add(HouseJson.Serialize(Doc));
-            if (_undo.Count > UndoDepth) _undo.RemoveAt(0);
+            var items = ItemDiff(Doc, next);
+            PushUndo(null);
             Doc = next;
             Store.Save(ProjectId, Doc);
-            Rebuild();
+            if (items == null || !RebuildItems(items)) Rebuild();
             return Issues;
+        }
+
+        /// <summary>
+        /// Makes <paramref name="next"/> current when it differs from the current document only in the items listed by id
+        /// (added, changed or removed): saved and undoable like <see cref="Apply"/>, but only those items are rebuilt — a few
+        /// milliseconds instead of the whole house. Edits with the same <paramref name="mergeKey"/> in quick succession (the
+        /// arrow-key nudges of one item) share one undo step.
+        /// </summary>
+        public List<Issue> ApplyItems(HouseDocument next, ICollection<string> ids, string mergeKey = null)
+        {
+            if (!HasProject) throw new InvalidOperationException("нет открытого проекта — открой или создай проект");
+            PushUndo(mergeKey);
+            Doc = next;
+            Store.Save(ProjectId, Doc);
+            if (!RebuildItems(ids)) Rebuild();
+            return Issues;
+        }
+
+        const float MergeSeconds = 2f;
+        string _lastMergeKey;
+        float _lastMergeAt = -10f;
+
+        void PushUndo(string mergeKey)
+        {
+            float now = Time.realtimeSinceStartup;
+            bool merge = mergeKey != null && mergeKey == _lastMergeKey && now - _lastMergeAt < MergeSeconds && _undo.Count > 0;
+            _lastMergeKey = mergeKey;
+            _lastMergeAt = now;
+            if (merge) return;                  // the step before the first nudge stays the one to go back to
+            _undo.Add(HouseJson.Serialize(Doc));
+            if (_undo.Count > UndoDepth) _undo.RemoveAt(0);
         }
 
         public bool Undo()
         {
             if (_undo.Count == 0) return false;
-            Doc = HouseJson.Deserialize(_undo[_undo.Count - 1]);
+            var prev = HouseJson.Deserialize(_undo[_undo.Count - 1]);
             _undo.RemoveAt(_undo.Count - 1);
+            _lastMergeKey = null;
+            var items = ItemDiff(Doc, prev);
+            Doc = prev;
             Store.Save(ProjectId, Doc);
-            Rebuild();
+            if (items == null || !RebuildItems(items)) Rebuild();
+            return true;
+        }
+
+        /// <summary>
+        /// Ids of the items that differ between two documents when nothing else does (metadata aside), otherwise null. Items
+        /// without an id cannot be told apart, so any of them makes it null too.
+        /// </summary>
+        static HashSet<string> ItemDiff(HouseDocument a, HouseDocument b)
+        {
+            if (a == null || b == null) return null;
+            var ja = JObject.Parse(HouseJson.Serialize(a));
+            var jb = JObject.Parse(HouseJson.Serialize(b));
+            var ia = Index(ja["items"] as JArray);
+            var ib = Index(jb["items"] as JArray);
+            if (ia == null || ib == null) return null;
+            foreach (var j in new[] { ja, jb }) { j.Remove("items"); j.Remove("meta"); }
+            if (!JToken.DeepEquals(ja, jb)) return null;
+            var changed = new HashSet<string>();
+            foreach (var kv in ia)
+                if (!ib.TryGetValue(kv.Key, out var other) || !JToken.DeepEquals(kv.Value, other)) changed.Add(kv.Key);
+            foreach (var id in ib.Keys) if (!ia.ContainsKey(id)) changed.Add(id);
+            return changed;
+        }
+
+        static Dictionary<string, JToken> Index(JArray items)
+        {
+            var map = new Dictionary<string, JToken>();
+            if (items == null) return map;
+            foreach (var it in items)
+            {
+                string id = (string)it["id"];
+                if (string.IsNullOrEmpty(id) || map.ContainsKey(id)) return null;
+                map[id] = it;
+            }
+            return map;
+        }
+
+        /// <summary>
+        /// Rebuilds just the listed items of the current house from <see cref="Doc"/>: their old objects go, the ones still in
+        /// the document are built again (with colliders and the house layer), the checks re-run. False when there is no built
+        /// house to patch (the caller rebuilds everything).
+        /// </summary>
+        bool RebuildItems(ICollection<string> ids)
+        {
+            var c = Result?.Context;
+            if (c == null || Result.House == null || _writer == null || c.Furniture == null) return false;
+            var sw = System.Diagnostics.Stopwatch.StartNew();
+            var set = new HashSet<string>(ids);
+            // the build context keeps its own copy of the document (the checks read it): bring its items in line
+            foreach (var box in c.ItemBoxes)
+            {
+                if (!set.Contains(box.Id) || box.Object == null) continue;
+                _writer.Release(box.Object);
+                Object.Destroy(box.Object);
+            }
+            c.ItemBoxes.RemoveAll(b => set.Contains(b.Id));
+            c.Doc.Items.RemoveAll(i => set.Contains(i.Id));
+            int layer = LayerMask.NameToLayer("House");
+            foreach (var it in Doc.Items)
+            {
+                if (it.Id == null || !set.Contains(it.Id)) continue;
+                var copy = HouseJson.Copy(it);
+                c.Doc.Items.Add(copy);
+                var box = HouseBuilder.BuildItem(c, copy, _writer);
+                if (box?.Object == null) continue;
+                if (layer >= 0) foreach (var t in box.Object.GetComponentsInChildren<Transform>(true)) t.gameObject.layer = layer;
+                CollisionSetup.Apply(box.Object);
+            }
+            foreach (var m in c.Mats.Created)
+                if (!Result.CreatedMaterials.Contains(m)) Result.CreatedMaterials.Add(m);
+            Issues = HouseValidator.Validate(Doc);
+            try { Result.Checks = HouseChecks.Run(c, c.ItemBoxes); }
+            catch (Exception e) { Debug.LogException(e); Result.Checks = new List<Issue>(); }
+            Issues.AddRange(Result.Checks);
+            LastBuildMs = sw.ElapsedMilliseconds;
+            ItemsChanged?.Invoke();
             return true;
         }
 

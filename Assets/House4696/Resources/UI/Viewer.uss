@@ -398,3 +398,10 @@
 .veil-skip.veil-on { opacity: 1; }
 .veil-home { position: absolute; left: 16px; top: 16px; }
 .veil-home.veil-pressed { background-color: var(--press); }
+
+/* squeezed between the library (left) and the plan panel (right): icons only, the tooltips keep the names */
+.tb-bar.tb-compact > .tb-modes > .seg > .seg-label { display: none; }
+.tb-bar.tb-compact > .tb-modes > .seg { width: 40px; padding: 0; }
+.tb-bar.tb-compact > .tb-views { width: 150px; }
+.tb-bar.tb-compact > .tb-labelled > .tool-label { display: none; }
+.tb-bar.tb-compact > .tb-labelled { width: 36px; padding: 0; }

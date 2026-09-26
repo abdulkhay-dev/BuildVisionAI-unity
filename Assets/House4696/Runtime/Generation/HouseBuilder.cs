@@ -58,7 +58,7 @@ namespace House4696.Generation
             foreach (var s in doc.Stairs) stairs.Build(s);
             var elements = new ElementBuilder(c);
             foreach (var e in doc.Elements) elements.Build(e);
-            foreach (var it in doc.Items) Item(c, it);
+            foreach (var it in doc.Items) BuildItem(c, it);
             Lights(c);
 
             var footprint = Footprint(c);
@@ -109,34 +109,60 @@ namespace House4696.Generation
         static string Sanitize(string s) => string.IsNullOrEmpty(s) ? "Project" : s.Replace('/', '_').Replace('\\', '_');
 
         // ------------------------------------------------------------------ items
-        /// <summary>Builds a catalogue item in its local space and places it with its transform (so it can move later).</summary>
-        static void Item(HouseContext c, ItemDef it)
+        /// <summary>
+        /// Builds a catalogue item under the house's items group and registers its real extent (<see cref="HouseContext.ItemBoxes"/>);
+        /// null when the model is unknown or failed. The item is built in its local space and placed by its transform, so it can
+        /// move later. <paramref name="writer"/> overrides the context's writer (an item rebuilt on its own).
+        /// </summary>
+        public static ItemBox BuildItem(HouseContext c, ItemDef it, SceneWriter writer = null)
         {
-            var model = ItemCatalog.Get(it.Model);
-            if (model == null) { c.Warn($"item '{it.Id}': unknown model '{it.Model}'"); return; }
+            var go = CreateItem(c, it, c.Furniture, writer ?? c.W, out var model, out float baseY);
+            if (go == null) return null;
+            var box = ItemBox.Of(it, model, go, baseY);
+            c.ItemBoxes.Add(box);
+            return box;
+        }
+
+        /// <summary>
+        /// The item's object exactly as the house builds it, under <paramref name="parent"/>, without registering it: a preview
+        /// that follows the pointer. Its generated meshes belong to <paramref name="writer"/> (release them with the preview).
+        /// </summary>
+        public static GameObject BuildItemObject(HouseContext c, ItemDef it, Transform parent, SceneWriter writer) =>
+            CreateItem(c, it, parent, writer, out _, out _);
+
+        static GameObject CreateItem(HouseContext c, ItemDef it, Transform parent, SceneWriter w, out ItemModel model, out float baseY)
+        {
+            baseY = 0f;
+            model = ItemCatalog.Get(it.Model);
+            if (model == null) { c.Warn($"item '{it.Id}': unknown model '{it.Model}'"); return null; }
             string levelId = it.Level;
             if (levelId == null && it.Room != null) levelId = c.Doc.Rooms.Find(r => r.Id == it.Room)?.Level;
-            float baseY = levelId != null ? c.Elevation(levelId) : 0f;
+            baseY = levelId != null ? c.Elevation(levelId) : 0f;
             string id = it.Id ?? model.Id;
             var go = new GameObject("Item_" + id);
-            go.transform.SetParent(c.Furniture, false);
+            go.transform.SetParent(parent, false);
             // rotation = compass direction the item's front faces (0 = +Z); catalogue models are built facing -Z
             go.transform.SetPositionAndRotation(new Vector3(it.Position.x, baseY + it.Position.y, it.Position.z), Quaternion.Euler(0, it.Rotation + 180f, 0));
 
             var b = new ItemBuild { C = c, P = new ItemParams(it.Params, c.Mats) };
             try { model.Build(b); }
-            catch (System.Exception ex) { c.Warn($"item '{id}' ({model.Id}) failed: {ex.Message}"); return; }
-            if (b.External != null) { PlaceModel(c, go, id, b); c.ItemBoxes.Add(ItemBox.Of(it, model, go, baseY)); return; }
-            c.W.Emit("Furniture_" + id, go.transform, b.F);
+            catch (System.Exception ex)
+            {
+                c.Warn($"item '{id}' ({model.Id}) failed: {ex.Message}");
+                if (Application.isPlaying) Object.Destroy(go); else Object.DestroyImmediate(go);
+                return null;
+            }
+            if (b.External != null) { PlaceModel(c, go, id, b); return go; }
+            w.Emit("Furniture_" + id, go.transform, b.F);
             // light fittings glow themselves: their globes and shades casting shadows of the lamps' own lights put
             // dark discs on the ceiling (a chandelier's globes shadow each other's bulbs)
-            c.W.Emit("Decor_" + id, go.transform, b.D, castShadows: model.Category != "lighting");
+            w.Emit("Decor_" + id, go.transform, b.D, castShadows: model.Category != "lighting");
             for (int i = 0; i < b.Plants.Count; i++)
             {
-                var p = c.W.Emit("Plant_" + id + (i > 0 ? "_" + i : ""), go.transform, b.Plants[i].mb);
+                var p = w.Emit("Plant_" + id + (i > 0 ? "_" + i : ""), go.transform, b.Plants[i].mb);
                 if (p != null) p.transform.localPosition = b.Plants[i].pos;
             }
-            c.ItemBoxes.Add(ItemBox.Of(it, model, go, baseY));
+            return go;
         }
 
         /// <summary>

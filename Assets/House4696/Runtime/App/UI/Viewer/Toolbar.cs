@@ -8,9 +8,10 @@ namespace House4696.App.UI
 {
     /// <summary>
     /// Bottom-centre toolbar (spec §3.3): camera modes on one sliding thumb in a recessed track · «Виды» with the views
-    /// popover (§3.4, V) · «План» toggle (M) · snapshot (spinner while it waits for the light) · clean view (H) · help (?).
-    /// Its width never changes (the «Виды» button is fixed, its label ellipsised), so nothing slides under the pointer.
-    /// Fades out 800 ms after the cursor is captured for mouse look and slides left when the plan panel would crowd it.
+    /// popover (§3.4, V) · «План» toggle (M) · snapshot (spinner while it waits for the light) · clean view (H) · help (?)
+    /// · «Мебель» (the furniture library, B). Its width does not change with the state (the «Виды» button is fixed, its label
+    /// ellipsised), so nothing slides under the pointer. Fades out 800 ms after the cursor is captured for mouse look; slides
+    /// left / right to keep clear of the plan panel and the library, and drops its labels when squeezed between both.
     /// </summary>
     public sealed class Toolbar
     {
@@ -34,14 +35,14 @@ namespace House4696.App.UI
         static readonly Regex TrailingNote = new Regex(@"\s*\([^)]*\)\s*$", RegexOptions.CultureInvariant);
 
         readonly AppUI _ui;
-        readonly VisualElement _wrap, _bar, _views, _plan, _snap, _snapIcon;
+        readonly VisualElement _wrap, _bar, _views, _plan, _snap, _snapIcon, _furniture;
         readonly Label _viewsLabel;
         readonly ProgressRing _spinner;
         readonly Segmented _modes;
 
         string _viewsFull;
-        bool _planShown, _snapBusy, _snapWaitsLight, _hidden;
-        float _capturedAt = -1f, _shift;
+        bool _planShown, _snapBusy, _snapWaitsLight, _hidden, _furnitureShown, _compact;
+        float _capturedAt = -1f, _shift, _fullWidth;
         IVisualElementScheduledItem _openWhenReady;
         int _openTries;
 
@@ -84,6 +85,7 @@ namespace House4696.App.UI
             // ---- plan toggle (neutral «selected» when on, never accent)
             _plan = Ui.Tool(IconKind.Plan, "План", TogglePlan, "План этажа", "M");
             _plan.AddToClassList("tb-gap");
+            _plan.AddToClassList("tb-labelled");
             _bar.Add(_plan);
             _bar.Add(Ui.DividerV());
 
@@ -107,7 +109,13 @@ namespace House4696.App.UI
             var help = Ui.Tool(IconKind.Help, null, () => _ui.ShowShortcuts(), "Управление и клавиши", "?");
             help.AddToClassList("tb-gap");
             _bar.Add(help);
-            // the right end is kept free for «Мебель» and «Презентация» (spec §2, reserved space)
+            _bar.Add(Ui.DividerV());
+
+            // ---- furniture library (neutral «selected» while open, like «План»); the right end stays free for «Презентация»
+            _furniture = Ui.Tool(IconKind.Sofa, "Мебель", ToggleFurniture, "Мебель и декор", "B");
+            _furniture.AddToClassList("tb-labelled");
+            Tooltips.Tip(_furniture, "Мебель и декор", "B", "Добавить из библиотеки, передвинуть, убрать");
+            _bar.Add(_furniture);
 
             _wrap = Elevation.Wrap(_bar, 12, 16, 4f, 0.45f, "tb-wrap");
             Element.Add(_wrap);
@@ -134,6 +142,7 @@ namespace House4696.App.UI
             UpdateViewsLabel();
             SyncPlan(true);
             SyncSnapshot(true);
+            SyncFurniture(true);
         }
 
         public void Tick()
@@ -141,6 +150,7 @@ namespace House4696.App.UI
             if (_ui.S == null) return;
             SyncPlan(false);
             SyncSnapshot(false);
+            SyncFurniture(false);
             SyncVisibility();
             SyncShift();
         }
@@ -165,6 +175,20 @@ namespace House4696.App.UI
             if (on == _planShown && !force) return;
             _planShown = on;
             _plan.EnableInClassList("selected", on);
+        }
+
+        void ToggleFurniture()
+        {
+            _ui.Library?.Toggle();
+            SyncFurniture(true);
+        }
+
+        void SyncFurniture(bool force)
+        {
+            bool on = _ui.Library != null && _ui.Library.IsOpen;
+            if (on == _furnitureShown && !force) return;
+            _furnitureShown = on;
+            _furniture.EnableInClassList("selected", on);
         }
 
         void SyncSnapshot(bool force)
@@ -207,22 +231,33 @@ namespace House4696.App.UI
             if (!show) _wrap.style.transitionTimingFunction = HideEasing;
         }
 
-        /// <summary>Keeps the toolbar clear of the plan panel: its right edge at or left of W − 320 (220 ms slide).</summary>
+        /// <summary>
+        /// Keeps the toolbar clear of the plan panel (its right edge at or left of W − 320) and of the library (its left edge
+        /// right of the panel), 220 ms slide. Squeezed between both it drops the mode and tool labels (tooltips stay); if it still
+        /// does not fit it centres in the gap.
+        /// </summary>
         void SyncShift()
         {
             float w = Element.layout.width, tw = _wrap.layout.width;
             if (float.IsNaN(w) || float.IsNaN(tw) || w <= 0f || tw <= 0f) return;
-            float target = 0f;
-            var plan = _ui.Plan;
+            if (!_compact) _fullWidth = tw;
+            float left = SideGutter, right = w - SideGutter;
+            var lib = _ui.Library;
+            if (lib != null && lib.Reserve > 0f) left = lib.Reserve;
             // PanelVisible: the small panel is really on screen (open, a project, the large plan closed)
-            if (plan != null && plan.PanelVisible)
+            var plan = _ui.Plan;
+            if (plan != null && plan.PanelVisible) right = w - PlanReserve;
+            bool compact = right - left < _fullWidth + (_compact ? 8f : 0f);
+            if (compact != _compact)
             {
-                float right = (w + tw) * 0.5f, limit = w - PlanReserve;
-                if (right > limit) target = limit - right;
-                // never past the left gutter (a very narrow window): overlap the plan rather than the edge
-                float minShift = SideGutter - (w - tw) * 0.5f;
-                if (target < minShift) target = Mathf.Min(0f, minShift);
+                _compact = compact;
+                _bar.EnableInClassList("tb-compact", compact);
+                return;                         // measured again with the new width next frame
             }
+            float l = (w - tw) * 0.5f, r = (w + tw) * 0.5f, target = 0f;
+            if (l < left) target = left - l;
+            if (r + target > right) target = right - r;
+            if (l + target < left) target = (left + right - w) * 0.5f;     // does not fit: centred in the gap
             if (Mathf.Abs(target - _shift) < 0.5f) return;
             _shift = target;
             Element.style.translate = new Translate(target, 0);

@@ -54,6 +54,17 @@ namespace House4696.Runtime
         public static bool PointerBlocked;
         /// <summary>A text field or a dialog owns the keyboard.</summary>
         public static bool KeyboardBlocked;
+        /// <summary>
+        /// A pointer tool is active (arranging furniture): the left button picks and drags objects, so the walk mode does not
+        /// capture the cursor and looks around with the right button, like the fly mode.
+        /// </summary>
+        public static bool PointerTool;
+        /// <summary>The current left-button press belongs to the tool (dragging an object, placing a model): the camera ignores it until release.</summary>
+        public static bool LeftClaimed;
+        /// <summary>The arrow keys nudge the selected object: the camera keeps WASD only.</summary>
+        public static bool ArrowsClaimed;
+        /// <summary>The wheel belongs to the tool this frame (turning an object while it is dragged).</summary>
+        public static bool WheelClaimed;
 
         public static Keyboard Kb => Keyboard.current;
         public static Mouse Mouse => Mouse.current;
@@ -69,8 +80,8 @@ namespace House4696.Runtime
         /// <summary>Key went down this frame (false while the UI owns the keyboard or a modifier makes it a shortcut).</summary>
         public static bool Down(Key k) => Usable(k) && Kb[k].wasPressedThisFrame;
 
-        public static bool LeftHeld => !PointerBlocked && Mouse != null && Mouse.leftButton.isPressed;
-        public static bool LeftDown => !PointerBlocked && Mouse != null && Mouse.leftButton.wasPressedThisFrame;
+        public static bool LeftHeld => !PointerBlocked && !LeftClaimed && Mouse != null && Mouse.leftButton.isPressed;
+        public static bool LeftDown => !PointerBlocked && !LeftClaimed && Mouse != null && Mouse.leftButton.wasPressedThisFrame;
         public static bool RightHeld => !PointerBlocked && Mouse != null && Mouse.rightButton.isPressed;
         public static bool MiddleHeld => !PointerBlocked && Mouse != null && Mouse.middleButton.isPressed;
 
@@ -79,10 +90,11 @@ namespace House4696.Runtime
         {
             if (KeyboardBlocked || Kb == null || Modified) return Vector2.zero;
             var v = Vector2.zero;
-            if (Held(Key.W) || Held(Key.UpArrow)) v.y += 1;
-            if (Held(Key.S) || Held(Key.DownArrow)) v.y -= 1;
-            if (Held(Key.D) || Held(Key.RightArrow)) v.x += 1;
-            if (Held(Key.A) || Held(Key.LeftArrow)) v.x -= 1;
+            bool arrows = !ArrowsClaimed;
+            if (Held(Key.W) || arrows && Held(Key.UpArrow)) v.y += 1;
+            if (Held(Key.S) || arrows && Held(Key.DownArrow)) v.y -= 1;
+            if (Held(Key.D) || arrows && Held(Key.RightArrow)) v.x += 1;
+            if (Held(Key.A) || arrows && Held(Key.LeftArrow)) v.x -= 1;
             return Vector2.ClampMagnitude(v, 1f);
         }
 
@@ -93,7 +105,7 @@ namespace House4696.Runtime
         {
             get
             {
-                float y = Mouse != null && !PointerBlocked ? Mouse.scroll.ReadValue().y : 0f;
+                float y = Mouse != null && !PointerBlocked && !WheelClaimed ? Mouse.scroll.ReadValue().y : 0f;
                 return Mathf.Abs(y) < 0.01f ? 0f : Mathf.Sign(y);
             }
         }

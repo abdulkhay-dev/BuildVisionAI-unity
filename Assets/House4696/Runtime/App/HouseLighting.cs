@@ -41,11 +41,42 @@ namespace House4696.App
 
         public bool CanBake => _content.BakedGI != null && _content.BakedGI.IsComplete && SystemInfo.supportsComputeShaders;
 
-        /// <summary>Starts baking the current house; a bake already running is abandoned.</summary>
+        float _pendingAt = -1f;
+
+        /// <summary>A bake is scheduled (<see cref="RebakeSoon"/>) and has not started yet.</summary>
+        public bool Pending => _pendingAt >= 0f;
+
+        /// <summary>
+        /// Furniture edits come in bursts (move, turn, move again): the bake starts <paramref name="delay"/> seconds after the
+        /// last of them instead of restarting after each. A bake of the old arrangement still running is abandoned; the
+        /// current lighting stays on screen meanwhile.
+        /// </summary>
+        public void RebakeSoon(float delay)
+        {
+            if (!CanBake || _session.Result == null) return;
+            ++_generation;
+            _pendingAt = Time.realtimeSinceStartup + delay;
+            Current = State.Baking;
+            Progress = 0f;
+            Error = null;
+        }
+
+        /// <summary>Every frame: starts a scheduled bake when its time has come.</summary>
+        public void Tick()
+        {
+            if (_pendingAt >= 0f && Time.realtimeSinceStartup >= _pendingAt) Rebake();
+        }
+
+        /// <summary>Starts baking the current house; a bake already running (or scheduled) is abandoned.</summary>
         public void Rebake()
         {
+            _pendingAt = -1f;
             int generation = ++_generation;
-            if (!CanBake || _session.Result == null) return;
+            if (!CanBake || _session.Result == null)
+            {
+                if (Current == State.Baking) Current = State.Idle;     // a scheduled bake whose house is gone
+                return;
+            }
             Current = State.Baking;
             Progress = 0f;
             Error = null;
@@ -75,9 +106,10 @@ namespace House4696.App
                 p => { if (generation == _generation) Progress = p; }));
         }
 
-        /// <summary>Waits while a bake is running (renders for the AI must show the finished lighting).</summary>
+        /// <summary>Waits while a bake is running or scheduled (renders for the AI must show the finished lighting): a scheduled one starts at once.</summary>
         public IEnumerator WaitForBake(float timeoutSeconds)
         {
+            if (Pending) Rebake();
             float end = Time.realtimeSinceStartup + timeoutSeconds;
             while (IsBaking && Time.realtimeSinceStartup < end) yield return null;
         }

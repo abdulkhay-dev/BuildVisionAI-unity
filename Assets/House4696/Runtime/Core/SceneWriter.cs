@@ -68,5 +68,20 @@ namespace House4696.Core
 
         /// <summary>Objects that move at runtime (door leaves) must not be static.</summary>
         public void MarkDynamic(GameObject go) => _hooks?.MarkDynamic(go);
+
+        /// <summary>
+        /// Destroys the in-memory meshes this writer made for the objects under <paramref name="root"/> (an item that is
+        /// rebuilt or a preview that is dropped); meshes of library prefabs are assets and stay.
+        /// </summary>
+        public void Release(GameObject root)
+        {
+            if (root == null) return;
+            foreach (var mf in root.GetComponentsInChildren<MeshFilter>(true))
+            {
+                var mesh = mf.sharedMesh;
+                if (mesh == null || !_runtimeMeshes.Remove(mesh)) continue;
+                if (Application.isPlaying) Object.Destroy(mesh); else Object.DestroyImmediate(mesh);
+            }
+        }
     }
 }

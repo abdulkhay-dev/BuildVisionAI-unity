@@ -16,7 +16,7 @@ namespace House4696.App
     /// </summary>
     public sealed class HouseBootstrap : MonoBehaviour
     {
-        public const string Version = "0.4.0";
+        public const string Version = "0.5.0";
 
         [SerializeField] Camera loadingCamera;
         [Tooltip("Project opened when nothing was opened before (id in the project store).")]
@@ -24,6 +24,9 @@ namespace House4696.App
         [Tooltip("Frames to let the realtime GI converge before the reflection probes are captured.")]
         [SerializeField] int giWarmupFrames = 60;
         [SerializeField] bool enableApi = true;
+
+        /// <summary>Seconds after the last furniture edit before the lighting is re-baked (edits come in bursts).</summary>
+        const float FurnitureRebakeDelay = 1.5f;
 
         public HouseSession Session { get; private set; }
         public LocalApi Api { get; private set; }
@@ -83,6 +86,14 @@ namespace House4696.App
                 if (!Lighting.CanBake || Lighting.Current == HouseLighting.State.Failed)
                     _reflections.Schedule(giWarmupFrames, () => thumbs.Capture());
             };
+            // furniture moved: the rest of the house stands, the light is re-baked once the edits pause
+            Session.ItemsChanged += () =>
+            {
+                Lighting.RebakeSoon(FurnitureRebakeDelay);
+                _lightingState = Lighting.Current;
+                if (!Lighting.CanBake || Lighting.Current == HouseLighting.State.Failed)
+                    _reflections.Schedule(giWarmupFrames, () => thumbs.Capture());
+            };
             string last = PlayerPrefs.GetString(HouseSession.LastProjectPref, defaultProject);
             if (!Session.Store.Exists(last)) last = Session.Store.Exists(defaultProject) ? defaultProject : Session.Store.List().Find(p => p.Id != null)?.Id;
             if (last != null)
@@ -125,6 +136,7 @@ namespace House4696.App
         {
             UpdateRenderScale();
             Api?.Pump(_execute);
+            Lighting?.Tick();
             WatchBakeFailure();
             _pacing.Tick(Api, Lighting);
         }
