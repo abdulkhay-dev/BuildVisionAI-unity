@@ -67,6 +67,9 @@ namespace House4696.App
         string Dir(string id) => Path.Combine(Root, id);
         string FileOf(string id) => Path.Combine(Dir(id), FileName);
 
+        /// <summary>Preview picture of a project (written by the app after the lighting of the open project is baked).</summary>
+        public string ThumbPath(string id) => Path.Combine(Dir(id), "thumb.jpg");
+
         public bool Exists(string id) => IsValidId(id) && File.Exists(FileOf(id));
 
         public static bool IsValidId(string id)
@@ -106,6 +109,22 @@ namespace House4696.App
             return id;
         }
 
+        /// <summary>Copies a project under a new name ("… (копия)"); the preview is copied too.</summary>
+        public string Duplicate(string id)
+        {
+            var doc = Load(id);
+            doc.Meta ??= new HouseMeta();
+            doc.Meta.Name = (doc.Meta.Name ?? id) + " (копия)";
+            doc.Meta.Created = DateTime.UtcNow.ToString("yyyy-MM-dd");
+            string copy = Create(doc);
+            try { if (File.Exists(ThumbPath(id))) File.Copy(ThumbPath(id), ThumbPath(copy), true); }
+            catch (Exception) { /* the preview is re-rendered when the copy is opened */ }
+            return copy;
+        }
+
+        /// <summary>Folder of a project on disk.</summary>
+        public string FolderOf(string id) => Dir(id);
+
         /// <summary>Moves a project to <c>Projects/../Trash</c> (recoverable).</summary>
         public void Delete(string id)
         {
@@ -116,6 +135,9 @@ namespace House4696.App
             Directory.Move(Dir(id), target);
         }
 
+        // parsed summaries by file time: the project list re-reads only changed projects
+        readonly Dictionary<string, (DateTime time, ProjectInfo info)> _infoCache = new Dictionary<string, (DateTime, ProjectInfo)>();
+
         public List<ProjectInfo> List()
         {
             var list = new List<ProjectInfo>();
@@ -123,8 +145,15 @@ namespace House4696.App
             {
                 string id = Path.GetFileName(dir);
                 if (!Exists(id)) continue;
-                try { list.Add(Info(id, Load(id))); }
-                catch (Exception e) { list.Add(new ProjectInfo { Id = id, Name = id, Description = "не читается: " + e.Message }); }
+                DateTime time;
+                try { time = File.GetLastWriteTimeUtc(FileOf(id)); }
+                catch (Exception) { continue; }
+                if (_infoCache.TryGetValue(id, out var hit) && hit.time == time) { list.Add(hit.info); continue; }
+                ProjectInfo info;
+                try { info = Info(id, Load(id)); }
+                catch (Exception e) { info = new ProjectInfo { Id = id, Name = id, Description = "не читается: " + e.Message }; }
+                _infoCache[id] = (time, info);
+                list.Add(info);
             }
             list.Sort((a, b) => string.CompareOrdinal(b.Modified ?? "", a.Modified ?? ""));
             return list;

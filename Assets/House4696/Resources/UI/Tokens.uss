@@ -1,0 +1,92 @@
+/* House v2 — design tokens and typography. Opaque colours only (UI Toolkit blends in linear space). */
+
+.app {
+    --bg-app: #0C0D10;
+    --surface-1: #15171B;
+    --surface-2: #1B1D22;
+    --field: #101114;
+    --hover-1: #22252B;
+    --hover-2: #272A31;
+    --press: #2E3139;
+    --selected: #2C2F37;
+    --border: #25282E;
+    --border-top: #30333A;
+    --border-strong: #383B43;
+    --divider: #24262C;
+    --text-1: #F2F3F5;
+    --text-2: #A3A8B1;
+    --text-3: #7C818B;
+    --text-disabled: #4A4E56;
+    --accent: #4B5CF0;
+    --accent-hover: #5A6AF7;
+    --accent-press: #4150D6;
+    --accent-text: #93A2FF;
+    --accent-halo: #20264D;
+    --ai: #A78BFA;
+    --ai-soft: #221C36;
+    --success: #34D399;
+    --success-soft: #10261D;
+    --warning: #F5B544;
+    --warning-soft: #2B2213;
+    --danger: #F87171;
+    --danger-soft: #2E1718;
+    --danger-button: #D64545;
+    --kbd-bg: #24272D;
+    --kbd-border: #34373E;
+    --kbd-bottom: #0E0F12;
+
+    /* floor plan (FloorPlanView custom properties) */
+    --plan-room: #1F2228;
+    --plan-room-hover: #2A2E36;
+    --plan-room-current: #20264D;
+    --plan-wall: #A3A8B1;
+    --plan-window: #93A2FF;
+    --plan-marker: #5A6AF7;
+
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+    -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Regular.ttf");
+    font-size: 14px;
+    color: var(--text-1);
+}
+
+Label { padding: 0; margin: 0; }
+
+/* ------------------------------------------------------------------ weights */
+.regular { -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Regular.ttf"); }
+.medium { -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Medium.ttf"); }
+.semibold { -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-SemiBold.ttf"); }
+.bold { -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Bold.ttf"); }
+
+/* ------------------------------------------------------------------ type scale */
+.t-display { font-size: 28px; letter-spacing: -0.5px; -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-SemiBold.ttf"); }
+.t-title { font-size: 20px; letter-spacing: -0.3px; -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-SemiBold.ttf"); }
+.t-headline { font-size: 15px; letter-spacing: -0.1px; -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-SemiBold.ttf"); }
+.t-body { font-size: 14px; -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Regular.ttf"); }
+.t-ui { font-size: 13px; -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Medium.ttf"); }
+.t-caption { font-size: 12px; -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Regular.ttf"); }
+.t-caption-m { font-size: 12px; -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Medium.ttf"); }
+.t-micro { font-size: 11px; letter-spacing: 0.2px; -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Medium.ttf"); }
+
+/* ------------------------------------------------------------------ text colours */
+.c-1 { color: var(--text-1); }
+.c-2 { color: var(--text-2); }
+.c-3 { color: var(--text-3); }
+.c-disabled { color: var(--text-disabled); }
+.c-accent { color: var(--accent-text); }
+.c-ai { color: var(--ai); }
+.c-success { color: var(--success); }
+.c-warning { color: var(--warning); }
+.c-danger { color: var(--danger); }
+
+/* ------------------------------------------------------------------ layout helpers */
+.layer { position: absolute; left: 0; top: 0; right: 0; bottom: 0; }
+.row { flex-direction: row; align-items: center; }
+.col { flex-direction: column; }
+.grow { flex-grow: 1; }
+.shrink { flex-shrink: 1; min-width: 0; }
+.no-shrink { flex-shrink: 0; }
+.hidden { display: none; }
+.ellipsis { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.wrap { white-space: normal; }
+.center { align-items: center; justify-content: center; }

@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace House4696.Runtime
 {
@@ -96,9 +97,6 @@ namespace House4696.Runtime
 
         public override void Tick(float dt)
         {
-            var kb = ViewerInput.Kb;
-            if (kb == null) return;
-
             if (Cursor.lockState == CursorLockMode.Locked)
             {
                 Vector2 d = ViewerInput.MouseDelta * lookSensitivity;
@@ -106,11 +104,11 @@ namespace House4696.Runtime
                 _pitch = Mathf.Clamp(_pitch - d.y, -85f, 85f);
             }
 
-            UpdateCrouch(kb.cKey.isPressed || kb.leftCtrlKey.isPressed);
+            UpdateCrouch(ViewerInput.Held(Key.C));
 
             // horizontal velocity with acceleration (air control is weaker)
             Vector2 input = ViewerInput.Move();
-            bool running = kb.leftShiftKey.isPressed && !_crouched && input.y > 0.1f;
+            bool running = ViewerInput.Held(Key.LeftShift) && !_crouched && input.y > 0.1f;
             float speed = _crouched ? crouchSpeed : running ? runSpeed : walkSpeed;
             Vector3 wish = Quaternion.Euler(0f, _yaw, 0f) * new Vector3(input.x, 0f, input.y) * speed;
             float accel = _cc.isGrounded ? acceleration : acceleration * 0.25f;
@@ -119,7 +117,7 @@ namespace House4696.Runtime
             if (_cc.isGrounded)
             {
                 if (_vy < 0f) _vy = -2f; // keeps the controller glued to steps and slopes
-                if (kb.spaceKey.wasPressedThisFrame && !_crouched) _vy = Mathf.Sqrt(2f * gravity * jumpHeight);
+                if (ViewerInput.Down(Key.Space) && !_crouched) _vy = Mathf.Sqrt(2f * gravity * jumpHeight);
             }
             _vy -= gravity * dt;
 
@@ -128,7 +126,7 @@ namespace House4696.Runtime
             if (_cc.transform.position.y < -20f) GoTo(_spawn); // fell out of the world
 
             UpdateCamera(dt, running);
-            UpdateInteraction(kb.eKey.wasPressedThisFrame);
+            UpdateInteraction(ViewerInput.Down(Key.E));
         }
 
         void UpdateCrouch(bool wantCrouch)

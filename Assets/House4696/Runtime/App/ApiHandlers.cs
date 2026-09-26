@@ -38,11 +38,12 @@ namespace House4696.App
             switch (c.Command)
             {
                 case "status": c.Done.SetResult(Status()); return;
-                case "catalog": c.Done.SetResult(Catalog((string)a["category"])); return;
-                case "materials": c.Done.SetResult(new JArray(Materials())); return;
+                case "catalog": c.Done.SetResult(Catalog((string)a["category"], (string)a["id"])); return;
+                case "materials": c.Done.SetResult(Materials((string)a["category"])); return;
+                case "inspect": RequireProject(); c.Done.SetResult(HouseInspector.Inspect(_s.Result, (string)a["section"], (string)a["id"])); return;
                 case "list_projects": c.Done.SetResult(JArray.FromObject(_s.Store.List(), Camel)); return;
                 case "create_project": c.Done.SetResult(CreateProject(a)); return;
-                case "open_project": _s.Open(Req(a, "id")); Remember(); c.Done.SetResult(Changed(new List<string> { $"открыт проект '{_s.ProjectId}'" })); return;
+                case "open_project": _s.Open(Req(a, "id")); c.Done.SetResult(Changed(new List<string> { $"открыт проект '{_s.ProjectId}'" })); return;
                 case "delete_project": c.Done.SetResult(DeleteProject(Req(a, "id"))); return;
                 case "get_project": c.Done.SetResult(GetProject((string)a["id"])); return;
                 case "replace_project": c.Done.SetResult(Replace(a)); return;
@@ -63,6 +64,14 @@ namespace House4696.App
                 case "measure":
                     _host.StartCoroutine(Guarded(PerfProbe.Measure(a["warmup"] != null ? (int)a["warmup"] : 120, a["frames"] != null ? (int)a["frames"] : 120,
                         r => c.Done.TrySetResult(r)), c));
+                    return;
+                case "bench":
+                    _host.StartCoroutine(Guarded(PerfProbe.Bench(_s, _renderer, a["frames"] != null ? (int)a["frames"] : 240, (string)a["shots"],
+                        r => c.Done.TrySetResult(r)), c));
+                    return;
+                case "ab":
+                    RequireProject();
+                    _host.StartCoroutine(Guarded(PerfProbe.AB(_s, a, r => c.Done.TrySetResult(r)), c));
                     return;
                 case "perf":
                     _host.StartCoroutine(Guarded(PerfProbe.Sweep(_s, House4696.Core.HouseContent.Load().RealtimeGIRendererIndex,
@@ -100,6 +109,8 @@ namespace House4696.App
                 }
                 catch (Exception e)
                 {
+                    // dispose every level so their finally blocks (render cleanup, queue release) run
+                    while (stack.Count > 0) (stack.Pop() as IDisposable)?.Dispose();
                     Debug.LogException(e);
                     c.Done.TrySetException(e is ArgumentException || e is InvalidOperationException ? e : new InvalidOperationException(e.Message, e));
                     yield break;
@@ -111,32 +122,15 @@ namespace House4696.App
 
         JObject CreateProject(JObject a)
         {
-            string name = (string)a["name"] ?? "Новый дом";
             string template = (string)a["template"] ?? "empty";
-            HouseDocument doc;
-            if (template == "empty")
-            {
-                doc = new HouseDocument();
-                doc.Levels.Add(new LevelDef { Id = "ground", Name = "1 этаж", Elevation = 0.3f, Height = 2.8f, Slab = 0.3f });
-            }
-            else
-            {
-                if (!ProjectStore.Samples().TryGetValue(template, out var path))
-                    throw new ArgumentException($"нет шаблона '{template}'. Есть: empty, {string.Join(", ", ProjectStore.Samples().Keys)}");
-                doc = HouseJson.Deserialize(File.ReadAllText(path));
-            }
-            doc.Meta = new HouseMeta { Name = name, Description = (string)a["description"] ?? doc.Meta?.Description, Author = "AI", Created = DateTime.UtcNow.ToString("yyyy-MM-dd") };
-            string id = _s.Store.Create(doc);
-            _s.Open(id);
-            Remember();
+            string id = _s.Create((string)a["name"], (string)a["description"], template, "AI");
             return Changed(new List<string> { $"создан проект '{id}' из шаблона '{template}' и открыт" });
         }
 
         JObject DeleteProject(string id)
         {
             bool current = id == _s.ProjectId;
-            _s.Store.Delete(id);
-            if (current) _s.Close();
+            _s.Delete(id);
             return new JObject { ["notes"] = new JArray($"проект '{id}' перемещён в корзину" + (current ? " (он был открыт — теперь проект не открыт)" : "")) };
         }
 
@@ -164,11 +158,6 @@ namespace House4696.App
                       ?? throw new ArgumentException("outline: массив точек [[x,z], …]");
             return Edit(n => DocumentOps.ExteriorWalls(_s.Doc, (string)a["level"] ?? _s.Doc.Levels.FirstOrDefault()?.Id, pts,
                 (string)a["prefix"] ?? "w", (float?)a["thickness"], (string)a["outside"], (float?)a["plinth"], n));
-        }
-
-        void Remember()
-        {
-            if (_s.ProjectId != null) PlayerPrefs.SetString("house.lastProject", _s.ProjectId);
         }
 
         // ------------------------------------------------------------------ editing
@@ -212,20 +201,76 @@ namespace House4696.App
             (string)a[key] is string s && s.Length > 0 ? s : throw new ArgumentException($"не указан параметр '{key}'");
 
         // ------------------------------------------------------------------ catalogue & materials
-        static JArray Catalog(string category)
+        JObject Catalog(string category, string id)
         {
+            var sizes = HouseBuilder.MeasureCatalog(_s.Mats);
             var arr = new JArray();
+            var cats = new SortedSet<string>();
             foreach (var m in ItemCatalog.All.OrderBy(m => m.Category).ThenBy(m => m.Id))
-                if (string.IsNullOrEmpty(category) || m.Category == category)
-                    arr.Add(new JObject { ["id"] = m.Id, ["name"] = m.Name, ["category"] = m.Category, ["params"] = m.Params });
-            return arr;
+            {
+                cats.Add(m.Category);
+                if (!string.IsNullOrEmpty(category) && m.Category != category) continue;
+                if (!string.IsNullOrEmpty(id) && !string.Equals(m.Id, id, StringComparison.OrdinalIgnoreCase)) continue;
+                var o = new JObject { ["id"] = m.Id, ["name"] = m.Name, ["category"] = m.Category };
+                if (!string.IsNullOrEmpty(m.Params)) o["params"] = m.Params;
+                if (sizes.TryGetValue(m.Id, out var b)) Describe(o, m, b);
+                arr.Add(o);
+            }
+            return new JObject
+            {
+                ["frame"] = "size = [ширина поперёк фасада, глубина вдоль rotation, высота] с параметрами по умолчанию (меняются параметрами length/width/…). " +
+                            "rotation — куда смотрит перед предмета (сиденье, дверцы, изножье кровати). fromOrigin — сколько предмет занимает от точки position в каждую сторону: " +
+                            "front — вперёд по rotation, back — назад (к стене), left/right — влево/вправо, если стоять за предметом лицом по rotation.",
+                ["categories"] = new JArray(cats),
+                ["models"] = arr,
+            };
         }
 
-        IEnumerable<string> Materials()
+        /// <summary>Size, extent from the placement point and a plain-words note about orientation and origin.</summary>
+        static void Describe(JObject o, ItemModel m, Bounds b)
         {
-            var lib = House4696.Core.MaterialLibrary.Create();
-            var r = new MaterialResolver(lib, new House4696.Catalog.InteriorMaterials(lib));
-            return r.Names.OrderBy(n => n);
+            // model frame: front faces -Z, so forward = -z and (looking forward) right = -x
+            float front = -b.min.z, back = b.max.z, right = -b.min.x, left = b.max.x;
+            o["size"] = new JArray(Math.Round(b.size.x, 2), Math.Round(b.size.z, 2), Math.Round(b.size.y, 2));
+            o["fromOrigin"] = new JObject
+            {
+                ["front"] = Math.Round(front, 2), ["back"] = Math.Round(back, 2), ["left"] = Math.Round(left, 2), ["right"] = Math.Round(right, 2),
+                ["down"] = Math.Round(-b.min.y, 2), ["up"] = Math.Round(b.max.y, 2),
+            };
+            var notes = new List<string>();
+            if (b.max.y <= 0.02f && b.min.y < -0.1f) notes.Add("точка — на потолке, предмет свисает вниз (Y = высота потолка над полом)");
+            else if (b.size.z < 0.16f && back < 0.03f && b.size.x >= 0.3f) notes.Add("настенный: точка — на стене (задняя сторона), Y — высота этой точки над полом");
+            else if (back < 0.05f && b.size.z > 0.3f) notes.Add("точка — у задней стороны: ставь её к стене, перед смотрит в комнату");
+            if (b.size.z > b.size.x * 1.25f) notes.Add("длинная сторона идёт вдоль rotation");
+            else if (b.size.x > b.size.z * 1.25f) notes.Add("длинная сторона — поперёк rotation (вдоль стены)");
+            if (notes.Count > 0) o["note"] = string.Join("; ", notes);
+        }
+
+        /// <summary>Library materials (real PBR scans, with names and categories) and the built-in palette names.</summary>
+        JObject Materials(string category)
+        {
+            var r = new MaterialResolver(_s.Mats, new House4696.Catalog.InteriorMaterials(_s.Mats));
+            var library = new JArray();
+            var ext = House4696.Core.ExternalCatalog.Load();
+            var ids = new HashSet<string>();
+            var cats = new SortedSet<string>();
+            if (ext != null)
+                foreach (var e in ext.Materials.OrderBy(e => e.Category).ThenBy(e => e.Id))
+                {
+                    ids.Add(MaterialResolver.Key(e.Id));
+                    cats.Add(e.Category);
+                    if (!string.IsNullOrEmpty(category) && e.Category != category) continue;
+                    library.Add(new JObject { ["id"] = e.Id, ["name"] = e.Name, ["category"] = e.Category, ["tint"] = e.Neutral ? "задайте цвет: id#rrggbb" : "свой цвет; можно подкрасить id#rrggbb" });
+                }
+            var o = new JObject
+            {
+                ["howTo"] = "library — сканы с реальным масштабом рисунка (метр в метре): для полов, стен, фасадов, кровли, мощения, мебели. " +
+                            "basic — встроенная палитра генератора: stone/plinth/stucco/wood/render — фасадные отделки стен; lawn, gravel, paver — поверхности участка " +
+                            "(для верха элементов-газонов бери lawn, не ground-сканы); glass, led — служебные. Категории library: " + string.Join(", ", cats) + ".",
+                ["library"] = library,
+            };
+            if (string.IsNullOrEmpty(category)) o["basic"] = new JArray(r.Names.Where(n => !ids.Contains(n)).OrderBy(n => n));
+            return o;
         }
 
         // ------------------------------------------------------------------ rendering

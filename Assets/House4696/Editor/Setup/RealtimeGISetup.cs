@@ -72,6 +72,13 @@ namespace House4696.Setup
         }
 
         /// <summary>
+        /// Rendering layers that take part in the realtime GI: the house interior (1) and its exterior shell (4, roofs,
+        /// battens, exterior elements — HouseSession.HouseExteriorRenderingLayer); the garden (2) stays out.
+        /// Roll back to 1u together with HouseSession.ExteriorShellLayer = false.
+        /// </summary>
+        const uint HouseGIMask = 1u | 4u;
+
+        /// <summary>
         /// Interactive defaults measured on an Apple M4 in the player (house 10×10 m, 1470×816 window): 8 samples and
         /// the garden in the GI cost ~125 ms GPU; garden excluded ~57 ms; + 4 samples ~29 ms; 2 samples ~20 ms with
         /// visibly the same converged result. Renders for the AI temporarily raise the samples (ViewRenderer).
@@ -83,7 +90,7 @@ namespace House4696.Setup
             gi.volumeSize.Override(48f);
             gi.volumeResolution.Override(64);
             gi.volumeCascadeCount.Override(4);
-            gi.renderingLayerMask.Override((RenderingLayerMask)1u);   // house only (garden = layer 2)
+            gi.renderingLayerMask.Override((RenderingLayerMask)HouseGIMask);   // house only (garden = layer 2)
         }
 
         public static VolumeProfile EnsureProfile()

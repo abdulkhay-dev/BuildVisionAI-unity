@@ -24,6 +24,8 @@ namespace House4696.Generation
                 case LandscapePreset.None: return null;
                 case LandscapePreset.Catalog4696:
                     return new LandscapeGenerator(_c.Lib, _c.W, CameraSpec.Position, CameraSpec.Forward).Build();
+                case LandscapePreset.Natural:
+                    return new House4696.Landscape.Natural.NaturalSiteBuilder(_c.Doc.Site, LandscapeKit.Load(), _c.W, _c.Veg, _c.Lib, _c.Mats, _c.Warnings).Build(footprint);
             }
             var root = new GameObject("Landscape");
             var ground = new MeshBuilder();
@@ -38,14 +40,18 @@ namespace House4696.Generation
             var r = footprint;
             gravel.Box(new Vector3(r.xMin - apron, 0, r.yMin - apron), new Vector3(r.xMax + apron, gy, r.yMax + apron), top);
             _c.W.Emit("Gravel", root.transform, gravel, castShadows: false, probeStatic: true);
-            var slabs = new MeshBuilder();
-            var slab = BoxMats.All(_c.Lib.Paver).Without(yn: true);
-            float px = r.center.x;
-            for (float z = r.yMin - apron - 0.2f; z > r.yMin - 14f; z -= 0.92f)
-                slabs.Box(new Vector3(px - 0.67f, 0, z - 0.62f), new Vector3(px + 0.67f, 0.05f, z), slab);
-            _c.W.Emit("Path_Slabs", root.transform, slabs, castShadows: false, probeStatic: true);
+            var site = _c.Doc.Site;
+            if (site.Path != "none")
+            {
+                var slabs = new MeshBuilder();
+                var slab = BoxMats.All(_c.Lib.Paver).Without(yn: true);
+                float px = r.center.x;
+                for (float z = r.yMin - apron - 0.2f; z > r.yMin - 14f; z -= 0.92f)
+                    slabs.Box(new Vector3(px - 0.67f, 0, z - 0.62f), new Vector3(px + 0.67f, 0.05f, z), slab);
+                _c.W.Emit("Path_Slabs", root.transform, slabs, castShadows: false, probeStatic: true);
+            }
 
-            Trees(root.transform, r);
+            if (site.Trees != "none") Trees(root.transform, r);
             return root;
         }
 
@@ -53,12 +59,15 @@ namespace House4696.Generation
         {
             var veg = _c.Veg;
             var g = _c.W.Group("Trees", root);
-            var spruce = new[] { veg.Spruce(11f, 1), veg.Spruce(14f, 2), veg.Spruce(9f, 3) };
-            var birch = new[] { veg.Birch(10f, 4), veg.Birch(12f, 5) };
-            var spruceMeshes = new Mesh[spruce.Length];
-            var birchMeshes = new Mesh[birch.Length];
-            for (int i = 0; i < spruce.Length; i++) spruceMeshes[i] = _c.W.Store(spruce[i].Build("Spruce_" + i));
-            for (int i = 0; i < birch.Length; i++) birchMeshes[i] = _c.W.Store(birch[i].Build("Birch_" + i));
+            bool lod = GardenPerf.TreeLod;
+            float[] spruceH = { 11f, 14f, 9f }; int[] spruceSeed = { 1, 2, 3 };
+            float[] birchH = { 10f, 12f }; int[] birchSeed = { 4, 5 };
+            var spruce = new TreeProto[spruceH.Length];
+            var birch = new TreeProto[birchH.Length];
+            for (int i = 0; i < spruce.Length; i++)
+                spruce[i] = new TreeProto(_c.W, "Spruce_" + i, veg.Spruce(spruceH[i], spruceSeed[i]), lod ? veg.Spruce(spruceH[i], spruceSeed[i], 1) : null);
+            for (int i = 0; i < birch.Length; i++)
+                birch[i] = new TreeProto(_c.W, "Birch_" + i, veg.Birch(birchH[i], birchSeed[i]), lod ? veg.Birch(birchH[i], birchSeed[i], 1) : null);
 
             var rng = new Rng(4696);
             float radius = Mathf.Max(house.width, house.height) * 0.5f;
@@ -76,13 +85,10 @@ namespace House4696.Generation
                 placed.Add(p);
                 bool isBirch = rng.Value() < 0.35f;
                 int idx = isBirch ? rng.Range(0, birch.Length) : rng.Range(0, spruce.Length);
-                var go = isBirch
-                    ? _c.W.Instance("Birch", g, birchMeshes[idx], birch[idx].Materials, true, true)
-                    : _c.W.Instance("Spruce", g, spruceMeshes[idx], spruce[idx].Materials, true, true);
-                go.transform.position = new Vector3(p.x, 0, p.y);
-                go.transform.rotation = Quaternion.Euler(0, rng.Range(0f, 360f), 0);
+                // same random draws in the same order as before: rotation, then scale
+                var rot = Quaternion.Euler(0, rng.Range(0f, 360f), 0);
                 float s = rng.Range(0.85f, 1.2f);
-                go.transform.localScale = Vector3.one * s;
+                GardenLod.Tree(_c.W, isBirch ? "Birch" : "Spruce", g, isBirch ? birch[idx] : spruce[idx], new Vector3(p.x, 0, p.y), rot, s);
             }
         }
     }

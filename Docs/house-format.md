@@ -8,7 +8,20 @@
 
 - Единицы — метры и градусы.
 - Мир: X вправо, Y вверх (0 = уровень земли), Z «на север». Точка на плане — `[x, z]`, в пространстве — `[x, y, z]`.
-- Повороты — вокруг вертикали, в градусах, как по компасу: 0 → +Z (север), 90 → +X (восток), 180 → −Z (юг), 270 → −X (запад). Для предмета (`rotation`) это направление, куда смотрит его перед; для лестницы (`direction`) — куда идёт первый марш; для камеры (`yaw`) — куда она смотрит.
+- Повороты — вокруг вертикали, в градусах, как по компасу: 0 → +Z (север), 90 → +X (восток), 180 → −Z (юг), 270 → −X (запад).
+
+  | где | что означает угол |
+  |---|---|
+  | `items[].rotation` | куда смотрит перед предмета (сиденье, дверцы, изножье кровати) |
+  | `stairs[].direction` | куда идёт (поднимается) первый марш |
+  | `roofs[].rotation` | gable/hip: конёк идёт поперёк этого направления (0 → конёк запад–восток); shed: куда поднимается скат (высокая сторона) |
+  | `views[].yaw` (walk) и `house_render` walk | куда смотрит камера |
+  | `house_render` orbit `yaw` | **откуда** смотрим: 0 — камера на юге и смотрит на север, 90 — камера на западе |
+- Не считай геометрию в уме: `house_inspect` показывает построенный дом в числах (верх стен, проёмы в координатах, карниз и
+  конёк крыши, габарит и проём лестницы, размеры предметов), `house_catalog` — реальные размеры моделей.
+- После каждой правки ответ содержит `issues` — ошибки документа и проверки построенного дома (мебель в стене или в проходе,
+  дверь в обрыв, проём выше стены или в углу, крыша сквозь комнату, лестница в стену, комната без крыши). Каждое сообщение
+  говорит, что поменять, — исправляй сразу.
 - Всё необязательное имеет разумные значения по умолчанию. Короткий документ — нормально.
 - Имена материалов не зависят от регистра и `_`: `oak_light` = `OakLight`.
 
@@ -18,7 +31,7 @@
 |---|---|
 | `format` | `"house/1"` |
 | `meta` | `name`, `description`, `author`, `created`, `modified` |
-| `site` | `landscape`: `garden` (газон, отмостка, дорожка, деревья) · `lawn` · `none` · `catalog4696`; `sunAzimuth` (откуда светит солнце, 0 = север, по часовой; 180 = юг), `sunElevation` |
+| `site` | `landscape`: `natural` (участок с рельефом: ручьи, клумбы, дорожки, мостик — см. «Участок») · `garden` (газон, отмостка, дорожка, деревья) · `lawn` · `none` · `catalog4696`; для `garden`: `path` (`auto` — дорожка из плит к южному фасаду, `none` — без неё), `trees` (`auto` — ели и берёзы вокруг, `none` — без них); `sunAzimuth` (откуда светит солнце, 0 = север, по часовой; 180 = юг), `sunElevation` |
 | `levels` | этажи |
 | `walls`, `openings` | стены и проёмы |
 | `rooms` | комнаты (полы, потолки, свет, пробы отражений) |
@@ -54,7 +67,10 @@
 { "id": "entry", "wall": "front", "type": "entryDoor", "at": 8.15, "width": 1.05, "sill": 0, "height": 2.3 }
 ```
 
-- `at` — расстояние от точки `a` стены до края проёма; `sill` — низ проёма над полом этажа стены; `height`, `width`.
+- `at` — расстояние от точки `a` стены до края проёма; `sill` — низ проёма над полом этажа стены (по умолчанию: окно `window` — 0.9 м, двери, `glazing` и `hole` — 0, от пола); `height`, `width`.
+- У наружного угла первые `thickness` метров стены заняты телом соседней стены: `at` ≥ толщина соседней стены + 0.1
+  (и так же от конца `b`). Верх проёма (`sill + height`) не выше верха стены — его даёт `house_inspect` (`walls[].top`).
+  Свободные участки стены для новых проёмов — `house_inspect` → `walls[].free`.
 - `type`: `window` · `glazing` (витраж, толстый профиль) · `door` (внутренняя дверь, полотно из дуба) · `entryDoor` (стеклянная входная) · `solidDoor` (глухая) · `hole` (пустой проём).
 - Окна: `columns` (импосты), `transoms` (высоты горизонтальных перемычек от низа проёма), `curtain`: `none` · `full` · `left` · `right`, `curtainFraction`.
 - Двери: `hinge` (`start`/`end` — сторона петель), `swing` (+1 — открывается влево от `a→b`, т.е. внутрь для наружных стен; −1 — вправо). Двери открываются в приложении.
@@ -67,7 +83,8 @@
 
 - `outline` — многоугольник по внутренним граням стен (для смежных комнат — по оси перегородки, чтобы полы сошлись без щелей). Комнаты одного этажа **не должны перекрываться**.
 - Комната даёт: плиту перекрытия с полом (`floor`, по умолчанию `oak`; санузлы/котельные — `tile`), потолок (`ceiling`), встроенные светильники (`downlights`: `auto` · `none`), пробу отражений (`probe`), мягкий свет, если в комнате нет явного источника.
-- `height` больше высоты этажа = **второй свет**: над комнатой не должно быть комнаты верхнего этажа.
+- `height` больше высоты этажа = **второй свет**: над комнатой не должно быть комнаты верхнего этажа. Открытый край пола
+  верхнего этажа (галерея) над вторым светом ограждай `railing` — проверка покажет, где край открыт, с готовым `path`.
 - Над лестницей тоже не должно быть комнаты верхнего этажа (валидатор проверит, хватает ли 2 м над ступенями).
 - `type`: `living, kitchen, dining, bedroom, bathroom, hall, corridor, wardrobe, utility, office, stair, garage, terrace, other`.
 
@@ -77,8 +94,14 @@
 { "id": "main", "type": "gable", "outline": [[0,0],[14,0],[14,8.6],[0,8.6]], "base": 3.55, "pitch": 35, "overhang": 0.5, "material": "coping", "gable": "wood" }
 ```
 
-- `type`: `flat` (любой многоугольник, `parapet` — высота парапета) · `shed` · `gable` · `hip` (по охватывающему прямоугольнику контура в системе крыши; конёк вдоль локальной X, `rotation` поворачивает крышу).
-- `base` — высота верха наружных стен (по умолчанию стены верхнего этажа заканчиваются на `elevation + height + 0.3`). Скатная крыша опирается на стены по их внутренней грани, свес `overhang` опускается по уклону `pitch`.
+- `type`: `flat` (любой многоугольник, `parapet` — высота парапета) · `shed` · `gable` · `hip` (по охватывающему прямоугольнику контура в системе крыши).
+- Направление: `gable`/`hip` — конёк вдоль локальной X: при `rotation` 0 конёк идёт запад–восток, скаты смотрят на север и юг,
+  фронтоны — на запад и восток; `rotation` 90 — конёк север–юг. `shed` — скат **поднимается в сторону `rotation`**:
+  0 — высокая сторона на севере, 90 — на востоке, 180 — на юге.
+- `base` — высота, на которую опирается крыша. **Не указывай его**: по умолчанию это верх наружных стен под контуром крыши
+  (стены верхнего этажа заканчиваются на `elevation + height + 0.3`). Скатная крыша опирается на стены по их внутренней
+  грани, свес `overhang` (одинаковый со всех сторон) опускается по уклону `pitch`. Реальные высоты карниза и конька —
+  `house_inspect` → `roofs`. Если свес попадает в соседнюю более высокую комнату (второй свет), проверка скажет об этом.
 - `thickness`, `material` (покрытие), `soffit` (подшивка), `gable` (отделка фронтонов: `wood` — вертикальная доска).
 
 ## Лестницы — `stairs`
@@ -90,12 +113,30 @@
 - `start` — низ первого марша по его оси; `direction` — направление подъёма первого марша (0 = +Z, 90 = +X).
 - `type`: `straight` · `l` · `u`; `turn`: `left`/`right` — куда поворачивает второй марш; `firstFlight` — подступенков в первом марше; `landing` — глубина площадки.
 - `style`: `floating_oak` (консольные дубовые ступени, стеклянное ограждение, подсветка) или `solid`.
+- `well` — проём в перекрытии над лестницей: `auto` (по умолчанию) — вырезается сам там, где над ступенями меньше 2 м, открытые
+  края ограждаются стеклом (кроме края схода и краёв у стен); `open` — без ограждения; `none` — не вырезать.
+  **Контуры комнат под лестницу не вырезай** — комната верхнего этажа остаётся целой, потолок над ней тоже.
+- Габарит маршей, проём и линия схода — `house_inspect` → `stairs`. Сход с лестницы должен попадать в комнату верхнего
+  этажа, а не в стену.
 
 ## Элементы — `elements`
 
-- `box`/`beam`/`platform`/`column`: `min`, `max` (абсолютные `[x,y,z]`), `material` (бока), `top`, `bottom` (`"none"` — без грани), `cap` (отлив сверху: `capHeight`, `capOverhang`). Так делаются пояса, козырьки, парапеты, террасы, ступени, колонны.
-- `railing`: `path` (точки на плане), `y` (низ), `height`, `style`: `glass` (стеклянные панели с профилем) · `glass_oak` (цельное стекло с дубовым поручнем) · `metal`.
+Вид элемента — в поле `type`: `box` · `beam` · `platform` · `column` · `railing`.
+
+```json
+{ "id": "terrace", "type": "platform", "min": [0, 0, -3], "max": [6, 0.3, 0], "material": "stone", "top": "deck_boards" }
+{ "id": "belt", "type": "box", "min": [0, 3.3, -0.1], "max": [12, 3.6, 0.3], "material": "stucco", "bottom": "soffit", "cap": "coping" }
+{ "id": "rail", "type": "railing", "path": [[0, -3], [6, -3]], "y": 0.3, "height": 1.0, "style": "glass" }
+```
+
+- `box`/`beam`/`platform`/`column`: `min`, `max` (абсолютные `[x,y,z]`), `material` (бока), `top`, `bottom` (материалы
+  верхней и нижней грани; `"none"` — без грани), `cap` — **имя материала** отлива сверху (`"coping"`), его размеры
+  `capHeight`, `capOverhang` — отлив накрывает **весь верх** элемента (для газона или мощения сверху используй `top`, а не `cap`). Так делаются пояса, козырьки, парапеты, террасы, ступени, колонны. Для газона на элементе —
+  `top: "lawn"`.
+- `railing`: `path` (точки на плане), `y` (низ, абсолютный), `height`, `style`: `glass` (стеклянные панели с профилем) · `glass_oak` (цельное стекло с дубовым поручнем) · `metal`.
 - `collide: false` — без коллайдера.
+- Дверь или витраж до пола в наружной стене выше земли (балкон, терраса второго этажа) должны выходить на опору — `platform`
+  с верхом на уровне пола; иначе проверка предупредит «дверь в обрыв».
 
 ## Предметы — `items`
 
@@ -105,7 +146,19 @@
 
 - `position`: X/Z на плане, Y — над полом `level` (без `level` — абсолютная высота). `rotation` — куда смотрит перед предмета (0 = +Z, 90 = +X).
 - Встроенные вещи ставятся спинкой к стене: точка — у стены, перед — в комнату. Подвесы и люстры — точка на потолке (Y = высота этажа).
-- Модели и параметры: см. `ItemCatalog.cs` (строка `Params` у каждой модели). Мебель: `sofa, armchair, lounge_chair, chaise_longue, dining_chair, bar_stool, bench, round_table, wire_table, dining_table, desk, wardrobe, fluted_cabinet, cubby_shelf, tv_console, media_wall, nightstand, bed`; кухня и ванная: `kitchen_base, tall_units, kitchen_island, vanity, toilet, bathtub, shower, towel_rail`; свет: `pendant_globe, linear_pendant, chandelier, table_lamp, floor_lamp, downlight, led_slot`; стены и текстиль: `slat_panel, artwork, mirror_round, rug, drapes, panel`; декор: `vase, books, twigs`; растения: `plant_tree, plant_grass`; прочее: `boiler, washer_stack, rattan_lounge_chair, bistro_set`.
+- Модели, параметры и **реальные размеры** — `house_catalog` (по `category` или `id`): `size` = [ширина поперёк фасада,
+  глубина вдоль `rotation`, высота], `fromOrigin` — сколько предмет занимает от точки `position` вперёд/назад/влево/вправо,
+  `note` — где точка (у задней стороны, на потолке, на стене) и куда идёт длинная сторона (у `dining_table` и `bed` — вдоль
+  `rotation`, у `sofa` и `kitchen_island` — поперёк). Проверка после правки скажет, если предмет заходит в
+  стену, закрывает проём, стоит в проходе у двери (0.8 м) или пересекается с другим. Мебель: `sofa, armchair, lounge_chair, chaise_longue, dining_chair, bar_stool, bench, round_table, wire_table, dining_table, desk, wardrobe, fluted_cabinet, cubby_shelf, tv_console, media_wall, nightstand, bed`; кухня и ванная: `kitchen_base, tall_units, kitchen_island, vanity, toilet, bathtub, shower, towel_rail`; свет: `pendant_globe, linear_pendant, chandelier, table_lamp, floor_lamp, downlight, led_slot`; стены и текстиль: `slat_panel, artwork, mirror_round, rug, drapes, panel`; декор: `vase, books, twigs`; растения: `plant_tree, plant_grass`; прочее: `boiler, washer_stack, rattan_lounge_chair, bistro_set`.
+
+- **Библиотечные модели** (сканы Poly Haven и модели из Blender, 75 шт.) — реалистичнее процедурных, но фиксированного
+  размера. Список с размерами и слотами — `house_catalog` (параметры вида `upholstery=linen_rough#c8c0b3`). Слоты
+  материалов: библиотечный материал, `#rrggbb` (подкрасить родной) или `original`. Точки опоры: мебель — центр на полу
+  (кровати — центр изголовья у стены), подвесы — точка на потолке, настенные (`poster_frame`, `wall_sconce_black`,
+  `wall_clock_modern`…) — центр задней стороны: Y = высота центра над полом. Примеры: `sofa_modern`, `bed_modern`,
+  `lounge_chair_leather`, `dining_table_round`, `sideboard_slatted`, `shelf_cubes`, `pendant_industrial`,
+  `vase_white_round`, `plant_ficus`, `fire_pit`, `bistro_set_garden`. Источник списка — `tools/assets/catalog.json`.
 
 ## Свет — `lights`
 
@@ -115,16 +168,71 @@
 
 ## Точки презентации — `views`
 
-- `walk`: `position` (ноги), `yaw`, `pitch` — остановки экскурсии.
-- `orbit`: `yaw`, `pitch`, `distance` — ракурсы вокруг дома. Без них приложение ставит стандартные.
+```json
+{ "name": "Гостиная", "type": "walk", "position": [4.2, 0.3, 3.5], "yaw": 45, "pitch": -5 }
+{ "name": "Фасад", "type": "orbit", "yaw": 30, "pitch": 10, "distance": 26 }
+```
+
+- Ключ точки — `name` (не `id`). `type`: `walk` · `orbit`.
+- `walk`: `position` — **абсолютная** точка ног `[x, y, z]` (y = отметка пола этажа), `yaw` — куда смотрим, `pitch` — наклон (минус — вниз).
+- `orbit`: `yaw` — откуда смотрим (0 — с юга), `pitch`, `distance` — ракурсы вокруг дома. Без них приложение ставит стандартные.
+
+## Участок — `site` с `landscape: "natural"`
+
+Сад строится **по замыслу**: ты задаёшь линии и стиль, генератор сам раскладывает рельеф, газон, тысячи растений,
+камни и воду (одинаково при каждой сборке). Дом стоит на ровной площадке на отметке 0, рельеф — вокруг.
+
+```json
+{ "landscape": "natural", "sunAzimuth": 200, "sunElevation": 30,
+  "plot": [-6, -29, 47.5, 37],
+  "terrain": { "slopeAzimuth": 0, "grade": 0.07, "relief": 0.3 },
+  "planting": { "style": "perennial", "flowers": ["salvia", "daisy", "phlox"], "density": 1, "lawn": 1.4 },
+  "streams": [{ "id": "brook", "path": [[32, 49], [28, 24], [28.5, 11], [32.5, 0], [34, -37]], "width": 2.6, "depth": 0.3 }],
+  "paths": [{ "id": "main", "path": [[22.7, -37], [22.3, -23], [21.7, -6], [16.5, 2]], "width": 1.1 }],
+  "beds": [{ "id": "rose", "outline": [[5, -8], [12, -8], [12, -4], [5, -4]], "style": "meadow" }],
+  "objects": [{ "id": "bridge", "type": "bridge", "at": [25.6, 10.5], "to": [31.7, 11.7] },
+              { "id": "l1", "type": "stone_lantern", "at": [29.4, -7.3] },
+              { "id": "t1", "type": "tree", "species": "maple_red", "at": [23.7, 15] }],
+  "fence": ["north", "east"] }
+```
+
+- `plot` — участок (линия забора) `[xmin, zmin, xmax, zmax]`; по умолчанию дом плюс 18 м во все стороны. Дом должен
+  быть внутри.
+- `terrain`: склон поднимается в сторону `slopeAzimuth` (0 = север) на `grade` метров на метр (0.05–0.1 — заметный
+  склон), `relief` — высота мягких неровностей. Без `terrain` участок ровный.
+- `streams` — ручьи: `path` — точки русла **от истока к устью** (вода течёт от первой точки к последней; ставь исток
+  выше по склону), `width`, `depth`. Каскады ставятся сами там, где русло спускается на ~0.5 м; свои —
+  `cascades: [[x, z], …]`. Берега выкладываются камнями, на порогах — водосливы между камнями.
+- `paths` — дорожки: `path` — осевая линия, `width`, `style`: `stepping` (плиты-ступени). Вдоль дорожек — полоса газона
+  шириной `planting.lawn` (0 — клумбы вплотную).
+- `planting.style`: `perennial` (цветущий миксбордер), `meadow` (луговой), `shade` (папоротники, хосты), `rock`
+  (рокарий), `none` (всё газон). `flowers` — акцентные цветы: `salvia`, `lavender`, `lupin`, `daisy`, `phlox`,
+  `yellow`, `orange`. `density` 0.3–1.5.
+- `beds` — отдельные клумбы многоугольником `outline` со своим `style` и `flowers` (остальной участок сажается по
+  `planting`).
+- `objects` — одиночные вещи: `bridge` (от `at` до `to` через ручей), `stone_lantern`, `garden_lamp` (светятся),
+  `boulder` (валун, `scale`), `tree` (`species`: `oak`, `birch`, `spruce`, `maple_red`; `scale`, `rotation`).
+- `fence` — стороны с забором: `north`, `east`, `south`, `west`.
+- Правка `site` заменяет массив целиком: чтобы добавить объект, пришли весь `objects` (возьми из `house_get_project`).
+- Низкое солнце (`sunElevation` < 15) — длинные тени: каждое дерево затеняет газон на 4–10 своих высот.
 
 ## Материалы
 
 Любой материал можно окрасить: `имя#rrggbb` — например, светлый фасад `render#e9e4da`, серый `render#b8b8b4`,
 тонированное дерево `oak#8b6a4f`. `stucco` — тёмная антрацитовая штукатурка, `render` — светлая.
 
-Отделка и мебель: `stone, plinth, stucco, wood, plaster, ceiling, oak, oak_light, walnut, tile, tile_dark, marble, travertine, porcelain, step_riser, gravel, paver, coping, soffit, frame, steel, black_metal, brass, chrome, glass, gloss_white, linen, boucle, sage, terracotta, charcoal, bedding, leather, leather_white, rug, rug_dark, towel, ceramic, stoneware, mirror, led`.
+**Библиотека реалистичных материалов** (сканы Poly Haven, CC0, реальный масштаб рисунка) — 176 штук по категориям:
+полы (`floor`), плитка и камень (`tile`), стены (`wall`), ткани (`fabric`), кожа (`leather`), ковры (`carpet`), шпон и
+дерево мебели (`wood`), фасады (`facade`), кровля (`roof`), металл (`metal`), мощение (`paving`), террасная доска
+(`deck`), грунт участка (`ground`). Полный список с русскими названиями — `house_materials` (раздел `library`).
+Примеры: пол `parquet_herringbone`, стена `plaster_white`, фасад `brick_red` или `cladding_cedar`, кровля
+`roof_clay_tiles`, дорожка `paving_herringbone_grey`. Материалы с серой основой (ткани, краски, микроцемент) задуманы
+для окраски: `velvet#6b4f3a`, `paint_smooth#dfe6e1`. Источник списка — `tools/assets/catalog.json`.
+
+Базовая палитра (отделка и мебель): `stone, plinth, stucco, wood, plaster, ceiling, oak, oak_light, walnut, tile, tile_dark, marble, travertine, porcelain, step_riser, gravel, paver, coping, soffit, frame, steel, black_metal, brass, chrome, glass, gloss_white, linen, boucle, sage, terracotta, charcoal, bedding, leather, leather_white, rug, rug_dark, towel, ceramic, stoneware, mirror, led`.
 
 ## Проверка
 
-`HouseValidator` возвращает ошибки и предупреждения на русском с путём к элементу (`openings/entry: проём выходит за стену…`) — их нужно исправить до сборки.
+`issues` в ответе на каждую правку (и `house_validate`) — ошибки и предупреждения на русском с путём к элементу
+(`openings/entry: проём выходит за стену…`). Две группы: проверка документа (ссылки, пересечения комнат, размеры) и проверка
+построенного дома по реальной геометрии (мебель, двери, проёмы, крыши, лестницы, замкнутость контура). Исправляй их по ходу.

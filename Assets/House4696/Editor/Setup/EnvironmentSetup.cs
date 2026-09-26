@@ -14,7 +14,11 @@ namespace House4696.Setup
         {
             if (!(GraphicsSettings.currentRenderPipeline is UniversalRenderPipelineAsset urp)) return;
             GlobalIlluminationSetup.ConfigurePipeline();
-            urp.msaaSampleCount = 4;
+            // the viewer anti-aliases with STP (temporal upscaler; needs MSAA off) or SMAA — MSAA on alpha-tested
+            // foliage cost ~6 ms. STP stays selected in the asset so its shaders survive build stripping; the player
+            // picks the upscaler per quality preset (HouseBootstrap.UpdateRenderScale). Stills use their own MSAA.
+            urp.msaaSampleCount = 1;
+            urp.upscalingFilter = UpscalingFilterSelection.STP;
             urp.shadowDistance = 95f;
             urp.shadowCascadeCount = 4;
             urp.cascade4Split = new Vector3(0.07f, 0.2f, 0.46f);
@@ -25,6 +29,17 @@ namespace House4696.Setup
             var hdr = so.FindProperty("m_SupportsHDR"); if (hdr != null) hdr.boolValue = true;
             so.ApplyModifiedPropertiesWithoutUndo();
             EditorUtility.SetDirty(urp);
+
+            // depth priming on every renderer: the colour pass shades each pixel once after the depth prepass (which the
+            // baked-GI resolve and SSAO need anyway). Alpha-tested foliage no longer shades its hidden layers:
+            // -2 ms on the natural site, identical pictures (RMSE < 0.4 % against off, house and garden)
+            var list = so.FindProperty("m_RendererDataList");
+            for (int i = 0; i < list.arraySize; i++)
+                if (list.GetArrayElementAtIndex(i).objectReferenceValue is UniversalRendererData ur && ur.depthPrimingMode != DepthPrimingMode.Forced)
+                {
+                    ur.depthPrimingMode = DepthPrimingMode.Forced;
+                    EditorUtility.SetDirty(ur);
+                }
 
             // stronger, wider SSAO for soffits, reveals and batten gaps
             var rendererData = so.FindProperty("m_RendererDataList").GetArrayElementAtIndex(0).objectReferenceValue as ScriptableRendererData;

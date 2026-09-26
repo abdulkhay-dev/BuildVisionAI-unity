@@ -1,0 +1,485 @@
+/* House v2 — dialogs and popovers (spec §6). Class prefix dlg-. Opaque colours only (tokens from Tokens.uss). */
+
+/* ================================================================== shared */
+.dlg-field { margin-bottom: 16px; }
+.dlg-field.last { margin-bottom: 0; }
+.dlg-label-row { flex-direction: row; align-items: flex-end; justify-content: space-between; margin: 0 2px 6px 2px; }
+.dlg-label {
+    font-size: 13px;
+    color: var(--text-2);
+    -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Medium.ttf");
+}
+.dlg-label-aside { font-size: 12px; color: var(--text-3); }
+
+.dlg-compact > .modal-head { margin-bottom: 0; }
+.dlg-sep { height: 1px; margin: 4px 0; background-color: var(--divider); flex-shrink: 0; }
+
+/* copy buttons flash «✓ Скопировано» */
+.btn.dlg-copied { color: var(--success); }
+.btn-primary.dlg-copied { color: #FFFFFF; }
+
+/* the button that has the default focus (↩) in a dialog */
+/* default button: no permanent outline (it read as "selected" and pulled focus from the danger action) */
+
+/* foot note on the left of a dialog footer */
+.dlg-footnote { flex-direction: row; align-items: center; flex-grow: 1; flex-shrink: 1; min-width: 0; margin-right: 16px; color: var(--text-3); }
+.dlg-footnote > .icon { margin-right: 8px; color: var(--text-3); }
+.dlg-footnote.ai > .icon { color: var(--ai); }
+.dlg-footnote-text { flex-shrink: 1; font-size: 12px; color: var(--text-3); white-space: normal; }
+
+/* ================================================================== new project */
+.dlg-radio {
+    flex-direction: row;
+    align-items: center;
+    height: 56px;
+    padding: 0 14px 0 8px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    border-width: 1px;
+    border-color: var(--border);
+    background-color: var(--surface-2);
+    transition-property: background-color, border-color, scale;
+    transition-duration: 0.09s, 0.09s, 0.08s;
+    transition-timing-function: ease-out;
+}
+.dlg-radio.last { margin-bottom: 0; }
+.dlg-radio:hover { background-color: var(--hover-2); border-color: var(--border-strong); }
+.dlg-radio:active { scale: 0.99 0.99; }
+.dlg-radio.selected, .dlg-radio.selected:hover { background-color: var(--accent-halo); border-color: var(--accent); }
+
+.dlg-radio-tile {
+    width: 64px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--press);
+    color: var(--text-2);
+    -unity-background-scale-mode: scale-and-crop;
+}
+.dlg-radio-tile.image { border-width: 1px; border-color: var(--border-strong); }
+.dlg-radio-tile.plot { background-color: var(--field); border-width: 1px; border-color: var(--border-strong); color: var(--text-3); }
+.dlg-radio.selected .dlg-radio-tile.plot { color: var(--accent-text); }
+.dlg-plot { position: absolute; left: 0; top: 0; right: 0; bottom: 0; }
+
+.dlg-radio-text { flex-grow: 1; flex-shrink: 1; min-width: 0; margin-left: 12px; }
+.dlg-radio-name {
+    font-size: 13px;
+    color: var(--text-1);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Medium.ttf");
+}
+.dlg-radio-meta { margin-top: 3px; font-size: 12px; color: var(--text-3); overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.dlg-radio.selected .dlg-radio-meta { color: var(--text-2); }
+.dlg-radio-check {
+    margin-left: 12px;
+    color: var(--accent-text);
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: 0.12s;
+    transition-timing-function: ease-out;
+}
+.dlg-radio.selected > .dlg-radio-check { opacity: 1; }
+.dlg-templates-scroll { height: 248px; }
+
+/* ================================================================== connect AI */
+.dlg-cai { height: 540px; }
+.dlg-cai > .modal-body { flex-grow: 1; flex-shrink: 1; min-height: 0; flex-direction: row; }
+.dlg-ai-tile {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    margin-right: 14px;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--ai-soft);
+    color: var(--ai);
+}
+
+/* client list */
+.dlg-cai-list { width: 220px; flex-shrink: 0; margin-right: 16px; }
+.dlg-client {
+    flex-direction: row;
+    align-items: center;
+    height: 40px;
+    padding: 0 10px 0 8px;
+    margin-bottom: 2px;
+    border-radius: 8px;
+    transition-property: background-color, scale;
+    transition-duration: 0.09s, 0.08s;
+    transition-timing-function: ease-out;
+}
+.dlg-client:hover { background-color: var(--hover-2); }
+.dlg-client:active { scale: 0.99 0.99; }
+.dlg-client.selected, .dlg-client.selected:hover { background-color: var(--selected); }
+.dlg-client-name {
+    flex-grow: 1;
+    flex-shrink: 1;
+    min-width: 0;
+    margin-left: 10px;
+    font-size: 13px;
+    color: var(--text-2);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Medium.ttf");
+}
+.dlg-client:hover > .dlg-client-name, .dlg-client.selected > .dlg-client-name { color: var(--text-1); }
+.dlg-client-check { margin-left: 8px; color: var(--success); }
+
+/* monograms: neutral 24 px tiles (colour is for status only, spec §0.3) */
+.dlg-mono {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--selected);
+    transition-property: background-color;
+    transition-duration: 0.09s;
+    transition-timing-function: ease-out;
+}
+.dlg-mono-text {
+    font-size: 11px;
+    color: var(--text-2);
+    -unity-text-align: middle-center;
+    -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-SemiBold.ttf");
+}
+.dlg-mono-other > .dlg-mono-text { font-size: 13px; }
+/* the selected row is `selected` itself: its tile steps up one level so it stays visible */
+.dlg-client.selected > .dlg-mono { background-color: var(--border-strong); }
+.dlg-client.selected .dlg-mono-text { color: var(--text-1); }
+
+/* «Для разработчиков» above Cursor … Codex (Caption Medium text-3) */
+.dlg-cai-group {
+    margin: 12px 0 4px 8px;
+    font-size: 12px;
+    color: var(--text-3);
+    -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Medium.ttf");
+}
+
+/* right panel */
+.dlg-cai-panel {
+    flex-grow: 1;
+    flex-shrink: 1;
+    min-width: 0;
+    border-radius: 12px;
+    border-width: 1px;
+    border-color: var(--border);
+    background-color: var(--surface-1);
+}
+.dlg-cai-content { padding: 20px 20px 16px 20px; }
+.dlg-cai-name { margin-bottom: 18px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+
+/* steps: 24 px number circles on a rail */
+.dlg-step { flex-direction: row; }
+.dlg-step-rail { width: 24px; flex-shrink: 0; align-items: center; }
+.dlg-step-num {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    border-width: 1px;
+    border-color: var(--border-strong);
+    align-items: center;
+    justify-content: center;
+    color: var(--text-3);
+    transition-property: background-color, border-color, color;
+    transition-duration: 0.18s;
+    transition-timing-function: ease-out;
+}
+.dlg-step-digit {
+    font-size: 12px;
+    color: var(--text-3);
+    -unity-text-align: middle-center;
+    -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-SemiBold.ttf");
+}
+.dlg-step-num > .icon { width: 14px; height: 14px; }
+.dlg-step.current .dlg-step-num { background-color: var(--accent-halo); border-color: var(--accent); }
+.dlg-step.current .dlg-step-digit { color: var(--accent-text); }
+.dlg-step.done .dlg-step-num { background-color: var(--success-soft); border-color: #1F4D3A; color: var(--success); }
+.dlg-step-line { width: 1px; flex-grow: 1; margin: 4px 0; background-color: var(--divider); }
+.dlg-step.done .dlg-step-line { background-color: #1F4D3A; }
+.dlg-step.last .dlg-step-line { display: none; }
+.dlg-step-body { flex-grow: 1; flex-shrink: 1; min-width: 0; margin-left: 12px; padding-bottom: 20px; }
+.dlg-step.last > .dlg-step-body { padding-bottom: 0; }
+.dlg-step-title {
+    margin-top: 4px;
+    font-size: 13px;
+    color: var(--text-1);
+    white-space: normal;
+    -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Medium.ttf");
+}
+.dlg-step-text { margin-top: 4px; font-size: 12px; color: var(--text-2); white-space: normal; }
+.dlg-step-text.dlg-step-note { margin-top: 8px; color: var(--text-3); }
+.dlg-step-controls { flex-direction: row; align-items: center; flex-wrap: wrap; margin-top: 10px; }
+.dlg-step-controls > .btn { margin-right: 8px; }
+.dlg-ok { flex-direction: row; align-items: center; margin-right: 12px; color: var(--success); }
+.dlg-ok-label {
+    margin-left: 6px;
+    font-size: 13px;
+    color: var(--success);
+    -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Medium.ttf");
+}
+
+/* one-line command and the prompt box */
+.dlg-code {
+    flex-direction: row;
+    align-items: center;
+    height: 36px;
+    margin-top: 10px;
+    padding: 0 12px;
+    border-radius: 8px;
+    border-width: 1px;
+    border-color: var(--border);
+    background-color: var(--field);
+}
+.dlg-code-text {
+    flex-grow: 1;
+    flex-shrink: 1;
+    min-width: 0;
+    font-size: 12px;
+    color: var(--text-1);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -unity-text-overflow-position: middle;
+}
+.dlg-prompt {
+    margin-top: 10px;
+    padding: 10px 12px 6px 12px;
+    border-radius: 8px;
+    border-width: 1px;
+    border-color: var(--border);
+    background-color: var(--field);
+}
+.dlg-prompt-text { font-size: 13px; color: var(--text-1); white-space: normal; }
+.dlg-prompt-foot { flex-direction: row; justify-content: flex-end; margin: 4px -6px 0 0; }
+.dlg-prompt-foot > .btn { color: var(--text-2); }
+.dlg-prompt-foot > .btn:hover { color: var(--text-1); }
+.dlg-prompt-foot > .btn.dlg-copied { color: var(--success); }
+
+/* «Настроить вручную ▸» */
+.dlg-disclosure {
+    flex-direction: row;
+    align-items: center;
+    align-self: flex-start;
+    height: 32px;
+    padding: 0 10px 0 6px;
+    margin: 16px 0 0 -6px;
+    border-radius: 8px;
+    color: var(--text-2);
+    transition-property: background-color, color;
+    transition-duration: 0.09s;
+    transition-timing-function: ease-out;
+}
+.dlg-disclosure:hover { background-color: var(--hover-1); color: var(--text-1); }
+.dlg-disclosure > .icon { width: 14px; height: 14px; transition-property: rotate; transition-duration: 0.16s; transition-timing-function: ease-out-cubic; }
+.dlg-disclosure.open > .icon { rotate: 90deg; }
+.dlg-disclosure-label {
+    margin-left: 6px;
+    font-size: 13px;
+    -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Medium.ttf");
+}
+.dlg-manual { margin-top: 4px; }
+.dlg-manual-caption {
+    margin: 12px 0 4px 0;
+    font-size: 12px;
+    color: var(--text-3);
+    -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Medium.ttf");
+}
+.dlg-path-row { flex-direction: row; align-items: flex-end; }
+.dlg-path-col { flex-grow: 1; flex-shrink: 1; min-width: 0; }
+.dlg-path-row > .btn { margin: 0 0 -6px 8px; color: var(--text-2); }
+.dlg-path-row > .btn:hover { color: var(--text-1); }
+.dlg-path {
+    font-size: 12px;
+    color: var(--text-2);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -unity-text-overflow-position: middle;
+}
+.dlg-json {
+    overflow: hidden;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border-width: 1px;
+    border-color: var(--border);
+    background-color: var(--field);
+}
+.dlg-json-text { font-size: 12px; color: var(--text-2); white-space: normal; }
+.dlg-chips { flex-direction: row; flex-wrap: wrap; }
+.dlg-chip {
+    flex-direction: row;
+    align-items: center;
+    height: 22px;
+    padding: 0 8px;
+    margin: 0 6px 6px 0;
+    border-radius: 8px;
+    background-color: var(--press);
+    color: var(--text-2);
+}
+.dlg-chip > .icon { width: 12px; height: 12px; margin-right: 5px; }
+.dlg-chip-text {
+    font-size: 11px;
+    letter-spacing: 0.2px;
+    -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Medium.ttf");
+}
+.dlg-chip.ok { background-color: var(--success-soft); color: var(--success); }
+.dlg-chip.bad { background-color: var(--danger-soft); color: var(--danger); }
+
+/* live footer status */
+.dlg-foot-status { flex-direction: row; align-items: center; flex-grow: 1; flex-shrink: 1; min-width: 0; margin-right: 16px; }
+.dlg-foot-dot { width: 16px; height: 16px; flex-shrink: 0; align-items: center; justify-content: center; }
+.dlg-foot-status-text { margin-left: 6px; font-size: 12px; color: var(--text-2); overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+
+/* ================================================================== shortcuts */
+.dlg-sc { flex-direction: row; align-items: flex-start; }
+/* columns start at their widest row (flex-basis auto), then share the rest: nothing is cut at w 720 */
+.dlg-sc-col { flex-grow: 1; flex-shrink: 1; flex-basis: auto; min-width: 0; margin-right: 24px; }
+.dlg-sc-col.last { margin-right: 0; }
+.dlg-sc-caption {
+    height: 20px;
+    margin-bottom: 4px;
+    font-size: 12px;
+    color: var(--text-3);
+    -unity-text-align: middle-left;
+    -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Medium.ttf");
+}
+.dlg-sc-caption.later { margin-top: 16px; }
+.dlg-sc-row { flex-direction: row; align-items: center; justify-content: space-between; height: 32px; }
+/* no ellipsis: a label that ever runs short wraps (and the dev check in ShortcutsDialog logs it) */
+.dlg-sc-label { flex-shrink: 1; min-width: 0; margin-right: 12px; font-size: 13px; color: var(--text-2); }
+.dlg-sc-row > .keys { flex-shrink: 0; }
+
+/* ================================================================== popovers: shared */
+.dlg-pop { flex-direction: column; }
+.dlg-pop .menu-item.dlg-row { transition-property: background-color, color; transition-duration: 0.09s; transition-timing-function: ease-out; }
+/* no row may push content past the popover (no overflow:hidden on the popover: a stencil clip makes the corners jagged) */
+.dlg-pop .menu-item > .menu-label { flex-shrink: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+/* two-line row: label + a Caption text-3 line under it (the reason a disabled row is off) */
+.dlg-row-text { flex-grow: 1; flex-shrink: 1; min-width: 0; }
+.dlg-row-text > .menu-label {
+    font-size: 13px;
+    color: var(--text-1);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Medium.ttf");
+}
+.dlg-row-caption { margin-top: 2px; font-size: 12px; color: var(--text-3); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.menu-item.dlg-undo.dlg-row-off { height: 44px; }
+.menu-item.dlg-row-off, .menu-item.dlg-row-off:hover { background-color: rgba(0, 0, 0, 0); color: var(--text-disabled); }
+.menu-item.dlg-row-off .menu-label { color: var(--text-disabled); }
+.menu-item.dlg-row-off > .menu-shortcut { color: var(--text-disabled); }
+
+/* ================================================================== settings */
+.dlg-settings > .dlg-sep { margin: 8px 0; }
+.dlg-quality { margin: 0 8px; }
+.dlg-quality > .seg { flex-grow: 1; flex-basis: 0; }
+.dlg-quality-hint { margin: 8px 8px 4px 8px; font-size: 12px; color: var(--text-2); white-space: normal; }
+.dlg-switch > .switch-label { flex-grow: 1; flex-shrink: 1; }
+.dlg-switch > .dlg-switch-keys { margin-right: 12px; }
+.dlg-files { flex-direction: row; align-items: center; min-height: 44px; padding: 0 2px 0 8px; }
+.dlg-files-text { flex-grow: 1; flex-shrink: 1; min-width: 0; margin-right: 8px; }
+.dlg-files-title {
+    font-size: 13px;
+    color: var(--text-1);
+    -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Medium.ttf");
+}
+.dlg-files-path {
+    margin-top: 2px;
+    font-size: 12px;
+    color: var(--text-3);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -unity-text-overflow-position: middle;
+}
+.dlg-pop-foot {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 6px;
+    padding-top: 4px;
+    border-top-width: 1px;
+    border-top-color: var(--divider);
+}
+/* padding-left 8 like the rows above: the Keyboard icon sits on the 8 px content inset (the x of «Графика») and the
+   hover fill lines up with the switch rows' hover (a negative margin would push the fill onto the popover border) */
+.dlg-pop-foot > .btn { padding-left: 8px; color: var(--text-2); }
+.dlg-pop-foot > .btn:hover { color: var(--text-1); }
+.dlg-version {
+    margin-right: 8px;
+    font-size: 11px;
+    letter-spacing: 0.2px;
+    color: var(--text-3);
+    -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Medium.ttf");
+}
+
+/* ================================================================== issues */
+.dlg-issues { max-height: 410px; }
+.dlg-iss-head { flex-shrink: 0; padding: 8px 8px 10px 8px; }
+.dlg-iss-counts { margin-top: 2px; font-size: 12px; color: var(--text-3); }
+.dlg-iss-scroll { flex-shrink: 1; max-height: 300px; }
+.dlg-iss-row { flex-direction: row; align-items: flex-start; padding: 8px; border-radius: 8px; }
+.dlg-iss-icon { margin: 1px 10px 0 0; }
+.dlg-iss-text { flex-grow: 1; flex-shrink: 1; min-width: 0; }
+.dlg-iss-msg { max-height: 54px; overflow: hidden; font-size: 14px; color: var(--text-1); white-space: normal; }
+.dlg-iss-path { margin-top: 3px; font-size: 12px; color: var(--text-3); overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.pop-caption.dlg-iss-group { margin-top: 12px; }
+.dlg-iss-foot {
+    flex-direction: row;
+    align-items: center;
+    flex-shrink: 0;
+    margin-top: 4px;
+    padding: 10px 4px 4px 8px;
+    border-top-width: 1px;
+    border-top-color: var(--divider);
+}
+.dlg-iss-foot-text { flex-grow: 1; flex-shrink: 1; min-width: 0; margin-right: 12px; font-size: 12px; color: var(--text-2); white-space: normal; }
+.dlg-empty { align-items: center; padding: 16px 16px 24px 16px; }
+.dlg-empty-badge {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 12px;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--success-soft);
+    color: var(--success);
+}
+.dlg-empty-title {
+    font-size: 15px;
+    letter-spacing: -0.1px;
+    color: var(--text-1);
+    -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-SemiBold.ttf");
+}
+.dlg-empty-text { margin-top: 4px; font-size: 12px; color: var(--text-3); -unity-text-align: middle-center; white-space: normal; }
+
+/* ================================================================== AI popover */
+/* the dot is centred on the title line (x-height centre ≈ 9 px below its top), not on title + subtitle */
+.dlg-ai-head { flex-direction: row; align-items: flex-start; padding: 8px 8px 8px 8px; }
+.dlg-ai-dot { width: 16px; height: 16px; margin-top: 2px; flex-shrink: 0; align-items: center; justify-content: center; }
+.dlg-ai-head-text { flex-grow: 1; flex-shrink: 1; min-width: 0; margin-left: 8px; }
+.dlg-ai-state {
+    font-size: 13px;
+    color: var(--text-1);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Medium.ttf");
+}
+.dlg-ai-last { margin-top: 2px; font-size: 12px; color: var(--text-3); }
+.dlg-ai-hint { margin: 0 8px 8px 32px; font-size: 12px; color: var(--text-2); white-space: normal; }
+.dlg-log-row { flex-direction: row; align-items: center; height: 28px; padding: 0 8px; }
+.dlg-log-icon { margin-right: 10px; color: var(--text-3); }
+.dlg-log-text { flex-grow: 1; flex-shrink: 1; min-width: 0; font-size: 12px; color: var(--text-2); overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.dlg-log-time { flex-shrink: 0; margin-left: 12px; font-size: 12px; color: var(--text-3); }

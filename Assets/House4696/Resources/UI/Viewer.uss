@@ -1,0 +1,400 @@
+/* House v2 — viewer: toolbar + views popover (tb-), overlay of the 3D view (ov-), veil (veil-).
+   Opaque colours only; sizes are panel px at 1600×940 (spec §2, §3.3, §3.4, §3.6, §3.7). */
+
+/* ================================================================== toolbar (§3.3) */
+.tb-host {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 16px;
+    align-items: center;
+    /* the slide that keeps it clear of the plan panel */
+    transition-property: translate;
+    transition-duration: 0.22s;
+    transition-timing-function: ease-out-cubic;
+}
+.tb-wrap { position: relative; }
+.tb-bar {
+    flex-direction: row;
+    align-items: center;
+    height: 44px;
+    padding: 3px;                       /* + 1 px border = the 4 px inset of floating objects; items are h 36 */
+    background-color: var(--surface-1);
+    border-width: 1px;
+    border-color: var(--border);
+    border-top-color: var(--border-top);
+    border-radius: 12px;
+}
+.tb-bar > .tb-gap { margin-left: 2px; }
+.tb-bar > .divider-v { margin: 0 6px; }
+
+/* modes: a recessed track (field) holding h 32 segments, so the thumb reads as a choice inside a group and never as
+   a second "on" toggle next to «План» (whose on-state is the standalone selected pill). 2 + 32 + 2 = the 36 px item. */
+.tb-bar > .tb-modes {
+    background-color: var(--field);
+    border-radius: 10px;
+    padding: 2px;
+}
+.tb-modes > .seg { height: 32px; }
+.tb-modes > .seg.tb-gap { margin-left: 2px; }
+.tb-modes > .seg-thumb { top: 2px; height: 32px; border-radius: 8px; }
+
+/* popover anchor while its popover is open: the same neutral "on" look as a toggle */
+.tb-bar > .tool.popover-open { background-color: var(--selected); color: var(--text-1); }
+
+/* «Виды»: fixed width, so the toolbar is the same width in every mode and view state (no reflow under the pointer) */
+.tb-bar > .tb-views {
+    width: 208px;
+    padding: 0 12px;
+    justify-content: flex-start;
+}
+.tb-views > .tb-views-label {
+    margin-left: 8px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -unity-text-align: middle-left;
+}
+.tb-views > .tb-chevron { margin-left: 6px; color: var(--text-3); }
+.tb-views:hover > .tb-chevron, .tb-views.popover-open > .tb-chevron { color: var(--text-2); }
+
+.tb-snap > .tb-spinner { width: 16px; height: 16px; }
+.tb-snap.tb-busy { color: var(--text-1); }
+
+/* ------------------------------------------------------------------ views popover (§3.4) */
+.tb-views-scroll { flex-grow: 0; flex-shrink: 0; }
+.tb-views-caption {
+    height: 30px;
+    padding: 0 10px;
+    -unity-text-align: middle-left;
+    font-size: 12px;
+    -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Medium.ttf");
+    color: var(--text-3);
+}
+/* the other mode's group: caption left, «переключит режим» (Caption Regular text-3) right, aligned with the keycaps */
+.tb-views-caption-row {
+    flex-direction: row;
+    align-items: center;
+    padding: 0 8px 0 10px;
+}
+.tb-views-caption-row > .tb-views-caption-text {
+    flex-grow: 1;
+    flex-shrink: 1;
+    min-width: 0;
+    font-size: 12px;
+    -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Medium.ttf");
+    color: var(--text-3);
+    -unity-text-align: middle-left;
+}
+.tb-views-caption-row > .tb-views-caption-hint {
+    flex-shrink: 0;
+    margin-left: 12px;
+    font-size: 12px;
+    -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Regular.ttf");
+    color: var(--text-3);
+    -unity-text-align: middle-right;
+}
+.tb-views-sep { height: 1px; margin: 4px 6px; background-color: var(--divider); }
+.tb-view-row {
+    flex-direction: row;
+    align-items: center;
+    height: 40px;
+    padding: 0 8px 0 10px;
+    border-radius: 8px;
+    flex-shrink: 0;
+    transition-property: background-color;
+    transition-duration: 0.09s;
+    transition-timing-function: ease-out;
+}
+.tb-view-row:hover { background-color: var(--hover-2); }
+.tb-view-row:active { background-color: var(--press); }
+.tb-view-row.selected { background-color: var(--selected); }
+.tb-view-row > .tb-view-icon { color: var(--text-2); margin-right: 10px; }
+.tb-view-row.selected > .tb-view-icon { color: var(--text-1); }
+.tb-view-row > .tb-view-name {
+    flex-grow: 1;
+    flex-shrink: 1;
+    min-width: 0;
+    font-size: 13px;
+    -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Medium.ttf");
+    color: var(--text-1);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.tb-view-row > .kbd { margin-left: 12px; }
+
+.tb-views-empty { height: 64px; padding: 4px 10px 0 10px; }
+.tb-views-empty-title {
+    font-size: 13px;
+    -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Medium.ttf");
+    color: var(--text-2);
+}
+.tb-views-empty-hint { font-size: 12px; color: var(--text-3); margin-top: 4px; white-space: normal; }
+.tb-views-empty-all { height: auto; align-items: center; padding: 24px 20px 20px 20px; }
+.tb-views-empty-all > .tb-views-empty-icon { color: var(--text-3); margin-bottom: 12px; }
+.tb-views-empty-all > .tb-views-empty-title { color: var(--text-1); }
+.tb-views-empty-all > .tb-views-empty-hint { -unity-text-align: upper-center; margin-top: 6px; }
+
+/* ================================================================== overlay (§3.6, §3.2, §2) */
+/* AI line: 2 px, full width, a 30 % violet segment runs across */
+.ov-ai-line { position: absolute; left: 0; right: 0; top: 0; height: 2px; overflow: hidden; }
+.ov-ai-seg { position: absolute; left: 0; top: 0; width: 30%; height: 2px; background-color: var(--ai); }
+
+/* coach slot: x centre, bottom 76 (follows the toolbar's slide) */
+.ov-coach-host {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 76px;
+    align-items: center;
+    transition-property: translate;
+    transition-duration: 0.22s;
+    transition-timing-function: ease-out-cubic;
+}
+.ov-coach-wrap { position: relative; }
+.ov-coach, .ov-door {
+    flex-direction: row;
+    align-items: center;
+    height: 36px;
+    padding: 0 14px 0 6px;              /* + 1 px border: a 22 px keycap sits 7 px from the edge, like its top */
+    background-color: var(--surface-1);
+    border-width: 1px;
+    border-color: var(--border);
+    border-top-color: var(--border-top);
+    border-radius: 12px;
+}
+.ov-coach-row { flex-direction: row; align-items: center; }
+.ov-coach-row > .kbd.ov-kbd-next { margin-left: 3px; }
+.ov-coach-text { font-size: 12px; color: var(--text-2); margin-left: 8px; }
+.ov-coach-sep { font-size: 12px; color: var(--text-3); margin: 0 10px; }
+
+/* door prompt: x centre, top 60 % */
+.ov-door-host { position: absolute; left: 0; right: 0; top: 60%; align-items: center; }
+.ov-door-wrap { position: relative; }
+.ov-door-text {
+    margin-left: 8px;
+    font-size: 13px;
+    -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Medium.ttf");
+    color: var(--text-1);
+}
+.ov-door-text.ov-no-key { margin-left: 7px; }
+
+/* crosshair: 6 px text-1 dot at 70 % inside an opaque 1 px dark ring */
+.ov-crosshair {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 8px;
+    height: 8px;
+    margin-left: -4px;
+    margin-top: -4px;
+    border-radius: 4px;
+    border-width: 1px;
+    border-color: #0E0F12;
+}
+.ov-crosshair-dot {
+    flex-grow: 1;
+    border-radius: 3px;
+    background-color: var(--text-1);
+    opacity: 0.7;
+}
+
+/* clean-view restore pill (HUD layer): bottom 16, centred; surface-1, h 36, radius 12, padding 0 12, e1 */
+.ov-restore-host { position: absolute; left: 0; right: 0; bottom: 16px; align-items: center; }
+.ov-restore-wrap { position: relative; }
+.ov-restore {
+    flex-direction: row;
+    align-items: center;
+    height: 36px;
+    padding: 0 12px;
+    background-color: var(--surface-1);
+    border-width: 1px;
+    border-color: var(--border);
+    border-top-color: var(--border-top);
+    border-radius: 12px;
+    color: var(--text-2);
+    transition-property: background-color, color, scale;
+    transition-duration: 0.09s, 0.09s, 0.08s;
+    transition-timing-function: ease-out;
+}
+.ov-restore:hover { background-color: var(--hover-1); color: var(--text-1); }
+.ov-restore:active { background-color: var(--press); scale: 0.97 0.97; }
+.ov-restore-text {
+    margin-left: 8px;
+    font-size: 13px;
+    -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Medium.ttf");
+    color: var(--text-1);
+}
+.ov-restore > .kbd { margin-left: 8px; }
+
+/* empty-site card: centre, w 440, surface-2, radius 16, padding 24, e2 */
+.ov-empty-host { position: absolute; left: 0; top: 0; right: 0; bottom: 0; align-items: center; justify-content: center; }
+.ov-empty-wrap { position: relative; }
+.ov-empty {
+    width: 440px;
+    padding: 24px;
+    background-color: var(--surface-2);
+    border-width: 1px;
+    border-color: var(--border);
+    border-top-color: var(--border-top);
+    border-radius: 16px;
+}
+.ov-empty-tile {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background-color: var(--ai-soft);
+    color: var(--ai);
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+.ov-empty-title { color: var(--text-1); }
+.ov-empty-text { margin-top: 6px; font-size: 14px; color: var(--text-2); white-space: normal; }
+.ov-empty-prompt {
+    margin-top: 20px;
+    padding: 12px 8px 8px 14px;
+    background-color: var(--field);
+    border-width: 1px;
+    border-color: var(--border);
+    border-radius: 8px;
+}
+.ov-empty-prompt-text { margin-right: 6px; font-size: 14px; color: var(--text-1); white-space: normal; }
+.ov-empty-prompt-foot { flex-direction: row; justify-content: flex-end; margin-top: 6px; }
+.ov-empty-copy { color: var(--text-2); }
+.ov-empty-copy:hover { color: var(--text-1); }
+.ov-empty-foot { flex-direction: row; align-items: center; justify-content: flex-end; min-height: 36px; margin-top: 20px; }
+.ov-empty-status { flex-direction: row; align-items: center; flex-grow: 1; }
+.ov-empty-status-text {
+    margin-left: 10px;
+    font-size: 13px;
+    -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Medium.ttf");
+    color: var(--text-2);
+}
+
+/* FPS: left 16, bottom 16, Micro text-3 on a small chip (legible over a bright sky) */
+.ov-fps {
+    position: absolute;
+    left: 16px;
+    bottom: 16px;
+    height: 22px;
+    padding: 0 8px;
+    justify-content: center;
+    border-radius: 8px;
+    background-color: var(--surface-1);
+    border-width: 1px;
+    border-color: var(--border);
+}
+.ov-fps-text {
+    min-width: 40px;
+    font-size: 11px;
+    letter-spacing: 0.2px;
+    -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Medium.ttf");
+    color: var(--text-3);
+    -unity-text-align: middle-center;
+}
+
+/* ================================================================== veil (§3.7) */
+.veil-root {
+    background-color: var(--bg-app);
+    opacity: 1;
+    transition-property: opacity;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-out;
+}
+.veil-root.veil-out { opacity: 0; }
+.veil-root.veil-instant { transition-duration: 0s; }
+
+.veil-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    -unity-background-scale-mode: scale-and-crop;
+    -unity-background-image-tint-color: #464951;
+}
+.veil-grid {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    --veil-bg: #0C0D10;
+    --veil-line: #14151A;
+    --veil-line-major: #1A1C21;
+    --veil-plot: #2C2F37;
+    --veil-stake: #4A4E56;
+}
+
+.veil-center { position: absolute; left: 0; top: 0; right: 0; bottom: 0; align-items: center; justify-content: center; }
+.veil-col { width: 360px; align-items: center; }
+.veil-mark {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    background-color: var(--accent);
+    color: #FFFFFF;
+    align-items: center;
+    justify-content: center;
+}
+.veil-name {
+    max-width: 360px;
+    font-size: 20px;
+    letter-spacing: -0.3px;
+    -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-SemiBold.ttf");
+    color: var(--text-1);
+    -unity-text-align: middle-center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.veil-status-row { flex-direction: row; align-items: center; justify-content: center; height: 18px; margin-top: 8px; }
+.veil-status, .veil-pct {
+    font-size: 13px;
+    -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Medium.ttf");
+    color: var(--text-2);
+}
+.veil-pct { min-width: 36px; margin-left: 4px; -unity-text-align: middle-left; }
+.veil-bar {
+    width: 240px;
+    height: 3px;
+    margin-top: 16px;
+    border-radius: 2px;
+    background-color: var(--press);
+    overflow: hidden;
+}
+.veil-fill {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--text-1);
+    transform-origin: 0% 50%;
+    scale: 0 1;
+}
+.veil-seg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 30%;
+    border-radius: 2px;
+    background-color: var(--text-1);
+}
+.veil-skip {
+    margin-top: 24px;
+    opacity: 0;
+    transition-property: opacity, background-color, scale;
+    transition-duration: 0.16s, 0.09s, 0.08s;
+    transition-timing-function: ease-out;
+}
+.veil-skip.veil-on { opacity: 1; }
+.veil-home { position: absolute; left: 16px; top: 16px; }
+.veil-home.veil-pressed { background-color: var(--press); }

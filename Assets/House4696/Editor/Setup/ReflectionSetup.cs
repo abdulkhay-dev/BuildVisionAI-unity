@@ -26,6 +26,34 @@ namespace House4696.Setup
             if (gardenProbe != null) gardenProbe.cullingMask = ~(1 << layer);
         }
 
+        /// <summary>
+        /// Realtime reflection probes on every quality level. The app captures its probes from script; with the option
+        /// off (the PC level had it off) they are never rendered and glossy surfaces reflect the sky. The player also
+        /// switches it on at start (<c>ReflectionCapture.EnableRealtimeProbes</c>); this makes it stick for the editor.
+        /// </summary>
+        [MenuItem("House 46-96/App/Enable realtime reflection probes", priority = 48)]
+        public static void EnableRealtimeProbes()
+        {
+            var assets = AssetDatabase.LoadAllAssetsAtPath("ProjectSettings/QualitySettings.asset");
+            if (assets == null || assets.Length == 0) { Debug.LogError("[ReflectionSetup] QualitySettings.asset not found"); return; }
+            var qs = new SerializedObject(assets[0]);
+            var levels = qs.FindProperty("m_QualitySettings");
+            int changed = 0;
+            for (int i = 0; levels != null && i < levels.arraySize; i++)
+            {
+                var p = levels.GetArrayElementAtIndex(i).FindPropertyRelative("realtimeReflectionProbes");
+                if (p == null) continue;
+                if (p.propertyType == SerializedPropertyType.Boolean)
+                {
+                    if (!p.boolValue) { p.boolValue = true; changed++; }
+                }
+                else if (p.intValue == 0) { p.intValue = 1; changed++; }
+            }
+            qs.ApplyModifiedPropertiesWithoutUndo();
+            AssetDatabase.SaveAssets();
+            Debug.Log($"[ReflectionSetup] realtime reflection probes on ({changed} quality level(s) changed)");
+        }
+
         static int EnsureLayer(string name)
         {
             int existing = LayerMask.NameToLayer(name);

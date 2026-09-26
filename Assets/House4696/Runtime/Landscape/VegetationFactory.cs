@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using House4696.Core;
 using UnityEngine;
 
@@ -8,45 +9,67 @@ namespace House4696.Landscape
     /// Procedural plant meshes built from alpha-cutout cards and thin strips. Foliage cards use
     /// "spherical" normals (pointing away from the crown centre) so crowns shade as soft volumes
     /// instead of flat planes.
+    /// Trees take a <c>detail</c> level: 0 is the full crown, 1 the LOD1 crown — the same random stream with every
+    /// n-th element kept and widened (<see cref="GardenPerf"/>), so both levels share their silhouette.
     /// </summary>
     public sealed class VegetationFactory
     {
         readonly MaterialLibrary _m;
         public VegetationFactory(MaterialLibrary m) { _m = m; }
 
+        /// <summary>A mesh builder with the vegetation vertex options (<see cref="GardenPerf.IndexedVegetation"/>, <see cref="GardenPerf.CompactVertices"/>).</summary>
+        public MeshBuilder NewBuilder() => new MeshBuilder { Weld = GardenPerf.IndexedVegetation, Compact = GardenPerf.CompactVertices };
+
         // ------------------------------------------------------------------ Norway spruce
-        public MeshBuilder Spruce(float height, int seed)
+        /// <param name="detail">0 = full crown; 1 = LOD1 (every <see cref="GardenPerf.Lod1WhorlStep"/>-th whorl, part of its branches, wider cards, no fillers).</param>
+        public MeshBuilder Spruce(float height, int seed, int detail = 0)
         {
-            var mb = new MeshBuilder();
+            var mb = NewBuilder();
             var rng = new Rng(seed);
+            bool low = detail > 0;
             float H = height;
             float R = H * rng.Range(0.19f, 0.23f);
             float baseR = 0.015f * H + 0.06f;
             float crownBase = H * rng.Range(0.03f, 0.09f);
             float lean = rng.Range(-0.01f, 0.01f);
 
-            Trunk(mb, Vector3.zero, H, baseR, 0.03f, 10, _m.Bark, lean);
+            Trunk(mb, Vector3.zero, H, baseR, 0.03f, low ? GardenPerf.Lod1TrunkSides : 10, _m.Bark, lean, 0f, low ? GardenPerf.Lod1TrunkRings : 8);
 
+            // every random number is drawn in the same order at both levels; LOD1 only skips emitting
+            float wide = low ? GardenPerf.Lod1CardWidth : 1f;
+            int seg = low ? Mathf.Max(1, GardenPerf.Lod1CardSegments) : 3;
+            int whorlStep = Mathf.Max(1, GardenPerf.Lod1WhorlStep);
             float dz = 0.34f;
             int whorl = 0;
             for (float h = crownBase; h < H - 0.5f; h += dz * rng.Range(0.85f, 1.15f), whorl++)
             {
+                bool keepWhorl = !low || whorl % whorlStep == 0;
                 float t = (h - crownBase) / (H - crownBase);
                 float L = R * Mathf.Pow(1f - t, 0.9f) * rng.Range(0.82f, 1.08f) + 0.25f;
                 int n = rng.Range(8, 11);
+                int keepCount = Mathf.Clamp(Mathf.RoundToInt(n * GardenPerf.Lod1BranchKeep), 1, n);
                 float phase = whorl * 2.39996f;
                 for (int b = 0; b < n; b++)
                 {
                     float az = phase + b * Mathf.PI * 2f / n + rng.Range(-0.25f, 0.25f);
                     float elev = Mathf.Lerp(-16f, 24f, Mathf.Pow(t, 1.3f)) + rng.Range(-6f, 6f);
-                    BranchCard(mb, new Vector3(lean * h, h, 0), az, elev, L, L * rng.Range(0.62f, 0.78f), rng.Range(-28f, 28f),
-                        sag: 0.16f * L, H: H, rng: rng);
+                    float width = L * rng.Range(0.62f, 0.78f);
+                    float roll = rng.Range(-28f, 28f);
+                    // LOD1: keepCount of n branches, spread evenly around the stem
+                    bool keep = !low || (keepWhorl && (b + 1) * keepCount / n > b * keepCount / n);
+                    if (keep)
+                        BranchCard(mb, new Vector3(lean * h, h, 0), az, elev, L, width * wide, roll, 0.16f * L, H, seg);
                     // hanging branchlets: a steep card below the outer half of the branch
                     if (L > 0.6f)
-                        BranchCard(mb, new Vector3(lean * h, h - 0.05f, 0), az + rng.Range(-0.15f, 0.15f), elev - rng.Range(28f, 45f),
-                            L * 0.85f, L * 0.55f, rng.Range(70f, 110f), sag: 0.1f * L, H: H, rng: rng);
+                    {
+                        float az2 = az + rng.Range(-0.15f, 0.15f);
+                        float elev2 = elev - rng.Range(28f, 45f);
+                        float roll2 = rng.Range(70f, 110f);
+                        if (keep)
+                            BranchCard(mb, new Vector3(lean * h, h - 0.05f, 0), az2, elev2, L * 0.85f, L * 0.55f * wide, roll2, 0.1f * L, H, seg);
+                    }
                 }
-                // filler sprays between whorls
+                // filler sprays between whorls (LOD0 only)
                 if (rng.Value() < 0.8f)
                 {
                     int f = rng.Range(2, 5);
@@ -54,8 +77,10 @@ namespace House4696.Landscape
                     {
                         float az = rng.Range(0, Mathf.PI * 2);
                         float hh = h + dz * 0.5f;
-                        BranchCard(mb, new Vector3(lean * hh, hh, 0), az, rng.Range(-30f, 10f), L * 0.7f, L * 0.45f, rng.Range(-60f, 60f),
-                            sag: 0.2f * L, H: H, rng: rng);
+                        float elev = rng.Range(-30f, 10f);
+                        float roll = rng.Range(-60f, 60f);
+                        if (!low)
+                            BranchCard(mb, new Vector3(lean * hh, hh, 0), az, elev, L * 0.7f, L * 0.45f, roll, 0.2f * L, H, seg);
                     }
                 }
             }
@@ -71,13 +96,12 @@ namespace House4696.Landscape
         }
 
         void BranchCard(MeshBuilder mb, Vector3 origin, float azimuth, float elevDeg, float length, float width, float rollDeg,
-                        float sag, float H, Rng rng)
+                        float sag, float H, int seg)
         {
             Vector3 dir = new Vector3(Mathf.Cos(azimuth), 0, Mathf.Sin(azimuth));
             Vector3 fwd = Quaternion.AngleAxis(-elevDeg, Vector3.Cross(Vector3.up, dir)) * dir;
             Vector3 side = Vector3.Cross(Vector3.up, dir).normalized;
             side = Quaternion.AngleAxis(rollDeg, fwd) * side;
-            const int seg = 3;
             var centre = new Vector3(origin.x, Mathf.Max(origin.y * 0.9f, H * 0.35f), origin.z);
             Vector3 prevL = Vector3.zero, prevR = Vector3.zero; float prevV = 0;
             for (int s = 0; s <= seg; s++)
@@ -111,16 +135,42 @@ namespace House4696.Landscape
             mb.Triangle(a, c, b, na, nc, nb, new Vector2(0, 0), new Vector2(1, vMax), new Vector2(1, 0), m);
         }
 
-        void Trunk(MeshBuilder mb, Vector3 basePos, float height, float r0, float r1, int sides, Material m, float lean, float bend = 0f)
+        void Trunk(MeshBuilder mb, Vector3 basePos, float height, float r0, float r1, int sides, Material m, float lean, float bend = 0f,
+                   int rings = 8)
         {
-            const int rings = 8;
+            rings = Mathf.Max(1, rings);
+            sides = Mathf.Max(3, sides);
+            Vector3 Centre(float t, float y) =>
+                basePos + new Vector3(lean * y + bend * Mathf.Sin(t * Mathf.PI), y, bend * 0.4f * Mathf.Sin(t * 2.2f));
+            if (mb.Weld && m != null)
+            {
+                // indexed grid: (sides + 1) × (rings + 1) points, the u seam duplicated
+                var idx = new int[sides + 1, rings + 1];
+                for (int k = 0; k <= rings; k++)
+                {
+                    float t = k / (float)rings, y = t * height, rad = Mathf.Lerp(r0, r1, t);
+                    Vector3 c = Centre(t, y);
+                    for (int i = 0; i <= sides; i++)
+                    {
+                        float a = i * Mathf.PI * 2 / sides;
+                        Vector3 d = new Vector3(Mathf.Cos(a), 0, Mathf.Sin(a));
+                        idx[i, k] = mb.V(c + d * rad, d, new Vector2(i / (float)sides, y));
+                    }
+                }
+                for (int k = 0; k < rings; k++)
+                for (int i = 0; i < sides; i++)
+                {
+                    mb.Tri(idx[i, k], idx[i, k + 1], idx[i + 1, k + 1], m);
+                    mb.Tri(idx[i, k], idx[i + 1, k + 1], idx[i + 1, k], m);
+                }
+                return;
+            }
             for (int k = 0; k < rings; k++)
             {
                 float t0 = k / (float)rings, t1 = (k + 1) / (float)rings;
                 float y0 = t0 * height, y1 = t1 * height;
                 float ra = Mathf.Lerp(r0, r1, t0), rb = Mathf.Lerp(r0, r1, t1);
-                Vector3 c0 = basePos + new Vector3(lean * y0 + bend * Mathf.Sin(t0 * Mathf.PI), y0, bend * 0.4f * Mathf.Sin(t0 * 2.2f));
-                Vector3 c1 = basePos + new Vector3(lean * y1 + bend * Mathf.Sin(t1 * Mathf.PI), y1, bend * 0.4f * Mathf.Sin(t1 * 2.2f));
+                Vector3 c0 = Centre(t0, y0), c1 = Centre(t1, y1);
                 for (int i = 0; i < sides; i++)
                 {
                     float a0 = i * Mathf.PI * 2 / sides, a1 = (i + 1) * Mathf.PI * 2 / sides;
@@ -133,13 +183,19 @@ namespace House4696.Landscape
         }
 
         // ------------------------------------------------------------------ birch
-        public MeshBuilder Birch(float height, int seed)
+        /// <param name="detail">0 = full crown; 1 = LOD1 (every <see cref="GardenPerf.Lod1LeafStep"/>-th leaf clump, enlarged; thinner trunk and limbs).</param>
+        public MeshBuilder Birch(float height, int seed, int detail = 0)
         {
-            var mb = new MeshBuilder();
+            var mb = NewBuilder();
             var rng = new Rng(seed);
+            bool low = detail > 0;
+            int leafStep = low ? Mathf.Max(1, GardenPerf.Lod1LeafStep) : 1;
+            float leafScale = low ? GardenPerf.Lod1LeafScale : 1f;
+            int leaf = 0;
             float H = height;
             float bend = rng.Range(-0.4f, 0.4f);
-            Trunk(mb, Vector3.zero, H * 0.92f, 0.012f * H + 0.04f, 0.035f, 9, _m.BirchBark, rng.Range(-0.015f, 0.015f), bend);
+            Trunk(mb, Vector3.zero, H * 0.92f, 0.012f * H + 0.04f, 0.035f, low ? GardenPerf.Lod1TrunkSides : 9, _m.BirchBark,
+                rng.Range(-0.015f, 0.015f), bend, low ? GardenPerf.Lod1TrunkRings : 8);
             Vector3 crownC = new Vector3(bend * 0.5f, H * 0.66f, 0);
             int branches = rng.Range(7, 11);
             for (int b = 0; b < branches; b++)
@@ -149,29 +205,31 @@ namespace House4696.Landscape
                 Vector3 dir = new Vector3(Mathf.Cos(az), rng.Range(0.25f, 0.7f), Mathf.Sin(az)).normalized;
                 float len = H * rng.Range(0.2f, 0.34f) * (1.15f - h / H);
                 Vector3 p0 = new Vector3(bend * Mathf.Sin(h / H * Mathf.PI), h, 0);
-                Limb(mb, p0, p0 + dir * len, 0.035f, 0.012f, _m.BirchBark);
+                Limb(mb, p0, p0 + dir * len, 0.035f, 0.012f, _m.BirchBark, low ? GardenPerf.Lod1LimbSides : 5);
                 int clusters = Mathf.Max(6, Mathf.RoundToInt(len * 16));
                 for (int c = 0; c < clusters; c++)
                 {
                     Vector3 p = Vector3.Lerp(p0, p0 + dir * len, rng.Range(0.3f, 1.05f)) + (Vector3)rng.InsideUnitCircle() * 0.4f;
-                    LeafClump(mb, p, rng.Range(0.55f, 0.95f), _m.BirchLeaves, crownC, rng);
+                    float size = rng.Range(0.55f, 0.95f);
+                    LeafClump(mb, p, size * leafScale, _m.BirchLeaves, crownC, rng, leaf++ % leafStep == 0);
                 }
             }
             for (int c = 0; c < 140; c++)
             {
                 Vector3 p = crownC + Vector3.Scale(rng.InsideUnitSphere(), new Vector3(H * 0.25f, H * 0.3f, H * 0.25f));
                 p.x += rng.Range(-0.2f, 0.2f);
-                LeafClump(mb, p, rng.Range(0.6f, 1.0f), _m.BirchLeaves, crownC, rng);
+                float size = rng.Range(0.6f, 1.0f);
+                LeafClump(mb, p, size * leafScale, _m.BirchLeaves, crownC, rng, leaf++ % leafStep == 0);
             }
             return mb;
         }
 
-        void Limb(MeshBuilder mb, Vector3 a, Vector3 b, float r0, float r1, Material m)
+        void Limb(MeshBuilder mb, Vector3 a, Vector3 b, float r0, float r1, Material m, int sides = 5)
         {
             Vector3 axis = (b - a).normalized;
             Vector3 u = Vector3.Cross(axis, Vector3.up).sqrMagnitude < 1e-4f ? Vector3.right : Vector3.Cross(axis, Vector3.up).normalized;
             Vector3 v = Vector3.Cross(axis, u);
-            const int sides = 5;
+            sides = Mathf.Max(3, sides);
             float len = (b - a).magnitude;
             for (int i = 0; i < sides; i++)
             {
@@ -182,23 +240,31 @@ namespace House4696.Landscape
             }
         }
 
-        /// <summary>Three crossed quads of a leaf-cluster texture.</summary>
-        void LeafClump(MeshBuilder mb, Vector3 p, float size, Material m, Vector3 centre, Rng rng)
+        /// <summary>Three crossed quads of a leaf-cluster texture. <paramref name="emit"/> = false draws the same random numbers but adds nothing (LOD1 decimation).</summary>
+        void LeafClump(MeshBuilder mb, Vector3 p, float size, Material m, Vector3 centre, Rng rng, bool emit = true)
         {
             for (int k = 0; k < 3; k++)
             {
                 var q = Quaternion.Euler(rng.Range(-40f, 40f), rng.Range(0f, 360f), rng.Range(-40f, 40f));
+                if (!emit) continue;
                 Vector3 r = q * Vector3.right * (size * 0.5f), up = q * Vector3.up * (size * 0.5f);
                 Card(mb, p - r - up, p + r - up, p + r + up, p - r + up, m, centre, 1f);
             }
         }
 
         // ------------------------------------------------------------------ generic broadleaf / big shrub
-        public MeshBuilder BroadleafTree(float height, float radius, int seed, bool trunk = true)
+        /// <param name="detail">0 = full crown; 1 = LOD1 (every <see cref="GardenPerf.Lod1LeafStep"/>-th leaf clump, enlarged; thinner trunk).</param>
+        public MeshBuilder BroadleafTree(float height, float radius, int seed, bool trunk = true, int detail = 0)
         {
-            var mb = new MeshBuilder();
+            var mb = NewBuilder();
             var rng = new Rng(seed);
-            if (trunk) Trunk(mb, Vector3.zero, height * 0.55f, 0.02f * height + 0.05f, 0.05f, 8, _m.Bark, rng.Range(-0.02f, 0.02f));
+            bool low = detail > 0;
+            int leafStep = low ? Mathf.Max(1, GardenPerf.Lod1LeafStep) : 1;
+            float leafScale = low ? GardenPerf.Lod1LeafScale : 1f;
+            int leaf = 0;
+            if (trunk)
+                Trunk(mb, Vector3.zero, height * 0.55f, 0.02f * height + 0.05f, 0.05f, low ? GardenPerf.Lod1TrunkSides : 8, _m.Bark,
+                    rng.Range(-0.02f, 0.02f), 0f, low ? GardenPerf.Lod1TrunkRings : 8);
             Vector3 c = new Vector3(0, height - radius * 0.95f, 0);
             int n = Mathf.RoundToInt(radius * radius * 22f) + 20;
             for (int i = 0; i < n; i++)
@@ -207,7 +273,8 @@ namespace House4696.Landscape
                 d.y = d.y * 0.85f;
                 Vector3 p = c + Vector3.Scale(d, new Vector3(radius, radius * 1.05f, radius)) * rng.Range(0.55f, 1.0f);
                 if (p.y < 0.2f) continue;
-                LeafClump(mb, p, rng.Range(0.9f, 1.5f), _m.DeciduousLeaves, c, rng);
+                float size = rng.Range(0.9f, 1.5f);
+                LeafClump(mb, p, size * leafScale, _m.DeciduousLeaves, c, rng, leaf++ % leafStep == 0);
             }
             return mb;
         }
@@ -216,7 +283,7 @@ namespace House4696.Landscape
         /// <summary>Bumpy needle-textured mound covered with small needle tufts (reads as a dense dwarf pine).</summary>
         public MeshBuilder RoundConifer(float radius, float height, int seed)
         {
-            var mb = new MeshBuilder();
+            var mb = NewBuilder();
             var rng = new Rng(seed);
             Vector3 c = new Vector3(0, height * 0.42f, 0);
             Vector3 r = new Vector3(radius, height * 0.58f, radius);
@@ -230,18 +297,42 @@ namespace House4696.Landscape
                 return p;
             }
             const int seg = 30, rings = 14;
-            for (int j = 0; j < rings; j++)
+            Vector3 D(float a, float t) => new Vector3(Mathf.Cos(a) * Mathf.Cos(t), Mathf.Sin(t), Mathf.Sin(a) * Mathf.Cos(t));
+            Vector2 U(Vector3 p) => new Vector2(p.x + p.z, p.y);
+            if (mb.Weld && _m.ConiferCore != null)
             {
-                float t0 = Mathf.PI * j / rings - Mathf.PI / 2, t1 = Mathf.PI * (j + 1) / rings - Mathf.PI / 2;
+                // indexed grid: every surface point once
+                var idx = new int[seg + 1, rings + 1];
+                for (int j = 0; j <= rings; j++)
+                {
+                    float t = Mathf.PI * j / rings - Mathf.PI / 2;
+                    for (int i = 0; i <= seg; i++)
+                    {
+                        float a = Mathf.PI * 2 * i / seg;
+                        Vector3 p = Surf(D(a, t), out var n);
+                        idx[i, j] = mb.V(p, n, U(p));
+                    }
+                }
+                for (int j = 0; j < rings; j++)
                 for (int i = 0; i < seg; i++)
                 {
-                    float a0 = Mathf.PI * 2 * i / seg, a1 = Mathf.PI * 2 * (i + 1) / seg;
-                    Vector3 D(float a, float t) => new Vector3(Mathf.Cos(a) * Mathf.Cos(t), Mathf.Sin(t), Mathf.Sin(a) * Mathf.Cos(t));
-                    Vector3 p00 = Surf(D(a0, t0), out var n00), p10 = Surf(D(a1, t0), out var n10);
-                    Vector3 p01 = Surf(D(a0, t1), out var n01), p11 = Surf(D(a1, t1), out var n11);
-                    Vector2 U(Vector3 p) => new Vector2(p.x + p.z, p.y);
-                    mb.Triangle(p00, p01, p11, n00, n01, n11, U(p00), U(p01), U(p11), _m.ConiferCore);
-                    mb.Triangle(p00, p11, p10, n00, n11, n10, U(p00), U(p11), U(p10), _m.ConiferCore);
+                    mb.Tri(idx[i, j], idx[i, j + 1], idx[i + 1, j + 1], _m.ConiferCore);
+                    mb.Tri(idx[i, j], idx[i + 1, j + 1], idx[i + 1, j], _m.ConiferCore);
+                }
+            }
+            else
+            {
+                for (int j = 0; j < rings; j++)
+                {
+                    float t0 = Mathf.PI * j / rings - Mathf.PI / 2, t1 = Mathf.PI * (j + 1) / rings - Mathf.PI / 2;
+                    for (int i = 0; i < seg; i++)
+                    {
+                        float a0 = Mathf.PI * 2 * i / seg, a1 = Mathf.PI * 2 * (i + 1) / seg;
+                        Vector3 p00 = Surf(D(a0, t0), out var n00), p10 = Surf(D(a1, t0), out var n10);
+                        Vector3 p01 = Surf(D(a0, t1), out var n01), p11 = Surf(D(a1, t1), out var n11);
+                        mb.Triangle(p00, p01, p11, n00, n01, n11, U(p00), U(p01), U(p11), _m.ConiferCore);
+                        mb.Triangle(p00, p11, p10, n00, n11, n10, U(p00), U(p11), U(p10), _m.ConiferCore);
+                    }
                 }
             }
             int count = Mathf.RoundToInt(radius * radius * 820f) + 90;
@@ -281,7 +372,7 @@ namespace House4696.Landscape
         public MeshBuilder GrassClump(float radius, float height, int blades, int variant, int plumes, float plumeHeight, int seed,
                                       float arch = 1f, float plumeSize = 0.32f)
         {
-            var mb = new MeshBuilder();
+            var mb = NewBuilder();
             var rng = new Rng(seed);
             for (int i = 0; i < blades; i++)
             {
@@ -346,15 +437,25 @@ namespace House4696.Landscape
         }
 
         // ------------------------------------------------------------------ clipped hedge (rounded, noise-displaced box)
-        public MeshBuilder Hedge(Vector3 size, float round, int seed, float cell = 0.05f)
+        public MeshBuilder Hedge(Vector3 size, float round, int seed, float cell = 0.05f) => HedgeMesh(size, round, seed, cell, false);
+
+        /// <summary>
+        /// ShadowsOnly stand-in of <see cref="Hedge"/> (same size, round and seed): <see cref="GardenPerf.HedgeProxyCell"/>
+        /// cells, only the large (3.1) noise octave, the surface <see cref="GardenPerf.HedgeProxyInset"/> inside the visible
+        /// one (no acne on the lit side), and exactly the visible hedge's tufts, so the ground shadow keeps its leafy fringe.
+        /// </summary>
+        public MeshBuilder HedgeShadow(Vector3 size, float round, int seed) =>
+            HedgeMesh(size, round, seed, Mathf.Max(0.02f, GardenPerf.HedgeProxyCell), true);
+
+        MeshBuilder HedgeMesh(Vector3 size, float round, int seed, float cell, bool shadowProxy)
         {
-            var mb = new MeshBuilder();
+            var mb = NewBuilder();
             Vector3 half = size * 0.5f;
             Vector3 inner = half - Vector3.one * round;
             inner.y = half.y - round;
             Vector3 centre = new Vector3(0, half.y, 0);
             int ox = seed % 1000;
-            Vector3 Surf(Vector3 p, out Vector3 nrm)
+            Vector3 Surf(Vector3 p, out Vector3 nrm, bool coarse)
             {
                 Vector3 local = p - centre;
                 Vector3 cl = new Vector3(Mathf.Clamp(local.x, -inner.x, inner.x), Mathf.Clamp(local.y, -half.y, inner.y), Mathf.Clamp(local.z, -inner.z, inner.z));
@@ -362,9 +463,12 @@ namespace House4696.Landscape
                 if (d.sqrMagnitude < 1e-8f) { nrm = Vector3.up; return p; }
                 nrm = d.normalized;
                 Vector3 s = centre + cl + nrm * round;
-                float n = Noise.Fbm3(s * 3.1f + new Vector3(ox, 0, 0), 4, seed) * 0.045f + Noise.Fbm3(s * 13f, 3, seed + 1) * 0.02f;
+                float big = Noise.Fbm3(s * 3.1f + new Vector3(ox, 0, 0), 4, seed) * 0.045f;
+                if (coarse) return s + nrm * (big - GardenPerf.HedgeProxyInset);
+                float n = big + Noise.Fbm3(s * 13f, 3, seed + 1) * 0.02f;
                 return s + nrm * n;
             }
+            Vector2 Uv(Vector3 p) => new Vector2(p.x + p.z * 0.7f, p.y + p.z * 0.3f);
             void Face(Vector3 o, Vector3 ua, Vector3 va, float lu, float lv)
             {
                 int nu = Mathf.Max(2, Mathf.CeilToInt(lu / cell)), nv = Mathf.Max(2, Mathf.CeilToInt(lv / cell));
@@ -372,12 +476,26 @@ namespace House4696.Landscape
                 var nrms = new Vector3[nu + 1, nv + 1];
                 for (int i = 0; i <= nu; i++)
                 for (int j = 0; j <= nv; j++)
-                    grid[i, j] = Surf(o + ua * (lu * i / nu) + va * (lv * j / nv), out nrms[i, j]);
+                    grid[i, j] = Surf(o + ua * (lu * i / nu) + va * (lv * j / nv), out nrms[i, j], shadowProxy);
+                if (mb.Weld && _m.Hedge != null)
+                {
+                    // indexed grid: every point once
+                    var idx = new int[nu + 1, nv + 1];
+                    for (int i = 0; i <= nu; i++)
+                    for (int j = 0; j <= nv; j++)
+                        idx[i, j] = mb.V(grid[i, j], nrms[i, j], Uv(grid[i, j]));
+                    for (int i = 0; i < nu; i++)
+                    for (int j = 0; j < nv; j++)
+                    {
+                        mb.Tri(idx[i, j], idx[i, j + 1], idx[i + 1, j + 1], _m.Hedge);
+                        mb.Tri(idx[i, j], idx[i + 1, j + 1], idx[i + 1, j], _m.Hedge);
+                    }
+                    return;
+                }
                 for (int i = 0; i < nu; i++)
                 for (int j = 0; j < nv; j++)
                 {
                     Vector3 a = grid[i, j], b = grid[i + 1, j], c = grid[i + 1, j + 1], d = grid[i, j + 1];
-                    Vector2 Uv(Vector3 p) => new Vector2(p.x + p.z * 0.7f, p.y + p.z * 0.3f);
                     mb.Triangle(a, d, c, nrms[i, j], nrms[i, j + 1], nrms[i + 1, j + 1], Uv(a), Uv(d), Uv(c), _m.Hedge);
                     mb.Triangle(a, c, b, nrms[i, j], nrms[i + 1, j + 1], nrms[i + 1, j], Uv(a), Uv(c), Uv(b), _m.Hedge);
                 }
@@ -393,14 +511,14 @@ namespace House4696.Landscape
                 (new Vector3(-half.x, Y, -half.z), Vector3.right, Vector3.forward, X, Z),    // top
             };
             foreach (var f in faces) Face(f.o, f.ua, f.va, f.lu, f.lv);
-            // leafy tufts break the clipped silhouette
+            // leafy tufts break the clipped silhouette (identical in the shadow proxy: they sit on the full-detail surface)
             var rng = new Rng(seed * 7 + 1);
             foreach (var f in faces)
             {
                 int count = Mathf.RoundToInt(f.lu * f.lv * 34f);
                 for (int k = 0; k < count; k++)
                 {
-                    Vector3 p = Surf(f.o + f.ua * (f.lu * rng.Value()) + f.va * (f.lv * rng.Range(0.04f, 1f)), out var nrm);
+                    Vector3 p = Surf(f.o + f.ua * (f.lu * rng.Value()) + f.va * (f.lv * rng.Range(0.04f, 1f)), out var nrm, false);
                     float sz = rng.Range(0.12f, 0.19f);
                     Vector3 dirOut = (nrm + rng.OnUnitSphere() * 0.4f).normalized;
                     Vector3 tang = Vector3.Cross(dirOut, rng.OnUnitSphere()).normalized;
@@ -412,10 +530,21 @@ namespace House4696.Landscape
         }
 
         // ------------------------------------------------------------------ lawn blades near the camera
-        public MeshBuilder LawnBlades(Func<Vector2, float> density, Rect area, int seed, float maxBlades)
+        /// <summary>One lawn blade: generated once, emitted into any chunk or LOD level.</summary>
+        public struct LawnBlade
         {
-            var mb = new MeshBuilder();
+            public Vector3 Root, Outward;
+            public float Elev, Height, Width, U;
+            /// <summary>Uniform [0, 1) from a separate stream: LOD levels keep the blades with Keep below their share.</summary>
+            public float Keep;
+        }
+
+        /// <summary>The blades of <see cref="LawnBlades"/> as data (same random stream, same blades).</summary>
+        public List<LawnBlade> LawnBladeList(Func<Vector2, float> density, Rect area, int seed, float maxBlades)
+        {
+            var list = new List<LawnBlade>();
             var rng = new Rng(seed);
+            var keep = new Rng(seed * 7919 + 17);
             int count = 0;
             float areaM2 = area.width * area.height;
             int tries = Mathf.RoundToInt(areaM2 * 1600);
@@ -429,9 +558,22 @@ namespace House4696.Landscape
                 float h = rng.Range(0.022f, 0.052f);
                 int k = rng.Value() < 0.12f ? 6 : rng.Range(1, 6);
                 float u = (k + 0.5f) / 8f;
-                Blade(mb, new Vector3(p.x, 0, p.y), outward, rng.Range(58f, 86f) * Mathf.Deg2Rad, h, rng.Range(0.003f, 0.005f), 1, 0.4f, u, _m.Blades);
+                float elev = rng.Range(58f, 86f) * Mathf.Deg2Rad;
+                float w = rng.Range(0.003f, 0.005f);
+                list.Add(new LawnBlade { Root = new Vector3(p.x, 0, p.y), Outward = outward, Elev = elev, Height = h, Width = w, U = u, Keep = keep.Value() });
                 count++;
             }
+            return list;
+        }
+
+        /// <summary>Adds one lawn blade; <paramref name="widen"/> scales its width (LOD1 blades are fewer and wider).</summary>
+        public void EmitBlade(MeshBuilder mb, LawnBlade b, float widen = 1f) =>
+            Blade(mb, b.Root, b.Outward, b.Elev, b.Height, b.Width * widen, 1, 0.4f, b.U, _m.Blades);
+
+        public MeshBuilder LawnBlades(Func<Vector2, float> density, Rect area, int seed, float maxBlades)
+        {
+            var mb = NewBuilder();
+            foreach (var b in LawnBladeList(density, area, seed, maxBlades)) EmitBlade(mb, b);
             return mb;
         }
     }

@@ -1,0 +1,2099 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f72174609401e4188866f5f94ba4f2f8, type: 3}
+  m_Name: ExternalCatalog
+  m_EditorClassIdentifier: Assembly-CSharp::House4696.Core.ExternalCatalog
+  Materials:
+  - Id: oak_planks
+    Name: "\u0414\u0443\u0431, \u0434\u043E\u0441\u043A\u0430"
+    Category: floor
+    Material: {fileID: 2100000, guid: 8fa23ac44daad4fb19643903d1ad9c97, type: 2}
+    Neutral: 0
+  - Id: parquet_herringbone
+    Name: "\u041F\u0430\u0440\u043A\u0435\u0442 \u0451\u043B\u043E\u0447\u043A\u043E\u0439"
+    Category: floor
+    Material: {fileID: 2100000, guid: b2d19606ccfe74e4c8502b2fc68d7493, type: 2}
+    Neutral: 0
+  - Id: parquet_diagonal
+    Name: "\u041F\u0430\u0440\u043A\u0435\u0442 \u0434\u0438\u0430\u0433\u043E\u043D\u0430\u043B\u044C\u043D\u044B\u0439"
+    Category: floor
+    Material: {fileID: 2100000, guid: a976e91aba432481db9f9bf83582d20e, type: 2}
+    Neutral: 0
+  - Id: parquet_block
+    Name: "\u0428\u0442\u0443\u0447\u043D\u044B\u0439 \u043F\u0430\u0440\u043A\u0435\u0442, \u0442\u0451\u043C\u043D\u044B\u0439"
+    Category: floor
+    Material: {fileID: 2100000, guid: d5554a6d7201c49ccac25c4e13af56c5, type: 2}
+    Neutral: 0
+  - Id: parquet_strips_light
+    Name: "\u041F\u0430\u0440\u043A\u0435\u0442 \u0441\u0432\u0435\u0442\u043B\u044B\u0439, \u043F\u043E\u043B\u043E\u0441\u044B"
+    Category: floor
+    Material: {fileID: 2100000, guid: e12df59f4b2c644bcb0895bb00d01ee1, type: 2}
+    Neutral: 0
+  - Id: floor_boards_mixed
+    Name: "\u0414\u043E\u0441\u043A\u0430 \u0441\u0432\u0435\u0442\u043B\u0430\u044F, \u0440\u0430\u0437\u043D\u043E\u0442\u043E\u043D"
+    Category: floor
+    Material: {fileID: 2100000, guid: 1ce181f653cd4400b8439ebb70e3ecb9, type: 2}
+    Neutral: 0
+  - Id: floor_boards_dark
+    Name: "\u0414\u043E\u0441\u043A\u0430 \u0442\u0451\u043C\u043D\u0430\u044F \u043B\u0430\u043A\u0438\u0440\u043E\u0432\u0430\u043D\u043D\u0430\u044F"
+    Category: floor
+    Material: {fileID: 2100000, guid: 292a404821c854e12adfdea3695980b3, type: 2}
+    Neutral: 0
+  - Id: floor_boards_medium
+    Name: "\u0414\u043E\u0441\u043A\u0430, \u0441\u0440\u0435\u0434\u043D\u0438\u0439 \u0442\u043E\u043D"
+    Category: floor
+    Material: {fileID: 2100000, guid: 3184f3e3bd9ae44928d2e204477006c4, type: 2}
+    Neutral: 0
+  - Id: laminate_light
+    Name: "\u041B\u0430\u043C\u0438\u043D\u0430\u0442 \u0441\u0432\u0435\u0442\u043B\u044B\u0439 \u0434\u0443\u0431"
+    Category: floor
+    Material: {fileID: 2100000, guid: 755e94a161fa3440790edb14cca1dde0, type: 2}
+    Neutral: 0
+  - Id: laminate_warm
+    Name: "\u041B\u0430\u043C\u0438\u043D\u0430\u0442 \u0442\u0451\u043F\u043B\u044B\u0439"
+    Category: floor
+    Material: {fileID: 2100000, guid: ab75219c6c5ef43ae900191f15c33797, type: 2}
+    Neutral: 0
+  - Id: laminate_medium
+    Name: "\u041B\u0430\u043C\u0438\u043D\u0430\u0442 \u0441\u0440\u0435\u0434\u043D\u0438\u0439 \u0442\u043E\u043D"
+    Category: floor
+    Material: {fileID: 2100000, guid: f26de551bb3b04c42bb1b1418825eda6, type: 2}
+    Neutral: 0
+  - Id: concrete_polished
+    Name: "\u0411\u0435\u0442\u043E\u043D \u0448\u043B\u0438\u0444\u043E\u0432\u0430\u043D\u043D\u044B\u0439"
+    Category: floor
+    Material: {fileID: 2100000, guid: 4be109c91acfd49a48d95cad57ecb4c2, type: 2}
+    Neutral: 0
+  - Id: concrete_dark_smooth
+    Name: "\u041C\u0438\u043A\u0440\u043E\u0446\u0435\u043C\u0435\u043D\u0442 \u0442\u0451\u043C\u043D\u044B\u0439"
+    Category: floor
+    Material: {fileID: 2100000, guid: 1806c6ef9380c47bf9494ad35df91112, type: 2}
+    Neutral: 0
+  - Id: marble_beige
+    Name: "\u041C\u0440\u0430\u043C\u043E\u0440 \u0431\u0435\u0436\u0435\u0432\u044B\u0439, \u043F\u043B\u0438\u0442\u044B"
+    Category: tile
+    Material: {fileID: 2100000, guid: db4638a33f65749b5b648d2ceec8a30e, type: 2}
+    Neutral: 0
+  - Id: marble_checker
+    Name: "\u041C\u0440\u0430\u043C\u043E\u0440 \u0448\u0430\u0445\u043C\u0430\u0442\u043A\u043E\u0439"
+    Category: tile
+    Material: {fileID: 2100000, guid: 459587bbb313141089c426ff6946b2e4, type: 2}
+    Neutral: 0
+  - Id: marble_black_gold
+    Name: "\u041C\u0440\u0430\u043C\u043E\u0440 \u0447\u0451\u0440\u043D\u044B\u0439 \u0441 \u0437\u043E\u043B\u043E\u0442\u044B\u043C\u0438 \u043F\u0440\u043E\u0436\u0438\u043B\u043A\u0430\u043C\u0438"
+    Category: tile
+    Material: {fileID: 2100000, guid: 1e0dbbbceec9e4310849855bd68f02e0, type: 2}
+    Neutral: 0
+  - Id: porcelain_dark
+    Name: "\u041A\u0435\u0440\u0430\u043C\u043E\u0433\u0440\u0430\u043D\u0438\u0442 \u0442\u0451\u043C\u043D\u044B\u0439 \u043A\u0440\u0443\u043F\u043D\u044B\u0439"
+    Category: tile
+    Material: {fileID: 2100000, guid: 96f57a88bdd45498988a26028489b295, type: 2}
+    Neutral: 0
+  - Id: porcelain_grey
+    Name: "\u041A\u0435\u0440\u0430\u043C\u043E\u0433\u0440\u0430\u043D\u0438\u0442 \u0441\u0435\u0440\u044B\u0439"
+    Category: tile
+    Material: {fileID: 2100000, guid: 23d5c6b853e964ac994463e854de22ad, type: 2}
+    Neutral: 0
+  - Id: granite_dark
+    Name: "\u0413\u0440\u0430\u043D\u0438\u0442 \u0442\u0451\u043C\u043D\u044B\u0439"
+    Category: tile
+    Material: {fileID: 2100000, guid: eef0faf7059014554922c3ea15c18165, type: 2}
+    Neutral: 0
+  - Id: limestone_tiles
+    Name: "\u0418\u0437\u0432\u0435\u0441\u0442\u043D\u044F\u043A, \u043F\u043B\u0438\u0442\u044B"
+    Category: tile
+    Material: {fileID: 2100000, guid: e82da34f7f1ad44e8a1799e291b8bded, type: 2}
+    Neutral: 0
+  - Id: stone_tiles_beige
+    Name: "\u041A\u0430\u043C\u0435\u043D\u044C \u0431\u0435\u0436\u0435\u0432\u044B\u0439, \u043F\u043B\u0438\u0442\u043A\u0430"
+    Category: tile
+    Material: {fileID: 2100000, guid: 29f8aaf84ed034ab9845bbefc81144b2, type: 2}
+    Neutral: 0
+  - Id: travertine_tiles
+    Name: "\u0422\u0440\u0430\u0432\u0435\u0440\u0442\u0438\u043D, \u043F\u043B\u0438\u0442\u043A\u0430"
+    Category: tile
+    Material: {fileID: 2100000, guid: 687d97dd90b114a46a4607d844e23635, type: 2}
+    Neutral: 0
+  - Id: stone_polished_dark
+    Name: "\u041A\u0430\u043C\u0435\u043D\u044C \u043F\u043E\u043B\u0438\u0440\u043E\u0432\u0430\u043D\u043D\u044B\u0439 \u0442\u0451\u043C\u043D\u044B\u0439"
+    Category: tile
+    Material: {fileID: 2100000, guid: ca8dfbb0c42c547c88c90958546270f9, type: 2}
+    Neutral: 0
+  - Id: tiles_diagonal_cream
+    Name: "\u041F\u043B\u0438\u0442\u043A\u0430 \u043A\u0440\u0435\u043C\u043E\u0432\u0430\u044F \u043F\u043E \u0434\u0438\u0430\u0433\u043E\u043D\u0430\u043B\u0438"
+    Category: tile
+    Material: {fileID: 2100000, guid: b43852d3b4ef843d7b4ece7e4e1c34f6, type: 2}
+    Neutral: 0
+  - Id: tiles_glossy_brown
+    Name: "\u041F\u043B\u0438\u0442\u043A\u0430 \u0433\u043B\u044F\u043D\u0446\u0435\u0432\u0430\u044F \u043A\u043E\u0440\u0438\u0447\u043D\u0435\u0432\u0430\u044F"
+    Category: tile
+    Material: {fileID: 2100000, guid: fe30dfd2121a341a1b2207493b27bb46, type: 2}
+    Neutral: 0
+  - Id: tiles_bath_antislip
+    Name: "\u041F\u043B\u0438\u0442\u043A\u0430 \u043F\u0440\u043E\u0442\u0438\u0432\u043E\u0441\u043A\u043E\u043B\u044C\u0437\u044F\u0449\u0430\u044F"
+    Category: tile
+    Material: {fileID: 2100000, guid: 5a2ecb3fc487f446ba9702d35dc09983, type: 2}
+    Neutral: 0
+  - Id: tiles_subway_white
+    Name: "\u041F\u043B\u0438\u0442\u043A\u0430 \xAB\u043A\u0430\u0431\u0430\u043D\u0447\u0438\u043A\xBB \u0431\u0435\u043B\u0430\u044F"
+    Category: tile
+    Material: {fileID: 2100000, guid: 41193fae5f1c446e4a35ad11b04af778, type: 2}
+    Neutral: 0
+  - Id: tiles_mosaic_wall
+    Name: "\u041C\u043E\u0437\u0430\u0438\u043A\u0430 \u043D\u0430\u0441\u0442\u0435\u043D\u043D\u0430\u044F"
+    Category: tile
+    Material: {fileID: 2100000, guid: b84834cf364054e2286e62144eda34a3, type: 2}
+    Neutral: 0
+  - Id: mosaic_marble
+    Name: "\u041C\u043E\u0437\u0430\u0438\u043A\u0430 \u043C\u0440\u0430\u043C\u043E\u0440\u043D\u0430\u044F"
+    Category: tile
+    Material: {fileID: 2100000, guid: 116d5e71e480f4478afa53b49a03bbce, type: 2}
+    Neutral: 0
+  - Id: mosaic_dark
+    Name: "\u041C\u043E\u0437\u0430\u0438\u043A\u0430 \u0442\u0451\u043C\u043D\u0430\u044F"
+    Category: tile
+    Material: {fileID: 2100000, guid: 61282b8d827af4c9191e2446729206de, type: 2}
+    Neutral: 0
+  - Id: terrazzo
+    Name: "\u0422\u0435\u0440\u0440\u0430\u0446\u0446\u043E"
+    Category: tile
+    Material: {fileID: 2100000, guid: 63899e034ec0a49fe88ebf12c732ec08, type: 2}
+    Neutral: 0
+  - Id: terracotta_tiles
+    Name: "\u0422\u0435\u0440\u0440\u0430\u043A\u043E\u0442\u043E\u0432\u0430\u044F \u043F\u043B\u0438\u0442\u043A\u0430"
+    Category: tile
+    Material: {fileID: 2100000, guid: daa721c849ae745e0be03215682804c9, type: 2}
+    Neutral: 0
+  - Id: cotto_tiles
+    Name: "\u041F\u043B\u0438\u0442\u043A\u0430 \u043A\u043E\u0442\u0442\u043E \u0441\u0432\u0435\u0442\u043B\u0430\u044F"
+    Category: tile
+    Material: {fileID: 2100000, guid: 4565918ab8a7648f89df13edbf2f9318, type: 2}
+    Neutral: 0
+  - Id: plaster_white
+    Name: "\u0428\u0442\u0443\u043A\u0430\u0442\u0443\u0440\u043A\u0430 \u0431\u0435\u043B\u0430\u044F"
+    Category: wall
+    Material: {fileID: 2100000, guid: 7ec31a84c8a914e8e8f4f4e03451299d, type: 2}
+    Neutral: 0
+  - Id: plaster_beige
+    Name: "\u0428\u0442\u0443\u043A\u0430\u0442\u0443\u0440\u043A\u0430 \u0431\u0435\u0436\u0435\u0432\u0430\u044F"
+    Category: wall
+    Material: {fileID: 2100000, guid: 0d3cda150a364433498e1dc9c17dd627, type: 2}
+    Neutral: 0
+  - Id: plaster_sand
+    Name: "\u0428\u0442\u0443\u043A\u0430\u0442\u0443\u0440\u043A\u0430 \u043F\u0435\u0441\u043E\u0447\u043D\u0430\u044F"
+    Category: wall
+    Material: {fileID: 2100000, guid: 3480ccd09e4684cfe98ea5c805e9dc83, type: 2}
+    Neutral: 0
+  - Id: plaster_textured
+    Name: "\u0428\u0442\u0443\u043A\u0430\u0442\u0443\u0440\u043A\u0430 \u0444\u0430\u043A\u0442\u0443\u0440\u043D\u0430\u044F"
+    Category: wall
+    Material: {fileID: 2100000, guid: 1837669025160487bb59490db298874a, type: 2}
+    Neutral: 1
+  - Id: plaster_smooth
+    Name: "\u0428\u0442\u0443\u043A\u0430\u0442\u0443\u0440\u043A\u0430 \u0433\u043B\u0430\u0434\u043A\u0430\u044F"
+    Category: wall
+    Material: {fileID: 2100000, guid: 1292a19751c094d9d8a867f9ab11b08e, type: 2}
+    Neutral: 1
+  - Id: plaster_painted
+    Name: "\u041E\u043A\u0440\u0430\u0448\u0435\u043D\u043D\u0430\u044F \u0441\u0442\u0435\u043D\u0430"
+    Category: wall
+    Material: {fileID: 2100000, guid: 41b5ea91795364fd0a80de1f68b1452e, type: 2}
+    Neutral: 1
+  - Id: paint_smooth
+    Name: "\u041A\u0440\u0430\u0441\u043A\u0430 \u043F\u043E \u0433\u043B\u0430\u0434\u043A\u043E\u0439 \u0441\u0442\u0435\u043D\u0435"
+    Category: wall
+    Material: {fileID: 2100000, guid: f5985d596a1be4c3491c1ea010d82e03, type: 2}
+    Neutral: 1
+  - Id: microcement
+    Name: "\u041C\u0438\u043A\u0440\u043E\u0446\u0435\u043C\u0435\u043D\u0442"
+    Category: wall
+    Material: {fileID: 2100000, guid: 6937c006bcc0a4d6996ebf6fff1a617e, type: 2}
+    Neutral: 1
+  - Id: plaster_clay
+    Name: "\u0413\u043B\u0438\u043D\u044F\u043D\u0430\u044F \u0448\u0442\u0443\u043A\u0430\u0442\u0443\u0440\u043A\u0430"
+    Category: wall
+    Material: {fileID: 2100000, guid: 550414c417b434de2aac99de332a27bb, type: 2}
+    Neutral: 0
+  - Id: tadelakt
+    Name: "\u0414\u0435\u043A\u043E\u0440\u0430\u0442\u0438\u0432\u043D\u0430\u044F \u0448\u0442\u0443\u043A\u0430\u0442\u0443\u0440\u043A\u0430 (\u0442\u0430\u0434\u0435\u043B\u0430\u043A\u0442)"
+    Category: wall
+    Material: {fileID: 2100000, guid: 347a695eaa856415a9095f2d3b9022b9, type: 2}
+    Neutral: 0
+  - Id: concrete_board_formed
+    Name: "\u0411\u0435\u0442\u043E\u043D \u0441 \u0442\u0435\u043A\u0441\u0442\u0443\u0440\u043E\u0439 \u043E\u043F\u0430\u043B\u0443\u0431\u043A\u0438"
+    Category: wall
+    Material: {fileID: 2100000, guid: de97b172eb5504d3983dfac5c82cb423, type: 2}
+    Neutral: 0
+  - Id: concrete_smooth
+    Name: "\u0411\u0435\u0442\u043E\u043D \u0433\u043B\u0430\u0434\u043A\u0438\u0439 \u0441\u0432\u0435\u0442\u043B\u044B\u0439"
+    Category: wall
+    Material: {fileID: 2100000, guid: 29ae12cfdd1c14ed49711d038943f4fe, type: 2}
+    Neutral: 0
+  - Id: concrete_slab_joints
+    Name: "\u0411\u0435\u0442\u043E\u043D \u0430\u0440\u0445\u0438\u0442\u0435\u043A\u0442\u0443\u0440\u043D\u044B\u0439 \u0441\u043E \u0448\u0432\u0430\u043C\u0438"
+    Category: wall
+    Material: {fileID: 2100000, guid: 487c7285539a34e7fb56460d18f971a8, type: 2}
+    Neutral: 0
+  - Id: brick_painted
+    Name: "\u041A\u0438\u0440\u043F\u0438\u0447 \u043A\u0440\u0430\u0448\u0435\u043D\u044B\u0439"
+    Category: wall
+    Material: {fileID: 2100000, guid: 285f5ec49a4864346bab55b48c26638c, type: 2}
+    Neutral: 1
+  - Id: stone_cladding_light
+    Name: "\u041A\u0430\u043C\u0435\u043D\u043D\u0430\u044F \u043E\u0431\u043B\u0438\u0446\u043E\u0432\u043A\u0430 \u0441\u0432\u0435\u0442\u043B\u0430\u044F"
+    Category: wall
+    Material: {fileID: 2100000, guid: 7c205a27cbe124fd5b7040c9dfad442a, type: 2}
+    Neutral: 0
+  - Id: wood_panels_dark
+    Name: "\u0414\u0435\u0440\u0435\u0432\u044F\u043D\u043D\u044B\u0435 \u0441\u0442\u0435\u043D\u043E\u0432\u044B\u0435 \u043F\u0430\u043D\u0435\u043B\u0438"
+    Category: wall
+    Material: {fileID: 2100000, guid: 9e2db607a148943608416e19ed694497, type: 2}
+    Neutral: 0
+  - Id: bamboo_slats
+    Name: "\u0411\u0430\u043C\u0431\u0443\u043A\u043E\u0432\u044B\u0435 \u0440\u0435\u0439\u043A\u0438"
+    Category: wall
+    Material: {fileID: 2100000, guid: ba9fa417e3c1245c5a87ff2e14cd6127, type: 2}
+    Neutral: 0
+  - Id: velvet
+    Name: "\u0411\u0430\u0440\u0445\u0430\u0442"
+    Category: fabric
+    Material: {fileID: 2100000, guid: 70c33d0176ba842ecb89e90f081c48f4, type: 2}
+    Neutral: 1
+  - Id: linen_rough
+    Name: "\u041B\u0451\u043D"
+    Category: fabric
+    Material: {fileID: 2100000, guid: 8fe7890ea86a0478aa9a846baeccd7e9, type: 2}
+    Neutral: 1
+  - Id: wool_herringbone
+    Name: "\u0428\u0435\u0440\u0441\u0442\u044C \u0451\u043B\u043E\u0447\u043A\u043E\u0439"
+    Category: fabric
+    Material: {fileID: 2100000, guid: f576cdb0238c041259a5b6d0473860ab, type: 2}
+    Neutral: 1
+  - Id: boucle_teddy
+    Name: "\u0411\u0443\u043A\u043B\u0435"
+    Category: fabric
+    Material: {fileID: 2100000, guid: dbb7ea0ac0ffc4d5d9b3c2e9729c2816, type: 2}
+    Neutral: 1
+  - Id: suede
+    Name: "\u0417\u0430\u043C\u0448\u0430"
+    Category: fabric
+    Material: {fileID: 2100000, guid: c62984df574cc43f2bd7a7550a7f2c58, type: 2}
+    Neutral: 1
+  - Id: satin
+    Name: "\u0421\u0430\u0442\u0438\u043D, \u0448\u0451\u043B\u043A"
+    Category: fabric
+    Material: {fileID: 2100000, guid: 90a0c692f75ac419f870fd06eab22592, type: 2}
+    Neutral: 1
+  - Id: corduroy
+    Name: "\u0412\u0435\u043B\u044C\u0432\u0435\u0442"
+    Category: fabric
+    Material: {fileID: 2100000, guid: c05cc29795bba4a8e9227af1cfc8fded, type: 2}
+    Neutral: 1
+  - Id: fleece_knit
+    Name: "\u0422\u0440\u0438\u043A\u043E\u0442\u0430\u0436, \u0444\u043B\u0438\u0441"
+    Category: fabric
+    Material: {fileID: 2100000, guid: 51d558395a1e84a72891026b11cffa73, type: 2}
+    Neutral: 1
+  - Id: wool_felt
+    Name: "\u0421\u0443\u043A\u043D\u043E (\u043F\u043B\u043E\u0442\u043D\u0430\u044F \u0448\u0435\u0440\u0441\u0442\u044C)"
+    Category: fabric
+    Material: {fileID: 2100000, guid: dca1c38275e754b14a8fb868a3f364aa, type: 2}
+    Neutral: 1
+  - Id: cotton_jersey
+    Name: "\u0425\u043B\u043E\u043F\u043E\u043A \u0442\u0440\u0438\u043A\u043E\u0442\u0430\u0436\u043D\u044B\u0439"
+    Category: fabric
+    Material: {fileID: 2100000, guid: 9c3c382b1ea1d41f3a5a70c383a10ef0, type: 2}
+    Neutral: 1
+  - Id: cotton_poplin
+    Name: "\u0425\u043B\u043E\u043F\u043E\u043A \u0433\u043B\u0430\u0434\u043A\u0438\u0439"
+    Category: fabric
+    Material: {fileID: 2100000, guid: 037be2eb478c94953849f0edd3518838, type: 2}
+    Neutral: 1
+  - Id: cotton_waffle
+    Name: "\u0412\u0430\u0444\u0435\u043B\u044C\u043D\u044B\u0439 \u0445\u043B\u043E\u043F\u043E\u043A"
+    Category: fabric
+    Material: {fileID: 2100000, guid: bfba15452646e44fc84ebd09ecb4db54, type: 2}
+    Neutral: 1
+  - Id: terry
+    Name: "\u041C\u0430\u0445\u0440\u0430"
+    Category: fabric
+    Material: {fileID: 2100000, guid: 7d1e1eab60cca4071961ecaa9cb845b9, type: 2}
+    Neutral: 1
+  - Id: burlap
+    Name: "\u041C\u0435\u0448\u043A\u043E\u0432\u0438\u043D\u0430, \u0434\u0436\u0443\u0442"
+    Category: fabric
+    Material: {fileID: 2100000, guid: c519c49e056794becbccce8e03fa21b9, type: 2}
+    Neutral: 0
+  - Id: jacquard_floral
+    Name: "\u0416\u0430\u043A\u043A\u0430\u0440\u0434 \u0446\u0432\u0435\u0442\u043E\u0447\u043D\u044B\u0439"
+    Category: fabric
+    Material: {fileID: 2100000, guid: b4e20f09de27444a2a37292b114eeab7, type: 2}
+    Neutral: 1
+  - Id: jacquard_pattern
+    Name: "\u0416\u0430\u043A\u043A\u0430\u0440\u0434 \u0443\u0437\u043E\u0440\u043D\u044B\u0439"
+    Category: fabric
+    Material: {fileID: 2100000, guid: 7495fdbd2755c414a8c7b542e1a2d67d, type: 2}
+    Neutral: 1
+  - Id: faux_fur
+    Name: "\u0418\u0441\u043A\u0443\u0441\u0441\u0442\u0432\u0435\u043D\u043D\u044B\u0439 \u043C\u0435\u0445"
+    Category: fabric
+    Material: {fileID: 2100000, guid: e1737a2d737e34f5ba921af8a4e074f2, type: 2}
+    Neutral: 0
+  - Id: tweed_check
+    Name: "\u0422\u0432\u0438\u0434 \u0432 \u043A\u043B\u0435\u0442\u043A\u0443"
+    Category: fabric
+    Material: {fileID: 2100000, guid: 5391ced7d4813490c9c8596faaec5941, type: 2}
+    Neutral: 0
+  - Id: linen_check
+    Name: "\u041B\u0451\u043D \u0432 \u043A\u043B\u0435\u0442\u043A\u0443"
+    Category: fabric
+    Material: {fileID: 2100000, guid: 622462a5e4f3e426690885632cc9ed61, type: 2}
+    Neutral: 0
+  - Id: denim
+    Name: "\u0414\u0435\u043D\u0438\u043C"
+    Category: fabric
+    Material: {fileID: 2100000, guid: e8f9964a10c7849ca93fd26f8a02af7b, type: 2}
+    Neutral: 0
+  - Id: leather_tan
+    Name: "\u041A\u043E\u0436\u0430 \u043A\u043E\u043D\u044C\u044F\u0447\u043D\u0430\u044F"
+    Category: leather
+    Material: {fileID: 2100000, guid: fc0223682e9e84684855c26608f429b1, type: 2}
+    Neutral: 0
+  - Id: leather_brown
+    Name: "\u041A\u043E\u0436\u0430 \u043A\u043E\u0440\u0438\u0447\u043D\u0435\u0432\u0430\u044F"
+    Category: leather
+    Material: {fileID: 2100000, guid: 8eaedbb9d798e49febe8b61cb341c540, type: 2}
+    Neutral: 0
+  - Id: leather_brown_soft
+    Name: "\u041A\u043E\u0436\u0430 \u043A\u043E\u0440\u0438\u0447\u043D\u0435\u0432\u0430\u044F \u043C\u044F\u0433\u043A\u0430\u044F"
+    Category: leather
+    Material: {fileID: 2100000, guid: bc68a0bfa51174338abf848c9870d87f, type: 2}
+    Neutral: 0
+  - Id: leather_burgundy
+    Name: "\u041A\u043E\u0436\u0430 \u0431\u043E\u0440\u0434\u043E\u0432\u0430\u044F"
+    Category: leather
+    Material: {fileID: 2100000, guid: 7bd93e8899ee3407c8df875cd30f201a, type: 2}
+    Neutral: 0
+  - Id: leather_oxblood
+    Name: "\u041A\u043E\u0436\u0430 \u0442\u0451\u043C\u043D\u043E-\u043A\u0440\u0430\u0441\u043D\u0430\u044F"
+    Category: leather
+    Material: {fileID: 2100000, guid: cdd6ec7cc868f42bc8c520fadc268fe2, type: 2}
+    Neutral: 0
+  - Id: leather_light
+    Name: "\u041A\u043E\u0436\u0430 \u0441\u0432\u0435\u0442\u043B\u0430\u044F"
+    Category: leather
+    Material: {fileID: 2100000, guid: c3548728eb91848a5b98ac7d980bd60a, type: 2}
+    Neutral: 1
+  - Id: carpet_loop
+    Name: "\u041A\u043E\u0432\u0440\u043E\u043B\u0438\u043D \u043F\u0435\u0442\u043B\u0435\u0432\u043E\u0439"
+    Category: carpet
+    Material: {fileID: 2100000, guid: 71d4c5136844a46758d87377636a6bee, type: 2}
+    Neutral: 1
+  - Id: sisal
+    Name: "\u0421\u0438\u0437\u0430\u043B\u044C, \u0442\u0430\u0442\u0430\u043C\u0438"
+    Category: carpet
+    Material: {fileID: 2100000, guid: 57fb92e89d0d8420cb5c0ef16ab59372, type: 2}
+    Neutral: 0
+  - Id: oak_veneer
+    Name: "\u0414\u0443\u0431, \u0448\u043F\u043E\u043D"
+    Category: wood
+    Material: {fileID: 2100000, guid: 27ae8a0a5a4884bfdbecafd0c50d8c61, type: 2}
+    Neutral: 0
+  - Id: oak_light_veneer
+    Name: "\u0414\u0443\u0431 \u0441\u0432\u0435\u0442\u043B\u044B\u0439, \u0448\u043F\u043E\u043D"
+    Category: wood
+    Material: {fileID: 2100000, guid: 2cc50dd9f66c146b6887055e445726a6, type: 2}
+    Neutral: 0
+  - Id: white_oak_veneer
+    Name: "\u0411\u0435\u043B\u044B\u0439 \u0434\u0443\u0431"
+    Category: wood
+    Material: {fileID: 2100000, guid: 22d19e5455be348babc8436d900b22e2, type: 2}
+    Neutral: 0
+  - Id: grey_oak_veneer
+    Name: "\u0414\u0443\u0431 \u0441\u0435\u0440\u044B\u0439"
+    Category: wood
+    Material: {fileID: 2100000, guid: 015bc6e1b85ef45e8bb225e0fb54cd44, type: 2}
+    Neutral: 0
+  - Id: black_oak_veneer
+    Name: "\u0414\u0443\u0431 \u043C\u043E\u0440\u0435\u043D\u044B\u0439 \u0447\u0451\u0440\u043D\u044B\u0439"
+    Category: wood
+    Material: {fileID: 2100000, guid: 5f5a3095bd909496794e93457a21674d, type: 2}
+    Neutral: 0
+  - Id: walnut_veneer
+    Name: "\u041E\u0440\u0435\u0445"
+    Category: wood
+    Material: {fileID: 2100000, guid: 7401014b5b6bd47729105137285d6e34, type: 2}
+    Neutral: 0
+  - Id: walnut_american
+    Name: "\u0410\u043C\u0435\u0440\u0438\u043A\u0430\u043D\u0441\u043A\u0438\u0439 \u043E\u0440\u0435\u0445"
+    Category: wood
+    Material: {fileID: 2100000, guid: fff91a13bc4e54a9e8f68a5fa658c5c9, type: 2}
+    Neutral: 0
+  - Id: walnut_european
+    Name: "\u0415\u0432\u0440\u043E\u043F\u0435\u0439\u0441\u043A\u0438\u0439 \u043E\u0440\u0435\u0445"
+    Category: wood
+    Material: {fileID: 2100000, guid: 40c38f75637c6440c8b1422416c3ca46, type: 2}
+    Neutral: 0
+  - Id: walnut_smoked
+    Name: "\u041E\u0440\u0435\u0445 \u043A\u043E\u043F\u0447\u0451\u043D\u044B\u0439"
+    Category: wood
+    Material: {fileID: 2100000, guid: 7b173eb84af5848d4807322502b12350, type: 2}
+    Neutral: 0
+  - Id: walnut_polished
+    Name: "\u041E\u0440\u0435\u0445 \u043F\u043E\u043B\u0438\u0440\u043E\u0432\u0430\u043D\u043D\u044B\u0439"
+    Category: wood
+    Material: {fileID: 2100000, guid: b22c159a6b3d140a2a6552fa49b93e1f, type: 2}
+    Neutral: 0
+  - Id: ash_veneer
+    Name: "\u042F\u0441\u0435\u043D\u044C"
+    Category: wood
+    Material: {fileID: 2100000, guid: 4231ea8e941604fbfafadf339de807b3, type: 2}
+    Neutral: 0
+  - Id: maple_white
+    Name: "\u041A\u043B\u0451\u043D \u0431\u0435\u043B\u044B\u0439"
+    Category: wood
+    Material: {fileID: 2100000, guid: e65cc8735b38c45cd8cd3e01269208ab, type: 2}
+    Neutral: 0
+  - Id: cherry_veneer
+    Name: "\u0412\u0438\u0448\u043D\u044F"
+    Category: wood
+    Material: {fileID: 2100000, guid: bc1611a53201e4a16a34f07bf34908c2, type: 2}
+    Neutral: 0
+  - Id: teak_veneer
+    Name: "\u0422\u0438\u043A"
+    Category: wood
+    Material: {fileID: 2100000, guid: 9d280d16bd4984a05997384bcf54ef9d, type: 2}
+    Neutral: 0
+  - Id: rosewood_polished
+    Name: "\u041F\u0430\u043B\u0438\u0441\u0430\u043D\u0434\u0440 \u043B\u0430\u043A\u0438\u0440\u043E\u0432\u0430\u043D\u043D\u044B\u0439"
+    Category: wood
+    Material: {fileID: 2100000, guid: 742805705b01c4eea8028a4eefe5b8c0, type: 2}
+    Neutral: 0
+  - Id: ebony_striped
+    Name: "\u042D\u0431\u0435\u043D \u043F\u043E\u043B\u043E\u0441\u0430\u0442\u044B\u0439"
+    Category: wood
+    Material: {fileID: 2100000, guid: d0ec7d52603ad43d8952fa2883ac1af4, type: 2}
+    Neutral: 0
+  - Id: wood_fronts_light
+    Name: "\u0421\u0432\u0435\u0442\u043B\u043E\u0435 \u0434\u0435\u0440\u0435\u0432\u043E \u0434\u043B\u044F \u0444\u0430\u0441\u0430\u0434\u043E\u0432"
+    Category: wood
+    Material: {fileID: 2100000, guid: 965b050b2596d44dba978c60ac6330e4, type: 2}
+    Neutral: 0
+  - Id: plywood
+    Name: "\u0424\u0430\u043D\u0435\u0440\u0430"
+    Category: wood
+    Material: {fileID: 2100000, guid: 214f59ca0d32e4c3696b840cc378245f, type: 2}
+    Neutral: 0
+  - Id: osb
+    Name: "OSB-\u043F\u043B\u0438\u0442\u0430"
+    Category: wood
+    Material: {fileID: 2100000, guid: 35e27c6f88ab34390bd8a9b77405f2a0, type: 2}
+    Neutral: 0
+  - Id: brick_red
+    Name: "\u041A\u0438\u0440\u043F\u0438\u0447 \u043A\u0440\u0430\u0441\u043D\u044B\u0439"
+    Category: facade
+    Material: {fileID: 2100000, guid: 3cb06bf31df6a427da5670e16c08e884, type: 2}
+    Neutral: 0
+  - Id: brick_red_dark
+    Name: "\u041A\u0438\u0440\u043F\u0438\u0447 \u0442\u0451\u043C\u043D\u043E-\u043A\u0440\u0430\u0441\u043D\u044B\u0439"
+    Category: facade
+    Material: {fileID: 2100000, guid: 7d909b7661ee3483ebd2b5e6ec54b25b, type: 2}
+    Neutral: 0
+  - Id: brick_red_multi
+    Name: "\u041A\u0438\u0440\u043F\u0438\u0447 \u043A\u0440\u0430\u0441\u043D\u044B\u0439 \u0440\u0430\u0437\u043D\u043E\u0442\u043E\u043D"
+    Category: facade
+    Material: {fileID: 2100000, guid: 7a676b80730bc4455a1a757bf1822b6b, type: 2}
+    Neutral: 0
+  - Id: brick_beige
+    Name: "\u041A\u0438\u0440\u043F\u0438\u0447 \u0431\u0435\u0436\u0435\u0432\u044B\u0439"
+    Category: facade
+    Material: {fileID: 2100000, guid: 42c5f6c5be85f426698ed8546b0cbe37, type: 2}
+    Neutral: 0
+  - Id: brick_light_brown
+    Name: "\u041A\u0438\u0440\u043F\u0438\u0447 \u0441\u0432\u0435\u0442\u043B\u043E-\u043A\u043E\u0440\u0438\u0447\u043D\u0435\u0432\u044B\u0439"
+    Category: facade
+    Material: {fileID: 2100000, guid: a8966966cfb8044a8ac8803d972e6398, type: 2}
+    Neutral: 0
+  - Id: brick_dark
+    Name: "\u041A\u0438\u0440\u043F\u0438\u0447 \u0442\u0451\u043C\u043D\u044B\u0439"
+    Category: facade
+    Material: {fileID: 2100000, guid: 194f2752d48764c3b8ef2725e5e7ef10, type: 2}
+    Neutral: 0
+  - Id: brick_grey
+    Name: "\u041A\u0438\u0440\u043F\u0438\u0447 \u0441\u0435\u0440\u044B\u0439"
+    Category: facade
+    Material: {fileID: 2100000, guid: c965d435018eb4c7cb595e7e3616f310, type: 2}
+    Neutral: 0
+  - Id: brick_whitewashed
+    Name: "\u041A\u0438\u0440\u043F\u0438\u0447 \u0431\u0435\u043B\u0451\u043D\u044B\u0439"
+    Category: facade
+    Material: {fileID: 2100000, guid: d06db687657ed46cfbac77aba5f3c41c, type: 2}
+    Neutral: 0
+  - Id: brick_thin_cladding
+    Name: "\u041A\u043B\u0438\u043D\u043A\u0435\u0440\u043D\u0430\u044F \u043F\u043B\u0438\u0442\u043A\u0430 \u043F\u043E\u0434 \u043A\u0438\u0440\u043F\u0438\u0447"
+    Category: facade
+    Material: {fileID: 2100000, guid: 113ec1b19cdc944f281f6f9cdc3fc125, type: 2}
+    Neutral: 0
+  - Id: stone_cladding_grey
+    Name: "\u041E\u0431\u043B\u0438\u0446\u043E\u0432\u043A\u0430 \u043A\u0430\u043C\u043D\u0435\u043C \u0441\u0435\u0440\u0430\u044F"
+    Category: facade
+    Material: {fileID: 2100000, guid: f4fec0fefd8f341a4b58049371eb9b7e, type: 2}
+    Neutral: 0
+  - Id: stone_blocks_grey
+    Name: "\u041A\u0430\u043C\u0435\u043D\u043D\u044B\u0435 \u0431\u043B\u043E\u043A\u0438 \u0441\u0435\u0440\u044B\u0435"
+    Category: facade
+    Material: {fileID: 2100000, guid: 5c9e8dd5dd6364f54b6fbe466b635a3c, type: 2}
+    Neutral: 0
+  - Id: sandstone_blocks
+    Name: "\u041F\u0435\u0441\u0447\u0430\u043D\u0438\u043A, \u0431\u043B\u043E\u043A\u0438"
+    Category: facade
+    Material: {fileID: 2100000, guid: 5961695ac6fa7470f8944d7f7244ff58, type: 2}
+    Neutral: 0
+  - Id: sandstone_light
+    Name: "\u041F\u0435\u0441\u0447\u0430\u043D\u0438\u043A \u0441\u0432\u0435\u0442\u043B\u044B\u0439, \u043A\u043B\u0430\u0434\u043A\u0430"
+    Category: facade
+    Material: {fileID: 2100000, guid: edbaaeec43a704f8784b98d005c7a170, type: 2}
+    Neutral: 0
+  - Id: stone_stacked
+    Name: "\u041A\u0430\u043C\u0435\u043D\u044C \u043F\u043B\u0438\u0442\u043D\u044F\u043A (\u0441\u043B\u0430\u043D\u0435\u0446)"
+    Category: facade
+    Material: {fileID: 2100000, guid: 89a4a53847c284cc9b9dd9a9c6ccd2d1, type: 2}
+    Neutral: 0
+  - Id: stone_drystone
+    Name: "\u0411\u0443\u0442\u043E\u0432\u044B\u0439 \u043A\u0430\u043C\u0435\u043D\u044C"
+    Category: facade
+    Material: {fileID: 2100000, guid: b567bc1ffbffe47658975fccd7cf42f1, type: 2}
+    Neutral: 0
+  - Id: stone_rustic
+    Name: "\u041A\u0430\u043C\u0435\u043D\u044C \u0440\u0432\u0430\u043D\u044B\u0439"
+    Category: facade
+    Material: {fileID: 2100000, guid: 1bd27dcd1740d47aab93e0a7a7421cfe, type: 2}
+    Neutral: 0
+  - Id: facade_tiles
+    Name: "\u0424\u0430\u0441\u0430\u0434\u043D\u0430\u044F \u043F\u043B\u0438\u0442\u043A\u0430"
+    Category: facade
+    Material: {fileID: 2100000, guid: 8b9e6ecd2de3e4b1cacf937227095b7b, type: 2}
+    Neutral: 0
+  - Id: facade_tiles_warm
+    Name: "\u0424\u0430\u0441\u0430\u0434\u043D\u0430\u044F \u043F\u043B\u0438\u0442\u043A\u0430 \u0442\u0451\u043F\u043B\u0430\u044F"
+    Category: facade
+    Material: {fileID: 2100000, guid: aa35c0068af554c73b255cd812842034, type: 2}
+    Neutral: 0
+  - Id: facade_panels_dark
+    Name: "\u0424\u0430\u0441\u0430\u0434\u043D\u044B\u0435 \u043F\u0430\u043D\u0435\u043B\u0438 \u0442\u0451\u043C\u043D\u044B\u0435"
+    Category: facade
+    Material: {fileID: 2100000, guid: 5494cd37d1d2448bd8aba395fc5a65c5, type: 2}
+    Neutral: 0
+  - Id: facade_panels_grey
+    Name: "\u0424\u0438\u0431\u0440\u043E\u0446\u0435\u043C\u0435\u043D\u0442\u043D\u044B\u0435 \u043F\u0430\u043D\u0435\u043B\u0438"
+    Category: facade
+    Material: {fileID: 2100000, guid: 74fa6dcdb9e694fdab06a2645b0534b5, type: 2}
+    Neutral: 0
+  - Id: siding_grey
+    Name: "\u0421\u0430\u0439\u0434\u0438\u043D\u0433 \u0441\u0435\u0440\u044B\u0439"
+    Category: facade
+    Material: {fileID: 2100000, guid: 17d0b2dc6d9dc4d56ac535250ce7cd0f, type: 2}
+    Neutral: 0
+  - Id: concrete_exposed
+    Name: "\u0411\u0435\u0442\u043E\u043D \u0444\u0430\u0441\u0430\u0434\u043D\u044B\u0439"
+    Category: facade
+    Material: {fileID: 2100000, guid: 5afd72bfbb986415aa2d32610f5894bc, type: 2}
+    Neutral: 0
+  - Id: render_dark
+    Name: "\u0428\u0442\u0443\u043A\u0430\u0442\u0443\u0440\u043A\u0430 \u0442\u0451\u043C\u043D\u0430\u044F \u0444\u0430\u0441\u0430\u0434\u043D\u0430\u044F"
+    Category: facade
+    Material: {fileID: 2100000, guid: 55c526168b8f34da9bd1373bec44aab9, type: 2}
+    Neutral: 0
+  - Id: wood_charred
+    Name: "\u0414\u043E\u0441\u043A\u0430 \u043E\u0431\u043E\u0436\u0436\u0451\u043D\u043D\u0430\u044F (\u0448\u0443 \u0441\u0443\u0433\u0438 \u0431\u0430\u043D)"
+    Category: facade
+    Material: {fileID: 2100000, guid: d1c860c8bcfbc40a384c87d6cc556f5b, type: 2}
+    Neutral: 0
+  - Id: cladding_white_vertical
+    Name: "\u0412\u0430\u0433\u043E\u043D\u043A\u0430 \u0431\u0435\u043B\u0430\u044F \u0432\u0435\u0440\u0442\u0438\u043A\u0430\u043B\u044C\u043D\u0430\u044F"
+    Category: facade
+    Material: {fileID: 2100000, guid: d6f42e7beeaca4261981362b8c0c6685, type: 2}
+    Neutral: 1
+  - Id: cladding_cedar
+    Name: "\u041A\u0435\u0434\u0440\u043E\u0432\u0430\u044F \u0432\u0435\u0440\u0442\u0438\u043A\u0430\u043B\u044C\u043D\u0430\u044F \u0434\u043E\u0441\u043A\u0430"
+    Category: facade
+    Material: {fileID: 2100000, guid: cd420a6c35c7e470189032c20648a68d, type: 2}
+    Neutral: 0
+  - Id: cladding_grey_boards
+    Name: "\u0414\u043E\u0441\u043A\u0430 \u0433\u043E\u0440\u0438\u0437\u043E\u043D\u0442\u0430\u043B\u044C\u043D\u0430\u044F \u0441\u0435\u0440\u0430\u044F"
+    Category: facade
+    Material: {fileID: 2100000, guid: b373f742a56214ed792922629556f004, type: 2}
+    Neutral: 0
+  - Id: cladding_dark_boards
+    Name: "\u0414\u043E\u0441\u043A\u0430 \u0433\u043E\u0440\u0438\u0437\u043E\u043D\u0442\u0430\u043B\u044C\u043D\u0430\u044F \u0442\u0451\u043C\u043D\u0430\u044F"
+    Category: facade
+    Material: {fileID: 2100000, guid: 162d2c6cf17d847b4b6b5c0b4158dfd8, type: 2}
+    Neutral: 0
+  - Id: cladding_wpc
+    Name: "\u041F\u0430\u043D\u0435\u043B\u0438 \u0414\u041F\u041A"
+    Category: facade
+    Material: {fileID: 2100000, guid: 1d7f369e03b5049d68a3782b6f2f542c, type: 2}
+    Neutral: 0
+  - Id: metal_ribbed
+    Name: "\u041C\u0435\u0442\u0430\u043B\u043B \u043F\u0440\u043E\u0444\u0438\u043B\u0438\u0440\u043E\u0432\u0430\u043D\u043D\u044B\u0439 (\u0444\u0430\u0441\u0430\u0434)"
+    Category: facade
+    Material: {fileID: 2100000, guid: 961e6bc427168465d980eb40af4c530b, type: 2}
+    Neutral: 1
+  - Id: roof_clay_tiles
+    Name: "\u0427\u0435\u0440\u0435\u043F\u0438\u0446\u0430 \u043A\u0435\u0440\u0430\u043C\u0438\u0447\u0435\u0441\u043A\u0430\u044F"
+    Category: roof
+    Material: {fileID: 2100000, guid: bb9cd026009d24d2da0420853458e53c, type: 2}
+    Neutral: 0
+  - Id: roof_clay_flat
+    Name: "\u0427\u0435\u0440\u0435\u043F\u0438\u0446\u0430 \u043F\u043B\u043E\u0441\u043A\u0430\u044F"
+    Category: roof
+    Material: {fileID: 2100000, guid: 9f6482a606209466b8678f91f9df5e7f, type: 2}
+    Neutral: 0
+  - Id: roof_grey_tiles
+    Name: "\u0427\u0435\u0440\u0435\u043F\u0438\u0446\u0430 \u0441\u0435\u0440\u0430\u044F"
+    Category: roof
+    Material: {fileID: 2100000, guid: a11256d108fbf4f53803ccd59a4c8ca6, type: 2}
+    Neutral: 0
+  - Id: roof_tiles_flat
+    Name: "\u0427\u0435\u0440\u0435\u043F\u0438\u0446\u0430 \u0431\u043E\u0431\u0440\u043E\u0432\u043A\u0430"
+    Category: roof
+    Material: {fileID: 2100000, guid: db3a87da9ed1947f2bd1b6ed8666da1d, type: 2}
+    Neutral: 0
+  - Id: roof_slate
+    Name: "\u0421\u043B\u0430\u043D\u0446\u0435\u0432\u0430\u044F \u043A\u0440\u043E\u0432\u043B\u044F"
+    Category: roof
+    Material: {fileID: 2100000, guid: dc91504ee9135407a8e2427b2dee3b17, type: 2}
+    Neutral: 0
+  - Id: roof_slate_small
+    Name: "\u0421\u043B\u0430\u043D\u0435\u0446 \u043C\u0435\u043B\u043A\u0438\u0439"
+    Category: roof
+    Material: {fileID: 2100000, guid: 0d3770901c20f4af4ad2fd5204a2152f, type: 2}
+    Neutral: 0
+  - Id: roof_shingles
+    Name: "\u041C\u044F\u0433\u043A\u0430\u044F \u043A\u0440\u043E\u0432\u043B\u044F (\u0433\u0438\u0431\u043A\u0430\u044F \u0447\u0435\u0440\u0435\u043F\u0438\u0446\u0430)"
+    Category: roof
+    Material: {fileID: 2100000, guid: 5eef4e9a7f408475a971bc89e19eef75, type: 2}
+    Neutral: 0
+  - Id: roof_metal_profile
+    Name: "\u041F\u0440\u043E\u0444\u043D\u0430\u0441\u0442\u0438\u043B"
+    Category: roof
+    Material: {fileID: 2100000, guid: 0e6c6827c47a54ad7b4024a23848eba5, type: 2}
+    Neutral: 1
+  - Id: roof_corrugated
+    Name: "\u041A\u0440\u043E\u0432\u043B\u044F \u0432\u043E\u043B\u043D\u0438\u0441\u0442\u0430\u044F \u0441\u0435\u0440\u0430\u044F"
+    Category: roof
+    Material: {fileID: 2100000, guid: 4b80426e5512a4b649450ad8d4825601, type: 2}
+    Neutral: 0
+  - Id: roof_corrugated_light
+    Name: "\u041A\u0440\u043E\u0432\u043B\u044F \u0432\u043E\u043B\u043D\u0438\u0441\u0442\u0430\u044F \u0441\u0432\u0435\u0442\u043B\u0430\u044F"
+    Category: roof
+    Material: {fileID: 2100000, guid: 9ac59e691a5844abda289bde480b28be, type: 2}
+    Neutral: 0
+  - Id: roof_thatch
+    Name: "\u041A\u0430\u043C\u044B\u0448\u043E\u0432\u0430\u044F \u043A\u0440\u043E\u0432\u043B\u044F"
+    Category: roof
+    Material: {fileID: 2100000, guid: 0287e2e9f76b04ed4a92d53e50a1345a, type: 2}
+    Neutral: 0
+  - Id: metal_painted
+    Name: "\u041C\u0435\u0442\u0430\u043B\u043B \u043E\u043A\u0440\u0430\u0448\u0435\u043D\u043D\u044B\u0439"
+    Category: metal
+    Material: {fileID: 2100000, guid: 8a196bd274f1548cf92e3842d639ce3b, type: 2}
+    Neutral: 1
+  - Id: paving_herringbone_grey
+    Name: "\u0411\u0440\u0443\u0441\u0447\u0430\u0442\u043A\u0430 \u0451\u043B\u043E\u0447\u043A\u043E\u0439 \u0441\u0435\u0440\u0430\u044F"
+    Category: paving
+    Material: {fileID: 2100000, guid: 25a298c732d614121a4a4186463f64a1, type: 2}
+    Neutral: 0
+  - Id: paving_herringbone_light
+    Name: "\u0411\u0440\u0443\u0441\u0447\u0430\u0442\u043A\u0430 \u0451\u043B\u043E\u0447\u043A\u043E\u0439 \u0441\u0432\u0435\u0442\u043B\u0430\u044F"
+    Category: paving
+    Material: {fileID: 2100000, guid: 7caee6d2dedbf4ab0800aed089dab45e, type: 2}
+    Neutral: 0
+  - Id: paving_herringbone_large
+    Name: "\u041F\u043B\u0438\u0442\u044B \u0451\u043B\u043E\u0447\u043A\u043E\u0439 \u043A\u0440\u0443\u043F\u043D\u044B\u0435"
+    Category: paving
+    Material: {fileID: 2100000, guid: 296ad7198244649208443f190dcd8dc4, type: 2}
+    Neutral: 0
+  - Id: paving_herringbone_volcanic
+    Name: "\u041A\u0430\u043C\u0435\u043D\u044C \u0451\u043B\u043E\u0447\u043A\u043E\u0439 \u0442\u0451\u043C\u043D\u044B\u0439"
+    Category: paving
+    Material: {fileID: 2100000, guid: 5076f253cba534ad9abd1efb06418f47, type: 2}
+    Neutral: 0
+  - Id: pavers_dark
+    Name: "\u0411\u0440\u0443\u0441\u0447\u0430\u0442\u043A\u0430 \u0442\u0451\u043C\u043D\u0430\u044F"
+    Category: paving
+    Material: {fileID: 2100000, guid: 91d2fb098ccee48e29afce69f35e9ff2, type: 2}
+    Neutral: 0
+  - Id: pavers_interlocking
+    Name: "\u0411\u0440\u0443\u0441\u0447\u0430\u0442\u043A\u0430 \u0444\u0438\u0433\u0443\u0440\u043D\u0430\u044F"
+    Category: paving
+    Material: {fileID: 2100000, guid: 51236a26d53d9490db62f4aa54919fd7, type: 2}
+    Neutral: 0
+  - Id: pavers_small
+    Name: "\u0411\u0440\u0443\u0441\u0447\u0430\u0442\u043A\u0430 \u043C\u0435\u043B\u043A\u0430\u044F"
+    Category: paving
+    Material: {fileID: 2100000, guid: b7249ceb5d5d44908a83cae714cb41c8, type: 2}
+    Neutral: 0
+  - Id: paving_slabs
+    Name: "\u0422\u0440\u043E\u0442\u0443\u0430\u0440\u043D\u044B\u0435 \u043F\u043B\u0438\u0442\u044B"
+    Category: paving
+    Material: {fileID: 2100000, guid: 1bf85618d683e4ce0947f4f3b31f803c, type: 2}
+    Neutral: 0
+  - Id: paving_large_grey
+    Name: "\u041A\u0440\u0443\u043F\u043D\u044B\u0435 \u043F\u043B\u0438\u0442\u044B \u0441\u0435\u0440\u044B\u0435"
+    Category: paving
+    Material: {fileID: 2100000, guid: a6a8b90602a8b4389ba8b4e705e1278b, type: 2}
+    Neutral: 0
+  - Id: paving_outdoor_tiles
+    Name: "\u0423\u043B\u0438\u0447\u043D\u0430\u044F \u043F\u043B\u0438\u0442\u043A\u0430 \u0441\u0435\u0440\u0430\u044F"
+    Category: paving
+    Material: {fileID: 2100000, guid: adde6896ce2ff446c96810cb99fd19f0, type: 2}
+    Neutral: 0
+  - Id: paving_square_pattern
+    Name: "\u041F\u043B\u0438\u0442\u044B \u043A\u0432\u0430\u0434\u0440\u0430\u0442\u043D\u044B\u0435"
+    Category: paving
+    Material: {fileID: 2100000, guid: da011dfdb74114d3ebf866432c57cecb, type: 2}
+    Neutral: 0
+  - Id: paving_rectangular
+    Name: "\u041F\u043B\u0438\u0442\u044B \u043F\u0440\u044F\u043C\u043E\u0443\u0433\u043E\u043B\u044C\u043D\u044B\u0435"
+    Category: paving
+    Material: {fileID: 2100000, guid: 886cb999d5e1e4e5bb1c3834649eeb44, type: 2}
+    Neutral: 0
+  - Id: paving_hexagon
+    Name: "\u0428\u0435\u0441\u0442\u0438\u0433\u0440\u0430\u043D\u043D\u0430\u044F \u043F\u043B\u0438\u0442\u043A\u0430"
+    Category: paving
+    Material: {fileID: 2100000, guid: 83b5e9bb2434b4536a7efaff01cdca06, type: 2}
+    Neutral: 0
+  - Id: paving_granite_light
+    Name: "\u0413\u0440\u0430\u043D\u0438\u0442\u043D\u0430\u044F \u043F\u043B\u0438\u0442\u043A\u0430 \u0441\u0432\u0435\u0442\u043B\u0430\u044F"
+    Category: paving
+    Material: {fileID: 2100000, guid: a07577153bd2645fa8241a0d17ceeac8, type: 2}
+    Neutral: 0
+  - Id: paving_crazy
+    Name: "\u041C\u043E\u0449\u0435\u043D\u0438\u0435 \xAB\u0440\u0432\u0430\u043D\u044B\u0439 \u043A\u0430\u043C\u0435\u043D\u044C\xBB"
+    Category: paving
+    Material: {fileID: 2100000, guid: 284cfd2214b4f4b84ba23ae99cb334d0, type: 2}
+    Neutral: 0
+  - Id: flagstone_grey
+    Name: "\u041F\u043B\u0438\u0442\u043D\u044F\u043A \u0441\u0435\u0440\u044B\u0439"
+    Category: paving
+    Material: {fileID: 2100000, guid: a39cb18ec86e24f82b5c78ee3af0ce2c, type: 2}
+    Neutral: 0
+  - Id: flagstone_path
+    Name: "\u041F\u043B\u0438\u0442\u043D\u044F\u043A \u0434\u043E\u0440\u043E\u0436\u043A\u0430"
+    Category: paving
+    Material: {fileID: 2100000, guid: 620b4e7e3d6094d1d92d03e08633c2d3, type: 2}
+    Neutral: 0
+  - Id: setts_granite
+    Name: "\u0413\u0440\u0430\u043D\u0438\u0442\u043D\u0430\u044F \u0431\u0440\u0443\u0441\u0447\u0430\u0442\u043A\u0430"
+    Category: paving
+    Material: {fileID: 2100000, guid: 103c4aad656954798942e113e461577f, type: 2}
+    Neutral: 0
+  - Id: setts_square
+    Name: "\u0411\u0440\u0443\u0441\u0447\u0430\u0442\u043A\u0430 \u043A\u0432\u0430\u0434\u0440\u0430\u0442\u043D\u0430\u044F"
+    Category: paving
+    Material: {fileID: 2100000, guid: b4f0d1625d53a4cb2865ab559d260473, type: 2}
+    Neutral: 0
+  - Id: cobbles
+    Name: "\u0411\u0443\u043B\u044B\u0436\u043D\u0438\u043A"
+    Category: paving
+    Material: {fileID: 2100000, guid: c45dcad3403714e62b5cd7ee29363cf1, type: 2}
+    Neutral: 0
+  - Id: asphalt_clean
+    Name: "\u0410\u0441\u0444\u0430\u043B\u044C\u0442"
+    Category: paving
+    Material: {fileID: 2100000, guid: 07b9fa10f80f64216b205d623d38ec4f, type: 2}
+    Neutral: 0
+  - Id: deck_boards
+    Name: "\u0422\u0435\u0440\u0440\u0430\u0441\u043D\u0430\u044F \u0434\u043E\u0441\u043A\u0430"
+    Category: deck
+    Material: {fileID: 2100000, guid: b6d8353b9ff624c3eb515a5756cd4969, type: 2}
+    Neutral: 0
+  - Id: deck_boards_grey
+    Name: "\u0422\u0435\u0440\u0440\u0430\u0441\u043D\u0430\u044F \u0434\u043E\u0441\u043A\u0430 \u0441\u0435\u0440\u0430\u044F"
+    Category: deck
+    Material: {fileID: 2100000, guid: 18d7928431ebf4b619a96340d558462f, type: 2}
+    Neutral: 0
+  - Id: lawn_texture
+    Name: "\u0413\u0430\u0437\u043E\u043D"
+    Category: ground
+    Material: {fileID: 2100000, guid: 9a2e9168ad5ea44d1a26b339bb7e1914, type: 2}
+    Neutral: 0
+  - Id: grass_dry
+    Name: "\u0422\u0440\u0430\u0432\u0430 \u0441\u0443\u0445\u0430\u044F"
+    Category: ground
+    Material: {fileID: 2100000, guid: 08bd4236c0a1f4045bbb4bf914620874, type: 2}
+    Neutral: 0
+  - Id: soil_garden
+    Name: "\u0413\u0440\u0443\u043D\u0442 \u0441\u0430\u0434\u043E\u0432\u044B\u0439"
+    Category: ground
+    Material: {fileID: 2100000, guid: 426032bbad65747f8a7d4df2ad70d1b2, type: 2}
+    Neutral: 0
+  - Id: soil_dirt
+    Name: "\u0417\u0435\u043C\u043B\u044F"
+    Category: ground
+    Material: {fileID: 2100000, guid: 6fd4c2de8638a436ca33b1d2edd2ed62, type: 2}
+    Neutral: 0
+  - Id: mulch_bark
+    Name: "\u041C\u0443\u043B\u044C\u0447\u0430 \u0438\u0437 \u043A\u043E\u0440\u044B"
+    Category: ground
+    Material: {fileID: 2100000, guid: a939d51f944c24fb48d019ce4b856cf0, type: 2}
+    Neutral: 0
+  - Id: wood_chips
+    Name: "\u0429\u0435\u043F\u0430"
+    Category: ground
+    Material: {fileID: 2100000, guid: 585e095d481704c9f994720c1b00b617, type: 2}
+    Neutral: 0
+  - Id: gravel_light
+    Name: "\u0413\u0440\u0430\u0432\u0438\u0439 \u0441\u0432\u0435\u0442\u043B\u044B\u0439"
+    Category: ground
+    Material: {fileID: 2100000, guid: 2c7142520a1154f0b96f367207761333, type: 2}
+    Neutral: 0
+  - Id: gravel_grey
+    Name: "\u0413\u0440\u0430\u0432\u0438\u0439 \u0441\u0435\u0440\u044B\u0439"
+    Category: ground
+    Material: {fileID: 2100000, guid: 21b336b1b9c4e4a60b053d95fd24061f, type: 2}
+    Neutral: 0
+  - Id: gravel_black
+    Name: "\u0413\u0440\u0430\u0432\u0438\u0439 \u0447\u0451\u0440\u043D\u044B\u0439"
+    Category: ground
+    Material: {fileID: 2100000, guid: 2d5e194d693d84630b147406ea0f6034, type: 2}
+    Neutral: 0
+  - Id: gravel_bicolour
+    Name: "\u0413\u0440\u0430\u0432\u0438\u0439 \u0434\u0432\u0443\u0445\u0446\u0432\u0435\u0442\u043D\u044B\u0439"
+    Category: ground
+    Material: {fileID: 2100000, guid: 87d0d1089b7504ed8babd05cd51c5502, type: 2}
+    Neutral: 0
+  - Id: pebbles_white
+    Name: "\u0413\u0430\u043B\u044C\u043A\u0430 \u043C\u0435\u043B\u043A\u0430\u044F \u0441\u0432\u0435\u0442\u043B\u0430\u044F"
+    Category: ground
+    Material: {fileID: 2100000, guid: 66a552822ac73432ba174e2e3a9b88d8, type: 2}
+    Neutral: 0
+  - Id: pebbles_river
+    Name: "\u0413\u0430\u043B\u044C\u043A\u0430 \u0440\u0435\u0447\u043D\u0430\u044F"
+    Category: ground
+    Material: {fileID: 2100000, guid: dc1cd0de8842d41cfb1eeb6a2fae7acf, type: 2}
+    Neutral: 0
+  - Id: pebbles_large_dark
+    Name: "\u0413\u0430\u043B\u044C\u043A\u0430 \u043A\u0440\u0443\u043F\u043D\u0430\u044F \u0442\u0451\u043C\u043D\u0430\u044F"
+    Category: ground
+    Material: {fileID: 2100000, guid: a731a2f1a0a8540c1a2a5b09781b6d21, type: 2}
+    Neutral: 0
+  - Id: sand
+    Name: "\u041F\u0435\u0441\u043E\u043A"
+    Category: ground
+    Material: {fileID: 2100000, guid: 047a1f6600ed54f0099cb6868339eb72, type: 2}
+    Neutral: 0
+  Models:
+  - Id: armchair_modern
+    Name: "\u041A\u0440\u0435\u0441\u043B\u043E: \u043A\u043E\u0436\u0430, \u0434\u0435\u0440\u0435\u0432\u044F\u043D\u043D\u044B\u0439 \u043A\u0430\u0440\u043A\u0430\u0441"
+    Category: seating
+    Source: polyhaven:modern_arm_chair_01
+    Prefab: {fileID: 4692032163508145384, guid: 4d2ed11836e0c42a7b1f8341a1b5419f, type: 3}
+    Size: {x: 0.82, y: 1.023, z: 0.987}
+    Hanging: 0
+    Triangles: 8916
+    Slots:
+    - Name: frame
+      Own: {fileID: 2100000, guid: e9257b71112ef407ebf0ae86e6414db5, type: 2}
+      Default: 
+      UvMeters: 0
+    - Name: upholstery
+      Own: {fileID: 2100000, guid: 0dd110197ea264032b2be77949f5ed4e, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: coffee_table_modern
+    Name: "\u0416\u0443\u0440\u043D\u0430\u043B\u044C\u043D\u044B\u0439 \u0441\u0442\u043E\u043B: \u0431\u0435\u0442\u043E\u043D \u0438 \u0434\u0435\u0440\u0435\u0432\u043E"
+    Category: tables
+    Source: polyhaven:modern_coffee_table_01
+    Prefab: {fileID: 2845928908180645011, guid: 4b0cbe5e3b697457b8cbb5581633a60b, type: 3}
+    Size: {x: 0.6, y: 0.39, z: 1.202}
+    Hanging: 0
+    Triangles: 4504
+    Slots:
+    - Name: main
+      Own: {fileID: 2100000, guid: bdff8400421444e7996a4ff3659a90cc, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: pendant_globe_modern
+    Name: "\u041F\u043E\u0434\u0432\u0435\u0441\u043D\u043E\u0439 \u0441\u0432\u0435\u0442\u0438\u043B\u044C\u043D\u0438\u043A-\u0448\u0430\u0440"
+    Category: lighting
+    Source: polyhaven:modern_ceiling_lamp_01
+    Prefab: {fileID: 3372855664530991425, guid: 89f8029cb3ad94732b5025e4ecafd109, type: 3}
+    Size: {x: 0.432, y: 0.952, z: 0.432}
+    Hanging: 1
+    Triangles: 5602
+    Slots:
+    - Name: glass
+      Own: {fileID: 2100000, guid: 687159446321a491aa3c59e15dafa480, type: 2}
+      Default: 
+      UvMeters: 0
+    - Name: body
+      Own: {fileID: 2100000, guid: ae953e8f2480f47bd9ace648d70e8eeb, type: 2}
+      Default: 
+      UvMeters: 0
+    - Name: globe
+      Own: {fileID: 2100000, guid: cb9575f9d4e564f9ba126f4c913af80c, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: plant_large
+    Name: "\u0420\u0430\u0441\u0442\u0435\u043D\u0438\u0435 \u0432 \u043A\u0430\u0448\u043F\u043E"
+    Category: plants
+    Source: polyhaven:potted_plant_02
+    Prefab: {fileID: 3105123027388544855, guid: 648232ff145604508b9281227cf7f79c, type: 3}
+    Size: {x: 0.701, y: 0.841, z: 0.657}
+    Hanging: 0
+    Triangles: 69806
+    Slots:
+    - Name: pot
+      Own: {fileID: 2100000, guid: 2a6a665a8993448ed8c49345eaadef49, type: 2}
+      Default: 
+      UvMeters: 0
+    - Name: leaves
+      Own: {fileID: 2100000, guid: 24e9a845fa8ef4c8b9655c598c469605, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: sofa_modern
+    Name: "\u0414\u0438\u0432\u0430\u043D 3-\u043C\u0435\u0441\u0442\u043D\u044B\u0439"
+    Category: seating
+    Source: blender:sofa_modern
+    Prefab: {fileID: 1205198755946885322, guid: da3fe84bf2b6d4a23ac68651b2f13c3b, type: 3}
+    Size: {x: 2.3, y: 0.889, z: 0.96}
+    Hanging: 0
+    Triangles: 22152
+    Slots:
+    - Name: upholstery
+      Own: {fileID: 0}
+      Default: linen_rough#c8c0b3
+      UvMeters: 1
+    - Name: cushion
+      Own: {fileID: 0}
+      Default: velvet#8b5e45
+      UvMeters: 1
+    - Name: legs
+      Own: {fileID: 0}
+      Default: black_metal
+      UvMeters: 1
+  - Id: bed_modern
+    Name: "\u041A\u0440\u043E\u0432\u0430\u0442\u044C \u0441 \u043C\u044F\u0433\u043A\u0438\u043C \u0438\u0437\u0433\u043E\u043B\u043E\u0432\u044C\u0435\u043C"
+    Category: bedroom
+    Source: blender:bed_modern
+    Prefab: {fileID: 7477667526096940907, guid: b26fc5ea0bc8442c7bc4ab39d5f251e3, type: 3}
+    Size: {x: 2.02, y: 1.28, z: 2.23}
+    Hanging: 0
+    Triangles: 23976
+    Slots:
+    - Name: frame
+      Own: {fileID: 0}
+      Default: wool_herringbone#b4aca0
+      UvMeters: 1
+    - Name: legs
+      Own: {fileID: 0}
+      Default: black_metal
+      UvMeters: 1
+    - Name: headboard
+      Own: {fileID: 0}
+      Default: wool_herringbone#b4aca0
+      UvMeters: 1
+    - Name: bedding
+      Own: {fileID: 0}
+      Default: linen_rough#eeeae3
+      UvMeters: 1
+    - Name: throw
+      Own: {fileID: 0}
+      Default: wool_herringbone#6b6259
+      UvMeters: 1
+    - Name: pillow
+      Own: {fileID: 0}
+      Default: linen_rough#e7e2d9
+      UvMeters: 1
+    - Name: cushion
+      Own: {fileID: 0}
+      Default: velvet#6f7a66
+      UvMeters: 1
+  - Id: lounge_chair_leather
+    Name: "\u041B\u0430\u0443\u043D\u0436-\u043A\u0440\u0435\u0441\u043B\u043E \u043A\u043E\u0436\u0430\u043D\u043E\u0435 \u043F\u043E\u0432\u043E\u0440\u043E\u0442\u043D\u043E\u0435"
+    Category: seating
+    Source: polyhaven:mid_century_lounge_chair
+    Prefab: {fileID: 4333320221913948605, guid: caa8444a0f76640398e1535e9de4ca33, type: 3}
+    Size: {x: 1.009, y: 1.169, z: 1.19}
+    Hanging: 0
+    Triangles: 6148
+    Slots:
+    - Name: main
+      Own: {fileID: 2100000, guid: 4b086a3d9f2f749e9ace75d7f780682a, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: dining_chair_tufted
+    Name: "\u0421\u0442\u0443\u043B \u043E\u0431\u0435\u0434\u0435\u043D\u043D\u044B\u0439 \u0441 \u043A\u0430\u0440\u0435\u0442\u043D\u043E\u0439 \u0441\u0442\u044F\u0436\u043A\u043E\u0439"
+    Category: seating
+    Source: polyhaven:dining_chair_02
+    Prefab: {fileID: 269323762135406306, guid: f9d2cc4d6c0c84a1aba8428443963d46, type: 3}
+    Size: {x: 0.434, y: 0.973, z: 0.576}
+    Hanging: 0
+    Triangles: 22013
+    Slots:
+    - Name: main
+      Own: {fileID: 2100000, guid: de0307017ae2c493297c768565328ef7, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: chair_wood_white
+    Name: "\u0421\u0442\u0443\u043B \u0434\u0435\u0440\u0435\u0432\u044F\u043D\u043D\u044B\u0439 \u0431\u0435\u043B\u044B\u0439"
+    Category: seating
+    Source: polyhaven:painted_wooden_chair_01
+    Prefab: {fileID: 689448837264067191, guid: 93fcf4f1c3fae420eabd6fcbf0df9a93, type: 3}
+    Size: {x: 0.432, y: 0.956, z: 0.54}
+    Hanging: 0
+    Triangles: 724
+    Slots:
+    - Name: main
+      Own: {fileID: 2100000, guid: a01c13c75ca7d4ca1b7275309ee4c312, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: armchair_classic
+    Name: "\u041A\u0440\u0435\u0441\u043B\u043E \u043A\u043B\u0430\u0441\u0441\u0438\u0447\u0435\u0441\u043A\u043E\u0435"
+    Category: seating
+    Source: polyhaven:ArmChair_01
+    Prefab: {fileID: 4859535280541964453, guid: f4c9b299e955747db94e6f904ce04d86, type: 3}
+    Size: {x: 0.848, y: 1.065, z: 0.766}
+    Hanging: 0
+    Triangles: 5626
+    Slots:
+    - Name: Armchair_01
+      Own: {fileID: 2100000, guid: 1cb4ca6f464f946b78c0e418795a12bc, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: sofa_chesterfield
+    Name: "\u0414\u0438\u0432\u0430\u043D \u0447\u0435\u0441\u0442\u0435\u0440\u0444\u0438\u043B\u0434 \u043A\u043E\u0436\u0430\u043D\u044B\u0439"
+    Category: seating
+    Source: polyhaven:sofa_02
+    Prefab: {fileID: 8417072157229947970, guid: 0728f230aecc049abbde2bd80955770e, type: 3}
+    Size: {x: 1.807, y: 0.709, z: 0.818}
+    Hanging: 0
+    Triangles: 2728
+    Slots:
+    - Name: main
+      Own: {fileID: 2100000, guid: a5af6948698924594b07e8e14f619130, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: sofa_classic
+    Name: "\u0414\u0438\u0432\u0430\u043D \u043A\u043B\u0430\u0441\u0441\u0438\u0447\u0435\u0441\u043A\u0438\u0439"
+    Category: seating
+    Source: polyhaven:Sofa_01
+    Prefab: {fileID: 7232730428304442195, guid: cc495586684e1473fa12584b84e33c96, type: 3}
+    Size: {x: 1.571, y: 0.797, z: 0.658}
+    Hanging: 0
+    Triangles: 4101
+    Slots:
+    - Name: main
+      Own: {fileID: 2100000, guid: e7dde2bc4b02f403292515da2276709a, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: ottoman_leather
+    Name: "\u041F\u0443\u0444 \u043A\u043E\u0436\u0430\u043D\u044B\u0439"
+    Category: seating
+    Source: polyhaven:Ottoman_01
+    Prefab: {fileID: 8077307605668114672, guid: f25c68c3bbcf04c51bb6a7d01352c85d, type: 3}
+    Size: {x: 0.885, y: 0.624, z: 0.621}
+    Hanging: 0
+    Triangles: 4240
+    Slots:
+    - Name: main
+      Own: {fileID: 2100000, guid: 988d4ed1cce3e4885a6e2ed0d2a2c202, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: rocking_chair
+    Name: "\u041A\u0440\u0435\u0441\u043B\u043E-\u043A\u0430\u0447\u0430\u043B\u043A\u0430"
+    Category: seating
+    Source: polyhaven:Rockingchair_01
+    Prefab: {fileID: 4209906241813348726, guid: ad4d2670d9a3c491187bc41bb1c1a352, type: 3}
+    Size: {x: 0.708, y: 0.995, z: 0.833}
+    Hanging: 0
+    Triangles: 11866
+    Slots:
+    - Name: main
+      Own: {fileID: 2100000, guid: 7e407209acc674aff8a67b4e39c2e040, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: bar_stool_wood
+    Name: "\u0411\u0430\u0440\u043D\u044B\u0439 \u0442\u0430\u0431\u0443\u0440\u0435\u0442 \u0434\u0435\u0440\u0435\u0432\u044F\u043D\u043D\u044B\u0439"
+    Category: seating
+    Source: polyhaven:bar_chair_round_01
+    Prefab: {fileID: 966371487923011355, guid: 3783868710281496faae29b73f4daf5a, type: 3}
+    Size: {x: 0.483, y: 0.751, z: 0.486}
+    Hanging: 0
+    Triangles: 14373
+    Slots:
+    - Name: Bar Chair
+      Own: {fileID: 2100000, guid: 75b16ff543efa4f2397fb2f70659b4ed, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: bar_stool_metal
+    Name: "\u0411\u0430\u0440\u043D\u044B\u0439 \u0442\u0430\u0431\u0443\u0440\u0435\u0442 \u043C\u0435\u0442\u0430\u043B\u043B\u0438\u0447\u0435\u0441\u043A\u0438\u0439"
+    Category: seating
+    Source: polyhaven:metal_stool_01
+    Prefab: {fileID: 5642949563724499676, guid: 50712b9fc376c4fe195685fb165871bf, type: 3}
+    Size: {x: 0.352, y: 0.883, z: 0.355}
+    Hanging: 0
+    Triangles: 8334
+    Slots:
+    - Name: main
+      Own: {fileID: 2100000, guid: f9c37891cd91446d5bf09fdceaa9d5c6, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: stool_metal
+    Name: "\u0422\u0430\u0431\u0443\u0440\u0435\u0442 \u043C\u0435\u0442\u0430\u043B\u043B\u0438\u0447\u0435\u0441\u043A\u0438\u0439"
+    Category: seating
+    Source: polyhaven:metal_stool_02
+    Prefab: {fileID: 9150624859934149987, guid: 701dc0e7efa7a487e911ecaa9f14dbb7, type: 3}
+    Size: {x: 0.448, y: 0.458, z: 0.473}
+    Hanging: 0
+    Triangles: 6532
+    Slots:
+    - Name: main
+      Own: {fileID: 2100000, guid: d0686c2b0bd5943319d6a6ae573ad9ff, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: daybed
+    Name: "\u041A\u0443\u0448\u0435\u0442\u043A\u0430"
+    Category: seating
+    Source: polyhaven:vintage_day_bed
+    Prefab: {fileID: 1441136688912848693, guid: 53068b79143d948ea8350c55e1e399f9, type: 3}
+    Size: {x: 1.973, y: 1.127, z: 0.855}
+    Hanging: 0
+    Triangles: 2715
+    Slots:
+    - Name: main
+      Own: {fileID: 2100000, guid: 1338103f6f7d042eea1d21d1b872fdd4, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: coffee_table_marble_round
+    Name: "\u0416\u0443\u0440\u043D\u0430\u043B\u044C\u043D\u044B\u0439 \u0441\u0442\u043E\u043B \u043A\u0440\u0443\u0433\u043B\u044B\u0439, \u043C\u0440\u0430\u043C\u043E\u0440"
+    Category: tables
+    Source: polyhaven:coffee_table_round_01
+    Prefab: {fileID: 523191128993613702, guid: bd877fe1585b94ae09d2f6466af4b1e4, type: 3}
+    Size: {x: 1.301, y: 0.491, z: 1.301}
+    Hanging: 0
+    Triangles: 4044
+    Slots:
+    - Name: main
+      Own: {fileID: 2100000, guid: 213cd5afd41b84b6890e69ccd697b12a, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: coffee_table_carved
+    Name: "\u0416\u0443\u0440\u043D\u0430\u043B\u044C\u043D\u044B\u0439 \u0441\u0442\u043E\u043B \u0441 \u0440\u0435\u0437\u043D\u043E\u0439 \u0440\u0435\u0448\u0451\u0442\u043A\u043E\u0439"
+    Category: tables
+    Source: polyhaven:modern_coffee_table_02
+    Prefab: {fileID: 3542432039034136186, guid: faff2a98b35234201b71c234870ee1ec, type: 3}
+    Size: {x: 1.199, y: 0.369, z: 1.2}
+    Hanging: 0
+    Triangles: 13645
+    Slots:
+    - Name: base
+      Own: {fileID: 2100000, guid: ccdb82713fe9641f8aeb6662c9f77a9b, type: 2}
+      Default: 
+      UvMeters: 0
+    - Name: wood
+      Own: {fileID: 2100000, guid: 2291a8c2dd0ea40149a7b436068beed9, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: coffee_table_industrial
+    Name: "\u0416\u0443\u0440\u043D\u0430\u043B\u044C\u043D\u044B\u0439 \u0441\u0442\u043E\u043B \u043B\u043E\u0444\u0442"
+    Category: tables
+    Source: polyhaven:industrial_coffee_table
+    Prefab: {fileID: 3166196308678707239, guid: 0699e100d25ed448e818e1445c11ae50, type: 3}
+    Size: {x: 0.778, y: 0.638, z: 0.758}
+    Hanging: 0
+    Triangles: 40000
+    Slots:
+    - Name: main
+      Own: {fileID: 2100000, guid: d66887eb72b334d8d9ce6aa053318e6b, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: dining_table_round
+    Name: "\u041E\u0431\u0435\u0434\u0435\u043D\u043D\u044B\u0439 \u0441\u0442\u043E\u043B \u043A\u0440\u0443\u0433\u043B\u044B\u0439"
+    Category: tables
+    Source: polyhaven:round_wooden_table_01
+    Prefab: {fileID: 8366942997964529272, guid: 363fb03cc6cf6425caccfb7358a7ff88, type: 3}
+    Size: {x: 1.399, y: 1.005, z: 1.399}
+    Hanging: 0
+    Triangles: 8640
+    Slots:
+    - Name: main
+      Own: {fileID: 2100000, guid: 8c27e2039ca4a47acb5bdeb9dec03518, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: dining_table_wood
+    Name: "\u041E\u0431\u0435\u0434\u0435\u043D\u043D\u044B\u0439 \u0441\u0442\u043E\u043B \u0434\u0435\u0440\u0435\u0432\u044F\u043D\u043D\u044B\u0439"
+    Category: tables
+    Source: polyhaven:wooden_table_02
+    Prefab: {fileID: 8631602594836721321, guid: b979e430501eb4aa9b03d238006b1a39, type: 3}
+    Size: {x: 1.134, y: 0.8, z: 0.706}
+    Hanging: 0
+    Triangles: 196
+    Slots:
+    - Name: main
+      Own: {fileID: 2100000, guid: 57b2ccaae7de7497aab70fa16006a939, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: side_table_oak
+    Name: "\u041F\u0440\u0438\u0441\u0442\u0430\u0432\u043D\u043E\u0439 \u0441\u0442\u043E\u043B\u0438\u043A \u0434\u0443\u0431\u043E\u0432\u044B\u0439"
+    Category: tables
+    Source: polyhaven:side_table_01
+    Prefab: {fileID: 678357882900383009, guid: c3a54b03f41a14f758afacb6f6e6beef, type: 3}
+    Size: {x: 0.55, y: 0.551, z: 0.45}
+    Hanging: 0
+    Triangles: 2756
+    Slots:
+    - Name: main
+      Own: {fileID: 2100000, guid: dbd3e2b555c9c43588edba53b4aebf26, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: plant_stand
+    Name: "\u041F\u043E\u0434\u0441\u0442\u0430\u0432\u043A\u0430 \u0434\u043B\u044F \u0446\u0432\u0435\u0442\u043E\u0432"
+    Category: tables
+    Source: polyhaven:side_table_tall_01
+    Prefab: {fileID: 8393006499324780611, guid: 2c543be234ed74faf80212a54250ee29, type: 3}
+    Size: {x: 0.384, y: 0.761, z: 0.384}
+    Hanging: 0
+    Triangles: 6408
+    Slots:
+    - Name: main
+      Own: {fileID: 2100000, guid: 0157ec050fa0b4fa9b2536162fd899ac, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: nightstand_classic
+    Name: "\u0422\u0443\u043C\u0431\u0430 \u043F\u0440\u0438\u043A\u0440\u043E\u0432\u0430\u0442\u043D\u0430\u044F \u043A\u043B\u0430\u0441\u0441\u0438\u0447\u0435\u0441\u043A\u0430\u044F"
+    Category: bedroom
+    Source: polyhaven:ClassicNightstand_01
+    Prefab: {fileID: 7536110900950892721, guid: 8b878256b94a549b4960ee525dce9953, type: 3}
+    Size: {x: 0.568, y: 0.7, z: 0.424}
+    Hanging: 0
+    Triangles: 2002
+    Slots:
+    - Name: main
+      Own: {fileID: 2100000, guid: 1b70f4fe9c4944e408ca64e56d63f484, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: sideboard_slatted
+    Name: "\u041A\u043E\u043C\u043E\u0434-\u0441\u0435\u0440\u0432\u0430\u043D\u0442 \u0441 \u0440\u0435\u0439\u043A\u0430\u043C\u0438"
+    Category: storage
+    Source: polyhaven:modern_wooden_cabinet
+    Prefab: {fileID: 4949387008903254921, guid: 4dc22b50c1d64437993be0dc32a7b13a, type: 3}
+    Size: {x: 2.44, y: 0.68, z: 0.52}
+    Hanging: 0
+    Triangles: 24976
+    Slots:
+    - Name: main
+      Own: {fileID: 2100000, guid: bb0ea29865123436e94ebc94c857e62b, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: dresser_wood
+    Name: "\u041A\u043E\u043C\u043E\u0434 \u0434\u0435\u0440\u0435\u0432\u044F\u043D\u043D\u044B\u0439"
+    Category: storage
+    Source: polyhaven:vintage_wooden_drawer_01
+    Prefab: {fileID: 1679094489317002729, guid: 6057d684d40124833bdbfce0aae559bc, type: 3}
+    Size: {x: 0.858, y: 0.545, z: 0.457}
+    Hanging: 0
+    Triangles: 5184
+    Slots:
+    - Name: main
+      Own: {fileID: 2100000, guid: 5aaa45851fcd449229f22dee24972d60, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: shelf_cubes
+    Name: "\u0421\u0442\u0435\u043B\u043B\u0430\u0436-\u044F\u0447\u0435\u0439\u043A\u0438"
+    Category: storage
+    Source: polyhaven:wooden_display_shelves_01
+    Prefab: {fileID: 9166783154434479055, guid: 93f90493e7d4c49b4b5ae8757e642d33, type: 3}
+    Size: {x: 0.372, y: 1.556, z: 1.078}
+    Hanging: 0
+    Triangles: 3174
+    Slots:
+    - Name: main
+      Own: {fileID: 2100000, guid: 599aa7ebf3cbd45fc8d3211a44067f79, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: shelf_industrial
+    Name: "\u0421\u0442\u0435\u043B\u043B\u0430\u0436 \u043C\u0435\u0442\u0430\u043B\u043B \u0438 \u0434\u0435\u0440\u0435\u0432\u043E"
+    Category: storage
+    Source: polyhaven:steel_frame_shelves_01
+    Prefab: {fileID: 1690297244206195544, guid: 25f549fda59dd48adb1b2154b0f009b1, type: 3}
+    Size: {x: 1.097, y: 2.141, z: 0.502}
+    Hanging: 0
+    Triangles: 4348
+    Slots:
+    - Name: main
+      Own: {fileID: 2100000, guid: 2d35ad1d30c564672bdc3e9d33044e47, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: shelf_industrial_wide
+    Name: "\u0421\u0442\u0435\u043B\u043B\u0430\u0436 \u0448\u0438\u0440\u043E\u043A\u0438\u0439 \u043B\u043E\u0444\u0442"
+    Category: storage
+    Source: polyhaven:steel_frame_shelves_03
+    Prefab: {fileID: 9185916619735076212, guid: 8d042b4a2127a423faa9496530d31323, type: 3}
+    Size: {x: 2.351, y: 2.312, z: 0.721}
+    Hanging: 0
+    Triangles: 8396
+    Slots:
+    - Name: main
+      Own: {fileID: 2100000, guid: 30801e20262504aa496b3902f1273b4e, type: 2}
+      Default: 
+      UvMeters: 0
+    - Name: drawers
+      Own: {fileID: 2100000, guid: f1a48dab569634ca289c10bca806587f, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: drawer_unit_industrial
+    Name: "\u0422\u0443\u043C\u0431\u0430 \u0441 \u044F\u0449\u0438\u043A\u0430\u043C\u0438 \u043B\u043E\u0444\u0442"
+    Category: storage
+    Source: polyhaven:drawer_cabinet
+    Prefab: {fileID: 692315829760469661, guid: db03dd64f032a4fb0b8767f616c0babc, type: 3}
+    Size: {x: 1.141, y: 1.881, z: 0.488}
+    Hanging: 0
+    Triangles: 26406
+    Slots:
+    - Name: main
+      Own: {fileID: 2100000, guid: 9e399dba41f614e83862a128e1efac54, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: pendant_industrial
+    Name: "\u041F\u043E\u0434\u0432\u0435\u0441\u043D\u043E\u0439 \u0441\u0432\u0435\u0442\u0438\u043B\u044C\u043D\u0438\u043A \u0438\u043D\u0434\u0443\u0441\u0442\u0440\u0438\u0430\u043B\u044C\u043D\u044B\u0439"
+    Category: lighting
+    Source: polyhaven:hanging_industrial_lamp
+    Prefab: {fileID: 4178327462026210607, guid: e8171e944bd3c4dd9933142533678ff7, type: 3}
+    Size: {x: 0.55, y: 1.355, z: 0.55}
+    Hanging: 1
+    Triangles: 9530
+    Slots:
+    - Name: main
+      Own: {fileID: 2100000, guid: d00e11a26d2e7451c9497732ffd93343, type: 2}
+      Default: 
+      UvMeters: 0
+    - Name: glass
+      Own: {fileID: 2100000, guid: dee74f3f7c10f4d4eaed1ce314ff21f0, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: chandelier_classic
+    Name: "\u041B\u044E\u0441\u0442\u0440\u0430 \u043A\u043B\u0430\u0441\u0441\u0438\u0447\u0435\u0441\u043A\u0430\u044F"
+    Category: lighting
+    Source: polyhaven:Chandelier_01
+    Prefab: {fileID: 303333871700607048, guid: 4fb5425ec528540dca80f378051844f8, type: 3}
+    Size: {x: 0.746, y: 0.798, z: 0.816}
+    Hanging: 1
+    Triangles: 26860
+    Slots:
+    - Name: basecolor_classic_chandelier_1
+      Own: {fileID: 2100000, guid: cdd24014f2dd64d5a92a9397e43a645a, type: 2}
+      Default: 
+      UvMeters: 0
+    - Name: lamps_classic_chandelier_1
+      Own: {fileID: 2100000, guid: 6d1049a0276c544a69ff44bef3d1060e, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: desk_lamp
+    Name: "\u041D\u0430\u0441\u0442\u043E\u043B\u044C\u043D\u0430\u044F \u043B\u0430\u043C\u043F\u0430 \u043D\u0430 \u043A\u0440\u043E\u043D\u0448\u0442\u0435\u0439\u043D\u0435"
+    Category: lighting
+    Source: polyhaven:desk_lamp_arm_01
+    Prefab: {fileID: 7138371452520184257, guid: 95b0661cb9b1b4f079a1e7f8a9220cc7, type: 3}
+    Size: {x: 0.202, y: 0.893, z: 0.614}
+    Hanging: 0
+    Triangles: 24102
+    Slots:
+    - Name: main
+      Own: {fileID: 2100000, guid: 3f799b51627b648c8b60d03af512f8aa, type: 2}
+      Default: 
+      UvMeters: 0
+    - Name: light
+      Own: {fileID: 2100000, guid: 4d8c8b84d987748d182f12cb8f0c0296, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: table_lamp_edison
+    Name: "\u041D\u0430\u0441\u0442\u043E\u043B\u044C\u043D\u0430\u044F \u043B\u0430\u043C\u043F\u0430 \u043B\u043E\u0444\u0442"
+    Category: lighting
+    Source: polyhaven:industrial_pipe_lamp
+    Prefab: {fileID: 5574829164029523127, guid: ade24172048e441f1a32a530a0a846d9, type: 3}
+    Size: {x: 0.183, y: 0.364, z: 0.262}
+    Hanging: 0
+    Triangles: 8626
+    Slots:
+    - Name: main
+      Own: {fileID: 2100000, guid: 978b969981c16468ca1bde8177e19505, type: 2}
+      Default: 
+      UvMeters: 0
+    - Name: glass
+      Own: {fileID: 2100000, guid: 95bca140ec7e247ccab753a5a7b34e38, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: wall_light_bulkhead
+    Name: "\u041D\u0430\u0441\u0442\u0435\u043D\u043D\u044B\u0439 \u0441\u0432\u0435\u0442\u0438\u043B\u044C\u043D\u0438\u043A \u0443\u043B\u0438\u0447\u043D\u044B\u0439"
+    Category: lighting
+    Source: polyhaven:industrial_wall_lamp
+    Prefab: {fileID: 8204825717700212139, guid: 241a4750c6dd54602b91670ca93274ff, type: 3}
+    Size: {x: 0.273, y: 0.43, z: 0.14}
+    Hanging: 0
+    Triangles: 4446
+    Slots:
+    - Name: main
+      Own: {fileID: 2100000, guid: 5217ce2fb414c487eb5da01d2d8eace1, type: 2}
+      Default: 
+      UvMeters: 0
+    - Name: glass
+      Own: {fileID: 2100000, guid: ed9ef8291a6dd4995bac38a578393402, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: wall_sconce_black
+    Name: "\u0411\u0440\u0430 \u0447\u0451\u0440\u043D\u043E\u0435"
+    Category: lighting
+    Source: polyhaven:industrial_wall_sconce
+    Prefab: {fileID: 2092322475993851138, guid: 725c0603675f440929abe232ff4df6d4, type: 3}
+    Size: {x: 0.15, y: 0.342, z: 0.252}
+    Hanging: 0
+    Triangles: 9826
+    Slots:
+    - Name: main
+      Own: {fileID: 2100000, guid: e69af75685e0e45eb862645f5a530d17, type: 2}
+      Default: 
+      UvMeters: 0
+    - Name: bulb
+      Own: {fileID: 2100000, guid: dd4407d3424c64027931223094e0e7af, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: wall_lantern_classic
+    Name: "\u041D\u0430\u0441\u0442\u0435\u043D\u043D\u044B\u0439 \u0444\u043E\u043D\u0430\u0440\u044C \u043A\u043B\u0430\u0441\u0441\u0438\u0447\u0435\u0441\u043A\u0438\u0439"
+    Category: lighting
+    Source: polyhaven:street_lamp_02
+    Prefab: {fileID: 2512281365397767506, guid: 473098dce14b84aefa07637fbdccd21b, type: 3}
+    Size: {x: 0.386, y: 1.675, z: 0.807}
+    Hanging: 0
+    Triangles: 20338
+    Slots:
+    - Name: main
+      Own: {fileID: 2100000, guid: 2e645cfe34942490b942b99fae4a02ac, type: 2}
+      Default: 
+      UvMeters: 0
+    - Name: glass
+      Own: {fileID: 2100000, guid: 86413c9b7426543fb9775d90c21b2824, type: 2}
+      Default: 
+      UvMeters: 0
+    - Name: bulb
+      Own: {fileID: 2100000, guid: 655c6fca95bb2446f9f5ddc7a9082cbf, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: garden_lamp_post
+    Name: "\u0421\u0430\u0434\u043E\u0432\u044B\u0439 \u0444\u043E\u043D\u0430\u0440\u044C \u043D\u0430 \u0441\u0442\u043E\u043B\u0431\u0435"
+    Category: outdoor
+    Source: polyhaven:street_lamp_01
+    Prefab: {fileID: 4435111435137119293, guid: 93c2b71a29ea8460bbfa200592c96971, type: 3}
+    Size: {x: 0.704, y: 3.871, z: 0.386}
+    Hanging: 0
+    Triangles: 30610
+    Slots:
+    - Name: main
+      Own: {fileID: 2100000, guid: 6f1ec2b7372e048f8b380f8d26410387, type: 2}
+      Default: 
+      UvMeters: 0
+    - Name: glass
+      Own: {fileID: 2100000, guid: d72e47ef498a64ae5a135e3af1a89ca6, type: 2}
+      Default: 
+      UvMeters: 0
+    - Name: bulb
+      Own: {fileID: 2100000, guid: ce69458ddb53e43c7aad8cecf7b5d6e1, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: lantern
+    Name: "\u0424\u043E\u043D\u0430\u0440\u044C \u043A\u0435\u0440\u043E\u0441\u0438\u043D\u043E\u0432\u044B\u0439 (\u0434\u0435\u043A\u043E\u0440)"
+    Category: decor
+    Source: polyhaven:Lantern_01
+    Prefab: {fileID: 7035534298413060264, guid: 2608d9b30aa09414a8310e3b53e9f81f, type: 3}
+    Size: {x: 0.122, y: 0.294, z: 0.097}
+    Hanging: 0
+    Triangles: 33902
+    Slots:
+    - Name: brass
+      Own: {fileID: 2100000, guid: 54da3280b26c34f7da5b51e3191dae65, type: 2}
+      Default: 
+      UvMeters: 0
+    - Name: glass
+      Own: {fileID: 2100000, guid: 492f313cd9f554622ad0fd6280982aca, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: vase_white_round
+    Name: "\u0412\u0430\u0437\u0430 \u0431\u0435\u043B\u0430\u044F \u043E\u043A\u0440\u0443\u0433\u043B\u0430\u044F"
+    Category: decor
+    Source: polyhaven:ceramic_vase_02
+    Prefab: {fileID: 1575201362931866755, guid: 8020ef7efb0c04b2cbecc28c1f93f74c, type: 3}
+    Size: {x: 0.218, y: 0.309, z: 0.218}
+    Hanging: 0
+    Triangles: 11128
+    Slots:
+    - Name: main
+      Own: {fileID: 2100000, guid: 9c7d8faf83caf4ff19b3fb8fbc5495aa, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: vase_white_bottle
+    Name: "\u0412\u0430\u0437\u0430 \u0431\u0435\u043B\u0430\u044F \u0431\u0443\u0442\u044B\u043B\u043A\u0430"
+    Category: decor
+    Source: polyhaven:ceramic_vase_01
+    Prefab: {fileID: 1560071261518151218, guid: 07afa825abf464465b6550ff9e1ecd0d, type: 3}
+    Size: {x: 0.204, y: 0.4, z: 0.204}
+    Hanging: 0
+    Triangles: 10296
+    Slots:
+    - Name: main
+      Own: {fileID: 2100000, guid: b8e5b93a365014884b1bbc8947c2692a, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: vase_white_tall
+    Name: "\u0412\u0430\u0437\u0430 \u0431\u0435\u043B\u0430\u044F \u0432\u044B\u0441\u043E\u043A\u0430\u044F"
+    Category: decor
+    Source: polyhaven:ceramic_vase_03
+    Prefab: {fileID: 2974222838139729384, guid: a41a7cbb933e74b4d9f415635d9279ef, type: 3}
+    Size: {x: 0.112, y: 0.414, z: 0.112}
+    Hanging: 0
+    Triangles: 11136
+    Slots:
+    - Name: main
+      Own: {fileID: 2100000, guid: 6fa7357ea8cb147ed8fc48fd97e0cb48, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: vase_white_jug
+    Name: "\u0412\u0430\u0437\u0430-\u043A\u0443\u0432\u0448\u0438\u043D \u0431\u0435\u043B\u0430\u044F"
+    Category: decor
+    Source: polyhaven:ceramic_vase_04
+    Prefab: {fileID: 2525235285924454909, guid: e8ad9bac3fb944e0db607cc567ab3947, type: 3}
+    Size: {x: 0.181, y: 0.342, z: 0.181}
+    Hanging: 0
+    Triangles: 9000
+    Slots:
+    - Name: main
+      Own: {fileID: 2100000, guid: 080f836d881ea474e96a83b2e6940d66, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: vase_porcelain
+    Name: "\u0412\u0430\u0437\u0430 \u0444\u0430\u0440\u0444\u043E\u0440\u043E\u0432\u0430\u044F \u0441 \u0440\u043E\u0441\u043F\u0438\u0441\u044C\u044E"
+    Category: decor
+    Source: polyhaven:antique_ceramic_vase_01
+    Prefab: {fileID: 850950918610953472, guid: 09481e855d9b94afa80578428ae8509f, type: 3}
+    Size: {x: 0.255, y: 0.44, z: 0.255}
+    Hanging: 0
+    Triangles: 9408
+    Slots:
+    - Name: main
+      Own: {fileID: 2100000, guid: 05eeafcd8851549429072298732af3f5, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: basket_wicker
+    Name: "\u041A\u043E\u0440\u0437\u0438\u043D\u0430 \u043F\u043B\u0435\u0442\u0451\u043D\u0430\u044F"
+    Category: decor
+    Source: polyhaven:wicker_basket_01
+    Prefab: {fileID: 6129220118537066334, guid: a2139d0f4680a44079e833f7fd5cdd27, type: 3}
+    Size: {x: 0.383, y: 0.117, z: 0.295}
+    Hanging: 0
+    Triangles: 22276
+    Slots:
+    - Name: main
+      Own: {fileID: 2100000, guid: 3bed7738c1f5249af9c3d47bd20b2cc8, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: basket_lidded
+    Name: "\u041A\u043E\u0440\u0437\u0438\u043D\u044B \u043F\u043B\u0435\u0442\u0451\u043D\u044B\u0435 \u0441 \u043A\u0440\u044B\u0448\u043A\u043E\u0439"
+    Category: decor
+    Source: polyhaven:wicker_basket_02
+    Prefab: {fileID: 5033554286996134679, guid: 96261e2ae80454a9ea98ccec8525fce5, type: 3}
+    Size: {x: 0.347, y: 0.2, z: 0.254}
+    Hanging: 0
+    Triangles: 17850
+    Slots:
+    - Name: main
+      Own: {fileID: 2100000, guid: c2cc3aa14976c4e3e88ffaa6eb90ba20, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: throw_pillows
+    Name: "\u0414\u0435\u043A\u043E\u0440\u0430\u0442\u0438\u0432\u043D\u044B\u0435 \u043F\u043E\u0434\u0443\u0448\u043A\u0438"
+    Category: decor
+    Source: polyhaven:throw_pillows_01
+    Prefab: {fileID: 5834366027780122392, guid: 9e6cb5602882a47199e5fcd35bfb8a7d, type: 3}
+    Size: {x: 0.94, y: 0.45, z: 0.452}
+    Hanging: 0
+    Triangles: 6362
+    Slots:
+    - Name: main
+      Own: {fileID: 2100000, guid: 759d46f1d01a940e982929de648521f6, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: photo_frame_black
+    Name: "\u0424\u043E\u0442\u043E\u0440\u0430\u043C\u043A\u0430 \u043D\u0430\u0441\u0442\u043E\u043B\u044C\u043D\u0430\u044F \u0447\u0451\u0440\u043D\u0430\u044F"
+    Category: decor
+    Source: polyhaven:standing_picture_frame_01
+    Prefab: {fileID: 145735783117605811, guid: 5b167ba8751ee4416b4a5a558bad7d45, type: 3}
+    Size: {x: 0.1, y: 0.25, z: 0.201}
+    Hanging: 0
+    Triangles: 1634
+    Slots:
+    - Name: glass
+      Own: {fileID: 2100000, guid: 2bacce786b7894c4aaa4b49d6f420f0f, type: 2}
+      Default: 
+      UvMeters: 0
+    - Name: artwork
+      Own: {fileID: 2100000, guid: 2b79ec11f60584484b23d6db93cbd1b0, type: 2}
+      Default: 
+      UvMeters: 0
+    - Name: main
+      Own: {fileID: 2100000, guid: 3674df659153049faae0c199ed35a61b, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: photo_frame_white
+    Name: "\u0424\u043E\u0442\u043E\u0440\u0430\u043C\u043A\u0430 \u043D\u0430\u0441\u0442\u043E\u043B\u044C\u043D\u0430\u044F \u0431\u0435\u043B\u0430\u044F"
+    Category: decor
+    Source: polyhaven:standing_picture_frame_02
+    Prefab: {fileID: 4443762426185848560, guid: f1ba05be2cd3f480ca2d2d78f91e0cd5, type: 3}
+    Size: {x: 0.102, y: 0.266, z: 0.217}
+    Hanging: 0
+    Triangles: 2986
+    Slots:
+    - Name: artwork
+      Own: {fileID: 2100000, guid: 637e1c48a4b07446eb8d0fab55c5ff91, type: 2}
+      Default: 
+      UvMeters: 0
+    - Name: main
+      Own: {fileID: 2100000, guid: 7f935e025b243403397a35470e506847, type: 2}
+      Default: 
+      UvMeters: 0
+    - Name: glass
+      Own: {fileID: 2100000, guid: b857a497d4a5a4a31b6f6f7fb9b68e07, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: poster_frame
+    Name: "\u041F\u043E\u0441\u0442\u0435\u0440 \u0432 \u0440\u0430\u043C\u0435"
+    Category: decor
+    Source: polyhaven:hanging_picture_frame_01
+    Prefab: {fileID: 8747484755726636312, guid: c46fea4dddaa442f7a1996fb3ef33a79, type: 3}
+    Size: {x: 0.594, y: 0.841, z: 0.016}
+    Hanging: 0
+    Triangles: 2586
+    Slots:
+    - Name: glass
+      Own: {fileID: 2100000, guid: 3c0917390472f458fa07db1f2430a169, type: 2}
+      Default: 
+      UvMeters: 0
+    - Name: artwork
+      Own: {fileID: 2100000, guid: c519873d1fa7148cf8807eea09820b7c, type: 2}
+      Default: 
+      UvMeters: 0
+    - Name: main
+      Own: {fileID: 2100000, guid: b68ebada048094ee7b1486bc3ab1509f, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: picture_frame_landscape
+    Name: "\u041A\u0430\u0440\u0442\u0438\u043D\u0430 \u0432 \u0431\u0435\u043B\u043E\u0439 \u0440\u0430\u043C\u0435"
+    Category: decor
+    Source: polyhaven:hanging_picture_frame_02
+    Prefab: {fileID: 4891868455925847317, guid: 1a4df388615cf4c3daa0d13bf0454884, type: 3}
+    Size: {x: 0.752, y: 0.5, z: 0.033}
+    Hanging: 0
+    Triangles: 3678
+    Slots:
+    - Name: artwork
+      Own: {fileID: 2100000, guid: 82dc7041826c1489993b6716b41b112c, type: 2}
+      Default: 
+      UvMeters: 0
+    - Name: main
+      Own: {fileID: 2100000, guid: 7b26c4a78ee744d7395f9bacdb4a79ab, type: 2}
+      Default: 
+      UvMeters: 0
+    - Name: glass
+      Own: {fileID: 2100000, guid: ce1faa167478343b59221391012d6adf, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: painting_classic
+    Name: "\u041A\u0430\u0440\u0442\u0438\u043D\u0430 \u0432 \u0437\u043E\u043B\u043E\u0447\u0451\u043D\u043E\u0439 \u0440\u0430\u043C\u0435"
+    Category: decor
+    Source: polyhaven:fancy_picture_frame_01
+    Prefab: {fileID: 6525571175258454793, guid: 30a0f41ae32a24b3bac07f77d6fc8b6f, type: 3}
+    Size: {x: 0.603, y: 0.464, z: 0.02}
+    Hanging: 0
+    Triangles: 938
+    Slots:
+    - Name: main
+      Own: {fileID: 2100000, guid: deee8ed7c4bbc4bfebc3ddd547e414b3, type: 2}
+      Default: 
+      UvMeters: 0
+    - Name: canvas
+      Own: {fileID: 2100000, guid: 1170b2aa1260e4586a7b8d76630448bd, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: wall_clock_modern
+    Name: "\u0427\u0430\u0441\u044B \u043D\u0430\u0441\u0442\u0435\u043D\u043D\u044B\u0435"
+    Category: decor
+    Source: polyhaven:wall_clock
+    Prefab: {fileID: 6290677278136970898, guid: 1f95a0bde1f46401484a53625b6bdb5e, type: 3}
+    Size: {x: 0.32, y: 0.32, z: 0.047}
+    Hanging: 0
+    Triangles: 3658
+    Slots:
+    - Name: main
+      Own: {fileID: 2100000, guid: 3b0a93437de404d2ab965703117dda86, type: 2}
+      Default: 
+      UvMeters: 0
+    - Name: glass
+      Own: {fileID: 2100000, guid: 9e3c69f8767b641e4b9ad76352a9007c, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: horse_figurine
+    Name: "\u0421\u0442\u0430\u0442\u0443\u044D\u0442\u043A\u0430 \u043B\u043E\u0448\u0430\u0434\u044C"
+    Category: decor
+    Source: polyhaven:horse_statue_01
+    Prefab: {fileID: 5644619513558117384, guid: c38ab189cabe14431bb1a6cb13785672, type: 3}
+    Size: {x: 0.163, y: 0.22, z: 0.108}
+    Hanging: 0
+    Triangles: 22388
+    Slots:
+    - Name: main
+      Own: {fileID: 2100000, guid: a74f6fa94526445bfbd092170a44a9f5, type: 2}
+      Default: 
+      UvMeters: 0
+    - Name: base
+      Own: {fileID: 2100000, guid: 71a4420ea52bb490cb8c734a91dcf070, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: bust_marble
+    Name: "\u0411\u044E\u0441\u0442 \u043C\u0440\u0430\u043C\u043E\u0440\u043D\u044B\u0439"
+    Category: decor
+    Source: polyhaven:marble_bust_01
+    Prefab: {fileID: 6608707056926564528, guid: 0c0b12cce8e324634b0919c7e6bcd417, type: 3}
+    Size: {x: 0.272, y: 0.515, z: 0.3}
+    Hanging: 0
+    Triangles: 17456
+    Slots:
+    - Name: main
+      Own: {fileID: 2100000, guid: 1b24ffc160471485b9e5f7e4cb14fdbc, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: chess_set
+    Name: "\u0428\u0430\u0445\u043C\u0430\u0442\u044B"
+    Category: decor
+    Source: polyhaven:chess_set
+    Prefab: {fileID: 818640177790970750, guid: 985c007f916c2489e8b902aecaf7fb16, type: 3}
+    Size: {x: 0.553, y: 0.112, z: 0.553}
+    Hanging: 0
+    Triangles: 40000
+    Slots:
+    - Name: pieces_white
+      Own: {fileID: 2100000, guid: 04aa0c9026da2447098403c7b523cff5, type: 2}
+      Default: 
+      UvMeters: 0
+    - Name: board
+      Own: {fileID: 2100000, guid: 415e232a411b647d0892c3ccca08f1ae, type: 2}
+      Default: 
+      UvMeters: 0
+    - Name: pieces_black
+      Own: {fileID: 2100000, guid: b56d44781420949858d3c445211d101c, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: wine_bottles
+    Name: "\u0411\u0443\u0442\u044B\u043B\u043A\u0438 \u0432\u0438\u043D\u0430"
+    Category: kitchen
+    Source: polyhaven:wine_bottles_01
+    Prefab: {fileID: 3911906330180759641, guid: 1d7d840cbe39a4e6993b486a0d3fb2c7, type: 3}
+    Size: {x: 0.676, y: 0.331, z: 0.081}
+    Hanging: 0
+    Triangles: 28848
+    Slots:
+    - Name: glass_orange
+      Own: {fileID: 2100000, guid: 91a8379fae1c64c6999ed59cbdb94ff8, type: 2}
+      Default: 
+      UvMeters: 0
+    - Name: seal_cork
+      Own: {fileID: 2100000, guid: 8778e81ae03874c0cb4043d258e52c29, type: 2}
+      Default: 
+      UvMeters: 0
+    - Name: wine_red
+      Own: {fileID: 2100000, guid: c45609ce742c4435d86160f02dc7ada9, type: 2}
+      Default: 
+      UvMeters: 0
+    - Name: ftero_vinea_02
+      Own: {fileID: 2100000, guid: c6b91f9138d254f6eaa986ef92a96561, type: 2}
+      Default: 
+      UvMeters: 0
+    - Name: glass_yellow
+      Own: {fileID: 2100000, guid: 062609cf6aa41402189dde81ac0543c0, type: 2}
+      Default: 
+      UvMeters: 0
+    - Name: wine_clear
+      Own: {fileID: 2100000, guid: 1bedfa91bd7a74bce86f7a86da346948, type: 2}
+      Default: 
+      UvMeters: 0
+    - Name: clearwater
+      Own: {fileID: 2100000, guid: 13a49746750aa428d9420b16278953a9, type: 2}
+      Default: 
+      UvMeters: 0
+    - Name: glass_clear
+      Own: {fileID: 2100000, guid: dd0ee0b37863a4c62b02bc7597cd4afc, type: 2}
+      Default: 
+      UvMeters: 0
+    - Name: wine_light_red
+      Own: {fileID: 2100000, guid: 6c5d1eb5a9e864baf83745fb3aff1236, type: 2}
+      Default: 
+      UvMeters: 0
+    - Name: intertwine
+      Own: {fileID: 2100000, guid: 7db9d9b2aae74418ba2a6e287b58c47f, type: 2}
+      Default: 
+      UvMeters: 0
+    - Name: glass_green
+      Own: {fileID: 2100000, guid: 300455d11398542568aea45a80adb1ae, type: 2}
+      Default: 
+      UvMeters: 0
+    - Name: ftero_vinea_01
+      Own: {fileID: 2100000, guid: 6ea0fed932f3b4594b8354c36a22b0d7, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: bowl_wood
+    Name: "\u0427\u0430\u0448\u0430 \u0434\u0435\u0440\u0435\u0432\u044F\u043D\u043D\u0430\u044F"
+    Category: decor
+    Source: polyhaven:wooden_bowl_02
+    Prefab: {fileID: 8290334408590162565, guid: a8fa1f129dc3a42cbb456f9c6bc5f93a, type: 3}
+    Size: {x: 0.131, y: 0.073, z: 0.125}
+    Hanging: 0
+    Triangles: 4666
+    Slots:
+    - Name: main
+      Own: {fileID: 2100000, guid: f0fd8cd0852e343c58d3d3b4a5948677, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: tea_set
+    Name: "\u0427\u0430\u0439\u043D\u044B\u0439 \u0441\u0435\u0440\u0432\u0438\u0437"
+    Category: kitchen
+    Source: polyhaven:tea_set_01
+    Prefab: {fileID: 888237810396413733, guid: 14a25801d5765413e94e952ac0230f7b, type: 3}
+    Size: {x: 0.918, y: 0.165, z: 0.484}
+    Hanging: 0
+    Triangles: 40000
+    Slots:
+    - Name: main
+      Own: {fileID: 2100000, guid: 9b3c9ae85e9794330959a1b68eaefa59, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: cutting_board
+    Name: "\u0420\u0430\u0437\u0434\u0435\u043B\u043E\u0447\u043D\u0430\u044F \u0434\u043E\u0441\u043A\u0430"
+    Category: kitchen
+    Source: polyhaven:wooden_cutting_board
+    Prefab: {fileID: 2428956828245419940, guid: 0d461ab6a8b4044ac9a663c40197bb1a, type: 3}
+    Size: {x: 0.45, y: 0.041, z: 0.247}
+    Hanging: 0
+    Triangles: 3520
+    Slots:
+    - Name: main
+      Own: {fileID: 2100000, guid: 9c2fa7e87074244a8b4048a2feed6f3b, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: bananas
+    Name: "\u0411\u0430\u043D\u0430\u043D\u044B"
+    Category: kitchen
+    Source: polyhaven:bananas
+    Prefab: {fileID: 6752261626502268041, guid: c81459480f19b4772856b2d59745f5e1, type: 3}
+    Size: {x: 0.6, y: 0.179, z: 0.244}
+    Hanging: 0
+    Triangles: 40000
+    Slots:
+    - Name: Material.008
+      Own: {fileID: 2100000, guid: c0391f93cafbc4e25a8026e9e028a622, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: books_encyclopedia
+    Name: "\u041A\u043D\u0438\u0433\u0438, \u0441\u043E\u0431\u0440\u0430\u043D\u0438\u0435 \u0442\u043E\u043C\u043E\u0432"
+    Category: decor
+    Source: polyhaven:book_encyclopedia_set_01
+    Prefab: {fileID: 9089016038931350618, guid: 7827c5d1963ee47b58cbfb13097cfb59, type: 3}
+    Size: {x: 0.551, y: 0.237, z: 0.163}
+    Hanging: 0
+    Triangles: 39999
+    Slots:
+    - Name: cover
+      Own: {fileID: 2100000, guid: e346c163275f0450bac9f0967436b135, type: 2}
+      Default: 
+      UvMeters: 0
+    - Name: paper
+      Own: {fileID: 2100000, guid: 9d8a182f4c0734e298f44cf97e915b6b, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: candleholders_brass
+    Name: "\u041F\u043E\u0434\u0441\u0432\u0435\u0447\u043D\u0438\u043A\u0438 \u043B\u0430\u0442\u0443\u043D\u043D\u044B\u0435"
+    Category: decor
+    Source: polyhaven:brass_candleholders
+    Prefab: {fileID: 780223668191253941, guid: 8c67c6b7dbf3d4bf386753c8b453fb16, type: 3}
+    Size: {x: 1.053, y: 0.835, z: 0.365}
+    Hanging: 0
+    Triangles: 39999
+    Slots:
+    - Name: 03
+      Own: {fileID: 2100000, guid: a060adbaee3864f3583ad96c07cd2a15, type: 2}
+      Default: 
+      UvMeters: 0
+    - Name: flame
+      Own: {fileID: 2100000, guid: 9b948ee18aeeb4ea18292697dbfe5e2a, type: 2}
+      Default: 
+      UvMeters: 0
+    - Name: 02
+      Own: {fileID: 2100000, guid: 9a99f623d5bc54d6c926f35f7821a006, type: 2}
+      Default: 
+      UvMeters: 0
+    - Name: candles
+      Own: {fileID: 2100000, guid: 1a2cfb74349634b38abca7c6b10a7097, type: 2}
+      Default: 
+      UvMeters: 0
+    - Name: 01
+      Own: {fileID: 2100000, guid: 6d001d0375fca426786fda9682698d7f, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: plant_ficus
+    Name: "\u0424\u0438\u043A\u0443\u0441 \u0432 \u0433\u043E\u0440\u0448\u043A\u0435"
+    Category: plants
+    Source: polyhaven:potted_plant_01
+    Prefab: {fileID: 6106241689997251690, guid: 8bcca9c6ee7ca49c4a30a7856367f12f, type: 3}
+    Size: {x: 0.587, y: 1.35, z: 0.634}
+    Hanging: 0
+    Triangles: 60000
+    Slots:
+    - Name: pot
+      Own: {fileID: 2100000, guid: ddf0d27ae0ded429798e78b9dc75d599, type: 2}
+      Default: 
+      UvMeters: 0
+    - Name: leaves
+      Own: {fileID: 2100000, guid: cf87909dfc31f4816a7fa94e8eda656b, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: plant_succulent
+    Name: "\u0421\u0443\u043A\u043A\u0443\u043B\u0435\u043D\u0442 \u0432 \u0431\u0435\u043B\u043E\u043C \u0433\u043E\u0440\u0448\u043A\u0435"
+    Category: plants
+    Source: polyhaven:potted_plant_04
+    Prefab: {fileID: 4477201280116810927, guid: 333caed451c35474284ddb4db35992dc, type: 3}
+    Size: {x: 0.168, y: 0.267, z: 0.185}
+    Hanging: 0
+    Triangles: 8929
+    Slots:
+    - Name: main
+      Own: {fileID: 2100000, guid: ba23f54143ce8471bab8f5cc3d0064c6, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: pot_clay
+    Name: "\u0413\u043E\u0440\u0448\u043E\u043A \u0433\u043B\u0438\u043D\u044F\u043D\u044B\u0439"
+    Category: plants
+    Source: polyhaven:planter_pot_clay
+    Prefab: {fileID: 4247269459080965010, guid: 9d30a636392444d30994dcd7885eecc6, type: 3}
+    Size: {x: 0.266, y: 0.222, z: 0.263}
+    Hanging: 0
+    Triangles: 3080
+    Slots:
+    - Name: main
+      Own: {fileID: 2100000, guid: 80ae27eb75dd14c4fbba88f5a9b18164, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: boulder
+    Name: "\u0412\u0430\u043B\u0443\u043D"
+    Category: outdoor
+    Source: polyhaven:boulder_01
+    Prefab: {fileID: 89112441186748729, guid: 71320ba6f7bf740538558d517230cb65, type: 3}
+    Size: {x: 1.275, y: 1.006, z: 1.83}
+    Hanging: 0
+    Triangles: 40000
+    Slots:
+    - Name: main
+      Own: {fileID: 2100000, guid: 7734f7288adfa4c21b0f0691b07783d4, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: planter_box
+    Name: "\u042F\u0449\u0438\u043A \u0434\u043B\u044F \u0440\u0430\u0441\u0442\u0435\u043D\u0438\u0439"
+    Category: outdoor
+    Source: polyhaven:planter_box_01
+    Prefab: {fileID: 4331139540029390614, guid: 10f040dfcc8224ec095253ee882972df, type: 3}
+    Size: {x: 0.913, y: 0.425, z: 0.414}
+    Hanging: 0
+    Triangles: 8094
+    Slots:
+    - Name: main
+      Own: {fileID: 2100000, guid: 27dfe4af4c576460b8d71a432434169e, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: raised_bed
+    Name: "\u0413\u0440\u044F\u0434\u043A\u0430 \u043D\u0430 \u043D\u043E\u0436\u043A\u0430\u0445"
+    Category: outdoor
+    Source: polyhaven:planter_box_03
+    Prefab: {fileID: 7748979410866589330, guid: 346c58729abb0428fb08a7fbce05d2dc, type: 3}
+    Size: {x: 0.914, y: 0.855, z: 0.656}
+    Hanging: 0
+    Triangles: 13112
+    Slots:
+    - Name: main
+      Own: {fileID: 2100000, guid: 74bc9b9dd0b0a4911ab7483646c9007c, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: fire_pit
+    Name: "\u041A\u043E\u0441\u0442\u0440\u0438\u0449\u0435 \u043A\u0430\u043C\u0435\u043D\u043D\u043E\u0435"
+    Category: outdoor
+    Source: polyhaven:stone_fire_pit
+    Prefab: {fileID: 1383308337314422829, guid: a2bd97c3a182547b08d30b8d5b155c05, type: 3}
+    Size: {x: 1.448, y: 0.388, z: 1.433}
+    Hanging: 0
+    Triangles: 3887
+    Slots:
+    - Name: main
+      Own: {fileID: 2100000, guid: c8b9d5f294c3b4ec4baeab68fc0f4167, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: watering_can
+    Name: "\u041B\u0435\u0439\u043A\u0430 \u043C\u0435\u0442\u0430\u043B\u043B\u0438\u0447\u0435\u0441\u043A\u0430\u044F"
+    Category: outdoor
+    Source: polyhaven:watering_can_metal_01
+    Prefab: {fileID: 9200272076662598239, guid: 72ae170745f6c497abba837436a2dd2a, type: 3}
+    Size: {x: 0.191, y: 0.197, z: 0.452}
+    Hanging: 0
+    Triangles: 11837
+    Slots:
+    - Name: main
+      Own: {fileID: 2100000, guid: fd9706047432849d9a7cf053c9a37a69, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: bistro_set_garden
+    Name: "\u0421\u0430\u0434\u043E\u0432\u044B\u0439 \u043A\u043E\u043C\u043F\u043B\u0435\u043A\u0442: \u0441\u0442\u043E\u043B \u0438 2 \u0441\u0442\u0443\u043B\u0430"
+    Category: outdoor
+    Source: polyhaven:outdoor_table_chair_set_01
+    Prefab: {fileID: 23290094843551578, guid: 76e9452969a1545baa7b98271d1a7933, type: 3}
+    Size: {x: 0.742, y: 0.859, z: 1.717}
+    Hanging: 0
+    Triangles: 9828
+    Slots:
+    - Name: chair
+      Own: {fileID: 2100000, guid: 6bc5a500278f7405096c89ff3b8eaa4b, type: 2}
+      Default: 
+      UvMeters: 0
+    - Name: table
+      Own: {fileID: 2100000, guid: bd3eb657b36ec4e5d92e7077c3ae921a, type: 2}
+      Default: 
+      UvMeters: 0
+  - Id: picnic_table
+    Name: "\u0421\u0442\u043E\u043B \u0434\u043B\u044F \u043F\u0438\u043A\u043D\u0438\u043A\u0430"
+    Category: outdoor
+    Source: polyhaven:wooden_picnic_table
+    Prefab: {fileID: 444557009809215755, guid: 220cca636a2fe428d8f890df8b58a5ff, type: 3}
+    Size: {x: 2.241, y: 0.746, z: 3.022}
+    Hanging: 0
+    Triangles: 10210
+    Slots:
+    - Name: bottom
+      Own: {fileID: 2100000, guid: 904bc325f377e49ab839b99a1dc58bd8, type: 2}
+      Default: 
+      UvMeters: 0
+    - Name: table
+      Own: {fileID: 2100000, guid: ba7c6b3c35d2343848f870b89d632d07, type: 2}
+      Default: 
+      UvMeters: 0

@@ -33,3 +33,6 @@
 # Procedural mesh container (~300 MB, rebuilt by House 46-96 → Rebuild Scene)
 /Assets/House4696/Generated/Meshes/SceneMeshes.asset
 /Assets/House4696/Generated/Meshes/SceneMeshes.asset.meta
+
+# Downloaded asset sources (tools/assets/fetch_polyhaven.py)
+/.cache/

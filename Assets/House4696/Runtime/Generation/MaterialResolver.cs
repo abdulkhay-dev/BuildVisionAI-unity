@@ -41,6 +41,16 @@ namespace House4696.Generation
             Lib = lib; Interior = interior;
             Collect(lib);
             Collect(interior); // interior names override (e.g. "glass", "soil")
+            // library materials (PBR scans) by their catalogue ids; built-in names keep priority
+            var external = ExternalCatalog.Load();
+            if (external != null)
+                foreach (var e in external.Materials)
+                {
+                    if (e.Material == null) continue;
+                    string k = Key(e.Id);
+                    if (_map.ContainsKey(k)) Debug.LogWarning($"[House] library material '{e.Id}' clashes with a built-in name and is hidden");
+                    else _map[k] = e.Material;
+                }
         }
 
         void Collect(object src)
@@ -89,6 +99,18 @@ namespace House4696.Generation
             t = new Material(m) { name = m.name + "_" + name.Substring(baseName.Length + 1) };
             t.SetColor("_BaseColor", col);
             _tinted[name] = t;
+            return t;
+        }
+
+        /// <summary>Copy of <paramref name="m"/> with the base colour "#rrggbb" (for a model's own scanned materials).</summary>
+        public Material Tint(Material m, string hex)
+        {
+            if (m == null || !ColorUtility.TryParseHtmlString(hex, out var col)) return m;
+            string key = m.name + hex;
+            if (_tinted.TryGetValue(key, out var t)) return t;
+            t = new Material(m) { name = m.name + "_" + hex.TrimStart('#') };
+            t.SetColor("_BaseColor", col);
+            _tinted[key] = t;
             return t;
         }
 

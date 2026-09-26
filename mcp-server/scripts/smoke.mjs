@@ -53,19 +53,22 @@ await tool("house_upsert", {
     { id: "bed", name: "Спальня", level: "ground", type: "bedroom", outline: [[6, 4], [9.6, 4], [9.6, 7.6], [6, 7.6]] },
   ],
 });
-await tool("house_upsert", { kind: "roof", data: { id: "roof", type: "gable", outline: [[0, 0], [10, 0], [10, 8], [0, 8]], base: 3.65, pitch: 30, overhang: 0.6, rotation: 90, gable: "wood" } });
+await tool("house_upsert", { kind: "roof", data: { id: "roof", type: "gable", outline: [[0, 0], [10, 0], [10, 8], [0, 8]], pitch: 30, overhang: 0.6, rotation: 90, gable: "wood" } });
 await tool("house_catalog", { category: "seating" });
+await tool("house_materials", { category: "floor" });
 await tool("house_upsert", {
   kind: "item", data: [
     { id: "sofa", model: "sofa", level: "ground", position: [3.0, 0, 4.0], rotation: 270, params: { length: 2.6, fabric: "linen" } },
     { id: "rug", model: "rug", level: "ground", position: [1.9, 0, 4.0], params: { width: 2.2, depth: 2.8 } },
-    { id: "bed", model: "bed", level: "ground", position: [7.8, 0, 7.54], rotation: 180, params: { width: 1.6, length: 2.0 } },
-    { id: "kitchen", model: "kitchen_base", level: "ground", position: [5.94, 0, 6.2], rotation: 270, params: { length: 2.4 } },
+    { id: "bed", model: "bed", level: "ground", position: [8.0, 0, 7.54], rotation: 180, params: { width: 1.6, length: 2.0 } },
+    { id: "kitchen", model: "kitchen_base", level: "ground", position: [5.94, 0, 3.9], rotation: 270, params: { length: 2.4 } },
   ],
 });
 await tool("house_upsert", { kind: "opening", data: { id: "entry", width: 1.2, heigth: 2.4 } }); // deliberate typo
 await tool("house_validate");
 await tool("house_summary");
+await tool("house_inspect", { section: "roofs" });
+await tool("house_inspect", { section: "items", id: "bed" });
 await tool("house_render", { mode: "orbit", yaw: 25, pitch: 12 });
 await tool("house_render", { mode: "plan" });
 await tool("house_render", { mode: "walk", position: [9.0, 1.0], level: "ground", yaw: 300 });

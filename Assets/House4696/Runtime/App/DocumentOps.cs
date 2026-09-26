@@ -136,7 +136,9 @@ namespace House4696.App
         /// <summary>Reports fields that the target type does not have (typos such as "heigth" or "thicknes").</summary>
         static void CheckFields(JObject o, Type t, string kind, List<string> notes)
         {
-            var names = new HashSet<string>(t.GetFields(BindingFlags.Public | BindingFlags.Instance).Select(f => char.ToLowerInvariant(f.Name[0]) + f.Name.Substring(1)));
+            // JSON names: an explicit [JsonProperty] name, else the camel-cased field name
+            var names = new HashSet<string>(t.GetFields(BindingFlags.Public | BindingFlags.Instance).Select(f =>
+                f.GetCustomAttribute<JsonPropertyAttribute>()?.PropertyName ?? char.ToLowerInvariant(f.Name[0]) + f.Name.Substring(1)));
             foreach (var p in o.Properties())
                 if (!names.Contains(p.Name))
                     notes.Add($"ВНИМАНИЕ: у {kind} нет поля '{p.Name}' — оно проигнорировано. Поля: {string.Join(", ", names)}");
@@ -201,7 +203,7 @@ namespace House4696.App
                 ["area"] = r.Outline.Count >= 3 ? Math.Round(Mathf.Abs(Polygon.SignedArea(r.Outline)), 1) : 0,
                 ["items"] = d.Items.Count(i => i.Room == r.Id || i.Room == null && i.Level == r.Level && r.Outline.Count >= 3 && Polygon.Contains(r.Outline, new Vector2(i.Position.x, i.Position.z))),
             }));
-            o["roofs"] = new JArray(d.Roofs.Select(r => $"{r.Id}: {r.Type.ToString().ToLowerInvariant()} base {r.Base:0.##} pitch {r.Pitch:0}"));
+            o["roofs"] = new JArray(d.Roofs.Select(r => $"{r.Id}: {r.Type.ToString().ToLowerInvariant()} base {(r.Base.HasValue ? r.Base.Value.ToString("0.##") : "auto")} pitch {r.Pitch:0}"));
             o["stairs"] = new JArray(d.Stairs.Select(s => $"{s.Id}: {s.Type.ToString().ToLowerInvariant()} {s.From}→{s.To}"));
             o["counts"] = new JObject { ["elements"] = d.Elements.Count, ["items"] = d.Items.Count, ["lights"] = d.Lights.Count, ["views"] = d.Views.Count };
             return o;

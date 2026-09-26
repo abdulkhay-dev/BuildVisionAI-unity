@@ -39,7 +39,8 @@ namespace House4696.Generation
         {
             var outline = Polygon.CounterClockwise(r.Outline);
             var slab = Offset(outline, r.Overhang);
-            float y0 = r.Base, y1 = r.Base + r.Thickness;
+            float rb = _c.RoofBase(r);
+            float y0 = rb, y1 = rb + r.Thickness;
             Polygon.Prism(mb, slab, y0, y1, r.Parapet > 0 ? top : null, soffit, fascia);
             if (r.Parapet <= 0f)
             {
@@ -83,6 +84,77 @@ namespace House4696.Generation
         }
 
         // ------------------------------------------------------------------ pitched
+        /// <summary>Heights of a built roof for the inspector and the checks (absolute, top surface).</summary>
+        public struct Shape
+        {
+            /// <summary>Top surface at the outer edge of the overhang (low side for a shed) and at the ridge (high side for a shed).</summary>
+            public float Eave, Ridge;
+            /// <summary>Underside where it meets the walls' outer face.</summary>
+            public float Base;
+            /// <summary>Shed roofs: compass direction the roof rises towards (the high side).</summary>
+            public float? HighSide;
+        }
+
+        /// <summary>
+        /// Height of the roof's underside over a plan point (null outside the roof and its overhang). Same geometry as
+        /// <see cref="Pitched"/>: the underside passes <see cref="WallSeat"/> inside the outline at the base height.
+        /// </summary>
+        public static float? UndersideAt(RoofDef r, float baseY, Vector2 p)
+        {
+            if (r.Outline == null || r.Outline.Count < 3) return null;
+            if (r.Type == RoofType.Flat)
+                return Polygon.Contains(Offset(Polygon.CounterClockwise(r.Outline), r.Overhang), p) ? baseY : (float?)null;
+            var inv = Quaternion.Inverse(Quaternion.Euler(0, r.Rotation, 0));
+            float x0 = float.MaxValue, x1 = float.MinValue, z0 = float.MaxValue, z1 = float.MinValue;
+            foreach (var q in r.Outline)
+            {
+                var l = inv * new Vector3(q.x, 0, q.y);
+                x0 = Mathf.Min(x0, l.x); x1 = Mathf.Max(x1, l.x); z0 = Mathf.Min(z0, l.z); z1 = Mathf.Max(z1, l.z);
+            }
+            var lp = inv * new Vector3(p.x, 0, p.y);
+            float oh = r.Overhang;
+            if (lp.x < x0 - oh || lp.x > x1 + oh || lp.z < z0 - oh || lp.z > z1 + oh) return null;
+            float tan = Mathf.Tan(Mathf.Clamp(r.Pitch, 3f, 70f) * Mathf.Deg2Rad);
+            float dist;
+            switch (r.Type)
+            {
+                case RoofType.Gable: dist = Mathf.Min(lp.z - z0, z1 - lp.z); break;
+                case RoofType.Shed: dist = lp.z - z0; break;
+                default: dist = Mathf.Min(Mathf.Min(lp.z - z0, z1 - lp.z), Mathf.Min(lp.x - x0, x1 - lp.x)); break;
+            }
+            return baseY - WallSeat * tan + dist * tan;
+        }
+
+        /// <summary>Same formulas as <see cref="Pitched"/> and <see cref="Flat"/>.</summary>
+        public static Shape Describe(RoofDef r, float baseY)
+        {
+            var sh = new Shape { Base = baseY };
+            if (r.Type == RoofType.Flat) { sh.Eave = sh.Ridge = baseY + r.Thickness + Mathf.Max(0f, r.Parapet); return sh; }
+            var inv = Quaternion.Inverse(Quaternion.Euler(0, r.Rotation, 0));
+            float z0 = float.MaxValue, z1 = float.MinValue, x0 = float.MaxValue, x1 = float.MinValue;
+            foreach (var p in r.Outline)
+            {
+                var l = inv * new Vector3(p.x, 0, p.y);
+                z0 = Mathf.Min(z0, l.z); z1 = Mathf.Max(z1, l.z); x0 = Mathf.Min(x0, l.x); x1 = Mathf.Max(x1, l.x);
+            }
+            float pitch = Mathf.Clamp(r.Pitch, 3f, 70f) * Mathf.Deg2Rad, tan = Mathf.Tan(pitch);
+            float oh = r.Overhang, lift = r.Thickness / Mathf.Cos(pitch) - WallSeat * tan;
+            sh.Eave = baseY - oh * tan + lift;
+            switch (r.Type)
+            {
+                case RoofType.Gable: sh.Ridge = baseY + (z1 - z0) * 0.5f * tan + lift; break;
+                case RoofType.Shed:
+                    sh.Ridge = baseY + (z1 - z0) * tan + oh * tan + lift;
+                    sh.HighSide = Mathf.Repeat(r.Rotation, 360f);
+                    break;
+                default:
+                    float h = Mathf.Min((z1 - z0) * 0.5f + oh, (x1 - x0) * 0.5f + oh);
+                    sh.Ridge = sh.Eave + h * tan;
+                    break;
+            }
+            return sh;
+        }
+
         void Pitched(RoofDef r, MeshBuilder mb, Material top, Material soffit, Material fascia, Material gable)
         {
             var rot = Quaternion.Euler(0, r.Rotation, 0);
@@ -93,6 +165,7 @@ namespace House4696.Generation
                 var l = inv * new Vector3(p.x, 0, p.y);
                 x0 = Mathf.Min(x0, l.x); x1 = Mathf.Max(x1, l.x); z0 = Mathf.Min(z0, l.z); z1 = Mathf.Max(z1, l.z);
             }
+            float B = _c.RoofBase(r);
             mb.Transform = Matrix4x4.TRS(Vector3.zero, rot, Vector3.one);
             float pitch = Mathf.Clamp(r.Pitch, 3f, 70f) * Mathf.Deg2Rad;
             float tan = Mathf.Tan(pitch);
@@ -105,15 +178,15 @@ namespace House4696.Generation
             // and its cladding run into the roof slab instead of leaving a slit under it
             float seat = WallSeat * tan;
             lift -= seat;
-            float ye = r.Base - oh * tan + lift;          // top surface at the overhang edge
-            float wallTop = r.Base;
+            float ye = B - oh * tan + lift;          // top surface at the overhang edge
+            float wallTop = B;
             float zc = (z0 + z1) * 0.5f;
 
             switch (r.Type)
             {
                 case RoofType.Gable:
                 {
-                    float yr = r.Base + (zc - z0) * tan + lift;
+                    float yr = B + (zc - z0) * tan + lift;
                     Slab(mb, new[] { V(X0, ye, Z0), V(X1, ye, Z0), V(X1, yr, zc), V(X0, yr, zc) }, t, top, soffit, fascia);
                     Slab(mb, new[] { V(X1, ye, Z1), V(X0, ye, Z1), V(X0, yr, zc), V(X1, yr, zc) }, t, top, soffit, fascia);
                     foreach (float x in new[] { x0, x1 })
@@ -122,7 +195,7 @@ namespace House4696.Generation
                 }
                 case RoofType.Shed:
                 {
-                    float yh = r.Base + (z1 - z0) * tan, yH = yh + oh * tan + lift;
+                    float yh = B + (z1 - z0) * tan, yH = yh + oh * tan + lift;
                     Slab(mb, new[] { V(X0, ye, Z0), V(X1, ye, Z0), V(X1, yH, Z1), V(X0, yH, Z1) }, t, top, soffit, fascia);
                     foreach (float x in new[] { x0, x1 })
                         EndWall(mb, x, x == x0 ? 1 : -1, new[] { new Vector2(z0, wallTop), new Vector2(z1, wallTop), new Vector2(z1, yh) }, gable);

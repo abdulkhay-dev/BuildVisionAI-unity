@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace House4696.Runtime
 {
@@ -40,12 +41,8 @@ namespace House4696.Runtime
 
         public override void Tick(float dt)
         {
-            var kb = ViewerInput.Kb;
-            var mouse = ViewerInput.Mouse;
-            if (kb == null || mouse == null) return;
-
             var t = Cam.transform;
-            if (mouse.rightButton.isPressed)
+            if (ViewerInput.RightHeld)
             {
                 Vector2 d = ViewerInput.MouseDelta * lookSensitivity;
                 _yaw += d.x;
@@ -58,9 +55,9 @@ namespace House4696.Runtime
 
             Vector2 m = ViewerInput.Move();
             Vector3 move = new Vector3(m.x, 0f, m.y);
-            if (kb.eKey.isPressed) move += Vector3.up;
-            if (kb.qKey.isPressed) move += Vector3.down;
-            float s = speed * (kb.leftShiftKey.isPressed ? 3f : 1f);
+            if (ViewerInput.Held(Key.E)) move += Vector3.up;
+            if (ViewerInput.Held(Key.Q)) move += Vector3.down;
+            float s = speed * (ViewerInput.Held(Key.LeftShift) ? 3f : 1f);
             t.Translate(move * (s * dt), Space.Self);
         }
     }

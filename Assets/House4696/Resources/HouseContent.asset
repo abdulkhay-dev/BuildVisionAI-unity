@@ -185,3 +185,5 @@ MonoBehaviour:
   RealtimeGIProfile: {fileID: 11400000, guid: a64f3d228c3074feeab26c99ccb70b90, type: 2}
   RealtimeGIRendererIndex: 1
   BakedGI: {fileID: 11400000, guid: 4d45995de4c9040f6822dc4b994d8003, type: 2}
+  External: {fileID: 11400000, guid: 74ac8e97f4f114b8992a922e4044751c, type: 2}
+  Landscape: {fileID: 11400000, guid: 4b33868138b174fa79d0b6420fb536c7, type: 2}

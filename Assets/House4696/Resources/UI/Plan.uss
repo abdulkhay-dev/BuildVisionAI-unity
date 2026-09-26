@@ -1,0 +1,184 @@
+/* House v2 — floor plan: small panel (bottom right), large plan card, floor plan view (spec §3.5). Prefix plan-. */
+
+/* ------------------------------------------------------------------ floor plan view (FloorPlanView) */
+/* the view reads its colours through CustomStyleResolvedEvent, so they are declared on the element itself */
+.floor-plan {
+    --plan-room: #1F2228;
+    --plan-room-hover: #2A2E36;
+    --plan-room-current: #20264D;
+    --plan-wall: #A3A8B1;
+    --plan-window: #93A2FF;
+    --plan-marker: #5A6AF7;
+    overflow: hidden;
+}
+.plan-label { position: absolute; align-items: center; }
+.plan-label-name {
+    font-size: 11px;
+    letter-spacing: 0.1px;
+    color: var(--text-2);
+    -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Medium.ttf");
+    -unity-text-align: middle-center;
+    white-space: nowrap;
+    transition-property: color;
+    transition-duration: 0.09s;
+    transition-timing-function: ease-out;
+}
+.plan-label-area {
+    font-size: 11px;
+    color: var(--text-3);
+    margin-top: 1px;
+    -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Regular.ttf");
+    -unity-text-align: middle-center;
+    white-space: nowrap;
+}
+/* small panel (FloorPlanView.LabelMode.Compact): Micro 11 Medium +0.2, text-3; hover / current below win (3 classes) */
+.plan-compact .plan-label-name { color: var(--text-3); letter-spacing: 0.2px; }
+.plan-label.plan-hover > .plan-label-name { color: var(--text-1); }
+.plan-label.plan-current > .plan-label-name { color: var(--accent-text); }
+
+/* ------------------------------------------------------------------ small panel: 288×320, surface-1, radius 12, padding 4, e1 */
+.plan-host { position: absolute; right: 16px; bottom: 16px; }
+.plan-panel { width: 288px; height: 320px; flex-direction: column; }
+
+.plan-head { flex-direction: row; align-items: center; height: 36px; padding: 0 4px; flex-shrink: 0; }
+.plan-levels { flex-direction: row; align-items: center; flex-grow: 1; flex-shrink: 1; min-width: 0; overflow: hidden; margin-right: 4px; }
+.plan-level-single {
+    flex-shrink: 1;
+    min-width: 0;
+    margin-left: 6px;
+    font-size: 13px;
+    color: var(--text-2);
+    -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Medium.ttf");
+}
+.plan-head > .plan-hbtn { margin-left: 2px; color: var(--text-2); }
+.plan-head > .plan-hbtn:hover { background-color: var(--hover-1); color: var(--text-1); }
+.plan-head > .plan-hbtn:active { background-color: var(--press); color: var(--text-1); }
+
+.plan-canvas { flex-grow: 1; position: relative; background-color: var(--field); border-radius: 8px; overflow: hidden; }
+.plan-canvas > .floor-plan { position: absolute; left: 0; top: 0; right: 0; bottom: 0; }
+
+/* ------------------------------------------------------------------ empty canvas */
+.plan-empty { position: absolute; left: 0; top: 0; right: 0; bottom: 0; align-items: center; justify-content: center; padding: 0 28px; }
+.plan-empty > .plan-empty-icon { color: var(--text-3); margin-bottom: 12px; }
+.plan-empty-title {
+    font-size: 13px;
+    color: var(--text-2);
+    -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Medium.ttf");
+    -unity-text-align: middle-center;
+    white-space: normal;
+}
+.plan-empty-text { font-size: 12px; color: var(--text-3); margin-top: 4px; -unity-text-align: middle-center; white-space: normal; }
+.plan-empty-lg > .plan-empty-icon { margin-bottom: 16px; }
+/* large canvas: empty-state type is Title (20 SemiBold −0.3), spec §1 */
+.plan-empty-lg > .plan-empty-title {
+    font-size: 20px;
+    letter-spacing: -0.3px;
+    color: var(--text-1);
+    -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-SemiBold.ttf");
+}
+.plan-empty-lg > .plan-empty-text { font-size: 14px; color: var(--text-2); margin-top: 6px; max-width: 360px; }
+
+/* ------------------------------------------------------------------ large plan: 1040×680 card, radius 16, e3 */
+.plan-large-host { position: absolute; left: 0; top: 0; right: 0; bottom: 0; align-items: center; justify-content: center; }
+.plan-large-shell { width: 1040px; height: 680px; max-width: 94%; max-height: 92%; }
+.plan-large {
+    flex-grow: 1;
+    flex-direction: row;
+    background-color: var(--surface-2);
+    border-width: 1px;
+    border-color: var(--border);
+    border-top-color: var(--border-top);
+    border-radius: 16px;
+}
+
+/* left column (280): title, level tabs, rooms, totals */
+.plan-side { width: 280px; flex-shrink: 0; flex-direction: column; padding: 20px 12px 16px 12px; }
+.plan-side-head { margin: 0 10px 16px 10px; flex-shrink: 0; }
+.plan-side-sub {
+    margin-top: 2px;
+    font-size: 12px;
+    color: var(--text-3);
+    white-space: normal;
+}
+.plan-side > .plan-levels { flex-grow: 0; flex-shrink: 0; margin: 0 10px 20px 10px; }
+.plan-rooms-head { flex-direction: row; align-items: center; justify-content: space-between; margin: 0 10px 6px 10px; flex-shrink: 0; }
+.plan-side-caption {
+    font-size: 12px;
+    color: var(--text-3);
+    -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Medium.ttf");
+}
+.plan-rooms-head > .plan-rooms-title { flex-shrink: 1; min-width: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.plan-rooms-head > .plan-rooms-area { flex-shrink: 0; margin-left: 8px; }
+.plan-rooms { flex-grow: 1; flex-shrink: 1; min-height: 0; }
+.plan-rooms-empty { flex-grow: 1; margin: 6px 10px 0 10px; font-size: 12px; color: var(--text-3); white-space: normal; }
+.plan-side-foot { flex-shrink: 0; margin-top: 8px; padding: 12px 10px 0 10px; border-top-width: 1px; border-color: var(--divider); }
+.plan-totals { font-size: 12px; color: var(--text-2); }
+
+/* room rows: h 36, radius 8 — type icon, name, area; hover ↔ plan cross-highlight (.plan-hl);
+   the viewer's room (.plan-current) is `selected` with an accent icon, like the current view in the views popover */
+.plan-row {
+    flex-direction: row;
+    align-items: center;
+    height: 36px;
+    padding: 0 10px;
+    border-radius: 8px;
+    flex-shrink: 0;
+    transition-property: background-color;
+    transition-duration: 0.09s;
+    transition-timing-function: ease-out;
+}
+.plan-row:hover, .plan-row.plan-hl { background-color: var(--hover-2); }
+.plan-row:active { background-color: var(--press); }
+.plan-row.plan-current { background-color: var(--selected); }
+.plan-row > .plan-row-icon { color: var(--text-3); margin-right: 10px; }
+.plan-row:hover > .plan-row-icon, .plan-row.plan-hl > .plan-row-icon { color: var(--text-2); }
+.plan-row.plan-current > .plan-row-icon { color: var(--accent-text); }
+.plan-row-name {
+    flex-grow: 1;
+    flex-shrink: 1;
+    min-width: 0;
+    font-size: 13px;
+    color: var(--text-1);
+    -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Medium.ttf");
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.plan-row-area { flex-shrink: 0; margin-left: 8px; font-size: 12px; color: var(--text-3); -unity-text-align: middle-right; }
+
+/* right: the plan on field, inset 8 on every side (radius 16 − 8 = 8) */
+.plan-stage { flex-grow: 1; position: relative; margin: 8px; background-color: var(--field); border-radius: 8px; overflow: hidden; }
+.plan-stage > .floor-plan { position: absolute; left: 0; top: 0; right: 0; bottom: 0; }
+.plan-stage .plan-label-name { font-size: 12px; }
+/* ✕: a ghost 28×28 like .modal-close — 8/8 inside the stage = 16/16 from the card corner */
+.plan-stage > .plan-stage-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 28px;
+    height: 28px;
+    border-width: 0;
+    color: var(--text-2);
+}
+.plan-stage > .plan-stage-btn:hover { background-color: var(--hover-2); }
+.plan-stage > .plan-stage-btn:active { background-color: var(--press); }
+
+/* north: 24 px ring (border-strong) with a text-2 arrowhead, «С» Micro text-3 2 px below */
+.plan-north { position: absolute; left: 16px; top: 12px; align-items: center; }
+.plan-north-dial {
+    width: 24px;
+    height: 24px;
+    border-width: 1px;
+    border-radius: 12px;
+    border-color: var(--border-strong);
+    background-color: var(--field);
+    color: var(--text-2);
+}
+.plan-north > .plan-north-label { margin-top: 2px; color: var(--text-3); }
+.plan-scale { position: absolute; left: 16px; bottom: 14px; flex-direction: row; align-items: flex-end; }
+.plan-scale-bar { height: 6px; border-left-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-color: var(--text-3); }
+.plan-scale-label { margin-left: 6px; margin-bottom: -4px; font-size: 11px; color: var(--text-3); }
+
+/* ------------------------------------------------------------------ room hover tooltip (follows the pointer; .tip look) */
+.plan-tip > .tip-text { white-space: nowrap; }
+.plan-tip > .plan-tip-go { margin-left: 4px; color: var(--text-2); }

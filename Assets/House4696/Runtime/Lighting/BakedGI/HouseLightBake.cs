@@ -44,17 +44,45 @@ namespace House4696.Lighting
             Action<BakedGIVolume> done, Action<string> failed, Func<bool> cancelled = null, Action<float> progress = null)
         {
             var s = settings ?? DefaultSettings(HouseBounds(house));
-            var renderers = new List<Renderer>(house.GetComponentsInChildren<MeshRenderer>());
+            var renderers = new List<Renderer>();
+            var lodCache = new Dictionary<LODGroup, HashSet<Renderer>>();
+            foreach (var r in house.GetComponentsInChildren<MeshRenderer>())
+                if (!IsCoarseLod(r, lodCache)) renderers.Add(r);
             // the garden only matters near the probes (ground bounce, hedges, nearby trees); distant forest is skipped
             if (site != null)
             {
                 var near = s.Bounds;
                 near.Expand(new Vector3(SiteReach, SiteReach, SiteReach) * 2f);
                 foreach (var r in site.GetComponentsInChildren<MeshRenderer>())
-                    if (near.Intersects(r.bounds)) renderers.Add(r);
+                    if (near.Intersects(r.bounds) && !IsCoarseLod(r, lodCache)) renderers.Add(r);
             }
             var lights = new List<Light>(UnityEngine.Object.FindObjectsByType<Light>());
             return ProbeVolumeBaker.Bake(resources, s, renderers, lights, done, failed, cancelled, progress);
+        }
+
+        /// <summary>
+        /// Coarse LOD levels (index &gt; 0 of a LODGroup: tree LOD1, lawn-chunk LOD1) stay out of the bake: the rays see the
+        /// full-detail level only; tracing both would double crowns and blades in the GI and the bake cost. Renderers of a
+        /// group that are in no LOD (tree shadow proxies) stay in. false = every renderer is traced.
+        /// </summary>
+        public static bool SkipCoarseLods = true;
+
+        static bool IsCoarseLod(Renderer r, Dictionary<LODGroup, HashSet<Renderer>> cache)
+        {
+            if (!SkipCoarseLods) return false;
+            var group = r.GetComponentInParent<LODGroup>();
+            if (group == null) return false;
+            if (!cache.TryGetValue(group, out var coarse))
+            {
+                coarse = new HashSet<Renderer>();
+                var lods = group.GetLODs();
+                var fine = lods.Length > 0 ? lods[0].renderers : null;
+                for (int i = 1; i < lods.Length; i++)
+                    foreach (var lr in lods[i].renderers)
+                        if (lr != null && (fine == null || Array.IndexOf(fine, lr) < 0)) coarse.Add(lr);
+                cache[group] = coarse;
+            }
+            return coarse.Contains(r);
         }
     }
 }

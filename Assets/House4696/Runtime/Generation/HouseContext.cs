@@ -18,9 +18,12 @@ namespace House4696.Generation
         public readonly VegetationFactory Veg;
         public readonly SceneWriter W;
         public readonly List<string> Warnings = new List<string>();
+        /// <summary>Catalogue items as built (filled by the builder).</summary>
+        public readonly List<ItemBox> ItemBoxes = new List<ItemBox>();
 
         readonly Dictionary<string, LevelDef> _levels = new Dictionary<string, LevelDef>();
         readonly Dictionary<string, WallFrame> _walls = new Dictionary<string, WallFrame>();
+        readonly Dictionary<StairDef, StairGeometry> _stairs = new Dictionary<StairDef, StairGeometry>();
 
         public Transform Root, Shell, Interior, Doors, Furniture, Plants, Lights, Probes;
 
@@ -38,6 +41,54 @@ namespace House4696.Generation
             foreach (var l in doc.Levels) if (!string.IsNullOrEmpty(l.Id)) _levels[l.Id] = l;
             foreach (var wd in doc.Walls) _walls[wd.Id ?? ("wall" + _walls.Count)] = new WallFrame(wd, this);
             DetectCorners();
+            foreach (var s in doc.Stairs)
+            {
+                var from = Level(s.From);
+                var to = s.To != null ? (_levels.TryGetValue(s.To, out var t) ? t : null) : Above(from);
+                var g = StairGeometry.Compute(s, from, to);
+                if (g != null) _stairs[s] = g;
+            }
+        }
+
+        /// <summary>Plan geometry of a stair (null when its levels do not make a stair).</summary>
+        public StairGeometry Stair(StairDef s) => s != null && _stairs.TryGetValue(s, out var g) ? g : null;
+        public IEnumerable<StairGeometry> StairGeometries => _stairs.Values;
+
+        /// <summary>
+        /// Exterior walls the roof covers: most of the wall (3 of 5 points along it) inside the outline grown by 0.3 m
+        /// (walls run along the outline with their outer face on it). A porch roof next to a house wall does not cover it.
+        /// </summary>
+        public List<WallFrame> WallsUnder(RoofDef r)
+        {
+            var list = new List<WallFrame>();
+            if (r.Outline == null || r.Outline.Count < 3) return list;
+            var grown = RoofBuilder.Offset(Polygon.CounterClockwise(r.Outline), 0.3f);
+            foreach (var f in _walls.Values)
+            {
+                if (!f.Exterior) continue;
+                int inside = 0;
+                for (int i = 0; i < 5; i++)
+                {
+                    var p = Vector3.Lerp(f.WorldA, f.WorldB, (i + 0.5f) / 5f);
+                    if (Polygon.Contains(grown, new Vector2(p.x, p.z))) inside++;
+                }
+                if (inside >= 3) list.Add(f);
+            }
+            return list;
+        }
+
+        /// <summary>
+        /// Height the roof bears at: its <see cref="RoofDef.Base"/>, or the highest top of the exterior walls under its
+        /// outline, or the top of the highest level + 0.3 m when no wall is under it.
+        /// </summary>
+        public float RoofBase(RoofDef r)
+        {
+            if (r.Base.HasValue) return r.Base.Value;
+            float best = float.MinValue;
+            foreach (var f in WallsUnder(r)) best = Mathf.Max(best, f.Y1);
+            if (best > float.MinValue) return best;
+            var top = Doc.Levels.Count > 0 ? Doc.Levels[Doc.Levels.Count - 1] : new LevelDef();
+            return top.Elevation + top.Height + 0.3f;
         }
 
         /// <summary>

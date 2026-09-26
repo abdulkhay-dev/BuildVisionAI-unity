@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using House4696.Core;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 namespace House4696.Landscape
 {
@@ -104,11 +105,19 @@ namespace House4696.Landscape
         void Hedges()
         {
             var g = _w.Group("Hedges", _root);
+            bool proxy = GardenPerf.HedgeShadowProxy;
             void H(string name, float x0, float x1, float z0, float z1, float h, int seed)
             {
-                var mb = _veg.Hedge(new Vector3(x1 - x0, h, z1 - z0), 0.12f, seed);
-                var go = _w.Emit(name, g, mb, probeStatic: true);
-                if (go != null) go.transform.position = new Vector3((x0 + x1) * 0.5f, 0.02f, (z0 + z1) * 0.5f);
+                var size = new Vector3(x1 - x0, h, z1 - z0);
+                var mb = _veg.Hedge(size, 0.12f, seed);
+                // with the proxy the visible hedge casts nothing; both stay in the GI bake (the proxy blocks shadow rays)
+                var go = _w.Emit(name, g, mb, castShadows: !proxy, probeStatic: true);
+                if (go == null) return;
+                go.transform.position = new Vector3((x0 + x1) * 0.5f, 0.02f, (z0 + z1) * 0.5f);
+                if (!proxy) return;
+                // "Hedge_" prefix: CollisionSetup gives it a box inside the hedge's own box (harmless)
+                var shadow = _w.Emit(name + "_Shadow", go.transform, _veg.HedgeShadow(size, 0.12f, seed), castShadows: true, probeStatic: true);
+                if (shadow != null) shadow.GetComponent<MeshRenderer>().shadowCastingMode = ShadowCastingMode.ShadowsOnly;
             }
             H("Hedge_LivingRoom", 4.85f, 9.25f, -1.42f, -0.82f, 0.56f, 11);
             H("Hedge_Left", -11.5f, -1.05f, 0.32f, 1.02f, 0.68f, 12);
@@ -177,7 +186,7 @@ namespace House4696.Landscape
             Put("mugo_l", 44f, 22f, 2.2f, 10);
 
             // boulder
-            var rock = new MeshBuilder();
+            var rock = _veg.NewBuilder();
             Boulder(rock, new Vector3(5.12f, 0f, -6.65f), new Vector3(0.95f, 0.5f, 0.62f), 17);
             _w.Emit("Boulder", g, rock, probeStatic: true);
         }
@@ -242,39 +251,30 @@ namespace House4696.Landscape
         void Trees()
         {
             var g = _w.Group("Trees", _root);
-            var spruce = new[] { _veg.Spruce(14f, 7), _veg.Spruce(17f, 8), _veg.Spruce(20f, 9) };
-            var spruceMeshes = new Mesh[spruce.Length];
-            for (int i = 0; i < spruce.Length; i++) spruceMeshes[i] = _w.Store(spruce[i].Build("Spruce_" + i));
-            var birch = new[] { _veg.Birch(11f, 31), _veg.Birch(13f, 32) };
-            var birchMeshes = new Mesh[birch.Length];
-            for (int i = 0; i < birch.Length; i++) birchMeshes[i] = _w.Store(birch[i].Build("Birch_" + i));
-            var broad = _veg.BroadleafTree(7f, 2.6f, 41);
-            var broadMesh = _w.Store(broad.Build("Broadleaf"));
+            bool lod = GardenPerf.TreeLod;
+            float[] spruceH = { 14f, 17f, 20f }; int[] spruceSeed = { 7, 8, 9 };
+            float[] birchH = { 11f, 13f }; int[] birchSeed = { 31, 32 };
+            var spruce = new TreeProto[spruceH.Length];
+            for (int i = 0; i < spruce.Length; i++)
+                spruce[i] = new TreeProto(_w, "Spruce_" + i, _veg.Spruce(spruceH[i], spruceSeed[i]), lod ? _veg.Spruce(spruceH[i], spruceSeed[i], 1) : null);
+            var birch = new TreeProto[birchH.Length];
+            for (int i = 0; i < birch.Length; i++)
+                birch[i] = new TreeProto(_w, "Birch_" + i, _veg.Birch(birchH[i], birchSeed[i]), lod ? _veg.Birch(birchH[i], birchSeed[i], 1) : null);
+            var broad = new TreeProto(_w, "Broadleaf", _veg.BroadleafTree(7f, 2.6f, 41), lod ? _veg.BroadleafTree(7f, 2.6f, 41, true, 1) : null);
 
+            void Place(string name, TreeProto p, float x, float z, float rot, float scale) =>
+                GardenLod.Tree(_w, name, g, p, new Vector3(x, 0, z), Quaternion.Euler(0, rot, 0), scale);
             void Spruce(float x, float z, float h, float rot)
             {
                 int idx = h < 15.5f ? 0 : h < 18.5f ? 1 : 2;
-                float native = idx == 0 ? 14f : idx == 1 ? 17f : 20f;
-                var go = _w.Instance("Spruce", g, spruceMeshes[idx], spruce[idx].Materials, true, true);
-                go.transform.position = new Vector3(x, 0, z);
-                go.transform.rotation = Quaternion.Euler(0, rot, 0);
-                go.transform.localScale = Vector3.one * (h / native);
+                Place("Spruce", spruce[idx], x, z, rot, h / spruceH[idx]);
             }
             void Birch(float x, float z, float h, float rot)
             {
                 int idx = h < 12f ? 0 : 1;
-                var go = _w.Instance("Birch", g, birchMeshes[idx], birch[idx].Materials, true, true);
-                go.transform.position = new Vector3(x, 0, z);
-                go.transform.rotation = Quaternion.Euler(0, rot, 0);
-                go.transform.localScale = Vector3.one * (h / (idx == 0 ? 11f : 13f));
+                Place("Birch", birch[idx], x, z, rot, h / birchH[idx]);
             }
-            void Broad(float x, float z, float s, float rot)
-            {
-                var go = _w.Instance("Broadleaf", g, broadMesh, broad.Materials, true, true);
-                go.transform.position = new Vector3(x, 0, z);
-                go.transform.rotation = Quaternion.Euler(0, rot, 0);
-                go.transform.localScale = Vector3.one * s;
-            }
+            void Broad(float x, float z, float s, float rot) => Place("Broadleaf", broad, x, z, rot, s);
 
             // left backdrop (behind the house's left end)
             Birch(1.8f, 32f, 12f, 0);
@@ -337,8 +337,40 @@ namespace House4696.Landscape
                 if (ang > 30f) return 0f;
                 return Mathf.Clamp01((17f - dist) / 6f);
             }
-            var mb = _veg.LawnBlades(Density, area, 77, 230000);
-            _w.Emit("Lawn_Blades", _root, mb, castShadows: false);
+            if (!GardenPerf.LawnChunks)
+            {
+                _w.Emit("Lawn_Blades", _root, _veg.LawnBlades(Density, area, 77, 230000), castShadows: false);
+                return;
+            }
+            // chunks (culled one by one, 16-bit indices); each with a LODGroup whose LOD1 keeps a fixed random subset of
+            // the blades, widened so the covered area stays the same
+            var blades = _veg.LawnBladeList(Density, area, 77, 230000);
+            float cs = Mathf.Max(0.5f, GardenPerf.LawnChunkSize);
+            int nx = Mathf.Max(1, Mathf.CeilToInt(area.width / cs)), nz = Mathf.Max(1, Mathf.CeilToInt(area.height / cs));
+            float keep = Mathf.Clamp(GardenPerf.LawnLodKeep, 0.05f, 1f);
+            float widen = Mathf.Clamp(1f / keep, 1f, Mathf.Max(1f, GardenPerf.LawnLodMaxWiden));
+            bool lod = GardenPerf.LawnLod && keep < 1f;
+            var full = new MeshBuilder[nx * nz];
+            var thin = new MeshBuilder[nx * nz];
+            foreach (var b in blades)
+            {
+                int ix = Mathf.Clamp(Mathf.FloorToInt((b.Root.x - area.xMin) / cs), 0, nx - 1);
+                int iz = Mathf.Clamp(Mathf.FloorToInt((b.Root.z - area.yMin) / cs), 0, nz - 1);
+                int c = ix + iz * nx;
+                _veg.EmitBlade(full[c] ??= _veg.NewBuilder(), b);
+                if (lod && b.Keep < keep) _veg.EmitBlade(thin[c] ??= _veg.NewBuilder(), b, widen);
+            }
+            var g = _w.Group("Lawn_Blades", _root);
+            for (int c = 0; c < full.Length; c++)
+            {
+                if (full[c] == null) continue;
+                // every name starts with "Lawn_Blades": no collider, no shadow (CollisionSetup, HouseSession)
+                var go = _w.Emit("Lawn_Blades_" + c, g, full[c], castShadows: false);
+                if (go == null || !lod) continue;
+                var low = thin[c] != null ? _w.Emit("Lawn_Blades_" + c + GardenLod.Lod1Suffix, go.transform, thin[c], castShadows: false) : null;
+                int ix = c % nx, iz = c / nx;
+                GardenLod.LawnChunk(go, low, new Vector3(area.xMin + (ix + 0.5f) * cs, 0.03f, area.yMin + (iz + 0.5f) * cs));
+            }
         }
 
         static void Cylinder(MeshBuilder mb, Vector3 baseCenter, float r, float h, int sides, Material m, bool caps = true)

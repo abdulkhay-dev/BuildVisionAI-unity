@@ -23,14 +23,20 @@ namespace House4696.Generation
 
         public void BuildAll()
         {
-            var slab = new MeshBuilder();
-            var finish = new MeshBuilder();
-            var ceilings = new MeshBuilder();
-            var fixtures = new MeshBuilder();
+            // one mesh set per level: plan renders hide whole renderers above the cut, so a mesh must not span floors
+            var sets = new Dictionary<string, (MeshBuilder slab, MeshBuilder finish, MeshBuilder ceilings, MeshBuilder fixtures)>();
+            var order = new List<string>();
             foreach (var r in _c.Doc.Rooms)
             {
                 if (r.Outline == null || r.Outline.Count < 3) { _c.Warn($"room '{r.Id}' needs at least 3 outline points"); continue; }
                 var L = _c.Level(r.Level);
+                string key = L.Id ?? "level";
+                if (!sets.TryGetValue(key, out var set))
+                {
+                    sets[key] = set = (new MeshBuilder(), new MeshBuilder(), new MeshBuilder(), new MeshBuilder());
+                    order.Add(key);
+                }
+                var slab = set.slab; var finish = set.finish; var ceilings = set.ceilings; var fixtures = set.fixtures;
                 float floorY = L.Elevation, h = r.Height ?? L.Height, ceilY = floorY + h;
                 bool lowest = _c.IsLowest(L);
                 var floorMat = _c.Mats.Get(r.Floor ?? DefaultFloor(r.Type), _c.M.Oak);
@@ -40,26 +46,42 @@ namespace House4696.Generation
                 // structural slab (plaster edges), finish layer on top when it differs from the default oak
                 bool tiled = floorMat != _c.M.Oak;
                 float slabBottom = floorY - L.Slab + (lowest ? 0.02f : 0f);
-                Polygon.Prism(slab, r.Outline, slabBottom, floorY, tiled ? null : floorMat, null, plaster);
+                // stairwells: the floor opens over stairs arriving on this level, the ceiling over stairs rising through it
+                var floorHoles = Wells(g => g.To.Id == L.Id);
+                var ceilHoles = Wells(g => g.From.Elevation < ceilY - 0.01f && g.To.Elevation > ceilY - 0.01f);
+                Polygon.Prism(slab, r.Outline, floorHoles, slabBottom, floorY, tiled ? null : floorMat, null, plaster);
                 if (tiled)
                 {
                     // thin finish plate replaces the slab top (tiles, porcelain, …)
-                    Polygon.Prism(finish, r.Outline, floorY - 0.004f, floorY + 0.004f, floorMat, null, floorMat);
+                    Polygon.Prism(finish, r.Outline, floorHoles, floorY - 0.004f, floorY + 0.004f, floorMat, null, floorMat);
                 }
                 if (r.Type != RoomType.Terrace)
-                    Polygon.Prism(ceilings, r.Outline, ceilY, ceilY + CeilingPlate, null, ceilMat, plaster);
+                    Polygon.Prism(ceilings, r.Outline, ceilHoles, ceilY, ceilY + CeilingPlate, null, ceilMat, plaster);
 
-                if (r.Downlights != "none" && r.Type != RoomType.Terrace) Downlights(fixtures, r, ceilY);
+                if (r.Downlights != "none" && r.Type != RoomType.Terrace) Downlights(fixtures, r, ceilY, ceilHoles);
                 if (r.Probe && r.Type != RoomType.Terrace) Probe(r, floorY, ceilY);
             }
-            _c.W.Emit("Interior_Slabs", _c.Interior, slab);
-            _c.W.Emit("Interior_FloorFinish", _c.Interior, finish);
-            _c.W.Emit("Interior_Ceilings", _c.Interior, ceilings);
-            _c.W.Emit("Decor_Downlights", _c.Interior, fixtures, castShadows: false);
+            foreach (var key in order)
+            {
+                var set = sets[key];
+                string sfx = order.Count > 1 ? "_" + key : "";
+                _c.W.Emit("Interior_Slabs" + sfx, _c.Interior, set.slab);
+                _c.W.Emit("Interior_FloorFinish" + sfx, _c.Interior, set.finish);
+                _c.W.Emit("Interior_Ceilings" + sfx, _c.Interior, set.ceilings);
+                _c.W.Emit("Decor_Downlights" + sfx, _c.Interior, set.fixtures, castShadows: false);
+            }
+        }
+
+        List<Vector2[]> Wells(System.Func<StairGeometry, bool> where)
+        {
+            var list = new List<Vector2[]>();
+            foreach (var g in _c.StairGeometries)
+                if (where(g)) list.AddRange(g.Well);
+            return list;
         }
 
         /// <summary>Grid of recessed downlights ~1.5 m apart, kept 0.6 m off the walls, only inside the outline.</summary>
-        void Downlights(MeshBuilder mb, RoomDef r, float ceilY)
+        void Downlights(MeshBuilder mb, RoomDef r, float ceilY, List<Vector2[]> holes)
         {
             var b = Polygon.Bounds(r.Outline);
             const float inset = 0.6f, pitch = 1.5f;
@@ -73,7 +95,7 @@ namespace House4696.Generation
                 float x = nx == 1 ? b.center.x : b.xMin + inset + w * i / (nx - 1);
                 float z = nz == 1 ? b.center.y : b.yMin + inset + d * j / (nz - 1);
                 var p = new Vector2(x, z);
-                if (!Polygon.Contains(r.Outline, p)) continue;
+                if (!Polygon.Contains(r.Outline, p) || holes.Exists(h => Polygon.Contains(h, p))) continue;
                 _c.Kit.Downlight(mb, new Vector3(x, ceilY, z));
             }
         }

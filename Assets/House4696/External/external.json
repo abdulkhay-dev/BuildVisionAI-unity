@@ -1,0 +1,7018 @@
+{
+ "materials": [
+  {
+   "id": "oak_planks",
+   "name": "Дуб, доска",
+   "category": "floor",
+   "source": "polyhaven:wood_floor",
+   "neutral": false,
+   "metersPerTile": [
+    1.6999996900558472,
+    1.6999996900558472
+   ],
+   "folder": "Materials/oak_planks",
+   "textures": {
+    "albedo": "oak_planks_albedo.jpg",
+    "normal": "oak_planks_normal.jpg",
+    "mask": "oak_planks_mask.png"
+   }
+  },
+  {
+   "id": "parquet_herringbone",
+   "name": "Паркет ёлочкой",
+   "category": "floor",
+   "source": "polyhaven:herringbone_parquet",
+   "neutral": false,
+   "metersPerTile": [
+    3.4000000953674316,
+    3.4000000953674316
+   ],
+   "folder": "Materials/parquet_herringbone",
+   "textures": {
+    "albedo": "parquet_herringbone_albedo.jpg",
+    "normal": "parquet_herringbone_normal.jpg",
+    "mask": "parquet_herringbone_mask.png"
+   }
+  },
+  {
+   "id": "parquet_diagonal",
+   "name": "Паркет диагональный",
+   "category": "floor",
+   "source": "polyhaven:diagonal_parquet",
+   "neutral": false,
+   "metersPerTile": [
+    2.359999418258667,
+    2.359999418258667
+   ],
+   "folder": "Materials/parquet_diagonal",
+   "textures": {
+    "albedo": "parquet_diagonal_albedo.jpg",
+    "normal": "parquet_diagonal_normal.jpg",
+    "mask": "parquet_diagonal_mask.png"
+   }
+  },
+  {
+   "id": "parquet_block",
+   "name": "Штучный паркет, тёмный",
+   "category": "floor",
+   "source": "polyhaven:rectangular_parquet",
+   "neutral": false,
+   "metersPerTile": [
+    2.25,
+    2.25
+   ],
+   "folder": "Materials/parquet_block",
+   "textures": {
+    "albedo": "parquet_block_albedo.jpg",
+    "normal": "parquet_block_normal.jpg",
+    "mask": "parquet_block_mask.png"
+   }
+  },
+  {
+   "id": "parquet_strips_light",
+   "name": "Паркет светлый, полосы",
+   "category": "floor",
+   "source": "polyhaven:wooden_floor_01",
+   "neutral": false,
+   "metersPerTile": [
+    1.9880001544952393,
+    1.9880001544952393
+   ],
+   "folder": "Materials/parquet_strips_light",
+   "textures": {
+    "albedo": "parquet_strips_light_albedo.jpg",
+    "normal": "parquet_strips_light_normal.jpg",
+    "mask": "parquet_strips_light_mask.png"
+   }
+  },
+  {
+   "id": "floor_boards_mixed",
+   "name": "Доска светлая, разнотон",
+   "category": "floor",
+   "source": "polyhaven:wooden_floor_02",
+   "neutral": false,
+   "metersPerTile": [
+    1.942000150680542,
+    1.942000150680542
+   ],
+   "folder": "Materials/floor_boards_mixed",
+   "textures": {
+    "albedo": "floor_boards_mixed_albedo.jpg",
+    "normal": "floor_boards_mixed_normal.jpg",
+    "mask": "floor_boards_mixed_mask.png"
+   }
+  },
+  {
+   "id": "floor_boards_dark",
+   "name": "Доска тёмная лакированная",
+   "category": "floor",
+   "source": "polyhaven:plank_flooring_04",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    2.0
+   ],
+   "folder": "Materials/floor_boards_dark",
+   "textures": {
+    "albedo": "floor_boards_dark_albedo.jpg",
+    "normal": "floor_boards_dark_normal.jpg",
+    "mask": "floor_boards_dark_mask.png"
+   }
+  },
+  {
+   "id": "floor_boards_medium",
+   "name": "Доска, средний тон",
+   "category": "floor",
+   "source": "polyhaven:stair_planks",
+   "neutral": false,
+   "metersPerTile": [
+    1.2000000476837158,
+    1.2000000476837158
+   ],
+   "folder": "Materials/floor_boards_medium",
+   "textures": {
+    "albedo": "floor_boards_medium_albedo.jpg",
+    "normal": "floor_boards_medium_normal.jpg",
+    "mask": "floor_boards_medium_mask.png"
+   }
+  },
+  {
+   "id": "laminate_light",
+   "name": "Ламинат светлый дуб",
+   "category": "floor",
+   "source": "polyhaven:laminate_floor_02",
+   "neutral": false,
+   "metersPerTile": [
+    1.6999999284744263,
+    1.7000000476837158
+   ],
+   "folder": "Materials/laminate_light",
+   "textures": {
+    "albedo": "laminate_light_albedo.jpg",
+    "normal": "laminate_light_normal.jpg",
+    "mask": "laminate_light_mask.png"
+   }
+  },
+  {
+   "id": "laminate_warm",
+   "name": "Ламинат тёплый",
+   "category": "floor",
+   "source": "polyhaven:laminate_floor",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    2.0
+   ],
+   "folder": "Materials/laminate_warm",
+   "textures": {
+    "albedo": "laminate_warm_albedo.jpg",
+    "normal": "laminate_warm_normal.jpg",
+    "mask": "laminate_warm_mask.png"
+   }
+  },
+  {
+   "id": "laminate_medium",
+   "name": "Ламинат средний тон",
+   "category": "floor",
+   "source": "polyhaven:laminate_floor_03",
+   "neutral": false,
+   "metersPerTile": [
+    2.0799996852874756,
+    2.0799996852874756
+   ],
+   "folder": "Materials/laminate_medium",
+   "textures": {
+    "albedo": "laminate_medium_albedo.jpg",
+    "normal": "laminate_medium_normal.jpg",
+    "mask": "laminate_medium_mask.png"
+   }
+  },
+  {
+   "id": "concrete_polished",
+   "name": "Бетон шлифованный",
+   "category": "floor",
+   "source": "polyhaven:concrete_floor_worn_001",
+   "neutral": false,
+   "metersPerTile": [
+    3.0,
+    3.000000238418579
+   ],
+   "folder": "Materials/concrete_polished",
+   "textures": {
+    "albedo": "concrete_polished_albedo.jpg",
+    "normal": "concrete_polished_normal.jpg",
+    "mask": "concrete_polished_mask.png"
+   }
+  },
+  {
+   "id": "concrete_dark_smooth",
+   "name": "Микроцемент тёмный",
+   "category": "floor",
+   "source": "polyhaven:painted_concrete_02",
+   "neutral": false,
+   "metersPerTile": [
+    4.0,
+    4.0
+   ],
+   "folder": "Materials/concrete_dark_smooth",
+   "textures": {
+    "albedo": "concrete_dark_smooth_albedo.jpg",
+    "normal": "concrete_dark_smooth_normal.jpg",
+    "mask": "concrete_dark_smooth_mask.png"
+   }
+  },
+  {
+   "id": "marble_beige",
+   "name": "Мрамор бежевый, плиты",
+   "category": "tile",
+   "source": "polyhaven:marble_01",
+   "neutral": false,
+   "metersPerTile": [
+    1.5,
+    1.5
+   ],
+   "folder": "Materials/marble_beige",
+   "textures": {
+    "albedo": "marble_beige_albedo.jpg",
+    "normal": "marble_beige_normal.jpg",
+    "mask": "marble_beige_mask.png"
+   }
+  },
+  {
+   "id": "marble_checker",
+   "name": "Мрамор шахматкой",
+   "category": "tile",
+   "source": "polyhaven:floor_tiles_06",
+   "neutral": false,
+   "metersPerTile": [
+    3.0,
+    3.0
+   ],
+   "folder": "Materials/marble_checker",
+   "textures": {
+    "albedo": "marble_checker_albedo.jpg",
+    "normal": "marble_checker_normal.jpg",
+    "mask": "marble_checker_mask.png"
+   }
+  },
+  {
+   "id": "marble_black_gold",
+   "name": "Мрамор чёрный с золотыми прожилками",
+   "category": "tile",
+   "source": "polyhaven:slab_tiles",
+   "neutral": false,
+   "metersPerTile": [
+    2.369999885559082,
+    2.370000123977661
+   ],
+   "folder": "Materials/marble_black_gold",
+   "textures": {
+    "albedo": "marble_black_gold_albedo.jpg",
+    "normal": "marble_black_gold_normal.jpg",
+    "mask": "marble_black_gold_mask.png"
+   }
+  },
+  {
+   "id": "porcelain_dark",
+   "name": "Керамогранит тёмный крупный",
+   "category": "tile",
+   "source": "polyhaven:granite_tile",
+   "neutral": false,
+   "metersPerTile": [
+    2.299999952316284,
+    2.299999952316284
+   ],
+   "folder": "Materials/porcelain_dark",
+   "textures": {
+    "albedo": "porcelain_dark_albedo.jpg",
+    "normal": "porcelain_dark_normal.jpg",
+    "mask": "porcelain_dark_mask.png"
+   }
+  },
+  {
+   "id": "porcelain_grey",
+   "name": "Керамогранит серый",
+   "category": "tile",
+   "source": "polyhaven:granite_tile_04",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    2.0
+   ],
+   "folder": "Materials/porcelain_grey",
+   "textures": {
+    "albedo": "porcelain_grey_albedo.jpg",
+    "normal": "porcelain_grey_normal.jpg",
+    "mask": "porcelain_grey_mask.png"
+   }
+  },
+  {
+   "id": "granite_dark",
+   "name": "Гранит тёмный",
+   "category": "tile",
+   "source": "polyhaven:granite_tile_03",
+   "neutral": false,
+   "metersPerTile": [
+    1.8020000457763672,
+    1.8020000457763672
+   ],
+   "folder": "Materials/granite_dark",
+   "textures": {
+    "albedo": "granite_dark_albedo.jpg",
+    "normal": "granite_dark_normal.jpg",
+    "mask": "granite_dark_mask.png"
+   }
+  },
+  {
+   "id": "limestone_tiles",
+   "name": "Известняк, плиты",
+   "category": "tile",
+   "source": "polyhaven:mixed_stone_tiles",
+   "neutral": false,
+   "metersPerTile": [
+    1.8000000715255737,
+    1.8000000715255737
+   ],
+   "folder": "Materials/limestone_tiles",
+   "textures": {
+    "albedo": "limestone_tiles_albedo.jpg",
+    "normal": "limestone_tiles_normal.jpg",
+    "mask": "limestone_tiles_mask.png"
+   }
+  },
+  {
+   "id": "stone_tiles_beige",
+   "name": "Камень бежевый, плитка",
+   "category": "tile",
+   "source": "polyhaven:floor_tiles_02",
+   "neutral": false,
+   "metersPerTile": [
+    4.0,
+    4.0
+   ],
+   "folder": "Materials/stone_tiles_beige",
+   "textures": {
+    "albedo": "stone_tiles_beige_albedo.jpg",
+    "normal": "stone_tiles_beige_normal.jpg",
+    "mask": "stone_tiles_beige_mask.png"
+   }
+  },
+  {
+   "id": "travertine_tiles",
+   "name": "Травертин, плитка",
+   "category": "tile",
+   "source": "polyhaven:floor_tiles_04",
+   "neutral": false,
+   "metersPerTile": [
+    4.0,
+    4.0
+   ],
+   "folder": "Materials/travertine_tiles",
+   "textures": {
+    "albedo": "travertine_tiles_albedo.jpg",
+    "normal": "travertine_tiles_normal.jpg",
+    "mask": "travertine_tiles_mask.png"
+   }
+  },
+  {
+   "id": "stone_polished_dark",
+   "name": "Камень полированный тёмный",
+   "category": "tile",
+   "source": "polyhaven:grey_cartago_02",
+   "neutral": false,
+   "metersPerTile": [
+    1.7000000476837158,
+    1.7000000476837158
+   ],
+   "folder": "Materials/stone_polished_dark",
+   "textures": {
+    "albedo": "stone_polished_dark_albedo.jpg",
+    "normal": "stone_polished_dark_normal.jpg",
+    "mask": "stone_polished_dark_mask.png"
+   }
+  },
+  {
+   "id": "tiles_diagonal_cream",
+   "name": "Плитка кремовая по диагонали",
+   "category": "tile",
+   "source": "polyhaven:interior_tiles",
+   "neutral": false,
+   "metersPerTile": [
+    1.8999998569488525,
+    1.8999998569488525
+   ],
+   "folder": "Materials/tiles_diagonal_cream",
+   "textures": {
+    "albedo": "tiles_diagonal_cream_albedo.jpg",
+    "normal": "tiles_diagonal_cream_normal.jpg",
+    "mask": "tiles_diagonal_cream_mask.png"
+   }
+  },
+  {
+   "id": "tiles_glossy_brown",
+   "name": "Плитка глянцевая коричневая",
+   "category": "tile",
+   "source": "polyhaven:tiled_floor_001",
+   "neutral": false,
+   "metersPerTile": [
+    1.5,
+    1.5
+   ],
+   "folder": "Materials/tiles_glossy_brown",
+   "textures": {
+    "albedo": "tiles_glossy_brown_albedo.jpg",
+    "normal": "tiles_glossy_brown_normal.jpg",
+    "mask": "tiles_glossy_brown_mask.png"
+   }
+  },
+  {
+   "id": "tiles_bath_antislip",
+   "name": "Плитка противоскользящая",
+   "category": "tile",
+   "source": "polyhaven:anti_skid_tiles",
+   "neutral": false,
+   "metersPerTile": [
+    1.8000000715255737,
+    1.8000000715255737
+   ],
+   "folder": "Materials/tiles_bath_antislip",
+   "textures": {
+    "albedo": "tiles_bath_antislip_albedo.jpg",
+    "normal": "tiles_bath_antislip_normal.jpg",
+    "mask": "tiles_bath_antislip_mask.png"
+   }
+  },
+  {
+   "id": "tiles_subway_white",
+   "name": "Плитка «кабанчик» белая",
+   "category": "tile",
+   "source": "polyhaven:long_white_tiles",
+   "neutral": false,
+   "metersPerTile": [
+    1.2699999809265137,
+    1.2699999809265137
+   ],
+   "folder": "Materials/tiles_subway_white",
+   "textures": {
+    "albedo": "tiles_subway_white_albedo.jpg",
+    "normal": "tiles_subway_white_normal.jpg",
+    "mask": "tiles_subway_white_mask.png"
+   }
+  },
+  {
+   "id": "tiles_mosaic_wall",
+   "name": "Мозаика настенная",
+   "category": "tile",
+   "source": "polyhaven:rounded_square_tiled_wall",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    2.0
+   ],
+   "folder": "Materials/tiles_mosaic_wall",
+   "textures": {
+    "albedo": "tiles_mosaic_wall_albedo.jpg",
+    "normal": "tiles_mosaic_wall_normal.jpg",
+    "mask": "tiles_mosaic_wall_mask.png"
+   }
+  },
+  {
+   "id": "mosaic_marble",
+   "name": "Мозаика мраморная",
+   "category": "tile",
+   "source": "polyhaven:marble_mosaic_tiles",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    2.0
+   ],
+   "folder": "Materials/mosaic_marble",
+   "textures": {
+    "albedo": "mosaic_marble_albedo.jpg",
+    "normal": "mosaic_marble_normal.jpg",
+    "mask": "mosaic_marble_mask.png"
+   }
+  },
+  {
+   "id": "mosaic_dark",
+   "name": "Мозаика тёмная",
+   "category": "tile",
+   "source": "polyhaven:square_floor",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    2.0
+   ],
+   "folder": "Materials/mosaic_dark",
+   "textures": {
+    "albedo": "mosaic_dark_albedo.jpg",
+    "normal": "mosaic_dark_normal.jpg",
+    "mask": "mosaic_dark_mask.png"
+   }
+  },
+  {
+   "id": "terrazzo",
+   "name": "Терраццо",
+   "category": "tile",
+   "source": "polyhaven:terrazzo_tiles",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    2.0
+   ],
+   "folder": "Materials/terrazzo",
+   "textures": {
+    "albedo": "terrazzo_albedo.jpg",
+    "normal": "terrazzo_normal.jpg",
+    "mask": "terrazzo_mask.png"
+   }
+  },
+  {
+   "id": "terracotta_tiles",
+   "name": "Терракотовая плитка",
+   "category": "tile",
+   "source": "polyhaven:terracotta_floor_tiles",
+   "neutral": false,
+   "metersPerTile": [
+    2.0799999237060547,
+    2.0799999237060547
+   ],
+   "folder": "Materials/terracotta_tiles",
+   "textures": {
+    "albedo": "terracotta_tiles_albedo.jpg",
+    "normal": "terracotta_tiles_normal.jpg",
+    "mask": "terracotta_tiles_mask.png"
+   }
+  },
+  {
+   "id": "cotto_tiles",
+   "name": "Плитка котто светлая",
+   "category": "tile",
+   "source": "polyhaven:patio_tiles",
+   "neutral": false,
+   "metersPerTile": [
+    2.1500000953674316,
+    2.1500000953674316
+   ],
+   "folder": "Materials/cotto_tiles",
+   "textures": {
+    "albedo": "cotto_tiles_albedo.jpg",
+    "normal": "cotto_tiles_normal.jpg",
+    "mask": "cotto_tiles_mask.png"
+   }
+  },
+  {
+   "id": "plaster_white",
+   "name": "Штукатурка белая",
+   "category": "wall",
+   "source": "polyhaven:white_stucco",
+   "neutral": false,
+   "metersPerTile": [
+    1.9980629682540894,
+    1.9980640411376953
+   ],
+   "folder": "Materials/plaster_white",
+   "textures": {
+    "albedo": "plaster_white_albedo.jpg",
+    "normal": "plaster_white_normal.jpg",
+    "mask": "plaster_white_mask.png"
+   }
+  },
+  {
+   "id": "plaster_beige",
+   "name": "Штукатурка бежевая",
+   "category": "wall",
+   "source": "polyhaven:beige_wall_001",
+   "neutral": false,
+   "metersPerTile": [
+    3.0,
+    3.000000238418579
+   ],
+   "folder": "Materials/plaster_beige",
+   "textures": {
+    "albedo": "plaster_beige_albedo.jpg",
+    "normal": "plaster_beige_normal.jpg",
+    "mask": "plaster_beige_mask.png"
+   }
+  },
+  {
+   "id": "plaster_sand",
+   "name": "Штукатурка песочная",
+   "category": "wall",
+   "source": "polyhaven:beige_wall_002",
+   "neutral": false,
+   "metersPerTile": [
+    3.0,
+    3.000000238418579
+   ],
+   "folder": "Materials/plaster_sand",
+   "textures": {
+    "albedo": "plaster_sand_albedo.jpg",
+    "normal": "plaster_sand_normal.jpg",
+    "mask": "plaster_sand_mask.png"
+   }
+  },
+  {
+   "id": "plaster_textured",
+   "name": "Штукатурка фактурная",
+   "category": "wall",
+   "source": "polyhaven:plastered_wall",
+   "neutral": true,
+   "metersPerTile": [
+    1.9999996423721313,
+    1.9999996423721313
+   ],
+   "folder": "Materials/plaster_textured",
+   "textures": {
+    "albedo": "plaster_textured_albedo.jpg",
+    "normal": "plaster_textured_normal.jpg",
+    "mask": "plaster_textured_mask.png"
+   }
+  },
+  {
+   "id": "plaster_smooth",
+   "name": "Штукатурка гладкая",
+   "category": "wall",
+   "source": "polyhaven:plastered_wall_04",
+   "neutral": true,
+   "metersPerTile": [
+    3.1999998092651367,
+    3.1999998092651367
+   ],
+   "folder": "Materials/plaster_smooth",
+   "textures": {
+    "albedo": "plaster_smooth_albedo.jpg",
+    "normal": "plaster_smooth_normal.jpg",
+    "mask": "plaster_smooth_mask.png"
+   }
+  },
+  {
+   "id": "plaster_painted",
+   "name": "Окрашенная стена",
+   "category": "wall",
+   "source": "polyhaven:painted_plaster_wall",
+   "neutral": true,
+   "metersPerTile": [
+    2.0,
+    2.0
+   ],
+   "folder": "Materials/plaster_painted",
+   "textures": {
+    "albedo": "plaster_painted_albedo.jpg",
+    "normal": "plaster_painted_normal.jpg",
+    "mask": "plaster_painted_mask.png"
+   }
+  },
+  {
+   "id": "paint_smooth",
+   "name": "Краска по гладкой стене",
+   "category": "wall",
+   "source": "polyhaven:blue_plaster_wall",
+   "neutral": true,
+   "metersPerTile": [
+    2.0,
+    2.0
+   ],
+   "folder": "Materials/paint_smooth",
+   "textures": {
+    "albedo": "paint_smooth_albedo.jpg",
+    "normal": "paint_smooth_normal.jpg",
+    "mask": "paint_smooth_mask.png"
+   }
+  },
+  {
+   "id": "microcement",
+   "name": "Микроцемент",
+   "category": "wall",
+   "source": "polyhaven:grey_plaster",
+   "neutral": true,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "folder": "Materials/microcement",
+   "textures": {
+    "albedo": "microcement_albedo.jpg",
+    "normal": "microcement_normal.jpg",
+    "mask": "microcement_mask.png"
+   }
+  },
+  {
+   "id": "plaster_clay",
+   "name": "Глиняная штукатурка",
+   "category": "wall",
+   "source": "polyhaven:clay_plaster",
+   "neutral": false,
+   "metersPerTile": [
+    1.9999996423721313,
+    1.9999996423721313
+   ],
+   "folder": "Materials/plaster_clay",
+   "textures": {
+    "albedo": "plaster_clay_albedo.jpg",
+    "normal": "plaster_clay_normal.jpg",
+    "mask": "plaster_clay_mask.png"
+   }
+  },
+  {
+   "id": "tadelakt",
+   "name": "Декоративная штукатурка (таделакт)",
+   "category": "wall",
+   "source": "polyhaven:patterned_clay_plaster",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    2.0
+   ],
+   "folder": "Materials/tadelakt",
+   "textures": {
+    "albedo": "tadelakt_albedo.jpg",
+    "normal": "tadelakt_normal.jpg",
+    "mask": "tadelakt_mask.png"
+   }
+  },
+  {
+   "id": "concrete_board_formed",
+   "name": "Бетон с текстурой опалубки",
+   "category": "wall",
+   "source": "polyhaven:wood_textured_concrete",
+   "neutral": false,
+   "metersPerTile": [
+    1.8000000715255737,
+    1.8000000715255737
+   ],
+   "folder": "Materials/concrete_board_formed",
+   "textures": {
+    "albedo": "concrete_board_formed_albedo.jpg",
+    "normal": "concrete_board_formed_normal.jpg",
+    "mask": "concrete_board_formed_mask.png"
+   }
+  },
+  {
+   "id": "concrete_smooth",
+   "name": "Бетон гладкий светлый",
+   "category": "wall",
+   "source": "polyhaven:concrete_wall_009",
+   "neutral": false,
+   "metersPerTile": [
+    1.8049999475479126,
+    1.8049999475479126
+   ],
+   "folder": "Materials/concrete_smooth",
+   "textures": {
+    "albedo": "concrete_smooth_albedo.jpg",
+    "normal": "concrete_smooth_normal.jpg",
+    "mask": "concrete_smooth_mask.png"
+   }
+  },
+  {
+   "id": "concrete_slab_joints",
+   "name": "Бетон архитектурный со швами",
+   "category": "wall",
+   "source": "polyhaven:concrete_slab_wall",
+   "neutral": false,
+   "metersPerTile": [
+    2.299999952316284,
+    2.299999952316284
+   ],
+   "folder": "Materials/concrete_slab_joints",
+   "textures": {
+    "albedo": "concrete_slab_joints_albedo.jpg",
+    "normal": "concrete_slab_joints_normal.jpg",
+    "mask": "concrete_slab_joints_mask.png"
+   }
+  },
+  {
+   "id": "brick_painted",
+   "name": "Кирпич крашеный",
+   "category": "wall",
+   "source": "polyhaven:painted_brick",
+   "neutral": true,
+   "metersPerTile": [
+    1.8000000715255737,
+    1.8000000715255737
+   ],
+   "folder": "Materials/brick_painted",
+   "textures": {
+    "albedo": "brick_painted_albedo.jpg",
+    "normal": "brick_painted_normal.jpg",
+    "mask": "brick_painted_mask.png"
+   }
+  },
+  {
+   "id": "stone_cladding_light",
+   "name": "Каменная облицовка светлая",
+   "category": "wall",
+   "source": "polyhaven:stone_tile_wall",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    2.0
+   ],
+   "folder": "Materials/stone_cladding_light",
+   "textures": {
+    "albedo": "stone_cladding_light_albedo.jpg",
+    "normal": "stone_cladding_light_normal.jpg",
+    "mask": "stone_cladding_light_mask.png"
+   }
+  },
+  {
+   "id": "wood_panels_dark",
+   "name": "Деревянные стеновые панели",
+   "category": "wall",
+   "source": "polyhaven:dark_paneled_wood",
+   "neutral": false,
+   "metersPerTile": [
+    1.4000000953674316,
+    1.4000000953674316
+   ],
+   "folder": "Materials/wood_panels_dark",
+   "textures": {
+    "albedo": "wood_panels_dark_albedo.jpg",
+    "normal": "wood_panels_dark_normal.jpg",
+    "mask": "wood_panels_dark_mask.png"
+   }
+  },
+  {
+   "id": "bamboo_slats",
+   "name": "Бамбуковые рейки",
+   "category": "wall",
+   "source": "polyhaven:bamboo_wall",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    2.0
+   ],
+   "folder": "Materials/bamboo_slats",
+   "textures": {
+    "albedo": "bamboo_slats_albedo.jpg",
+    "normal": "bamboo_slats_normal.jpg",
+    "mask": "bamboo_slats_mask.png"
+   }
+  },
+  {
+   "id": "velvet",
+   "name": "Бархат",
+   "category": "fabric",
+   "source": "polyhaven:velour_velvet",
+   "neutral": true,
+   "metersPerTile": [
+    0.28422817052147237,
+    0.273499995470047
+   ],
+   "folder": "Materials/velvet",
+   "textures": {
+    "albedo": "velvet_albedo.jpg",
+    "normal": "velvet_normal.jpg",
+    "mask": "velvet_mask.png"
+   }
+  },
+  {
+   "id": "linen_rough",
+   "name": "Лён",
+   "category": "fabric",
+   "source": "polyhaven:rough_linen",
+   "neutral": true,
+   "metersPerTile": [
+    0.2707081392676629,
+    0.27129998803138733
+   ],
+   "folder": "Materials/linen_rough",
+   "textures": {
+    "albedo": "linen_rough_albedo.jpg",
+    "normal": "linen_rough_normal.jpg",
+    "mask": "linen_rough_mask.png"
+   }
+  },
+  {
+   "id": "wool_herringbone",
+   "name": "Шерсть ёлочкой",
+   "category": "fabric",
+   "source": "polyhaven:poly_wool_herringbone",
+   "neutral": true,
+   "metersPerTile": [
+    0.2700788548673393,
+    0.27570000290870667
+   ],
+   "folder": "Materials/wool_herringbone",
+   "textures": {
+    "albedo": "wool_herringbone_albedo.jpg",
+    "normal": "wool_herringbone_normal.jpg",
+    "mask": "wool_herringbone_mask.png"
+   }
+  },
+  {
+   "id": "boucle_teddy",
+   "name": "Букле",
+   "category": "fabric",
+   "source": "polyhaven:curly_teddy_natural",
+   "neutral": true,
+   "metersPerTile": [
+    0.335804452696631,
+    0.33090004324913025
+   ],
+   "folder": "Materials/boucle_teddy",
+   "textures": {
+    "albedo": "boucle_teddy_albedo.jpg",
+    "normal": "boucle_teddy_normal.jpg",
+    "mask": "boucle_teddy_mask.png"
+   }
+  },
+  {
+   "id": "suede",
+   "name": "Замша",
+   "category": "fabric",
+   "source": "polyhaven:scuba_suede",
+   "neutral": true,
+   "metersPerTile": [
+    0.2852202902890041,
+    0.27889999747276306
+   ],
+   "folder": "Materials/suede",
+   "textures": {
+    "albedo": "suede_albedo.jpg",
+    "normal": "suede_normal.jpg",
+    "mask": "suede_mask.png"
+   }
+  },
+  {
+   "id": "satin",
+   "name": "Сатин, шёлк",
+   "category": "fabric",
+   "source": "polyhaven:crepe_satin",
+   "neutral": true,
+   "metersPerTile": [
+    0.26319942218838305,
+    0.2678999900817871
+   ],
+   "folder": "Materials/satin",
+   "textures": {
+    "albedo": "satin_albedo.jpg",
+    "normal": "satin_normal.jpg",
+    "mask": "satin_mask.png"
+   }
+  },
+  {
+   "id": "corduroy",
+   "name": "Вельвет",
+   "category": "fabric",
+   "source": "polyhaven:ribbed_corduroy",
+   "neutral": true,
+   "metersPerTile": [
+    0.2664041751752189,
+    0.26669999957084656
+   ],
+   "folder": "Materials/corduroy",
+   "textures": {
+    "albedo": "corduroy_albedo.jpg",
+    "normal": "corduroy_normal.jpg",
+    "mask": "corduroy_mask.png"
+   }
+  },
+  {
+   "id": "fleece_knit",
+   "name": "Трикотаж, флис",
+   "category": "fabric",
+   "source": "polyhaven:knitted_fleece",
+   "neutral": true,
+   "metersPerTile": [
+    0.26635669526830075,
+    0.2703999876976013
+   ],
+   "folder": "Materials/fleece_knit",
+   "textures": {
+    "albedo": "fleece_knit_albedo.jpg",
+    "normal": "fleece_knit_normal.jpg",
+    "mask": "fleece_knit_mask.png"
+   }
+  },
+  {
+   "id": "wool_felt",
+   "name": "Сукно (плотная шерсть)",
+   "category": "fabric",
+   "source": "polyhaven:caban",
+   "neutral": true,
+   "metersPerTile": [
+    0.2739921411828764,
+    0.2732999920845032
+   ],
+   "folder": "Materials/wool_felt",
+   "textures": {
+    "albedo": "wool_felt_albedo.jpg",
+    "normal": "wool_felt_normal.jpg",
+    "mask": "wool_felt_mask.png"
+   }
+  },
+  {
+   "id": "cotton_jersey",
+   "name": "Хлопок трикотажный",
+   "category": "fabric",
+   "source": "polyhaven:cotton_jersey",
+   "neutral": true,
+   "metersPerTile": [
+    0.2636027473872483,
+    0.2637999951839447
+   ],
+   "folder": "Materials/cotton_jersey",
+   "textures": {
+    "albedo": "cotton_jersey_albedo.jpg",
+    "normal": "cotton_jersey_normal.jpg",
+    "mask": "cotton_jersey_mask.png"
+   }
+  },
+  {
+   "id": "cotton_poplin",
+   "name": "Хлопок гладкий",
+   "category": "fabric",
+   "source": "polyhaven:stretch_poplin",
+   "neutral": true,
+   "metersPerTile": [
+    0.2910233241569048,
+    0.2808000147342682
+   ],
+   "folder": "Materials/cotton_poplin",
+   "textures": {
+    "albedo": "cotton_poplin_albedo.jpg",
+    "normal": "cotton_poplin_normal.jpg",
+    "mask": "cotton_poplin_mask.png"
+   }
+  },
+  {
+   "id": "cotton_waffle",
+   "name": "Вафельный хлопок",
+   "category": "fabric",
+   "source": "polyhaven:waffle_pique_cotton",
+   "neutral": true,
+   "metersPerTile": [
+    0.280787176718274,
+    0.2768000066280365
+   ],
+   "folder": "Materials/cotton_waffle",
+   "textures": {
+    "albedo": "cotton_waffle_albedo.jpg",
+    "normal": "cotton_waffle_normal.jpg",
+    "mask": "cotton_waffle_mask.png"
+   }
+  },
+  {
+   "id": "terry",
+   "name": "Махра",
+   "category": "fabric",
+   "source": "polyhaven:terry_cloth",
+   "neutral": true,
+   "metersPerTile": [
+    0.3670535953781794,
+    0.36320000886917114
+   ],
+   "folder": "Materials/terry",
+   "textures": {
+    "albedo": "terry_albedo.jpg",
+    "normal": "terry_normal.jpg",
+    "mask": "terry_mask.png"
+   }
+  },
+  {
+   "id": "burlap",
+   "name": "Мешковина, джут",
+   "category": "fabric",
+   "source": "polyhaven:hessian_380",
+   "neutral": false,
+   "metersPerTile": [
+    0.2738657700451184,
+    0.27379998564720154
+   ],
+   "folder": "Materials/burlap",
+   "textures": {
+    "albedo": "burlap_albedo.jpg",
+    "normal": "burlap_normal.jpg",
+    "mask": "burlap_mask.png"
+   }
+  },
+  {
+   "id": "jacquard_floral",
+   "name": "Жаккард цветочный",
+   "category": "fabric",
+   "source": "polyhaven:floral_jacquard",
+   "neutral": true,
+   "metersPerTile": [
+    0.2529498182468769,
+    0.38359999656677246
+   ],
+   "folder": "Materials/jacquard_floral",
+   "textures": {
+    "albedo": "jacquard_floral_albedo.jpg",
+    "normal": "jacquard_floral_normal.jpg",
+    "mask": "jacquard_floral_mask.png"
+   }
+  },
+  {
+   "id": "jacquard_pattern",
+   "name": "Жаккард узорный",
+   "category": "fabric",
+   "source": "polyhaven:quatrefoil_jacquard_fabric",
+   "neutral": true,
+   "metersPerTile": [
+    0.28011855714681566,
+    0.28380000591278076
+   ],
+   "folder": "Materials/jacquard_pattern",
+   "textures": {
+    "albedo": "jacquard_pattern_albedo.jpg",
+    "normal": "jacquard_pattern_normal.jpg",
+    "mask": "jacquard_pattern_mask.png"
+   }
+  },
+  {
+   "id": "faux_fur",
+   "name": "Искусственный мех",
+   "category": "fabric",
+   "source": "polyhaven:faux_fur_geometric",
+   "neutral": false,
+   "metersPerTile": [
+    0.3019999563694,
+    0.3019766083948956
+   ],
+   "folder": "Materials/faux_fur",
+   "textures": {
+    "albedo": "faux_fur_albedo.jpg",
+    "normal": "faux_fur_normal.jpg",
+    "mask": "faux_fur_mask.png"
+   }
+  },
+  {
+   "id": "tweed_check",
+   "name": "Твид в клетку",
+   "category": "fabric",
+   "source": "polyhaven:wool_boucle",
+   "neutral": false,
+   "metersPerTile": [
+    0.3147823709728821,
+    0.39010000228881836
+   ],
+   "folder": "Materials/tweed_check",
+   "textures": {
+    "albedo": "tweed_check_albedo.jpg",
+    "normal": "tweed_check_normal.jpg",
+    "mask": "tweed_check_mask.png"
+   }
+  },
+  {
+   "id": "linen_check",
+   "name": "Лён в клетку",
+   "category": "fabric",
+   "source": "polyhaven:fabric_pattern_05",
+   "neutral": false,
+   "metersPerTile": [
+    0.5,
+    0.4999999403953552
+   ],
+   "folder": "Materials/linen_check",
+   "textures": {
+    "albedo": "linen_check_albedo.jpg",
+    "normal": "linen_check_normal.jpg",
+    "mask": "linen_check_mask.png"
+   }
+  },
+  {
+   "id": "denim",
+   "name": "Деним",
+   "category": "fabric",
+   "source": "polyhaven:denim_fabric_04",
+   "neutral": false,
+   "metersPerTile": [
+    0.2728973422962554,
+    0.26930001378059387
+   ],
+   "folder": "Materials/denim",
+   "textures": {
+    "albedo": "denim_albedo.jpg",
+    "normal": "denim_normal.jpg",
+    "mask": "denim_mask.png"
+   }
+  },
+  {
+   "id": "leather_tan",
+   "name": "Кожа коньячная",
+   "category": "leather",
+   "source": "polyhaven:fabric_leather_02",
+   "neutral": false,
+   "metersPerTile": [
+    0.5,
+    0.4999999403953552
+   ],
+   "folder": "Materials/leather_tan",
+   "textures": {
+    "albedo": "leather_tan_albedo.jpg",
+    "normal": "leather_tan_normal.jpg",
+    "mask": "leather_tan_mask.png"
+   }
+  },
+  {
+   "id": "leather_brown",
+   "name": "Кожа коричневая",
+   "category": "leather",
+   "source": "polyhaven:brown_leather",
+   "neutral": false,
+   "metersPerTile": [
+    0.4000000059604645,
+    0.40000003576278687
+   ],
+   "folder": "Materials/leather_brown",
+   "textures": {
+    "albedo": "leather_brown_albedo.jpg",
+    "normal": "leather_brown_normal.jpg",
+    "mask": "leather_brown_mask.png"
+   }
+  },
+  {
+   "id": "leather_brown_soft",
+   "name": "Кожа коричневая мягкая",
+   "category": "leather",
+   "source": "polyhaven:fabric_leather_01",
+   "neutral": false,
+   "metersPerTile": [
+    0.4000000059604645,
+    0.40000003576278687
+   ],
+   "folder": "Materials/leather_brown_soft",
+   "textures": {
+    "albedo": "leather_brown_soft_albedo.jpg",
+    "normal": "leather_brown_soft_normal.jpg",
+    "mask": "leather_brown_soft_mask.png"
+   }
+  },
+  {
+   "id": "leather_burgundy",
+   "name": "Кожа бордовая",
+   "category": "leather",
+   "source": "polyhaven:leather_red_02",
+   "neutral": false,
+   "metersPerTile": [
+    0.6000000238418579,
+    0.6000000238418579
+   ],
+   "folder": "Materials/leather_burgundy",
+   "textures": {
+    "albedo": "leather_burgundy_albedo.jpg",
+    "normal": "leather_burgundy_normal.jpg",
+    "mask": "leather_burgundy_mask.png"
+   }
+  },
+  {
+   "id": "leather_oxblood",
+   "name": "Кожа тёмно-красная",
+   "category": "leather",
+   "source": "polyhaven:leather_red_03",
+   "neutral": false,
+   "metersPerTile": [
+    0.30000001192092896,
+    0.30000001192092896
+   ],
+   "folder": "Materials/leather_oxblood",
+   "textures": {
+    "albedo": "leather_oxblood_albedo.jpg",
+    "normal": "leather_oxblood_normal.jpg",
+    "mask": "leather_oxblood_mask.png"
+   }
+  },
+  {
+   "id": "leather_light",
+   "name": "Кожа светлая",
+   "category": "leather",
+   "source": "polyhaven:leather_white",
+   "neutral": true,
+   "metersPerTile": [
+    0.30000001192092896,
+    0.30000001192092896
+   ],
+   "folder": "Materials/leather_light",
+   "textures": {
+    "albedo": "leather_light_albedo.jpg",
+    "normal": "leather_light_normal.jpg",
+    "mask": "leather_light_mask.png"
+   }
+  },
+  {
+   "id": "carpet_loop",
+   "name": "Ковролин петлевой",
+   "category": "carpet",
+   "source": "polyhaven:dirty_carpet",
+   "neutral": true,
+   "metersPerTile": [
+    0.5999999046325684,
+    0.5999999046325684
+   ],
+   "folder": "Materials/carpet_loop",
+   "textures": {
+    "albedo": "carpet_loop_albedo.jpg",
+    "normal": "carpet_loop_normal.jpg",
+    "mask": "carpet_loop_mask.png"
+   }
+  },
+  {
+   "id": "sisal",
+   "name": "Сизаль, татами",
+   "category": "carpet",
+   "source": "polyhaven:tatami_mat",
+   "neutral": false,
+   "metersPerTile": [
+    1.8000000715255737,
+    1.8000000715255737
+   ],
+   "folder": "Materials/sisal",
+   "textures": {
+    "albedo": "sisal_albedo.jpg",
+    "normal": "sisal_normal.jpg",
+    "mask": "sisal_mask.png"
+   }
+  },
+  {
+   "id": "oak_veneer",
+   "name": "Дуб, шпон",
+   "category": "wood",
+   "source": "polyhaven:oak_veneer_01",
+   "neutral": false,
+   "metersPerTile": [
+    1.8300000429153442,
+    1.8300000429153442
+   ],
+   "folder": "Materials/oak_veneer",
+   "textures": {
+    "albedo": "oak_veneer_albedo.jpg",
+    "normal": "oak_veneer_normal.jpg",
+    "mask": "oak_veneer_mask.png"
+   }
+  },
+  {
+   "id": "oak_light_veneer",
+   "name": "Дуб светлый, шпон",
+   "category": "wood",
+   "source": "polyhaven:oak_veneer_03",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "folder": "Materials/oak_light_veneer",
+   "textures": {
+    "albedo": "oak_light_veneer_albedo.jpg",
+    "normal": "oak_light_veneer_normal.jpg",
+    "mask": "oak_light_veneer_mask.png"
+   }
+  },
+  {
+   "id": "white_oak_veneer",
+   "name": "Белый дуб",
+   "category": "wood",
+   "source": "polyhaven:white_oak_veneer",
+   "neutral": false,
+   "metersPerTile": [
+    0.5,
+    0.5
+   ],
+   "folder": "Materials/white_oak_veneer",
+   "textures": {
+    "albedo": "white_oak_veneer_albedo.jpg",
+    "normal": "white_oak_veneer_normal.jpg",
+    "mask": "white_oak_veneer_mask.png"
+   }
+  },
+  {
+   "id": "grey_oak_veneer",
+   "name": "Дуб серый",
+   "category": "wood",
+   "source": "polyhaven:grey_oak_veneer_01",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "folder": "Materials/grey_oak_veneer",
+   "textures": {
+    "albedo": "grey_oak_veneer_albedo.jpg",
+    "normal": "grey_oak_veneer_normal.jpg",
+    "mask": "grey_oak_veneer_mask.png"
+   }
+  },
+  {
+   "id": "black_oak_veneer",
+   "name": "Дуб мореный чёрный",
+   "category": "wood",
+   "source": "polyhaven:black_oak_veneer",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "folder": "Materials/black_oak_veneer",
+   "textures": {
+    "albedo": "black_oak_veneer_albedo.jpg",
+    "normal": "black_oak_veneer_normal.jpg",
+    "mask": "black_oak_veneer_mask.png"
+   }
+  },
+  {
+   "id": "walnut_veneer",
+   "name": "Орех",
+   "category": "wood",
+   "source": "polyhaven:walnut_veneer",
+   "neutral": false,
+   "metersPerTile": [
+    1.7999999523162842,
+    1.7999999523162842
+   ],
+   "folder": "Materials/walnut_veneer",
+   "textures": {
+    "albedo": "walnut_veneer_albedo.jpg",
+    "normal": "walnut_veneer_normal.jpg",
+    "mask": "walnut_veneer_mask.png"
+   }
+  },
+  {
+   "id": "walnut_american",
+   "name": "Американский орех",
+   "category": "wood",
+   "source": "polyhaven:american_walnut_veneer",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "folder": "Materials/walnut_american",
+   "textures": {
+    "albedo": "walnut_american_albedo.jpg",
+    "normal": "walnut_american_normal.jpg",
+    "mask": "walnut_american_mask.png"
+   }
+  },
+  {
+   "id": "walnut_european",
+   "name": "Европейский орех",
+   "category": "wood",
+   "source": "polyhaven:european_walnut_veneer_04",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "folder": "Materials/walnut_european",
+   "textures": {
+    "albedo": "walnut_european_albedo.jpg",
+    "normal": "walnut_european_normal.jpg",
+    "mask": "walnut_european_mask.png"
+   }
+  },
+  {
+   "id": "walnut_smoked",
+   "name": "Орех копчёный",
+   "category": "wood",
+   "source": "polyhaven:smoked_walnut_veneer",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "folder": "Materials/walnut_smoked",
+   "textures": {
+    "albedo": "walnut_smoked_albedo.jpg",
+    "normal": "walnut_smoked_normal.jpg",
+    "mask": "walnut_smoked_mask.png"
+   }
+  },
+  {
+   "id": "walnut_polished",
+   "name": "Орех полированный",
+   "category": "wood",
+   "source": "polyhaven:wood_table_001",
+   "neutral": false,
+   "metersPerTile": [
+    1.5,
+    1.5000001192092896
+   ],
+   "folder": "Materials/walnut_polished",
+   "textures": {
+    "albedo": "walnut_polished_albedo.jpg",
+    "normal": "walnut_polished_normal.jpg",
+    "mask": "walnut_polished_mask.png"
+   }
+  },
+  {
+   "id": "ash_veneer",
+   "name": "Ясень",
+   "category": "wood",
+   "source": "polyhaven:ash_veneer",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "folder": "Materials/ash_veneer",
+   "textures": {
+    "albedo": "ash_veneer_albedo.jpg",
+    "normal": "ash_veneer_normal.jpg",
+    "mask": "ash_veneer_mask.png"
+   }
+  },
+  {
+   "id": "maple_white",
+   "name": "Клён белый",
+   "category": "wood",
+   "source": "polyhaven:white_maple_veneer",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "folder": "Materials/maple_white",
+   "textures": {
+    "albedo": "maple_white_albedo.jpg",
+    "normal": "maple_white_normal.jpg",
+    "mask": "maple_white_mask.png"
+   }
+  },
+  {
+   "id": "cherry_veneer",
+   "name": "Вишня",
+   "category": "wood",
+   "source": "polyhaven:cherry_veneer",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "folder": "Materials/cherry_veneer",
+   "textures": {
+    "albedo": "cherry_veneer_albedo.jpg",
+    "normal": "cherry_veneer_normal.jpg",
+    "mask": "cherry_veneer_mask.png"
+   }
+  },
+  {
+   "id": "teak_veneer",
+   "name": "Тик",
+   "category": "wood",
+   "source": "polyhaven:teak_veneer",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "folder": "Materials/teak_veneer",
+   "textures": {
+    "albedo": "teak_veneer_albedo.jpg",
+    "normal": "teak_veneer_normal.jpg",
+    "mask": "teak_veneer_mask.png"
+   }
+  },
+  {
+   "id": "rosewood_polished",
+   "name": "Палисандр лакированный",
+   "category": "wood",
+   "source": "polyhaven:rosewood_veneer1",
+   "neutral": false,
+   "metersPerTile": [
+    2.430000066757202,
+    2.430000066757202
+   ],
+   "folder": "Materials/rosewood_polished",
+   "textures": {
+    "albedo": "rosewood_polished_albedo.jpg",
+    "normal": "rosewood_polished_normal.jpg",
+    "mask": "rosewood_polished_mask.png"
+   }
+  },
+  {
+   "id": "ebony_striped",
+   "name": "Эбен полосатый",
+   "category": "wood",
+   "source": "polyhaven:smoke_speckled_veneer",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "folder": "Materials/ebony_striped",
+   "textures": {
+    "albedo": "ebony_striped_albedo.jpg",
+    "normal": "ebony_striped_normal.jpg",
+    "mask": "ebony_striped_mask.png"
+   }
+  },
+  {
+   "id": "wood_fronts_light",
+   "name": "Светлое дерево для фасадов",
+   "category": "wood",
+   "source": "polyhaven:kitchen_wood",
+   "neutral": false,
+   "metersPerTile": [
+    0.6000000238418579,
+    0.6000000238418579
+   ],
+   "folder": "Materials/wood_fronts_light",
+   "textures": {
+    "albedo": "wood_fronts_light_albedo.jpg",
+    "normal": "wood_fronts_light_normal.jpg",
+    "mask": "wood_fronts_light_mask.png"
+   }
+  },
+  {
+   "id": "plywood",
+   "name": "Фанера",
+   "category": "wood",
+   "source": "polyhaven:plywood",
+   "neutral": false,
+   "metersPerTile": [
+    0.499999940395355,
+    0.499999940395355
+   ],
+   "folder": "Materials/plywood",
+   "textures": {
+    "albedo": "plywood_albedo.jpg",
+    "normal": "plywood_normal.jpg",
+    "mask": "plywood_mask.png"
+   }
+  },
+  {
+   "id": "osb",
+   "name": "OSB-плита",
+   "category": "wood",
+   "source": "polyhaven:oriented_strand_board",
+   "neutral": false,
+   "metersPerTile": [
+    2.509999990463257,
+    2.509999990463257
+   ],
+   "folder": "Materials/osb",
+   "textures": {
+    "albedo": "osb_albedo.jpg",
+    "normal": "osb_normal.jpg",
+    "mask": "osb_mask.png"
+   }
+  },
+  {
+   "id": "brick_red",
+   "name": "Кирпич красный",
+   "category": "facade",
+   "source": "polyhaven:red_brick",
+   "neutral": false,
+   "metersPerTile": [
+    1.399999976158142,
+    1.399999976158142
+   ],
+   "folder": "Materials/brick_red",
+   "textures": {
+    "albedo": "brick_red_albedo.jpg",
+    "normal": "brick_red_normal.jpg",
+    "mask": "brick_red_mask.png"
+   }
+  },
+  {
+   "id": "brick_red_dark",
+   "name": "Кирпич тёмно-красный",
+   "category": "facade",
+   "source": "polyhaven:red_brick_03",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "folder": "Materials/brick_red_dark",
+   "textures": {
+    "albedo": "brick_red_dark_albedo.jpg",
+    "normal": "brick_red_dark_normal.jpg",
+    "mask": "brick_red_dark_mask.png"
+   }
+  },
+  {
+   "id": "brick_red_multi",
+   "name": "Кирпич красный разнотон",
+   "category": "facade",
+   "source": "polyhaven:brick_wall_001",
+   "neutral": false,
+   "metersPerTile": [
+    3.0,
+    3.0
+   ],
+   "folder": "Materials/brick_red_multi",
+   "textures": {
+    "albedo": "brick_red_multi_albedo.jpg",
+    "normal": "brick_red_multi_normal.jpg",
+    "mask": "brick_red_multi_mask.png"
+   }
+  },
+  {
+   "id": "brick_beige",
+   "name": "Кирпич бежевый",
+   "category": "facade",
+   "source": "polyhaven:brick_wall_003",
+   "neutral": false,
+   "metersPerTile": [
+    4.0,
+    4.0
+   ],
+   "folder": "Materials/brick_beige",
+   "textures": {
+    "albedo": "brick_beige_albedo.jpg",
+    "normal": "brick_beige_normal.jpg",
+    "mask": "brick_beige_mask.png"
+   }
+  },
+  {
+   "id": "brick_light_brown",
+   "name": "Кирпич светло-коричневый",
+   "category": "facade",
+   "source": "polyhaven:brick_wall_09",
+   "neutral": false,
+   "metersPerTile": [
+    2.009999990463257,
+    2.009999990463257
+   ],
+   "folder": "Materials/brick_light_brown",
+   "textures": {
+    "albedo": "brick_light_brown_albedo.jpg",
+    "normal": "brick_light_brown_normal.jpg",
+    "mask": "brick_light_brown_mask.png"
+   }
+  },
+  {
+   "id": "brick_dark",
+   "name": "Кирпич тёмный",
+   "category": "facade",
+   "source": "polyhaven:brick_wall_10",
+   "neutral": false,
+   "metersPerTile": [
+    1.8999998569488525,
+    1.8999998569488525
+   ],
+   "folder": "Materials/brick_dark",
+   "textures": {
+    "albedo": "brick_dark_albedo.jpg",
+    "normal": "brick_dark_normal.jpg",
+    "mask": "brick_dark_mask.png"
+   }
+  },
+  {
+   "id": "brick_grey",
+   "name": "Кирпич серый",
+   "category": "facade",
+   "source": "polyhaven:brick_wall_08",
+   "neutral": false,
+   "metersPerTile": [
+    1.8999998569488525,
+    1.8999998569488525
+   ],
+   "folder": "Materials/brick_grey",
+   "textures": {
+    "albedo": "brick_grey_albedo.jpg",
+    "normal": "brick_grey_normal.jpg",
+    "mask": "brick_grey_mask.png"
+   }
+  },
+  {
+   "id": "brick_whitewashed",
+   "name": "Кирпич белёный",
+   "category": "facade",
+   "source": "polyhaven:whitewashed_brick",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    2.0
+   ],
+   "folder": "Materials/brick_whitewashed",
+   "textures": {
+    "albedo": "brick_whitewashed_albedo.jpg",
+    "normal": "brick_whitewashed_normal.jpg",
+    "mask": "brick_whitewashed_mask.png"
+   }
+  },
+  {
+   "id": "brick_thin_cladding",
+   "name": "Клинкерная плитка под кирпич",
+   "category": "facade",
+   "source": "polyhaven:exterior_wall_cladding_02",
+   "neutral": false,
+   "metersPerTile": [
+    1.9900001287460327,
+    1.9900001287460327
+   ],
+   "folder": "Materials/brick_thin_cladding",
+   "textures": {
+    "albedo": "brick_thin_cladding_albedo.jpg",
+    "normal": "brick_thin_cladding_normal.jpg",
+    "mask": "brick_thin_cladding_mask.png"
+   }
+  },
+  {
+   "id": "stone_cladding_grey",
+   "name": "Облицовка камнем серая",
+   "category": "facade",
+   "source": "polyhaven:exterior_wall_cladding",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    2.0
+   ],
+   "folder": "Materials/stone_cladding_grey",
+   "textures": {
+    "albedo": "stone_cladding_grey_albedo.jpg",
+    "normal": "stone_cladding_grey_normal.jpg",
+    "mask": "stone_cladding_grey_mask.png"
+   }
+  },
+  {
+   "id": "stone_blocks_grey",
+   "name": "Каменные блоки серые",
+   "category": "facade",
+   "source": "polyhaven:japanese_stone_wall",
+   "neutral": false,
+   "metersPerTile": [
+    1.8999998569488525,
+    1.8999998569488525
+   ],
+   "folder": "Materials/stone_blocks_grey",
+   "textures": {
+    "albedo": "stone_blocks_grey_albedo.jpg",
+    "normal": "stone_blocks_grey_normal.jpg",
+    "mask": "stone_blocks_grey_mask.png"
+   }
+  },
+  {
+   "id": "sandstone_blocks",
+   "name": "Песчаник, блоки",
+   "category": "facade",
+   "source": "polyhaven:sandstone_blocks_08",
+   "neutral": false,
+   "metersPerTile": [
+    3.0,
+    3.0
+   ],
+   "folder": "Materials/sandstone_blocks",
+   "textures": {
+    "albedo": "sandstone_blocks_albedo.jpg",
+    "normal": "sandstone_blocks_normal.jpg",
+    "mask": "sandstone_blocks_mask.png"
+   }
+  },
+  {
+   "id": "sandstone_light",
+   "name": "Песчаник светлый, кладка",
+   "category": "facade",
+   "source": "polyhaven:white_sandstone_bricks",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    2.0
+   ],
+   "folder": "Materials/sandstone_light",
+   "textures": {
+    "albedo": "sandstone_light_albedo.jpg",
+    "normal": "sandstone_light_normal.jpg",
+    "mask": "sandstone_light_mask.png"
+   }
+  },
+  {
+   "id": "stone_stacked",
+   "name": "Камень плитняк (сланец)",
+   "category": "facade",
+   "source": "polyhaven:stacked_stone_wall",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    2.0
+   ],
+   "folder": "Materials/stone_stacked",
+   "textures": {
+    "albedo": "stone_stacked_albedo.jpg",
+    "normal": "stone_stacked_normal.jpg",
+    "mask": "stone_stacked_mask.png"
+   }
+  },
+  {
+   "id": "stone_drystone",
+   "name": "Бутовый камень",
+   "category": "facade",
+   "source": "polyhaven:stone_wall",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    2.0
+   ],
+   "folder": "Materials/stone_drystone",
+   "textures": {
+    "albedo": "stone_drystone_albedo.jpg",
+    "normal": "stone_drystone_normal.jpg",
+    "mask": "stone_drystone_mask.png"
+   }
+  },
+  {
+   "id": "stone_rustic",
+   "name": "Камень рваный",
+   "category": "facade",
+   "source": "polyhaven:rustic_stone_wall",
+   "neutral": false,
+   "metersPerTile": [
+    1.5199998617172241,
+    1.5199998617172241
+   ],
+   "folder": "Materials/stone_rustic",
+   "textures": {
+    "albedo": "stone_rustic_albedo.jpg",
+    "normal": "stone_rustic_normal.jpg",
+    "mask": "stone_rustic_mask.png"
+   }
+  },
+  {
+   "id": "facade_tiles",
+   "name": "Фасадная плитка",
+   "category": "facade",
+   "source": "polyhaven:rectangular_facade_tiles",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    2.0
+   ],
+   "folder": "Materials/facade_tiles",
+   "textures": {
+    "albedo": "facade_tiles_albedo.jpg",
+    "normal": "facade_tiles_normal.jpg",
+    "mask": "facade_tiles_mask.png"
+   }
+  },
+  {
+   "id": "facade_tiles_warm",
+   "name": "Фасадная плитка тёплая",
+   "category": "facade",
+   "source": "polyhaven:rectangular_facade_tiles_02",
+   "neutral": false,
+   "metersPerTile": [
+    2.1050000190734863,
+    2.1050000190734863
+   ],
+   "folder": "Materials/facade_tiles_warm",
+   "textures": {
+    "albedo": "facade_tiles_warm_albedo.jpg",
+    "normal": "facade_tiles_warm_normal.jpg",
+    "mask": "facade_tiles_warm_mask.png"
+   }
+  },
+  {
+   "id": "facade_panels_dark",
+   "name": "Фасадные панели тёмные",
+   "category": "facade",
+   "source": "polyhaven:concrete_tile_facade",
+   "neutral": false,
+   "metersPerTile": [
+    2.0899999141693115,
+    2.0899999141693115
+   ],
+   "folder": "Materials/facade_panels_dark",
+   "textures": {
+    "albedo": "facade_panels_dark_albedo.jpg",
+    "normal": "facade_panels_dark_normal.jpg",
+    "mask": "facade_panels_dark_mask.png"
+   }
+  },
+  {
+   "id": "facade_panels_grey",
+   "name": "Фиброцементные панели",
+   "category": "facade",
+   "source": "polyhaven:concrete_wall_004",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    2.0
+   ],
+   "folder": "Materials/facade_panels_grey",
+   "textures": {
+    "albedo": "facade_panels_grey_albedo.jpg",
+    "normal": "facade_panels_grey_normal.jpg",
+    "mask": "facade_panels_grey_mask.png"
+   }
+  },
+  {
+   "id": "siding_grey",
+   "name": "Сайдинг серый",
+   "category": "facade",
+   "source": "polyhaven:exterior_wall_cladding_03",
+   "neutral": false,
+   "metersPerTile": [
+    1.9600000381469727,
+    1.9600000381469727
+   ],
+   "folder": "Materials/siding_grey",
+   "textures": {
+    "albedo": "siding_grey_albedo.jpg",
+    "normal": "siding_grey_normal.jpg",
+    "mask": "siding_grey_mask.png"
+   }
+  },
+  {
+   "id": "concrete_exposed",
+   "name": "Бетон фасадный",
+   "category": "facade",
+   "source": "polyhaven:concrete_wall_008",
+   "neutral": false,
+   "metersPerTile": [
+    2.7100000381469727,
+    2.7100000381469727
+   ],
+   "folder": "Materials/concrete_exposed",
+   "textures": {
+    "albedo": "concrete_exposed_albedo.jpg",
+    "normal": "concrete_exposed_normal.jpg",
+    "mask": "concrete_exposed_mask.png"
+   }
+  },
+  {
+   "id": "render_dark",
+   "name": "Штукатурка тёмная фасадная",
+   "category": "facade",
+   "source": "polyhaven:plastered_wall_05",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    2.0
+   ],
+   "folder": "Materials/render_dark",
+   "textures": {
+    "albedo": "render_dark_albedo.jpg",
+    "normal": "render_dark_normal.jpg",
+    "mask": "render_dark_mask.png"
+   }
+  },
+  {
+   "id": "wood_charred",
+   "name": "Доска обожжённая (шу суги бан)",
+   "category": "facade",
+   "source": "polyhaven:black_painted_planks",
+   "neutral": false,
+   "metersPerTile": [
+    1.5999999046325684,
+    1.5999999046325684
+   ],
+   "folder": "Materials/wood_charred",
+   "textures": {
+    "albedo": "wood_charred_albedo.jpg",
+    "normal": "wood_charred_normal.jpg",
+    "mask": "wood_charred_mask.png"
+   }
+  },
+  {
+   "id": "cladding_white_vertical",
+   "name": "Вагонка белая вертикальная",
+   "category": "facade",
+   "source": "polyhaven:white_planks_clean",
+   "neutral": true,
+   "metersPerTile": [
+    1.8000000715255737,
+    1.8000000715255737
+   ],
+   "folder": "Materials/cladding_white_vertical",
+   "textures": {
+    "albedo": "cladding_white_vertical_albedo.jpg",
+    "normal": "cladding_white_vertical_normal.jpg",
+    "mask": "cladding_white_vertical_mask.png"
+   }
+  },
+  {
+   "id": "cladding_cedar",
+   "name": "Кедровая вертикальная доска",
+   "category": "facade",
+   "source": "polyhaven:japanese_cedar_planks",
+   "neutral": false,
+   "metersPerTile": [
+    1.130000114440918,
+    1.130000114440918
+   ],
+   "folder": "Materials/cladding_cedar",
+   "textures": {
+    "albedo": "cladding_cedar_albedo.jpg",
+    "normal": "cladding_cedar_normal.jpg",
+    "mask": "cladding_cedar_mask.png"
+   }
+  },
+  {
+   "id": "cladding_grey_boards",
+   "name": "Доска горизонтальная серая",
+   "category": "facade",
+   "source": "polyhaven:brown_planks_05",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "folder": "Materials/cladding_grey_boards",
+   "textures": {
+    "albedo": "cladding_grey_boards_albedo.jpg",
+    "normal": "cladding_grey_boards_normal.jpg",
+    "mask": "cladding_grey_boards_mask.png"
+   }
+  },
+  {
+   "id": "cladding_dark_boards",
+   "name": "Доска горизонтальная тёмная",
+   "category": "facade",
+   "source": "polyhaven:wooden_planks",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    2.0
+   ],
+   "folder": "Materials/cladding_dark_boards",
+   "textures": {
+    "albedo": "cladding_dark_boards_albedo.jpg",
+    "normal": "cladding_dark_boards_normal.jpg",
+    "mask": "cladding_dark_boards_mask.png"
+   }
+  },
+  {
+   "id": "cladding_wpc",
+   "name": "Панели ДПК",
+   "category": "facade",
+   "source": "polyhaven:synthetic_wood",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    2.0
+   ],
+   "folder": "Materials/cladding_wpc",
+   "textures": {
+    "albedo": "cladding_wpc_albedo.jpg",
+    "normal": "cladding_wpc_normal.jpg",
+    "mask": "cladding_wpc_mask.png"
+   }
+  },
+  {
+   "id": "metal_ribbed",
+   "name": "Металл профилированный (фасад)",
+   "category": "facade",
+   "source": "polyhaven:painted_metal_shutter",
+   "neutral": true,
+   "metersPerTile": [
+    2.0,
+    2.0
+   ],
+   "folder": "Materials/metal_ribbed",
+   "textures": {
+    "albedo": "metal_ribbed_albedo.jpg",
+    "normal": "metal_ribbed_normal.jpg",
+    "mask": "metal_ribbed_mask.png"
+   }
+  },
+  {
+   "id": "roof_clay_tiles",
+   "name": "Черепица керамическая",
+   "category": "roof",
+   "source": "polyhaven:clay_roof_tiles_02",
+   "neutral": false,
+   "metersPerTile": [
+    2.5,
+    2.5
+   ],
+   "folder": "Materials/roof_clay_tiles",
+   "textures": {
+    "albedo": "roof_clay_tiles_albedo.jpg",
+    "normal": "roof_clay_tiles_normal.jpg",
+    "mask": "roof_clay_tiles_mask.png"
+   }
+  },
+  {
+   "id": "roof_clay_flat",
+   "name": "Черепица плоская",
+   "category": "roof",
+   "source": "polyhaven:clay_roof_tiles_03",
+   "neutral": false,
+   "metersPerTile": [
+    2.5999999046325684,
+    2.5999999046325684
+   ],
+   "folder": "Materials/roof_clay_flat",
+   "textures": {
+    "albedo": "roof_clay_flat_albedo.jpg",
+    "normal": "roof_clay_flat_normal.jpg",
+    "mask": "roof_clay_flat_mask.png"
+   }
+  },
+  {
+   "id": "roof_grey_tiles",
+   "name": "Черепица серая",
+   "category": "roof",
+   "source": "polyhaven:grey_roof_tiles",
+   "neutral": false,
+   "metersPerTile": [
+    3.0,
+    3.0
+   ],
+   "folder": "Materials/roof_grey_tiles",
+   "textures": {
+    "albedo": "roof_grey_tiles_albedo.jpg",
+    "normal": "roof_grey_tiles_normal.jpg",
+    "mask": "roof_grey_tiles_mask.png"
+   }
+  },
+  {
+   "id": "roof_tiles_flat",
+   "name": "Черепица бобровка",
+   "category": "roof",
+   "source": "polyhaven:roof_tiles",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    2.0
+   ],
+   "folder": "Materials/roof_tiles_flat",
+   "textures": {
+    "albedo": "roof_tiles_flat_albedo.jpg",
+    "normal": "roof_tiles_flat_normal.jpg",
+    "mask": "roof_tiles_flat_mask.png"
+   }
+  },
+  {
+   "id": "roof_slate",
+   "name": "Сланцевая кровля",
+   "category": "roof",
+   "source": "polyhaven:grey_roof_tiles_02",
+   "neutral": false,
+   "metersPerTile": [
+    1.5,
+    1.5
+   ],
+   "folder": "Materials/roof_slate",
+   "textures": {
+    "albedo": "roof_slate_albedo.jpg",
+    "normal": "roof_slate_normal.jpg",
+    "mask": "roof_slate_mask.png"
+   }
+  },
+  {
+   "id": "roof_slate_small",
+   "name": "Сланец мелкий",
+   "category": "roof",
+   "source": "polyhaven:roof_slates_03",
+   "neutral": false,
+   "metersPerTile": [
+    3.0,
+    3.0
+   ],
+   "folder": "Materials/roof_slate_small",
+   "textures": {
+    "albedo": "roof_slate_small_albedo.jpg",
+    "normal": "roof_slate_small_normal.jpg",
+    "mask": "roof_slate_small_mask.png"
+   }
+  },
+  {
+   "id": "roof_shingles",
+   "name": "Мягкая кровля (гибкая черепица)",
+   "category": "roof",
+   "source": "polyhaven:grey_roof_01",
+   "neutral": false,
+   "metersPerTile": [
+    8.0,
+    8.0
+   ],
+   "folder": "Materials/roof_shingles",
+   "textures": {
+    "albedo": "roof_shingles_albedo.jpg",
+    "normal": "roof_shingles_normal.jpg",
+    "mask": "roof_shingles_mask.png"
+   }
+  },
+  {
+   "id": "roof_metal_profile",
+   "name": "Профнастил",
+   "category": "roof",
+   "source": "polyhaven:box_profile_metal_sheet",
+   "neutral": true,
+   "metersPerTile": [
+    2.0,
+    2.0
+   ],
+   "folder": "Materials/roof_metal_profile",
+   "textures": {
+    "albedo": "roof_metal_profile_albedo.jpg",
+    "normal": "roof_metal_profile_normal.jpg",
+    "mask": "roof_metal_profile_mask.png"
+   }
+  },
+  {
+   "id": "roof_corrugated",
+   "name": "Кровля волнистая серая",
+   "category": "roof",
+   "source": "polyhaven:corrugated_iron_02",
+   "neutral": false,
+   "metersPerTile": [
+    2.700000047683716,
+    2.700000047683716
+   ],
+   "folder": "Materials/roof_corrugated",
+   "textures": {
+    "albedo": "roof_corrugated_albedo.jpg",
+    "normal": "roof_corrugated_normal.jpg",
+    "mask": "roof_corrugated_mask.png"
+   }
+  },
+  {
+   "id": "roof_corrugated_light",
+   "name": "Кровля волнистая светлая",
+   "category": "roof",
+   "source": "polyhaven:corrugated_iron",
+   "neutral": false,
+   "metersPerTile": [
+    1.1200000047683716,
+    1.1200000047683716
+   ],
+   "folder": "Materials/roof_corrugated_light",
+   "textures": {
+    "albedo": "roof_corrugated_light_albedo.jpg",
+    "normal": "roof_corrugated_light_normal.jpg",
+    "mask": "roof_corrugated_light_mask.png"
+   }
+  },
+  {
+   "id": "roof_thatch",
+   "name": "Камышовая кровля",
+   "category": "roof",
+   "source": "polyhaven:thatch_roof_angled",
+   "neutral": false,
+   "metersPerTile": [
+    0.5399999618530273,
+    0.5399999618530273
+   ],
+   "folder": "Materials/roof_thatch",
+   "textures": {
+    "albedo": "roof_thatch_albedo.jpg",
+    "normal": "roof_thatch_normal.jpg",
+    "mask": "roof_thatch_mask.png"
+   }
+  },
+  {
+   "id": "metal_painted",
+   "name": "Металл окрашенный",
+   "category": "metal",
+   "source": "polyhaven:blue_metal_plate",
+   "neutral": true,
+   "metersPerTile": [
+    2.5,
+    2.5
+   ],
+   "folder": "Materials/metal_painted",
+   "textures": {
+    "albedo": "metal_painted_albedo.jpg",
+    "normal": "metal_painted_normal.jpg",
+    "mask": "metal_painted_mask.png"
+   }
+  },
+  {
+   "id": "paving_herringbone_grey",
+   "name": "Брусчатка ёлочкой серая",
+   "category": "paving",
+   "source": "polyhaven:herringbone_pavement",
+   "neutral": false,
+   "metersPerTile": [
+    1.9999996423721313,
+    1.9999996423721313
+   ],
+   "folder": "Materials/paving_herringbone_grey",
+   "textures": {
+    "albedo": "paving_herringbone_grey_albedo.jpg",
+    "normal": "paving_herringbone_grey_normal.jpg",
+    "mask": "paving_herringbone_grey_mask.png"
+   }
+  },
+  {
+   "id": "paving_herringbone_light",
+   "name": "Брусчатка ёлочкой светлая",
+   "category": "paving",
+   "source": "polyhaven:herringbone_brick_02",
+   "neutral": false,
+   "metersPerTile": [
+    1.8400001525878906,
+    1.8400001525878906
+   ],
+   "folder": "Materials/paving_herringbone_light",
+   "textures": {
+    "albedo": "paving_herringbone_light_albedo.jpg",
+    "normal": "paving_herringbone_light_normal.jpg",
+    "mask": "paving_herringbone_light_mask.png"
+   }
+  },
+  {
+   "id": "paving_herringbone_large",
+   "name": "Плиты ёлочкой крупные",
+   "category": "paving",
+   "source": "polyhaven:herringbone_concrete_tile",
+   "neutral": false,
+   "metersPerTile": [
+    1.8000000715255737,
+    1.8000000715255737
+   ],
+   "folder": "Materials/paving_herringbone_large",
+   "textures": {
+    "albedo": "paving_herringbone_large_albedo.jpg",
+    "normal": "paving_herringbone_large_normal.jpg",
+    "mask": "paving_herringbone_large_mask.png"
+   }
+  },
+  {
+   "id": "paving_herringbone_volcanic",
+   "name": "Камень ёлочкой тёмный",
+   "category": "paving",
+   "source": "polyhaven:volcanic_herringbone_01",
+   "neutral": false,
+   "metersPerTile": [
+    1.8000000715255737,
+    1.8000000715255737
+   ],
+   "folder": "Materials/paving_herringbone_volcanic",
+   "textures": {
+    "albedo": "paving_herringbone_volcanic_albedo.jpg",
+    "normal": "paving_herringbone_volcanic_normal.jpg",
+    "mask": "paving_herringbone_volcanic_mask.png"
+   }
+  },
+  {
+   "id": "pavers_dark",
+   "name": "Брусчатка тёмная",
+   "category": "paving",
+   "source": "polyhaven:brick_pavement_02",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    2.0
+   ],
+   "folder": "Materials/pavers_dark",
+   "textures": {
+    "albedo": "pavers_dark_albedo.jpg",
+    "normal": "pavers_dark_normal.jpg",
+    "mask": "pavers_dark_mask.png"
+   }
+  },
+  {
+   "id": "pavers_interlocking",
+   "name": "Брусчатка фигурная",
+   "category": "paving",
+   "source": "polyhaven:concrete_pavers_02",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    2.0
+   ],
+   "folder": "Materials/pavers_interlocking",
+   "textures": {
+    "albedo": "pavers_interlocking_albedo.jpg",
+    "normal": "pavers_interlocking_normal.jpg",
+    "mask": "pavers_interlocking_mask.png"
+   }
+  },
+  {
+   "id": "pavers_small",
+   "name": "Брусчатка мелкая",
+   "category": "paving",
+   "source": "polyhaven:square_concrete_pavers",
+   "neutral": false,
+   "metersPerTile": [
+    1.7999999523162842,
+    1.7999999523162842
+   ],
+   "folder": "Materials/pavers_small",
+   "textures": {
+    "albedo": "pavers_small_albedo.jpg",
+    "normal": "pavers_small_normal.jpg",
+    "mask": "pavers_small_mask.png"
+   }
+  },
+  {
+   "id": "paving_slabs",
+   "name": "Тротуарные плиты",
+   "category": "paving",
+   "source": "polyhaven:concrete_pavement",
+   "neutral": false,
+   "metersPerTile": [
+    1.8000000715255737,
+    1.8000000715255737
+   ],
+   "folder": "Materials/paving_slabs",
+   "textures": {
+    "albedo": "paving_slabs_albedo.jpg",
+    "normal": "paving_slabs_normal.jpg",
+    "mask": "paving_slabs_mask.png"
+   }
+  },
+  {
+   "id": "paving_large_grey",
+   "name": "Крупные плиты серые",
+   "category": "paving",
+   "source": "polyhaven:large_floor_tiles_02",
+   "neutral": false,
+   "metersPerTile": [
+    3.0,
+    3.0
+   ],
+   "folder": "Materials/paving_large_grey",
+   "textures": {
+    "albedo": "paving_large_grey_albedo.jpg",
+    "normal": "paving_large_grey_normal.jpg",
+    "mask": "paving_large_grey_mask.png"
+   }
+  },
+  {
+   "id": "paving_outdoor_tiles",
+   "name": "Уличная плитка серая",
+   "category": "paving",
+   "source": "polyhaven:large_grey_tiles",
+   "neutral": false,
+   "metersPerTile": [
+    3.0,
+    3.0
+   ],
+   "folder": "Materials/paving_outdoor_tiles",
+   "textures": {
+    "albedo": "paving_outdoor_tiles_albedo.jpg",
+    "normal": "paving_outdoor_tiles_normal.jpg",
+    "mask": "paving_outdoor_tiles_mask.png"
+   }
+  },
+  {
+   "id": "paving_square_pattern",
+   "name": "Плиты квадратные",
+   "category": "paving",
+   "source": "polyhaven:large_square_pattern_01",
+   "neutral": false,
+   "metersPerTile": [
+    3.0,
+    3.0
+   ],
+   "folder": "Materials/paving_square_pattern",
+   "textures": {
+    "albedo": "paving_square_pattern_albedo.jpg",
+    "normal": "paving_square_pattern_normal.jpg",
+    "mask": "paving_square_pattern_mask.png"
+   }
+  },
+  {
+   "id": "paving_rectangular",
+   "name": "Плиты прямоугольные",
+   "category": "paving",
+   "source": "polyhaven:rectangular_paving",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    2.0
+   ],
+   "folder": "Materials/paving_rectangular",
+   "textures": {
+    "albedo": "paving_rectangular_albedo.jpg",
+    "normal": "paving_rectangular_normal.jpg",
+    "mask": "paving_rectangular_mask.png"
+   }
+  },
+  {
+   "id": "paving_hexagon",
+   "name": "Шестигранная плитка",
+   "category": "paving",
+   "source": "polyhaven:hexagonal_concrete_paving",
+   "neutral": false,
+   "metersPerTile": [
+    1.6000003814697266,
+    1.6000001430511475
+   ],
+   "folder": "Materials/paving_hexagon",
+   "textures": {
+    "albedo": "paving_hexagon_albedo.jpg",
+    "normal": "paving_hexagon_normal.jpg",
+    "mask": "paving_hexagon_mask.png"
+   }
+  },
+  {
+   "id": "paving_granite_light",
+   "name": "Гранитная плитка светлая",
+   "category": "paving",
+   "source": "polyhaven:rock_tile_floor",
+   "neutral": false,
+   "metersPerTile": [
+    1.9600000381469727,
+    1.9600000381469727
+   ],
+   "folder": "Materials/paving_granite_light",
+   "textures": {
+    "albedo": "paving_granite_light_albedo.jpg",
+    "normal": "paving_granite_light_normal.jpg",
+    "mask": "paving_granite_light_mask.png"
+   }
+  },
+  {
+   "id": "paving_crazy",
+   "name": "Мощение «рваный камень»",
+   "category": "paving",
+   "source": "polyhaven:pavement_02",
+   "neutral": false,
+   "metersPerTile": [
+    2.119999647140503,
+    2.119999885559082
+   ],
+   "folder": "Materials/paving_crazy",
+   "textures": {
+    "albedo": "paving_crazy_albedo.jpg",
+    "normal": "paving_crazy_normal.jpg",
+    "mask": "paving_crazy_mask.png"
+   }
+  },
+  {
+   "id": "flagstone_grey",
+   "name": "Плитняк серый",
+   "category": "paving",
+   "source": "polyhaven:grey_stone_path",
+   "neutral": false,
+   "metersPerTile": [
+    1.799999713897705,
+    1.799999713897705
+   ],
+   "folder": "Materials/flagstone_grey",
+   "textures": {
+    "albedo": "flagstone_grey_albedo.jpg",
+    "normal": "flagstone_grey_normal.jpg",
+    "mask": "flagstone_grey_mask.png"
+   }
+  },
+  {
+   "id": "flagstone_path",
+   "name": "Плитняк дорожка",
+   "category": "paving",
+   "source": "polyhaven:stone_pathway",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    2.0
+   ],
+   "folder": "Materials/flagstone_path",
+   "textures": {
+    "albedo": "flagstone_path_albedo.jpg",
+    "normal": "flagstone_path_normal.jpg",
+    "mask": "flagstone_path_mask.png"
+   }
+  },
+  {
+   "id": "setts_granite",
+   "name": "Гранитная брусчатка",
+   "category": "paving",
+   "source": "polyhaven:cobblestone_color",
+   "neutral": false,
+   "metersPerTile": [
+    2.4000000953674316,
+    2.4000000953674316
+   ],
+   "folder": "Materials/setts_granite",
+   "textures": {
+    "albedo": "setts_granite_albedo.jpg",
+    "normal": "setts_granite_normal.jpg",
+    "mask": "setts_granite_mask.png"
+   }
+  },
+  {
+   "id": "setts_square",
+   "name": "Брусчатка квадратная",
+   "category": "paving",
+   "source": "polyhaven:square_cobblestone",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    2.0
+   ],
+   "folder": "Materials/setts_square",
+   "textures": {
+    "albedo": "setts_square_albedo.jpg",
+    "normal": "setts_square_normal.jpg",
+    "mask": "setts_square_mask.png"
+   }
+  },
+  {
+   "id": "cobbles",
+   "name": "Булыжник",
+   "category": "paving",
+   "source": "polyhaven:cobblestone_floor_08",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    2.0
+   ],
+   "folder": "Materials/cobbles",
+   "textures": {
+    "albedo": "cobbles_albedo.jpg",
+    "normal": "cobbles_normal.jpg",
+    "mask": "cobbles_mask.png"
+   }
+  },
+  {
+   "id": "asphalt_clean",
+   "name": "Асфальт",
+   "category": "paving",
+   "source": "polyhaven:clean_asphalt",
+   "neutral": false,
+   "metersPerTile": [
+    2.0999999046325684,
+    2.0999999046325684
+   ],
+   "folder": "Materials/asphalt_clean",
+   "textures": {
+    "albedo": "asphalt_clean_albedo.jpg",
+    "normal": "asphalt_clean_normal.jpg",
+    "mask": "asphalt_clean_mask.png"
+   }
+  },
+  {
+   "id": "deck_boards",
+   "name": "Террасная доска",
+   "category": "deck",
+   "source": "polyhaven:wood_floor_deck",
+   "neutral": false,
+   "metersPerTile": [
+    1.7999999523162842,
+    1.7999999523162842
+   ],
+   "folder": "Materials/deck_boards",
+   "textures": {
+    "albedo": "deck_boards_albedo.jpg",
+    "normal": "deck_boards_normal.jpg",
+    "mask": "deck_boards_mask.png"
+   }
+  },
+  {
+   "id": "deck_boards_grey",
+   "name": "Террасная доска серая",
+   "category": "deck",
+   "source": "polyhaven:wood_planks_grey",
+   "neutral": false,
+   "metersPerTile": [
+    1.5,
+    1.5000001192092896
+   ],
+   "folder": "Materials/deck_boards_grey",
+   "textures": {
+    "albedo": "deck_boards_grey_albedo.jpg",
+    "normal": "deck_boards_grey_normal.jpg",
+    "mask": "deck_boards_grey_mask.png"
+   }
+  },
+  {
+   "id": "lawn_texture",
+   "name": "Газон",
+   "category": "ground",
+   "source": "polyhaven:leafy_grass",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    2.0
+   ],
+   "folder": "Materials/lawn_texture",
+   "textures": {
+    "albedo": "lawn_texture_albedo.jpg",
+    "normal": "lawn_texture_normal.jpg",
+    "mask": "lawn_texture_mask.png"
+   }
+  },
+  {
+   "id": "grass_dry",
+   "name": "Трава сухая",
+   "category": "ground",
+   "source": "polyhaven:grass_ground",
+   "neutral": false,
+   "metersPerTile": [
+    2.509999990463257,
+    2.509999990463257
+   ],
+   "folder": "Materials/grass_dry",
+   "textures": {
+    "albedo": "grass_dry_albedo.jpg",
+    "normal": "grass_dry_normal.jpg",
+    "mask": "grass_dry_mask.png"
+   }
+  },
+  {
+   "id": "soil_garden",
+   "name": "Грунт садовый",
+   "category": "ground",
+   "source": "polyhaven:farm_soil",
+   "neutral": false,
+   "metersPerTile": [
+    1.9999992847442627,
+    2.000000238418579
+   ],
+   "folder": "Materials/soil_garden",
+   "textures": {
+    "albedo": "soil_garden_albedo.jpg",
+    "normal": "soil_garden_normal.jpg",
+    "mask": "soil_garden_mask.png"
+   }
+  },
+  {
+   "id": "soil_dirt",
+   "name": "Земля",
+   "category": "ground",
+   "source": "polyhaven:dirt",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    2.0
+   ],
+   "folder": "Materials/soil_dirt",
+   "textures": {
+    "albedo": "soil_dirt_albedo.jpg",
+    "normal": "soil_dirt_normal.jpg",
+    "mask": "soil_dirt_mask.png"
+   }
+  },
+  {
+   "id": "mulch_bark",
+   "name": "Мульча из коры",
+   "category": "ground",
+   "source": "polyhaven:yellow_flower_mulch",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    2.0
+   ],
+   "folder": "Materials/mulch_bark",
+   "textures": {
+    "albedo": "mulch_bark_albedo.jpg",
+    "normal": "mulch_bark_normal.jpg",
+    "mask": "mulch_bark_mask.png"
+   }
+  },
+  {
+   "id": "wood_chips",
+   "name": "Щепа",
+   "category": "ground",
+   "source": "polyhaven:wood_chips",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    2.0
+   ],
+   "folder": "Materials/wood_chips",
+   "textures": {
+    "albedo": "wood_chips_albedo.jpg",
+    "normal": "wood_chips_normal.jpg",
+    "mask": "wood_chips_mask.png"
+   }
+  },
+  {
+   "id": "gravel_light",
+   "name": "Гравий светлый",
+   "category": "ground",
+   "source": "polyhaven:gravel_floor_02",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    2.0
+   ],
+   "folder": "Materials/gravel_light",
+   "textures": {
+    "albedo": "gravel_light_albedo.jpg",
+    "normal": "gravel_light_normal.jpg",
+    "mask": "gravel_light_mask.png"
+   }
+  },
+  {
+   "id": "gravel_grey",
+   "name": "Гравий серый",
+   "category": "ground",
+   "source": "polyhaven:gravel_floor_03",
+   "neutral": false,
+   "metersPerTile": [
+    2.5,
+    2.5
+   ],
+   "folder": "Materials/gravel_grey",
+   "textures": {
+    "albedo": "gravel_grey_albedo.jpg",
+    "normal": "gravel_grey_normal.jpg",
+    "mask": "gravel_grey_mask.png"
+   }
+  },
+  {
+   "id": "gravel_black",
+   "name": "Гравий чёрный",
+   "category": "ground",
+   "source": "polyhaven:gravel_stones",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    2.0
+   ],
+   "folder": "Materials/gravel_black",
+   "textures": {
+    "albedo": "gravel_black_albedo.jpg",
+    "normal": "gravel_black_normal.jpg",
+    "mask": "gravel_black_mask.png"
+   }
+  },
+  {
+   "id": "gravel_bicolour",
+   "name": "Гравий двухцветный",
+   "category": "ground",
+   "source": "polyhaven:bicolour_gravel",
+   "neutral": false,
+   "metersPerTile": [
+    1.8999998569488525,
+    1.8999998569488525
+   ],
+   "folder": "Materials/gravel_bicolour",
+   "textures": {
+    "albedo": "gravel_bicolour_albedo.jpg",
+    "normal": "gravel_bicolour_normal.jpg",
+    "mask": "gravel_bicolour_mask.png"
+   }
+  },
+  {
+   "id": "pebbles_white",
+   "name": "Галька мелкая светлая",
+   "category": "ground",
+   "source": "polyhaven:clean_pebbles",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    2.0
+   ],
+   "folder": "Materials/pebbles_white",
+   "textures": {
+    "albedo": "pebbles_white_albedo.jpg",
+    "normal": "pebbles_white_normal.jpg",
+    "mask": "pebbles_white_mask.png"
+   }
+  },
+  {
+   "id": "pebbles_river",
+   "name": "Галька речная",
+   "category": "ground",
+   "source": "polyhaven:dry_river_pebbles",
+   "neutral": false,
+   "metersPerTile": [
+    2.0009167194366455,
+    2.000917911529541
+   ],
+   "folder": "Materials/pebbles_river",
+   "textures": {
+    "albedo": "pebbles_river_albedo.jpg",
+    "normal": "pebbles_river_normal.jpg",
+    "mask": "pebbles_river_mask.png"
+   }
+  },
+  {
+   "id": "pebbles_large_dark",
+   "name": "Галька крупная тёмная",
+   "category": "ground",
+   "source": "polyhaven:large_pebbles",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    2.0
+   ],
+   "folder": "Materials/pebbles_large_dark",
+   "textures": {
+    "albedo": "pebbles_large_dark_albedo.jpg",
+    "normal": "pebbles_large_dark_normal.jpg",
+    "mask": "pebbles_large_dark_mask.png"
+   }
+  },
+  {
+   "id": "sand",
+   "name": "Песок",
+   "category": "ground",
+   "source": "polyhaven:dense_sand",
+   "neutral": false,
+   "metersPerTile": [
+    1.8000000715255737,
+    1.8000000715255737
+   ],
+   "folder": "Materials/sand",
+   "textures": {
+    "albedo": "sand_albedo.jpg",
+    "normal": "sand_normal.jpg",
+    "mask": "sand_mask.png"
+   }
+  }
+ ],
+ "models": [
+  {
+   "id": "armchair_modern",
+   "name": "Кресло: кожа, деревянный каркас",
+   "category": "seating",
+   "source": "polyhaven:modern_arm_chair_01",
+   "folder": "Models/armchair_modern",
+   "fbx": "armchair_modern.fbx",
+   "size": [
+    0.82,
+    0.987,
+    1.023
+   ],
+   "triangles": 8916,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "frame",
+     "textures": {
+      "albedo": "armchair_modern_frame_albedo.jpg",
+      "normal": "armchair_modern_frame_normal.jpg",
+      "mask": "armchair_modern_frame_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    },
+    {
+     "slot": "upholstery",
+     "textures": {
+      "albedo": "armchair_modern_upholstery_albedo.jpg",
+      "normal": "armchair_modern_upholstery_normal.jpg",
+      "mask": "armchair_modern_upholstery_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "coffee_table_modern",
+   "name": "Журнальный стол: бетон и дерево",
+   "category": "tables",
+   "source": "polyhaven:modern_coffee_table_01",
+   "folder": "Models/coffee_table_modern",
+   "fbx": "coffee_table_modern.fbx",
+   "size": [
+    0.6,
+    1.202,
+    0.39
+   ],
+   "triangles": 4504,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "main",
+     "textures": {
+      "albedo": "coffee_table_modern_main_albedo.jpg",
+      "normal": "coffee_table_modern_main_normal.jpg",
+      "mask": "coffee_table_modern_main_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "pendant_globe_modern",
+   "name": "Подвесной светильник-шар",
+   "category": "lighting",
+   "source": "polyhaven:modern_ceiling_lamp_01",
+   "folder": "Models/pendant_globe_modern",
+   "fbx": "pendant_globe_modern.fbx",
+   "size": [
+    0.432,
+    0.432,
+    0.952
+   ],
+   "triangles": 5602,
+   "hanging": true,
+   "slots": [
+    {
+     "slot": "glass",
+     "textures": {},
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    },
+    {
+     "slot": "body",
+     "textures": {
+      "albedo": "pendant_globe_modern_body_albedo.jpg",
+      "normal": "pendant_globe_modern_body_normal.jpg",
+      "mask": "pendant_globe_modern_body_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    },
+    {
+     "slot": "globe",
+     "textures": {},
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0.6229580640792847,
+      0.5416215658187866,
+      0.4745504856109619
+     ],
+     "transparent": false,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "plant_large",
+   "name": "Растение в кашпо",
+   "category": "plants",
+   "source": "polyhaven:potted_plant_02",
+   "folder": "Models/plant_large",
+   "fbx": "plant_large.fbx",
+   "size": [
+    0.701,
+    0.657,
+    0.841
+   ],
+   "triangles": 69806,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "pot",
+     "textures": {
+      "albedo": "plant_large_pot_albedo.jpg",
+      "normal": "plant_large_pot_normal.jpg",
+      "mask": "plant_large_pot_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    },
+    {
+     "slot": "leaves",
+     "textures": {
+      "albedo": "plant_large_leaves_albedo.png",
+      "normal": "plant_large_leaves_normal.jpg",
+      "mask": "plant_large_leaves_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": true
+    }
+   ]
+  },
+  {
+   "id": "sofa_modern",
+   "name": "Диван 3-местный",
+   "category": "seating",
+   "source": "blender:sofa_modern",
+   "folder": "Models/sofa_modern",
+   "fbx": "sofa_modern.fbx",
+   "size": [
+    2.3,
+    0.96,
+    0.889
+   ],
+   "triangles": 22152,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "upholstery",
+     "default": "linen_rough#c8c0b3",
+     "uvMeters": true
+    },
+    {
+     "slot": "cushion",
+     "default": "velvet#8b5e45",
+     "uvMeters": true
+    },
+    {
+     "slot": "legs",
+     "default": "black_metal",
+     "uvMeters": true
+    }
+   ]
+  },
+  {
+   "id": "bed_modern",
+   "name": "Кровать с мягким изголовьем",
+   "category": "bedroom",
+   "source": "blender:bed_modern",
+   "folder": "Models/bed_modern",
+   "fbx": "bed_modern.fbx",
+   "size": [
+    2.02,
+    2.23,
+    1.28
+   ],
+   "triangles": 23976,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "frame",
+     "default": "wool_herringbone#b4aca0",
+     "uvMeters": true
+    },
+    {
+     "slot": "legs",
+     "default": "black_metal",
+     "uvMeters": true
+    },
+    {
+     "slot": "headboard",
+     "default": "wool_herringbone#b4aca0",
+     "uvMeters": true
+    },
+    {
+     "slot": "bedding",
+     "default": "linen_rough#eeeae3",
+     "uvMeters": true
+    },
+    {
+     "slot": "throw",
+     "default": "wool_herringbone#6b6259",
+     "uvMeters": true
+    },
+    {
+     "slot": "pillow",
+     "default": "linen_rough#e7e2d9",
+     "uvMeters": true
+    },
+    {
+     "slot": "cushion",
+     "default": "velvet#6f7a66",
+     "uvMeters": true
+    }
+   ]
+  },
+  {
+   "id": "lounge_chair_leather",
+   "name": "Лаунж-кресло кожаное поворотное",
+   "category": "seating",
+   "source": "polyhaven:mid_century_lounge_chair",
+   "folder": "Models/lounge_chair_leather",
+   "fbx": "lounge_chair_leather.fbx",
+   "size": [
+    1.009,
+    1.19,
+    1.169
+   ],
+   "triangles": 6148,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "main",
+     "textures": {
+      "albedo": "lounge_chair_leather_main_albedo.jpg",
+      "normal": "lounge_chair_leather_main_normal.jpg",
+      "mask": "lounge_chair_leather_main_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "dining_chair_tufted",
+   "name": "Стул обеденный с каретной стяжкой",
+   "category": "seating",
+   "source": "polyhaven:dining_chair_02",
+   "folder": "Models/dining_chair_tufted",
+   "fbx": "dining_chair_tufted.fbx",
+   "size": [
+    0.434,
+    0.576,
+    0.973
+   ],
+   "triangles": 22013,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "main",
+     "textures": {
+      "albedo": "dining_chair_tufted_main_albedo.jpg",
+      "normal": "dining_chair_tufted_main_normal.jpg",
+      "mask": "dining_chair_tufted_main_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "chair_wood_white",
+   "name": "Стул деревянный белый",
+   "category": "seating",
+   "source": "polyhaven:painted_wooden_chair_01",
+   "folder": "Models/chair_wood_white",
+   "fbx": "chair_wood_white.fbx",
+   "size": [
+    0.432,
+    0.54,
+    0.956
+   ],
+   "triangles": 724,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "main",
+     "textures": {
+      "albedo": "chair_wood_white_main_albedo.jpg",
+      "normal": "chair_wood_white_main_normal.jpg",
+      "mask": "chair_wood_white_main_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "armchair_classic",
+   "name": "Кресло классическое",
+   "category": "seating",
+   "source": "polyhaven:ArmChair_01",
+   "folder": "Models/armchair_classic",
+   "fbx": "armchair_classic.fbx",
+   "size": [
+    0.848,
+    0.766,
+    1.065
+   ],
+   "triangles": 5626,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "Armchair_01",
+     "textures": {
+      "albedo": "armchair_classic_Armchair_01_albedo.jpg",
+      "normal": "armchair_classic_Armchair_01_normal.jpg",
+      "mask": "armchair_classic_Armchair_01_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "sofa_chesterfield",
+   "name": "Диван честерфилд кожаный",
+   "category": "seating",
+   "source": "polyhaven:sofa_02",
+   "folder": "Models/sofa_chesterfield",
+   "fbx": "sofa_chesterfield.fbx",
+   "size": [
+    1.807,
+    0.818,
+    0.709
+   ],
+   "triangles": 2728,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "main",
+     "textures": {
+      "albedo": "sofa_chesterfield_main_albedo.jpg",
+      "normal": "sofa_chesterfield_main_normal.jpg",
+      "mask": "sofa_chesterfield_main_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "sofa_classic",
+   "name": "Диван классический",
+   "category": "seating",
+   "source": "polyhaven:Sofa_01",
+   "folder": "Models/sofa_classic",
+   "fbx": "sofa_classic.fbx",
+   "size": [
+    1.571,
+    0.658,
+    0.797
+   ],
+   "triangles": 4101,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "main",
+     "textures": {
+      "albedo": "sofa_classic_main_albedo.jpg",
+      "normal": "sofa_classic_main_normal.jpg",
+      "mask": "sofa_classic_main_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "ottoman_leather",
+   "name": "Пуф кожаный",
+   "category": "seating",
+   "source": "polyhaven:Ottoman_01",
+   "folder": "Models/ottoman_leather",
+   "fbx": "ottoman_leather.fbx",
+   "size": [
+    0.885,
+    0.621,
+    0.624
+   ],
+   "triangles": 4240,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "main",
+     "textures": {
+      "albedo": "ottoman_leather_main_albedo.jpg",
+      "normal": "ottoman_leather_main_normal.jpg",
+      "mask": "ottoman_leather_main_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "rocking_chair",
+   "name": "Кресло-качалка",
+   "category": "seating",
+   "source": "polyhaven:Rockingchair_01",
+   "folder": "Models/rocking_chair",
+   "fbx": "rocking_chair.fbx",
+   "size": [
+    0.708,
+    0.833,
+    0.995
+   ],
+   "triangles": 11866,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "main",
+     "textures": {
+      "albedo": "rocking_chair_main_albedo.jpg",
+      "normal": "rocking_chair_main_normal.jpg",
+      "mask": "rocking_chair_main_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "bar_stool_wood",
+   "name": "Барный табурет деревянный",
+   "category": "seating",
+   "source": "polyhaven:bar_chair_round_01",
+   "folder": "Models/bar_stool_wood",
+   "fbx": "bar_stool_wood.fbx",
+   "size": [
+    0.483,
+    0.486,
+    0.751
+   ],
+   "triangles": 14373,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "Bar Chair",
+     "textures": {
+      "albedo": "bar_stool_wood_Bar Chair_albedo.jpg",
+      "normal": "bar_stool_wood_Bar Chair_normal.jpg",
+      "mask": "bar_stool_wood_Bar Chair_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "bar_stool_metal",
+   "name": "Барный табурет металлический",
+   "category": "seating",
+   "source": "polyhaven:metal_stool_01",
+   "folder": "Models/bar_stool_metal",
+   "fbx": "bar_stool_metal.fbx",
+   "size": [
+    0.352,
+    0.355,
+    0.883
+   ],
+   "triangles": 8334,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "main",
+     "textures": {
+      "albedo": "bar_stool_metal_main_albedo.jpg",
+      "normal": "bar_stool_metal_main_normal.jpg",
+      "mask": "bar_stool_metal_main_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "stool_metal",
+   "name": "Табурет металлический",
+   "category": "seating",
+   "source": "polyhaven:metal_stool_02",
+   "folder": "Models/stool_metal",
+   "fbx": "stool_metal.fbx",
+   "size": [
+    0.448,
+    0.473,
+    0.458
+   ],
+   "triangles": 6532,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "main",
+     "textures": {
+      "albedo": "stool_metal_main_albedo.jpg",
+      "normal": "stool_metal_main_normal.jpg",
+      "mask": "stool_metal_main_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "daybed",
+   "name": "Кушетка",
+   "category": "seating",
+   "source": "polyhaven:vintage_day_bed",
+   "folder": "Models/daybed",
+   "fbx": "daybed.fbx",
+   "size": [
+    1.973,
+    0.855,
+    1.127
+   ],
+   "triangles": 2715,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "main",
+     "textures": {
+      "albedo": "daybed_main_albedo.jpg",
+      "normal": "daybed_main_normal.jpg",
+      "mask": "daybed_main_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "coffee_table_marble_round",
+   "name": "Журнальный стол круглый, мрамор",
+   "category": "tables",
+   "source": "polyhaven:coffee_table_round_01",
+   "folder": "Models/coffee_table_marble_round",
+   "fbx": "coffee_table_marble_round.fbx",
+   "size": [
+    1.301,
+    1.301,
+    0.491
+   ],
+   "triangles": 4044,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "main",
+     "textures": {
+      "albedo": "coffee_table_marble_round_main_albedo.jpg",
+      "normal": "coffee_table_marble_round_main_normal.jpg",
+      "mask": "coffee_table_marble_round_main_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "coffee_table_carved",
+   "name": "Журнальный стол с резной решёткой",
+   "category": "tables",
+   "source": "polyhaven:modern_coffee_table_02",
+   "folder": "Models/coffee_table_carved",
+   "fbx": "coffee_table_carved.fbx",
+   "size": [
+    1.199,
+    1.2,
+    0.369
+   ],
+   "triangles": 13645,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "base",
+     "textures": {
+      "albedo": "coffee_table_carved_base_albedo.jpg",
+      "normal": "coffee_table_carved_base_normal.jpg",
+      "mask": "coffee_table_carved_base_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    },
+    {
+     "slot": "wood",
+     "textures": {
+      "albedo": "coffee_table_carved_wood_albedo.jpg",
+      "normal": "coffee_table_carved_wood_normal.jpg",
+      "mask": "coffee_table_carved_wood_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "coffee_table_industrial",
+   "name": "Журнальный стол лофт",
+   "category": "tables",
+   "source": "polyhaven:industrial_coffee_table",
+   "folder": "Models/coffee_table_industrial",
+   "fbx": "coffee_table_industrial.fbx",
+   "size": [
+    0.778,
+    0.758,
+    0.638
+   ],
+   "triangles": 40000,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "main",
+     "textures": {
+      "albedo": "coffee_table_industrial_main_albedo.jpg",
+      "normal": "coffee_table_industrial_main_normal.jpg",
+      "mask": "coffee_table_industrial_main_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "dining_table_round",
+   "name": "Обеденный стол круглый",
+   "category": "tables",
+   "source": "polyhaven:round_wooden_table_01",
+   "folder": "Models/dining_table_round",
+   "fbx": "dining_table_round.fbx",
+   "size": [
+    1.399,
+    1.399,
+    1.005
+   ],
+   "triangles": 8640,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "main",
+     "textures": {
+      "albedo": "dining_table_round_main_albedo.jpg",
+      "normal": "dining_table_round_main_normal.jpg",
+      "mask": "dining_table_round_main_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "dining_table_wood",
+   "name": "Обеденный стол деревянный",
+   "category": "tables",
+   "source": "polyhaven:wooden_table_02",
+   "folder": "Models/dining_table_wood",
+   "fbx": "dining_table_wood.fbx",
+   "size": [
+    1.134,
+    0.706,
+    0.8
+   ],
+   "triangles": 196,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "main",
+     "textures": {
+      "albedo": "dining_table_wood_main_albedo.jpg",
+      "normal": "dining_table_wood_main_normal.jpg",
+      "mask": "dining_table_wood_main_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "side_table_oak",
+   "name": "Приставной столик дубовый",
+   "category": "tables",
+   "source": "polyhaven:side_table_01",
+   "folder": "Models/side_table_oak",
+   "fbx": "side_table_oak.fbx",
+   "size": [
+    0.55,
+    0.45,
+    0.551
+   ],
+   "triangles": 2756,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "main",
+     "textures": {
+      "albedo": "side_table_oak_main_albedo.jpg",
+      "normal": "side_table_oak_main_normal.jpg",
+      "mask": "side_table_oak_main_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "plant_stand",
+   "name": "Подставка для цветов",
+   "category": "tables",
+   "source": "polyhaven:side_table_tall_01",
+   "folder": "Models/plant_stand",
+   "fbx": "plant_stand.fbx",
+   "size": [
+    0.384,
+    0.384,
+    0.761
+   ],
+   "triangles": 6408,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "main",
+     "textures": {
+      "albedo": "plant_stand_main_albedo.jpg",
+      "normal": "plant_stand_main_normal.jpg",
+      "mask": "plant_stand_main_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "nightstand_classic",
+   "name": "Тумба прикроватная классическая",
+   "category": "bedroom",
+   "source": "polyhaven:ClassicNightstand_01",
+   "folder": "Models/nightstand_classic",
+   "fbx": "nightstand_classic.fbx",
+   "size": [
+    0.568,
+    0.424,
+    0.7
+   ],
+   "triangles": 2002,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "main",
+     "textures": {
+      "albedo": "nightstand_classic_main_albedo.jpg",
+      "normal": "nightstand_classic_main_normal.jpg",
+      "mask": "nightstand_classic_main_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "sideboard_slatted",
+   "name": "Комод-сервант с рейками",
+   "category": "storage",
+   "source": "polyhaven:modern_wooden_cabinet",
+   "folder": "Models/sideboard_slatted",
+   "fbx": "sideboard_slatted.fbx",
+   "size": [
+    2.44,
+    0.52,
+    0.68
+   ],
+   "triangles": 24976,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "main",
+     "textures": {
+      "albedo": "sideboard_slatted_main_albedo.jpg",
+      "normal": "sideboard_slatted_main_normal.jpg",
+      "mask": "sideboard_slatted_main_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "dresser_wood",
+   "name": "Комод деревянный",
+   "category": "storage",
+   "source": "polyhaven:vintage_wooden_drawer_01",
+   "folder": "Models/dresser_wood",
+   "fbx": "dresser_wood.fbx",
+   "size": [
+    0.858,
+    0.457,
+    0.545
+   ],
+   "triangles": 5184,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "main",
+     "textures": {
+      "albedo": "dresser_wood_main_albedo.jpg",
+      "normal": "dresser_wood_main_normal.jpg",
+      "mask": "dresser_wood_main_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "shelf_cubes",
+   "name": "Стеллаж-ячейки",
+   "category": "storage",
+   "source": "polyhaven:wooden_display_shelves_01",
+   "folder": "Models/shelf_cubes",
+   "fbx": "shelf_cubes.fbx",
+   "size": [
+    0.372,
+    1.078,
+    1.556
+   ],
+   "triangles": 3174,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "main",
+     "textures": {
+      "albedo": "shelf_cubes_main_albedo.jpg",
+      "normal": "shelf_cubes_main_normal.jpg",
+      "mask": "shelf_cubes_main_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "shelf_industrial",
+   "name": "Стеллаж металл и дерево",
+   "category": "storage",
+   "source": "polyhaven:steel_frame_shelves_01",
+   "folder": "Models/shelf_industrial",
+   "fbx": "shelf_industrial.fbx",
+   "size": [
+    1.097,
+    0.502,
+    2.141
+   ],
+   "triangles": 4348,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "main",
+     "textures": {
+      "albedo": "shelf_industrial_main_albedo.jpg",
+      "normal": "shelf_industrial_main_normal.jpg",
+      "mask": "shelf_industrial_main_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "shelf_industrial_wide",
+   "name": "Стеллаж широкий лофт",
+   "category": "storage",
+   "source": "polyhaven:steel_frame_shelves_03",
+   "folder": "Models/shelf_industrial_wide",
+   "fbx": "shelf_industrial_wide.fbx",
+   "size": [
+    2.351,
+    0.721,
+    2.312
+   ],
+   "triangles": 8396,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "main",
+     "textures": {
+      "albedo": "shelf_industrial_wide_main_albedo.jpg",
+      "normal": "shelf_industrial_wide_main_normal.jpg",
+      "mask": "shelf_industrial_wide_main_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    },
+    {
+     "slot": "drawers",
+     "textures": {
+      "albedo": "shelf_industrial_wide_drawers_albedo.jpg",
+      "normal": "shelf_industrial_wide_drawers_normal.jpg",
+      "mask": "shelf_industrial_wide_drawers_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "drawer_unit_industrial",
+   "name": "Тумба с ящиками лофт",
+   "category": "storage",
+   "source": "polyhaven:drawer_cabinet",
+   "folder": "Models/drawer_unit_industrial",
+   "fbx": "drawer_unit_industrial.fbx",
+   "size": [
+    1.141,
+    0.488,
+    1.881
+   ],
+   "triangles": 26406,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "main",
+     "textures": {
+      "albedo": "drawer_unit_industrial_main_albedo.jpg",
+      "normal": "drawer_unit_industrial_main_normal.jpg",
+      "mask": "drawer_unit_industrial_main_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "pendant_industrial",
+   "name": "Подвесной светильник индустриальный",
+   "category": "lighting",
+   "source": "polyhaven:hanging_industrial_lamp",
+   "folder": "Models/pendant_industrial",
+   "fbx": "pendant_industrial.fbx",
+   "size": [
+    0.55,
+    0.55,
+    1.355
+   ],
+   "triangles": 9530,
+   "hanging": true,
+   "slots": [
+    {
+     "slot": "main",
+     "textures": {
+      "albedo": "pendant_industrial_main_albedo.jpg",
+      "normal": "pendant_industrial_main_normal.jpg",
+      "mask": "pendant_industrial_main_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      1,
+      1,
+      1
+     ],
+     "transparent": false,
+     "cutout": false
+    },
+    {
+     "slot": "glass",
+     "textures": {
+      "normal": "pendant_industrial_glass_normal.jpg",
+      "mask": "pendant_industrial_glass_mask.png"
+     },
+     "baseColor": [
+      0.800000011920929,
+      0.800000011920929,
+      0.800000011920929,
+      1
+     ],
+     "metallic": 0,
+     "roughness": 0.10000000149011612,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": true,
+     "cutout": true
+    }
+   ]
+  },
+  {
+   "id": "chandelier_classic",
+   "name": "Люстра классическая",
+   "category": "lighting",
+   "source": "polyhaven:Chandelier_01",
+   "folder": "Models/chandelier_classic",
+   "fbx": "chandelier_classic.fbx",
+   "size": [
+    0.746,
+    0.816,
+    0.798
+   ],
+   "triangles": 26860,
+   "hanging": true,
+   "slots": [
+    {
+     "slot": "basecolor_classic_chandelier_1",
+     "textures": {
+      "albedo": "chandelier_classic_basecolor_classic_chandelier_1_albedo.jpg",
+      "normal": "chandelier_classic_basecolor_classic_chandelier_1_normal.jpg",
+      "mask": "chandelier_classic_basecolor_classic_chandelier_1_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    },
+    {
+     "slot": "lamps_classic_chandelier_1",
+     "textures": {
+      "albedo": "chandelier_classic_lamps_classic_chandelier_1_albedo.jpg",
+      "normal": "chandelier_classic_lamps_classic_chandelier_1_normal.jpg",
+      "mask": "chandelier_classic_lamps_classic_chandelier_1_mask.png"
+     },
+     "baseColor": [
+      0.800000011920929,
+      0.800000011920929,
+      0.800000011920929,
+      1
+     ],
+     "metallic": 0,
+     "roughness": 0.3227272629737854,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "desk_lamp",
+   "name": "Настольная лампа на кронштейне",
+   "category": "lighting",
+   "source": "polyhaven:desk_lamp_arm_01",
+   "folder": "Models/desk_lamp",
+   "fbx": "desk_lamp.fbx",
+   "size": [
+    0.202,
+    0.614,
+    0.893
+   ],
+   "triangles": 24102,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "main",
+     "textures": {
+      "albedo": "desk_lamp_main_albedo.jpg",
+      "normal": "desk_lamp_main_normal.jpg",
+      "mask": "desk_lamp_main_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    },
+    {
+     "slot": "light",
+     "textures": {},
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      1,
+      0.9837890267372131,
+      0.649111270904541
+     ],
+     "transparent": false,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "table_lamp_edison",
+   "name": "Настольная лампа лофт",
+   "category": "lighting",
+   "source": "polyhaven:industrial_pipe_lamp",
+   "folder": "Models/table_lamp_edison",
+   "fbx": "table_lamp_edison.fbx",
+   "size": [
+    0.183,
+    0.262,
+    0.364
+   ],
+   "triangles": 8626,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "main",
+     "textures": {
+      "albedo": "table_lamp_edison_main_albedo.jpg",
+      "normal": "table_lamp_edison_main_normal.jpg",
+      "mask": "table_lamp_edison_main_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      1,
+      1,
+      1
+     ],
+     "transparent": false,
+     "cutout": false
+    },
+    {
+     "slot": "glass",
+     "textures": {},
+     "baseColor": [
+      1,
+      1,
+      1,
+      0.20000000298023224
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      1,
+      1,
+      1
+     ],
+     "transparent": true,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "wall_light_bulkhead",
+   "name": "Настенный светильник уличный",
+   "category": "lighting",
+   "source": "polyhaven:industrial_wall_lamp",
+   "folder": "Models/wall_light_bulkhead",
+   "fbx": "wall_light_bulkhead.fbx",
+   "size": [
+    0.273,
+    0.14,
+    0.43
+   ],
+   "triangles": 4446,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "main",
+     "textures": {
+      "albedo": "wall_light_bulkhead_main_albedo.jpg",
+      "normal": "wall_light_bulkhead_main_normal.jpg",
+      "mask": "wall_light_bulkhead_main_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 0,
+     "roughness": 1.0,
+     "emissive": [
+      1,
+      1,
+      1
+     ],
+     "transparent": false,
+     "cutout": false
+    },
+    {
+     "slot": "glass",
+     "textures": {
+      "albedo": "wall_light_bulkhead_glass_albedo.png",
+      "normal": "wall_light_bulkhead_glass_normal.jpg",
+      "mask": "wall_light_bulkhead_glass_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": true,
+     "cutout": true
+    }
+   ]
+  },
+  {
+   "id": "wall_sconce_black",
+   "name": "Бра чёрное",
+   "category": "lighting",
+   "source": "polyhaven:industrial_wall_sconce",
+   "folder": "Models/wall_sconce_black",
+   "fbx": "wall_sconce_black.fbx",
+   "size": [
+    0.15,
+    0.252,
+    0.342
+   ],
+   "triangles": 9826,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "main",
+     "textures": {
+      "albedo": "wall_sconce_black_main_albedo.jpg",
+      "normal": "wall_sconce_black_main_normal.jpg",
+      "mask": "wall_sconce_black_main_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    },
+    {
+     "slot": "bulb",
+     "textures": {
+      "albedo": "wall_sconce_black_bulb_albedo.jpg",
+      "mask": "wall_sconce_black_bulb_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "wall_lantern_classic",
+   "name": "Настенный фонарь классический",
+   "category": "lighting",
+   "source": "polyhaven:street_lamp_02",
+   "folder": "Models/wall_lantern_classic",
+   "fbx": "wall_lantern_classic.fbx",
+   "size": [
+    0.386,
+    0.807,
+    1.675
+   ],
+   "triangles": 20338,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "main",
+     "textures": {
+      "albedo": "wall_lantern_classic_main_albedo.jpg",
+      "normal": "wall_lantern_classic_main_normal.jpg",
+      "mask": "wall_lantern_classic_main_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    },
+    {
+     "slot": "glass",
+     "textures": {},
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": true,
+     "cutout": false
+    },
+    {
+     "slot": "bulb",
+     "textures": {},
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "garden_lamp_post",
+   "name": "Садовый фонарь на столбе",
+   "category": "outdoor",
+   "source": "polyhaven:street_lamp_01",
+   "folder": "Models/garden_lamp_post",
+   "fbx": "garden_lamp_post.fbx",
+   "size": [
+    0.704,
+    0.386,
+    3.871
+   ],
+   "triangles": 30610,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "main",
+     "textures": {
+      "albedo": "garden_lamp_post_main_albedo.jpg",
+      "normal": "garden_lamp_post_main_normal.jpg",
+      "mask": "garden_lamp_post_main_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    },
+    {
+     "slot": "glass",
+     "textures": {},
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": true,
+     "cutout": false
+    },
+    {
+     "slot": "bulb",
+     "textures": {},
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "lantern",
+   "name": "Фонарь керосиновый (декор)",
+   "category": "decor",
+   "source": "polyhaven:Lantern_01",
+   "folder": "Models/lantern",
+   "fbx": "lantern.fbx",
+   "size": [
+    0.122,
+    0.097,
+    0.294
+   ],
+   "triangles": 33902,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "brass",
+     "textures": {
+      "albedo": "lantern_brass_albedo.jpg",
+      "normal": "lantern_brass_normal.jpg",
+      "mask": "lantern_brass_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": true,
+     "cutout": false
+    },
+    {
+     "slot": "glass",
+     "textures": {},
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": true,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "vase_white_round",
+   "name": "Ваза белая округлая",
+   "category": "decor",
+   "source": "polyhaven:ceramic_vase_02",
+   "folder": "Models/vase_white_round",
+   "fbx": "vase_white_round.fbx",
+   "size": [
+    0.218,
+    0.218,
+    0.309
+   ],
+   "triangles": 11128,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "main",
+     "textures": {
+      "albedo": "vase_white_round_main_albedo.jpg",
+      "normal": "vase_white_round_main_normal.jpg",
+      "mask": "vase_white_round_main_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "vase_white_bottle",
+   "name": "Ваза белая бутылка",
+   "category": "decor",
+   "source": "polyhaven:ceramic_vase_01",
+   "folder": "Models/vase_white_bottle",
+   "fbx": "vase_white_bottle.fbx",
+   "size": [
+    0.204,
+    0.204,
+    0.4
+   ],
+   "triangles": 10296,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "main",
+     "textures": {
+      "albedo": "vase_white_bottle_main_albedo.jpg",
+      "normal": "vase_white_bottle_main_normal.jpg",
+      "mask": "vase_white_bottle_main_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "vase_white_tall",
+   "name": "Ваза белая высокая",
+   "category": "decor",
+   "source": "polyhaven:ceramic_vase_03",
+   "folder": "Models/vase_white_tall",
+   "fbx": "vase_white_tall.fbx",
+   "size": [
+    0.112,
+    0.112,
+    0.414
+   ],
+   "triangles": 11136,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "main",
+     "textures": {
+      "albedo": "vase_white_tall_main_albedo.jpg",
+      "normal": "vase_white_tall_main_normal.jpg",
+      "mask": "vase_white_tall_main_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "vase_white_jug",
+   "name": "Ваза-кувшин белая",
+   "category": "decor",
+   "source": "polyhaven:ceramic_vase_04",
+   "folder": "Models/vase_white_jug",
+   "fbx": "vase_white_jug.fbx",
+   "size": [
+    0.181,
+    0.181,
+    0.342
+   ],
+   "triangles": 9000,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "main",
+     "textures": {
+      "albedo": "vase_white_jug_main_albedo.jpg",
+      "normal": "vase_white_jug_main_normal.jpg",
+      "mask": "vase_white_jug_main_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "vase_porcelain",
+   "name": "Ваза фарфоровая с росписью",
+   "category": "decor",
+   "source": "polyhaven:antique_ceramic_vase_01",
+   "folder": "Models/vase_porcelain",
+   "fbx": "vase_porcelain.fbx",
+   "size": [
+    0.255,
+    0.255,
+    0.44
+   ],
+   "triangles": 9408,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "main",
+     "textures": {
+      "albedo": "vase_porcelain_main_albedo.jpg",
+      "normal": "vase_porcelain_main_normal.jpg",
+      "mask": "vase_porcelain_main_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "basket_wicker",
+   "name": "Корзина плетёная",
+   "category": "decor",
+   "source": "polyhaven:wicker_basket_01",
+   "folder": "Models/basket_wicker",
+   "fbx": "basket_wicker.fbx",
+   "size": [
+    0.383,
+    0.295,
+    0.117
+   ],
+   "triangles": 22276,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "main",
+     "textures": {
+      "albedo": "basket_wicker_main_albedo.jpg",
+      "normal": "basket_wicker_main_normal.jpg",
+      "mask": "basket_wicker_main_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "basket_lidded",
+   "name": "Корзины плетёные с крышкой",
+   "category": "decor",
+   "source": "polyhaven:wicker_basket_02",
+   "folder": "Models/basket_lidded",
+   "fbx": "basket_lidded.fbx",
+   "size": [
+    0.347,
+    0.254,
+    0.2
+   ],
+   "triangles": 17850,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "main",
+     "textures": {
+      "albedo": "basket_lidded_main_albedo.jpg",
+      "normal": "basket_lidded_main_normal.jpg",
+      "mask": "basket_lidded_main_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "throw_pillows",
+   "name": "Декоративные подушки",
+   "category": "decor",
+   "source": "polyhaven:throw_pillows_01",
+   "folder": "Models/throw_pillows",
+   "fbx": "throw_pillows.fbx",
+   "size": [
+    0.94,
+    0.452,
+    0.45
+   ],
+   "triangles": 6362,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "main",
+     "textures": {
+      "albedo": "throw_pillows_main_albedo.jpg",
+      "normal": "throw_pillows_main_normal.jpg",
+      "mask": "throw_pillows_main_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "photo_frame_black",
+   "name": "Фоторамка настольная чёрная",
+   "category": "decor",
+   "source": "polyhaven:standing_picture_frame_01",
+   "folder": "Models/photo_frame_black",
+   "fbx": "photo_frame_black.fbx",
+   "size": [
+    0.1,
+    0.201,
+    0.25
+   ],
+   "triangles": 1634,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "glass",
+     "textures": {},
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": true,
+     "cutout": false
+    },
+    {
+     "slot": "artwork",
+     "textures": {
+      "albedo": "photo_frame_black_artwork_albedo.jpg",
+      "normal": "photo_frame_black_artwork_normal.jpg"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    },
+    {
+     "slot": "main",
+     "textures": {
+      "albedo": "photo_frame_black_main_albedo.jpg",
+      "normal": "photo_frame_black_main_normal.jpg",
+      "mask": "photo_frame_black_main_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "photo_frame_white",
+   "name": "Фоторамка настольная белая",
+   "category": "decor",
+   "source": "polyhaven:standing_picture_frame_02",
+   "folder": "Models/photo_frame_white",
+   "fbx": "photo_frame_white.fbx",
+   "size": [
+    0.102,
+    0.217,
+    0.266
+   ],
+   "triangles": 2986,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "artwork",
+     "textures": {
+      "albedo": "photo_frame_white_artwork_albedo.jpg",
+      "normal": "photo_frame_white_artwork_normal.jpg"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    },
+    {
+     "slot": "main",
+     "textures": {
+      "albedo": "photo_frame_white_main_albedo.jpg",
+      "normal": "photo_frame_white_main_normal.jpg",
+      "mask": "photo_frame_white_main_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    },
+    {
+     "slot": "glass",
+     "textures": {},
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": true,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "poster_frame",
+   "name": "Постер в раме",
+   "category": "decor",
+   "source": "polyhaven:hanging_picture_frame_01",
+   "folder": "Models/poster_frame",
+   "fbx": "poster_frame.fbx",
+   "size": [
+    0.594,
+    0.016,
+    0.841
+   ],
+   "triangles": 2586,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "glass",
+     "textures": {},
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": true,
+     "cutout": false
+    },
+    {
+     "slot": "artwork",
+     "textures": {
+      "albedo": "poster_frame_artwork_albedo.jpg",
+      "normal": "poster_frame_artwork_normal.jpg",
+      "mask": "poster_frame_artwork_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    },
+    {
+     "slot": "main",
+     "textures": {
+      "albedo": "poster_frame_main_albedo.jpg",
+      "normal": "poster_frame_main_normal.jpg",
+      "mask": "poster_frame_main_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "picture_frame_landscape",
+   "name": "Картина в белой раме",
+   "category": "decor",
+   "source": "polyhaven:hanging_picture_frame_02",
+   "folder": "Models/picture_frame_landscape",
+   "fbx": "picture_frame_landscape.fbx",
+   "size": [
+    0.752,
+    0.033,
+    0.5
+   ],
+   "triangles": 3678,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "artwork",
+     "textures": {
+      "albedo": "picture_frame_landscape_artwork_albedo.jpg",
+      "normal": "picture_frame_landscape_artwork_normal.jpg",
+      "mask": "picture_frame_landscape_artwork_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    },
+    {
+     "slot": "main",
+     "textures": {
+      "albedo": "picture_frame_landscape_main_albedo.jpg",
+      "normal": "picture_frame_landscape_main_normal.jpg",
+      "mask": "picture_frame_landscape_main_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    },
+    {
+     "slot": "glass",
+     "textures": {},
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": true,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "painting_classic",
+   "name": "Картина в золочёной раме",
+   "category": "decor",
+   "source": "polyhaven:fancy_picture_frame_01",
+   "folder": "Models/painting_classic",
+   "fbx": "painting_classic.fbx",
+   "size": [
+    0.603,
+    0.02,
+    0.464
+   ],
+   "triangles": 938,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "main",
+     "textures": {
+      "albedo": "painting_classic_main_albedo.jpg",
+      "normal": "painting_classic_main_normal.jpg",
+      "mask": "painting_classic_main_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    },
+    {
+     "slot": "canvas",
+     "textures": {
+      "albedo": "painting_classic_canvas_albedo.jpg",
+      "normal": "painting_classic_canvas_normal.jpg"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "wall_clock_modern",
+   "name": "Часы настенные",
+   "category": "decor",
+   "source": "polyhaven:wall_clock",
+   "folder": "Models/wall_clock_modern",
+   "fbx": "wall_clock_modern.fbx",
+   "size": [
+    0.32,
+    0.047,
+    0.32
+   ],
+   "triangles": 3658,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "main",
+     "textures": {
+      "albedo": "wall_clock_modern_main_albedo.jpg",
+      "normal": "wall_clock_modern_main_normal.jpg",
+      "mask": "wall_clock_modern_main_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    },
+    {
+     "slot": "glass",
+     "textures": {
+      "mask": "wall_clock_modern_glass_mask.png"
+     },
+     "baseColor": [
+      0.800000011920929,
+      0.800000011920929,
+      0.800000011920929,
+      0.4000000059604645
+     ],
+     "metallic": 0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": true,
+     "cutout": true
+    }
+   ]
+  },
+  {
+   "id": "horse_figurine",
+   "name": "Статуэтка лошадь",
+   "category": "decor",
+   "source": "polyhaven:horse_statue_01",
+   "folder": "Models/horse_figurine",
+   "fbx": "horse_figurine.fbx",
+   "size": [
+    0.163,
+    0.108,
+    0.22
+   ],
+   "triangles": 22388,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "main",
+     "textures": {
+      "albedo": "horse_figurine_main_albedo.jpg",
+      "normal": "horse_figurine_main_normal.jpg",
+      "mask": "horse_figurine_main_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    },
+    {
+     "slot": "base",
+     "textures": {},
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "bust_marble",
+   "name": "Бюст мраморный",
+   "category": "decor",
+   "source": "polyhaven:marble_bust_01",
+   "folder": "Models/bust_marble",
+   "fbx": "bust_marble.fbx",
+   "size": [
+    0.272,
+    0.3,
+    0.515
+   ],
+   "triangles": 17456,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "main",
+     "textures": {
+      "albedo": "bust_marble_main_albedo.jpg",
+      "normal": "bust_marble_main_normal.jpg",
+      "mask": "bust_marble_main_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "chess_set",
+   "name": "Шахматы",
+   "category": "decor",
+   "source": "polyhaven:chess_set",
+   "folder": "Models/chess_set",
+   "fbx": "chess_set.fbx",
+   "size": [
+    0.553,
+    0.553,
+    0.112
+   ],
+   "triangles": 40000,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "pieces_white",
+     "textures": {
+      "albedo": "chess_set_pieces_white_albedo.jpg",
+      "normal": "chess_set_pieces_white_normal.jpg",
+      "mask": "chess_set_pieces_white_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    },
+    {
+     "slot": "board",
+     "textures": {
+      "albedo": "chess_set_board_albedo.jpg",
+      "normal": "chess_set_board_normal.jpg",
+      "mask": "chess_set_board_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    },
+    {
+     "slot": "pieces_black",
+     "textures": {
+      "albedo": "chess_set_pieces_black_albedo.jpg",
+      "normal": "chess_set_pieces_black_normal.jpg",
+      "mask": "chess_set_pieces_black_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "wine_bottles",
+   "name": "Бутылки вина",
+   "category": "kitchen",
+   "source": "polyhaven:wine_bottles_01",
+   "folder": "Models/wine_bottles",
+   "fbx": "wine_bottles.fbx",
+   "size": [
+    0.676,
+    0.081,
+    0.331
+   ],
+   "triangles": 28848,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "glass_orange",
+     "textures": {},
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": true,
+     "cutout": false
+    },
+    {
+     "slot": "seal_cork",
+     "textures": {},
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": true
+    },
+    {
+     "slot": "wine_red",
+     "textures": {},
+     "baseColor": [
+      0.5224650502204895,
+      0.04925941303372383,
+      0.024301469326019287,
+      1
+     ],
+     "metallic": 0,
+     "roughness": 0.12820515036582947,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": true,
+     "cutout": false
+    },
+    {
+     "slot": "ftero_vinea_02",
+     "textures": {
+      "albedo": "wine_bottles_ftero_vinea_02_albedo.png",
+      "mask": "wine_bottles_ftero_vinea_02_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": true
+    },
+    {
+     "slot": "glass_yellow",
+     "textures": {},
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": true,
+     "cutout": false
+    },
+    {
+     "slot": "wine_clear",
+     "textures": {},
+     "baseColor": [
+      1,
+      0.9324522614479065,
+      0.7874122262001038,
+      1
+     ],
+     "metallic": 0,
+     "roughness": 0.20512822270393372,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": true,
+     "cutout": false
+    },
+    {
+     "slot": "clearwater",
+     "textures": {},
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": true
+    },
+    {
+     "slot": "glass_clear",
+     "textures": {},
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": true,
+     "cutout": false
+    },
+    {
+     "slot": "wine_light_red",
+     "textures": {},
+     "baseColor": [
+      1,
+      0.08782617002725601,
+      0.04163853079080582,
+      1
+     ],
+     "metallic": 0,
+     "roughness": 0.12820515036582947,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": true,
+     "cutout": false
+    },
+    {
+     "slot": "intertwine",
+     "textures": {},
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": true
+    },
+    {
+     "slot": "glass_green",
+     "textures": {},
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": true,
+     "cutout": false
+    },
+    {
+     "slot": "ftero_vinea_01",
+     "textures": {
+      "albedo": "wine_bottles_ftero_vinea_01_albedo.png",
+      "mask": "wine_bottles_ftero_vinea_01_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": true
+    }
+   ]
+  },
+  {
+   "id": "bowl_wood",
+   "name": "Чаша деревянная",
+   "category": "decor",
+   "source": "polyhaven:wooden_bowl_02",
+   "folder": "Models/bowl_wood",
+   "fbx": "bowl_wood.fbx",
+   "size": [
+    0.131,
+    0.125,
+    0.073
+   ],
+   "triangles": 4666,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "main",
+     "textures": {
+      "albedo": "bowl_wood_main_albedo.jpg",
+      "normal": "bowl_wood_main_normal.jpg",
+      "mask": "bowl_wood_main_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "tea_set",
+   "name": "Чайный сервиз",
+   "category": "kitchen",
+   "source": "polyhaven:tea_set_01",
+   "folder": "Models/tea_set",
+   "fbx": "tea_set.fbx",
+   "size": [
+    0.918,
+    0.484,
+    0.165
+   ],
+   "triangles": 40000,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "main",
+     "textures": {
+      "albedo": "tea_set_main_albedo.jpg",
+      "normal": "tea_set_main_normal.jpg",
+      "mask": "tea_set_main_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "cutting_board",
+   "name": "Разделочная доска",
+   "category": "kitchen",
+   "source": "polyhaven:wooden_cutting_board",
+   "folder": "Models/cutting_board",
+   "fbx": "cutting_board.fbx",
+   "size": [
+    0.45,
+    0.247,
+    0.041
+   ],
+   "triangles": 3520,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "main",
+     "textures": {
+      "albedo": "cutting_board_main_albedo.jpg",
+      "normal": "cutting_board_main_normal.jpg",
+      "mask": "cutting_board_main_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "bananas",
+   "name": "Бананы",
+   "category": "kitchen",
+   "source": "polyhaven:bananas",
+   "folder": "Models/bananas",
+   "fbx": "bananas.fbx",
+   "size": [
+    0.6,
+    0.244,
+    0.179
+   ],
+   "triangles": 40000,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "Material.008",
+     "textures": {
+      "albedo": "bananas_Material.008_albedo.jpg",
+      "normal": "bananas_Material.008_normal.jpg",
+      "mask": "bananas_Material.008_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "books_encyclopedia",
+   "name": "Книги, собрание томов",
+   "category": "decor",
+   "source": "polyhaven:book_encyclopedia_set_01",
+   "folder": "Models/books_encyclopedia",
+   "fbx": "books_encyclopedia.fbx",
+   "size": [
+    0.551,
+    0.163,
+    0.237
+   ],
+   "triangles": 39999,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "cover",
+     "textures": {
+      "albedo": "books_encyclopedia_cover_albedo.jpg",
+      "normal": "books_encyclopedia_cover_normal.jpg",
+      "mask": "books_encyclopedia_cover_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    },
+    {
+     "slot": "paper",
+     "textures": {
+      "albedo": "books_encyclopedia_paper_albedo.jpg",
+      "normal": "books_encyclopedia_paper_normal.jpg",
+      "mask": "books_encyclopedia_paper_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "candleholders_brass",
+   "name": "Подсвечники латунные",
+   "category": "decor",
+   "source": "polyhaven:brass_candleholders",
+   "folder": "Models/candleholders_brass",
+   "fbx": "candleholders_brass.fbx",
+   "size": [
+    1.053,
+    0.365,
+    0.835
+   ],
+   "triangles": 39999,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "03",
+     "textures": {
+      "albedo": "candleholders_brass_03_albedo.jpg",
+      "normal": "candleholders_brass_03_normal.jpg",
+      "mask": "candleholders_brass_03_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    },
+    {
+     "slot": "flame",
+     "textures": {
+      "albedo": "candleholders_brass_flame_albedo.jpg"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 0,
+     "roughness": 1.0,
+     "emissive": [
+      1,
+      1,
+      1
+     ],
+     "transparent": true,
+     "cutout": false
+    },
+    {
+     "slot": "02",
+     "textures": {
+      "albedo": "candleholders_brass_02_albedo.jpg",
+      "normal": "candleholders_brass_02_normal.jpg",
+      "mask": "candleholders_brass_02_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    },
+    {
+     "slot": "candles",
+     "textures": {
+      "albedo": "candleholders_brass_candles_albedo.jpg",
+      "normal": "candleholders_brass_candles_normal.jpg",
+      "mask": "candleholders_brass_candles_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    },
+    {
+     "slot": "01",
+     "textures": {
+      "albedo": "candleholders_brass_01_albedo.jpg",
+      "normal": "candleholders_brass_01_normal.jpg",
+      "mask": "candleholders_brass_01_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "plant_ficus",
+   "name": "Фикус в горшке",
+   "category": "plants",
+   "source": "polyhaven:potted_plant_01",
+   "folder": "Models/plant_ficus",
+   "fbx": "plant_ficus.fbx",
+   "size": [
+    0.587,
+    0.634,
+    1.35
+   ],
+   "triangles": 60000,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "pot",
+     "textures": {
+      "albedo": "plant_ficus_pot_albedo.jpg",
+      "normal": "plant_ficus_pot_normal.jpg",
+      "mask": "plant_ficus_pot_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    },
+    {
+     "slot": "leaves",
+     "textures": {
+      "albedo": "plant_ficus_leaves_albedo.png",
+      "normal": "plant_ficus_leaves_normal.jpg",
+      "mask": "plant_ficus_leaves_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": true
+    }
+   ]
+  },
+  {
+   "id": "plant_succulent",
+   "name": "Суккулент в белом горшке",
+   "category": "plants",
+   "source": "polyhaven:potted_plant_04",
+   "folder": "Models/plant_succulent",
+   "fbx": "plant_succulent.fbx",
+   "size": [
+    0.168,
+    0.185,
+    0.267
+   ],
+   "triangles": 8929,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "main",
+     "textures": {
+      "albedo": "plant_succulent_main_albedo.jpg",
+      "normal": "plant_succulent_main_normal.jpg",
+      "mask": "plant_succulent_main_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "pot_clay",
+   "name": "Горшок глиняный",
+   "category": "plants",
+   "source": "polyhaven:planter_pot_clay",
+   "folder": "Models/pot_clay",
+   "fbx": "pot_clay.fbx",
+   "size": [
+    0.266,
+    0.263,
+    0.222
+   ],
+   "triangles": 3080,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "main",
+     "textures": {
+      "albedo": "pot_clay_main_albedo.jpg",
+      "normal": "pot_clay_main_normal.jpg",
+      "mask": "pot_clay_main_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "boulder",
+   "name": "Валун",
+   "category": "outdoor",
+   "source": "polyhaven:boulder_01",
+   "folder": "Models/boulder",
+   "fbx": "boulder.fbx",
+   "size": [
+    1.275,
+    1.83,
+    1.006
+   ],
+   "triangles": 40000,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "main",
+     "textures": {
+      "albedo": "boulder_main_albedo.jpg",
+      "normal": "boulder_main_normal.jpg",
+      "mask": "boulder_main_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "planter_box",
+   "name": "Ящик для растений",
+   "category": "outdoor",
+   "source": "polyhaven:planter_box_01",
+   "folder": "Models/planter_box",
+   "fbx": "planter_box.fbx",
+   "size": [
+    0.913,
+    0.414,
+    0.425
+   ],
+   "triangles": 8094,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "main",
+     "textures": {
+      "albedo": "planter_box_main_albedo.jpg",
+      "normal": "planter_box_main_normal.jpg",
+      "mask": "planter_box_main_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "raised_bed",
+   "name": "Грядка на ножках",
+   "category": "outdoor",
+   "source": "polyhaven:planter_box_03",
+   "folder": "Models/raised_bed",
+   "fbx": "raised_bed.fbx",
+   "size": [
+    0.914,
+    0.656,
+    0.855
+   ],
+   "triangles": 13112,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "main",
+     "textures": {
+      "albedo": "raised_bed_main_albedo.jpg",
+      "normal": "raised_bed_main_normal.jpg",
+      "mask": "raised_bed_main_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "fire_pit",
+   "name": "Кострище каменное",
+   "category": "outdoor",
+   "source": "polyhaven:stone_fire_pit",
+   "folder": "Models/fire_pit",
+   "fbx": "fire_pit.fbx",
+   "size": [
+    1.448,
+    1.433,
+    0.388
+   ],
+   "triangles": 3887,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "main",
+     "textures": {
+      "albedo": "fire_pit_main_albedo.jpg",
+      "normal": "fire_pit_main_normal.jpg",
+      "mask": "fire_pit_main_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "watering_can",
+   "name": "Лейка металлическая",
+   "category": "outdoor",
+   "source": "polyhaven:watering_can_metal_01",
+   "folder": "Models/watering_can",
+   "fbx": "watering_can.fbx",
+   "size": [
+    0.191,
+    0.452,
+    0.197
+   ],
+   "triangles": 11837,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "main",
+     "textures": {
+      "albedo": "watering_can_main_albedo.jpg",
+      "normal": "watering_can_main_normal.jpg",
+      "mask": "watering_can_main_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "bistro_set_garden",
+   "name": "Садовый комплект: стол и 2 стула",
+   "category": "outdoor",
+   "source": "polyhaven:outdoor_table_chair_set_01",
+   "folder": "Models/bistro_set_garden",
+   "fbx": "bistro_set_garden.fbx",
+   "size": [
+    0.742,
+    1.717,
+    0.859
+   ],
+   "triangles": 9828,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "chair",
+     "textures": {
+      "albedo": "bistro_set_garden_chair_albedo.jpg",
+      "normal": "bistro_set_garden_chair_normal.jpg",
+      "mask": "bistro_set_garden_chair_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    },
+    {
+     "slot": "table",
+     "textures": {
+      "albedo": "bistro_set_garden_table_albedo.jpg",
+      "normal": "bistro_set_garden_table_normal.jpg",
+      "mask": "bistro_set_garden_table_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    }
+   ]
+  },
+  {
+   "id": "picnic_table",
+   "name": "Стол для пикника",
+   "category": "outdoor",
+   "source": "polyhaven:wooden_picnic_table",
+   "folder": "Models/picnic_table",
+   "fbx": "picnic_table.fbx",
+   "size": [
+    2.241,
+    3.022,
+    0.746
+   ],
+   "triangles": 10210,
+   "hanging": false,
+   "slots": [
+    {
+     "slot": "bottom",
+     "textures": {
+      "albedo": "picnic_table_bottom_albedo.jpg",
+      "normal": "picnic_table_bottom_normal.jpg",
+      "mask": "picnic_table_bottom_mask.png"
+     },
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    },
+    {
+     "slot": "table",
+     "textures": {},
+     "baseColor": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "metallic": 1.0,
+     "roughness": 1.0,
+     "emissive": [
+      0,
+      0,
+      0
+     ],
+     "transparent": false,
+     "cutout": false
+    }
+   ]
+  }
+ ]
+}

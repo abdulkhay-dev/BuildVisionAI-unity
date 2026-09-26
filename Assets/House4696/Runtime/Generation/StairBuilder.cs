@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using House4696.Core;
 using House4696.Model;
 using UnityEngine;
@@ -82,12 +83,16 @@ namespace House4696.Generation
                     {
                         GlassPanel(glass, xm, new[] { new Vector2(0f, 0f), new Vector2(zl, landY - 0.05f), new Vector2(zt, slabBottom), new Vector2(0f, slabBottom) });
                         GlassPanel(glass, xm, new[] { new Vector2(zl, landY - 0.05f), new Vector2(zl, landY + 0.95f), new Vector2(zt, H + 0.95f), new Vector2(zt, slabBottom) });
-                        // guard at the top of flight 1 (between the wall and the inner edge of flight 2)
-                        float guardA = Mathf.Min(side > 0 ? -hw : x2 + hw, side > 0 ? x2 - hw : hw);
-                        float guardB = Mathf.Max(side > 0 ? -hw : x2 + hw, side > 0 ? x2 - hw : hw);
-                        glass.Box(new Vector3(guardA, H, zt - 0.006f), new Vector3(guardB, H + 1.0f, zt + 0.006f), _c.M.Glass);
                         rails.Rod(new Vector3(xm, landY + 0.95f, zl), new Vector3(xm, H + 0.95f, zt), 0.022f, _c.M.BlackMetal, 12);
-                        rails.Rod(new Vector3(guardA, H + 1.0f, zt), new Vector3(guardB, H + 1.0f, zt), 0.022f, _c.M.BlackMetal, 12);
+                        // guard at the top of flight 1 (between the wall and the inner edge of flight 2); with an
+                        // automatic well the well guards cover this edge
+                        if (s.Well != "auto" || _c.Stair(s) == null || _c.Stair(s).Well.Count == 0)
+                        {
+                            float guardA = Mathf.Min(side > 0 ? -hw : x2 + hw, side > 0 ? x2 - hw : hw);
+                            float guardB = Mathf.Max(side > 0 ? -hw : x2 + hw, side > 0 ? x2 - hw : hw);
+                            glass.Box(new Vector3(guardA, H, zt - 0.006f), new Vector3(guardB, H + 1.0f, zt + 0.006f), _c.M.Glass);
+                            rails.Rod(new Vector3(guardA, H + 1.0f, zt), new Vector3(guardB, H + 1.0f, zt), 0.022f, _c.M.BlackMetal, 12);
+                        }
                     }
                     Handrail(rails, r0, new Vector3(r0.x, landY + 0.9f, zl), wallX);
                 }
@@ -107,10 +112,73 @@ namespace House4696.Generation
             }
 
             string id = s.Id ?? "stair";
+            WellGuards(s, id);
             _c.W.Emit("Stair_" + id, _c.Interior, mb);
             _c.W.Emit("Stair_Glass_" + id, _c.Interior, glass, castShadows: false);
             _c.W.Emit("Stair_Rails_" + id, _c.Interior, rails);
             _c.W.Emit("Decor_StepLights_" + id, _c.Interior, lights, castShadows: false);
+        }
+
+        /// <summary>
+        /// Glass guards on the open edges of the stairwell in the upper floor: every edge of the well except the arrival
+        /// edge, edges along walls, edges over no floor (a double-height space) and edges an author's railing already covers.
+        /// </summary>
+        void WellGuards(StairDef s, string id)
+        {
+            var g = _c.Stair(s);
+            if (g == null || g.Well.Count == 0 || s.Well != "auto") return;
+            float y = g.To.Elevation;
+            var rooms = _c.Doc.Rooms.FindAll(r => r.Level == g.To.Id && r.Outline != null && r.Outline.Count >= 3);
+            var walls = new List<WallFrame>();
+            foreach (var f in _c.Walls) if (f.Y0 < y + 0.5f && f.Y1 > y + 0.5f) walls.Add(f);
+            var rails = _c.Doc.Elements.FindAll(e => e.Type == ElementType.Railing && Mathf.Abs(e.Y - y) < 0.4f && e.Path.Count >= 2);
+
+            bool Open(Vector2 p, Vector2 outward)
+            {
+                var q = p + outward * 0.15f;
+                if (g.InWell(q) || g.OnArrival(p, 0.08f)) return false;
+                if (!rooms.Exists(r => Polygon.Contains(r.Outline, q))) return false;
+                foreach (var f in walls)
+                {
+                    var a2 = f.P(f.S0, 0, -f.T * 0.5f); var b2 = f.P(f.S1, 0, -f.T * 0.5f);
+                    if (StairGeometry.DistanceToSegment(p, new Vector2(a2.x, a2.z), new Vector2(b2.x, b2.z)) < f.T * 0.5f + 0.2f) return false;
+                }
+                foreach (var e in rails)
+                    for (int i = 0; i + 1 < e.Path.Count; i++)
+                        if (StairGeometry.DistanceToSegment(p, e.Path[i], e.Path[i + 1]) < 0.2f) return false;
+                return true;
+            }
+
+            var elements = new ElementBuilder(_c);
+            int n = 0;
+            foreach (var h in g.Well)
+                for (int i = 0; i < h.Length; i++)
+                {
+                    Vector2 a = h[i], b = h[(i + 1) % h.Length], d = b - a;
+                    float len = d.magnitude;
+                    if (len < 0.3f) continue;
+                    d /= len;
+                    var outward = new Vector2(d.y, -d.x);
+                    const float step = 0.05f;
+                    int steps = Mathf.Max(1, Mathf.RoundToInt(len / step));
+                    int runStart = -1;
+                    for (int k = 0; k <= steps; k++)
+                    {
+                        bool open = k < steps && Open(a + d * (len * (k + 0.5f) / steps), outward);
+                        if (open && runStart < 0) runStart = k;
+                        if (open || runStart < 0) continue;
+                        float t0 = len * runStart / steps, t1 = len * k / steps;
+                        runStart = -1;
+                        if (t1 - t0 < 0.3f) continue;
+                        // on the slab, just outside the opening
+                        var off = outward * 0.03f;
+                        elements.Build(new ElementDef
+                        {
+                            Id = $"{id}_well{++n}", Type = ElementType.Railing, Y = y, Height = 1.0f, Style = "glass",
+                            Path = new List<Vector2> { a + d * t0 + off, a + d * t1 + off },
+                        });
+                    }
+                }
         }
 
         /// <summary>Wall-mounted walnut handrail with black brackets towards the wall at <paramref name="wallX"/>.</summary>

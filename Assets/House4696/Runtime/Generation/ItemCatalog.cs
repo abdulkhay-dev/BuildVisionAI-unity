@@ -39,6 +39,8 @@ namespace House4696.Generation
         public readonly List<(MeshBuilder mb, Vector3 pos)> Plants = new List<(MeshBuilder, Vector3)>();
         public ItemParams P;
         public HouseContext C;
+        /// <summary>Set by library models: the builder places this prefab instead of generated meshes.</summary>
+        public ExternalCatalog.ModelEntry External;
         public InteriorMaterials M => C.M;
         public FurnitureKit K => C.Kit;
         public VegetationFactory Veg => C.Veg;
@@ -58,8 +60,25 @@ namespace House4696.Generation
     public static class ItemCatalog
     {
         static readonly Dictionary<string, ItemModel> Models = new Dictionary<string, ItemModel>(StringComparer.OrdinalIgnoreCase);
-        public static IEnumerable<ItemModel> All => Models.Values;
-        public static ItemModel Get(string id) => id != null && Models.TryGetValue(id, out var m) ? m : null;
+        public static IEnumerable<ItemModel> All { get { EnsureExternal(); return Models.Values; } }
+        public static ItemModel Get(string id) { EnsureExternal(); return id != null && Models.TryGetValue(id, out var m) ? m : null; }
+
+        static bool _external;
+
+        /// <summary>Library models (scans, Blender models) join the catalogue under their ids once the content is loaded.</summary>
+        static void EnsureExternal()
+        {
+            if (_external) return;
+            _external = true;
+            var ext = ExternalCatalog.Load();
+            if (ext == null) return;
+            foreach (var e in ext.Models)
+            {
+                if (e.Prefab == null || Models.ContainsKey(e.Id)) continue;
+                var entry = e;
+                Models[e.Id] = new ItemModel { Id = e.Id, Name = e.Name, Category = e.Category, Params = e.ParamsText(), Build = b => b.External = entry };
+            }
+        }
 
         static void R(string id, string name, string category, string ps, Action<ItemBuild> build) =>
             Models[id] = new ItemModel { Id = id, Name = name, Category = category, Params = ps, Build = build };

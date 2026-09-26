@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using UnityEngine;
 
@@ -38,13 +39,99 @@ namespace House4696.Model
         public string Modified;
     }
 
-    public enum LandscapePreset { None, Lawn, Garden, Catalog4696 }
+    public enum LandscapePreset { None, Lawn, Garden, Catalog4696, Natural }
 
     public sealed class SiteDef
     {
         public LandscapePreset Landscape = LandscapePreset.Garden;
         /// <summary>Sun direction: azimuth from north (+Z) clockwise, elevation above the horizon.</summary>
         public float SunAzimuth = 175f, SunElevation = 33f;
+        /// <summary>Garden preset only: the paved path from the front ("auto") or none ("none").</summary>
+        public string Path = "auto";
+        /// <summary>Garden and natural presets: trees around the plot ("auto") or none ("none").</summary>
+        public string Trees = "auto";
+
+        // ---- natural preset: a landscaped plot on relief, generated from the intent below ----
+
+        /// <summary>Plot (fence line) <c>[xmin, zmin, xmax, zmax]</c>; default: the house footprint plus 18 m.</summary>
+        public float[] Plot;
+        public TerrainDef Terrain;          // null = flat, default undulation
+        public PlantingDef Planting;        // null = defaults
+        public List<StreamDef> Streams = new List<StreamDef>();
+        public List<SitePathDef> Paths = new List<SitePathDef>();
+        public List<BedDef> Beds = new List<BedDef>();
+        public List<SiteObjectDef> Objects = new List<SiteObjectDef>();
+        /// <summary>Board fence along the plot: sides "north", "east", "south", "west" (empty = no fence).</summary>
+        public List<string> Fence = new List<string>();
+    }
+
+    /// <summary>Relief of the natural preset. The house stands on a level pad at grade 0.</summary>
+    public sealed class TerrainDef
+    {
+        /// <summary>The ground rises towards this azimuth (from north, clockwise)…</summary>
+        public float SlopeAzimuth;
+        /// <summary>…by this many metres per metre (0.07 = 7 %).</summary>
+        public float Grade;
+        /// <summary>Height of the soft undulation, metres.</summary>
+        public float Relief = 0.3f;
+        public int Seed = 4696;
+    }
+
+    /// <summary>How the natural preset plants the beds (everything that is not lawn, path, water or house).</summary>
+    public sealed class PlantingDef
+    {
+        /// <summary>perennial (flowering border), meadow, shade (ferns and hostas), rock (rock garden), none.</summary>
+        public string Style = "perennial";
+        /// <summary>Accent flowers: salvia, lavender, lupin, daisy, phlox, yellow, orange (default: the style's mix).</summary>
+        public List<string> Flowers = new List<string>();
+        /// <summary>Planting density, 0.3–1.5.</summary>
+        public float Density = 1f;
+        /// <summary>Width of the lawn strip on each side of the paths, metres (0 = beds right up to the path).</summary>
+        public float Lawn = 1.4f;
+    }
+
+    /// <summary>A stream flowing from the first point to the last; level pools stepping down in cascades.</summary>
+    public sealed class StreamDef
+    {
+        public string Id;
+        public List<Vector2> Path = new List<Vector2>();
+        public float Width = 2.4f;
+        public float Depth = 0.3f;
+        /// <summary>Points on the stream where it drops in a cascade (default: every ~9 m of fall along the slope).</summary>
+        public List<Vector2> Cascades = new List<Vector2>();
+    }
+
+    public sealed class SitePathDef
+    {
+        public string Id;
+        public List<Vector2> Path = new List<Vector2>();
+        public float Width = 1f;
+        /// <summary>stepping (flat stone slabs), gravel.</summary>
+        public string Style = "stepping";
+    }
+
+    /// <summary>An explicit bed (the rest of the plot is planted by <see cref="PlantingDef"/>).</summary>
+    public sealed class BedDef
+    {
+        public string Id;
+        public List<Vector2> Outline = new List<Vector2>();
+        public string Style;
+        public List<string> Flowers = new List<string>();
+    }
+
+    /// <summary>
+    /// A single placed thing on the site: bridge (spans <see cref="At"/> → <see cref="To"/>), stone_lantern,
+    /// garden_lamp, boulder, tree (species oak, birch, spruce, maple_red), plant (a kit group id).
+    /// </summary>
+    public sealed class SiteObjectDef
+    {
+        public string Id;
+        public string Type;
+        public Vector2 At;
+        public Vector2? To;
+        public float Rotation;
+        public float Scale = 1f;
+        public string Species;
     }
 
     /// <summary>A storey. <see cref="Elevation"/> = finished floor above grade; <see cref="Height"/> = clear floor-to-ceiling height.</summary>
@@ -104,7 +191,11 @@ namespace House4696.Model
         public string Id;
         public string Wall;
         public OpeningType Type = OpeningType.Window;
-        public float At, Width = 1.2f, Sill = 0.9f, Height = 1.5f;
+        public float At, Width = 1.2f, Height = 1.5f;
+        /// <summary>As written in the document (null = default for the type, see <see cref="Sill"/>).</summary>
+        [JsonProperty("sill")] public float? SillValue;
+        /// <summary>Bottom of the opening above the level floor: windows default to 0.9 m, doors, glazing and holes to the floor.</summary>
+        [JsonIgnore] public float Sill { get => SillValue ?? (Type == OpeningType.Window ? 0.9f : 0f); set => SillValue = value; }
         public int Columns = 1;
         /// <summary>Transom bar heights above the sill.</summary>
         public List<float> Transoms = new List<float>();
@@ -142,14 +233,15 @@ namespace House4696.Model
     /// <summary>
     /// Roof over a plan outline. Flat roofs accept any polygon (slab + optional parapet on the outline); pitched roofs
     /// use the outline's bounding rectangle in the roof's own frame (<see cref="Rotation"/>, ridge along local X).
-    /// <see cref="Base"/> is the absolute height of the roof's underside at the walls.
+    /// <see cref="Base"/> is the absolute height of the roof's underside at the walls; when omitted it is the top of
+    /// the exterior walls under the roof (see <see cref="Generation.HouseContext.RoofBase"/>).
     /// </summary>
     public sealed class RoofDef
     {
         public string Id;
         public RoofType Type = RoofType.Gable;
         public List<Vector2> Outline = new List<Vector2>();
-        public float Base;
+        public float? Base;
         public float Thickness = 0.3f;
         public float Overhang = 0.5f;
         public float Pitch = 30f;
@@ -184,6 +276,11 @@ namespace House4696.Model
         public string Style = "floating_oak";
         /// <summary>Depth of the landing (L/U stairs); default = stair width.</summary>
         public float? Landing;
+        /// <summary>
+        /// Opening in the upper floor over the stair: "auto" = cut where the treads need 2 m of headroom and guard its
+        /// open edges with glass, "open" = cut without guards, "none" = leave the floor (the author cuts it).
+        /// </summary>
+        public string Well = "auto";
     }
 
     public enum ElementType { Box, Column, Railing, Platform, Beam }

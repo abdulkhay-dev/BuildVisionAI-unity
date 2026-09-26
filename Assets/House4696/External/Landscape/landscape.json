@@ -1,0 +1,3397 @@
+{
+ "terrainLayers": [
+  {
+   "id": "soil",
+   "source": "polyhaven:forest_ground_04",
+   "folder": "Terrain/soil",
+   "textures": {
+    "albedo": "soil_albedo.jpg",
+    "normal": "soil_normal.jpg",
+    "mask": "soil_mask.png"
+   },
+   "metersPerTile": [
+    3.1500000953674316,
+    3.1500000953674316
+   ]
+  },
+  {
+   "id": "grass",
+   "source": "polyhaven:sparse_grass",
+   "folder": "Terrain/grass",
+   "textures": {
+    "albedo": "grass_albedo.jpg",
+    "normal": "grass_normal.jpg",
+    "mask": "grass_mask.png"
+   },
+   "metersPerTile": [
+    2.0,
+    2.0
+   ]
+  },
+  {
+   "id": "pebbles",
+   "source": "polyhaven:river_small_rocks",
+   "folder": "Terrain/pebbles",
+   "textures": {
+    "albedo": "pebbles_albedo.jpg",
+    "normal": "pebbles_normal.jpg",
+    "mask": "pebbles_mask.png"
+   },
+   "metersPerTile": [
+    2.9000000953674316,
+    2.9000003337860107
+   ]
+  },
+  {
+   "id": "mud",
+   "source": "polyhaven:brown_mud_leaves_01",
+   "folder": "Terrain/mud",
+   "textures": {
+    "albedo": "mud_albedo.jpg",
+    "normal": "mud_normal.jpg",
+    "mask": "mud_mask.png"
+   },
+   "metersPerTile": [
+    1.2999998331069946,
+    1.2999998331069946
+   ]
+  }
+ ],
+ "groups": [
+  {
+   "id": "rock_boulder",
+   "kind": "rock",
+   "variants": [
+    {
+     "id": "rock_boulder_00",
+     "fbx": "Models/rock_boulder_00.fbx",
+     "source": "polyhaven:namaqualand_boulder_02",
+     "size": [
+      2.52,
+      1.232,
+      0.879
+     ],
+     "tris": [
+      2499,
+      749
+     ],
+     "materials": [
+      "namaqualand_boulder_02_grey"
+     ]
+    },
+    {
+     "id": "rock_boulder_01",
+     "fbx": "Models/rock_boulder_01.fbx",
+     "source": "polyhaven:namaqualand_boulder_03",
+     "size": [
+      2.406,
+      3.063,
+      1.474
+     ],
+     "tris": [
+      2500,
+      750
+     ],
+     "materials": [
+      "namaqualand_boulder_03_grey"
+     ]
+    },
+    {
+     "id": "rock_boulder_02",
+     "fbx": "Models/rock_boulder_02.fbx",
+     "source": "polyhaven:namaqualand_boulder_04",
+     "size": [
+      2.523,
+      2.497,
+      1.892
+     ],
+     "tris": [
+      2500,
+      750
+     ],
+     "materials": [
+      "namaqualand_boulder_04_grey"
+     ]
+    },
+    {
+     "id": "rock_boulder_03",
+     "fbx": "Models/rock_boulder_03.fbx",
+     "source": "polyhaven:namaqualand_boulder_05",
+     "size": [
+      1.359,
+      0.747,
+      0.53
+     ],
+     "tris": [
+      2500,
+      750
+     ],
+     "materials": [
+      "namaqualand_boulder_05_grey"
+     ]
+    },
+    {
+     "id": "rock_boulder_04",
+     "fbx": "Models/rock_boulder_04.fbx",
+     "source": "polyhaven:namaqualand_boulder_06",
+     "size": [
+      0.669,
+      1.208,
+      0.648
+     ],
+     "tris": [
+      2500,
+      750
+     ],
+     "materials": [
+      "namaqualand_boulder_06_grey"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "rock_moss",
+   "kind": "rock",
+   "variants": [
+    {
+     "id": "rock_moss_00",
+     "fbx": "Models/rock_moss_00.fbx",
+     "source": "polyhaven:rock_moss_set_01",
+     "size": [
+      2.235,
+      3.361,
+      1.472
+     ],
+     "tris": [
+      2000,
+      600
+     ],
+     "materials": [
+      "rock_moss_set_01"
+     ]
+    },
+    {
+     "id": "rock_moss_01",
+     "fbx": "Models/rock_moss_01.fbx",
+     "source": "polyhaven:rock_moss_set_01",
+     "size": [
+      2.649,
+      3.265,
+      1.262
+     ],
+     "tris": [
+      2000,
+      600
+     ],
+     "materials": [
+      "rock_moss_set_01"
+     ]
+    },
+    {
+     "id": "rock_moss_02",
+     "fbx": "Models/rock_moss_02.fbx",
+     "source": "polyhaven:rock_moss_set_01",
+     "size": [
+      2.106,
+      2.074,
+      1.098
+     ],
+     "tris": [
+      2000,
+      600
+     ],
+     "materials": [
+      "rock_moss_set_01"
+     ]
+    },
+    {
+     "id": "rock_moss_03",
+     "fbx": "Models/rock_moss_03.fbx",
+     "source": "polyhaven:rock_moss_set_01",
+     "size": [
+      2.131,
+      1.966,
+      1.77
+     ],
+     "tris": [
+      1999,
+      599
+     ],
+     "materials": [
+      "rock_moss_set_01"
+     ]
+    },
+    {
+     "id": "rock_moss_04",
+     "fbx": "Models/rock_moss_04.fbx",
+     "source": "polyhaven:rock_moss_set_01",
+     "size": [
+      1.818,
+      3.007,
+      1.211
+     ],
+     "tris": [
+      2000,
+      600
+     ],
+     "materials": [
+      "rock_moss_set_01"
+     ]
+    },
+    {
+     "id": "rock_moss_05",
+     "fbx": "Models/rock_moss_05.fbx",
+     "source": "polyhaven:rock_moss_set_01",
+     "size": [
+      2.135,
+      2.757,
+      1.257
+     ],
+     "tris": [
+      2000,
+      600
+     ],
+     "materials": [
+      "rock_moss_set_01"
+     ]
+    },
+    {
+     "id": "rock_moss_06",
+     "fbx": "Models/rock_moss_06.fbx",
+     "source": "polyhaven:rock_moss_set_02",
+     "size": [
+      2.493,
+      1.79,
+      1.094
+     ],
+     "tris": [
+      2000,
+      600
+     ],
+     "materials": [
+      "rock_moss_set_02"
+     ]
+    },
+    {
+     "id": "rock_moss_07",
+     "fbx": "Models/rock_moss_07.fbx",
+     "source": "polyhaven:rock_moss_set_02",
+     "size": [
+      1.204,
+      0.983,
+      0.526
+     ],
+     "tris": [
+      2000,
+      600
+     ],
+     "materials": [
+      "rock_moss_set_02"
+     ]
+    },
+    {
+     "id": "rock_moss_08",
+     "fbx": "Models/rock_moss_08.fbx",
+     "source": "polyhaven:rock_moss_set_02",
+     "size": [
+      1.626,
+      1.015,
+      0.608
+     ],
+     "tris": [
+      2000,
+      600
+     ],
+     "materials": [
+      "rock_moss_set_02"
+     ]
+    },
+    {
+     "id": "rock_moss_09",
+     "fbx": "Models/rock_moss_09.fbx",
+     "source": "polyhaven:rock_moss_set_02",
+     "size": [
+      2.202,
+      1.554,
+      0.77
+     ],
+     "tris": [
+      2000,
+      600
+     ],
+     "materials": [
+      "rock_moss_set_02"
+     ]
+    },
+    {
+     "id": "rock_moss_10",
+     "fbx": "Models/rock_moss_10.fbx",
+     "source": "polyhaven:rock_moss_set_02",
+     "size": [
+      1.95,
+      1.525,
+      1.299
+     ],
+     "tris": [
+      2000,
+      600
+     ],
+     "materials": [
+      "rock_moss_set_02"
+     ]
+    },
+    {
+     "id": "rock_moss_11",
+     "fbx": "Models/rock_moss_11.fbx",
+     "source": "polyhaven:rock_moss_set_02",
+     "size": [
+      1.581,
+      1.444,
+      0.733
+     ],
+     "tris": [
+      1999,
+      599
+     ],
+     "materials": [
+      "rock_moss_set_02"
+     ]
+    },
+    {
+     "id": "rock_moss_12",
+     "fbx": "Models/rock_moss_12.fbx",
+     "source": "polyhaven:rock_moss_set_02",
+     "size": [
+      2.089,
+      1.142,
+      1.252
+     ],
+     "tris": [
+      2000,
+      600
+     ],
+     "materials": [
+      "rock_moss_set_02"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "rock_small",
+   "kind": "stone",
+   "variants": [
+    {
+     "id": "rock_small_00",
+     "fbx": "Models/rock_small_00.fbx",
+     "source": "polyhaven:stone_01",
+     "size": [
+      0.147,
+      0.09,
+      0.071
+     ],
+     "tris": [
+      400
+     ],
+     "materials": [
+      "stone_01"
+     ]
+    },
+    {
+     "id": "rock_small_01",
+     "fbx": "Models/rock_small_01.fbx",
+     "source": "polyhaven:rock_07",
+     "size": [
+      0.167,
+      0.32,
+      0.142
+     ],
+     "tris": [
+      400
+     ],
+     "materials": [
+      "rock_07"
+     ]
+    },
+    {
+     "id": "rock_small_02",
+     "fbx": "Models/rock_small_02.fbx",
+     "source": "polyhaven:rock_09",
+     "size": [
+      0.074,
+      0.145,
+      0.033
+     ],
+     "tris": [
+      398
+     ],
+     "materials": [
+      "rock_09"
+     ]
+    },
+    {
+     "id": "rock_small_03",
+     "fbx": "Models/rock_small_03.fbx",
+     "source": "polyhaven:namaqualand_stones_01",
+     "size": [
+      0.076,
+      0.063,
+      0.038
+     ],
+     "tris": [
+      316
+     ],
+     "materials": [
+      "namaqualand_stones_01"
+     ]
+    },
+    {
+     "id": "rock_small_04",
+     "fbx": "Models/rock_small_04.fbx",
+     "source": "polyhaven:namaqualand_stones_01",
+     "size": [
+      0.151,
+      0.081,
+      0.083
+     ],
+     "tris": [
+      398
+     ],
+     "materials": [
+      "namaqualand_stones_01"
+     ]
+    },
+    {
+     "id": "rock_small_05",
+     "fbx": "Models/rock_small_05.fbx",
+     "source": "polyhaven:namaqualand_stones_01",
+     "size": [
+      0.103,
+      0.097,
+      0.057
+     ],
+     "tris": [
+      400
+     ],
+     "materials": [
+      "namaqualand_stones_01"
+     ]
+    },
+    {
+     "id": "rock_small_06",
+     "fbx": "Models/rock_small_06.fbx",
+     "source": "polyhaven:namaqualand_stones_01",
+     "size": [
+      0.114,
+      0.082,
+      0.037
+     ],
+     "tris": [
+      400
+     ],
+     "materials": [
+      "namaqualand_stones_01"
+     ]
+    },
+    {
+     "id": "rock_small_07",
+     "fbx": "Models/rock_small_07.fbx",
+     "source": "polyhaven:namaqualand_stones_01",
+     "size": [
+      0.111,
+      0.111,
+      0.077
+     ],
+     "tris": [
+      400
+     ],
+     "materials": [
+      "namaqualand_stones_01"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "grass_lawn",
+   "kind": "detail",
+   "variants": [
+    {
+     "id": "grass_lawn_00",
+     "fbx": "Models/grass_lawn_00.fbx",
+     "source": "polyhaven:grass_medium_01",
+     "size": [
+      0.327,
+      0.327,
+      0.135
+     ],
+     "tris": [
+      1011
+     ],
+     "materials": [
+      "grass_medium_01"
+     ]
+    },
+    {
+     "id": "grass_lawn_01",
+     "fbx": "Models/grass_lawn_01.fbx",
+     "source": "polyhaven:grass_medium_01",
+     "size": [
+      0.291,
+      0.291,
+      0.165
+     ],
+     "tris": [
+      890
+     ],
+     "materials": [
+      "grass_medium_01"
+     ]
+    },
+    {
+     "id": "grass_lawn_02",
+     "fbx": "Models/grass_lawn_02.fbx",
+     "source": "polyhaven:grass_medium_01",
+     "size": [
+      0.29,
+      0.29,
+      0.137
+     ],
+     "tris": [
+      1032
+     ],
+     "materials": [
+      "grass_medium_01"
+     ]
+    },
+    {
+     "id": "grass_lawn_03",
+     "fbx": "Models/grass_lawn_03.fbx",
+     "source": "polyhaven:grass_medium_01",
+     "size": [
+      0.206,
+      0.216,
+      0.199
+     ],
+     "tris": [
+      659
+     ],
+     "materials": [
+      "grass_medium_01"
+     ]
+    },
+    {
+     "id": "grass_lawn_04",
+     "fbx": "Models/grass_lawn_04.fbx",
+     "source": "polyhaven:grass_medium_01",
+     "size": [
+      0.188,
+      0.182,
+      0.178
+     ],
+     "tris": [
+      334
+     ],
+     "materials": [
+      "grass_medium_01"
+     ]
+    },
+    {
+     "id": "grass_lawn_05",
+     "fbx": "Models/grass_lawn_05.fbx",
+     "source": "polyhaven:grass_medium_01",
+     "size": [
+      0.195,
+      0.21,
+      0.131
+     ],
+     "tris": [
+      348
+     ],
+     "materials": [
+      "grass_medium_01"
+     ]
+    },
+    {
+     "id": "grass_lawn_06",
+     "fbx": "Models/grass_lawn_06.fbx",
+     "source": "polyhaven:grass_medium_01",
+     "size": [
+      0.161,
+      0.159,
+      0.326
+     ],
+     "tris": [
+      121
+     ],
+     "materials": [
+      "grass_medium_01"
+     ]
+    },
+    {
+     "id": "grass_lawn_07",
+     "fbx": "Models/grass_lawn_07.fbx",
+     "source": "polyhaven:grass_medium_01",
+     "size": [
+      0.15,
+      0.135,
+      0.286
+     ],
+     "tris": [
+      164
+     ],
+     "materials": [
+      "grass_medium_01"
+     ]
+    },
+    {
+     "id": "grass_lawn_08",
+     "fbx": "Models/grass_lawn_08.fbx",
+     "source": "polyhaven:grass_medium_01",
+     "size": [
+      0.151,
+      0.121,
+      0.226
+     ],
+     "tris": [
+      162
+     ],
+     "materials": [
+      "grass_medium_01"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "grass_short",
+   "kind": "detail",
+   "variants": [
+    {
+     "id": "grass_short_00",
+     "fbx": "Models/grass_short_00.fbx",
+     "source": "polyhaven:grass_bermuda_01",
+     "size": [
+      0.039,
+      0.029,
+      0.098
+     ],
+     "tris": [
+      17
+     ],
+     "materials": [
+      "grass_bermuda_01"
+     ]
+    },
+    {
+     "id": "grass_short_01",
+     "fbx": "Models/grass_short_01.fbx",
+     "source": "polyhaven:grass_bermuda_01",
+     "size": [
+      0.051,
+      0.022,
+      0.075
+     ],
+     "tris": [
+      8
+     ],
+     "materials": [
+      "grass_bermuda_01"
+     ]
+    },
+    {
+     "id": "grass_short_02",
+     "fbx": "Models/grass_short_02.fbx",
+     "source": "polyhaven:grass_bermuda_01",
+     "size": [
+      0.057,
+      0.092,
+      0.067
+     ],
+     "tris": [
+      20
+     ],
+     "materials": [
+      "grass_bermuda_01"
+     ]
+    },
+    {
+     "id": "grass_short_03",
+     "fbx": "Models/grass_short_03.fbx",
+     "source": "polyhaven:grass_bermuda_01",
+     "size": [
+      0.055,
+      0.016,
+      0.102
+     ],
+     "tris": [
+      14
+     ],
+     "materials": [
+      "grass_bermuda_01"
+     ]
+    },
+    {
+     "id": "grass_short_04",
+     "fbx": "Models/grass_short_04.fbx",
+     "source": "polyhaven:grass_bermuda_01",
+     "size": [
+      0.066,
+      0.037,
+      0.083
+     ],
+     "tris": [
+      24
+     ],
+     "materials": [
+      "grass_bermuda_01"
+     ]
+    },
+    {
+     "id": "grass_short_05",
+     "fbx": "Models/grass_short_05.fbx",
+     "source": "polyhaven:grass_bermuda_01",
+     "size": [
+      0.041,
+      0.026,
+      0.113
+     ],
+     "tris": [
+      30
+     ],
+     "materials": [
+      "grass_bermuda_01"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "moss",
+   "kind": "detail",
+   "variants": [
+    {
+     "id": "moss_00",
+     "fbx": "Models/moss_00.fbx",
+     "source": "polyhaven:moss_01",
+     "size": [
+      0.014,
+      0.016,
+      0.026
+     ],
+     "tris": [
+      24
+     ],
+     "materials": [
+      "moss_01"
+     ]
+    },
+    {
+     "id": "moss_01",
+     "fbx": "Models/moss_01.fbx",
+     "source": "polyhaven:moss_01",
+     "size": [
+      0.009,
+      0.01,
+      0.015
+     ],
+     "tris": [
+      16
+     ],
+     "materials": [
+      "moss_01"
+     ]
+    },
+    {
+     "id": "moss_02",
+     "fbx": "Models/moss_02.fbx",
+     "source": "polyhaven:moss_01",
+     "size": [
+      0.018,
+      0.014,
+      0.028
+     ],
+     "tris": [
+      24
+     ],
+     "materials": [
+      "moss_01"
+     ]
+    },
+    {
+     "id": "moss_03",
+     "fbx": "Models/moss_03.fbx",
+     "source": "polyhaven:moss_01",
+     "size": [
+      0.014,
+      0.016,
+      0.027
+     ],
+     "tris": [
+      16
+     ],
+     "materials": [
+      "moss_01"
+     ]
+    },
+    {
+     "id": "moss_04",
+     "fbx": "Models/moss_04.fbx",
+     "source": "polyhaven:moss_01",
+     "size": [
+      0.011,
+      0.013,
+      0.022
+     ],
+     "tris": [
+      20
+     ],
+     "materials": [
+      "moss_01"
+     ]
+    },
+    {
+     "id": "moss_05",
+     "fbx": "Models/moss_05.fbx",
+     "source": "polyhaven:moss_01",
+     "size": [
+      0.013,
+      0.013,
+      0.03
+     ],
+     "tris": [
+      20
+     ],
+     "materials": [
+      "moss_01"
+     ]
+    },
+    {
+     "id": "moss_06",
+     "fbx": "Models/moss_06.fbx",
+     "source": "polyhaven:moss_01",
+     "size": [
+      0.013,
+      0.009,
+      0.022
+     ],
+     "tris": [
+      16
+     ],
+     "materials": [
+      "moss_01"
+     ]
+    },
+    {
+     "id": "moss_07",
+     "fbx": "Models/moss_07.fbx",
+     "source": "polyhaven:moss_01",
+     "size": [
+      0.011,
+      0.006,
+      0.018
+     ],
+     "tris": [
+      6
+     ],
+     "materials": [
+      "moss_01"
+     ]
+    },
+    {
+     "id": "moss_08",
+     "fbx": "Models/moss_08.fbx",
+     "source": "polyhaven:moss_01",
+     "size": [
+      0.016,
+      0.013,
+      0.015
+     ],
+     "tris": [
+      6
+     ],
+     "materials": [
+      "moss_01"
+     ]
+    },
+    {
+     "id": "moss_09",
+     "fbx": "Models/moss_09.fbx",
+     "source": "polyhaven:moss_01",
+     "size": [
+      0.017,
+      0.019,
+      0.009
+     ],
+     "tris": [
+      8
+     ],
+     "materials": [
+      "moss_01"
+     ]
+    },
+    {
+     "id": "moss_10",
+     "fbx": "Models/moss_10.fbx",
+     "source": "polyhaven:moss_01",
+     "size": [
+      0.021,
+      0.011,
+      0.034
+     ],
+     "tris": [
+      24
+     ],
+     "materials": [
+      "moss_01"
+     ]
+    },
+    {
+     "id": "moss_11",
+     "fbx": "Models/moss_11.fbx",
+     "source": "polyhaven:moss_01",
+     "size": [
+      0.018,
+      0.012,
+      0.037
+     ],
+     "tris": [
+      24
+     ],
+     "materials": [
+      "moss_01"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "groundcover",
+   "kind": "detail",
+   "variants": [
+    {
+     "id": "groundcover_00",
+     "fbx": "Models/groundcover_00.fbx",
+     "source": "polyhaven:shrub_04",
+     "size": [
+      0.136,
+      0.108,
+      0.195
+     ],
+     "tris": [
+      931
+     ],
+     "materials": [
+      "shrub_04"
+     ]
+    },
+    {
+     "id": "groundcover_01",
+     "fbx": "Models/groundcover_01.fbx",
+     "source": "polyhaven:shrub_04",
+     "size": [
+      0.143,
+      0.166,
+      0.208
+     ],
+     "tris": [
+      1646
+     ],
+     "materials": [
+      "shrub_04"
+     ]
+    },
+    {
+     "id": "groundcover_02",
+     "fbx": "Models/groundcover_02.fbx",
+     "source": "polyhaven:shrub_04",
+     "size": [
+      0.156,
+      0.169,
+      0.281
+     ],
+     "tris": [
+      1542
+     ],
+     "materials": [
+      "shrub_04"
+     ]
+    },
+    {
+     "id": "groundcover_03",
+     "fbx": "Models/groundcover_03.fbx",
+     "source": "polyhaven:shrub_04",
+     "size": [
+      0.218,
+      0.187,
+      0.274
+     ],
+     "tris": [
+      2708
+     ],
+     "materials": [
+      "shrub_04"
+     ]
+    },
+    {
+     "id": "groundcover_04",
+     "fbx": "Models/groundcover_04.fbx",
+     "source": "polyhaven:periwinkle_plant",
+     "size": [
+      0.269,
+      0.328,
+      0.397
+     ],
+     "tris": [
+      755
+     ],
+     "materials": [
+      "periwinkle_plant"
+     ]
+    },
+    {
+     "id": "groundcover_05",
+     "fbx": "Models/groundcover_05.fbx",
+     "source": "polyhaven:periwinkle_plant",
+     "size": [
+      0.24,
+      0.233,
+      0.41
+     ],
+     "tris": [
+      606
+     ],
+     "materials": [
+      "periwinkle_plant"
+     ]
+    },
+    {
+     "id": "groundcover_06",
+     "fbx": "Models/groundcover_06.fbx",
+     "source": "polyhaven:periwinkle_plant",
+     "size": [
+      0.182,
+      0.154,
+      0.3
+     ],
+     "tris": [
+      332
+     ],
+     "materials": [
+      "periwinkle_plant"
+     ]
+    },
+    {
+     "id": "groundcover_07",
+     "fbx": "Models/groundcover_07.fbx",
+     "source": "polyhaven:periwinkle_plant",
+     "size": [
+      0.163,
+      0.192,
+      0.265
+     ],
+     "tris": [
+      256
+     ],
+     "materials": [
+      "periwinkle_plant"
+     ]
+    },
+    {
+     "id": "groundcover_08",
+     "fbx": "Models/groundcover_08.fbx",
+     "source": "polyhaven:periwinkle_plant",
+     "size": [
+      0.124,
+      0.149,
+      0.206
+     ],
+     "tris": [
+      182
+     ],
+     "materials": [
+      "periwinkle_plant"
+     ]
+    },
+    {
+     "id": "groundcover_09",
+     "fbx": "Models/groundcover_09.fbx",
+     "source": "polyhaven:periwinkle_plant",
+     "size": [
+      0.115,
+      0.097,
+      0.16
+     ],
+     "tris": [
+      103
+     ],
+     "materials": [
+      "periwinkle_plant"
+     ]
+    },
+    {
+     "id": "groundcover_10",
+     "fbx": "Models/groundcover_10.fbx",
+     "source": "polyhaven:celandine_01",
+     "size": [
+      0.273,
+      0.225,
+      0.185
+     ],
+     "tris": [
+      414
+     ],
+     "materials": [
+      "celandine_01"
+     ]
+    },
+    {
+     "id": "groundcover_11",
+     "fbx": "Models/groundcover_11.fbx",
+     "source": "polyhaven:celandine_01",
+     "size": [
+      0.253,
+      0.311,
+      0.143
+     ],
+     "tris": [
+      365
+     ],
+     "materials": [
+      "celandine_01"
+     ]
+    },
+    {
+     "id": "groundcover_12",
+     "fbx": "Models/groundcover_12.fbx",
+     "source": "polyhaven:celandine_01",
+     "size": [
+      0.254,
+      0.186,
+      0.176
+     ],
+     "tris": [
+      694
+     ],
+     "materials": [
+      "celandine_01"
+     ]
+    },
+    {
+     "id": "groundcover_13",
+     "fbx": "Models/groundcover_13.fbx",
+     "source": "polyhaven:celandine_01",
+     "size": [
+      0.188,
+      0.22,
+      0.151
+     ],
+     "tris": [
+      519
+     ],
+     "materials": [
+      "celandine_01"
+     ]
+    },
+    {
+     "id": "groundcover_14",
+     "fbx": "Models/groundcover_14.fbx",
+     "source": "polyhaven:celandine_01",
+     "size": [
+      0.188,
+      0.218,
+      0.123
+     ],
+     "tris": [
+      207
+     ],
+     "materials": [
+      "celandine_01"
+     ]
+    },
+    {
+     "id": "groundcover_15",
+     "fbx": "Models/groundcover_15.fbx",
+     "source": "polyhaven:weed_plant_02",
+     "size": [
+      0.219,
+      0.291,
+      0.072
+     ],
+     "tris": [
+      361
+     ],
+     "materials": [
+      "weed_plant_02"
+     ]
+    },
+    {
+     "id": "groundcover_16",
+     "fbx": "Models/groundcover_16.fbx",
+     "source": "polyhaven:weed_plant_02",
+     "size": [
+      0.188,
+      0.198,
+      0.068
+     ],
+     "tris": [
+      303
+     ],
+     "materials": [
+      "weed_plant_02"
+     ]
+    },
+    {
+     "id": "groundcover_17",
+     "fbx": "Models/groundcover_17.fbx",
+     "source": "polyhaven:weed_plant_02",
+     "size": [
+      0.142,
+      0.143,
+      0.055
+     ],
+     "tris": [
+      247
+     ],
+     "materials": [
+      "weed_plant_02"
+     ]
+    },
+    {
+     "id": "groundcover_18",
+     "fbx": "Models/groundcover_18.fbx",
+     "source": "polyhaven:weed_plant_02",
+     "size": [
+      0.153,
+      0.108,
+      0.038
+     ],
+     "tris": [
+      230
+     ],
+     "materials": [
+      "weed_plant_02"
+     ]
+    },
+    {
+     "id": "groundcover_19",
+     "fbx": "Models/groundcover_19.fbx",
+     "source": "polyhaven:weed_plant_02",
+     "size": [
+      0.119,
+      0.061,
+      0.04
+     ],
+     "tris": [
+      258
+     ],
+     "materials": [
+      "weed_plant_02"
+     ]
+    },
+    {
+     "id": "groundcover_20",
+     "fbx": "Models/groundcover_20.fbx",
+     "source": "polyhaven:nettle_plant",
+     "size": [
+      0.078,
+      0.09,
+      0.131
+     ],
+     "tris": [
+      509
+     ],
+     "materials": [
+      "nettle_plant"
+     ]
+    },
+    {
+     "id": "groundcover_21",
+     "fbx": "Models/groundcover_21.fbx",
+     "source": "polyhaven:nettle_plant",
+     "size": [
+      0.066,
+      0.068,
+      0.105
+     ],
+     "tris": [
+      455
+     ],
+     "materials": [
+      "nettle_plant"
+     ]
+    },
+    {
+     "id": "groundcover_22",
+     "fbx": "Models/groundcover_22.fbx",
+     "source": "polyhaven:nettle_plant",
+     "size": [
+      0.066,
+      0.044,
+      0.063
+     ],
+     "tris": [
+      312
+     ],
+     "materials": [
+      "nettle_plant"
+     ]
+    },
+    {
+     "id": "groundcover_23",
+     "fbx": "Models/groundcover_23.fbx",
+     "source": "polyhaven:nettle_plant",
+     "size": [
+      0.059,
+      0.039,
+      0.022
+     ],
+     "tris": [
+      71
+     ],
+     "materials": [
+      "nettle_plant"
+     ]
+    },
+    {
+     "id": "groundcover_24",
+     "fbx": "Models/groundcover_24.fbx",
+     "source": "polyhaven:nettle_plant",
+     "size": [
+      0.105,
+      0.093,
+      0.217
+     ],
+     "tris": [
+      582
+     ],
+     "materials": [
+      "nettle_plant"
+     ]
+    },
+    {
+     "id": "groundcover_25",
+     "fbx": "Models/groundcover_25.fbx",
+     "source": "polyhaven:nettle_plant",
+     "size": [
+      0.084,
+      0.094,
+      0.193
+     ],
+     "tris": [
+      671
+     ],
+     "materials": [
+      "nettle_plant"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "groundcover_plant",
+   "kind": "plant",
+   "variants": [
+    {
+     "id": "groundcover_plant_00",
+     "fbx": "Models/groundcover_plant_00.fbx",
+     "source": "polyhaven:periwinkle_plant",
+     "size": [
+      0.264,
+      0.322,
+      0.397
+     ],
+     "tris": [
+      1314,
+      421,
+      6
+     ],
+     "materials": [
+      "periwinkle_plant"
+     ]
+    },
+    {
+     "id": "groundcover_plant_01",
+     "fbx": "Models/groundcover_plant_01.fbx",
+     "source": "polyhaven:periwinkle_plant",
+     "size": [
+      0.231,
+      0.228,
+      0.41
+     ],
+     "tris": [
+      1070,
+      342,
+      6
+     ],
+     "materials": [
+      "periwinkle_plant"
+     ]
+    },
+    {
+     "id": "groundcover_plant_02",
+     "fbx": "Models/groundcover_plant_02.fbx",
+     "source": "polyhaven:periwinkle_plant",
+     "size": [
+      0.168,
+      0.148,
+      0.301
+     ],
+     "tris": [
+      616,
+      188,
+      6
+     ],
+     "materials": [
+      "periwinkle_plant"
+     ]
+    },
+    {
+     "id": "groundcover_plant_03",
+     "fbx": "Models/groundcover_plant_03.fbx",
+     "source": "polyhaven:periwinkle_plant",
+     "size": [
+      0.159,
+      0.185,
+      0.265
+     ],
+     "tris": [
+      474,
+      142,
+      6
+     ],
+     "materials": [
+      "periwinkle_plant"
+     ]
+    },
+    {
+     "id": "groundcover_plant_04",
+     "fbx": "Models/groundcover_plant_04.fbx",
+     "source": "polyhaven:periwinkle_plant",
+     "size": [
+      0.111,
+      0.144,
+      0.206
+     ],
+     "tris": [
+      345,
+      106,
+      6
+     ],
+     "materials": [
+      "periwinkle_plant"
+     ]
+    },
+    {
+     "id": "groundcover_plant_05",
+     "fbx": "Models/groundcover_plant_05.fbx",
+     "source": "polyhaven:periwinkle_plant",
+     "size": [
+      0.104,
+      0.092,
+      0.16
+     ],
+     "tris": [
+      193,
+      53,
+      6
+     ],
+     "materials": [
+      "periwinkle_plant"
+     ]
+    },
+    {
+     "id": "groundcover_plant_06",
+     "fbx": "Models/groundcover_plant_06.fbx",
+     "source": "polyhaven:celandine_01",
+     "size": [
+      0.276,
+      0.228,
+      0.186
+     ],
+     "tris": [
+      622,
+      232,
+      6
+     ],
+     "materials": [
+      "celandine_01"
+     ]
+    },
+    {
+     "id": "groundcover_plant_07",
+     "fbx": "Models/groundcover_plant_07.fbx",
+     "source": "polyhaven:celandine_01",
+     "size": [
+      0.252,
+      0.307,
+      0.145
+     ],
+     "tris": [
+      599,
+      207,
+      6
+     ],
+     "materials": [
+      "celandine_01"
+     ]
+    },
+    {
+     "id": "groundcover_plant_08",
+     "fbx": "Models/groundcover_plant_08.fbx",
+     "source": "polyhaven:celandine_01",
+     "size": [
+      0.257,
+      0.186,
+      0.176
+     ],
+     "tris": [
+      4301,
+      319,
+      6
+     ],
+     "materials": [
+      "celandine_01"
+     ]
+    },
+    {
+     "id": "groundcover_plant_09",
+     "fbx": "Models/groundcover_plant_09.fbx",
+     "source": "polyhaven:celandine_01",
+     "size": [
+      0.187,
+      0.223,
+      0.149
+     ],
+     "tris": [
+      3002,
+      250,
+      6
+     ],
+     "materials": [
+      "celandine_01"
+     ]
+    },
+    {
+     "id": "groundcover_plant_10",
+     "fbx": "Models/groundcover_plant_10.fbx",
+     "source": "polyhaven:celandine_01",
+     "size": [
+      0.188,
+      0.216,
+      0.124
+     ],
+     "tris": [
+      442,
+      138,
+      6
+     ],
+     "materials": [
+      "celandine_01"
+     ]
+    },
+    {
+     "id": "groundcover_plant_11",
+     "fbx": "Models/groundcover_plant_11.fbx",
+     "source": "polyhaven:weed_plant_02",
+     "size": [
+      0.219,
+      0.291,
+      0.072
+     ],
+     "tris": [
+      1031,
+      153,
+      6
+     ],
+     "materials": [
+      "weed_plant_02"
+     ]
+    },
+    {
+     "id": "groundcover_plant_12",
+     "fbx": "Models/groundcover_plant_12.fbx",
+     "source": "polyhaven:weed_plant_02",
+     "size": [
+      0.188,
+      0.198,
+      0.068
+     ],
+     "tris": [
+      848,
+      140,
+      6
+     ],
+     "materials": [
+      "weed_plant_02"
+     ]
+    },
+    {
+     "id": "groundcover_plant_13",
+     "fbx": "Models/groundcover_plant_13.fbx",
+     "source": "polyhaven:weed_plant_02",
+     "size": [
+      0.142,
+      0.143,
+      0.055
+     ],
+     "tris": [
+      651,
+      110,
+      6
+     ],
+     "materials": [
+      "weed_plant_02"
+     ]
+    },
+    {
+     "id": "groundcover_plant_14",
+     "fbx": "Models/groundcover_plant_14.fbx",
+     "source": "polyhaven:weed_plant_02",
+     "size": [
+      0.154,
+      0.108,
+      0.039
+     ],
+     "tris": [
+      680,
+      94,
+      6
+     ],
+     "materials": [
+      "weed_plant_02"
+     ]
+    },
+    {
+     "id": "groundcover_plant_15",
+     "fbx": "Models/groundcover_plant_15.fbx",
+     "source": "polyhaven:weed_plant_02",
+     "size": [
+      0.119,
+      0.061,
+      0.04
+     ],
+     "tris": [
+      725,
+      115,
+      6
+     ],
+     "materials": [
+      "weed_plant_02"
+     ]
+    },
+    {
+     "id": "groundcover_plant_16",
+     "fbx": "Models/groundcover_plant_16.fbx",
+     "source": "polyhaven:nettle_plant",
+     "size": [
+      0.078,
+      0.09,
+      0.132
+     ],
+     "tris": [
+      852,
+      509,
+      6
+     ],
+     "materials": [
+      "nettle_plant"
+     ]
+    },
+    {
+     "id": "groundcover_plant_17",
+     "fbx": "Models/groundcover_plant_17.fbx",
+     "source": "polyhaven:nettle_plant",
+     "size": [
+      0.067,
+      0.068,
+      0.105
+     ],
+     "tris": [
+      811,
+      455,
+      6
+     ],
+     "materials": [
+      "nettle_plant"
+     ]
+    },
+    {
+     "id": "groundcover_plant_18",
+     "fbx": "Models/groundcover_plant_18.fbx",
+     "source": "polyhaven:nettle_plant",
+     "size": [
+      0.066,
+      0.044,
+      0.063
+     ],
+     "tris": [
+      572,
+      312,
+      6
+     ],
+     "materials": [
+      "nettle_plant"
+     ]
+    },
+    {
+     "id": "groundcover_plant_19",
+     "fbx": "Models/groundcover_plant_19.fbx",
+     "source": "polyhaven:nettle_plant",
+     "size": [
+      0.06,
+      0.038,
+      0.022
+     ],
+     "tris": [
+      152,
+      71,
+      6
+     ],
+     "materials": [
+      "nettle_plant"
+     ]
+    },
+    {
+     "id": "groundcover_plant_20",
+     "fbx": "Models/groundcover_plant_20.fbx",
+     "source": "polyhaven:nettle_plant",
+     "size": [
+      0.105,
+      0.093,
+      0.217
+     ],
+     "tris": [
+      974,
+      582,
+      6
+     ],
+     "materials": [
+      "nettle_plant"
+     ]
+    },
+    {
+     "id": "groundcover_plant_21",
+     "fbx": "Models/groundcover_plant_21.fbx",
+     "source": "polyhaven:nettle_plant",
+     "size": [
+      0.084,
+      0.095,
+      0.193
+     ],
+     "tris": [
+      1144,
+      671,
+      6
+     ],
+     "materials": [
+      "nettle_plant"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "grass_tuft",
+   "kind": "plant",
+   "variants": [
+    {
+     "id": "grass_tuft_00",
+     "fbx": "Models/grass_tuft_00.fbx",
+     "source": "polyhaven:grass_medium_02",
+     "size": [
+      0.119,
+      0.12,
+      0.157
+     ],
+     "tris": [
+      714,
+      284,
+      6
+     ],
+     "materials": [
+      "grass_medium_02"
+     ]
+    },
+    {
+     "id": "grass_tuft_01",
+     "fbx": "Models/grass_tuft_01.fbx",
+     "source": "polyhaven:grass_medium_02",
+     "size": [
+      0.179,
+      0.199,
+      0.18
+     ],
+     "tris": [
+      1760,
+      703,
+      6
+     ],
+     "materials": [
+      "grass_medium_02"
+     ]
+    },
+    {
+     "id": "grass_tuft_02",
+     "fbx": "Models/grass_tuft_02.fbx",
+     "source": "polyhaven:grass_medium_02",
+     "size": [
+      0.262,
+      0.25,
+      0.232
+     ],
+     "tris": [
+      1215,
+      485,
+      6
+     ],
+     "materials": [
+      "grass_medium_02"
+     ]
+    },
+    {
+     "id": "grass_tuft_03",
+     "fbx": "Models/grass_tuft_03.fbx",
+     "source": "polyhaven:grass_medium_02",
+     "size": [
+      0.317,
+      0.362,
+      0.26
+     ],
+     "tris": [
+      2489,
+      995,
+      6
+     ],
+     "materials": [
+      "grass_medium_02"
+     ]
+    },
+    {
+     "id": "grass_tuft_04",
+     "fbx": "Models/grass_tuft_04.fbx",
+     "source": "polyhaven:grass_medium_02",
+     "size": [
+      0.356,
+      0.433,
+      0.403
+     ],
+     "tris": [
+      1664,
+      665,
+      6
+     ],
+     "materials": [
+      "grass_medium_02"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fern",
+   "kind": "plant",
+   "variants": [
+    {
+     "id": "fern_00",
+     "fbx": "Models/fern_00.fbx",
+     "source": "polyhaven:fern_02",
+     "size": [
+      0.552,
+      0.613,
+      0.287
+     ],
+     "tris": [
+      784,
+      313,
+      6
+     ],
+     "materials": [
+      "fern_02"
+     ]
+    },
+    {
+     "id": "fern_01",
+     "fbx": "Models/fern_01.fbx",
+     "source": "polyhaven:fern_02",
+     "size": [
+      0.99,
+      0.894,
+      0.428
+     ],
+     "tris": [
+      2384,
+      953,
+      6
+     ],
+     "materials": [
+      "fern_02"
+     ]
+    },
+    {
+     "id": "fern_02",
+     "fbx": "Models/fern_02.fbx",
+     "source": "polyhaven:fern_02",
+     "size": [
+      0.874,
+      0.765,
+      0.349
+     ],
+     "tris": [
+      2248,
+      899,
+      6
+     ],
+     "materials": [
+      "fern_02"
+     ]
+    },
+    {
+     "id": "fern_03",
+     "fbx": "Models/fern_03.fbx",
+     "source": "polyhaven:fern_02",
+     "size": [
+      0.573,
+      0.593,
+      0.213
+     ],
+     "tris": [
+      816,
+      326,
+      6
+     ],
+     "materials": [
+      "fern_02"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "shrub",
+   "kind": "plant",
+   "variants": [
+    {
+     "id": "shrub_00",
+     "fbx": "Models/shrub_00.fbx",
+     "source": "polyhaven:shrub_02",
+     "size": [
+      1.267,
+      1.048,
+      1.391
+     ],
+     "tris": [
+      4670,
+      2335,
+      6
+     ],
+     "materials": [
+      "shrub_02"
+     ]
+    },
+    {
+     "id": "shrub_01",
+     "fbx": "Models/shrub_01.fbx",
+     "source": "polyhaven:shrub_02",
+     "size": [
+      0.902,
+      1.04,
+      1.224
+     ],
+     "tris": [
+      3206,
+      1603,
+      6
+     ],
+     "materials": [
+      "shrub_02"
+     ]
+    },
+    {
+     "id": "shrub_02",
+     "fbx": "Models/shrub_02.fbx",
+     "source": "polyhaven:shrub_02",
+     "size": [
+      1.436,
+      1.857,
+      1.068
+     ],
+     "tris": [
+      5650,
+      2824,
+      6
+     ],
+     "materials": [
+      "shrub_02"
+     ]
+    },
+    {
+     "id": "shrub_03",
+     "fbx": "Models/shrub_03.fbx",
+     "source": "polyhaven:shrub_02",
+     "size": [
+      0.878,
+      0.892,
+      0.999
+     ],
+     "tris": [
+      3184,
+      1591,
+      6
+     ],
+     "materials": [
+      "shrub_02"
+     ]
+    },
+    {
+     "id": "shrub_04",
+     "fbx": "Models/shrub_04.fbx",
+     "source": "polyhaven:wild_rooibos_bush",
+     "size": [
+      0.705,
+      0.767,
+      0.544
+     ],
+     "tris": [
+      6884,
+      5002,
+      6
+     ],
+     "materials": [
+      "wild_rooibos_bush",
+      "wild_rooibos_bush_leaves",
+      "wild_rooibos_bush_twigs"
+     ]
+    },
+    {
+     "id": "shrub_05",
+     "fbx": "Models/shrub_05.fbx",
+     "source": "polyhaven:wild_rooibos_bush",
+     "size": [
+      0.544,
+      0.486,
+      0.498
+     ],
+     "tris": [
+      3640,
+      2680,
+      6
+     ],
+     "materials": [
+      "wild_rooibos_bush",
+      "wild_rooibos_bush_leaves",
+      "wild_rooibos_bush_twigs"
+     ]
+    },
+    {
+     "id": "shrub_06",
+     "fbx": "Models/shrub_06.fbx",
+     "source": "polyhaven:wild_rooibos_bush",
+     "size": [
+      0.444,
+      0.485,
+      0.458
+     ],
+     "tris": [
+      2282,
+      1784,
+      6
+     ],
+     "materials": [
+      "wild_rooibos_bush",
+      "wild_rooibos_bush_leaves",
+      "wild_rooibos_bush_twigs"
+     ]
+    },
+    {
+     "id": "shrub_07",
+     "fbx": "Models/shrub_07.fbx",
+     "source": "polyhaven:wild_rooibos_bush",
+     "size": [
+      0.327,
+      0.402,
+      0.413
+     ],
+     "tris": [
+      1504,
+      1128,
+      6
+     ],
+     "materials": [
+      "wild_rooibos_bush",
+      "wild_rooibos_bush_leaves",
+      "wild_rooibos_bush_twigs"
+     ]
+    },
+    {
+     "id": "shrub_08",
+     "fbx": "Models/shrub_08.fbx",
+     "source": "polyhaven:wild_rooibos_bush",
+     "size": [
+      0.295,
+      0.177,
+      0.315
+     ],
+     "tris": [
+      714,
+      556,
+      6
+     ],
+     "materials": [
+      "wild_rooibos_bush",
+      "wild_rooibos_bush_leaves",
+      "wild_rooibos_bush_twigs"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "flower_yellow",
+   "kind": "plant",
+   "variants": [
+    {
+     "id": "flower_yellow_00",
+     "fbx": "Models/flower_yellow_00.fbx",
+     "source": "polyhaven:flower_ursinia",
+     "size": [
+      0.422,
+      0.342,
+      0.164
+     ],
+     "tris": [
+      2983,
+      1193,
+      6
+     ],
+     "materials": [
+      "flower_ursinia"
+     ]
+    },
+    {
+     "id": "flower_yellow_01",
+     "fbx": "Models/flower_yellow_01.fbx",
+     "source": "polyhaven:flower_ursinia",
+     "size": [
+      0.275,
+      0.259,
+      0.13
+     ],
+     "tris": [
+      1541,
+      615,
+      6
+     ],
+     "materials": [
+      "flower_ursinia"
+     ]
+    },
+    {
+     "id": "flower_yellow_02",
+     "fbx": "Models/flower_yellow_02.fbx",
+     "source": "polyhaven:flower_ursinia",
+     "size": [
+      0.259,
+      0.196,
+      0.148
+     ],
+     "tris": [
+      1137,
+      454,
+      6
+     ],
+     "materials": [
+      "flower_ursinia"
+     ]
+    },
+    {
+     "id": "flower_yellow_03",
+     "fbx": "Models/flower_yellow_03.fbx",
+     "source": "polyhaven:dandelion_01",
+     "size": [
+      0.221,
+      0.257,
+      0.159
+     ],
+     "tris": [
+      629,
+      260,
+      6
+     ],
+     "materials": [
+      "dandelion_01"
+     ]
+    },
+    {
+     "id": "flower_yellow_04",
+     "fbx": "Models/flower_yellow_04.fbx",
+     "source": "polyhaven:dandelion_01",
+     "size": [
+      0.202,
+      0.218,
+      0.113
+     ],
+     "tris": [
+      619,
+      265,
+      6
+     ],
+     "materials": [
+      "dandelion_01"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "flower_orange",
+   "kind": "plant",
+   "variants": [
+    {
+     "id": "flower_orange_00",
+     "fbx": "Models/flower_orange_00.fbx",
+     "source": "polyhaven:flower_gazania",
+     "size": [
+      1.38,
+      1.711,
+      0.909
+     ],
+     "tris": [
+      808,
+      238,
+      6
+     ],
+     "materials": [
+      "flower_gazania"
+     ]
+    },
+    {
+     "id": "flower_orange_01",
+     "fbx": "Models/flower_orange_01.fbx",
+     "source": "polyhaven:flower_gazania",
+     "size": [
+      0.312,
+      0.307,
+      0.109
+     ],
+     "tris": [
+      1072,
+      327,
+      6
+     ],
+     "materials": [
+      "flower_gazania"
+     ]
+    },
+    {
+     "id": "flower_orange_02",
+     "fbx": "Models/flower_orange_02.fbx",
+     "source": "polyhaven:flower_gazania",
+     "size": [
+      0.269,
+      0.288,
+      0.124
+     ],
+     "tris": [
+      1320,
+      422,
+      6
+     ],
+     "materials": [
+      "flower_gazania"
+     ]
+    },
+    {
+     "id": "flower_orange_03",
+     "fbx": "Models/flower_orange_03.fbx",
+     "source": "polyhaven:flower_gazania",
+     "size": [
+      0.338,
+      0.326,
+      0.165
+     ],
+     "tris": [
+      1568,
+      482,
+      6
+     ],
+     "materials": [
+      "flower_gazania"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "flower_salvia",
+   "kind": "plant",
+   "variants": [
+    {
+     "id": "flower_salvia_00",
+     "fbx": "Models/flower_salvia_00.fbx",
+     "source": "procedural:spike_plant",
+     "size": [
+      0.393,
+      0.49,
+      0.647
+     ],
+     "tris": [
+      3078,
+      1205,
+      6
+     ],
+     "materials": [
+      "flora"
+     ]
+    },
+    {
+     "id": "flower_salvia_01",
+     "fbx": "Models/flower_salvia_01.fbx",
+     "source": "procedural:spike_plant",
+     "size": [
+      0.382,
+      0.412,
+      0.651
+     ],
+     "tris": [
+      3168,
+      921,
+      6
+     ],
+     "materials": [
+      "flora"
+     ]
+    },
+    {
+     "id": "flower_salvia_02",
+     "fbx": "Models/flower_salvia_02.fbx",
+     "source": "procedural:spike_plant",
+     "size": [
+      0.418,
+      0.509,
+      0.654
+     ],
+     "tris": [
+      3222,
+      853,
+      6
+     ],
+     "materials": [
+      "flora"
+     ]
+    },
+    {
+     "id": "flower_salvia_03",
+     "fbx": "Models/flower_salvia_03.fbx",
+     "source": "procedural:spike_plant",
+     "size": [
+      0.459,
+      0.386,
+      0.65
+     ],
+     "tris": [
+      3444,
+      1189,
+      6
+     ],
+     "materials": [
+      "flora"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "flower_lavender",
+   "kind": "plant",
+   "variants": [
+    {
+     "id": "flower_lavender_00",
+     "fbx": "Models/flower_lavender_00.fbx",
+     "source": "procedural:spike_plant",
+     "size": [
+      0.528,
+      0.514,
+      0.496
+     ],
+     "tris": [
+      2808,
+      1261,
+      6
+     ],
+     "materials": [
+      "flora"
+     ]
+    },
+    {
+     "id": "flower_lavender_01",
+     "fbx": "Models/flower_lavender_01.fbx",
+     "source": "procedural:spike_plant",
+     "size": [
+      0.614,
+      0.501,
+      0.492
+     ],
+     "tris": [
+      3162,
+      1261,
+      6
+     ],
+     "materials": [
+      "flora"
+     ]
+    },
+    {
+     "id": "flower_lavender_02",
+     "fbx": "Models/flower_lavender_02.fbx",
+     "source": "procedural:spike_plant",
+     "size": [
+      0.806,
+      0.574,
+      0.495
+     ],
+     "tris": [
+      3342,
+      1197,
+      6
+     ],
+     "materials": [
+      "flora"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "flower_lupin",
+   "kind": "plant",
+   "variants": [
+    {
+     "id": "flower_lupin_00",
+     "fbx": "Models/flower_lupin_00.fbx",
+     "source": "procedural:spike_plant",
+     "size": [
+      0.458,
+      0.45,
+      1.022
+     ],
+     "tris": [
+      1074,
+      373,
+      6
+     ],
+     "materials": [
+      "flora"
+     ]
+    },
+    {
+     "id": "flower_lupin_01",
+     "fbx": "Models/flower_lupin_01.fbx",
+     "source": "procedural:spike_plant",
+     "size": [
+      0.412,
+      0.495,
+      0.969
+     ],
+     "tris": [
+      1062,
+      385,
+      6
+     ],
+     "materials": [
+      "flora"
+     ]
+    },
+    {
+     "id": "flower_lupin_02",
+     "fbx": "Models/flower_lupin_02.fbx",
+     "source": "procedural:spike_plant",
+     "size": [
+      0.436,
+      0.396,
+      0.979
+     ],
+     "tris": [
+      852,
+      313,
+      6
+     ],
+     "materials": [
+      "flora"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "flower_daisy",
+   "kind": "plant",
+   "variants": [
+    {
+     "id": "flower_daisy_00",
+     "fbx": "Models/flower_daisy_00.fbx",
+     "source": "procedural:daisy",
+     "size": [
+      0.455,
+      0.406,
+      0.589
+     ],
+     "tris": [
+      1470,
+      516,
+      6
+     ],
+     "materials": [
+      "flora"
+     ]
+    },
+    {
+     "id": "flower_daisy_01",
+     "fbx": "Models/flower_daisy_01.fbx",
+     "source": "procedural:daisy",
+     "size": [
+      0.418,
+      0.449,
+      0.615
+     ],
+     "tris": [
+      1390,
+      640,
+      6
+     ],
+     "materials": [
+      "flora"
+     ]
+    },
+    {
+     "id": "flower_daisy_02",
+     "fbx": "Models/flower_daisy_02.fbx",
+     "source": "procedural:daisy",
+     "size": [
+      0.405,
+      0.47,
+      0.606
+     ],
+     "tris": [
+      1390,
+      640,
+      6
+     ],
+     "materials": [
+      "flora"
+     ]
+    },
+    {
+     "id": "flower_daisy_03",
+     "fbx": "Models/flower_daisy_03.fbx",
+     "source": "procedural:daisy",
+     "size": [
+      0.415,
+      0.429,
+      0.605
+     ],
+     "tris": [
+      1390,
+      578,
+      6
+     ],
+     "materials": [
+      "flora"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "flower_pink",
+   "kind": "plant",
+   "variants": [
+    {
+     "id": "flower_pink_00",
+     "fbx": "Models/flower_pink_00.fbx",
+     "source": "procedural:phlox",
+     "size": [
+      0.283,
+      0.53,
+      0.534
+     ],
+     "tris": [
+      1862,
+      675,
+      6
+     ],
+     "materials": [
+      "flora"
+     ]
+    },
+    {
+     "id": "flower_pink_01",
+     "fbx": "Models/flower_pink_01.fbx",
+     "source": "procedural:phlox",
+     "size": [
+      0.429,
+      0.413,
+      0.527
+     ],
+     "tris": [
+      1897,
+      650,
+      6
+     ],
+     "materials": [
+      "flora"
+     ]
+    },
+    {
+     "id": "flower_pink_02",
+     "fbx": "Models/flower_pink_02.fbx",
+     "source": "procedural:phlox",
+     "size": [
+      0.488,
+      0.335,
+      0.499
+     ],
+     "tris": [
+      1654,
+      523,
+      6
+     ],
+     "materials": [
+      "flora"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "hosta",
+   "kind": "plant",
+   "variants": [
+    {
+     "id": "hosta_00",
+     "fbx": "Models/hosta_00.fbx",
+     "source": "procedural:hosta",
+     "size": [
+      0.68,
+      0.704,
+      0.091
+     ],
+     "tris": [
+      306,
+      110,
+      6
+     ],
+     "materials": [
+      "flora"
+     ]
+    },
+    {
+     "id": "hosta_01",
+     "fbx": "Models/hosta_01.fbx",
+     "source": "procedural:hosta",
+     "size": [
+      0.605,
+      0.661,
+      0.1
+     ],
+     "tris": [
+      289,
+      99,
+      6
+     ],
+     "materials": [
+      "flora"
+     ]
+    },
+    {
+     "id": "hosta_02",
+     "fbx": "Models/hosta_02.fbx",
+     "source": "procedural:hosta",
+     "size": [
+      0.626,
+      0.608,
+      0.093
+     ],
+     "tris": [
+      340,
+      121,
+      6
+     ],
+     "materials": [
+      "flora"
+     ]
+    }
+   ]
+  }
+ ],
+ "materials": [
+  {
+   "name": "celandine_01",
+   "folder": "Textures/celandine_01",
+   "textures": {
+    "albedo": "celandine_01_albedo.png",
+    "normal": "celandine_01_normal.jpg",
+    "mask": "celandine_01_mask.png"
+   },
+   "cutout": true,
+   "twoSided": true
+  },
+  {
+   "name": "dandelion_01",
+   "folder": "Textures/dandelion_01",
+   "textures": {
+    "albedo": "dandelion_01_albedo.png",
+    "normal": "dandelion_01_normal.jpg",
+    "mask": "dandelion_01_mask.png"
+   },
+   "cutout": true,
+   "twoSided": true
+  },
+  {
+   "name": "fern_02",
+   "folder": "Textures/fern_02",
+   "textures": {
+    "albedo": "fern_02_albedo.png",
+    "normal": "fern_02_normal.jpg",
+    "mask": "fern_02_mask.png"
+   },
+   "cutout": true,
+   "twoSided": true
+  },
+  {
+   "name": "flora",
+   "folder": "Textures/flora",
+   "textures": {
+    "albedo": "flora_albedo.png",
+    "mask": "flora_mask.png"
+   },
+   "cutout": false,
+   "twoSided": true,
+   "point": true
+  },
+  {
+   "name": "flower_gazania",
+   "folder": "Textures/flower_gazania",
+   "textures": {
+    "albedo": "flower_gazania_albedo.png",
+    "normal": "flower_gazania_normal.jpg",
+    "mask": "flower_gazania_mask.png"
+   },
+   "cutout": true,
+   "twoSided": true
+  },
+  {
+   "name": "flower_ursinia",
+   "folder": "Textures/flower_ursinia",
+   "textures": {
+    "albedo": "flower_ursinia_albedo.png",
+    "normal": "flower_ursinia_normal.jpg",
+    "mask": "flower_ursinia_mask.png"
+   },
+   "cutout": true,
+   "twoSided": true
+  },
+  {
+   "name": "grass_bermuda_01",
+   "folder": "Textures/grass_bermuda_01",
+   "textures": {
+    "albedo": "grass_bermuda_01_albedo.png",
+    "normal": "grass_bermuda_01_normal.jpg",
+    "mask": "grass_bermuda_01_mask.png"
+   },
+   "cutout": true,
+   "twoSided": true
+  },
+  {
+   "name": "grass_medium_01",
+   "folder": "Textures/grass_medium_01",
+   "textures": {
+    "albedo": "grass_medium_01_albedo.png",
+    "normal": "grass_medium_01_normal.jpg",
+    "mask": "grass_medium_01_mask.png"
+   },
+   "cutout": true,
+   "twoSided": true
+  },
+  {
+   "name": "grass_medium_02",
+   "folder": "Textures/grass_medium_02",
+   "textures": {
+    "albedo": "grass_medium_02_albedo.png",
+    "normal": "grass_medium_02_normal.jpg",
+    "mask": "grass_medium_02_mask.png"
+   },
+   "cutout": true,
+   "twoSided": true
+  },
+  {
+   "name": "impostor",
+   "folder": "Textures/impostors",
+   "textures": {
+    "albedo": "impostors_albedo.png"
+   },
+   "cutout": true,
+   "twoSided": true,
+   "impostor": true,
+   "smoothness": 0.08
+  },
+  {
+   "name": "moss_01",
+   "folder": "Textures/moss_01",
+   "textures": {
+    "albedo": "moss_01_albedo.png",
+    "normal": "moss_01_normal.jpg",
+    "mask": "moss_01_mask.png"
+   },
+   "cutout": true,
+   "twoSided": true
+  },
+  {
+   "name": "namaqualand_boulder_02_grey",
+   "folder": "Textures/namaqualand_boulder_02_grey",
+   "textures": {
+    "albedo": "namaqualand_boulder_02_grey_albedo.jpg",
+    "normal": "namaqualand_boulder_02_grey_normal.jpg",
+    "mask": "namaqualand_boulder_02_grey_mask.png"
+   },
+   "cutout": false,
+   "twoSided": false
+  },
+  {
+   "name": "namaqualand_boulder_03_grey",
+   "folder": "Textures/namaqualand_boulder_03_grey",
+   "textures": {
+    "albedo": "namaqualand_boulder_03_grey_albedo.jpg",
+    "normal": "namaqualand_boulder_03_grey_normal.jpg",
+    "mask": "namaqualand_boulder_03_grey_mask.png"
+   },
+   "cutout": false,
+   "twoSided": false
+  },
+  {
+   "name": "namaqualand_boulder_04_grey",
+   "folder": "Textures/namaqualand_boulder_04_grey",
+   "textures": {
+    "albedo": "namaqualand_boulder_04_grey_albedo.jpg",
+    "normal": "namaqualand_boulder_04_grey_normal.jpg",
+    "mask": "namaqualand_boulder_04_grey_mask.png"
+   },
+   "cutout": false,
+   "twoSided": false
+  },
+  {
+   "name": "namaqualand_boulder_05_grey",
+   "folder": "Textures/namaqualand_boulder_05_grey",
+   "textures": {
+    "albedo": "namaqualand_boulder_05_grey_albedo.jpg",
+    "normal": "namaqualand_boulder_05_grey_normal.jpg",
+    "mask": "namaqualand_boulder_05_grey_mask.png"
+   },
+   "cutout": false,
+   "twoSided": false
+  },
+  {
+   "name": "namaqualand_boulder_06_grey",
+   "folder": "Textures/namaqualand_boulder_06_grey",
+   "textures": {
+    "albedo": "namaqualand_boulder_06_grey_albedo.jpg",
+    "normal": "namaqualand_boulder_06_grey_normal.jpg",
+    "mask": "namaqualand_boulder_06_grey_mask.png"
+   },
+   "cutout": false,
+   "twoSided": false
+  },
+  {
+   "name": "namaqualand_stones_01",
+   "folder": "Textures/namaqualand_stones_01",
+   "textures": {
+    "albedo": "namaqualand_stones_01_albedo.jpg",
+    "normal": "namaqualand_stones_01_normal.jpg",
+    "mask": "namaqualand_stones_01_mask.png"
+   },
+   "cutout": false,
+   "twoSided": false
+  },
+  {
+   "name": "nettle_plant",
+   "folder": "Textures/nettle_plant",
+   "textures": {
+    "albedo": "nettle_plant_albedo.png",
+    "normal": "nettle_plant_normal.jpg",
+    "mask": "nettle_plant_mask.png"
+   },
+   "cutout": true,
+   "twoSided": true
+  },
+  {
+   "name": "periwinkle_plant",
+   "folder": "Textures/periwinkle_plant",
+   "textures": {
+    "albedo": "periwinkle_plant_albedo.png",
+    "normal": "periwinkle_plant_normal.jpg",
+    "mask": "periwinkle_plant_mask.png"
+   },
+   "cutout": true,
+   "twoSided": true
+  },
+  {
+   "name": "rock_07",
+   "folder": "Textures/rock_07",
+   "textures": {
+    "albedo": "rock_07_albedo.jpg",
+    "normal": "rock_07_normal.jpg",
+    "mask": "rock_07_mask.png"
+   },
+   "cutout": false,
+   "twoSided": false
+  },
+  {
+   "name": "rock_09",
+   "folder": "Textures/rock_09",
+   "textures": {
+    "albedo": "rock_09_albedo.jpg",
+    "normal": "rock_09_normal.jpg",
+    "mask": "rock_09_mask.png"
+   },
+   "cutout": false,
+   "twoSided": false
+  },
+  {
+   "name": "rock_moss_set_01",
+   "folder": "Textures/rock_moss_set_01",
+   "textures": {
+    "albedo": "rock_moss_set_01_albedo.jpg",
+    "normal": "rock_moss_set_01_normal.jpg",
+    "mask": "rock_moss_set_01_mask.png"
+   },
+   "cutout": false,
+   "twoSided": false
+  },
+  {
+   "name": "rock_moss_set_02",
+   "folder": "Textures/rock_moss_set_02",
+   "textures": {
+    "albedo": "rock_moss_set_02_albedo.jpg",
+    "normal": "rock_moss_set_02_normal.jpg",
+    "mask": "rock_moss_set_02_mask.png"
+   },
+   "cutout": false,
+   "twoSided": false
+  },
+  {
+   "name": "shrub_02",
+   "folder": "Textures/shrub_02",
+   "textures": {
+    "albedo": "shrub_02_albedo.png",
+    "normal": "shrub_02_normal.jpg",
+    "mask": "shrub_02_mask.png"
+   },
+   "cutout": true,
+   "twoSided": true
+  },
+  {
+   "name": "shrub_04",
+   "folder": "Textures/shrub_04",
+   "textures": {
+    "albedo": "shrub_04_albedo.png",
+    "normal": "shrub_04_normal.jpg",
+    "mask": "shrub_04_mask.png"
+   },
+   "cutout": true,
+   "twoSided": true
+  },
+  {
+   "name": "stone_01",
+   "folder": "Textures/stone_01",
+   "textures": {
+    "albedo": "stone_01_albedo.jpg",
+    "normal": "stone_01_normal.jpg",
+    "mask": "stone_01_mask.png"
+   },
+   "cutout": false,
+   "twoSided": false
+  },
+  {
+   "name": "weed_plant_02",
+   "folder": "Textures/weed_plant_02",
+   "textures": {
+    "albedo": "weed_plant_02_albedo.png",
+    "normal": "weed_plant_02_normal.jpg",
+    "mask": "weed_plant_02_mask.png"
+   },
+   "cutout": true,
+   "twoSided": true
+  },
+  {
+   "name": "wild_rooibos_bush",
+   "folder": "Textures/wild_rooibos_bush",
+   "textures": {
+    "albedo": "wild_rooibos_bush_albedo.png",
+    "normal": "wild_rooibos_bush_normal.jpg",
+    "mask": "wild_rooibos_bush_mask.png"
+   },
+   "cutout": true,
+   "twoSided": true
+  },
+  {
+   "name": "wild_rooibos_bush_leaves",
+   "folder": "Textures/wild_rooibos_bush_leaves",
+   "textures": {
+    "albedo": "wild_rooibos_bush_leaves_albedo.png",
+    "normal": "wild_rooibos_bush_leaves_normal.jpg",
+    "mask": "wild_rooibos_bush_leaves_mask.png"
+   },
+   "cutout": true,
+   "twoSided": true
+  },
+  {
+   "name": "wild_rooibos_bush_twigs",
+   "folder": "Textures/wild_rooibos_bush_twigs",
+   "textures": {
+    "albedo": "wild_rooibos_bush_twigs_albedo.png",
+    "normal": "wild_rooibos_bush_twigs_normal.jpg",
+    "mask": "wild_rooibos_bush_twigs_mask.png"
+   },
+   "cutout": true,
+   "twoSided": true
+  }
+ ],
+ "impostors": {
+  "cells": {
+   "groundcover_plant_00": [
+    0,
+    1,
+    2
+   ],
+   "groundcover_plant_01": [
+    3,
+    4,
+    5
+   ],
+   "groundcover_plant_02": [
+    6,
+    7,
+    8
+   ],
+   "groundcover_plant_03": [
+    9,
+    10,
+    11
+   ],
+   "groundcover_plant_04": [
+    12,
+    13,
+    14
+   ],
+   "groundcover_plant_05": [
+    15,
+    16,
+    17
+   ],
+   "groundcover_plant_06": [
+    18,
+    19,
+    20
+   ],
+   "groundcover_plant_07": [
+    21,
+    22,
+    23
+   ],
+   "groundcover_plant_08": [
+    24,
+    25,
+    26
+   ],
+   "groundcover_plant_09": [
+    27,
+    28,
+    29
+   ],
+   "groundcover_plant_10": [
+    30,
+    31,
+    32
+   ],
+   "groundcover_plant_11": [
+    33,
+    34,
+    35
+   ],
+   "groundcover_plant_12": [
+    36,
+    37,
+    38
+   ],
+   "groundcover_plant_13": [
+    39,
+    40,
+    41
+   ],
+   "groundcover_plant_14": [
+    42,
+    43,
+    44
+   ],
+   "groundcover_plant_15": [
+    45,
+    46,
+    47
+   ],
+   "groundcover_plant_16": [
+    48,
+    49,
+    50
+   ],
+   "groundcover_plant_17": [
+    51,
+    52,
+    53
+   ],
+   "groundcover_plant_18": [
+    54,
+    55,
+    56
+   ],
+   "groundcover_plant_19": [
+    57,
+    58,
+    59
+   ],
+   "groundcover_plant_20": [
+    60,
+    61,
+    62
+   ],
+   "groundcover_plant_21": [
+    63,
+    64,
+    65
+   ],
+   "grass_tuft_00": [
+    66,
+    67,
+    68
+   ],
+   "grass_tuft_01": [
+    69,
+    70,
+    71
+   ],
+   "grass_tuft_02": [
+    72,
+    73,
+    74
+   ],
+   "grass_tuft_03": [
+    75,
+    76,
+    77
+   ],
+   "grass_tuft_04": [
+    78,
+    79,
+    80
+   ],
+   "fern_00": [
+    81,
+    82,
+    83
+   ],
+   "fern_01": [
+    84,
+    85,
+    86
+   ],
+   "fern_02": [
+    87,
+    88,
+    89
+   ],
+   "fern_03": [
+    90,
+    91,
+    92
+   ],
+   "shrub_00": [
+    93,
+    94,
+    95
+   ],
+   "shrub_01": [
+    96,
+    97,
+    98
+   ],
+   "shrub_02": [
+    99,
+    100,
+    101
+   ],
+   "shrub_03": [
+    102,
+    103,
+    104
+   ],
+   "shrub_04": [
+    105,
+    106,
+    107
+   ],
+   "shrub_05": [
+    108,
+    109,
+    110
+   ],
+   "shrub_06": [
+    111,
+    112,
+    113
+   ],
+   "shrub_07": [
+    114,
+    115,
+    116
+   ],
+   "shrub_08": [
+    117,
+    118,
+    119
+   ],
+   "flower_yellow_00": [
+    120,
+    121,
+    122
+   ],
+   "flower_yellow_01": [
+    123,
+    124,
+    125
+   ],
+   "flower_yellow_02": [
+    126,
+    127,
+    128
+   ],
+   "flower_yellow_03": [
+    129,
+    130,
+    131
+   ],
+   "flower_yellow_04": [
+    132,
+    133,
+    134
+   ],
+   "flower_orange_00": [
+    135,
+    136,
+    137
+   ],
+   "flower_orange_01": [
+    138,
+    139,
+    140
+   ],
+   "flower_orange_02": [
+    141,
+    142,
+    143
+   ],
+   "flower_orange_03": [
+    144,
+    145,
+    146
+   ],
+   "flower_salvia_00": [
+    147,
+    148,
+    149
+   ],
+   "flower_salvia_01": [
+    150,
+    151,
+    152
+   ],
+   "flower_salvia_02": [
+    153,
+    154,
+    155
+   ],
+   "flower_salvia_03": [
+    156,
+    157,
+    158
+   ],
+   "flower_lavender_00": [
+    159,
+    160,
+    161
+   ],
+   "flower_lavender_01": [
+    162,
+    163,
+    164
+   ],
+   "flower_lavender_02": [
+    165,
+    166,
+    167
+   ],
+   "flower_lupin_00": [
+    168,
+    169,
+    170
+   ],
+   "flower_lupin_01": [
+    171,
+    172,
+    173
+   ],
+   "flower_lupin_02": [
+    174,
+    175,
+    176
+   ],
+   "flower_daisy_00": [
+    177,
+    178,
+    179
+   ],
+   "flower_daisy_01": [
+    180,
+    181,
+    182
+   ],
+   "flower_daisy_02": [
+    183,
+    184,
+    185
+   ],
+   "flower_daisy_03": [
+    186,
+    187,
+    188
+   ],
+   "flower_pink_00": [
+    189,
+    190,
+    191
+   ],
+   "flower_pink_01": [
+    192,
+    193,
+    194
+   ],
+   "flower_pink_02": [
+    195,
+    196,
+    197
+   ],
+   "hosta_00": [
+    198,
+    199,
+    200
+   ],
+   "hosta_01": [
+    201,
+    202,
+    203
+   ],
+   "hosta_02": [
+    204,
+    205,
+    206
+   ]
+  },
+  "next": 207,
+  "grid": [
+   16,
+   16
+  ],
+  "cell": 128
+ }
+}

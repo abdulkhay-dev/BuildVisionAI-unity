@@ -1,0 +1,1823 @@
+{
+ "comment": "Source list of external (CC0) materials and models. tools/assets/fetch_polyhaven.py downloads the sources into .cache/polyhaven, tools/assets/process_blender.py prepares them into Assets/House4696/External, Unity menu House 46-96 -> External -> Import Catalog builds materials, prefabs and the runtime catalogue. Ids are the names house documents use.",
+ "materials": [
+  {
+   "id": "oak_planks",
+   "source": "wood_floor",
+   "name": "Дуб, доска",
+   "category": "floor",
+   "res": "1k"
+  },
+  {
+   "id": "parquet_herringbone",
+   "source": "herringbone_parquet",
+   "name": "Паркет ёлочкой",
+   "category": "floor",
+   "res": "1k"
+  },
+  {
+   "id": "parquet_diagonal",
+   "source": "diagonal_parquet",
+   "name": "Паркет диагональный",
+   "category": "floor",
+   "res": "1k"
+  },
+  {
+   "id": "parquet_block",
+   "source": "rectangular_parquet",
+   "name": "Штучный паркет, тёмный",
+   "category": "floor",
+   "res": "1k"
+  },
+  {
+   "id": "parquet_strips_light",
+   "source": "wooden_floor_01",
+   "name": "Паркет светлый, полосы",
+   "category": "floor",
+   "res": "1k"
+  },
+  {
+   "id": "floor_boards_mixed",
+   "source": "wooden_floor_02",
+   "name": "Доска светлая, разнотон",
+   "category": "floor",
+   "res": "1k"
+  },
+  {
+   "id": "floor_boards_dark",
+   "source": "plank_flooring_04",
+   "name": "Доска тёмная лакированная",
+   "category": "floor",
+   "res": "1k"
+  },
+  {
+   "id": "floor_boards_medium",
+   "source": "stair_planks",
+   "name": "Доска, средний тон",
+   "category": "floor",
+   "res": "1k"
+  },
+  {
+   "id": "laminate_light",
+   "source": "laminate_floor_02",
+   "name": "Ламинат светлый дуб",
+   "category": "floor",
+   "res": "1k"
+  },
+  {
+   "id": "laminate_warm",
+   "source": "laminate_floor",
+   "name": "Ламинат тёплый",
+   "category": "floor",
+   "res": "1k"
+  },
+  {
+   "id": "laminate_medium",
+   "source": "laminate_floor_03",
+   "name": "Ламинат средний тон",
+   "category": "floor",
+   "res": "1k"
+  },
+  {
+   "id": "concrete_polished",
+   "source": "concrete_floor_worn_001",
+   "name": "Бетон шлифованный",
+   "category": "floor",
+   "res": "1k"
+  },
+  {
+   "id": "concrete_dark_smooth",
+   "source": "painted_concrete_02",
+   "name": "Микроцемент тёмный",
+   "category": "floor",
+   "res": "1k"
+  },
+  {
+   "id": "marble_beige",
+   "source": "marble_01",
+   "name": "Мрамор бежевый, плиты",
+   "category": "tile",
+   "res": "1k"
+  },
+  {
+   "id": "marble_checker",
+   "source": "floor_tiles_06",
+   "name": "Мрамор шахматкой",
+   "category": "tile",
+   "res": "1k"
+  },
+  {
+   "id": "marble_black_gold",
+   "source": "slab_tiles",
+   "name": "Мрамор чёрный с золотыми прожилками",
+   "category": "tile",
+   "res": "1k"
+  },
+  {
+   "id": "porcelain_dark",
+   "source": "granite_tile",
+   "name": "Керамогранит тёмный крупный",
+   "category": "tile",
+   "res": "1k"
+  },
+  {
+   "id": "porcelain_grey",
+   "source": "granite_tile_04",
+   "name": "Керамогранит серый",
+   "category": "tile",
+   "res": "1k"
+  },
+  {
+   "id": "granite_dark",
+   "source": "granite_tile_03",
+   "name": "Гранит тёмный",
+   "category": "tile",
+   "res": "1k"
+  },
+  {
+   "id": "limestone_tiles",
+   "source": "mixed_stone_tiles",
+   "name": "Известняк, плиты",
+   "category": "tile",
+   "res": "1k"
+  },
+  {
+   "id": "stone_tiles_beige",
+   "source": "floor_tiles_02",
+   "name": "Камень бежевый, плитка",
+   "category": "tile",
+   "res": "1k"
+  },
+  {
+   "id": "travertine_tiles",
+   "source": "floor_tiles_04",
+   "name": "Травертин, плитка",
+   "category": "tile",
+   "res": "1k"
+  },
+  {
+   "id": "stone_polished_dark",
+   "source": "grey_cartago_02",
+   "name": "Камень полированный тёмный",
+   "category": "tile",
+   "res": "1k"
+  },
+  {
+   "id": "tiles_diagonal_cream",
+   "source": "interior_tiles",
+   "name": "Плитка кремовая по диагонали",
+   "category": "tile",
+   "res": "1k"
+  },
+  {
+   "id": "tiles_glossy_brown",
+   "source": "tiled_floor_001",
+   "name": "Плитка глянцевая коричневая",
+   "category": "tile",
+   "res": "1k"
+  },
+  {
+   "id": "tiles_bath_antislip",
+   "source": "anti_skid_tiles",
+   "name": "Плитка противоскользящая",
+   "category": "tile",
+   "res": "1k"
+  },
+  {
+   "id": "tiles_subway_white",
+   "source": "long_white_tiles",
+   "name": "Плитка «кабанчик» белая",
+   "category": "tile",
+   "res": "1k"
+  },
+  {
+   "id": "tiles_mosaic_wall",
+   "source": "rounded_square_tiled_wall",
+   "name": "Мозаика настенная",
+   "category": "tile",
+   "res": "1k"
+  },
+  {
+   "id": "mosaic_marble",
+   "source": "marble_mosaic_tiles",
+   "name": "Мозаика мраморная",
+   "category": "tile",
+   "res": "1k"
+  },
+  {
+   "id": "mosaic_dark",
+   "source": "square_floor",
+   "name": "Мозаика тёмная",
+   "category": "tile",
+   "res": "1k"
+  },
+  {
+   "id": "terrazzo",
+   "source": "terrazzo_tiles",
+   "name": "Терраццо",
+   "category": "tile",
+   "res": "1k"
+  },
+  {
+   "id": "terracotta_tiles",
+   "source": "terracotta_floor_tiles",
+   "name": "Терракотовая плитка",
+   "category": "tile",
+   "res": "1k"
+  },
+  {
+   "id": "cotto_tiles",
+   "source": "patio_tiles",
+   "name": "Плитка котто светлая",
+   "category": "tile",
+   "res": "1k"
+  },
+  {
+   "id": "plaster_white",
+   "source": "white_stucco",
+   "name": "Штукатурка белая",
+   "category": "wall",
+   "res": "1k"
+  },
+  {
+   "id": "plaster_beige",
+   "source": "beige_wall_001",
+   "name": "Штукатурка бежевая",
+   "category": "wall",
+   "res": "1k"
+  },
+  {
+   "id": "plaster_sand",
+   "source": "beige_wall_002",
+   "name": "Штукатурка песочная",
+   "category": "wall",
+   "res": "1k"
+  },
+  {
+   "id": "plaster_textured",
+   "source": "plastered_wall",
+   "name": "Штукатурка фактурная",
+   "category": "wall",
+   "res": "1k",
+   "neutral": true
+  },
+  {
+   "id": "plaster_smooth",
+   "source": "plastered_wall_04",
+   "name": "Штукатурка гладкая",
+   "category": "wall",
+   "res": "1k",
+   "neutral": true
+  },
+  {
+   "id": "plaster_painted",
+   "source": "painted_plaster_wall",
+   "name": "Окрашенная стена",
+   "category": "wall",
+   "res": "1k",
+   "neutral": true,
+   "contrast": 0.45
+  },
+  {
+   "id": "paint_smooth",
+   "source": "blue_plaster_wall",
+   "name": "Краска по гладкой стене",
+   "category": "wall",
+   "res": "1k",
+   "neutral": true,
+   "contrast": 0.45
+  },
+  {
+   "id": "microcement",
+   "source": "grey_plaster",
+   "name": "Микроцемент",
+   "category": "wall",
+   "res": "1k",
+   "neutral": true,
+   "contrast": 0.45
+  },
+  {
+   "id": "plaster_clay",
+   "source": "clay_plaster",
+   "name": "Глиняная штукатурка",
+   "category": "wall",
+   "res": "1k"
+  },
+  {
+   "id": "tadelakt",
+   "source": "patterned_clay_plaster",
+   "name": "Декоративная штукатурка (таделакт)",
+   "category": "wall",
+   "res": "1k"
+  },
+  {
+   "id": "concrete_board_formed",
+   "source": "wood_textured_concrete",
+   "name": "Бетон с текстурой опалубки",
+   "category": "wall",
+   "res": "1k"
+  },
+  {
+   "id": "concrete_smooth",
+   "source": "concrete_wall_009",
+   "name": "Бетон гладкий светлый",
+   "category": "wall",
+   "res": "1k"
+  },
+  {
+   "id": "concrete_slab_joints",
+   "source": "concrete_slab_wall",
+   "name": "Бетон архитектурный со швами",
+   "category": "wall",
+   "res": "1k"
+  },
+  {
+   "id": "brick_painted",
+   "source": "painted_brick",
+   "name": "Кирпич крашеный",
+   "category": "wall",
+   "res": "1k",
+   "neutral": true
+  },
+  {
+   "id": "stone_cladding_light",
+   "source": "stone_tile_wall",
+   "name": "Каменная облицовка светлая",
+   "category": "wall",
+   "res": "1k"
+  },
+  {
+   "id": "wood_panels_dark",
+   "source": "dark_paneled_wood",
+   "name": "Деревянные стеновые панели",
+   "category": "wall",
+   "res": "1k"
+  },
+  {
+   "id": "bamboo_slats",
+   "source": "bamboo_wall",
+   "name": "Бамбуковые рейки",
+   "category": "wall",
+   "res": "1k"
+  },
+  {
+   "id": "velvet",
+   "source": "velour_velvet",
+   "name": "Бархат",
+   "category": "fabric",
+   "res": "1k",
+   "neutral": true
+  },
+  {
+   "id": "linen_rough",
+   "source": "rough_linen",
+   "name": "Лён",
+   "category": "fabric",
+   "res": "1k",
+   "neutral": true
+  },
+  {
+   "id": "wool_herringbone",
+   "source": "poly_wool_herringbone",
+   "name": "Шерсть ёлочкой",
+   "category": "fabric",
+   "res": "1k",
+   "neutral": true
+  },
+  {
+   "id": "boucle_teddy",
+   "source": "curly_teddy_natural",
+   "name": "Букле",
+   "category": "fabric",
+   "res": "1k",
+   "neutral": true
+  },
+  {
+   "id": "suede",
+   "source": "scuba_suede",
+   "name": "Замша",
+   "category": "fabric",
+   "res": "1k",
+   "neutral": true
+  },
+  {
+   "id": "satin",
+   "source": "crepe_satin",
+   "name": "Сатин, шёлк",
+   "category": "fabric",
+   "res": "1k",
+   "neutral": true
+  },
+  {
+   "id": "corduroy",
+   "source": "ribbed_corduroy",
+   "name": "Вельвет",
+   "category": "fabric",
+   "res": "1k",
+   "neutral": true
+  },
+  {
+   "id": "fleece_knit",
+   "source": "knitted_fleece",
+   "name": "Трикотаж, флис",
+   "category": "fabric",
+   "res": "1k",
+   "neutral": true
+  },
+  {
+   "id": "wool_felt",
+   "source": "caban",
+   "name": "Сукно (плотная шерсть)",
+   "category": "fabric",
+   "res": "1k",
+   "neutral": true
+  },
+  {
+   "id": "cotton_jersey",
+   "source": "cotton_jersey",
+   "name": "Хлопок трикотажный",
+   "category": "fabric",
+   "res": "1k",
+   "neutral": true
+  },
+  {
+   "id": "cotton_poplin",
+   "source": "stretch_poplin",
+   "name": "Хлопок гладкий",
+   "category": "fabric",
+   "res": "1k",
+   "neutral": true
+  },
+  {
+   "id": "cotton_waffle",
+   "source": "waffle_pique_cotton",
+   "name": "Вафельный хлопок",
+   "category": "fabric",
+   "res": "1k",
+   "neutral": true
+  },
+  {
+   "id": "terry",
+   "source": "terry_cloth",
+   "name": "Махра",
+   "category": "fabric",
+   "res": "1k",
+   "neutral": true
+  },
+  {
+   "id": "burlap",
+   "source": "hessian_380",
+   "name": "Мешковина, джут",
+   "category": "fabric",
+   "res": "1k"
+  },
+  {
+   "id": "jacquard_floral",
+   "source": "floral_jacquard",
+   "name": "Жаккард цветочный",
+   "category": "fabric",
+   "res": "1k",
+   "neutral": true
+  },
+  {
+   "id": "jacquard_pattern",
+   "source": "quatrefoil_jacquard_fabric",
+   "name": "Жаккард узорный",
+   "category": "fabric",
+   "res": "1k",
+   "neutral": true
+  },
+  {
+   "id": "faux_fur",
+   "source": "faux_fur_geometric",
+   "name": "Искусственный мех",
+   "category": "fabric",
+   "res": "1k"
+  },
+  {
+   "id": "tweed_check",
+   "source": "wool_boucle",
+   "name": "Твид в клетку",
+   "category": "fabric",
+   "res": "1k"
+  },
+  {
+   "id": "linen_check",
+   "source": "fabric_pattern_05",
+   "name": "Лён в клетку",
+   "category": "fabric",
+   "res": "1k"
+  },
+  {
+   "id": "denim",
+   "source": "denim_fabric_04",
+   "name": "Деним",
+   "category": "fabric",
+   "res": "1k"
+  },
+  {
+   "id": "leather_tan",
+   "source": "fabric_leather_02",
+   "name": "Кожа коньячная",
+   "category": "leather",
+   "res": "1k"
+  },
+  {
+   "id": "leather_brown",
+   "source": "brown_leather",
+   "name": "Кожа коричневая",
+   "category": "leather",
+   "res": "1k"
+  },
+  {
+   "id": "leather_brown_soft",
+   "source": "fabric_leather_01",
+   "name": "Кожа коричневая мягкая",
+   "category": "leather",
+   "res": "1k"
+  },
+  {
+   "id": "leather_burgundy",
+   "source": "leather_red_02",
+   "name": "Кожа бордовая",
+   "category": "leather",
+   "res": "1k"
+  },
+  {
+   "id": "leather_oxblood",
+   "source": "leather_red_03",
+   "name": "Кожа тёмно-красная",
+   "category": "leather",
+   "res": "1k"
+  },
+  {
+   "id": "leather_light",
+   "source": "leather_white",
+   "name": "Кожа светлая",
+   "category": "leather",
+   "res": "1k",
+   "neutral": true
+  },
+  {
+   "id": "carpet_loop",
+   "source": "dirty_carpet",
+   "name": "Ковролин петлевой",
+   "category": "carpet",
+   "res": "1k",
+   "neutral": true
+  },
+  {
+   "id": "sisal",
+   "source": "tatami_mat",
+   "name": "Сизаль, татами",
+   "category": "carpet",
+   "res": "1k"
+  },
+  {
+   "id": "oak_veneer",
+   "source": "oak_veneer_01",
+   "name": "Дуб, шпон",
+   "category": "wood",
+   "res": "1k"
+  },
+  {
+   "id": "oak_light_veneer",
+   "source": "oak_veneer_03",
+   "name": "Дуб светлый, шпон",
+   "category": "wood",
+   "res": "1k"
+  },
+  {
+   "id": "white_oak_veneer",
+   "source": "white_oak_veneer",
+   "name": "Белый дуб",
+   "category": "wood",
+   "res": "1k"
+  },
+  {
+   "id": "grey_oak_veneer",
+   "source": "grey_oak_veneer_01",
+   "name": "Дуб серый",
+   "category": "wood",
+   "res": "1k"
+  },
+  {
+   "id": "black_oak_veneer",
+   "source": "black_oak_veneer",
+   "name": "Дуб мореный чёрный",
+   "category": "wood",
+   "res": "1k"
+  },
+  {
+   "id": "walnut_veneer",
+   "source": "walnut_veneer",
+   "name": "Орех",
+   "category": "wood",
+   "res": "1k"
+  },
+  {
+   "id": "walnut_american",
+   "source": "american_walnut_veneer",
+   "name": "Американский орех",
+   "category": "wood",
+   "res": "1k"
+  },
+  {
+   "id": "walnut_european",
+   "source": "european_walnut_veneer_04",
+   "name": "Европейский орех",
+   "category": "wood",
+   "res": "1k"
+  },
+  {
+   "id": "walnut_smoked",
+   "source": "smoked_walnut_veneer",
+   "name": "Орех копчёный",
+   "category": "wood",
+   "res": "1k"
+  },
+  {
+   "id": "walnut_polished",
+   "source": "wood_table_001",
+   "name": "Орех полированный",
+   "category": "wood",
+   "res": "1k"
+  },
+  {
+   "id": "ash_veneer",
+   "source": "ash_veneer",
+   "name": "Ясень",
+   "category": "wood",
+   "res": "1k"
+  },
+  {
+   "id": "maple_white",
+   "source": "white_maple_veneer",
+   "name": "Клён белый",
+   "category": "wood",
+   "res": "1k"
+  },
+  {
+   "id": "cherry_veneer",
+   "source": "cherry_veneer",
+   "name": "Вишня",
+   "category": "wood",
+   "res": "1k"
+  },
+  {
+   "id": "teak_veneer",
+   "source": "teak_veneer",
+   "name": "Тик",
+   "category": "wood",
+   "res": "1k"
+  },
+  {
+   "id": "rosewood_polished",
+   "source": "rosewood_veneer1",
+   "name": "Палисандр лакированный",
+   "category": "wood",
+   "res": "1k"
+  },
+  {
+   "id": "ebony_striped",
+   "source": "smoke_speckled_veneer",
+   "name": "Эбен полосатый",
+   "category": "wood",
+   "res": "1k"
+  },
+  {
+   "id": "wood_fronts_light",
+   "source": "kitchen_wood",
+   "name": "Светлое дерево для фасадов",
+   "category": "wood",
+   "res": "1k"
+  },
+  {
+   "id": "plywood",
+   "source": "plywood",
+   "name": "Фанера",
+   "category": "wood",
+   "res": "1k"
+  },
+  {
+   "id": "osb",
+   "source": "oriented_strand_board",
+   "name": "OSB-плита",
+   "category": "wood",
+   "res": "1k"
+  },
+  {
+   "id": "brick_red",
+   "source": "red_brick",
+   "name": "Кирпич красный",
+   "category": "facade",
+   "res": "1k"
+  },
+  {
+   "id": "brick_red_dark",
+   "source": "red_brick_03",
+   "name": "Кирпич тёмно-красный",
+   "category": "facade",
+   "res": "1k"
+  },
+  {
+   "id": "brick_red_multi",
+   "source": "brick_wall_001",
+   "name": "Кирпич красный разнотон",
+   "category": "facade",
+   "res": "1k"
+  },
+  {
+   "id": "brick_beige",
+   "source": "brick_wall_003",
+   "name": "Кирпич бежевый",
+   "category": "facade",
+   "res": "1k"
+  },
+  {
+   "id": "brick_light_brown",
+   "source": "brick_wall_09",
+   "name": "Кирпич светло-коричневый",
+   "category": "facade",
+   "res": "1k"
+  },
+  {
+   "id": "brick_dark",
+   "source": "brick_wall_10",
+   "name": "Кирпич тёмный",
+   "category": "facade",
+   "res": "1k"
+  },
+  {
+   "id": "brick_grey",
+   "source": "brick_wall_08",
+   "name": "Кирпич серый",
+   "category": "facade",
+   "res": "1k"
+  },
+  {
+   "id": "brick_whitewashed",
+   "source": "whitewashed_brick",
+   "name": "Кирпич белёный",
+   "category": "facade",
+   "res": "1k"
+  },
+  {
+   "id": "brick_thin_cladding",
+   "source": "exterior_wall_cladding_02",
+   "name": "Клинкерная плитка под кирпич",
+   "category": "facade",
+   "res": "1k"
+  },
+  {
+   "id": "stone_cladding_grey",
+   "source": "exterior_wall_cladding",
+   "name": "Облицовка камнем серая",
+   "category": "facade",
+   "res": "1k"
+  },
+  {
+   "id": "stone_blocks_grey",
+   "source": "japanese_stone_wall",
+   "name": "Каменные блоки серые",
+   "category": "facade",
+   "res": "1k"
+  },
+  {
+   "id": "sandstone_blocks",
+   "source": "sandstone_blocks_08",
+   "name": "Песчаник, блоки",
+   "category": "facade",
+   "res": "1k"
+  },
+  {
+   "id": "sandstone_light",
+   "source": "white_sandstone_bricks",
+   "name": "Песчаник светлый, кладка",
+   "category": "facade",
+   "res": "1k"
+  },
+  {
+   "id": "stone_stacked",
+   "source": "stacked_stone_wall",
+   "name": "Камень плитняк (сланец)",
+   "category": "facade",
+   "res": "1k"
+  },
+  {
+   "id": "stone_drystone",
+   "source": "stone_wall",
+   "name": "Бутовый камень",
+   "category": "facade",
+   "res": "1k"
+  },
+  {
+   "id": "stone_rustic",
+   "source": "rustic_stone_wall",
+   "name": "Камень рваный",
+   "category": "facade",
+   "res": "1k"
+  },
+  {
+   "id": "facade_tiles",
+   "source": "rectangular_facade_tiles",
+   "name": "Фасадная плитка",
+   "category": "facade",
+   "res": "1k"
+  },
+  {
+   "id": "facade_tiles_warm",
+   "source": "rectangular_facade_tiles_02",
+   "name": "Фасадная плитка тёплая",
+   "category": "facade",
+   "res": "1k"
+  },
+  {
+   "id": "facade_panels_dark",
+   "source": "concrete_tile_facade",
+   "name": "Фасадные панели тёмные",
+   "category": "facade",
+   "res": "1k"
+  },
+  {
+   "id": "facade_panels_grey",
+   "source": "concrete_wall_004",
+   "name": "Фиброцементные панели",
+   "category": "facade",
+   "res": "1k"
+  },
+  {
+   "id": "siding_grey",
+   "source": "exterior_wall_cladding_03",
+   "name": "Сайдинг серый",
+   "category": "facade",
+   "res": "1k"
+  },
+  {
+   "id": "concrete_exposed",
+   "source": "concrete_wall_008",
+   "name": "Бетон фасадный",
+   "category": "facade",
+   "res": "1k"
+  },
+  {
+   "id": "render_dark",
+   "source": "plastered_wall_05",
+   "name": "Штукатурка тёмная фасадная",
+   "category": "facade",
+   "res": "1k"
+  },
+  {
+   "id": "wood_charred",
+   "source": "black_painted_planks",
+   "name": "Доска обожжённая (шу суги бан)",
+   "category": "facade",
+   "res": "1k"
+  },
+  {
+   "id": "cladding_white_vertical",
+   "source": "white_planks_clean",
+   "name": "Вагонка белая вертикальная",
+   "category": "facade",
+   "res": "1k",
+   "neutral": true
+  },
+  {
+   "id": "cladding_cedar",
+   "source": "japanese_cedar_planks",
+   "name": "Кедровая вертикальная доска",
+   "category": "facade",
+   "res": "1k"
+  },
+  {
+   "id": "cladding_grey_boards",
+   "source": "brown_planks_05",
+   "name": "Доска горизонтальная серая",
+   "category": "facade",
+   "res": "1k"
+  },
+  {
+   "id": "cladding_dark_boards",
+   "source": "wooden_planks",
+   "name": "Доска горизонтальная тёмная",
+   "category": "facade",
+   "res": "1k"
+  },
+  {
+   "id": "cladding_wpc",
+   "source": "synthetic_wood",
+   "name": "Панели ДПК",
+   "category": "facade",
+   "res": "1k"
+  },
+  {
+   "id": "metal_ribbed",
+   "source": "painted_metal_shutter",
+   "name": "Металл профилированный (фасад)",
+   "category": "facade",
+   "res": "1k",
+   "neutral": true
+  },
+  {
+   "id": "roof_clay_tiles",
+   "source": "clay_roof_tiles_02",
+   "name": "Черепица керамическая",
+   "category": "roof",
+   "res": "1k"
+  },
+  {
+   "id": "roof_clay_flat",
+   "source": "clay_roof_tiles_03",
+   "name": "Черепица плоская",
+   "category": "roof",
+   "res": "1k"
+  },
+  {
+   "id": "roof_grey_tiles",
+   "source": "grey_roof_tiles",
+   "name": "Черепица серая",
+   "category": "roof",
+   "res": "1k"
+  },
+  {
+   "id": "roof_tiles_flat",
+   "source": "roof_tiles",
+   "name": "Черепица бобровка",
+   "category": "roof",
+   "res": "1k"
+  },
+  {
+   "id": "roof_slate",
+   "source": "grey_roof_tiles_02",
+   "name": "Сланцевая кровля",
+   "category": "roof",
+   "res": "1k"
+  },
+  {
+   "id": "roof_slate_small",
+   "source": "roof_slates_03",
+   "name": "Сланец мелкий",
+   "category": "roof",
+   "res": "1k"
+  },
+  {
+   "id": "roof_shingles",
+   "source": "grey_roof_01",
+   "name": "Мягкая кровля (гибкая черепица)",
+   "category": "roof",
+   "res": "1k"
+  },
+  {
+   "id": "roof_metal_profile",
+   "source": "box_profile_metal_sheet",
+   "name": "Профнастил",
+   "category": "roof",
+   "res": "1k",
+   "neutral": true
+  },
+  {
+   "id": "roof_corrugated",
+   "source": "corrugated_iron_02",
+   "name": "Кровля волнистая серая",
+   "category": "roof",
+   "res": "1k"
+  },
+  {
+   "id": "roof_corrugated_light",
+   "source": "corrugated_iron",
+   "name": "Кровля волнистая светлая",
+   "category": "roof",
+   "res": "1k"
+  },
+  {
+   "id": "roof_thatch",
+   "source": "thatch_roof_angled",
+   "name": "Камышовая кровля",
+   "category": "roof",
+   "res": "1k"
+  },
+  {
+   "id": "metal_painted",
+   "source": "blue_metal_plate",
+   "name": "Металл окрашенный",
+   "category": "metal",
+   "res": "1k",
+   "neutral": true,
+   "contrast": 0.6
+  },
+  {
+   "id": "paving_herringbone_grey",
+   "source": "herringbone_pavement",
+   "name": "Брусчатка ёлочкой серая",
+   "category": "paving",
+   "res": "1k"
+  },
+  {
+   "id": "paving_herringbone_light",
+   "source": "herringbone_brick_02",
+   "name": "Брусчатка ёлочкой светлая",
+   "category": "paving",
+   "res": "1k"
+  },
+  {
+   "id": "paving_herringbone_large",
+   "source": "herringbone_concrete_tile",
+   "name": "Плиты ёлочкой крупные",
+   "category": "paving",
+   "res": "1k"
+  },
+  {
+   "id": "paving_herringbone_volcanic",
+   "source": "volcanic_herringbone_01",
+   "name": "Камень ёлочкой тёмный",
+   "category": "paving",
+   "res": "1k"
+  },
+  {
+   "id": "pavers_dark",
+   "source": "brick_pavement_02",
+   "name": "Брусчатка тёмная",
+   "category": "paving",
+   "res": "1k"
+  },
+  {
+   "id": "pavers_interlocking",
+   "source": "concrete_pavers_02",
+   "name": "Брусчатка фигурная",
+   "category": "paving",
+   "res": "1k"
+  },
+  {
+   "id": "pavers_small",
+   "source": "square_concrete_pavers",
+   "name": "Брусчатка мелкая",
+   "category": "paving",
+   "res": "1k"
+  },
+  {
+   "id": "paving_slabs",
+   "source": "concrete_pavement",
+   "name": "Тротуарные плиты",
+   "category": "paving",
+   "res": "1k"
+  },
+  {
+   "id": "paving_large_grey",
+   "source": "large_floor_tiles_02",
+   "name": "Крупные плиты серые",
+   "category": "paving",
+   "res": "1k"
+  },
+  {
+   "id": "paving_outdoor_tiles",
+   "source": "large_grey_tiles",
+   "name": "Уличная плитка серая",
+   "category": "paving",
+   "res": "1k"
+  },
+  {
+   "id": "paving_square_pattern",
+   "source": "large_square_pattern_01",
+   "name": "Плиты квадратные",
+   "category": "paving",
+   "res": "1k"
+  },
+  {
+   "id": "paving_rectangular",
+   "source": "rectangular_paving",
+   "name": "Плиты прямоугольные",
+   "category": "paving",
+   "res": "1k"
+  },
+  {
+   "id": "paving_hexagon",
+   "source": "hexagonal_concrete_paving",
+   "name": "Шестигранная плитка",
+   "category": "paving",
+   "res": "1k"
+  },
+  {
+   "id": "paving_granite_light",
+   "source": "rock_tile_floor",
+   "name": "Гранитная плитка светлая",
+   "category": "paving",
+   "res": "1k"
+  },
+  {
+   "id": "paving_crazy",
+   "source": "pavement_02",
+   "name": "Мощение «рваный камень»",
+   "category": "paving",
+   "res": "1k"
+  },
+  {
+   "id": "flagstone_grey",
+   "source": "grey_stone_path",
+   "name": "Плитняк серый",
+   "category": "paving",
+   "res": "1k"
+  },
+  {
+   "id": "flagstone_path",
+   "source": "stone_pathway",
+   "name": "Плитняк дорожка",
+   "category": "paving",
+   "res": "1k"
+  },
+  {
+   "id": "setts_granite",
+   "source": "cobblestone_color",
+   "name": "Гранитная брусчатка",
+   "category": "paving",
+   "res": "1k"
+  },
+  {
+   "id": "setts_square",
+   "source": "square_cobblestone",
+   "name": "Брусчатка квадратная",
+   "category": "paving",
+   "res": "1k"
+  },
+  {
+   "id": "cobbles",
+   "source": "cobblestone_floor_08",
+   "name": "Булыжник",
+   "category": "paving",
+   "res": "1k"
+  },
+  {
+   "id": "asphalt_clean",
+   "source": "clean_asphalt",
+   "name": "Асфальт",
+   "category": "paving",
+   "res": "1k"
+  },
+  {
+   "id": "deck_boards",
+   "source": "wood_floor_deck",
+   "name": "Террасная доска",
+   "category": "deck",
+   "res": "1k"
+  },
+  {
+   "id": "deck_boards_grey",
+   "source": "wood_planks_grey",
+   "name": "Террасная доска серая",
+   "category": "deck",
+   "res": "1k"
+  },
+  {
+   "id": "lawn_texture",
+   "source": "leafy_grass",
+   "name": "Газон",
+   "category": "ground",
+   "res": "1k"
+  },
+  {
+   "id": "grass_dry",
+   "source": "grass_ground",
+   "name": "Трава сухая",
+   "category": "ground",
+   "res": "1k"
+  },
+  {
+   "id": "soil_garden",
+   "source": "farm_soil",
+   "name": "Грунт садовый",
+   "category": "ground",
+   "res": "1k"
+  },
+  {
+   "id": "soil_dirt",
+   "source": "dirt",
+   "name": "Земля",
+   "category": "ground",
+   "res": "1k"
+  },
+  {
+   "id": "mulch_bark",
+   "source": "yellow_flower_mulch",
+   "name": "Мульча из коры",
+   "category": "ground",
+   "res": "1k"
+  },
+  {
+   "id": "wood_chips",
+   "source": "wood_chips",
+   "name": "Щепа",
+   "category": "ground",
+   "res": "1k"
+  },
+  {
+   "id": "gravel_light",
+   "source": "gravel_floor_02",
+   "name": "Гравий светлый",
+   "category": "ground",
+   "res": "1k"
+  },
+  {
+   "id": "gravel_grey",
+   "source": "gravel_floor_03",
+   "name": "Гравий серый",
+   "category": "ground",
+   "res": "1k"
+  },
+  {
+   "id": "gravel_black",
+   "source": "gravel_stones",
+   "name": "Гравий чёрный",
+   "category": "ground",
+   "res": "1k"
+  },
+  {
+   "id": "gravel_bicolour",
+   "source": "bicolour_gravel",
+   "name": "Гравий двухцветный",
+   "category": "ground",
+   "res": "1k"
+  },
+  {
+   "id": "pebbles_white",
+   "source": "clean_pebbles",
+   "name": "Галька мелкая светлая",
+   "category": "ground",
+   "res": "1k"
+  },
+  {
+   "id": "pebbles_river",
+   "source": "dry_river_pebbles",
+   "name": "Галька речная",
+   "category": "ground",
+   "res": "1k"
+  },
+  {
+   "id": "pebbles_large_dark",
+   "source": "large_pebbles",
+   "name": "Галька крупная тёмная",
+   "category": "ground",
+   "res": "1k"
+  },
+  {
+   "id": "sand",
+   "source": "dense_sand",
+   "name": "Песок",
+   "category": "ground",
+   "res": "1k"
+  }
+ ],
+ "models": [
+  {
+   "id": "armchair_modern",
+   "source": "modern_arm_chair_01",
+   "name": "Кресло: кожа, деревянный каркас",
+   "category": "seating",
+   "res": "1k",
+   "slots": {
+    "pillow": "upholstery",
+    "legs": "frame"
+   }
+  },
+  {
+   "id": "coffee_table_modern",
+   "source": "modern_coffee_table_01",
+   "name": "Журнальный стол: бетон и дерево",
+   "category": "tables",
+   "res": "1k"
+  },
+  {
+   "id": "pendant_globe_modern",
+   "source": "modern_ceiling_lamp_01",
+   "name": "Подвесной светильник-шар",
+   "category": "lighting",
+   "res": "1k",
+   "hanging": true,
+   "slots": {
+    "main": "body",
+    "modern_ceiling_globe": "globe"
+   }
+  },
+  {
+   "id": "plant_large",
+   "source": "potted_plant_02",
+   "name": "Растение в кашпо",
+   "category": "plants",
+   "res": "1k",
+   "maxTris": 0
+  },
+  {
+   "id": "sofa_modern",
+   "blender": "sofa_modern",
+   "name": "Диван 3-местный",
+   "category": "seating"
+  },
+  {
+   "id": "bed_modern",
+   "blender": "bed_modern",
+   "name": "Кровать с мягким изголовьем",
+   "category": "bedroom",
+   "pivot": "back"
+  },
+  {
+   "id": "lounge_chair_leather",
+   "source": "mid_century_lounge_chair",
+   "name": "Лаунж-кресло кожаное поворотное",
+   "category": "seating",
+   "res": "1k"
+  },
+  {
+   "id": "dining_chair_tufted",
+   "source": "dining_chair_02",
+   "name": "Стул обеденный с каретной стяжкой",
+   "category": "seating",
+   "res": "1k"
+  },
+  {
+   "id": "chair_wood_white",
+   "source": "painted_wooden_chair_01",
+   "name": "Стул деревянный белый",
+   "category": "seating",
+   "res": "1k"
+  },
+  {
+   "id": "armchair_classic",
+   "source": "ArmChair_01",
+   "name": "Кресло классическое",
+   "category": "seating",
+   "res": "1k",
+   "slots": {
+    "Armchair_01": "main"
+   }
+  },
+  {
+   "id": "sofa_chesterfield",
+   "source": "sofa_02",
+   "name": "Диван честерфилд кожаный",
+   "category": "seating",
+   "res": "1k"
+  },
+  {
+   "id": "sofa_classic",
+   "source": "Sofa_01",
+   "name": "Диван классический",
+   "category": "seating",
+   "res": "1k"
+  },
+  {
+   "id": "ottoman_leather",
+   "source": "Ottoman_01",
+   "name": "Пуф кожаный",
+   "category": "seating",
+   "res": "1k"
+  },
+  {
+   "id": "rocking_chair",
+   "source": "Rockingchair_01",
+   "name": "Кресло-качалка",
+   "category": "seating",
+   "res": "1k"
+  },
+  {
+   "id": "bar_stool_wood",
+   "source": "bar_chair_round_01",
+   "name": "Барный табурет деревянный",
+   "category": "seating",
+   "res": "1k"
+  },
+  {
+   "id": "bar_stool_metal",
+   "source": "metal_stool_01",
+   "name": "Барный табурет металлический",
+   "category": "seating",
+   "res": "1k"
+  },
+  {
+   "id": "stool_metal",
+   "source": "metal_stool_02",
+   "name": "Табурет металлический",
+   "category": "seating",
+   "res": "1k"
+  },
+  {
+   "id": "daybed",
+   "source": "vintage_day_bed",
+   "name": "Кушетка",
+   "category": "seating",
+   "res": "1k"
+  },
+  {
+   "id": "coffee_table_marble_round",
+   "source": "coffee_table_round_01",
+   "name": "Журнальный стол круглый, мрамор",
+   "category": "tables",
+   "res": "1k"
+  },
+  {
+   "id": "coffee_table_carved",
+   "source": "modern_coffee_table_02",
+   "name": "Журнальный стол с резной решёткой",
+   "category": "tables",
+   "res": "1k"
+  },
+  {
+   "id": "coffee_table_industrial",
+   "source": "industrial_coffee_table",
+   "name": "Журнальный стол лофт",
+   "category": "tables",
+   "res": "1k"
+  },
+  {
+   "id": "dining_table_round",
+   "source": "round_wooden_table_01",
+   "name": "Обеденный стол круглый",
+   "category": "tables",
+   "res": "1k"
+  },
+  {
+   "id": "dining_table_wood",
+   "source": "wooden_table_02",
+   "name": "Обеденный стол деревянный",
+   "category": "tables",
+   "res": "1k"
+  },
+  {
+   "id": "side_table_oak",
+   "source": "side_table_01",
+   "name": "Приставной столик дубовый",
+   "category": "tables",
+   "res": "1k"
+  },
+  {
+   "id": "plant_stand",
+   "source": "side_table_tall_01",
+   "name": "Подставка для цветов",
+   "category": "tables",
+   "res": "1k"
+  },
+  {
+   "id": "nightstand_classic",
+   "source": "ClassicNightstand_01",
+   "name": "Тумба прикроватная классическая",
+   "category": "bedroom",
+   "res": "1k"
+  },
+  {
+   "id": "sideboard_slatted",
+   "source": "modern_wooden_cabinet",
+   "name": "Комод-сервант с рейками",
+   "category": "storage",
+   "res": "1k"
+  },
+  {
+   "id": "dresser_wood",
+   "source": "vintage_wooden_drawer_01",
+   "name": "Комод деревянный",
+   "category": "storage",
+   "res": "1k"
+  },
+  {
+   "id": "shelf_cubes",
+   "source": "wooden_display_shelves_01",
+   "name": "Стеллаж-ячейки",
+   "category": "storage",
+   "res": "1k"
+  },
+  {
+   "id": "shelf_industrial",
+   "source": "steel_frame_shelves_01",
+   "name": "Стеллаж металл и дерево",
+   "category": "storage",
+   "res": "1k",
+   "scale": 0.1
+  },
+  {
+   "id": "shelf_industrial_wide",
+   "source": "steel_frame_shelves_03",
+   "name": "Стеллаж широкий лофт",
+   "category": "storage",
+   "res": "1k"
+  },
+  {
+   "id": "drawer_unit_industrial",
+   "source": "drawer_cabinet",
+   "name": "Тумба с ящиками лофт",
+   "category": "storage",
+   "res": "1k"
+  },
+  {
+   "id": "pendant_industrial",
+   "source": "hanging_industrial_lamp",
+   "name": "Подвесной светильник индустриальный",
+   "category": "lighting",
+   "res": "1k",
+   "hanging": true
+  },
+  {
+   "id": "chandelier_classic",
+   "source": "Chandelier_01",
+   "name": "Люстра классическая",
+   "category": "lighting",
+   "res": "1k",
+   "hanging": true
+  },
+  {
+   "id": "desk_lamp",
+   "source": "desk_lamp_arm_01",
+   "name": "Настольная лампа на кронштейне",
+   "category": "lighting",
+   "res": "1k"
+  },
+  {
+   "id": "table_lamp_edison",
+   "source": "industrial_pipe_lamp",
+   "name": "Настольная лампа лофт",
+   "category": "lighting",
+   "res": "1k"
+  },
+  {
+   "id": "wall_light_bulkhead",
+   "source": "industrial_wall_lamp",
+   "name": "Настенный светильник уличный",
+   "category": "lighting",
+   "res": "1k",
+   "pivot": "wall"
+  },
+  {
+   "id": "wall_sconce_black",
+   "source": "industrial_wall_sconce",
+   "name": "Бра чёрное",
+   "category": "lighting",
+   "res": "1k",
+   "pivot": "wall"
+  },
+  {
+   "id": "wall_lantern_classic",
+   "source": "street_lamp_02",
+   "name": "Настенный фонарь классический",
+   "category": "lighting",
+   "res": "1k",
+   "pivot": "wall"
+  },
+  {
+   "id": "garden_lamp_post",
+   "source": "street_lamp_01",
+   "name": "Садовый фонарь на столбе",
+   "category": "outdoor",
+   "res": "1k"
+  },
+  {
+   "id": "lantern",
+   "source": "Lantern_01",
+   "name": "Фонарь керосиновый (декор)",
+   "category": "decor",
+   "res": "1k"
+  },
+  {
+   "id": "vase_white_round",
+   "source": "ceramic_vase_02",
+   "name": "Ваза белая округлая",
+   "category": "decor",
+   "res": "1k"
+  },
+  {
+   "id": "vase_white_bottle",
+   "source": "ceramic_vase_01",
+   "name": "Ваза белая бутылка",
+   "category": "decor",
+   "res": "1k"
+  },
+  {
+   "id": "vase_white_tall",
+   "source": "ceramic_vase_03",
+   "name": "Ваза белая высокая",
+   "category": "decor",
+   "res": "1k"
+  },
+  {
+   "id": "vase_white_jug",
+   "source": "ceramic_vase_04",
+   "name": "Ваза-кувшин белая",
+   "category": "decor",
+   "res": "1k"
+  },
+  {
+   "id": "vase_porcelain",
+   "source": "antique_ceramic_vase_01",
+   "name": "Ваза фарфоровая с росписью",
+   "category": "decor",
+   "res": "1k"
+  },
+  {
+   "id": "basket_wicker",
+   "source": "wicker_basket_01",
+   "name": "Корзина плетёная",
+   "category": "decor",
+   "res": "1k"
+  },
+  {
+   "id": "basket_lidded",
+   "source": "wicker_basket_02",
+   "name": "Корзины плетёные с крышкой",
+   "category": "decor",
+   "res": "1k"
+  },
+  {
+   "id": "throw_pillows",
+   "source": "throw_pillows_01",
+   "name": "Декоративные подушки",
+   "category": "decor",
+   "res": "1k"
+  },
+  {
+   "id": "photo_frame_black",
+   "source": "standing_picture_frame_01",
+   "name": "Фоторамка настольная чёрная",
+   "category": "decor",
+   "res": "1k",
+   "yaw": 180
+  },
+  {
+   "id": "photo_frame_white",
+   "source": "standing_picture_frame_02",
+   "name": "Фоторамка настольная белая",
+   "category": "decor",
+   "res": "1k",
+   "yaw": 180
+  },
+  {
+   "id": "poster_frame",
+   "source": "hanging_picture_frame_01",
+   "name": "Постер в раме",
+   "category": "decor",
+   "res": "1k",
+   "pivot": "wall"
+  },
+  {
+   "id": "picture_frame_landscape",
+   "source": "hanging_picture_frame_02",
+   "name": "Картина в белой раме",
+   "category": "decor",
+   "res": "1k",
+   "pivot": "wall"
+  },
+  {
+   "id": "painting_classic",
+   "source": "fancy_picture_frame_01",
+   "name": "Картина в золочёной раме",
+   "category": "decor",
+   "res": "1k",
+   "pivot": "wall"
+  },
+  {
+   "id": "wall_clock_modern",
+   "source": "wall_clock",
+   "name": "Часы настенные",
+   "category": "decor",
+   "res": "1k",
+   "pivot": "wall"
+  },
+  {
+   "id": "horse_figurine",
+   "source": "horse_statue_01",
+   "name": "Статуэтка лошадь",
+   "category": "decor",
+   "res": "1k"
+  },
+  {
+   "id": "bust_marble",
+   "source": "marble_bust_01",
+   "name": "Бюст мраморный",
+   "category": "decor",
+   "res": "1k"
+  },
+  {
+   "id": "chess_set",
+   "source": "chess_set",
+   "name": "Шахматы",
+   "category": "decor",
+   "res": "1k"
+  },
+  {
+   "id": "wine_bottles",
+   "source": "wine_bottles_01",
+   "name": "Бутылки вина",
+   "category": "kitchen",
+   "res": "1k"
+  },
+  {
+   "id": "bowl_wood",
+   "source": "wooden_bowl_02",
+   "name": "Чаша деревянная",
+   "category": "decor",
+   "res": "1k"
+  },
+  {
+   "id": "tea_set",
+   "source": "tea_set_01",
+   "name": "Чайный сервиз",
+   "category": "kitchen",
+   "res": "1k"
+  },
+  {
+   "id": "cutting_board",
+   "source": "wooden_cutting_board",
+   "name": "Разделочная доска",
+   "category": "kitchen",
+   "res": "1k"
+  },
+  {
+   "id": "bananas",
+   "source": "bananas",
+   "name": "Бананы",
+   "category": "kitchen",
+   "res": "1k",
+   "slots": {
+    "Material.008": "main"
+   }
+  },
+  {
+   "id": "books_encyclopedia",
+   "source": "book_encyclopedia_set_01",
+   "name": "Книги, собрание томов",
+   "category": "decor",
+   "res": "1k"
+  },
+  {
+   "id": "candleholders_brass",
+   "source": "brass_candleholders",
+   "name": "Подсвечники латунные",
+   "category": "decor",
+   "res": "1k"
+  },
+  {
+   "id": "plant_ficus",
+   "source": "potted_plant_01",
+   "name": "Фикус в горшке",
+   "category": "plants",
+   "res": "1k",
+   "maxTris": 60000
+  },
+  {
+   "id": "plant_succulent",
+   "source": "potted_plant_04",
+   "name": "Суккулент в белом горшке",
+   "category": "plants",
+   "res": "1k"
+  },
+  {
+   "id": "pot_clay",
+   "source": "planter_pot_clay",
+   "name": "Горшок глиняный",
+   "category": "plants",
+   "res": "1k"
+  },
+  {
+   "id": "boulder",
+   "source": "boulder_01",
+   "name": "Валун",
+   "category": "outdoor",
+   "res": "1k"
+  },
+  {
+   "id": "planter_box",
+   "source": "planter_box_01",
+   "name": "Ящик для растений",
+   "category": "outdoor",
+   "res": "1k"
+  },
+  {
+   "id": "raised_bed",
+   "source": "planter_box_03",
+   "name": "Грядка на ножках",
+   "category": "outdoor",
+   "res": "1k"
+  },
+  {
+   "id": "fire_pit",
+   "source": "stone_fire_pit",
+   "name": "Кострище каменное",
+   "category": "outdoor",
+   "res": "1k"
+  },
+  {
+   "id": "watering_can",
+   "source": "watering_can_metal_01",
+   "name": "Лейка металлическая",
+   "category": "outdoor",
+   "res": "1k"
+  },
+  {
+   "id": "bistro_set_garden",
+   "source": "outdoor_table_chair_set_01",
+   "name": "Садовый комплект: стол и 2 стула",
+   "category": "outdoor",
+   "res": "1k"
+  },
+  {
+   "id": "picnic_table",
+   "source": "wooden_picnic_table",
+   "name": "Стол для пикника",
+   "category": "outdoor",
+   "res": "1k"
+  }
+ ]
+}

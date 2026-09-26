@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -48,6 +49,23 @@ namespace House4696.Core
         public Vector2 UvOffset = Vector2.zero;
         public Color VertexColor = Color.white;
 
+        /// <summary>
+        /// Indexed emission for <see cref="Triangle"/>: a corner exactly equal (position, normal, uv, colour) to one of
+        /// the last <see cref="WeldWindow"/> vertices reuses it instead of adding a vertex, so cards, strips and grid rows
+        /// emitted corner by corner share their vertices (a quad becomes 4 vertices instead of 6). Grids can use
+        /// <see cref="V"/> + <see cref="Tri"/> directly. Off by default: other builders keep one vertex per corner.
+        /// </summary>
+        public bool Weld;
+        /// <summary>How many of the most recent vertices a welded corner is compared with.</summary>
+        public const int WeldWindow = 8;
+        /// <summary>
+        /// Compact vertex layout in <see cref="Build"/>: position, normal and UV0 stay Float32 (UVs are in metres on bark and
+        /// hedges, and the GPU probe baker's geometry pool reads normal / UV0 as float3 / float2), the tangent is Float16×4
+        /// and only present when a material has a normal map, no vertex colour (URP/Lit ignores it): 32 or 40 bytes per
+        /// vertex instead of 64. Off by default.
+        /// </summary>
+        public bool Compact;
+
         public int VertexCount => _v.Count;
         public bool IsEmpty => _v.Count == 0;
 
@@ -60,13 +78,39 @@ namespace House4696.Core
             return _mats.Count - 1;
         }
 
-        int AddVertex(Vector3 p, Vector3 n, Vector2 uv)
+        int AddVertex(Vector3 p, Vector3 n, Vector2 uv) =>
+            Push(Transform.MultiplyPoint3x4(p), Transform.MultiplyVector(n).normalized, uv + UvOffset);
+
+        int Push(Vector3 p, Vector3 n, Vector2 uv)
         {
-            _v.Add(Transform.MultiplyPoint3x4(p));
-            _n.Add(Transform.MultiplyVector(n).normalized);
-            _uv.Add(uv + UvOffset);
+            _v.Add(p);
+            _n.Add(n);
+            _uv.Add(uv);
             _c.Add(VertexColor);
             return _v.Count - 1;
+        }
+
+        /// <summary>A triangle corner: with <see cref="Weld"/> an identical recent vertex is reused.</summary>
+        int Corner(Vector3 p, Vector3 n, Vector2 uv)
+        {
+            if (!Weld) return AddVertex(p, n, uv);
+            Vector3 wp = Transform.MultiplyPoint3x4(p), wn = Transform.MultiplyVector(n).normalized;
+            Vector2 wuv = uv + UvOffset;
+            int stop = Mathf.Max(0, _v.Count - WeldWindow);
+            for (int i = _v.Count - 1; i >= stop; i--)
+                if (_v[i].Equals(wp) && _n[i].Equals(wn) && _uv[i].Equals(wuv) && _c[i].Equals(VertexColor)) return i;
+            return Push(wp, wn, wuv);
+        }
+
+        /// <summary>Adds one vertex for indexed emission and returns its index (connect vertices with <see cref="Tri"/>).</summary>
+        public int V(Vector3 p, Vector3 n, Vector2 uv) => AddVertex(p, n, uv);
+
+        /// <summary>Triangle over vertices added with <see cref="V"/>; winding as in <see cref="Triangle"/>.</summary>
+        public void Tri(int i0, int i1, int i2, Material m)
+        {
+            if (m == null) return;
+            var t = _tris[Sub(m)];
+            t.Add(i0); t.Add(i1); t.Add(i2);
         }
 
         /// <summary>Quad a-b-c-d given counter-clockwise when looking at its front (normal side).</summary>
@@ -84,7 +128,7 @@ namespace House4696.Core
         {
             if (m == null) return;
             var t = _tris[Sub(m)];
-            int ia = AddVertex(a, na, ua), ib = AddVertex(b, nb, ub), ic = AddVertex(c, nc, uc);
+            int ia = Corner(a, na, ua), ib = Corner(b, nb, ub), ic = Corner(c, nc, uc);
             t.Add(ia); t.Add(ib); t.Add(ic);
         }
 
@@ -163,6 +207,11 @@ namespace House4696.Core
 
         public Mesh Build(string name, bool tangents = true)
         {
+            if (Compact && _v.Count > 0)
+            {
+                var compact = BuildCompact(name, tangents);
+                if (compact != null) return compact;
+            }
             var mesh = new Mesh { name = name };
             if (_v.Count > 65000) mesh.indexFormat = IndexFormat.UInt32;
             mesh.SetVertices(_v);
@@ -174,6 +223,108 @@ namespace House4696.Core
             mesh.RecalculateBounds();
             if (tangents) mesh.RecalculateTangents();
             return mesh;
+        }
+
+        // ------------------------------------------------------------------ compact layout
+        // Interleaved stream 0; Unity orders attributes Position, Normal, Tangent, Color, TexCoord0 inside a stream.
+        [StructLayout(LayoutKind.Sequential)]
+        struct VertexPNU { public Vector3 P, N; public Vector2 Uv; }                                       // 32 B
+
+        [StructLayout(LayoutKind.Sequential)]
+        struct VertexPNTU { public Vector3 P, N; public ushort Tx, Ty, Tz, Tw; public Vector2 Uv; }       // 40 B
+
+        /// <summary>The <see cref="Compact"/> layout; null when the device cannot take Float16 tangents (the caller falls back to the classic layout).</summary>
+        Mesh BuildCompact(string name, bool tangents)
+        {
+            bool withTangents = tangents && HasNormalMap();
+            if (withTangents && !SystemInfo.SupportsVertexAttributeFormat(VertexAttributeFormat.Float16, 4)) return null;
+            int count = _v.Count;
+            var mesh = new Mesh { name = name };
+            if (count > 65000) mesh.indexFormat = IndexFormat.UInt32;
+            if (withTangents)
+            {
+                mesh.SetVertexBufferParams(count,
+                    new VertexAttributeDescriptor(VertexAttribute.Position, VertexAttributeFormat.Float32, 3),
+                    new VertexAttributeDescriptor(VertexAttribute.Normal, VertexAttributeFormat.Float32, 3),
+                    new VertexAttributeDescriptor(VertexAttribute.Tangent, VertexAttributeFormat.Float16, 4),
+                    new VertexAttributeDescriptor(VertexAttribute.TexCoord0, VertexAttributeFormat.Float32, 2));
+                var tan = Tangents();
+                var data = new VertexPNTU[count];
+                for (int i = 0; i < count; i++)
+                {
+                    var t = tan[i];
+                    data[i] = new VertexPNTU
+                    {
+                        P = _v[i], N = _n[i], Uv = _uv[i],
+                        Tx = Mathf.FloatToHalf(t.x), Ty = Mathf.FloatToHalf(t.y), Tz = Mathf.FloatToHalf(t.z), Tw = Mathf.FloatToHalf(t.w),
+                    };
+                }
+                mesh.SetVertexBufferData(data, 0, 0, count, 0, MeshUpdateFlags.Default);
+            }
+            else
+            {
+                mesh.SetVertexBufferParams(count,
+                    new VertexAttributeDescriptor(VertexAttribute.Position, VertexAttributeFormat.Float32, 3),
+                    new VertexAttributeDescriptor(VertexAttribute.Normal, VertexAttributeFormat.Float32, 3),
+                    new VertexAttributeDescriptor(VertexAttribute.TexCoord0, VertexAttributeFormat.Float32, 2));
+                var data = new VertexPNU[count];
+                for (int i = 0; i < count; i++) data[i] = new VertexPNU { P = _v[i], N = _n[i], Uv = _uv[i] };
+                mesh.SetVertexBufferData(data, 0, 0, count, 0, MeshUpdateFlags.Default);
+            }
+            mesh.subMeshCount = _tris.Count;
+            for (int i = 0; i < _tris.Count; i++) mesh.SetTriangles(_tris[i], i, false);
+            mesh.RecalculateBounds();
+            return mesh;
+        }
+
+        bool HasNormalMap()
+        {
+            foreach (var m in _mats)
+                if (m != null && (m.IsKeywordEnabled("_NORMALMAP") || (m.HasProperty("_BumpMap") && m.GetTexture("_BumpMap") != null)))
+                    return true;
+            return false;
+        }
+
+        /// <summary>
+        /// Per-vertex tangents from positions, normals and UV0 (accumulated over the triangles that share a vertex,
+        /// orthogonalised to the normal, w = bitangent sign) — the same construction as Mesh.RecalculateTangents, which
+        /// cannot be used here because it rewrites the layout to Float32.
+        /// </summary>
+        Vector4[] Tangents()
+        {
+            int count = _v.Count;
+            var sdir = new Vector3[count];
+            var tdir = new Vector3[count];
+            foreach (var t in _tris)
+                for (int k = 0; k + 2 < t.Count; k += 3)
+                {
+                    int i0 = t[k], i1 = t[k + 1], i2 = t[k + 2];
+                    Vector3 e1 = _v[i1] - _v[i0], e2 = _v[i2] - _v[i0];
+                    Vector2 d1 = _uv[i1] - _uv[i0], d2 = _uv[i2] - _uv[i0];
+                    float det = d1.x * d2.y - d2.x * d1.y;
+                    if (Mathf.Abs(det) < 1e-12f) continue;
+                    float r = 1f / det;
+                    Vector3 s = (e1 * d2.y - e2 * d1.y) * r;
+                    Vector3 u = (e2 * d1.x - e1 * d2.x) * r;
+                    sdir[i0] += s; sdir[i1] += s; sdir[i2] += s;
+                    tdir[i0] += u; tdir[i1] += u; tdir[i2] += u;
+                }
+            var result = new Vector4[count];
+            for (int i = 0; i < count; i++)
+            {
+                Vector3 n = _n[i], s = sdir[i];
+                Vector3 o = s - n * Vector3.Dot(n, s);
+                if (o.sqrMagnitude < 1e-20f)
+                {
+                    // no usable UV gradient: any unit vector perpendicular to the normal
+                    o = Vector3.Cross(n, Mathf.Abs(n.y) < 0.99f ? Vector3.up : Vector3.right);
+                    if (o.sqrMagnitude < 1e-20f) o = Vector3.right;
+                }
+                o.Normalize();
+                float w = Vector3.Dot(Vector3.Cross(n, s), tdir[i]) < 0f ? -1f : 1f;
+                result[i] = new Vector4(o.x, o.y, o.z, w);
+            }
+            return result;
         }
     }
 }

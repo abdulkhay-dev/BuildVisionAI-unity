@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace House4696.Runtime
 {
@@ -74,19 +75,16 @@ namespace House4696.Runtime
 
         public override void Tick(float dt)
         {
-            var kb = ViewerInput.Kb;
-            var mouse = ViewerInput.Mouse;
-            if (kb == null || mouse == null) return;
             bool input = false;
 
             Vector2 delta = ViewerInput.MouseDelta;
-            if (mouse.leftButton.isPressed)
+            if (ViewerInput.LeftHeld)
             {
                 _yaw += delta.x * rotateSensitivity;
                 _pitch -= delta.y * rotateSensitivity;
                 input = true;
             }
-            else if (mouse.rightButton.isPressed || mouse.middleButton.isPressed)
+            else if (ViewerInput.RightHeld || ViewerInput.MiddleHeld)
             {
                 var t = Cam.transform;
                 _target -= (t.right * delta.x + t.up * delta.y) * (panSensitivity * _cDist);
@@ -103,7 +101,7 @@ namespace House4696.Runtime
 
             float scroll = ViewerInput.ScrollSign;
             if (scroll != 0f) { _dist *= scroll > 0 ? 0.88f : 1.14f; input = true; }
-            if (kb.fKey.wasPressedThisFrame) { _target = pivot; input = true; }
+            if (ViewerInput.Down(Key.F)) { _target = pivot; input = true; }
 
             _idle = input ? 0f : _idle + dt;
             if (idleSpin > 0f && _idle > idleSpin) _yaw += spinSpeed * dt;

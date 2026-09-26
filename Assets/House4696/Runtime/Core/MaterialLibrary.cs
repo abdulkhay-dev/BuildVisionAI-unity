@@ -19,6 +19,12 @@ namespace House4696.Core
         public bool Transparent;
         public Color Emission;
         public bool ReceiveShadows;
+        /// <summary>
+        /// Rough garden surface: no specular highlights and no probe reflections (_SPECULARHIGHLIGHTS_OFF,
+        /// _ENVIRONMENTREFLECTIONS_OFF; at smoothness ≤ 0.15 they are ~1 % of the radiance). Applied when the editor writes
+        /// the material assets (see <see cref="MaterialLibrary.MatteGarden"/>); the player ships them from the palette.
+        /// </summary>
+        public bool Matte;
 
         public static LitOptions Of(Color c, float smoothness = 0.25f) => new LitOptions
         {
@@ -37,6 +43,13 @@ namespace House4696.Core
             Lawn, Mulch, Soil, Hedge, SpruceBranch, PineTuft, BirchLeaves, DeciduousLeaves, Bark, BirchBark, Blades,
             GreyBlades, Plume, Boulder, BollardWood, BollardCap, BollardLight, Pot, Edging, Rattan, Cushion,
             FurnitureDark, Steel, Sky, GlassInner;
+
+        /// <summary>
+        /// Honour <see cref="LitOptions.Matte"/> (foliage, grass blades, lawn, bark, mulch, soil, dwarf-pine surface).
+        /// false = those materials keep highlights and reflections, as before. A change takes effect after
+        /// House 46-96 → Rebuild Runtime Content (the player reads the material assets from the palette).
+        /// </summary>
+        public static bool MatteGarden = true;
 
         public static MaterialLibrary Create()
         {
@@ -130,14 +143,16 @@ namespace House4696.Core
             L.Lawn = Lit("M_Lawn", new LitOptions
             {
                 Color = new Color(1f, 1f, 0.78f), Albedo = "T_Lawn", Normal = "T_Lawn_N", NormalScale = 0.8f,
-                MetersPerTile = 3f, Smoothness = 0.04f, ReceiveShadows = true
+                MetersPerTile = 3f, Smoothness = 0.04f, ReceiveShadows = true, Matte = true
             });
             L.Mulch = Lit("M_Mulch", new LitOptions
             {
                 Color = Color.white, Albedo = "T_Mulch", Normal = "T_Mulch_N", NormalScale = 1f,
-                MetersPerTile = 1.5f, Smoothness = 0.1f, ReceiveShadows = true
+                MetersPerTile = 1.5f, Smoothness = 0.1f, ReceiveShadows = true, Matte = true
             });
-            L.Soil = Lit("M_Soil", LitOptions.Of(new Color(0.16f, 0.12f, 0.09f), 0.1f));
+            var soil = LitOptions.Of(new Color(0.16f, 0.12f, 0.09f), 0.1f);
+            soil.Matte = true;
+            L.Soil = Lit("M_Soil", soil);
             L.Edging = Lit("M_SteelEdging", LitOptions.Of(new Color(0.06f, 0.06f, 0.06f), 0.4f));
             L.Boulder = Lit("M_Boulder", new LitOptions
             {
@@ -154,7 +169,7 @@ namespace House4696.Core
             L.ConiferCore = Lit("M_PineSurface", new LitOptions
             {
                 Color = new Color(0.55f, 0.68f, 0.45f), Albedo = "T_Hedge", Normal = "T_Hedge_N", NormalScale = 1.6f,
-                MetersPerTile = 0.6f, Smoothness = 0.02f, ReceiveShadows = true
+                MetersPerTile = 0.6f, Smoothness = 0.02f, ReceiveShadows = true, Matte = true
             });
             L.ConiferCore.SetFloat("_EnvironmentReflections", 0f);
             L.ConiferCore.EnableKeyword("_ENVIRONMENTREFLECTIONS_OFF");
@@ -167,17 +182,17 @@ namespace House4696.Core
             L.Bark = Lit("M_BarkSpruce", new LitOptions
             {
                 Color = Color.white, Albedo = "T_Bark", Normal = "T_Bark_N", NormalScale = 1f,
-                Tiling = new Vector2(1f, 1f), Smoothness = 0.1f, ReceiveShadows = true
+                Tiling = new Vector2(1f, 1f), Smoothness = 0.1f, ReceiveShadows = true, Matte = true
             });
             L.BirchBark = Lit("M_BarkBirch", new LitOptions
             {
                 Color = Color.white, Albedo = "T_BirchBark", Normal = "T_BirchBark_N", NormalScale = 0.6f,
-                Tiling = new Vector2(1f, 1f), Smoothness = 0.15f, ReceiveShadows = true
+                Tiling = new Vector2(1f, 1f), Smoothness = 0.15f, ReceiveShadows = true, Matte = true
             });
             var blades = new LitOptions
             {
                 Color = Color.white, Albedo = "T_Blades", Tiling = Vector2.one, Smoothness = 0.05f,
-                TwoSided = true, ReceiveShadows = true, NormalScale = 1f
+                TwoSided = true, ReceiveShadows = true, NormalScale = 1f, Matte = true
             };
             L.Blades = Lit("M_GrassBlades", blades);
             L.GreyBlades = L.Blades;
@@ -210,7 +225,7 @@ namespace House4696.Core
             return Lit(name, new LitOptions
             {
                 Color = tint, Albedo = tex, Tiling = Vector2.one, Smoothness = 0.08f,
-                Cutout = true, Cutoff = 0.45f, TwoSided = true, ReceiveShadows = true, NormalScale = 1f
+                Cutout = true, Cutoff = 0.45f, TwoSided = true, ReceiveShadows = true, NormalScale = 1f, Matte = true
             });
         }
         // note: foliage keeps low smoothness so grazing sky reflections do not turn crowns blue
@@ -226,7 +241,22 @@ namespace House4696.Core
         }
         static IMaterialSource _source;
 
-        public static Material Lit(string name, LitOptions o) => Source.Lit(name, o);
+        public static Material Lit(string name, LitOptions o)
+        {
+            var m = Source.Lit(name, o);
+            // only while writing the assets: the player's palette already carries the keywords (and their variants)
+            if (o.Matte && MatteGarden && m != null && !(Source is PaletteMaterialSource)) SetMatte(m);
+            return m;
+        }
+
+        /// <summary>What URP's LitGUI.SetMaterialKeywords derives from the two toggles, set directly (runtime assembly).</summary>
+        static void SetMatte(Material m)
+        {
+            m.SetFloat("_SpecularHighlights", 0f);
+            m.SetFloat("_EnvironmentReflections", 0f);
+            m.EnableKeyword("_SPECULARHIGHLIGHTS_OFF");
+            m.EnableKeyword("_ENVIRONMENTREFLECTIONS_OFF");
+        }
     }
 
     public interface IMaterialSource

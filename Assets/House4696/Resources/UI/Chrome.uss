@@ -1,0 +1,302 @@
+/* House v2 — viewer chrome (spec §2, §3.1, §3.2): project pill (pp-*) top-left, status pill (sp-*) top-right.
+   Opaque colours only. Never set `display` here: .hidden (Tokens.uss) must keep winning. */
+
+/* ------------------------------------------------------------------ anchors & surfaces */
+.pp-root { position: absolute; left: 16px; top: 16px; }
+.sp-root { position: absolute; right: 16px; top: 16px; }
+
+/* h 44 = 1 border + 3 padding + 36 item + 3 + 1 */
+.pp-pill, .sp-pill {
+    flex-direction: row;
+    align-items: center;
+    height: 44px;
+    padding: 3px;
+    border-width: 1px;
+    border-color: var(--border);
+    border-top-color: var(--border-top);
+    border-radius: 12px;
+    background-color: var(--surface-1);
+}
+.pp-pill { max-width: 480px; }
+
+/* popover anchor proxy: covers the pill's surface so popovers hang 8 px below the surface, aligned to its edge */
+.sp-anchor { position: absolute; left: 0; top: 0; right: 0; bottom: 0; }
+
+/* swapped text fades in */
+.sp-fade { transition-property: opacity; transition-duration: 0.16s; transition-timing-function: ease-out-cubic; }
+.sp-fade.sp-fresh { opacity: 0; transition-duration: 0s; }
+
+/* ------------------------------------------------------------------ project pill: mark */
+.pp-mark {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition-property: background-color, scale;
+    transition-duration: 0.09s, 0.08s;
+    transition-timing-function: ease-out, ease-out;
+}
+.pp-mark:hover { background-color: var(--hover-1); }
+.pp-mark:active { scale: 0.97 0.97; }
+.pp-tile {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--accent);
+    color: #FFFFFF;
+    transition-property: background-color;
+    transition-duration: 0.09s;
+    transition-timing-function: ease-out;
+}
+.pp-mark:hover > .pp-tile { background-color: var(--accent-hover); }
+.pp-mark:active > .pp-tile { background-color: var(--accent-press); }
+
+/* ------------------------------------------------------------------ project pill: name */
+.pp-name {
+    flex-direction: row;
+    align-items: center;
+    height: 36px;
+    padding: 0 8px 0 10px;
+    margin-left: 2px;
+    border-radius: 8px;
+    flex-shrink: 1;
+    min-width: 0;
+    color: var(--text-3);
+    transition-property: background-color, color;
+    transition-duration: 0.09s, 0.09s;
+    transition-timing-function: ease-out, ease-out;
+}
+.pp-name:hover { background-color: var(--hover-1); color: var(--text-2); }
+.pp-name:active { background-color: var(--press); }
+.pp-name.popover-open { background-color: var(--selected); color: var(--text-2); }
+.pp-name-label {
+    color: var(--text-1);
+    max-width: 280px;
+    flex-shrink: 1;
+    min-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.pp-chev {
+    width: 12px;
+    height: 12px;
+    margin-left: 6px;
+    flex-shrink: 0;
+    transition-property: rotate;
+    transition-duration: 0.14s;
+    transition-timing-function: ease-out-cubic;
+}
+.pp-name.popover-open > .pp-chev { rotate: 180deg; }
+
+/* inline rename: the field sits where the name was, same type (Headline), accent border + 2 px halo */
+.pp-rename-wrap {
+    padding: 2px;
+    margin: -2px 0 -2px 0;
+    border-radius: 10px;
+    background-color: var(--accent-halo);
+    flex-shrink: 1;
+    min-width: 0;
+}
+.pp-rename-wrap > .pp-rename {
+    margin: 0;
+    padding: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+    min-width: 0;
+}
+.pp-rename-wrap > .pp-rename > .unity-base-text-field__input,
+.pp-rename-wrap > .pp-rename:hover > .unity-base-text-field__input,
+.pp-rename-wrap > .pp-rename:focus > .unity-base-text-field__input {
+    height: 36px;
+    margin: 0;
+    padding: 0 9px;
+    border-width: 1px;
+    border-radius: 8px;
+    border-color: var(--accent);
+    background-color: var(--field);
+    color: var(--text-1);
+    font-size: 15px;
+    letter-spacing: -0.1px;
+    -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-SemiBold.ttf");
+    -unity-text-align: middle-left;
+    --unity-cursor-color: #93A2FF;
+    --unity-selection-color: #2E3A7A;
+}
+
+/* ------------------------------------------------------------------ project pill: breadcrumb */
+.pp-crumbs {
+    height: 36px;
+    flex-direction: row;
+    flex-shrink: 0;
+    overflow: hidden;
+    transition-property: width;
+    transition-duration: 0.24s;
+    transition-timing-function: ease-in-out-cubic;
+}
+.pp-crumbs.sp-instant { transition-duration: 0s; }
+.pp-crumbs-in {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    flex-direction: row;
+    align-items: center;
+    padding-right: 8px;
+}
+/* the name and the crumbs are separated like the status pill's segments (1×20 divider), not by a chevron */
+.divider-v.pp-crumbs-div { margin: 0 8px; }
+.pp-sep { width: 12px; height: 12px; margin: 0 6px; flex-shrink: 0; color: var(--text-3); }
+.pp-crumb {
+    color: var(--text-2);
+    flex-shrink: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.pp-crumb-level { max-width: 110px; }
+.pp-crumb-room { max-width: 160px; }
+
+/* ------------------------------------------------------------------ project pill: issues badge */
+.pp-issues {
+    flex-direction: row;
+    align-items: center;
+    flex-shrink: 0;
+    height: 24px;
+    padding: 0 8px;
+    margin: 0 7px 0 4px;
+    border-radius: 8px;
+    background-color: var(--warning-soft);
+    color: var(--warning);
+    transition-property: background-color, scale;
+    transition-duration: 0.09s, 0.12s;
+    transition-timing-function: ease-out, ease-out;
+}
+.pp-issues:hover, .pp-issues.popover-open { background-color: #3A2E18; }
+.pp-issues:active { scale: 0.97 0.97; }
+.pp-issues.pp-err { background-color: var(--danger-soft); color: var(--danger); }
+.pp-issues.pp-err:hover, .pp-issues.pp-err.popover-open { background-color: #3F1F21; }
+.pp-issues.pp-bump { scale: 1.15 1.15; }
+.pp-issues > .icon { width: 14px; height: 14px; margin-right: 5px; }
+.pp-issues-count { white-space: nowrap; -unity-text-align: middle-left; }
+
+/* ------------------------------------------------------------------ project menu: recent projects */
+.menu-item.pp-recent-item { height: 44px; padding: 0 6px; }
+.pp-recent {
+    flex-direction: row;
+    align-items: center;
+    flex-grow: 1;
+    flex-shrink: 1;
+    min-width: 0;
+    max-width: 258px;
+}
+.pp-recent-thumb {
+    width: 48px;
+    height: 30px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    border-width: 1px;
+    border-color: var(--border);
+    background-color: var(--press);
+    -unity-background-scale-mode: scale-and-crop;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-3);
+}
+.pp-recent-ph { width: 14px; height: 14px; }
+.pp-recent-text { margin-left: 10px; flex-grow: 1; flex-shrink: 1; min-width: 0; }
+.pp-recent-name {
+    font-size: 13px;
+    -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Medium.ttf");
+    color: var(--text-1);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.pp-recent-ago {
+    margin-top: 1px;
+    font-size: 12px;
+    -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Regular.ttf");
+    color: var(--text-3);
+    white-space: nowrap;
+}
+
+/* ------------------------------------------------------------------ status pill: light segment */
+.sp-light-clip {
+    height: 36px;
+    flex-direction: row;
+    flex-shrink: 0;
+    overflow: hidden;
+    transition-property: width;
+    transition-duration: 0.24s;
+    transition-timing-function: ease-in-out-cubic;
+}
+.sp-light-clip.sp-instant { transition-duration: 0s; }
+.sp-light-in {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    flex-direction: row;
+    align-items: center;
+}
+.sp-light {
+    flex-direction: row;
+    align-items: center;
+    height: 36px;
+    padding: 0 12px;
+    border-radius: 8px;
+    flex-shrink: 0;
+    color: var(--text-2);
+    transition-property: background-color, color, scale;
+    transition-duration: 0.09s, 0.09s, 0.08s;
+    transition-timing-function: ease-out, ease-out, ease-out;
+}
+.sp-light.sp-clickable:hover { background-color: var(--hover-1); color: var(--text-1); }
+.sp-light.sp-clickable:active { background-color: var(--press); scale: 0.97 0.97; }
+.sp-light > .ring { width: 16px; height: 16px; }
+.sp-light > .icon { width: 16px; height: 16px; }
+.sp-light-label { margin-left: 8px; white-space: nowrap; }
+/* changing numbers get a fixed min-width (no tabular figures) */
+.sp-light-pct { margin-left: 4px; min-width: 36px; white-space: nowrap; }
+
+/* ------------------------------------------------------------------ status pill: AI segment */
+/* the label is text-1 in every state (a text-2 «ИИ ожидает» read as offline); the connect CTA is white on accent */
+.sp-ai {
+    height: 36px;
+    flex-direction: row;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    color: var(--text-1);
+    transition-property: width, background-color, color, scale;
+    transition-duration: 0.24s, 0.09s, 0.09s, 0.08s;
+    transition-timing-function: ease-in-out-cubic, ease-out, ease-out, ease-out;
+}
+.sp-ai.sp-instant { transition-duration: 0s, 0.09s, 0.09s, 0.08s; }
+.sp-ai:hover { background-color: var(--hover-1); }
+.sp-ai:active { scale: 0.97 0.97; }
+.sp-ai.popover-open { background-color: var(--selected); }
+.sp-ai.sp-ai-connect { background-color: var(--accent); color: #FFFFFF; }
+.sp-ai.sp-ai-connect:hover { background-color: var(--accent-hover); color: #FFFFFF; }
+.sp-ai.sp-ai-connect:active { background-color: var(--accent-press); }
+.sp-ai-in {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 12px;
+}
+.sp-ai-in > .icon { width: 16px; height: 16px; }
+/* connected but unused: the 8 px ring (1.5 px stroke) is success, so it reads as ready, not as offline */
+.sp-ai .dot.dot-ring { border-color: var(--success); }
+.sp-ai-label { margin-left: 8px; white-space: nowrap; }
+
+/* ------------------------------------------------------------------ status pill: gear */
+.tool.sp-gear.popover-open { background-color: var(--selected); color: var(--text-1); }

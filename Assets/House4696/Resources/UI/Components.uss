@@ -1,0 +1,382 @@
+/* House v2 — shared components (UiKit). Screen-specific styles live in Chrome/Viewer/Plan/Home/Dialogs.uss. */
+
+/* ------------------------------------------------------------------ icons */
+.icon { width: 18px; height: 18px; flex-shrink: 0; }
+.icon-12 { width: 12px; height: 12px; }
+.icon-14 { width: 14px; height: 14px; }
+.icon-16 { width: 16px; height: 16px; }
+.icon-18 { width: 18px; height: 18px; }
+.icon-20 { width: 20px; height: 20px; }
+.icon-24 { width: 24px; height: 24px; }
+.icon-32 { width: 32px; height: 32px; }
+
+/* ------------------------------------------------------------------ surfaces */
+/* floating surface over the 3D view: opaque, 1 px border with a lighter top edge */
+.float {
+    background-color: var(--surface-1);
+    border-width: 1px;
+    border-color: var(--border);
+    border-top-color: var(--border-top);
+    border-radius: 12px;
+    padding: 3px;
+}
+.float-2 {
+    background-color: var(--surface-2);
+    border-width: 1px;
+    border-color: var(--border);
+    border-top-color: var(--border-top);
+    border-radius: 12px;
+}
+.elev-host { position: relative; }
+.shadow { position: absolute; }
+
+.divider-v { width: 1px; height: 20px; margin: 0 6px; background-color: var(--divider); flex-shrink: 0; }
+.divider-h { height: 1px; margin: 4px 0; background-color: var(--divider); }
+
+/* ------------------------------------------------------------------ buttons */
+.btn {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 36px;
+    padding: 0 14px;
+    border-radius: 8px;
+    color: var(--text-1);
+    font-size: 13px;
+    -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Medium.ttf");
+    flex-shrink: 0;
+    transition-property: background-color, color, scale, border-color, opacity;
+    transition-duration: 0.09s, 0.09s, 0.08s, 0.09s, 0.16s;
+    transition-timing-function: ease-out;
+}
+.btn:active { scale: 0.97 0.97; }
+.btn:disabled { opacity: 0.45; }
+.btn-label { -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Medium.ttf"); font-size: 13px; }
+.btn > .btn-label.after-icon { margin-left: 8px; }
+.btn > .kbd { margin-left: 8px; }
+.btn > .trail-icon { margin-left: 6px; }
+
+.btn-primary { background-color: var(--accent); color: #FFFFFF; }
+.btn-primary:hover { background-color: var(--accent-hover); }
+.btn-primary:active { background-color: var(--accent-press); }
+
+.btn-secondary { background-color: var(--selected); border-width: 1px; border-color: var(--border-strong); border-top-color: var(--border-top); }
+.btn-secondary:hover { background-color: var(--press); }
+
+.btn-ghost { background-color: rgba(0, 0, 0, 0); color: var(--text-1); }
+.btn-ghost:hover { background-color: var(--hover-2); }
+.btn-ghost:active { background-color: var(--press); }
+.on-surface-1.btn-ghost:hover, .on-surface-1 .btn-ghost:hover { background-color: var(--hover-1); }
+
+.btn-danger { background-color: var(--danger-button); color: #FFFFFF; }
+.btn-danger:hover { background-color: #E05252; }
+
+.btn-accent-ghost { background-color: rgba(0, 0, 0, 0); color: var(--accent-text); }
+.btn-accent-ghost:hover { background-color: var(--hover-2); }
+
+.btn-sm { height: 32px; padding: 0 12px; }
+.btn-xs { height: 28px; padding: 0 10px; }
+.btn-icon { width: 36px; padding: 0; }
+.btn-icon.btn-sm { width: 32px; }
+.btn-icon.btn-xs { width: 28px; }
+
+/* toolbar / chrome item: neutral, text-2 until hover/selected */
+.tool {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 36px;
+    padding: 0 12px;
+    border-radius: 8px;
+    color: var(--text-2);
+    flex-shrink: 0;
+    transition-property: background-color, color, scale;
+    transition-duration: 0.09s, 0.09s, 0.08s;
+    transition-timing-function: ease-out;
+}
+.tool:hover { background-color: var(--hover-1); color: var(--text-1); }
+.tool:active { background-color: var(--press); scale: 0.97 0.97; }
+.tool.selected { background-color: var(--selected); color: var(--text-1); }
+.tool.icon-only { width: 36px; padding: 0; }
+.tool > .tool-label { margin-left: 8px; font-size: 13px; -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Medium.ttf"); }
+
+/* ------------------------------------------------------------------ keycaps */
+.kbd {
+    height: 22px;
+    min-width: 22px;
+    padding: 0 6px;
+    border-radius: 4px;
+    border-width: 1px;
+    border-bottom-width: 2px;
+    border-color: var(--kbd-border);
+    border-bottom-color: var(--kbd-bottom);
+    background-color: var(--kbd-bg);
+    color: var(--text-1);
+    font-size: 11px;
+    letter-spacing: 0.2px;
+    -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Medium.ttf");
+    -unity-text-align: middle-center;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+}
+.kbd > .icon { width: 14px; height: 14px; color: var(--text-1); }
+.kbd-sm { height: 18px; min-width: 18px; padding: 0 4px; font-size: 10px; }
+.keys { flex-direction: row; align-items: center; }
+.keys > .kbd { margin-left: 3px; }
+.keys > .keys-sep { margin: 0 4px; color: var(--text-3); font-size: 12px; }
+
+/* ------------------------------------------------------------------ badges, dots */
+.badge {
+    flex-direction: row;
+    align-items: center;
+    height: 22px;
+    padding: 0 8px;
+    border-radius: 8px;
+    font-size: 11px;
+    -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Medium.ttf");
+}
+.badge-warning { background-color: var(--warning-soft); color: var(--warning); }
+.badge-danger { background-color: var(--danger-soft); color: var(--danger); }
+.badge-success { background-color: var(--success-soft); color: var(--success); }
+.badge > .icon { width: 14px; height: 14px; margin-right: 5px; }
+
+.dot { width: 8px; height: 8px; border-radius: 4px; background-color: var(--text-3); flex-shrink: 0; }
+.dot-success { background-color: var(--success); }
+.dot-ai { background-color: var(--ai); }
+.dot-warning { background-color: var(--warning); }
+.dot-ring { background-color: rgba(0, 0, 0, 0); border-width: 1.5px; border-color: var(--success); }
+.pulse { position: relative; width: 8px; height: 8px; flex-shrink: 0; }
+.pulse > .pulse-ring { position: absolute; left: 0; top: 0; width: 8px; height: 8px; border-radius: 4px; background-color: var(--ai); }
+.pulse > .dot { position: absolute; left: 0; top: 0; }
+
+/* ------------------------------------------------------------------ progress */
+.bar { height: 3px; border-radius: 2px; background-color: var(--press); overflow: hidden; }
+.bar-fill { height: 100%; width: 0; background-color: var(--accent); border-radius: 2px; transition-property: width; transition-duration: 0.25s; }
+.ring { width: 16px; height: 16px; flex-shrink: 0; --ring-track: #2E3139; --ring-fill: #4B5CF0; }
+
+/* ------------------------------------------------------------------ inputs */
+.field-wrap {
+    border-radius: 11px;
+    padding: 3px;
+    margin: -3px;
+    transition-property: background-color;
+    transition-duration: 0.12s;
+}
+.field-wrap.focused { background-color: var(--accent-halo); }
+.field { margin: 0; flex-grow: 1; }
+.field > .unity-base-text-field__input {
+    height: 36px;
+    border-radius: 8px;
+    border-width: 1px;
+    border-color: var(--selected);
+    background-color: var(--field);
+    color: var(--text-1);
+    padding: 0 12px;
+    font-size: 14px;
+    -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Regular.ttf");
+    --unity-cursor-color: #93A2FF;
+    --unity-selection-color: #2E3A7A;
+    transition-property: border-color;
+    transition-duration: 0.12s;
+}
+.field:hover > .unity-base-text-field__input { border-color: var(--border-strong); }
+.field-wrap.focused .field > .unity-base-text-field__input { border-color: var(--accent); }
+.field-multiline > .unity-base-text-field__input { height: 64px; padding: 9px 12px; -unity-text-align: upper-left; white-space: normal; }
+.field > .unity-base-text-field__input > .unity-text-element { flex-grow: 1; margin: 0; padding: 0; -unity-text-align: middle-left; }
+.field-multiline > .unity-base-text-field__input > .unity-text-element { -unity-text-align: upper-left; }
+.field-placeholder { position: absolute; left: 13px; top: 0; bottom: 0; -unity-text-align: middle-left; color: var(--text-3); font-size: 14px; }
+.field-multiline > .field-placeholder { top: 9px; -unity-text-align: upper-left; }
+.field-icon { position: absolute; left: 11px; top: 10px; width: 16px; height: 16px; color: var(--text-3); }
+.field.with-icon > .unity-base-text-field__input { padding-left: 34px; }
+.field.with-icon .field-placeholder { left: 35px; }
+.field-kbd { position: absolute; right: 8px; top: 7px; }
+.field-label { font-size: 13px; -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Medium.ttf"); color: var(--text-2); margin: 0 0 6px 2px; }
+
+/* ------------------------------------------------------------------ switch */
+.switch { width: 32px; height: 18px; border-radius: 9px; background-color: var(--press); flex-shrink: 0; transition-property: background-color; transition-duration: 0.15s; }
+.switch-knob {
+    position: absolute; left: 2px; top: 2px; width: 14px; height: 14px; border-radius: 7px; background-color: #FFFFFF;
+    transition-property: translate; transition-duration: 0.15s; transition-timing-function: ease-out-cubic;
+}
+.switch.on { background-color: var(--accent); }
+.switch.on > .switch-knob { translate: 14px 0; }
+.switch-row {
+    flex-direction: row; align-items: center; justify-content: space-between;
+    height: 36px; padding: 0 8px; border-radius: 8px;
+}
+.switch-row:hover { background-color: var(--hover-2); }
+.switch-row > .switch-label { font-size: 13px; -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Medium.ttf"); }
+
+/* ------------------------------------------------------------------ segmented (sliding thumb) */
+.segmented { flex-direction: row; align-items: center; position: relative; }
+.seg-thumb {
+    position: absolute; top: 0; height: 36px; border-radius: 8px;
+    background-color: var(--selected);
+    border-width: 1px; border-color: var(--border); border-top-color: var(--border-top);
+    transition-property: translate, width;
+    transition-duration: 0.22s;
+    transition-timing-function: ease-out-cubic;
+}
+.seg-thumb.instant { transition-duration: 0s; }
+.seg {
+    flex-direction: row; align-items: center; justify-content: center;
+    height: 36px; padding: 0 12px; border-radius: 8px;
+    color: var(--text-3);
+    flex-shrink: 0;
+    transition-property: color;
+    transition-duration: 0.09s;
+}
+.seg:hover { color: var(--text-1); }
+.seg > .seg-label { margin-left: 8px; font-size: 13px; color: var(--text-2); -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Medium.ttf"); }
+.seg:hover > .seg-label { color: var(--text-1); }
+.seg.selected { color: var(--text-1); }
+.seg.selected > .seg-label { color: var(--text-1); }
+.seg.no-icon > .seg-label { margin-left: 0; }
+.segmented.sm > .seg, .segmented.sm > .seg-thumb { height: 28px; }
+.segmented.sm > .seg { padding: 0 10px; }
+.segmented.boxed { background-color: var(--field); border-radius: 10px; padding: 2px; }
+.segmented.boxed > .seg-thumb { top: 2px; }
+
+/* ------------------------------------------------------------------ popover & menu */
+.popover-host { position: absolute; }
+.popover {
+    background-color: var(--surface-2);
+    border-width: 1px; border-color: var(--border); border-top-color: var(--border-top);
+    border-radius: 12px;
+    padding: 4px;
+    opacity: 0;
+    translate: 0 -4px;
+    scale: 0.98 0.98;
+    transition-property: opacity, translate, scale;
+    transition-duration: 0.1s;
+    transition-timing-function: ease-in-cubic;
+}
+.popover.up { translate: 0 4px; }
+.popover.open { opacity: 1; translate: 0 0; scale: 1 1; transition-duration: 0.14s; transition-timing-function: ease-out-cubic; }
+.pop-section { padding: 8px 8px 4px 8px; }
+.pop-caption { font-size: 12px; -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Medium.ttf"); color: var(--text-3); margin: 8px 8px 6px 8px; }
+.pop-hint { font-size: 12px; color: var(--text-2); margin: 6px 8px 4px 8px; white-space: normal; }
+
+.menu { min-width: 220px; }
+.menu-item {
+    flex-direction: row; align-items: center;
+    height: 32px; padding: 0 8px; border-radius: 8px;
+    color: var(--text-2);
+}
+.menu-item > .icon { width: 16px; height: 16px; margin-right: 10px; }
+.menu-item > .menu-label { flex-grow: 1; flex-shrink: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 13px; color: var(--text-1); -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Medium.ttf"); }
+.menu-item > .menu-shortcut { font-size: 12px; color: var(--text-3); margin-left: 16px; }
+.menu-item:hover, .menu-item.highlight { background-color: var(--hover-2); color: var(--text-1); }
+.menu-item.danger > .menu-label, .menu-item.danger { color: var(--danger); }
+.menu-item.danger:hover, .menu-item.danger.highlight { background-color: var(--danger-soft); }
+.menu-item:disabled { opacity: 0.45; }
+.menu-sep { height: 1px; margin: 4px 0; background-color: var(--divider); }
+.menu-header { font-size: 12px; -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Medium.ttf"); color: var(--text-3); margin: 6px 8px 4px 8px; }
+
+/* ------------------------------------------------------------------ tooltip */
+.tip {
+    position: absolute;
+    flex-direction: row;
+    align-items: center;
+    min-height: 28px;
+    max-width: 320px;
+    padding: 5px 10px;
+    border-radius: 8px;
+    background-color: var(--selected);
+    border-width: 1px;
+    border-color: var(--border-strong);
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: 0.08s;
+}
+.tip.show { opacity: 1; transition-duration: 0.1s; }
+.tip-body { flex-shrink: 1; }
+.tip-text { font-size: 12px; color: var(--text-1); white-space: normal; -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Medium.ttf"); }
+.tip-sub { font-size: 12px; color: var(--text-2); white-space: normal; margin-top: 2px; }
+.tip-keys { flex-direction: row; margin-left: 10px; align-items: center; }
+.tip-kbd {
+    height: 18px; min-width: 18px; padding: 0 5px; margin-left: 3px;
+    border-radius: 4px; border-width: 1px; border-bottom-width: 2px;
+    border-color: var(--kbd-border); border-bottom-color: var(--kbd-bottom); background-color: var(--kbd-bg);
+    font-size: 10px; color: var(--text-1); -unity-text-align: middle-center;
+    -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Medium.ttf");
+}
+
+/* ------------------------------------------------------------------ toast */
+.toast-host { position: absolute; top: 16px; left: 0; right: 0; align-items: center; transition-property: top; transition-duration: 0.2s; }
+.under-header > .toast-host { top: 76px; }
+.toast {
+    flex-direction: row;
+    align-items: center;
+    height: 44px;
+    padding: 0 4px 0 14px;
+    border-radius: 12px;
+    background-color: var(--surface-2);
+    border-width: 1px; border-color: var(--border); border-top-color: var(--border-top);
+    opacity: 0;
+    translate: 0 -12px;
+    transition-property: opacity, translate;
+    transition-duration: 0.16s;
+    transition-timing-function: ease-in-cubic;
+}
+.toast.show { opacity: 1; translate: 0 0; transition-duration: 0.24s; transition-timing-function: ease-out-cubic; }
+.toast-content { flex-direction: row; align-items: center; transition-property: opacity; transition-duration: 0.12s; }
+.toast-content > .icon { width: 16px; height: 16px; color: var(--text-2); }
+.toast.success .toast-content > .icon { color: var(--success); }
+.toast.error .toast-content > .icon { color: var(--danger); }
+.toast.ai .toast-content > .icon { color: var(--ai); }
+.toast-text-row { flex-direction: row; align-items: center; margin: 0 10px; }
+.toast-text { font-size: 13px; -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Medium.ttf"); }
+.toast-kbd { margin: 0 4px; }
+.toast-action { margin-left: 2px; }
+.toast.no-action { padding-right: 4px; }
+
+/* ------------------------------------------------------------------ modal */
+.modal-host { position: absolute; left: 0; top: 0; right: 0; bottom: 0; align-items: center; justify-content: center; }
+.scrim {
+    position: absolute; left: 0; top: 0; right: 0; bottom: 0;
+    background-color: rgba(6, 7, 10, 0.72);
+    opacity: 0;
+    transition-property: opacity; transition-duration: 0.18s; transition-timing-function: linear;
+}
+.scrim.open { opacity: 1; }
+.modal-shell {
+    opacity: 0;
+    scale: 0.96 0.96;
+    transition-property: opacity, scale;
+    transition-duration: 0.14s;
+    transition-timing-function: ease-in-cubic;
+}
+.modal-shell.open { opacity: 1; scale: 1 1; transition-duration: 0.22s; transition-timing-function: ease-out-cubic; }
+.modal {
+    background-color: var(--surface-2);
+    border-width: 1px; border-color: var(--border); border-top-color: var(--border-top);
+    border-radius: 16px;
+    padding: 24px;
+}
+.modal-head { flex-direction: row; align-items: flex-start; margin-bottom: 20px; }
+.modal-titles { flex-grow: 1; flex-shrink: 1; }
+.modal-subtitle { font-size: 14px; color: var(--text-2); margin-top: 6px; white-space: normal; }
+.modal { position: relative; }
+.modal-close { position: absolute; top: 16px; right: 16px; margin: 0; color: var(--text-2); }
+.modal-head > .modal-titles > .t-title { padding-right: 36px; }
+.modal-foot { flex-direction: row; align-items: center; justify-content: flex-end; margin-top: 24px; }
+.modal-foot > .btn { margin-left: 8px; }
+.modal-foot > .foot-note { flex-grow: 1; flex-shrink: 1; margin-right: 16px; font-size: 12px; color: var(--text-3); white-space: normal; }
+
+/* ------------------------------------------------------------------ overlays */
+.fade-overlay { position: absolute; left: 0; top: 0; right: 0; bottom: 0; background-color: var(--bg-app); opacity: 0; }
+.shutter { position: absolute; left: 0; top: 0; right: 0; bottom: 0; background-color: #FFFFFF; opacity: 0; }
+
+/* scroll bars: overlay, thin, visible on hover */
+.unity-scroller--vertical { position: absolute; right: 3px; top: 6px; bottom: 6px; width: 6px; }
+.unity-scroller--vertical .unity-base-slider__tracker { background-color: rgba(0, 0, 0, 0); border-width: 0; }
+.unity-scroller--vertical .unity-base-slider__dragger {
+    background-color: rgba(0, 0, 0, 0); border-width: 0; border-radius: 2px; width: 4px; left: 1px;
+    transition-property: background-color; transition-duration: 0.15s;
+}
+.unity-scroll-view:hover .unity-base-slider__dragger { background-color: #3A3D45; }
+.unity-scroller--vertical .unity-base-slider__dragger:hover { background-color: #50545E; }
+.unity-scroller--vertical .unity-scroller__low-button, .unity-scroller--vertical .unity-scroller__high-button { display: none; }
+.unity-scroller--vertical > .unity-scroller__slider { margin: 0; }

@@ -131,7 +131,9 @@ namespace House4696.Generation
                 if (s.To != null) Lvl(s.To, p);
                 if (s.Width < 0.7f) W(p, $"ширина марша {s.Width:0.##} м — меньше 0.7 м");
                 if (s.Going < 0.22f || s.Going > 0.35f) W(p, $"проступь {s.Going:0.##} м вне 0.22–0.35");
-                // the upper level must leave an opening wherever a tread has less than 2 m headroom
+                if (s.Well != "auto" && s.Well != "open" && s.Well != "none") E(p, $"well: \"auto\", \"open\" или \"none\", указано \"{s.Well}\"");
+                // the upper level must leave an opening wherever a tread has less than 2 m headroom (automatic unless well = none)
+                if (s.Well != "none") continue;
                 var toId = s.To ?? NextLevel(sorted, s.From);
                 if (toId == null || !levels.TryGetValue(toId, out var toL)) continue;
                 var fromL = levels[s.From];
@@ -174,7 +176,100 @@ namespace House4696.Generation
             }
             foreach (var l in d.Lights)
                 if (l.Level != null) Lvl(l.Level, $"lights/{l.Id}");
+            if (d.Site != null && d.Site.Landscape == LandscapePreset.Natural) Site(d, E, W);
             return list;
+        }
+
+        static readonly string[] Styles = { "perennial", "meadow", "shade", "rock", "none" };
+        static readonly string[] ObjectTypes = { "bridge", "stone_lantern", "garden_lamp", "boulder", "tree" };
+        static readonly string[] TreeSpecies = { "oak", "birch", "spruce", "maple_red" };
+        static readonly string[] Sides = { "north", "east", "south", "west" };
+
+        /// <summary>The natural site: shapes, names and sizes an author can get wrong.</summary>
+        static void Site(HouseDocument d, System.Action<string, string> E, System.Action<string, string> W)
+        {
+            var s = d.Site;
+            // the house footprint from the exterior walls (the generator levels a pad there)
+            float hx0 = float.MaxValue, hz0 = float.MaxValue, hx1 = float.MinValue, hz1 = float.MinValue;
+            foreach (var w in d.Walls)
+            {
+                if (w.Kind != WallKind.Exterior) continue;
+                foreach (var p in new[] { w.A, w.B })
+                {
+                    hx0 = Mathf.Min(hx0, p.x); hx1 = Mathf.Max(hx1, p.x); hz0 = Mathf.Min(hz0, p.y); hz1 = Mathf.Max(hz1, p.y);
+                }
+            }
+            bool house = hx0 < hx1;
+            Rect plot;
+            if (s.Plot != null)
+            {
+                if (s.Plot.Length != 4 || s.Plot[2] <= s.Plot[0] || s.Plot[3] <= s.Plot[1]) { E("site/plot", "нужно [xmin, zmin, xmax, zmax] с xmax > xmin и zmax > zmin"); return; }
+                plot = Rect.MinMaxRect(s.Plot[0], s.Plot[1], s.Plot[2], s.Plot[3]);
+                if (plot.width > 220f || plot.height > 220f) W("site/plot", $"участок {plot.width:0}×{plot.height:0} м: больше 220 м генератор делает грубее");
+                if (house && (hx0 < plot.xMin || hx1 > plot.xMax || hz0 < plot.yMin || hz1 > plot.yMax))
+                    E("site/plot", $"дом ({hx0:0.#}…{hx1:0.#}, {hz0:0.#}…{hz1:0.#}) выходит за участок — расширь plot");
+            }
+            else plot = house ? Rect.MinMaxRect(hx0 - 18f, hz0 - 18f, hx1 + 18f, hz1 + 18f) : Rect.MinMaxRect(-20f, -20f, 20f, 20f);
+            var reach = Rect.MinMaxRect(plot.xMin - 30f, plot.yMin - 30f, plot.xMax + 30f, plot.yMax + 30f);
+            bool InHouse(Vector2 p, float m) => house && p.x > hx0 - m && p.x < hx1 + m && p.y > hz0 - m && p.y < hz1 + m;
+
+            if (s.Terrain != null && (s.Terrain.Grade < 0f || s.Terrain.Grade > 0.3f))
+                W("site/terrain", $"уклон {s.Terrain.Grade:0.##} м/м — обычно 0–0.15 (grade — метры подъёма на метр)");
+            if (s.Planting != null)
+            {
+                if (!string.IsNullOrEmpty(s.Planting.Style) && System.Array.IndexOf(Styles, s.Planting.Style) < 0)
+                    E("site/planting", $"стиль '{s.Planting.Style}' неизвестен: {string.Join(", ", Styles)}");
+                foreach (var f in s.Planting.Flowers)
+                    if (System.Array.IndexOf(Landscape.Natural.PlantingPlan.Flowers, f) < 0)
+                        W("site/planting", $"цветок '{f}' неизвестен: {string.Join(", ", Landscape.Natural.PlantingPlan.Flowers)}");
+            }
+            // ids are unique within each list (a path and the bridge on it may share a name)
+            var ids = new HashSet<string>();
+            foreach (var st in s.Streams)
+            {
+                string p = $"site/streams/{st.Id}";
+                if (!string.IsNullOrEmpty(st.Id) && !ids.Add(st.Id)) E(p, "повторяющийся id");
+                if (st.Path == null || st.Path.Count < 2) { E(p, "нужно минимум 2 точки path (от истока к устью)"); continue; }
+                if (st.Width < 0.5f || st.Width > 8f) W(p, $"ширина {st.Width:0.#} м — обычно 1–4");
+                if (st.Depth < 0.1f || st.Depth > 1.2f) W(p, $"глубина {st.Depth:0.##} м — обычно 0.2–0.5");
+                foreach (var q in st.Path)
+                {
+                    if (!reach.Contains(q)) { W(p, $"точка [{q.x:0.#}, {q.y:0.#}] далеко за участком (ручей обрезается краем рельефа)"); break; }
+                    if (InHouse(q, st.Width * 0.5f + 1f)) { E(p, $"русло проходит под домом у [{q.x:0.#}, {q.y:0.#}]"); break; }
+                }
+            }
+            ids.Clear();
+            foreach (var pa in s.Paths)
+            {
+                string p = $"site/paths/{pa.Id}";
+                if (!string.IsNullOrEmpty(pa.Id) && !ids.Add(pa.Id)) E(p, "повторяющийся id");
+                if (pa.Path == null || pa.Path.Count < 2) E(p, "нужно минимум 2 точки path");
+                if (!string.IsNullOrEmpty(pa.Style) && pa.Style != "stepping") W(p, $"стиль '{pa.Style}' пока не поддерживается (stepping)");
+            }
+            foreach (var b in s.Beds)
+            {
+                string p = $"site/beds/{b.Id}";
+                if (b.Outline == null || b.Outline.Count < 3) E(p, "нужен outline минимум из 3 точек");
+                if (!string.IsNullOrEmpty(b.Style) && System.Array.IndexOf(Styles, b.Style) < 0) E(p, $"стиль '{b.Style}' неизвестен: {string.Join(", ", Styles)}");
+            }
+            ids.Clear();
+            foreach (var o in s.Objects)
+            {
+                string p = $"site/objects/{o.Id}";
+                if (!string.IsNullOrEmpty(o.Id) && !ids.Add(o.Id)) E(p, "повторяющийся id");
+                if (System.Array.IndexOf(ObjectTypes, o.Type) < 0) { E(p, $"type '{o.Type}' неизвестен: {string.Join(", ", ObjectTypes)}"); continue; }
+                if (!reach.Contains(o.At)) W(p, "стоит далеко за участком");
+                if (o.Type != "bridge" && InHouse(o.At, 0.3f)) E(p, "стоит внутри дома");
+                if (o.Type == "bridge")
+                {
+                    if (o.To == null) E(p, "мост: нужны at и to (берега по разные стороны ручья)");
+                    else if ((o.To.Value - o.At).magnitude < 2f || (o.To.Value - o.At).magnitude > 12f) W(p, $"пролёт {(o.To.Value - o.At).magnitude:0.#} м — обычно 3–8");
+                }
+                if (o.Type == "tree" && !string.IsNullOrEmpty(o.Species) && System.Array.IndexOf(TreeSpecies, o.Species) < 0)
+                    E(p, $"порода '{o.Species}' неизвестна: {string.Join(", ", TreeSpecies)}");
+            }
+            foreach (var f in s.Fence)
+                if (System.Array.IndexOf(Sides, f) < 0) E("site/fence", $"сторона '{f}' неизвестна: {string.Join(", ", Sides)}");
         }
 
         static string NextLevel(List<LevelDef> sorted, string id)

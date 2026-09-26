@@ -1,0 +1,328 @@
+/* House v2 — Home, the project library (spec §5). Classes are prefixed "home-". Opaque colours only. */
+
+/* ------------------------------------------------------------------ screen */
+.home {
+    background-color: var(--bg-app);
+    flex-direction: column;
+}
+/* ghost buttons sit on bg-app / surface-1 here: the softer hover */
+.home .btn-ghost:hover { background-color: var(--hover-1); }
+.home .btn-ghost:active { background-color: var(--press); }
+
+/* ------------------------------------------------------------------ header (h 64, aligned with the content column) */
+.home-header {
+    height: 64px;
+    flex-shrink: 0;
+    align-items: center;
+    border-bottom-width: 1px;
+    border-bottom-color: var(--bg-app);
+    transition-property: border-bottom-color;
+    transition-duration: 0.16s;
+    transition-timing-function: ease-out;
+}
+.home-header.scrolled { border-bottom-color: var(--divider); }
+.home-header-inner {
+    flex-direction: row;
+    align-items: center;
+    flex-grow: 1;
+    width: 100%;
+    max-width: 1296px;
+    padding: 0 32px;
+}
+
+.home-brand { flex-direction: row; align-items: center; flex-shrink: 0; }
+.home-mark {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    background-color: var(--accent);
+    color: #FFFFFF;
+    align-items: center;
+    justify-content: center;
+}
+.home-mark > .icon { color: #FFFFFF; }
+.home-brand-name { margin-left: 10px; color: var(--text-1); }
+
+.home-actions { flex-direction: row; align-items: center; flex-shrink: 1; min-width: 0; }
+
+/* search 280×36 (the wrap adds the 3 px halo ring around the field) */
+.home-search { width: 286px; margin: -3px 9px -3px -3px; flex-shrink: 1; min-width: 180px; }
+.home-search .field > .unity-base-text-field__input { padding-right: 38px; }
+.home-search-clear {
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    color: var(--text-3);
+}
+.home-search-clear:hover { color: var(--text-1); }
+
+/* AI segment as a standalone pill (states as in the status pill) */
+.home-ai {
+    flex-direction: row;
+    align-items: center;
+    height: 36px;
+    padding: 0 12px;
+    border-radius: 8px;
+    border-width: 1px;
+    border-color: var(--border);
+    border-top-color: var(--border-top);
+    background-color: var(--surface-1);
+    color: var(--text-1);
+    flex-shrink: 0;
+    transition-property: background-color, border-color, scale;
+    transition-duration: 0.09s, 0.09s, 0.08s;
+    transition-timing-function: ease-out;
+}
+.home-ai:hover { background-color: var(--hover-1); }
+.home-ai:active { background-color: var(--press); scale: 0.97 0.97; }
+.home-ai.popover-open { background-color: var(--selected); border-color: var(--border-strong); }
+.home-ai > .icon { width: 16px; height: 16px; color: #FFFFFF; }
+.home-ai > .pulse { margin: 0 1px 0 1px; }
+.home-ai > .home-ai-label {
+    margin-left: 8px;
+    font-size: 13px;
+    color: var(--text-1);
+    -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Medium.ttf");
+}
+.home-ai.home-ai--connect { background-color: var(--accent); border-color: var(--accent); }
+.home-ai.home-ai--connect:hover { background-color: var(--accent-hover); border-color: var(--accent-hover); }
+.home-ai.home-ai--connect:active { background-color: var(--accent-press); border-color: var(--accent-press); }
+.home-ai.home-ai--connect > .home-ai-label { color: #FFFFFF; }
+
+.home-back { margin-left: 8px; }
+.home-back > .kbd { margin-left: 10px; }
+.home-new { margin-left: 8px; }
+
+/* ------------------------------------------------------------------ content column (max-w 1296, padding 0 32) */
+/* 24 below the 64 px header, then 32 between the checklist and the title row: a 24 / 32 rhythm */
+.home-scroll { flex-grow: 1; }
+.home-center { align-items: center; }
+.home-column {
+    width: 100%;
+    max-width: 1296px;
+    padding: 24px 32px 64px 32px;
+}
+
+/* ------------------------------------------------------------------ checklist «Начало работы» */
+.home-check {
+    background-color: var(--surface-1);
+    border-radius: 12px;
+    border-width: 1px;
+    border-color: var(--border);
+    padding: 20px;
+}
+.home-check-head { flex-direction: row; align-items: center; margin-bottom: 16px; }
+.home-check-progress { margin-left: 8px; }
+/* ghost ✕ «Скрыть»: text-2 → text-1; the label's right edge lines up with the card padding */
+.home-check-close { margin: -4px -10px -4px 0; color: var(--text-2); }
+.home-check-close:hover { color: var(--text-1); }
+.home-check-close > .icon { width: 14px; height: 14px; }
+.home-check-close > .btn-label.after-icon { margin-left: 6px; }
+
+.home-check-steps { flex-direction: row; align-items: stretch; }
+.home-check-divider { width: 1px; margin: 0 24px; background-color: var(--divider); flex-shrink: 0; }
+.home-step { flex-grow: 1; flex-shrink: 1; flex-basis: 0; flex-direction: row; align-items: flex-start; min-width: 0; }
+.home-step-circle {
+    width: 24px;
+    height: 24px;
+    border-radius: 12px;
+    border-width: 1.5px;
+    border-color: var(--border-strong);
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition-property: background-color, border-color;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+}
+.home-step-num {
+    font-size: 11px;
+    letter-spacing: 0.2px;
+    color: var(--text-3);
+    -unity-text-align: middle-center;
+    -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-Medium.ttf");
+}
+.home-step-check { width: 14px; height: 14px; color: var(--bg-app); }
+.home-step.done > .home-step-circle { background-color: var(--success); border-color: var(--success); }
+.home-step-text { margin-left: 12px; flex-grow: 1; flex-shrink: 1; min-width: 0; }
+.home-step-title { color: var(--text-1); margin-top: 3px; white-space: normal; }
+.home-step.done .home-step-title { color: var(--text-2); }
+.home-step-caption { margin-top: 2px; white-space: normal; }
+.home-step-action { margin-top: 12px; align-self: flex-start; }
+.home-step-done {
+    flex-direction: row;
+    align-items: center;
+    height: 32px;
+    margin-top: 12px;
+    color: var(--success);
+}
+.home-step-done > .icon { width: 14px; height: 14px; color: var(--success); margin-right: 6px; }
+.home-step-done > Label { color: var(--success); }
+
+/* ------------------------------------------------------------------ title row */
+.home-title-row { flex-direction: row; align-items: flex-end; margin-top: 32px; margin-bottom: 20px; }
+.home-title-row.first { margin-top: 0; }     /* checklist hidden: the title row takes the column's 24 px top */
+.home-title { color: var(--text-1); }
+.home-count { margin-left: 10px; margin-bottom: 3px; }
+.home-sort { align-self: center; color: var(--text-2); }
+.home-sort:hover { color: var(--text-1); }
+.home-sort.popover-open { background-color: var(--selected); color: var(--text-1); }
+.home-sort > .icon { width: 16px; height: 16px; }
+.home-sort > .trail-icon { width: 12px; height: 12px; color: var(--text-3); }
+
+/* ------------------------------------------------------------------ grid & card (no box: borders only) */
+.home-grid { flex-direction: row; flex-wrap: wrap; align-items: flex-start; }
+
+.home-card {
+    margin-bottom: 32px;
+    flex-shrink: 0;
+    transition-property: scale;
+    transition-duration: 0.08s;
+    transition-timing-function: ease-out;
+}
+.home-card:active { scale: 0.99 0.99; }
+.home-card.renaming:active { scale: 1 1; }
+
+/* The thumbnail is the frame's own background image (set from code): the rounded background mesh is anti-aliased and
+   the 1 px border draws on top of it. No overflow:hidden here: that clips children with a stencil mask (stair-stepped
+   corners, the image bleeding over the border). Thumbnails are 16:10 like the frame, so 100% 100% keeps the aspect;
+   the hover zoom grows the image to 103% around the centre and the renderer clips it to the rounded rect. */
+.home-thumb-wrap { position: relative; }
+.home-thumb {
+    border-radius: 12px;
+    border-width: 1px;
+    border-color: var(--border);
+    background-color: var(--surface-1);
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition-property: border-color, background-size;
+    transition-duration: 0.09s, 0.24s;
+    transition-timing-function: ease-out, ease-out-cubic;
+}
+.home-card:hover .home-thumb,
+.home-card.highlight .home-thumb { border-color: var(--border-strong); background-size: 103% 103%; }
+
+.home-thumb-empty {
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+    align-items: center;
+    justify-content: center;
+    padding: 0 24px;
+    color: var(--text-3);
+}
+.home-thumb-empty > .icon { color: var(--text-3); }
+.home-thumb-empty-text {
+    margin-top: 10px;
+    max-width: 200px;
+    color: var(--text-3);
+    white-space: normal;
+    -unity-text-align: middle-center;
+}
+
+.home-open-badge {
+    position: absolute;
+    left: 8px;
+    top: 8px;
+    height: 22px;
+    padding: 0 8px;
+    border-radius: 8px;
+    background-color: var(--bg-app);
+    flex-direction: row;
+    align-items: center;
+}
+.home-open-dot { width: 6px; height: 6px; border-radius: 3px; background-color: var(--success); margin-right: 6px; }
+.home-open-text { color: var(--text-1); }
+
+.home-more {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    background-color: var(--surface-2);
+    color: var(--text-1);
+    opacity: 0;
+    transition-property: opacity, background-color, scale;
+    transition-duration: 0.14s, 0.09s, 0.08s;
+    transition-timing-function: ease-out;
+}
+.home-more > .icon { width: 16px; height: 16px; }
+.home .home-more:hover { background-color: var(--hover-2); }
+.home .home-more:active { background-color: var(--press); }
+.home-card:hover .home-more,
+.home-card.highlight .home-more,
+.home-more.popover-open { opacity: 1; }
+.home-more.popover-open { background-color: var(--selected); }
+
+/* keyboard highlight: 2 px accent ring with a 2 px gap around the thumbnail */
+.home-ring {
+    position: absolute;
+    left: -4px; top: -4px; right: -4px; bottom: -4px;
+    border-radius: 16px;
+    border-width: 2px;
+    border-color: var(--accent);
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: 0.12s;
+    transition-timing-function: ease-out;
+}
+.home-card.highlight .home-ring { opacity: 1; }
+
+.home-name-row { margin-top: 12px; height: 20px; flex-direction: row; align-items: center; }
+.home-name { flex-shrink: 1; min-width: 0; color: var(--text-1); }
+.home-meta-row { margin-top: 4px; flex-direction: row; align-items: center; }
+.home-meta { flex-grow: 1; flex-shrink: 1; min-width: 0; }
+.home-ago { margin-left: 12px; flex-shrink: 0; }
+
+/* inline rename: the field sits where the name was (text aligned), accent border + 3 px accent-halo ring (spec §6 inputs) */
+.home-rename-wrap {
+    flex-grow: 1;
+    flex-shrink: 1;
+    min-width: 0;
+    padding: 3px;
+    margin: -7px -3px -7px -12px;
+    border-radius: 11px;
+    background-color: var(--accent-halo);
+}
+.home-rename-wrap > .home-rename { margin: 0; padding: 0; flex-grow: 1; flex-shrink: 1; min-width: 0; }
+.home-rename-wrap > .home-rename > .unity-base-text-field__input,
+.home-rename-wrap > .home-rename:hover > .unity-base-text-field__input,
+.home-rename-wrap > .home-rename:focus > .unity-base-text-field__input {
+    height: 28px;
+    margin: 0;
+    padding: 0 8px;
+    border-width: 1px;
+    border-radius: 8px;
+    border-color: var(--accent);
+    background-color: var(--field);
+    color: var(--text-1);
+    font-size: 15px;
+    letter-spacing: -0.1px;
+    -unity-font-definition: url("project://database/Assets/House4696/UI/Fonts/Inter-SemiBold.ttf");
+    -unity-text-align: middle-left;
+    --unity-cursor-color: #93A2FF;
+    --unity-selection-color: #2E3A7A;
+}
+
+/* ------------------------------------------------------------------ states: no results, empty library */
+.home-noresults { align-items: center; padding: 72px 0 48px 0; }
+.home-state-icon { width: 32px; height: 32px; color: var(--text-3); }
+.home-state-title { margin-top: 16px; color: var(--text-1); white-space: normal; -unity-text-align: middle-center; max-width: 560px; }
+.home-state-reset { margin-top: 16px; }
+.home-state-body { margin-top: 8px; max-width: 420px; white-space: normal; -unity-text-align: middle-center; }
+.home-state-actions { flex-direction: row; justify-content: center; margin-top: 24px; }
+.home-state-actions > .btn { margin: 0 4px; }
+
+.home-empty { align-items: center; padding: 88px 0 48px 0; }
+.home-empty > .home-state-title { margin-top: 24px; }
+
+.home-illo {
+    width: 96px;
+    height: 96px;
+    flex-shrink: 0;
+    --illo-plot: #15171B;
+    --illo-edge: #30333A;
+    --illo-dot: #383B43;
+    --illo-line: #A3A8B1;
+    --illo-accent: #93A2FF;
+    --illo-ai: #A78BFA;
+}

@@ -11,15 +11,34 @@ export const INSTRUCTIONS = `House — проектирование частны
 1) house_guide — прочитай формат проекта (один раз за сессию).
 2) house_create_project (или house_list_projects + house_open_project).
 3) Этажи (house_upsert kind=level) → наружные стены по контуру (house_exterior_walls) → перегородки и проёмы (house_upsert wall/opening) → комнаты (room) → крыша/лестница/элементы → мебель (item, см. house_catalog) → свет и точки показа.
-4) После изменений смотри issues/buildWarnings в ответе и исправляй их. Проверяй результат глазами: house_render (orbit — снаружи, plan — план этажа, walk — вид изнутри).
-Координаты в метрах: X вправо, Z на север, Y вверх; точки плана [x, z]. Правки частичные: house_upsert с тем же id меняет только переданные поля. Ошибся — house_undo.`;
+4) Каждый ответ на правку содержит issues: ошибки и предупреждения ПО ПОСТРОЕННОМУ дому (мебель в стене или в проходе, дверь в обрыв, проём выше стены или в углу, крыша сквозь комнату, лестница в стену, комната без крыши) — с готовым исправлением. Исправляй их сразу, до следующего шага.
+5) Не считай геометрию в уме: house_inspect даёт реальные числа (верх стен, проёмы в координатах, карниз и конёк крыши, габарит и проём лестницы, размеры предметов). house_catalog даёт реальные размеры моделей.
+6) Проверяй глазами: house_render (orbit — снаружи, plan — план этажа, walk — вид изнутри).
+Координаты в метрах: X вправо (восток), Z на север, Y вверх; точки плана [x, z]. Правки частичные: house_upsert с тем же id меняет только переданные поля. Ошибся — house_undo.`;
 
 const KINDS = ["level", "wall", "opening", "room", "roof", "stair", "element", "item", "light", "view", "meta", "site"] as const;
 
 const point2 = z.tuple([z.number(), z.number()]);
 
+/** JSON for a model to read: objects indented, arrays of numbers (points, sizes) on one line — far fewer tokens. */
+export function compact(value: unknown, indent = ""): string {
+  if (Array.isArray(value)) {
+    if (value.every((v) => v === null || typeof v !== "object" || (Array.isArray(v) && v.every((x) => typeof x !== "object"))))
+      return JSON.stringify(value);
+    const inner = indent + "  ";
+    return "[\n" + value.map((v) => inner + compact(v, inner)).join(",\n") + "\n" + indent + "]";
+  }
+  if (value !== null && typeof value === "object") {
+    const entries = Object.entries(value as Record<string, unknown>);
+    if (entries.length === 0) return "{}";
+    const inner = indent + "  ";
+    return "{\n" + entries.map(([k, v]) => inner + JSON.stringify(k) + ": " + compact(v, inner)).join(",\n") + "\n" + indent + "}";
+  }
+  return JSON.stringify(value);
+}
+
 function text(value: unknown): CallToolResult {
-  return { content: [{ type: "text", text: typeof value === "string" ? value : JSON.stringify(value, null, 2) }] };
+  return { content: [{ type: "text", text: typeof value === "string" ? value : compact(value) }] };
 }
 
 /** Runs an app command and turns app errors into tool errors the model can read and fix. */
@@ -146,16 +165,39 @@ export function registerTools(server: McpServer): void {
 
   server.registerTool("house_catalog", {
     title: "Каталог моделей",
-    description: "Модели мебели, сантехники, света, декора и растений для items: id, название, категория и параметры со значениями по умолчанию.",
-    inputSchema: { category: z.string().optional().describe("seating, tables, storage, bedroom, kitchen, bath, lighting, walls, textiles, decor, plants, utility, outdoor") },
+    description: "Модели мебели, сантехники, света, декора и растений для items: id, название, категория, параметры со значениями по умолчанию, " +
+      "реальный размер size [ширина, глубина, высота], fromOrigin — сколько предмет занимает от точки position в каждую сторону, и note — куда ставить точку и как повёрнут. " +
+      "Без фильтра список длинный — лучше указывай category или id.",
+    inputSchema: {
+      category: z.string().optional().describe("seating, tables, storage, bedroom, kitchen, bath, lighting, walls, textiles, decor, plants, utility, outdoor"),
+      id: z.string().optional().describe("Одна модель по id"),
+    },
     annotations: readOnly,
   }, async (a) => run("catalog", a));
 
   server.registerTool("house_materials", {
     title: "Материалы",
-    description: "Имена материалов для отделки и параметров мебели. Любой можно окрасить: 'имя#rrggbb' (например 'render#e8e2d6').",
+    description: "Материалы для отделки и параметров мебели. library — реалистичные материалы-сканы с названием и категорией " +
+      "(floor, tile, wall, fabric, leather, carpet, wood, facade, roof, metal, paving, deck, ground); basic — встроенная палитра. " +
+      "Любой можно окрасить: 'имя#rrggbb' (например 'velvet#6b4f3a', 'render#e8e2d6'). " +
+      "У моделей из каталога параметры — слоты материалов (upholstery, legs, …): материал, '#rrggbb' (подкрасить родной) или 'original'. " +
+      "Список длинный — указывай category.",
+    inputSchema: { category: z.string().optional().describe("Категория library: floor, tile, wall, fabric, leather, carpet, wood, facade, roof, metal, paving, deck, ground") },
     annotations: readOnly,
-  }, async () => run("materials"));
+  }, async (a) => run("materials", a));
+
+  server.registerTool("house_inspect", {
+    title: "Геометрия построенного дома",
+    description: "Реальные числа построенного дома вместо расчётов в уме: этажи (пол, потолок), стены (концы, толщина, низ и верх, куда смотрят, " +
+      "проёмы в координатах и по высоте, свободные участки), комнаты (площадь, границы), крыши (base, карниз, конёк, куда поднимается скат), " +
+      "лестницы (число и высота ступеней, габарит маршей, проём в перекрытии, линия схода), предметы (реальный размер, высоты, пятно на плане), элементы. " +
+      "Все высоты абсолютные (над землёй).",
+    inputSchema: {
+      section: z.enum(["levels", "walls", "rooms", "roofs", "stairs", "items", "elements"]).optional().describe("Раздел; без него — всё"),
+      id: z.string().optional().describe("Только элемент с этим id"),
+    },
+    annotations: readOnly,
+  }, async (a) => run("inspect", a));
 
   server.registerTool("house_render", {
     title: "Показать дом",

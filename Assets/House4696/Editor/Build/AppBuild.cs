@@ -27,6 +27,9 @@ namespace House4696.Build
 
         public static void BuildMacCli()
         {
+            // -importLandscape: rebuild the landscape kit first (after tools/landscape/export_kit.py)
+            if (Array.IndexOf(Environment.GetCommandLineArgs(), "-importLandscape") >= 0)
+                Debug.Log(Setup.LandscapeKitImporter.Import());
             var r = Build(BuildTarget.StandaloneOSX);
             Log(r);
             EditorApplication.Exit(r.StartsWith("[AppBuild] OK", StringComparison.Ordinal) ? 0 : 1);

@@ -14,11 +14,13 @@ namespace House4696.Setup
         static readonly (string prefix, Shape shape)[] Rules =
         {
             ("Curtains_", Shape.None),
+            ("Water_", Shape.None),            // stream water: you wade through it to the bed
             ("Decor_", Shape.None),
             ("Lawn_Blades", Shape.None),
             ("Plant_", Shape.None),
             ("Pot_Grass", Shape.None),
             ("Lawn", Shape.Box),
+            ("Model_", Shape.Box),            // library furniture: a box is enough to walk around it
             ("Hedge_", Shape.Box),
             ("Spruce", Shape.Trunk),
             ("Birch", Shape.Trunk),
@@ -41,6 +43,9 @@ namespace House4696.Setup
 
         static Shape ShapeFor(string name)
         {
+            // coarse LODs and shadow-only proxies duplicate a collider their full-detail sibling already has
+            if (name.EndsWith("_LOD1", System.StringComparison.Ordinal) || name.EndsWith("_Shadow", System.StringComparison.Ordinal)
+                || name == "ShadowProxy") return Shape.None;
             foreach (var (prefix, shape) in Rules)
                 if (name.StartsWith(prefix, System.StringComparison.Ordinal)) return shape;
             return Shape.Mesh;

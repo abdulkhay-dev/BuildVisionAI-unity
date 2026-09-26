@@ -17,6 +17,12 @@ namespace House4696.Generation
         public WalkPoint[] Walk;
         public OrbitPoint[] Orbit;
         public int Colliders;
+        /// <summary>Resolved geometry of this build (walls, stairs, roofs) for the checks and the inspector.</summary>
+        public HouseContext Context;
+        /// <summary>Built catalogue items with their real bounds.</summary>
+        public List<ItemBox> Items = new List<ItemBox>();
+        /// <summary>Geometric checks of the built house (<see cref="HouseChecks"/>).</summary>
+        public List<Issue> Checks = new List<Issue>();
         /// <summary>Materials created for this house (tinted variants); the owner destroys them with the house.</summary>
         public List<Material> CreatedMaterials = new List<Material>();
     }
@@ -58,12 +64,46 @@ namespace House4696.Generation
             var footprint = Footprint(c);
             var site = new SiteBuilder(c).Build(footprint);
             int colliders = CollisionSetup.Apply(site != null ? new[] { root, site } : new[] { root });
-            return new HouseBuildResult
+            var result = new HouseBuildResult
             {
                 House = root, Site = site, Warnings = c.Warnings, Footprint = footprint, Colliders = colliders,
                 Pivot = new Vector3(footprint.center.x, TopHeight(c) * 0.45f, footprint.center.y),
                 Walk = WalkViews(doc), Orbit = OrbitViews(doc), CreatedMaterials = new List<Material>(c.Mats.Created),
+                Context = c, Items = c.ItemBoxes,
             };
+            try { result.Checks = HouseChecks.Run(c, c.ItemBoxes); }
+            catch (System.Exception e) { Debug.LogException(e); c.Warn("geometry checks failed: " + e.Message); }
+            return result;
+        }
+
+        static Dictionary<string, Bounds> _measured;
+
+        /// <summary>
+        /// Real extent of every catalogue model with default parameters, in the model's frame (front faces -Z, origin =
+        /// its placement point): built once in a throwaway house and cached.
+        /// </summary>
+        public static Dictionary<string, Bounds> MeasureCatalog(MaterialLibrary lib)
+        {
+            if (_measured != null) return _measured;
+            var doc = new HouseDocument();
+            doc.Site.Landscape = LandscapePreset.None;
+            doc.Levels.Add(new LevelDef { Id = "ground" });
+            int i = 0;
+            foreach (var m in ItemCatalog.All)
+            {
+                doc.Items.Add(new ItemDef { Id = m.Id, Model = m.Id, Level = "ground", Position = new Vector3(i % 12 * 15f, 0, i / 12 * 15f) });
+                i++;
+            }
+            var w = new SceneWriter();
+            var r = Build(doc, lib, w);
+            _measured = new Dictionary<string, Bounds>(System.StringComparer.OrdinalIgnoreCase);
+            foreach (var it in r.Items) _measured[it.Model] = it.Local;
+            // immediately: the probe objects must not render (or reach the lighting bake) even for one frame
+            void Kill(Object o) { if (o != null) Object.DestroyImmediate(o); }
+            Kill(r.House); Kill(r.Site);
+            foreach (var m in r.CreatedMaterials) Kill(m);
+            foreach (var m in w.RuntimeMeshes) Kill(m);
+            return _measured;
         }
 
         static string Sanitize(string s) => string.IsNullOrEmpty(s) ? "Project" : s.Replace('/', '_').Replace('\\', '_');
@@ -86,6 +126,7 @@ namespace House4696.Generation
             var b = new ItemBuild { C = c, P = new ItemParams(it.Params, c.Mats) };
             try { model.Build(b); }
             catch (System.Exception ex) { c.Warn($"item '{id}' ({model.Id}) failed: {ex.Message}"); return; }
+            if (b.External != null) { PlaceModel(c, go, id, b); c.ItemBoxes.Add(ItemBox.Of(it, model, go, baseY)); return; }
             c.W.Emit("Furniture_" + id, go.transform, b.F);
             // light fittings glow themselves: their globes and shades casting shadows of the lamps' own lights put
             // dark discs on the ceiling (a chandelier's globes shadow each other's bulbs)
@@ -95,6 +136,34 @@ namespace House4696.Generation
                 var p = c.W.Emit("Plant_" + id + (i > 0 ? "_" + i : ""), go.transform, b.Plants[i].mb);
                 if (p != null) p.transform.localPosition = b.Plants[i].pos;
             }
+            c.ItemBoxes.Add(ItemBox.Of(it, model, go, baseY));
+        }
+
+        /// <summary>
+        /// Library model: the prefab under the item's transform; every slot takes the item parameter of the same name
+        /// (a library material, "#rrggbb" to tint the model's own material, or "original"), else the slot's default.
+        /// </summary>
+        static void PlaceModel(HouseContext c, GameObject go, string id, ItemBuild b)
+        {
+            var e = b.External;
+            var inst = Object.Instantiate(e.Prefab, go.transform, false);
+            // collider rules go by name: plants and light fittings get none, other models a box
+            string prefix = e.Category == "plants" ? "Plant_" : e.Category == "lighting" ? "Decor_" : "Model_";
+            inst.name = prefix + id;
+            var r = inst.GetComponentInChildren<MeshRenderer>();
+            if (r == null) return;
+            r.gameObject.name = prefix + id + "_mesh";
+            var mats = r.sharedMaterials;
+            for (int i = 0; i < mats.Length && i < e.Slots.Count; i++)
+            {
+                var slot = e.Slots[i];
+                string want = b.P.S(e.SlotKey(i), null) ?? b.P.S(slot.Name, null) ?? slot.Default;
+                if (string.IsNullOrEmpty(want) || want == "original") continue;
+                mats[i] = want.StartsWith("#") ? c.Mats.Tint(slot.Own != null ? slot.Own : mats[i], want) : c.Mats.Get(want, mats[i]);
+            }
+            r.sharedMaterials = mats;
+            // light fittings glow themselves (see Decor_ above)
+            if (e.Category == "lighting") r.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
         }
 
         // ------------------------------------------------------------------ lights
@@ -135,6 +204,15 @@ namespace House4696.Generation
             }
         }
 
+        /// <summary>
+        /// Perf plan step 4a. Every lamp gets a fixed shadow-resolution tier of the pipeline asset (spots High =
+        /// 1024, points Medium = 512 per cube face) instead of the default High for all. With High everywhere, 5
+        /// shadowed lamps request 20 slices of 1024² that do not fit the 4096² atlas, so URP halves all of them to 512,
+        /// and the resolution pops between 512 and 1024 as lamps enter and leave the view. Fixed tiers always fit
+        /// (no squeeze, no popping). Set to false (then rebuild) to go back to URP's default tier.
+        /// </summary>
+        public static bool FixedLampShadowTiers = true;
+
         static Light Make(HouseContext c, string name, Vector3 pos, LightType type, Color col, float intensity, float range, bool shadows)
         {
             var go = new GameObject("Light_" + name);
@@ -146,15 +224,39 @@ namespace House4696.Generation
             l.intensity = intensity;
             l.range = range;
             l.shadows = shadows ? LightShadows.Soft : LightShadows.None;
-            l.shadowBias = 0.02f;
-            l.shadowNormalBias = 0.3f;
+            // no shadowBias / shadowNormalBias: URP ignores them while usePipelineSettings = true (asset 0.1 / 0.5)
             l.shadowNearPlane = 0.1f;
 #if UNITY_EDITOR
             l.lightmapBakeType = LightmapBakeType.Mixed; // editor bake only; a player lights everything in realtime
 #endif
             l.bounceIntensity = 1f;
-            go.AddComponent<UniversalAdditionalLightData>().usePipelineSettings = true;
+            var data = go.AddComponent<UniversalAdditionalLightData>();
+            data.usePipelineSettings = true;
+            if (FixedLampShadowTiers)
+                SetShadowTier(data, type == LightType.Spot
+                    ? UniversalAdditionalLightData.AdditionalLightsShadowResolutionTierHigh
+                    : UniversalAdditionalLightData.AdditionalLightsShadowResolutionTierMedium);
             return l;
+        }
+
+        /// <summary>
+        /// The tier setter throws outside play mode, so editor previews write the serialized field instead
+        /// (same result: the editor preview matches the app).
+        /// </summary>
+        static void SetShadowTier(UniversalAdditionalLightData data, int tier)
+        {
+            if (Application.isPlaying)
+            {
+                data.additionalLightsShadowResolutionTier = tier;
+                return;
+            }
+#if UNITY_EDITOR
+            var so = new UnityEditor.SerializedObject(data);
+            var p = so.FindProperty("m_AdditionalLightsShadowResolutionTier");
+            if (p == null) return;
+            p.intValue = tier;
+            so.ApplyModifiedPropertiesWithoutUndo();
+#endif
         }
 
         public static Color ColorOf(string s)

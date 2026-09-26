@@ -30,6 +30,18 @@ namespace House4696.App
         }
 
         public int Port { get; private set; }
+        /// <summary>When the last command arrived (UTC; MinValue = none since start) — the UI shows whether an AI is connected.</summary>
+        public DateTime LastCallUtc { get; private set; } = DateTime.MinValue;
+        public string LastCommand { get; private set; }
+        /// <summary>Commands received and not answered yet (the AI is working right now).</summary>
+        public int InFlight => Volatile.Read(ref _inFlight);
+        /// <summary>When the last command was answered (UTC).</summary>
+        public DateTime LastFinishedUtc { get; private set; } = DateTime.MinValue;
+        /// <summary>Raised on the main thread (from <see cref="Pump"/>) when a command was answered: command, success.</summary>
+        public event Action<string, bool> CallFinished;
+
+        int _inFlight;
+        readonly ConcurrentQueue<(string command, bool ok)> _finished = new ConcurrentQueue<(string, bool)>();
         public string Token { get; }
         public static string DiscoveryPath => Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), ".house-app", "api.json");
 
@@ -110,8 +122,15 @@ namespace House4696.App
                     using (var r = new StreamReader(req.InputStream, Encoding.UTF8)) body = r.ReadToEnd();
                     var o = JObject.Parse(body);
                     var call = new Call { Command = (string)o["command"], Args = o["args"] as JObject ?? new JObject() };
+                    Interlocked.Increment(ref _inFlight);
                     _queue.Enqueue(call);
-                    var finished = await Task.WhenAny(call.Done.Task, Task.Delay(TimeSpan.FromSeconds(180)));
+                    Task finished;
+                    try { finished = await Task.WhenAny(call.Done.Task, Task.Delay(TimeSpan.FromSeconds(180))); }
+                    finally
+                    {
+                        Interlocked.Decrement(ref _inFlight);
+                        _finished.Enqueue((call.Command, call.Done.Task.IsCompleted && !call.Done.Task.IsFaulted));
+                    }
                     reply = finished == call.Done.Task
                         ? (call.Done.Task.IsFaulted ? Error(call.Done.Task.Exception?.GetBaseException().Message) : new JObject { ["ok"] = true, ["result"] = call.Done.Task.Result })
                         : Error("timeout: приложение не ответило за 180 с");
@@ -134,8 +153,16 @@ namespace House4696.App
         /// <summary>Main-thread pump: hands queued calls to <paramref name="execute"/>.</summary>
         public void Pump(Action<Call> execute)
         {
+            while (_finished.TryDequeue(out var f))
+            {
+                LastFinishedUtc = DateTime.UtcNow;
+                try { CallFinished?.Invoke(f.command, f.ok); }
+                catch (Exception e) { Debug.LogException(e); }
+            }
             while (_queue.TryDequeue(out var call))
             {
+                LastCallUtc = DateTime.UtcNow;
+                LastCommand = call.Command;
                 try { execute(call); }
                 catch (Exception e) { call.Done.TrySetException(e); }
             }

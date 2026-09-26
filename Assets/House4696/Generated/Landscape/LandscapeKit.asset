@@ -1,0 +1,972 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebb3961020e4a4e3baef5c383447af1a, type: 3}
+  m_Name: LandscapeKit
+  m_EditorClassIdentifier: Assembly-CSharp::House4696.Core.LandscapeKit
+  TerrainMaterial: {fileID: 2100000, guid: 2feb9e6129120490aa6069aab41dd550, type: 2}
+  WaterMaterial: {fileID: 2100000, guid: e2111b2c6f7e34335989f0f08592c84a, type: 2}
+  FallsMaterial: {fileID: 2100000, guid: b534c3b75b64e4545a8638cf5dc16072, type: 2}
+  Groups:
+  - Id: rock_boulder
+    Kind: 0
+    Variants:
+    - Id: rock_boulder_00
+      Source: polyhaven:namaqualand_boulder_02
+      Prefab: {fileID: 8975852754977112198, guid: 747f0dcc7b0a7496e9891e4104f0366d, type: 3}
+      Size: {x: 2.52, y: 0.879, z: 1.232}
+      TrianglesLod0: 2499
+      TrianglesLod1: 749
+    - Id: rock_boulder_01
+      Source: polyhaven:namaqualand_boulder_03
+      Prefab: {fileID: 2177091514902183425, guid: 6e9097807e7154345a4f6621b8c5e312, type: 3}
+      Size: {x: 2.406, y: 1.474, z: 3.063}
+      TrianglesLod0: 2500
+      TrianglesLod1: 750
+    - Id: rock_boulder_02
+      Source: polyhaven:namaqualand_boulder_04
+      Prefab: {fileID: 2548132724364636453, guid: 3891a61f88f0f49aca57c02c8ed010c9, type: 3}
+      Size: {x: 2.523, y: 1.892, z: 2.497}
+      TrianglesLod0: 2500
+      TrianglesLod1: 750
+    - Id: rock_boulder_03
+      Source: polyhaven:namaqualand_boulder_05
+      Prefab: {fileID: 6811428210813428112, guid: 04dc2da1e112443f39a69a0bf37eec50, type: 3}
+      Size: {x: 1.359, y: 0.53, z: 0.747}
+      TrianglesLod0: 2500
+      TrianglesLod1: 750
+    - Id: rock_boulder_04
+      Source: polyhaven:namaqualand_boulder_06
+      Prefab: {fileID: 1845702466178696828, guid: 6d363937d19bf48129e16570082b86e2, type: 3}
+      Size: {x: 0.669, y: 0.648, z: 1.208}
+      TrianglesLod0: 2500
+      TrianglesLod1: 750
+  - Id: rock_moss
+    Kind: 0
+    Variants:
+    - Id: rock_moss_00
+      Source: polyhaven:rock_moss_set_01
+      Prefab: {fileID: 50170776950415682, guid: 89f609c977c91471f9bc18847ab9effe, type: 3}
+      Size: {x: 2.235, y: 1.472, z: 3.361}
+      TrianglesLod0: 2000
+      TrianglesLod1: 600
+    - Id: rock_moss_01
+      Source: polyhaven:rock_moss_set_01
+      Prefab: {fileID: 3116217491316211990, guid: cece5565bed094672874d5155ea424e9, type: 3}
+      Size: {x: 2.649, y: 1.262, z: 3.265}
+      TrianglesLod0: 2000
+      TrianglesLod1: 600
+    - Id: rock_moss_02
+      Source: polyhaven:rock_moss_set_01
+      Prefab: {fileID: 8643894439946126686, guid: 5e05e0540626d406fb12411e656992e8, type: 3}
+      Size: {x: 2.106, y: 1.098, z: 2.074}
+      TrianglesLod0: 2000
+      TrianglesLod1: 600
+    - Id: rock_moss_03
+      Source: polyhaven:rock_moss_set_01
+      Prefab: {fileID: 1387623070799329819, guid: 61b2e940485264277b89e0ab98567001, type: 3}
+      Size: {x: 2.131, y: 1.77, z: 1.966}
+      TrianglesLod0: 1999
+      TrianglesLod1: 599
+    - Id: rock_moss_04
+      Source: polyhaven:rock_moss_set_01
+      Prefab: {fileID: 296990910787317255, guid: ced322d7767bd445ca401224d8b304a6, type: 3}
+      Size: {x: 1.818, y: 1.211, z: 3.007}
+      TrianglesLod0: 2000
+      TrianglesLod1: 600
+    - Id: rock_moss_05
+      Source: polyhaven:rock_moss_set_01
+      Prefab: {fileID: 3575448111652660576, guid: ba2b4aeef177f4e4285e245b6f00dd96, type: 3}
+      Size: {x: 2.135, y: 1.257, z: 2.757}
+      TrianglesLod0: 2000
+      TrianglesLod1: 600
+    - Id: rock_moss_06
+      Source: polyhaven:rock_moss_set_02
+      Prefab: {fileID: 2401377400746765899, guid: 99eb26b365a6541e4950a744f8acc172, type: 3}
+      Size: {x: 2.493, y: 1.094, z: 1.79}
+      TrianglesLod0: 2000
+      TrianglesLod1: 600
+    - Id: rock_moss_07
+      Source: polyhaven:rock_moss_set_02
+      Prefab: {fileID: 6205984341190894384, guid: b217c05bf3d3a45bdabc628822b3dd2c, type: 3}
+      Size: {x: 1.204, y: 0.526, z: 0.983}
+      TrianglesLod0: 2000
+      TrianglesLod1: 600
+    - Id: rock_moss_08
+      Source: polyhaven:rock_moss_set_02
+      Prefab: {fileID: 1782789368863080395, guid: af1e74c3ff2a44754af4653c13a9006a, type: 3}
+      Size: {x: 1.626, y: 0.608, z: 1.015}
+      TrianglesLod0: 2000
+      TrianglesLod1: 600
+    - Id: rock_moss_09
+      Source: polyhaven:rock_moss_set_02
+      Prefab: {fileID: 8151906486082574850, guid: 1d6f75d2c690a402090c0637b9a1c7e8, type: 3}
+      Size: {x: 2.202, y: 0.77, z: 1.554}
+      TrianglesLod0: 2000
+      TrianglesLod1: 600
+    - Id: rock_moss_10
+      Source: polyhaven:rock_moss_set_02
+      Prefab: {fileID: 9106551220593573174, guid: 89544d4a66bb749a9991cc5e43051738, type: 3}
+      Size: {x: 1.95, y: 1.299, z: 1.525}
+      TrianglesLod0: 2000
+      TrianglesLod1: 600
+    - Id: rock_moss_11
+      Source: polyhaven:rock_moss_set_02
+      Prefab: {fileID: 8041078876779432834, guid: dbdf90a8949e04bbc84931273fb82beb, type: 3}
+      Size: {x: 1.581, y: 0.733, z: 1.444}
+      TrianglesLod0: 1999
+      TrianglesLod1: 599
+    - Id: rock_moss_12
+      Source: polyhaven:rock_moss_set_02
+      Prefab: {fileID: 1554940491910773829, guid: 601c18faa4c4c49ab91422ec7e5e12b2, type: 3}
+      Size: {x: 2.089, y: 1.252, z: 1.142}
+      TrianglesLod0: 2000
+      TrianglesLod1: 600
+  - Id: rock_small
+    Kind: 1
+    Variants:
+    - Id: rock_small_00
+      Source: polyhaven:stone_01
+      Prefab: {fileID: 4819362328349039346, guid: 29392433e56744541abc1f7a907b93f5, type: 3}
+      Size: {x: 0.147, y: 0.071, z: 0.09}
+      TrianglesLod0: 400
+      TrianglesLod1: 0
+    - Id: rock_small_01
+      Source: polyhaven:rock_07
+      Prefab: {fileID: 6656690732204035603, guid: 9cccd936a77ab4794b125176c0ec4ad9, type: 3}
+      Size: {x: 0.167, y: 0.142, z: 0.32}
+      TrianglesLod0: 400
+      TrianglesLod1: 0
+    - Id: rock_small_02
+      Source: polyhaven:rock_09
+      Prefab: {fileID: 18861799889724390, guid: faa606e3f860148d4a8d3194a2a1e0d6, type: 3}
+      Size: {x: 0.074, y: 0.033, z: 0.145}
+      TrianglesLod0: 398
+      TrianglesLod1: 0
+    - Id: rock_small_03
+      Source: polyhaven:namaqualand_stones_01
+      Prefab: {fileID: 7685980595283918604, guid: 90d15e44dd31b4419b946345e385d423, type: 3}
+      Size: {x: 0.076, y: 0.038, z: 0.063}
+      TrianglesLod0: 316
+      TrianglesLod1: 0
+    - Id: rock_small_04
+      Source: polyhaven:namaqualand_stones_01
+      Prefab: {fileID: 2192626164305011701, guid: 01f56b8ea31894e56a4be1abc7bbe91c, type: 3}
+      Size: {x: 0.151, y: 0.083, z: 0.081}
+      TrianglesLod0: 398
+      TrianglesLod1: 0
+    - Id: rock_small_05
+      Source: polyhaven:namaqualand_stones_01
+      Prefab: {fileID: 8218619429510982214, guid: 206c732fffa94420f91fe09f6b7a9ff4, type: 3}
+      Size: {x: 0.103, y: 0.057, z: 0.097}
+      TrianglesLod0: 400
+      TrianglesLod1: 0
+    - Id: rock_small_06
+      Source: polyhaven:namaqualand_stones_01
+      Prefab: {fileID: 4038285885264205643, guid: 2959447e93ab241718969e821968f21c, type: 3}
+      Size: {x: 0.114, y: 0.037, z: 0.082}
+      TrianglesLod0: 400
+      TrianglesLod1: 0
+    - Id: rock_small_07
+      Source: polyhaven:namaqualand_stones_01
+      Prefab: {fileID: 8493282827829314598, guid: baa3fd19fdbff47feb00e905899879aa, type: 3}
+      Size: {x: 0.111, y: 0.077, z: 0.111}
+      TrianglesLod0: 400
+      TrianglesLod1: 0
+  - Id: grass_lawn
+    Kind: 3
+    Variants:
+    - Id: grass_lawn_00
+      Source: polyhaven:grass_medium_01
+      Prefab: {fileID: 7748952048734176551, guid: 4094ae536a12d42c3a1fd6bca1307ce8, type: 3}
+      Size: {x: 0.327, y: 0.135, z: 0.327}
+      TrianglesLod0: 1011
+      TrianglesLod1: 0
+    - Id: grass_lawn_01
+      Source: polyhaven:grass_medium_01
+      Prefab: {fileID: 7310385586710863915, guid: 6b281034fbd794a84801658f4c4477e2, type: 3}
+      Size: {x: 0.291, y: 0.165, z: 0.291}
+      TrianglesLod0: 890
+      TrianglesLod1: 0
+    - Id: grass_lawn_02
+      Source: polyhaven:grass_medium_01
+      Prefab: {fileID: 1007917201285898700, guid: 06b0dba263b464346ba61f048fe5041f, type: 3}
+      Size: {x: 0.29, y: 0.137, z: 0.29}
+      TrianglesLod0: 1032
+      TrianglesLod1: 0
+    - Id: grass_lawn_03
+      Source: polyhaven:grass_medium_01
+      Prefab: {fileID: 7661918564363512724, guid: 5525d1de8786d491d9d5d713f0535277, type: 3}
+      Size: {x: 0.206, y: 0.199, z: 0.216}
+      TrianglesLod0: 659
+      TrianglesLod1: 0
+    - Id: grass_lawn_04
+      Source: polyhaven:grass_medium_01
+      Prefab: {fileID: 8449471368663308330, guid: cb040e77532054b789ed74e537f0f6c4, type: 3}
+      Size: {x: 0.188, y: 0.178, z: 0.182}
+      TrianglesLod0: 334
+      TrianglesLod1: 0
+    - Id: grass_lawn_05
+      Source: polyhaven:grass_medium_01
+      Prefab: {fileID: 4308681369706612965, guid: 6163b76bd7ad74fda84d3821d4c9774c, type: 3}
+      Size: {x: 0.195, y: 0.131, z: 0.21}
+      TrianglesLod0: 348
+      TrianglesLod1: 0
+    - Id: grass_lawn_06
+      Source: polyhaven:grass_medium_01
+      Prefab: {fileID: 2658801632610105957, guid: 9268dc3be95e149c399067077081370a, type: 3}
+      Size: {x: 0.161, y: 0.326, z: 0.159}
+      TrianglesLod0: 121
+      TrianglesLod1: 0
+    - Id: grass_lawn_07
+      Source: polyhaven:grass_medium_01
+      Prefab: {fileID: 6436562281525585443, guid: ab65de07466ee45db83d2e84e656e17d, type: 3}
+      Size: {x: 0.15, y: 0.286, z: 0.135}
+      TrianglesLod0: 164
+      TrianglesLod1: 0
+    - Id: grass_lawn_08
+      Source: polyhaven:grass_medium_01
+      Prefab: {fileID: 101739198929504435, guid: d4409f30cfdea44779ec89c4a436fd98, type: 3}
+      Size: {x: 0.151, y: 0.226, z: 0.121}
+      TrianglesLod0: 162
+      TrianglesLod1: 0
+  - Id: grass_short
+    Kind: 3
+    Variants:
+    - Id: grass_short_00
+      Source: polyhaven:grass_bermuda_01
+      Prefab: {fileID: 4579111533910771823, guid: b0873f59e3a79486090be6e0795a4ea5, type: 3}
+      Size: {x: 0.039, y: 0.098, z: 0.029}
+      TrianglesLod0: 17
+      TrianglesLod1: 0
+    - Id: grass_short_01
+      Source: polyhaven:grass_bermuda_01
+      Prefab: {fileID: 4214387985509000155, guid: 3a7de2d3ab76446ec9933903feab7211, type: 3}
+      Size: {x: 0.051, y: 0.075, z: 0.022}
+      TrianglesLod0: 8
+      TrianglesLod1: 0
+    - Id: grass_short_02
+      Source: polyhaven:grass_bermuda_01
+      Prefab: {fileID: 5804778267568719031, guid: 78fce3bc219f14dec807e6d65da26d08, type: 3}
+      Size: {x: 0.057, y: 0.067, z: 0.092}
+      TrianglesLod0: 20
+      TrianglesLod1: 0
+    - Id: grass_short_03
+      Source: polyhaven:grass_bermuda_01
+      Prefab: {fileID: 4329781347265793140, guid: 58935c0fb548c4b6fb1272008ba1cdcb, type: 3}
+      Size: {x: 0.055, y: 0.102, z: 0.016}
+      TrianglesLod0: 14
+      TrianglesLod1: 0
+    - Id: grass_short_04
+      Source: polyhaven:grass_bermuda_01
+      Prefab: {fileID: 6054323520009719966, guid: 10645af053e3f4d0e9b83263a86f0372, type: 3}
+      Size: {x: 0.066, y: 0.083, z: 0.037}
+      TrianglesLod0: 24
+      TrianglesLod1: 0
+    - Id: grass_short_05
+      Source: polyhaven:grass_bermuda_01
+      Prefab: {fileID: 1645262415392056915, guid: 75a74c2cd1ae74df1b5452739b9d956b, type: 3}
+      Size: {x: 0.041, y: 0.113, z: 0.026}
+      TrianglesLod0: 30
+      TrianglesLod1: 0
+  - Id: moss
+    Kind: 3
+    Variants:
+    - Id: moss_00
+      Source: polyhaven:moss_01
+      Prefab: {fileID: 3907007922728613357, guid: 1009da66cec3d40dd92f835f2dc8acc4, type: 3}
+      Size: {x: 0.014, y: 0.026, z: 0.016}
+      TrianglesLod0: 24
+      TrianglesLod1: 0
+    - Id: moss_01
+      Source: polyhaven:moss_01
+      Prefab: {fileID: 8894230914536906463, guid: 95cc10c6f26844773a98b623461ed14b, type: 3}
+      Size: {x: 0.009, y: 0.015, z: 0.01}
+      TrianglesLod0: 16
+      TrianglesLod1: 0
+    - Id: moss_02
+      Source: polyhaven:moss_01
+      Prefab: {fileID: 8132635361727557137, guid: 576ca7c64a49a4a988869b1c423e944f, type: 3}
+      Size: {x: 0.018, y: 0.028, z: 0.014}
+      TrianglesLod0: 24
+      TrianglesLod1: 0
+    - Id: moss_03
+      Source: polyhaven:moss_01
+      Prefab: {fileID: 6641158479468569596, guid: f0cc736b3732e4e8ba70518af628c102, type: 3}
+      Size: {x: 0.014, y: 0.027, z: 0.016}
+      TrianglesLod0: 16
+      TrianglesLod1: 0
+    - Id: moss_04
+      Source: polyhaven:moss_01
+      Prefab: {fileID: 8520805340578281516, guid: 41fcae1989850480d82ad9fb6db9b803, type: 3}
+      Size: {x: 0.011, y: 0.022, z: 0.013}
+      TrianglesLod0: 20
+      TrianglesLod1: 0
+    - Id: moss_05
+      Source: polyhaven:moss_01
+      Prefab: {fileID: 9018922973444586481, guid: 9823a63481a654525b613f28a41ad8c0, type: 3}
+      Size: {x: 0.013, y: 0.03, z: 0.013}
+      TrianglesLod0: 20
+      TrianglesLod1: 0
+    - Id: moss_06
+      Source: polyhaven:moss_01
+      Prefab: {fileID: 8298762692451430570, guid: 66b65d35828b447d784ba48fcb80e044, type: 3}
+      Size: {x: 0.013, y: 0.022, z: 0.009}
+      TrianglesLod0: 16
+      TrianglesLod1: 0
+    - Id: moss_07
+      Source: polyhaven:moss_01
+      Prefab: {fileID: 609006009533936373, guid: 416da259bef9a4418b27ad370cd8315c, type: 3}
+      Size: {x: 0.011, y: 0.018, z: 0.006}
+      TrianglesLod0: 6
+      TrianglesLod1: 0
+    - Id: moss_08
+      Source: polyhaven:moss_01
+      Prefab: {fileID: 2043754642641371501, guid: 7cb1b54a263474d05bac5d3f3b7a5e0d, type: 3}
+      Size: {x: 0.016, y: 0.015, z: 0.013}
+      TrianglesLod0: 6
+      TrianglesLod1: 0
+    - Id: moss_09
+      Source: polyhaven:moss_01
+      Prefab: {fileID: 8043143836410491785, guid: e0527e41bba0c47809842f0cff1123a2, type: 3}
+      Size: {x: 0.017, y: 0.009, z: 0.019}
+      TrianglesLod0: 8
+      TrianglesLod1: 0
+    - Id: moss_10
+      Source: polyhaven:moss_01
+      Prefab: {fileID: 7733220894482837036, guid: 1ba7c5c11e0034b53afb68113d833824, type: 3}
+      Size: {x: 0.021, y: 0.034, z: 0.011}
+      TrianglesLod0: 24
+      TrianglesLod1: 0
+    - Id: moss_11
+      Source: polyhaven:moss_01
+      Prefab: {fileID: 1480400838605082939, guid: f987516b1cbc24a53b9d4530d7a51395, type: 3}
+      Size: {x: 0.018, y: 0.037, z: 0.012}
+      TrianglesLod0: 24
+      TrianglesLod1: 0
+  - Id: groundcover
+    Kind: 3
+    Variants:
+    - Id: groundcover_00
+      Source: polyhaven:shrub_04
+      Prefab: {fileID: 1827013415919731822, guid: ee9a7e6c646b340518840bfcd120002e, type: 3}
+      Size: {x: 0.136, y: 0.195, z: 0.108}
+      TrianglesLod0: 931
+      TrianglesLod1: 0
+    - Id: groundcover_01
+      Source: polyhaven:shrub_04
+      Prefab: {fileID: 2759893902798196926, guid: cc45a9aec54904c3d93aa54743922cb9, type: 3}
+      Size: {x: 0.143, y: 0.208, z: 0.166}
+      TrianglesLod0: 1646
+      TrianglesLod1: 0
+    - Id: groundcover_02
+      Source: polyhaven:shrub_04
+      Prefab: {fileID: 41688112743959543, guid: d57098154e6b24fdba628046c4edfb61, type: 3}
+      Size: {x: 0.156, y: 0.281, z: 0.169}
+      TrianglesLod0: 1542
+      TrianglesLod1: 0
+    - Id: groundcover_03
+      Source: polyhaven:shrub_04
+      Prefab: {fileID: 3529621815957619504, guid: 65b986fe6440c4f6ea9aa0cb9709823f, type: 3}
+      Size: {x: 0.218, y: 0.274, z: 0.187}
+      TrianglesLod0: 2708
+      TrianglesLod1: 0
+    - Id: groundcover_04
+      Source: polyhaven:periwinkle_plant
+      Prefab: {fileID: 4798224926838113609, guid: efbb6ff1c843841278d2943eb5a61c08, type: 3}
+      Size: {x: 0.269, y: 0.397, z: 0.328}
+      TrianglesLod0: 755
+      TrianglesLod1: 0
+    - Id: groundcover_05
+      Source: polyhaven:periwinkle_plant
+      Prefab: {fileID: 7895329032501411140, guid: bb5a5b0a84e474cb6a4408e6c78de5f3, type: 3}
+      Size: {x: 0.24, y: 0.41, z: 0.233}
+      TrianglesLod0: 606
+      TrianglesLod1: 0
+    - Id: groundcover_06
+      Source: polyhaven:periwinkle_plant
+      Prefab: {fileID: 5283485908084936494, guid: 44665afe43aaf4f0a916a28ce741e85e, type: 3}
+      Size: {x: 0.182, y: 0.3, z: 0.154}
+      TrianglesLod0: 332
+      TrianglesLod1: 0
+    - Id: groundcover_07
+      Source: polyhaven:periwinkle_plant
+      Prefab: {fileID: 3507810290623344145, guid: 42207dfb0749c462bbc1da96a8b3ed94, type: 3}
+      Size: {x: 0.163, y: 0.265, z: 0.192}
+      TrianglesLod0: 256
+      TrianglesLod1: 0
+    - Id: groundcover_08
+      Source: polyhaven:periwinkle_plant
+      Prefab: {fileID: 4182692105761961868, guid: 7840ba9a2a2ea44beaf040d94fb3cb45, type: 3}
+      Size: {x: 0.124, y: 0.206, z: 0.149}
+      TrianglesLod0: 182
+      TrianglesLod1: 0
+    - Id: groundcover_09
+      Source: polyhaven:periwinkle_plant
+      Prefab: {fileID: 6960326664184404472, guid: a80c5bda5a5cf41d185dedcd07cae6b1, type: 3}
+      Size: {x: 0.115, y: 0.16, z: 0.097}
+      TrianglesLod0: 103
+      TrianglesLod1: 0
+    - Id: groundcover_10
+      Source: polyhaven:celandine_01
+      Prefab: {fileID: 1547821899559764446, guid: efc14ff2db46d414486e1755992e83a3, type: 3}
+      Size: {x: 0.273, y: 0.185, z: 0.225}
+      TrianglesLod0: 414
+      TrianglesLod1: 0
+    - Id: groundcover_11
+      Source: polyhaven:celandine_01
+      Prefab: {fileID: 4896186370841138914, guid: 87d48686f99a647ce8fc2f6fec2d4fc1, type: 3}
+      Size: {x: 0.253, y: 0.143, z: 0.311}
+      TrianglesLod0: 365
+      TrianglesLod1: 0
+    - Id: groundcover_12
+      Source: polyhaven:celandine_01
+      Prefab: {fileID: 7542554255568411469, guid: 4ccf1a5b5135846cebeeecfa168dc104, type: 3}
+      Size: {x: 0.254, y: 0.176, z: 0.186}
+      TrianglesLod0: 694
+      TrianglesLod1: 0
+    - Id: groundcover_13
+      Source: polyhaven:celandine_01
+      Prefab: {fileID: 3604358690588208991, guid: 983afff31a57f4ae69560a4bd8fc11e6, type: 3}
+      Size: {x: 0.188, y: 0.151, z: 0.22}
+      TrianglesLod0: 519
+      TrianglesLod1: 0
+    - Id: groundcover_14
+      Source: polyhaven:celandine_01
+      Prefab: {fileID: 6582993803468363678, guid: 95e89307eed08403b9279dea3c91b7ac, type: 3}
+      Size: {x: 0.188, y: 0.123, z: 0.218}
+      TrianglesLod0: 207
+      TrianglesLod1: 0
+    - Id: groundcover_15
+      Source: polyhaven:weed_plant_02
+      Prefab: {fileID: 4444375409996473559, guid: 883ec77a3f7b54cc691fbe69e2aef09d, type: 3}
+      Size: {x: 0.219, y: 0.072, z: 0.291}
+      TrianglesLod0: 361
+      TrianglesLod1: 0
+    - Id: groundcover_16
+      Source: polyhaven:weed_plant_02
+      Prefab: {fileID: 4510246620552521274, guid: 6d806401f20a3453497c0f2353b19086, type: 3}
+      Size: {x: 0.188, y: 0.068, z: 0.198}
+      TrianglesLod0: 303
+      TrianglesLod1: 0
+    - Id: groundcover_17
+      Source: polyhaven:weed_plant_02
+      Prefab: {fileID: 594747002469922821, guid: 88f014b32a83143d6bd6a77b81201292, type: 3}
+      Size: {x: 0.142, y: 0.055, z: 0.143}
+      TrianglesLod0: 247
+      TrianglesLod1: 0
+    - Id: groundcover_18
+      Source: polyhaven:weed_plant_02
+      Prefab: {fileID: 3053903086083040217, guid: ce7e933fb663543b6842d25084144e93, type: 3}
+      Size: {x: 0.153, y: 0.038, z: 0.108}
+      TrianglesLod0: 230
+      TrianglesLod1: 0
+    - Id: groundcover_19
+      Source: polyhaven:weed_plant_02
+      Prefab: {fileID: 1057601602821638097, guid: 447e8509a37e74a09bd5c16ffe5c93e9, type: 3}
+      Size: {x: 0.119, y: 0.04, z: 0.061}
+      TrianglesLod0: 258
+      TrianglesLod1: 0
+    - Id: groundcover_20
+      Source: polyhaven:nettle_plant
+      Prefab: {fileID: 8759193387665332846, guid: 327d65a7b445547bb85c0ac104331e24, type: 3}
+      Size: {x: 0.078, y: 0.131, z: 0.09}
+      TrianglesLod0: 509
+      TrianglesLod1: 0
+    - Id: groundcover_21
+      Source: polyhaven:nettle_plant
+      Prefab: {fileID: 3123229923742710300, guid: cd3af3d5e3a4d4f4ba484ec0ca17694b, type: 3}
+      Size: {x: 0.066, y: 0.105, z: 0.068}
+      TrianglesLod0: 455
+      TrianglesLod1: 0
+    - Id: groundcover_22
+      Source: polyhaven:nettle_plant
+      Prefab: {fileID: 7930624141983746264, guid: e59a3381bef5f44fd915bf1eb1a5613a, type: 3}
+      Size: {x: 0.066, y: 0.063, z: 0.044}
+      TrianglesLod0: 312
+      TrianglesLod1: 0
+    - Id: groundcover_23
+      Source: polyhaven:nettle_plant
+      Prefab: {fileID: 4528953557996315046, guid: 7598770497a054693a54785aeb5c881c, type: 3}
+      Size: {x: 0.059, y: 0.022, z: 0.039}
+      TrianglesLod0: 71
+      TrianglesLod1: 0
+    - Id: groundcover_24
+      Source: polyhaven:nettle_plant
+      Prefab: {fileID: 5455776299330961060, guid: e78f5c7670ae147dc8b85af98867a426, type: 3}
+      Size: {x: 0.105, y: 0.217, z: 0.093}
+      TrianglesLod0: 582
+      TrianglesLod1: 0
+    - Id: groundcover_25
+      Source: polyhaven:nettle_plant
+      Prefab: {fileID: 5041528993432093890, guid: aa9f61f3957d2492382bf82323fc9479, type: 3}
+      Size: {x: 0.084, y: 0.193, z: 0.094}
+      TrianglesLod0: 671
+      TrianglesLod1: 0
+  - Id: groundcover_plant
+    Kind: 2
+    Variants:
+    - Id: groundcover_plant_00
+      Source: polyhaven:periwinkle_plant
+      Prefab: {fileID: 1757323319975146861, guid: df5ad15242ce640aba3f656ce036a729, type: 3}
+      Size: {x: 0.264, y: 0.397, z: 0.322}
+      TrianglesLod0: 1314
+      TrianglesLod1: 421
+    - Id: groundcover_plant_01
+      Source: polyhaven:periwinkle_plant
+      Prefab: {fileID: 7170734379684144394, guid: efedefa6f6d2847a9bfe92e57a3338e6, type: 3}
+      Size: {x: 0.231, y: 0.41, z: 0.228}
+      TrianglesLod0: 1070
+      TrianglesLod1: 342
+    - Id: groundcover_plant_02
+      Source: polyhaven:periwinkle_plant
+      Prefab: {fileID: 1585098030633966552, guid: 7cc34fc204ba9458b9ba233225f979c3, type: 3}
+      Size: {x: 0.168, y: 0.301, z: 0.148}
+      TrianglesLod0: 616
+      TrianglesLod1: 188
+    - Id: groundcover_plant_03
+      Source: polyhaven:periwinkle_plant
+      Prefab: {fileID: 1654016736935476888, guid: 61d6cc742b9754987a081d296b35061c, type: 3}
+      Size: {x: 0.159, y: 0.265, z: 0.185}
+      TrianglesLod0: 474
+      TrianglesLod1: 142
+    - Id: groundcover_plant_04
+      Source: polyhaven:periwinkle_plant
+      Prefab: {fileID: 8544983829014074728, guid: fb725bc8545fc4534b58324e614807fc, type: 3}
+      Size: {x: 0.111, y: 0.206, z: 0.144}
+      TrianglesLod0: 345
+      TrianglesLod1: 106
+    - Id: groundcover_plant_05
+      Source: polyhaven:periwinkle_plant
+      Prefab: {fileID: 2165219521054228527, guid: d17d5c7a25cd6414884c04973c5177f2, type: 3}
+      Size: {x: 0.104, y: 0.16, z: 0.092}
+      TrianglesLod0: 193
+      TrianglesLod1: 53
+    - Id: groundcover_plant_06
+      Source: polyhaven:celandine_01
+      Prefab: {fileID: 2346634845463601842, guid: e947269dabec3420286468d9dcac8d51, type: 3}
+      Size: {x: 0.276, y: 0.186, z: 0.228}
+      TrianglesLod0: 622
+      TrianglesLod1: 232
+    - Id: groundcover_plant_07
+      Source: polyhaven:celandine_01
+      Prefab: {fileID: 7443448319926411220, guid: b83df95811d6143cfa9c4a1377761efb, type: 3}
+      Size: {x: 0.252, y: 0.145, z: 0.307}
+      TrianglesLod0: 599
+      TrianglesLod1: 207
+    - Id: groundcover_plant_08
+      Source: polyhaven:celandine_01
+      Prefab: {fileID: 8369554568272652263, guid: 073bff909e12c4bb7b71aa11b81c0afc, type: 3}
+      Size: {x: 0.257, y: 0.176, z: 0.186}
+      TrianglesLod0: 4301
+      TrianglesLod1: 319
+    - Id: groundcover_plant_09
+      Source: polyhaven:celandine_01
+      Prefab: {fileID: 5567170036795215025, guid: 644513a8fc29942579fa16a87f129776, type: 3}
+      Size: {x: 0.187, y: 0.149, z: 0.223}
+      TrianglesLod0: 3002
+      TrianglesLod1: 250
+    - Id: groundcover_plant_10
+      Source: polyhaven:celandine_01
+      Prefab: {fileID: 2106277037245350002, guid: 189e37d606d004b4cb756f6313c4776f, type: 3}
+      Size: {x: 0.188, y: 0.124, z: 0.216}
+      TrianglesLod0: 442
+      TrianglesLod1: 138
+    - Id: groundcover_plant_11
+      Source: polyhaven:weed_plant_02
+      Prefab: {fileID: 3310499143252238131, guid: fa8cadfc799f7426b9dfaf41c9a37f05, type: 3}
+      Size: {x: 0.219, y: 0.072, z: 0.291}
+      TrianglesLod0: 1031
+      TrianglesLod1: 153
+    - Id: groundcover_plant_12
+      Source: polyhaven:weed_plant_02
+      Prefab: {fileID: 7263259050348648689, guid: 7980014790ac741f5974b06c1a81c76d, type: 3}
+      Size: {x: 0.188, y: 0.068, z: 0.198}
+      TrianglesLod0: 848
+      TrianglesLod1: 140
+    - Id: groundcover_plant_13
+      Source: polyhaven:weed_plant_02
+      Prefab: {fileID: 2438595598847998283, guid: d5a03c8400dfa428d944cbc22dd93771, type: 3}
+      Size: {x: 0.142, y: 0.055, z: 0.143}
+      TrianglesLod0: 651
+      TrianglesLod1: 110
+    - Id: groundcover_plant_14
+      Source: polyhaven:weed_plant_02
+      Prefab: {fileID: 8747988003635530976, guid: 429b8b6914a754e73a79e08fe9c5b1c8, type: 3}
+      Size: {x: 0.154, y: 0.039, z: 0.108}
+      TrianglesLod0: 680
+      TrianglesLod1: 94
+    - Id: groundcover_plant_15
+      Source: polyhaven:weed_plant_02
+      Prefab: {fileID: 7346016635141111015, guid: 8f803d27f14fe467cb8e92a05b23d54c, type: 3}
+      Size: {x: 0.119, y: 0.04, z: 0.061}
+      TrianglesLod0: 725
+      TrianglesLod1: 115
+    - Id: groundcover_plant_16
+      Source: polyhaven:nettle_plant
+      Prefab: {fileID: 3953505807020030087, guid: cff7bd377dfea419abe7365742d5eeff, type: 3}
+      Size: {x: 0.078, y: 0.132, z: 0.09}
+      TrianglesLod0: 852
+      TrianglesLod1: 509
+    - Id: groundcover_plant_17
+      Source: polyhaven:nettle_plant
+      Prefab: {fileID: 3312190000284411364, guid: 18b19a051f811441899ff2e5b590d42c, type: 3}
+      Size: {x: 0.067, y: 0.105, z: 0.068}
+      TrianglesLod0: 811
+      TrianglesLod1: 455
+    - Id: groundcover_plant_18
+      Source: polyhaven:nettle_plant
+      Prefab: {fileID: 800007535710533831, guid: b53477e7114d0496a9be02447014e309, type: 3}
+      Size: {x: 0.066, y: 0.063, z: 0.044}
+      TrianglesLod0: 572
+      TrianglesLod1: 312
+    - Id: groundcover_plant_19
+      Source: polyhaven:nettle_plant
+      Prefab: {fileID: 4896235282875921422, guid: 5ca1b49b4671d4fd9801d379cc575808, type: 3}
+      Size: {x: 0.06, y: 0.022, z: 0.038}
+      TrianglesLod0: 152
+      TrianglesLod1: 71
+    - Id: groundcover_plant_20
+      Source: polyhaven:nettle_plant
+      Prefab: {fileID: 3961636766457181683, guid: b81ece00c51ad4a6f8d24ebbcd0d7f2d, type: 3}
+      Size: {x: 0.105, y: 0.217, z: 0.093}
+      TrianglesLod0: 974
+      TrianglesLod1: 582
+    - Id: groundcover_plant_21
+      Source: polyhaven:nettle_plant
+      Prefab: {fileID: 8325293249799752579, guid: 44f1c81cd676a4d03b9677ec8dc9c295, type: 3}
+      Size: {x: 0.084, y: 0.193, z: 0.095}
+      TrianglesLod0: 1144
+      TrianglesLod1: 671
+  - Id: grass_tuft
+    Kind: 2
+    Variants:
+    - Id: grass_tuft_00
+      Source: polyhaven:grass_medium_02
+      Prefab: {fileID: 8851943460495978830, guid: ef309c6b4fdda48b1aebbf51fa696509, type: 3}
+      Size: {x: 0.119, y: 0.157, z: 0.12}
+      TrianglesLod0: 714
+      TrianglesLod1: 284
+    - Id: grass_tuft_01
+      Source: polyhaven:grass_medium_02
+      Prefab: {fileID: 2090147549597405500, guid: 4b63628a03818445dbd3264e2af3dc6c, type: 3}
+      Size: {x: 0.179, y: 0.18, z: 0.199}
+      TrianglesLod0: 1760
+      TrianglesLod1: 703
+    - Id: grass_tuft_02
+      Source: polyhaven:grass_medium_02
+      Prefab: {fileID: 4332801595332297974, guid: 5947de37f414440a7b6c9e5e6eac86cf, type: 3}
+      Size: {x: 0.262, y: 0.232, z: 0.25}
+      TrianglesLod0: 1215
+      TrianglesLod1: 485
+    - Id: grass_tuft_03
+      Source: polyhaven:grass_medium_02
+      Prefab: {fileID: 1223552664490285328, guid: 1ccd78548694f483f96b05f9a7184d89, type: 3}
+      Size: {x: 0.317, y: 0.26, z: 0.362}
+      TrianglesLod0: 2489
+      TrianglesLod1: 995
+    - Id: grass_tuft_04
+      Source: polyhaven:grass_medium_02
+      Prefab: {fileID: 5784407920289758238, guid: d61c25cd5394f41d7b66b133db9ee25d, type: 3}
+      Size: {x: 0.356, y: 0.403, z: 0.433}
+      TrianglesLod0: 1664
+      TrianglesLod1: 665
+  - Id: fern
+    Kind: 2
+    Variants:
+    - Id: fern_00
+      Source: polyhaven:fern_02
+      Prefab: {fileID: 3626339912327911968, guid: d2cf3455e1ad64f1bbd0d52af054c053, type: 3}
+      Size: {x: 0.552, y: 0.287, z: 0.613}
+      TrianglesLod0: 784
+      TrianglesLod1: 313
+    - Id: fern_01
+      Source: polyhaven:fern_02
+      Prefab: {fileID: 5337139969444283877, guid: 0c82ad9b7abf44276abdb4ab6b01b985, type: 3}
+      Size: {x: 0.99, y: 0.428, z: 0.894}
+      TrianglesLod0: 2384
+      TrianglesLod1: 953
+    - Id: fern_02
+      Source: polyhaven:fern_02
+      Prefab: {fileID: 1490961986219947630, guid: a0d87c9f382804abdbce9caa8d0c090a, type: 3}
+      Size: {x: 0.874, y: 0.349, z: 0.765}
+      TrianglesLod0: 2248
+      TrianglesLod1: 899
+    - Id: fern_03
+      Source: polyhaven:fern_02
+      Prefab: {fileID: 3960876000007377832, guid: 1e776f9963a354460ad1dec9df7dba18, type: 3}
+      Size: {x: 0.573, y: 0.213, z: 0.593}
+      TrianglesLod0: 816
+      TrianglesLod1: 326
+  - Id: shrub
+    Kind: 2
+    Variants:
+    - Id: shrub_00
+      Source: polyhaven:shrub_02
+      Prefab: {fileID: 8458414295950163674, guid: f1b492727db894a048e8663d7947e9c2, type: 3}
+      Size: {x: 1.267, y: 1.391, z: 1.048}
+      TrianglesLod0: 4670
+      TrianglesLod1: 2335
+    - Id: shrub_01
+      Source: polyhaven:shrub_02
+      Prefab: {fileID: 5974335746178071335, guid: 1287ac035ab9b439388a1c762ec3ea86, type: 3}
+      Size: {x: 0.902, y: 1.224, z: 1.04}
+      TrianglesLod0: 3206
+      TrianglesLod1: 1603
+    - Id: shrub_02
+      Source: polyhaven:shrub_02
+      Prefab: {fileID: 4237575589265299621, guid: 0149018fe2e1d4c97acf9dba82221fad, type: 3}
+      Size: {x: 1.436, y: 1.068, z: 1.857}
+      TrianglesLod0: 5650
+      TrianglesLod1: 2824
+    - Id: shrub_03
+      Source: polyhaven:shrub_02
+      Prefab: {fileID: 763422969319339799, guid: 8cac525905e8a48fbb5ef2593c861ee8, type: 3}
+      Size: {x: 0.878, y: 0.999, z: 0.892}
+      TrianglesLod0: 3184
+      TrianglesLod1: 1591
+    - Id: shrub_04
+      Source: polyhaven:wild_rooibos_bush
+      Prefab: {fileID: 1399289405912575319, guid: d78c2e5ff23274425882d87b6ef98452, type: 3}
+      Size: {x: 0.705, y: 0.544, z: 0.767}
+      TrianglesLod0: 6884
+      TrianglesLod1: 5002
+    - Id: shrub_05
+      Source: polyhaven:wild_rooibos_bush
+      Prefab: {fileID: 6070357470776943143, guid: b41a279713bd64a9290566a562607aee, type: 3}
+      Size: {x: 0.544, y: 0.498, z: 0.486}
+      TrianglesLod0: 3640
+      TrianglesLod1: 2680
+    - Id: shrub_06
+      Source: polyhaven:wild_rooibos_bush
+      Prefab: {fileID: 3229435852577624012, guid: 16aa27953535449e69fbda270c289da5, type: 3}
+      Size: {x: 0.444, y: 0.458, z: 0.485}
+      TrianglesLod0: 2282
+      TrianglesLod1: 1784
+    - Id: shrub_07
+      Source: polyhaven:wild_rooibos_bush
+      Prefab: {fileID: 4124386110359908507, guid: 35d15f822019d4bb8b4bad61b9e7f8e6, type: 3}
+      Size: {x: 0.327, y: 0.413, z: 0.402}
+      TrianglesLod0: 1504
+      TrianglesLod1: 1128
+    - Id: shrub_08
+      Source: polyhaven:wild_rooibos_bush
+      Prefab: {fileID: 5001206022590600103, guid: d500cf5e1fa0d425d848c51aa99d1f48, type: 3}
+      Size: {x: 0.295, y: 0.315, z: 0.177}
+      TrianglesLod0: 714
+      TrianglesLod1: 556
+  - Id: flower_yellow
+    Kind: 2
+    Variants:
+    - Id: flower_yellow_00
+      Source: polyhaven:flower_ursinia
+      Prefab: {fileID: 9105163471392253996, guid: 8d8f685f2af304d07849f6976644f50a, type: 3}
+      Size: {x: 0.422, y: 0.164, z: 0.342}
+      TrianglesLod0: 2983
+      TrianglesLod1: 1193
+    - Id: flower_yellow_01
+      Source: polyhaven:flower_ursinia
+      Prefab: {fileID: 8890224901618990331, guid: a35d19706efbb4986be72bf0377ca836, type: 3}
+      Size: {x: 0.275, y: 0.13, z: 0.259}
+      TrianglesLod0: 1541
+      TrianglesLod1: 615
+    - Id: flower_yellow_02
+      Source: polyhaven:flower_ursinia
+      Prefab: {fileID: 6660856844474025219, guid: 57b584d0018f2490c810b9bdb7d0a1bb, type: 3}
+      Size: {x: 0.259, y: 0.148, z: 0.196}
+      TrianglesLod0: 1137
+      TrianglesLod1: 454
+    - Id: flower_yellow_03
+      Source: polyhaven:dandelion_01
+      Prefab: {fileID: 4222403236583341070, guid: 5f899c4ea9aba4b799e39d4dd8f45b1e, type: 3}
+      Size: {x: 0.221, y: 0.159, z: 0.257}
+      TrianglesLod0: 629
+      TrianglesLod1: 260
+    - Id: flower_yellow_04
+      Source: polyhaven:dandelion_01
+      Prefab: {fileID: 3322393434872542058, guid: 540f6d5860e4d41958fdc65051f7de4c, type: 3}
+      Size: {x: 0.202, y: 0.113, z: 0.218}
+      TrianglesLod0: 619
+      TrianglesLod1: 265
+  - Id: flower_orange
+    Kind: 2
+    Variants:
+    - Id: flower_orange_00
+      Source: polyhaven:flower_gazania
+      Prefab: {fileID: 2486945871095903535, guid: d1fb065e74d254d60a36419a7f1b043d, type: 3}
+      Size: {x: 1.38, y: 0.909, z: 1.711}
+      TrianglesLod0: 808
+      TrianglesLod1: 238
+    - Id: flower_orange_01
+      Source: polyhaven:flower_gazania
+      Prefab: {fileID: 3440107388948538054, guid: b7f568ef361ba4edbb2653155ddc5bf0, type: 3}
+      Size: {x: 0.312, y: 0.109, z: 0.307}
+      TrianglesLod0: 1072
+      TrianglesLod1: 327
+    - Id: flower_orange_02
+      Source: polyhaven:flower_gazania
+      Prefab: {fileID: 8175665115618681221, guid: df5936ebb8c584d7180106501222dc81, type: 3}
+      Size: {x: 0.269, y: 0.124, z: 0.288}
+      TrianglesLod0: 1320
+      TrianglesLod1: 422
+    - Id: flower_orange_03
+      Source: polyhaven:flower_gazania
+      Prefab: {fileID: 2791086360362679232, guid: cf5020ededf0f4c0d9eb59b0b0bcf32c, type: 3}
+      Size: {x: 0.338, y: 0.165, z: 0.326}
+      TrianglesLod0: 1568
+      TrianglesLod1: 482
+  - Id: flower_salvia
+    Kind: 2
+    Variants:
+    - Id: flower_salvia_00
+      Source: procedural:spike_plant
+      Prefab: {fileID: 2621057170507940999, guid: 445436d382bfb485d9c4948fa046c896, type: 3}
+      Size: {x: 0.393, y: 0.647, z: 0.49}
+      TrianglesLod0: 3078
+      TrianglesLod1: 1205
+    - Id: flower_salvia_01
+      Source: procedural:spike_plant
+      Prefab: {fileID: 1063285434504038612, guid: b372bf82e174c4959a2d6731b14718bf, type: 3}
+      Size: {x: 0.382, y: 0.651, z: 0.412}
+      TrianglesLod0: 3168
+      TrianglesLod1: 921
+    - Id: flower_salvia_02
+      Source: procedural:spike_plant
+      Prefab: {fileID: 1828584607001421245, guid: 2d1a9e50c9bb04f9d90829d420209c2d, type: 3}
+      Size: {x: 0.418, y: 0.654, z: 0.509}
+      TrianglesLod0: 3222
+      TrianglesLod1: 853
+    - Id: flower_salvia_03
+      Source: procedural:spike_plant
+      Prefab: {fileID: 5191375915982494436, guid: 349ae72406c4e4355922aa842f73eb2c, type: 3}
+      Size: {x: 0.459, y: 0.65, z: 0.386}
+      TrianglesLod0: 3444
+      TrianglesLod1: 1189
+  - Id: flower_lavender
+    Kind: 2
+    Variants:
+    - Id: flower_lavender_00
+      Source: procedural:spike_plant
+      Prefab: {fileID: 445743931712122058, guid: b69b07e4cee1f4293b69fd0fff1e16c9, type: 3}
+      Size: {x: 0.528, y: 0.496, z: 0.514}
+      TrianglesLod0: 2808
+      TrianglesLod1: 1261
+    - Id: flower_lavender_01
+      Source: procedural:spike_plant
+      Prefab: {fileID: 3249474837741434741, guid: 82be21e1237b14704b104b950af21c0b, type: 3}
+      Size: {x: 0.614, y: 0.492, z: 0.501}
+      TrianglesLod0: 3162
+      TrianglesLod1: 1261
+    - Id: flower_lavender_02
+      Source: procedural:spike_plant
+      Prefab: {fileID: 2702874039579324009, guid: 11e740c9c32b44d9b9982b5140f592c6, type: 3}
+      Size: {x: 0.806, y: 0.495, z: 0.574}
+      TrianglesLod0: 3342
+      TrianglesLod1: 1197
+  - Id: flower_lupin
+    Kind: 2
+    Variants:
+    - Id: flower_lupin_00
+      Source: procedural:spike_plant
+      Prefab: {fileID: 4021011182550425163, guid: a868c64804ae54148914011e070fbf63, type: 3}
+      Size: {x: 0.458, y: 1.022, z: 0.45}
+      TrianglesLod0: 1074
+      TrianglesLod1: 373
+    - Id: flower_lupin_01
+      Source: procedural:spike_plant
+      Prefab: {fileID: 4883101887530382368, guid: 18b7b3b51c4034eecb929b392dad0f84, type: 3}
+      Size: {x: 0.412, y: 0.969, z: 0.495}
+      TrianglesLod0: 1062
+      TrianglesLod1: 385
+    - Id: flower_lupin_02
+      Source: procedural:spike_plant
+      Prefab: {fileID: 1606507760241185184, guid: 2cc8476248e9640a7a77a401c897a6b4, type: 3}
+      Size: {x: 0.436, y: 0.979, z: 0.396}
+      TrianglesLod0: 852
+      TrianglesLod1: 313
+  - Id: flower_daisy
+    Kind: 2
+    Variants:
+    - Id: flower_daisy_00
+      Source: procedural:daisy
+      Prefab: {fileID: 3313421924809540567, guid: 141446a6a4e4643c0985fef56fd5e203, type: 3}
+      Size: {x: 0.455, y: 0.589, z: 0.406}
+      TrianglesLod0: 1470
+      TrianglesLod1: 516
+    - Id: flower_daisy_01
+      Source: procedural:daisy
+      Prefab: {fileID: 4895186543986946676, guid: de240b3b01c5c4070b1c908973f104e4, type: 3}
+      Size: {x: 0.418, y: 0.615, z: 0.449}
+      TrianglesLod0: 1390
+      TrianglesLod1: 640
+    - Id: flower_daisy_02
+      Source: procedural:daisy
+      Prefab: {fileID: 7490550549174609453, guid: fd3dbff3aecf24cc19719e7e6cc38042, type: 3}
+      Size: {x: 0.405, y: 0.606, z: 0.47}
+      TrianglesLod0: 1390
+      TrianglesLod1: 640
+    - Id: flower_daisy_03
+      Source: procedural:daisy
+      Prefab: {fileID: 3575943538568963307, guid: 2042de2c560454f5da1a77f6cda35cee, type: 3}
+      Size: {x: 0.415, y: 0.605, z: 0.429}
+      TrianglesLod0: 1390
+      TrianglesLod1: 578
+  - Id: flower_pink
+    Kind: 2
+    Variants:
+    - Id: flower_pink_00
+      Source: procedural:phlox
+      Prefab: {fileID: 7895224984832018611, guid: f0dea2ff68f9b44008b9934d579ca182, type: 3}
+      Size: {x: 0.283, y: 0.534, z: 0.53}
+      TrianglesLod0: 1862
+      TrianglesLod1: 675
+    - Id: flower_pink_01
+      Source: procedural:phlox
+      Prefab: {fileID: 4978121465535369978, guid: de7ff2c63fb694d38a29dd35b63c9db1, type: 3}
+      Size: {x: 0.429, y: 0.527, z: 0.413}
+      TrianglesLod0: 1897
+      TrianglesLod1: 650
+    - Id: flower_pink_02
+      Source: procedural:phlox
+      Prefab: {fileID: 6824942601233586345, guid: 9a5f0a116aac34daea9d00ca9262a7e6, type: 3}
+      Size: {x: 0.488, y: 0.499, z: 0.335}
+      TrianglesLod0: 1654
+      TrianglesLod1: 523
+  - Id: hosta
+    Kind: 2
+    Variants:
+    - Id: hosta_00
+      Source: procedural:hosta
+      Prefab: {fileID: 6689964919990274771, guid: c1baf5b14f5ee4814844db70d1457062, type: 3}
+      Size: {x: 0.68, y: 0.091, z: 0.704}
+      TrianglesLod0: 306
+      TrianglesLod1: 110
+    - Id: hosta_01
+      Source: procedural:hosta
+      Prefab: {fileID: 947391402106605957, guid: 03651fb901b8a4cc4a8746bccab80e5b, type: 3}
+      Size: {x: 0.605, y: 0.1, z: 0.661}
+      TrianglesLod0: 289
+      TrianglesLod1: 99
+    - Id: hosta_02
+      Source: procedural:hosta
+      Prefab: {fileID: 2958965422924181103, guid: b7168044073fe41bf956e512012d5554, type: 3}
+      Size: {x: 0.626, y: 0.093, z: 0.608}
+      TrianglesLod0: 340
+      TrianglesLod1: 121
+  Layers:
+  - Id: soil
+    TerrainLayer: {fileID: 8574412962073106934, guid: 9f991eb796153469bae8f182aa304e0a, type: 2}
+  - Id: grass
+    TerrainLayer: {fileID: 8574412962073106934, guid: 79eb57241b14d4cb78c469bce093d4b2, type: 2}
+  - Id: pebbles
+    TerrainLayer: {fileID: 8574412962073106934, guid: dcff9d049a7f7441ea6560d19fdb162a, type: 2}
+  - Id: mud
+    TerrainLayer: {fileID: 8574412962073106934, guid: ed31a8d7716f94dd1bdeedbbc06179c5, type: 2}

@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace House4696.Runtime
 {
@@ -37,6 +38,10 @@ namespace House4696.Runtime
         [SerializeField] WalkPoint[] walkPoints = new WalkPoint[0];
         [SerializeField] OrbitPoint[] orbitPoints = new OrbitPoint[0];
         [SerializeField] bool showHelp = true;
+        [Tooltip("Draw the built-in IMGUI overlay (off when the app UI draws its own HUD).")]
+        [SerializeField] bool drawOverlay = true;
+        [Tooltip("Handle Tab / 1–9 / R / H / F10 / F11 here (off when the app UI owns the shortcuts).")]
+        [SerializeField] bool handleHotkeys = true;
 
         Camera _cam;
         ViewMode _current;
@@ -46,12 +51,39 @@ namespace House4696.Runtime
         float _toastUntil;
         GUIStyle _panel, _title, _text, _center;
 
+        /// <summary>Raised after a mode switch.</summary>
+        public event Action<Mode> ModeChanged;
+        /// <summary>Raised with a short message (mode name, viewpoint name) for the HUD to show.</summary>
+        public event Action<string> Toasted;
+        /// <summary>Raised after the walk points or orbit presets change (a new house was configured).</summary>
+        public event Action Configured;
+        /// <summary>Raised when the camera arrives at a viewpoint (mode, index) or leaves it by user input (index -1).</summary>
+        public event Action<Mode, int> PointChanged;
+
+        /// <summary>Viewpoint of the current mode the camera is at (-1 = moved away by the user).</summary>
+        public int CurrentPoint { get; private set; } = -1;
+
+        public Mode CurrentMode => _mode;
+        public ViewMode Current => _current;
+        public WalkPoint[] WalkPoints => walkPoints;
+        public OrbitPoint[] OrbitPoints => orbitPoints;
+        /// <summary>Viewpoints of the current mode: orbit presets in orbit, walk points otherwise.</summary>
+        public int PointCount => _mode == Mode.Orbit ? orbitPoints.Length : walkPoints.Length;
+        public string PointName(int i) => _mode == Mode.Orbit ? orbitPoints[i].Name : walkPoints[i].Name;
+        public bool DrawOverlay { get => drawOverlay; set => drawOverlay = value; }
+        public bool HandleHotkeys { get => handleHotkeys; set => handleHotkeys = value; }
+        /// <summary>Walking position (feet) — valid in the walk mode.</summary>
+        public Vector3 WalkFeet => walk.Feet;
+        public bool ShowHelp { get => showHelp; set => showHelp = value; }
+        public bool CursorCaptured => Cursor.lockState == CursorLockMode.Locked;
+
         /// <summary>Called by the scene generator with house-specific data.</summary>
         public void Configure(Vector3 orbitPivot, WalkPoint[] walkTour, OrbitPoint[] orbitPresets)
         {
             orbit.Pivot = orbitPivot;
             walkPoints = walkTour;
             orbitPoints = orbitPresets;
+            Configured?.Invoke();
         }
 
         void Awake()
@@ -77,19 +109,32 @@ namespace House4696.Runtime
 
         void Update()
         {
-            var kb = ViewerInput.Kb;
-            if (kb != null)
+            if (handleHotkeys)
             {
-                if (kb.tabKey.wasPressedThisFrame) SwitchTo((Mode)(((int)_mode + 1) % 3));
-                if (kb.rKey.wasPressedThisFrame) ShowReference();
-                if (kb.hKey.wasPressedThisFrame) showHelp = !showHelp;
-                if (kb.f11Key.wasPressedThisFrame) Screen.fullScreen = !Screen.fullScreen;
-                if (kb.f10Key.wasPressedThisFrame && !Application.isEditor) Application.Quit();
+                if (ViewerInput.Down(Key.Tab)) SwitchTo((Mode)(((int)_mode + 1) % 3));
+                if (ViewerInput.Down(Key.R)) ShowReference();
+                if (ViewerInput.Down(Key.H)) showHelp = !showHelp;
+                if (ViewerInput.Down(Key.F11)) Screen.fullScreen = !Screen.fullScreen;
+                if (ViewerInput.Down(Key.F10) && !Application.isEditor) Application.Quit();
                 for (int i = 0; i < 9; i++)
-                    if (kb[UnityEngine.InputSystem.Key.Digit1 + i].wasPressedThisFrame) GoToPoint(i);
+                    if (ViewerInput.Down(Key.Digit1 + i)) GoToPoint(i);
             }
             UpdateCursor();
             _current?.Tick(Time.deltaTime);
+            // any camera input leaves the viewpoint
+            if (CurrentPoint >= 0 && UserMovedCamera()) SetPoint(-1);
+        }
+
+        static bool UserMovedCamera() =>
+            ViewerInput.Move() != Vector2.zero || ViewerInput.ScrollSign != 0f
+            || ((ViewerInput.LeftHeld || ViewerInput.RightHeld || ViewerInput.MiddleHeld || Cursor.lockState == CursorLockMode.Locked)
+                && ViewerInput.MouseDelta.sqrMagnitude > 4f);
+
+        void SetPoint(int i)
+        {
+            if (CurrentPoint == i) return;
+            CurrentPoint = i;
+            PointChanged?.Invoke(_mode, i);
         }
 
         public void SwitchTo(Mode mode)
@@ -99,6 +144,8 @@ namespace House4696.Runtime
             _current = mode == Mode.Walk ? walk : mode == Mode.Orbit ? (ViewMode)orbit : fly;
             _current.Enter();
             Toast(_current.Title);
+            CurrentPoint = -1;
+            ModeChanged?.Invoke(mode);
         }
 
         /// <summary>Calibrated reference shot: physical lens with vertical shift; stays in fly mode.</summary>
@@ -112,33 +159,42 @@ namespace House4696.Runtime
             Toast("Ракурс референса");
         }
 
-        void GoToPoint(int i)
+        public void GoToPoint(int i)
         {
             if (_mode == Mode.Orbit)
             {
-                if (i >= orbitPoints.Length) return;
+                if (i < 0 || i >= orbitPoints.Length) return;
                 orbit.GoTo(orbitPoints[i]);
                 Toast(orbitPoints[i].Name);
             }
             else
             {
-                if (i >= walkPoints.Length) return;
+                if (i < 0 || i >= walkPoints.Length) return;
                 _current.GoTo(walkPoints[i]);
                 Toast(walkPoints[i].Name);
             }
+            SetPoint(i);
+        }
+
+        /// <summary>Walks to a standing point (switching to the walk mode first), e.g. the view spot of a room.</summary>
+        public void TeleportWalk(WalkPoint p)
+        {
+            if (_mode != Mode.Walk) SwitchTo(Mode.Walk);
+            _current.GoTo(p);
+            SetPoint(-1);
+            if (!string.IsNullOrEmpty(p.Name)) Toast(p.Name);
         }
 
         void UpdateCursor()
         {
-            if (!_current.CapturesCursor)
+            // a dialog owns the keyboard: the look mode lets the cursor go
+            if (!_current.CapturesCursor || ViewerInput.KeyboardBlocked)
             {
                 if (Cursor.lockState != CursorLockMode.None) { Cursor.lockState = CursorLockMode.None; Cursor.visible = true; }
                 return;
             }
-            var kb = ViewerInput.Kb;
-            var mouse = ViewerInput.Mouse;
-            if (kb != null && kb.escapeKey.wasPressedThisFrame) { Cursor.lockState = CursorLockMode.None; Cursor.visible = true; }
-            else if (mouse != null && mouse.leftButton.wasPressedThisFrame && Cursor.lockState != CursorLockMode.Locked)
+            if (ViewerInput.Down(Key.Escape)) { Cursor.lockState = CursorLockMode.None; Cursor.visible = true; }
+            else if (ViewerInput.LeftDown && Cursor.lockState != CursorLockMode.Locked)
             {
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
@@ -151,12 +207,16 @@ namespace House4696.Runtime
                 ? hit.point : new Vector3(p.x, 0f, p.z);
         }
 
-        void Toast(string text) { _toast = text; _toastUntil = Time.unscaledTime + 1.6f; }
+        void Toast(string text)
+        {
+            _toast = text; _toastUntil = Time.unscaledTime + 1.6f;
+            Toasted?.Invoke(text);
+        }
 
         // ------------------------------------------------------------------ overlay
         void OnGUI()
         {
-            if (_current == null) return;
+            if (_current == null || !drawOverlay) return;
             EnsureStyles();
             float scale = Mathf.Max(0.75f, Screen.height / 1080f);
             GUI.matrix = Matrix4x4.Scale(new Vector3(scale, scale, 1f));
