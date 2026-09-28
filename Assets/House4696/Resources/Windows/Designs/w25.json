@@ -1,0 +1,8 @@
+{
+  "id": "w25", "name": "Открытая витрина",
+  "ref": [4000, 2500],
+  "fixX": [[0, 40], [3960, 4000]], "fixY": [[0, 40], [2460, 2500]],
+  "frame": { "width": 40, "depth": 120, "inset": 60 },
+  "layout": { "sash": "fixed" },
+  "sill": { "outside": "none", "inside": "none" }
+}

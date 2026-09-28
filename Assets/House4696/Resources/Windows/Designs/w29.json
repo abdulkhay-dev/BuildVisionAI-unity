@@ -1,0 +1,12 @@
+{
+  "id": "w29", "name": "Угловая витрина",
+  "ref": [4000, 3400],
+  "fixX": [[0, 60], [1135, 1225], [3880, 4000]], "fixY": [[0, 480], [3340, 3400]],
+  "frame": { "width": 60, "depth": 200, "inset": 40 },
+  "layout": { "split": "y", "at": [440], "mullion": 80,
+    "cells": [
+      { "panel": "frame" },
+      { "split": "x", "at": [1180], "mullion": 90, "cells": [ { "sash": "fixed" }, { "sash": "fixed" } ] } ] },
+  "members": [ { "path": "M 3940 0 L 3940 3400", "width": 120, "depth": 220, "material": "frame" } ],
+  "sill": { "outside": "none", "inside": "none" }
+}

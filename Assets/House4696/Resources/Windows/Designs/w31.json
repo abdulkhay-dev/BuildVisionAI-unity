@@ -1,0 +1,9 @@
+{
+  "id": "w31", "name": "Портал из дерева",
+  "ref": [3000, 1800],
+  "fixX": [[0, 45], [1480, 1520], [2955, 3000]], "fixY": [[0, 45], [1755, 1800]],
+  "frame": { "width": 45, "depth": 90, "inset": 200 },
+  "layout": { "split": "x", "at": [1500], "mullion": 40, "cells": [ { "sash": "fixed" }, { "sash": "fixed" } ] },
+  "sill": { "outside": "none", "inside": "board" },
+  "surround": { "width": 300, "depth": 70, "material": "frame" }
+}

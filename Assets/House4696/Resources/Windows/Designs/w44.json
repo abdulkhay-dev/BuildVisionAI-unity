@@ -1,0 +1,10 @@
+{
+  "id": "w44", "name": "Мягкий цветной акцент",
+  "ref": [3000, 1550],
+  "fixX": [[0, 55], [890, 950], [2050, 2110], [2945, 3000]], "fixY": [[0, 55], [1495, 1550]],
+  "frame": { "width": 55, "depth": 75, "inset": 80 },
+  "sash": { "width": 55, "depth": 75, "offset": 6 },
+  "layout": { "split": "x", "at": [920, 2080], "mullion": 60,
+    "cells": [ { "sash": "tilt-turn", "hinge": "left" }, { "sash": "tilt" }, { "sash": "tilt-turn", "hinge": "right" } ] },
+  "sill": { "outside": "metal", "inside": "board", "overhang": 60, "material": "frame" }
+}

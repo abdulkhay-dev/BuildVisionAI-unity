@@ -121,3 +121,26 @@ Things the pictures show that the format cannot say yet; the designs approximate
   `fixed` puts the glass straight in the frame, so those panels have a slimmer border (w03, w12).
 - **Surround** — always runs all the way round the outline (also under the sill); no keystone (w05), no plinth blocks.
 - **Glazing bars** — one width per cell; no thicker meeting rail between the bar rows, no sash horns (w06, w08).
+
+Since then `rails`, `hung`, `door`, `panel`, `members`, `awning`, `shelf`, `fixings`, `keystone` and `surround.bottom`
+closed most of these: w04 (tall bottom rails, surround stops at the stone sill), w05 (keystone, no band under the sill),
+w06 (the centre light is a real hung sash pair with its meeting rail), w08 (hung sashes), w03 / w12 (door-like rails).
+
+## Notes on windows 13–48
+
+- **Tower modules (13–24)** are one storey (sill 0, 2.7–3.4 m high) and one bay of the facade; a wall repeats them.
+  Where the picture's rhythm is two bays (the chessboard 21, the staggered 23) the module is one bay and the house
+  shifts alternate storeys by half a module — a module cannot shift itself.
+- **Fixed panes with a sash profile** — sliding systems (w03, w12) put their fixed panels in a `tilt` sash (a sash that
+  stays shut) with the same `rails`, so every panel has the same border. There is no dedicated "fixed sash" kind.
+- **Stepped / offset fins** — fins, deep jambs and spandrel projections are `members` with `z` < 0 (14, 18, 23, 47).
+  Their front view is right; how they meet the wall's cladding at the module's edges is left to the next module.
+- **w19** — the outer screen is the window (frameless panes on `fixings`, 20 mm joints); the inner grid (posts, rails,
+  the inner window frame and its spandrel) are `members` with `z` > 0, behind the screen.
+- **Moulded panels** (30, 32: a shopfront's raised-and-fielded low panels) are a `panel` cell plus a closed `members`
+  path as the moulding; there is no bevelled panel.
+- **Surround as a cornice / fascia** — 30's heavy shopfront cornice is `surround` (`material: "frame"`) with `head`;
+  pilasters, capitals and the cornice's profile are not expressible.
+- **Frosted door glass** — `frosted` works on a `door`'s glass too (34).
+- `preview2d.py` draws `members` over the glass whatever their `z` (it has no depth), so members behind glass (19) look
+  as if they were in front; the 3D render shows them right.

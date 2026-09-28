@@ -1,0 +1,9 @@
+{
+  "id": "w35", "name": "Три выставочных окна",
+  "ref": [1400, 2600],
+  "fixX": [[0, 90], [1310, 1400]], "fixY": [[0, 90], [2510, 2600]],
+  "frame": { "width": 90, "depth": 120, "inset": 120 },
+  "layout": { "sash": "fixed" },
+  "sill": { "outside": "none", "inside": "none" },
+  "surround": { "width": 190, "depth": 40, "material": "door_enamel_whitey#dcd3c2" }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "w18", "name": "Наружные ламели",
+  "ref": [2100, 3400],
+  "fixX": [[0, 320], [1025, 1075], [1780, 2100]], "fixY": [[0, 370], [1675, 1725], [3350, 3400]],
+  "frame": { "width": 50, "depth": 150, "inset": 60 },
+  "layout": { "split": "y", "at": [345], "mullion": 50,
+    "cells": [
+      { "panel": "metal_painted#b9ab8e" },
+      { "split": "x", "at": [295, 1805], "mullion": 50,
+        "cells": [
+          { "panel": "metal_painted#b9ab8e" },
+          { "split": "x", "at": [1050], "mullion": 50,
+            "cells": [
+              { "split": "y", "at": [1700], "mullion": 50, "cells": [ { "sash": "fixed" }, { "sash": "fixed" } ] },
+              { "split": "y", "at": [1700], "mullion": 50, "cells": [ { "sash": "fixed" }, { "sash": "fixed" } ] } ] },
+          { "panel": "metal_painted#b9ab8e" } ] } ] },
+  "members": [
+    { "path": "M 0 160 L 2100 160", "width": 320, "depth": 280, "z": -280, "material": "metal_painted#b9ab8e" },
+    { "path": "M 125 0 L 125 3400", "width": 250, "depth": 480, "z": -480, "material": "metal_painted#b9ab8e" },
+    { "path": "M 1975 0 L 1975 3400", "width": 250, "depth": 480, "z": -480, "material": "metal_painted#b9ab8e" } ],
+  "sill": { "outside": "none", "inside": "none" }
+}

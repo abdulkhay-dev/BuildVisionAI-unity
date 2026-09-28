@@ -1,0 +1,20 @@
+{
+  "id": "w32", "name": "Витрина с маркизой",
+  "ref": [4400, 2700],
+  "fixX": [[0, 90], [2420, 2520], [2950, 3130], [3790, 3880], [4310, 4400]], "fixY": [[0, 90], [630, 690], [2090, 2170], [2610, 2700]],
+  "frame": { "width": 90, "depth": 100, "inset": 60 },
+  "sash": { "width": 90, "depth": 60, "offset": 6 },
+  "layout": { "split": "x", "at": [3040, 3835], "mullion": [180, 90],
+    "cells": [
+      { "split": "y", "at": [660], "mullion": 60,
+        "cells": [ { "panel": "frame" },
+          { "split": "x", "at": [2470], "mullion": 100, "cells": [ { "sash": "fixed" }, { "sash": "fixed" } ] } ] },
+      { "split": "y", "at": [2130], "mullion": 80,
+        "cells": [ { "sash": "door", "hinge": "left", "rails": { "bottom": 620, "top": 110, "side": 90 } }, { "panel": "frame" } ] },
+      { "split": "y", "at": [660], "mullion": 60, "cells": [ { "panel": "frame" }, { "sash": "fixed" } ] } ] },
+  "members": [
+    { "path": "M 200 140 L 1500 140 L 1500 520 L 200 520 Z M 1640 140 L 2860 140 L 2860 520 L 1640 520 Z", "width": 30, "depth": 50, "material": "frame" },
+    { "path": "M 3180 170 L 3700 170 L 3700 520 L 3180 520 Z M 3960 150 L 4250 150 L 4250 520 L 3960 520 Z", "width": 30, "depth": 50, "material": "frame" } ],
+  "awning": { "depth": 1100, "drop": 450, "height": 250, "stripe": 180, "valance": 220, "ears": 150, "colors": ["#efe9dc", "#4f6b56"] },
+  "sill": { "outside": "none", "inside": "none" }
+}

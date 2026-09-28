@@ -1,0 +1,11 @@
+{
+  "id": "w26", "name": "Витрина с фрамугой",
+  "ref": [4000, 2800],
+  "fixX": [[0, 70], [1303, 1363], [2637, 2697], [3930, 4000]], "fixY": [[0, 70], [1965, 2035], [2730, 2800]],
+  "frame": { "width": 70, "depth": 150, "inset": 60 },
+  "layout": { "split": "y", "at": [2000], "mullion": 70,
+    "cells": [
+      { "split": "x", "at": [1333, 2667], "mullion": 60, "cells": [ { "sash": "fixed" }, { "sash": "fixed" }, { "sash": "fixed" } ] },
+      { "split": "x", "at": [1333, 2667], "mullion": 60, "cells": [ { "sash": "fixed" }, { "sash": "fixed" }, { "sash": "fixed" } ] } ] },
+  "sill": { "outside": "none", "inside": "none" }
+}

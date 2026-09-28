@@ -1,0 +1,13 @@
+{
+  "id": "w45", "name": "Угловая зона ожидания",
+  "ref": [4000, 3000],
+  "fixX": [[0, 60], [970, 1030], [1970, 2030], [2970, 3030], [3940, 4000]], "fixY": [[0, 60], [2360, 3000]],
+  "frame": { "width": 60, "depth": 180, "inset": 40 },
+  "layout": { "split": "y", "at": [2390], "mullion": 60,
+    "cells": [
+      { "split": "x", "at": [1000, 2000, 3000], "mullion": 60,
+        "cells": [ { "sash": "fixed" }, { "sash": "fixed" }, { "sash": "fixed" }, { "sash": "fixed" } ] },
+      { "split": "x", "at": [1000, 2000, 3000], "mullion": 20,
+        "cells": [ { "panel": "metal_painted#a9adb0" }, { "panel": "metal_painted#a9adb0" }, { "panel": "metal_painted#a9adb0" }, { "panel": "metal_painted#a9adb0" } ] } ] },
+  "sill": { "outside": "none", "inside": "none" }
+}

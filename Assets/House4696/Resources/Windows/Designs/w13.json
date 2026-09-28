@@ -1,0 +1,10 @@
+{
+  "id": "w13", "name": "Строгая модульная сетка",
+  "ref": [3000, 3150],
+  "fixX": [[0, 160], [2840, 3000]], "fixY": [[0, 215], [2935, 3150]],
+  "frame": { "width": 160, "depth": 220, "inset": 0 },
+  "sash": { "width": 90, "depth": 70, "offset": 20 },
+  "layout": { "split": "y", "at": [215, 2935], "mullion": 0,
+    "cells": [ { "panel": "frame" }, { "sash": "tilt" }, { "panel": "frame" } ] },
+  "sill": { "outside": "none", "inside": "none" }
+}

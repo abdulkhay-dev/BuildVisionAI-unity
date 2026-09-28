@@ -1,0 +1,10 @@
+{
+  "id": "w41", "name": "Трёхчастный обзор",
+  "ref": [3400, 1750],
+  "fixX": [[0, 55], [675, 725], [2625, 2675], [3345, 3400]], "fixY": [[0, 55], [1695, 1750]],
+  "frame": { "width": 55, "depth": 100, "inset": 80 },
+  "sash": { "width": 50, "depth": 75, "offset": 6 },
+  "layout": { "split": "x", "at": [700, 2650], "mullion": 50,
+    "cells": [ { "sash": "tilt-turn", "hinge": "left" }, { "sash": "fixed" }, { "sash": "tilt-turn", "hinge": "right" } ] },
+  "sill": { "outside": "metal", "inside": "board", "overhang": 40, "material": "metal_painted#b8bbbe" }
+}

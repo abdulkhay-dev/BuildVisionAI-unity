@@ -1,0 +1,9 @@
+{
+  "id": "w46", "name": "Вертикальный свет",
+  "ref": [900, 3200],
+  "fixX": [[0, 50], [850, 900]], "fixY": [[0, 50], [910, 950], [1660, 1700], [2390, 2430], [3150, 3200]],
+  "frame": { "width": 50, "depth": 75, "inset": 80 },
+  "layout": { "split": "y", "at": [930, 1680, 2410], "mullion": 40,
+    "cells": [ { "sash": "fixed" }, { "sash": "fixed" }, { "sash": "fixed" }, { "sash": "fixed" } ] },
+  "sill": { "outside": "none", "inside": "board" }
+}

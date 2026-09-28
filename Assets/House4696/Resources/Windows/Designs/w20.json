@@ -1,0 +1,11 @@
+{
+  "id": "w20", "name": "Угловой модуль",
+  "ref": [3200, 3200],
+  "fixX": [[0, 50], [1042, 1092], [2108, 2158], [3150, 3200]], "fixY": [[0, 50], [2775, 3200]],
+  "frame": { "width": 50, "depth": 200, "inset": 0 },
+  "layout": { "split": "y", "at": [2800], "mullion": 50,
+    "cells": [
+      { "split": "x", "at": [1067, 2133], "mullion": 50, "cells": [ { "sash": "fixed" }, { "sash": "fixed" }, { "sash": "fixed" } ] },
+      { "panel": "frame" } ] },
+  "sill": { "outside": "none", "inside": "none" }
+}

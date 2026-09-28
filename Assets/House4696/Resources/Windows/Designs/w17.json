@@ -1,0 +1,13 @@
+{
+  "id": "w17", "name": "Бронзовый фасад",
+  "ref": [2400, 3200],
+  "fixX": [[0, 140], [1825, 1875], [2260, 2400]], "fixY": [[0, 300], [2900, 3200]],
+  "frame": { "width": 140, "depth": 220, "inset": 0 },
+  "sash": { "width": 60, "depth": 70, "offset": 20 },
+  "layout": { "split": "y", "at": [300, 2900], "mullion": 0,
+    "cells": [
+      { "panel": "frame" },
+      { "split": "x", "at": [1850], "mullion": 50, "cells": [ { "sash": "fixed" }, { "sash": "turn", "hinge": "right" } ] },
+      { "panel": "frame" } ] },
+  "sill": { "outside": "none", "inside": "none" }
+}

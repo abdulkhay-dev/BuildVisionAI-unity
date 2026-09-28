@@ -1,0 +1,13 @@
+{
+  "id": "w48", "name": "Остекление внутреннего сада",
+  "ref": [4400, 2950],
+  "fixX": [[0, 70], [1065, 1135], [2165, 2235], [3265, 3335], [4330, 4400]], "fixY": [[0, 70], [1600, 1640], [2880, 2950]],
+  "frame": { "width": 70, "depth": 200, "inset": 40 },
+  "layout": { "split": "x", "at": [1100, 2200, 3300], "mullion": 70,
+    "cells": [
+      { "split": "y", "at": [1620], "mullion": 40, "cells": [ { "sash": "fixed" }, { "sash": "fixed" } ] },
+      { "split": "y", "at": [1620], "mullion": 40, "cells": [ { "sash": "fixed" }, { "sash": "fixed" } ] },
+      { "split": "y", "at": [1620], "mullion": 40, "cells": [ { "sash": "fixed" }, { "sash": "fixed" } ] },
+      { "split": "y", "at": [1620], "mullion": 40, "cells": [ { "sash": "fixed" }, { "sash": "fixed" } ] } ] },
+  "sill": { "outside": "none", "inside": "none" }
+}

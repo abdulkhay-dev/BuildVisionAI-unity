@@ -1,0 +1,10 @@
+{
+  "id": "w40", "name": "Высокая световая лента",
+  "ref": [3600, 750],
+  "fixX": [[0, 50], [875, 925], [1775, 1825], [2675, 2725], [3550, 3600]], "fixY": [[0, 50], [700, 750]],
+  "frame": { "width": 50, "depth": 75, "inset": 80 },
+  "sash": { "width": 45, "depth": 75, "offset": 6 },
+  "layout": { "split": "x", "at": [900, 1800, 2700], "mullion": 50,
+    "cells": [ { "sash": "tilt" }, { "sash": "tilt" }, { "sash": "tilt" }, { "sash": "tilt" } ] },
+  "sill": { "outside": "metal", "inside": "board", "overhang": 40, "material": "metal_painted#eceeed" }
+}

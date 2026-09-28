@@ -1,0 +1,11 @@
+{
+  "id": "w36", "name": "Окно выдачи",
+  "ref": [2200, 1300],
+  "fixX": [[0, 60], [2140, 2200]], "fixY": [[0, 60], [1240, 1300]],
+  "frame": { "width": 60, "depth": 130, "inset": 60 },
+  "sash": { "width": 70, "depth": 50, "offset": 6, "overlap": 40 },
+  "layout": { "split": "x", "at": [1100], "mullion": 0,
+    "cells": [ { "sash": "slide", "hinge": "right" }, { "sash": "tilt" } ] },
+  "shelf": { "depth": 360, "thickness": 60, "y": 0, "ears": 250, "material": "door_natur_oak", "brackets": true },
+  "sill": { "outside": "none", "inside": "board" }
+}

@@ -1,0 +1,10 @@
+{
+  "id": "w37", "name": "Спокойная симметрия",
+  "ref": [1800, 1300],
+  "fixX": [[0, 55], [870, 930], [1745, 1800]], "fixY": [[0, 55], [1245, 1300]],
+  "frame": { "width": 55, "depth": 75, "inset": 80 },
+  "sash": { "width": 45, "depth": 75, "offset": 6 },
+  "layout": { "split": "x", "at": [900], "mullion": 60,
+    "cells": [ { "sash": "turn", "hinge": "left" }, { "sash": "tilt-turn", "hinge": "right" } ] },
+  "sill": { "outside": "metal", "inside": "board", "overhang": 50, "material": "metal_painted#eceeed" }
+}

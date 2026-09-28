@@ -318,10 +318,10 @@
       "design": "w13",
       "finish": "silver",
       "size": [
-        1.5,
-        1.6
+        3.0,
+        3.15
       ],
-      "sillHeight": 0.8,
+      "sillHeight": 0.0,
       "photo": "w13.jpg"
     },
     {
@@ -334,8 +334,8 @@
       "design": "w14",
       "finish": "graphite",
       "size": [
-        1.2,
-        3.2
+        1.3,
+        3.3
       ],
       "sillHeight": 0.0,
       "photo": "w14.jpg"
@@ -350,10 +350,10 @@
       "design": "w15",
       "finish": "grey",
       "size": [
-        3.6,
-        1.6
+        1.9,
+        3.3
       ],
-      "sillHeight": 0.9,
+      "sillHeight": 0.0,
       "photo": "w15.jpg"
     },
     {
@@ -366,7 +366,7 @@
       "design": "w16",
       "finish": "black",
       "size": [
-        3.0,
+        3.2,
         3.2
       ],
       "sillHeight": 0.0,
@@ -383,7 +383,7 @@
       "finish": "bronze",
       "size": [
         2.4,
-        3.0
+        3.2
       ],
       "sillHeight": 0.0,
       "photo": "w17.jpg"
@@ -396,10 +396,10 @@
       "style": "Биоклиматический образ",
       "note": "Вертикальные рёбра создают глубину и тень. Офисный небоскрёб. Песочный алюминий.",
       "design": "w18",
-      "finish": "sand",
+      "finish": "anthracite",
       "size": [
-        2.4,
-        3.2
+        2.1,
+        3.4
       ],
       "sillHeight": 0.0,
       "photo": "w18.jpg"
@@ -415,7 +415,7 @@
       "finish": "silver",
       "size": [
         3.0,
-        3.2
+        3.3
       ],
       "sillHeight": 0.0,
       "photo": "w19.jpg"
@@ -431,7 +431,7 @@
       "finish": "anthracite",
       "size": [
         3.2,
-        3.0
+        3.2
       ],
       "sillHeight": 0.0,
       "photo": "w20.jpg"
@@ -446,7 +446,7 @@
       "design": "w21",
       "finish": "graphite",
       "size": [
-        2.4,
+        2.8,
         3.0
       ],
       "sillHeight": 0.0,
@@ -460,7 +460,7 @@
       "style": "Футуристический",
       "note": "Диагональная графика поверх модульного стекла. Знаковая башня. Белый профиль.",
       "design": "w22",
-      "finish": "white-alu",
+      "finish": "anthracite",
       "size": [
         3.6,
         3.4
@@ -478,7 +478,7 @@
       "design": "w23",
       "finish": "anthracite",
       "size": [
-        2.8,
+        2.4,
         3.0
       ],
       "sillHeight": 0.0,
@@ -494,8 +494,8 @@
       "design": "w24",
       "finish": "bronze",
       "size": [
-        1.5,
-        2.8
+        1.15,
+        2.7
       ],
       "sillHeight": 0.3,
       "photo": "w24.jpg"
@@ -511,7 +511,7 @@
       "finish": "black",
       "size": [
         4.0,
-        2.6
+        2.5
       ],
       "sillHeight": 0.4,
       "photo": "w25.jpg"
@@ -543,9 +543,9 @@
       "finish": "black",
       "size": [
         4.2,
-        3.0
+        2.7
       ],
-      "sillHeight": 0.4,
+      "sillHeight": 0.5,
       "photo": "w27.jpg"
     },
     {
@@ -559,7 +559,7 @@
       "finish": "bronze",
       "size": [
         3.0,
-        3.2
+        2.6
       ],
       "sillHeight": 0.4,
       "photo": "w28.jpg"
@@ -572,12 +572,12 @@
       "style": "Современный",
       "note": "Экспозиция разворачивается на две стороны. Графит.",
       "design": "w29",
-      "finish": "graphite",
+      "finish": "black",
       "size": [
         4.0,
-        3.0
+        3.4
       ],
-      "sillHeight": 0.3,
+      "sillHeight": 0.0,
       "photo": "w29.jpg"
     },
     {
@@ -590,8 +590,8 @@
       "design": "w30",
       "finish": "sage",
       "size": [
-        4.2,
-        3.0
+        3.9,
+        2.4
       ],
       "sillHeight": 0.0,
       "photo": "w30.jpg"
@@ -606,8 +606,8 @@
       "design": "w31",
       "finish": "natural-oak",
       "size": [
-        3.6,
-        2.4
+        3.0,
+        1.8
       ],
       "sillHeight": 0.5,
       "photo": "w31.jpg"
@@ -623,7 +623,7 @@
       "finish": "ivory",
       "size": [
         4.4,
-        3.0
+        2.7
       ],
       "sillHeight": 0.0,
       "photo": "w32.jpg"
@@ -639,9 +639,9 @@
       "finish": "brass",
       "size": [
         3.6,
-        3.0
+        2.7
       ],
-      "sillHeight": 0.5,
+      "sillHeight": 0.6,
       "photo": "w33.jpg"
     },
     {
@@ -655,7 +655,7 @@
       "finish": "grey",
       "size": [
         4.2,
-        3.0
+        2.7
       ],
       "sillHeight": 0.0,
       "photo": "w34.jpg"
@@ -670,7 +670,7 @@
       "design": "w35",
       "finish": "white-alu",
       "size": [
-        1.2,
+        1.4,
         2.6
       ],
       "sillHeight": 0.3,
@@ -684,7 +684,7 @@
       "style": "Практичный",
       "note": "Компактный проём с нижней полкой и боковой секцией. Антрацит.",
       "design": "w36",
-      "finish": "anthracite",
+      "finish": "black",
       "size": [
         2.2,
         1.3
@@ -703,7 +703,7 @@
       "finish": "white-alu",
       "size": [
         1.8,
-        1.5
+        1.3
       ],
       "sillHeight": 0.9,
       "photo": "w37.jpg"
@@ -735,7 +735,7 @@
       "finish": "light-grey",
       "size": [
         2.8,
-        1.8
+        1.9
       ],
       "sillHeight": 0.7,
       "photo": "w39.jpg"
@@ -751,7 +751,7 @@
       "finish": "white-alu",
       "size": [
         3.6,
-        0.7
+        0.75
       ],
       "sillHeight": 1.8,
       "photo": "w40.jpg"
@@ -767,7 +767,7 @@
       "finish": "silver",
       "size": [
         3.4,
-        2.0
+        1.75
       ],
       "sillHeight": 0.6,
       "photo": "w41.jpg"
@@ -780,7 +780,7 @@
       "style": "Функциональный",
       "note": "Повторяющиеся окна образуют непрерывный ритм. Светло-серый.",
       "design": "w42",
-      "finish": "light-grey",
+      "finish": "grey",
       "size": [
         6.0,
         1.4
@@ -814,8 +814,8 @@
       "design": "w44",
       "finish": "mint",
       "size": [
-        2.6,
-        1.6
+        3.0,
+        1.55
       ],
       "sillHeight": 0.8,
       "photo": "w44.jpg"
@@ -831,7 +831,7 @@
       "finish": "light-grey",
       "size": [
         4.0,
-        2.8
+        3.0
       ],
       "sillHeight": 0.3,
       "photo": "w45.jpg"
@@ -860,7 +860,7 @@
       "style": "Современный",
       "note": "Наружные горизонтальные ламели перед стеклом. Солнечный фасад. Серебристый.",
       "design": "w47",
-      "finish": "silver",
+      "finish": "grey",
       "size": [
         3.2,
         1.7
@@ -876,10 +876,10 @@
       "style": "Природный",
       "note": "Высокая сетка стекла обращена к озеленённому двору. Тёплый серый.",
       "design": "w48",
-      "finish": "warm-grey",
+      "finish": "bronze",
       "size": [
         4.4,
-        3.4
+        2.95
       ],
       "sillHeight": 0.0,
       "photo": "w48.jpg"

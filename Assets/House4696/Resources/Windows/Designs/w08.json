@@ -3,8 +3,10 @@
   "ref": [1300, 2250],
   "fixX": [[0, 60], [1240, 1300]], "fixY": [[0, 60], [2190, 2250]],
   "frame": { "width": 60, "depth": 110, "inset": 80 },
-  "sash": { "width": 55, "depth": 50, "offset": 6 },
-  "layout": { "split": "y", "at": [1290], "mullion": 0,
-    "cells": [ { "sash": "tilt" }, { "sash": "tilt" } ] },
+  "sash": { "width": 55, "depth": 50, "offset": 6, "overlap": 50 },
+  "layout": { "split": "y", "at": [1220], "mullion": 0,
+    "cells": [
+      { "sash": "hung", "rails": { "bottom": 90, "top": 45, "side": 55 } },
+      { "sash": "hung", "rails": { "bottom": 45, "top": 55, "side": 55 } } ] },
   "sill": { "outside": "stone", "inside": "board", "overhang": 70, "thickness": 90, "ears": 100 }
 }

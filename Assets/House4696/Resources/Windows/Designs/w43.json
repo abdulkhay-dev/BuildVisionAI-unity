@@ -1,0 +1,10 @@
+{
+  "id": "w43", "name": "Окно с внутренними жалюзи",
+  "ref": [2400, 1600],
+  "fixX": [[0, 60], [1370, 1430], [2340, 2400]], "fixY": [[0, 60], [1540, 1600]],
+  "frame": { "width": 60, "depth": 75, "inset": 80 },
+  "sash": { "width": 55, "depth": 75, "offset": 6 },
+  "layout": { "split": "x", "at": [1400], "mullion": 60,
+    "cells": [ { "sash": "fixed", "blinds": true }, { "sash": "tilt-turn", "hinge": "right", "blinds": true } ] },
+  "sill": { "outside": "metal", "inside": "board", "overhang": 50, "material": "metal_painted#eceeed" }
+}

@@ -1,0 +1,9 @@
+{
+  "id": "w42", "name": "Лента коридора",
+  "ref": [6000, 1400],
+  "fixX": [[0, 60], [1160, 1240], [2360, 2440], [3560, 3640], [4760, 4840], [5940, 6000]], "fixY": [[0, 60], [1340, 1400]],
+  "frame": { "width": 60, "depth": 75, "inset": 80 },
+  "layout": { "split": "x", "at": [1200, 2400, 3600, 4800], "mullion": 80,
+    "cells": [ { "sash": "fixed" }, { "sash": "fixed" }, { "sash": "fixed" }, { "sash": "fixed" }, { "sash": "fixed" } ] },
+  "sill": { "outside": "metal", "inside": "board", "overhang": 40, "material": "metal_painted#b4b7b8" }
+}

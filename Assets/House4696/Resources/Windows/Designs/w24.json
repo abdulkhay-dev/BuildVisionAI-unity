@@ -1,0 +1,16 @@
+{
+  "id": "w24", "name": "Светлые каменные порталы",
+  "ref": [1150, 2700],
+  "fixX": [[0, 70], [555, 595], [1080, 1150]], "fixY": [[0, 380], [1825, 1875], [2630, 2700]],
+  "frame": { "width": 70, "depth": 80, "inset": 260 },
+  "sash": { "width": 50, "depth": 64, "offset": 6 },
+  "layout": { "split": "y", "at": [360, 1850], "mullion": [40, 50],
+    "cells": [
+      { "split": "x", "at": [575], "mullion": 40, "cells": [ { "panel": "frame" }, { "panel": "frame" } ] },
+      { "split": "x", "at": [575], "mullion": 40,
+        "cells": [ { "sash": "turn", "hinge": "left", "rails": { "bottom": 70 } }, { "sash": "turn", "hinge": "right", "rails": { "bottom": 70 } } ] },
+      { "split": "x", "at": [575], "mullion": 40, "cells": [ { "sash": "fixed" }, { "sash": "fixed" } ] } ] },
+  "members": [ { "path": "M 70 680 L 1080 680", "width": 22, "depth": 22, "z": -45, "material": "frame" } ],
+  "sill": { "outside": "stone", "inside": "board", "overhang": 90, "thickness": 90, "ears": 290, "material": "door_enamel_whitey#e6dccb" },
+  "surround": { "width": 290, "depth": 120, "material": "door_enamel_whitey#e6dccb", "head": 160, "bottom": false }
+}

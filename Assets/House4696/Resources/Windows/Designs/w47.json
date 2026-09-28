@@ -1,0 +1,14 @@
+{
+  "id": "w47", "name": "Окно с внешним экраном",
+  "ref": [3200, 1700],
+  "fixX": [[0, 55], [1030, 1100], [2100, 2170], [3145, 3200]], "fixY": [[0, 55], [1645, 1700]],
+  "frame": { "width": 55, "depth": 75, "inset": 120 },
+  "sash": { "width": 55, "depth": 75, "offset": 6 },
+  "layout": { "split": "x", "at": [1067, 2133], "mullion": 70,
+    "cells": [ { "sash": "fixed" }, { "sash": "tilt-turn", "hinge": "left" }, { "sash": "fixed" } ] },
+  "members": [
+    { "path": "M -120 1640 L 3320 1640", "width": 110, "depth": 30, "z": -300, "material": "metal_painted#b8bbbe", "count": 7, "stepY": -120 },
+    { "path": "M 30 850 L 30 1720 M 1067 850 L 1067 1720 M 2133 850 L 2133 1720 M 3170 850 L 3170 1720", "width": 50, "depth": 300, "z": -300, "material": "metal_painted#b8bbbe" } ],
+  "sill": { "outside": "metal", "inside": "board", "overhang": 60, "material": "metal_painted#b8bbbe" },
+  "surround": { "width": 50, "depth": 20, "material": "metal_painted#b8bbbe" }
+}

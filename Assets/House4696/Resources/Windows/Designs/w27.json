@@ -1,0 +1,13 @@
+{
+  "id": "w27", "name": "Чёрный лофт",
+  "ref": [4200, 2700],
+  "fixX": [[0, 80], [1025, 1075], [2075, 2125], [3125, 3175], [4120, 4200]], "fixY": [[0, 80], [880, 920], [1780, 1820], [2620, 2700]],
+  "frame": { "width": 80, "depth": 100, "inset": 60 },
+  "layout": { "split": "x", "at": [1050, 2100, 3150], "mullion": 50,
+    "cells": [
+      { "split": "y", "at": [900, 1800], "mullion": 40, "cells": [ { "sash": "fixed" }, { "sash": "fixed" }, { "sash": "fixed" } ] },
+      { "split": "y", "at": [900, 1800], "mullion": 40, "cells": [ { "sash": "fixed" }, { "sash": "fixed" }, { "sash": "fixed" } ] },
+      { "split": "y", "at": [900, 1800], "mullion": 40, "cells": [ { "sash": "fixed" }, { "sash": "fixed" }, { "sash": "fixed" } ] },
+      { "split": "y", "at": [900, 1800], "mullion": 40, "cells": [ { "sash": "fixed" }, { "sash": "fixed" }, { "sash": "fixed" } ] } ] },
+  "sill": { "outside": "none", "inside": "none" }
+}

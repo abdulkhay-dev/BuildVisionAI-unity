@@ -1,0 +1,16 @@
+{
+  "id": "w34", "name": "Витрина с матовым низом",
+  "ref": [4200, 2700],
+  "fixX": [[0, 65], [810, 870], [2835, 2905], [4135, 4200]], "fixY": [[0, 65], [2195, 2255], [2470, 2530], [2635, 2700]],
+  "frame": { "width": 65, "depth": 120, "inset": 60 },
+  "sash": { "width": 90, "depth": 70, "offset": 6 },
+  "layout": { "split": "x", "at": [2870], "mullion": 70,
+    "cells": [
+      { "split": "y", "at": [2500], "mullion": 60,
+        "cells": [
+          { "split": "x", "at": [840], "mullion": 60, "cells": [ { "sash": "fixed", "frosted": 700 }, { "sash": "fixed", "frosted": 700 } ] },
+          { "panel": "frame" } ] },
+      { "split": "y", "at": [2225], "mullion": 60,
+        "cells": [ { "sash": "door", "hinge": "right", "rails": { "bottom": 120, "top": 90, "side": 90 }, "frosted": 610 }, { "sash": "fixed" } ] } ] },
+  "sill": { "outside": "none", "inside": "none" }
+}

@@ -1,0 +1,8 @@
+{
+  "id": "w16", "name": "Структурная гладь",
+  "ref": [3200, 3200],
+  "fixX": [[0, 12], [1588, 1612], [3188, 3200]], "fixY": [[0, 12], [3188, 3200]],
+  "frame": { "width": 12, "depth": 220, "inset": 0 },
+  "layout": { "split": "x", "at": [1600], "mullion": 24, "cells": [ { "sash": "fixed" }, { "sash": "fixed" } ] },
+  "sill": { "outside": "none", "inside": "none" }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "w33", "name": "Геометрия ар-деко",
+  "ref": [3600, 2700],
+  "fixX": [[0, 60], [295, 365], [3235, 3305], [3540, 3600]], "fixY": [[0, 90], [2610, 2700]],
+  "frame": { "width": 60, "depth": 120, "inset": 60 },
+  "layout": { "split": "y", "at": [120], "mullion": 60,
+    "cells": [
+      { "panel": "frame" },
+      { "split": "x", "at": [330, 3270], "mullion": 70,
+        "cells": [
+          { "sash": "fixed" },
+          { "split": "x", "at": [950, 2650], "mullion": 40, "cells": [ { "sash": "fixed" }, { "sash": "fixed" }, { "sash": "fixed" } ] },
+          { "sash": "fixed" } ] } ] },
+  "members": [
+    { "path": "M 1150 300 L 1150 1750 L 1320 1750 L 1320 1960 L 1490 1960 L 1490 2170 L 1660 2170 L 1660 2450 L 1940 2450 L 1940 2170 L 2110 2170 L 2110 1960 L 2280 1960 L 2280 1750 L 2450 1750 L 2450 300",
+      "width": 30, "depth": 44, "material": "frame" },
+    { "path": "M 1320 300 L 1320 1750 M 1490 300 L 1490 1960 M 1660 300 L 1660 2170 M 1940 300 L 1940 2170 M 2110 300 L 2110 1960 M 2280 300 L 2280 1750",
+      "width": 22, "depth": 40, "material": "frame" },
+    { "path": "M 1660 2320 L 1940 2320", "width": 22, "depth": 40, "material": "frame" },
+    { "path": "M 1150 300 L 2450 300 M 1320 200 L 2280 200 M 1320 200 L 1320 300 M 2280 200 L 2280 300", "width": 26, "depth": 40, "material": "frame" },
+    { "path": "M 150 250 L 150 2150 L 210 2150 L 210 2350 M 245 250 L 245 2350 M 210 250 L 210 900 L 150 900", "width": 20, "depth": 40, "material": "frame" },
+    { "path": "M 3450 250 L 3450 2150 L 3390 2150 L 3390 2350 M 3355 250 L 3355 2350 M 3390 250 L 3390 900 L 3450 900", "width": 20, "depth": 40, "material": "frame" } ],
+  "sill": { "outside": "stone", "inside": "none", "overhang": 30, "thickness": 60, "ears": 0, "material": "door_enamel_whitey#2b2b2d" }
+}

@@ -7,8 +7,9 @@
   "sash": { "width": 55, "depth": 70, "offset": 6 },
   "layout": { "split": "x", "at": [650], "mullion": 15,
     "cells": [
-      { "sash": "turn", "hinge": "left", "bars": { "cols": 2, "rows": 4, "width": 18 } },
-      { "sash": "turn", "hinge": "right", "bars": { "cols": 2, "rows": 4, "width": 18 } } ] },
+      { "sash": "turn", "hinge": "left", "rails": { "bottom": 85, "side": 55 }, "bars": { "cols": 2, "rows": 4, "width": 18 } },
+      { "sash": "turn", "hinge": "right", "rails": { "bottom": 85, "side": 55 }, "bars": { "cols": 2, "rows": 4, "width": 18 } } ] },
   "sill": { "outside": "stone", "inside": "board", "overhang": 70, "thickness": 90, "ears": 260 },
-  "surround": { "width": 220, "depth": 40, "material": "door_enamel_whitey#e4d9c2", "head": 0 }
+  "surround": { "width": 220, "depth": 40, "material": "door_enamel_whitey#e4d9c2", "head": 0, "bottom": false,
+    "keystone": { "width": 200, "height": 260, "proud": 20 } }
 }

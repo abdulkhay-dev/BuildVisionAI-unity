@@ -1,0 +1,17 @@
+{
+  "id": "w23", "name": "Ступенчатый ритм",
+  "ref": [2400, 3000],
+  "fixX": [[0, 530], [1275, 1325], [2350, 2400]], "fixY": [[0, 355], [2950, 3000]],
+  "frame": { "width": 50, "depth": 150, "inset": 80 },
+  "layout": { "split": "y", "at": [330], "mullion": 50,
+    "cells": [
+      { "panel": "frame" },
+      { "split": "x", "at": [505], "mullion": 50,
+        "cells": [
+          { "panel": "frame" },
+          { "split": "x", "at": [1300], "mullion": 50, "cells": [ { "sash": "fixed" }, { "sash": "fixed" } ] } ] } ] },
+  "members": [
+    { "path": "M 0 150 L 2400 150", "width": 300, "depth": 160, "z": -160, "material": "frame" },
+    { "path": "M 240 0 L 240 3000", "width": 480, "depth": 220, "z": -220, "material": "frame" } ],
+  "sill": { "outside": "none", "inside": "none" }
+}

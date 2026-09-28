@@ -1,0 +1,14 @@
+{
+  "id": "w21", "name": "Шахматная композиция",
+  "ref": [2800, 3000],
+  "fixX": [[0, 40], [700, 740], [1380, 1420], [2760, 2800]], "fixY": [[0, 40], [2380, 2420], [2960, 3000]],
+  "frame": { "width": 40, "depth": 200, "inset": 0 },
+  "layout": { "split": "x", "at": [1400], "mullion": 40,
+    "cells": [
+      { "split": "x", "at": [720], "mullion": 40,
+        "cells": [
+          { "sash": "fixed" },
+          { "split": "y", "at": [2400], "mullion": 40, "cells": [ { "sash": "fixed" }, { "panel": "frame" } ] } ] },
+      { "panel": "frame" } ] },
+  "sill": { "outside": "none", "inside": "none" }
+}

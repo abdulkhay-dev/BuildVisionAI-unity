@@ -1,0 +1,19 @@
+{
+  "id": "w30", "name": "Ретро с цоколем",
+  "ref": [3900, 2400],
+  "fixX": [[0, 70], [1475, 1575], [2417, 2517], [3830, 3900]], "fixY": [[0, 70], [590, 650], [1855, 1905], [2330, 2400]],
+  "frame": { "width": 70, "depth": 100, "inset": 60 },
+  "sash": { "width": 90, "depth": 60, "offset": 6 },
+  "layout": { "split": "x", "at": [1525, 2467], "mullion": 100,
+    "cells": [
+      { "split": "y", "at": [620, 1880], "mullion": [60, 50], "cells": [ { "panel": "frame" }, { "sash": "fixed" }, { "sash": "fixed" } ] },
+      { "split": "y", "at": [1880], "mullion": 50,
+        "cells": [ { "sash": "door", "hinge": "left", "rails": { "bottom": 720, "top": 120, "side": 90 } }, { "sash": "fixed" } ] },
+      { "split": "y", "at": [620, 1880], "mullion": [60, 50], "cells": [ { "panel": "frame" }, { "sash": "fixed" }, { "sash": "fixed" } ] } ] },
+  "members": [
+    { "path": "M 160 150 L 760 150 L 760 510 L 160 510 Z M 830 150 L 1410 150 L 1410 510 L 830 510 Z", "width": 30, "depth": 50, "material": "frame" },
+    { "path": "M 2600 150 L 3150 150 L 3150 510 L 2600 510 Z M 3220 150 L 3750 150 L 3750 510 L 3220 510 Z", "width": 30, "depth": 50, "material": "frame" },
+    { "path": "M 1690 170 L 2300 170 L 2300 560 L 1690 560 Z", "width": 30, "depth": 70, "material": "frame" } ],
+  "sill": { "outside": "none", "inside": "none" },
+  "surround": { "width": 250, "depth": 60, "material": "frame", "head": 150, "bottom": false }
+}

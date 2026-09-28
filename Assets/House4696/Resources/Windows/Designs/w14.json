@@ -1,0 +1,12 @@
+{
+  "id": "w14", "name": "Вертикальный ритм",
+  "ref": [1300, 3300],
+  "fixX": [[0, 30], [750, 790], [1270, 1300]], "fixY": [[0, 30], [2475, 2525], [3270, 3300]],
+  "frame": { "width": 30, "depth": 200, "inset": 0 },
+  "layout": { "split": "x", "at": [770], "mullion": 40,
+    "cells": [
+      { "split": "y", "at": [2500], "mullion": 50, "cells": [ { "sash": "fixed" }, { "sash": "fixed" } ] },
+      { "panel": "frame" } ] },
+  "members": [ { "path": "M 1030 0 L 1030 3300", "width": 480, "depth": 110, "z": -110, "material": "frame" } ],
+  "sill": { "outside": "none", "inside": "none" }
+}

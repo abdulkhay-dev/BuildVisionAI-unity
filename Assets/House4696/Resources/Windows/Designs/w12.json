@@ -6,9 +6,9 @@
   "sash": { "width": 60, "depth": 60, "offset": 6, "overlap": 30 },
   "layout": { "split": "x", "at": [1200, 2400, 3600], "mullion": [40, 100, 40],
     "cells": [
-      { "sash": "slide", "hinge": "right" },
-      { "sash": "fixed" },
-      { "sash": "fixed" },
-      { "sash": "slide", "hinge": "left" } ] },
+      { "sash": "slide", "hinge": "right", "rails": { "bottom": 110, "top": 70, "side": 60 } },
+      { "sash": "tilt", "rails": { "bottom": 110, "top": 70, "side": 60 } },
+      { "sash": "tilt", "rails": { "bottom": 110, "top": 70, "side": 60 } },
+      { "sash": "slide", "hinge": "left", "rails": { "bottom": 110, "top": 70, "side": 60 } } ] },
   "sill": { "outside": "none", "inside": "none" }
 }
