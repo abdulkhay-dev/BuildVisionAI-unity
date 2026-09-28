@@ -1,0 +1,288 @@
+{
+  "finishes": [
+    {
+      "id": "white-pvc",
+      "name": "Белый (ПВХ)",
+      "material": "door_enamel_whitey#f1f0eb",
+      "color": "#f1f0eb"
+    },
+    {
+      "id": "white-alu",
+      "name": "Белый (алюминий)",
+      "material": "metal_painted#eceeed",
+      "color": "#eceeed"
+    },
+    {
+      "id": "ivory",
+      "name": "Слоновая кость",
+      "material": "door_enamel_whitey#ebe3d1",
+      "color": "#ebe3d1"
+    },
+    {
+      "id": "milk",
+      "name": "Молочный",
+      "material": "door_enamel_whitey#efe9dc",
+      "color": "#efe9dc"
+    },
+    {
+      "id": "light-oak",
+      "name": "Светлый дуб",
+      "material": "door_organic_oak",
+      "color": "#b9a07a"
+    },
+    {
+      "id": "natural-oak",
+      "name": "Натуральный дуб",
+      "material": "door_natur_oak",
+      "color": "#a6772f"
+    },
+    {
+      "id": "dark-walnut",
+      "name": "Тёмный орех",
+      "material": "door_f_17_chocolate",
+      "color": "#552e1a"
+    },
+    {
+      "id": "graphite",
+      "name": "Графит",
+      "material": "metal_painted#3a3c3f",
+      "color": "#3a3c3f"
+    },
+    {
+      "id": "anthracite",
+      "name": "Антрацит",
+      "material": "metal_painted#2e3134",
+      "color": "#2e3134"
+    },
+    {
+      "id": "black",
+      "name": "Чёрный",
+      "material": "metal_painted#1c1d1f",
+      "color": "#1c1d1f"
+    },
+    {
+      "id": "grey",
+      "name": "Серый",
+      "material": "metal_painted#5d6166",
+      "color": "#5d6166"
+    },
+    {
+      "id": "silver",
+      "name": "Серебристый",
+      "material": "metal_painted#b8bbbe",
+      "color": "#b8bbbe"
+    },
+    {
+      "id": "bronze",
+      "name": "Бронза",
+      "material": "metal_painted#5b4632",
+      "color": "#5b4632"
+    },
+    {
+      "id": "sage",
+      "name": "Шалфейный",
+      "material": "door_enamel_whitey#8a9a7f",
+      "color": "#8a9a7f"
+    },
+    {
+      "id": "mint",
+      "name": "Мятный",
+      "material": "door_enamel_whitey#9fc4b0",
+      "color": "#9fc4b0"
+    }
+  ],
+  "models": [
+    {
+      "id": "w01",
+      "number": 1,
+      "name": "Двустворчатая классика",
+      "section": "home",
+      "style": "Классический",
+      "note": "Две равные створки и спокойные пропорции. Спальня, кабинет.",
+      "design": "w01",
+      "finish": "white-pvc",
+      "size": [
+        1.4,
+        1.4
+      ],
+      "sillHeight": 0.9,
+      "photo": "w01.jpg"
+    },
+    {
+      "id": "w02",
+      "number": 2,
+      "name": "Тёплый сканди",
+      "section": "home",
+      "style": "Скандинавский",
+      "note": "Светлая рама, крупное стекло и минимум делений. Кухня, детская.",
+      "design": "w02",
+      "finish": "light-oak",
+      "size": [
+        1.8,
+        1.5
+      ],
+      "sillHeight": 0.6,
+      "photo": "w02.jpg"
+    },
+    {
+      "id": "w03",
+      "number": 3,
+      "name": "Чёрная панорама",
+      "section": "home",
+      "style": "Минимализм",
+      "note": "Широкое остекление с тонким графичным рисунком. Гостиная с видом на сад.",
+      "design": "w03",
+      "finish": "graphite",
+      "size": [
+        4.5,
+        2.6
+      ],
+      "sillHeight": 0.0,
+      "photo": "w03.jpg"
+    },
+    {
+      "id": "w04",
+      "number": 4,
+      "name": "Французское окно",
+      "section": "home",
+      "style": "Европейский",
+      "note": "Высокие парные створки с мелкой раскладкой. Гостиная, выход на террасу.",
+      "design": "w04",
+      "finish": "milk",
+      "size": [
+        1.2,
+        2.4
+      ],
+      "sillHeight": 0.0,
+      "photo": "w04.jpg"
+    },
+    {
+      "id": "w05",
+      "number": 5,
+      "name": "Арка прованс",
+      "section": "home",
+      "style": "Прованс",
+      "note": "Мягкая арка и симметричная раскладка. Столовая, загородный дом.",
+      "design": "w05",
+      "finish": "ivory",
+      "size": [
+        1.3,
+        2.1
+      ],
+      "sillHeight": 0.5,
+      "photo": "w05.jpg"
+    },
+    {
+      "id": "w06",
+      "number": 6,
+      "name": "Английская решётка",
+      "section": "home",
+      "style": "Английский",
+      "note": "Частые прямоугольные ячейки в строгой раме. Кабинет, кирпичный дом.",
+      "design": "w06",
+      "finish": "dark-walnut",
+      "size": [
+        1.8,
+        1.8
+      ],
+      "sillHeight": 0.7,
+      "photo": "w06.jpg"
+    },
+    {
+      "id": "w07",
+      "number": 7,
+      "name": "Круглый акцент",
+      "section": "home",
+      "style": "Современный",
+      "note": "Круглое окно становится акцентом фасада. Лестница, фронтон.",
+      "design": "w07",
+      "finish": "graphite",
+      "size": [
+        1.0,
+        1.0
+      ],
+      "sillHeight": 1.2,
+      "photo": "w07.jpg"
+    },
+    {
+      "id": "w08",
+      "number": 8,
+      "name": "Эркер на три грани",
+      "section": "home",
+      "style": "Традиционный",
+      "note": "Центральное окно и два боковых под углом. Столовая, зона отдыха.",
+      "design": "w08",
+      "finish": "white-pvc",
+      "size": [
+        1.4,
+        2.0
+      ],
+      "sillHeight": 0.5,
+      "photo": "w08.jpg"
+    },
+    {
+      "id": "w09",
+      "number": 9,
+      "name": "Угловой обзор",
+      "section": "home",
+      "style": "Современный",
+      "note": "Остекление поворачивает за угол фасада. Гостиная на углу дома.",
+      "design": "w09",
+      "finish": "anthracite",
+      "size": [
+        3.2,
+        2.6
+      ],
+      "sillHeight": 0.0,
+      "photo": "w09.jpg"
+    },
+    {
+      "id": "w10",
+      "number": 10,
+      "name": "Окно под скатом",
+      "section": "home",
+      "style": "Шале",
+      "note": "Треугольный верх повторяет силуэт крыши. Мансарда, фронтон.",
+      "design": "w10",
+      "finish": "natural-oak",
+      "size": [
+        4.0,
+        2.4
+      ],
+      "sillHeight": 0.8,
+      "photo": "w10.jpg"
+    },
+    {
+      "id": "w11",
+      "number": 11,
+      "name": "Горизонтальная лента",
+      "section": "home",
+      "style": "Минимализм",
+      "note": "Низкий протяжённый проём с тремя секциями. Кухня над рабочей зоной.",
+      "design": "w11",
+      "finish": "grey",
+      "size": [
+        2.8,
+        0.7
+      ],
+      "sillHeight": 1.3,
+      "photo": "w11.jpg"
+    },
+    {
+      "id": "w12",
+      "number": 12,
+      "name": "Раздвижная панорама",
+      "section": "home",
+      "style": "Современный",
+      "note": "Четыре высокие секции в единой композиции. Терраса, зимний сад.",
+      "design": "w12",
+      "finish": "bronze",
+      "size": [
+        4.8,
+        2.6
+      ],
+      "sillHeight": 0.0,
+      "photo": "w12.jpg"
+    }
+  ]
+}

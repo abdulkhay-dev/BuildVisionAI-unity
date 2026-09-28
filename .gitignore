@@ -42,3 +42,6 @@ __pycache__/
 
 # Door catalog extraction (tools/doors/catalog_index.py): catalogue photos, not ours to ship
 /tools/doors/.cache/
+
+# Window catalogue images beyond the ones in tools/windows/reference
+/tools/windows/.cache/

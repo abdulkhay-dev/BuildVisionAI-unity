@@ -189,6 +189,15 @@ export function registerTools(server: McpServer): void {
     annotations: readOnly,
   }, async (a) => run("doors", a));
 
+  server.registerTool("house_windows", {
+    title: "Каталог окон",
+    description: "Окна из каталога (дом, магазины, больницы): модели с типичным размером проёма и высотой подоконника, цвета рам. " +
+      "Окно ставится проёмом type window с полями model и finish; рама, створки, раскладка, отлив и подоконник строятся по модели, " +
+      "фигурные окна (арка, круг, треугольник) вписываются в проём сами.",
+    inputSchema: {},
+    annotations: readOnly,
+  }, async () => run("windows", {}));
+
   server.registerTool("house_materials", {
     title: "Материалы",
     description: "Материалы для отделки и параметров мебели. library — реалистичные материалы-сканы с названием и категорией " +

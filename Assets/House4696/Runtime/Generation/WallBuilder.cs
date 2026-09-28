@@ -23,7 +23,8 @@ namespace House4696.Generation
 
         readonly HouseContext _c;
         readonly DoorBlockBuilder _doors;
-        public WallBuilder(HouseContext c) { _c = c; _doors = new DoorBlockBuilder(c); }
+        readonly House4696.Windows.WindowBuilder _windows;
+        public WallBuilder(HouseContext c) { _c = c; _doors = new DoorBlockBuilder(c); _windows = new House4696.Windows.WindowBuilder(c); }
 
         /// <summary>The catalogue door of an opening (model, finish, glass, design), or null for the built-in door.</summary>
         static ResolvedDoor Catalogue(OpeningRect o) => DoorSizing.IsCatalogueDoor(o.Def) ? DoorCatalog.Resolve(o.Def) : null;
@@ -220,6 +221,17 @@ namespace House4696.Generation
                     // a catalogue door in a facade wall: casing indoors only, the facade keeps its reveal
                     _doors.Build(f, o.Def, door, o.S0, o.S1, o.Y0, o.Y1, casingOut: false, casingIn: true);
                     Threshold(frames, f, o);
+                    continue;
+                }
+                var window = House4696.Windows.WindowCatalog.Resolve(o.Def);
+                if (window != null)
+                {
+                    // a catalogue window: its own frame, sashes, sills and (for a shaped one) the wall round its outline
+                    var clad = CladOf(defFinish);
+                    _windows.Build(f, o.Def, window, o.S0, o.S1, o.Y0, o.Y1, new House4696.Windows.WindowBuilder.WallSide
+                    {
+                        Outside = CladMat(clad, defFinish), Inside = _c.Mats.Get(f.Def.Inside, _c.M.Plaster), CladT = CladT(clad),
+                    });
                     continue;
                 }
                 var leaf = new MeshBuilder { Transform = f.ToWorld };

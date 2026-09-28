@@ -40,6 +40,7 @@ namespace House4696.App
                 case "status": c.Done.SetResult(Status()); return;
                 case "catalog": c.Done.SetResult(Catalog((string)a["category"], (string)a["id"])); return;
                 case "doors": c.Done.SetResult(Doors((string)a["series"], (string)a["id"])); return;
+                case "windows": c.Done.SetResult(Windows()); return;
                 case "materials": c.Done.SetResult(Materials((string)a["category"])); return;
                 case "inspect": RequireProject(); c.Done.SetResult(HouseInspector.Inspect(_s.Result, (string)a["section"], (string)a["id"])); return;
                 case "list_projects": c.Done.SetResult(JArray.FromObject(_s.Store.List(), Camel)); return;
@@ -233,6 +234,25 @@ namespace House4696.App
         /// The door catalogue for openings: series with their models, finishes and glass, standard sizes and how an opening
         /// follows its leaf. Filtered by series id or model id (the full list grows with the catalogue).
         /// </summary>
+        /// <summary>The window catalogue: models (with their typical size and sill height) and frame finishes.</summary>
+        static JObject Windows()
+        {
+            var cat = House4696.Windows.WindowCatalog.File;
+            return new JObject
+            {
+                ["howTo"] = "Окно из каталога — проём type window с полями model (id модели), finish (цвет рамы), width/height — размер проёма, м, " +
+                            "sill — высота низа над полом. size и sillHeight модели — типичный проём. Рама, створки, раскладка, отлив, подоконник " +
+                            "и обрамление строятся по модели; поворотные створки открываются внутрь, раздвижные уезжают (open: true — открыты). " +
+                            "Фигурные окна (арка, круг, треугольник) вписываются в прямоугольный проём — стена заполняет углы сама.",
+                ["finishes"] = new JArray(cat.Finishes.Select(f => new JObject { ["id"] = f.Id, ["name"] = f.Name })),
+                ["models"] = new JArray(cat.Models.Select(m => new JObject
+                {
+                    ["id"] = m.Id, ["name"] = m.Name, ["section"] = m.Section, ["style"] = m.Style, ["note"] = m.Note, ["finish"] = m.Finish,
+                    ["size"] = m.Size != null ? new JArray(m.Size[0], m.Size[1]) : null, ["sillHeight"] = m.SillHeight,
+                })),
+            };
+        }
+
         const string DoorsHowTo =
             "Дверь из каталога — проём type door с полями model (id модели), finish (id цвета серии), glass (id стекла модели, " +
             "если у модели есть стекло) и leaf [ширина, высота] — размер полотна, м. Проём в стене (width/height) считается из полотна " +

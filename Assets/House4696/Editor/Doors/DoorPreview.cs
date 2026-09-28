@@ -37,6 +37,11 @@ namespace House4696.Doors
             /// <summary>Pixels per metre of a front view.</summary>
             public float PxPerM = 400f;
             public bool HideWall = true;
+            /// <summary>A ready document instead of the door test wall (window previews); its first opening is framed.</summary>
+            public HouseDocument Doc;
+            /// <summary>Front view: the framed size (m) and the height of its centre, when not the door's.</summary>
+            public Vector2? FrontSize;
+            public float? FrontCenterY;
         }
 
         static readonly Vector3 Studio = new Vector3(0f, 0f, -600f);
@@ -46,7 +51,7 @@ namespace House4696.Doors
         {
             var lib = MaterialLibrary.Create();
             var writer = new SceneWriter();
-            var doc = Document(s);
+            var doc = s.Doc ?? Document(s);
             var saved = (RenderSettings.ambientMode, RenderSettings.ambientLight, RenderSettings.ambientProbe, RenderSettings.defaultReflectionMode,
                 RenderSettings.customReflectionTexture);
             var lights = new List<Light>();
@@ -92,7 +97,7 @@ namespace House4696.Doors
                 // frame: the opening in wall "w" (along +X at z = 0); the swing side is +Z
                 var o = doc.Openings[0];
                 float ow = o.Width, oh = o.Height;
-                var center = Studio + new Vector3(0f, oh * 0.5f + 0.03f, 0f);
+                var center = Studio + new Vector3(0f, s.FrontCenterY ?? oh * 0.5f + 0.03f, 0f);
                 var camGo = new GameObject("DoorPreviewCam") { hideFlags = HideFlags.HideAndDontSave };
                 camGo.transform.SetParent(studio.transform, false);
                 var cam = camGo.AddComponent<Camera>();
@@ -114,10 +119,12 @@ namespace House4696.Doors
                     // classic blocks (pilasters, cornice) stand wider and taller than plain casings
                     bool wide = DoorCatalog.Resolve(o)?.Block?.StartsWith("classic") == true;
                     float fw = ow + 2f * (wide ? 0.15f : 0.08f), fh = oh + (wide ? 0.2f : 0.1f);
+                    if (s.FrontSize.HasValue) { fw = s.FrontSize.Value.x; fh = s.FrontSize.Value.y; }
+                    float cy = s.FrontCenterY ?? fh * 0.5f;
                     W = Mathf.RoundToInt(fw * s.PxPerM); H = Mathf.RoundToInt(fh * s.PxPerM);
                     cam.orthographic = true;
                     cam.orthographicSize = fh * 0.5f;
-                    camGo.transform.SetPositionAndRotation(Studio + new Vector3(0f, fh * 0.5f, sideZ * 4f), Quaternion.LookRotation(new Vector3(0f, 0f, -sideZ)));
+                    camGo.transform.SetPositionAndRotation(Studio + new Vector3(0f, cy, sideZ * 4f), Quaternion.LookRotation(new Vector3(0f, 0f, -sideZ)));
                     cam.nearClipPlane = 0.5f; cam.farClipPlane = 10f;
                 }
                 else if (s.View.StartsWith("detail"))

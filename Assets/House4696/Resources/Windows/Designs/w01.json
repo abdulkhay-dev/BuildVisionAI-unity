@@ -1,0 +1,10 @@
+{
+  "id": "w01", "name": "Двустворчатая классика",
+  "ref": [1400, 1400],
+  "fixX": [[0, 90], [650, 750], [1310, 1400]], "fixY": [[0, 90], [1310, 1400]],
+  "frame": { "width": 70, "depth": 70, "inset": 120 },
+  "sash": { "width": 70, "depth": 76, "offset": 6 },
+  "layout": { "split": "x", "at": [700], "mullion": 80,
+    "cells": [ { "sash": "turn", "hinge": "left" }, { "sash": "tilt-turn", "hinge": "right" } ] },
+  "sill": { "outside": "stone", "inside": "board", "overhang": 50, "thickness": 60, "ears": 60 }
+}
