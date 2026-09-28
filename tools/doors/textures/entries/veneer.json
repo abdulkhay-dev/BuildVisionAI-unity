@@ -1,0 +1,92 @@
+[
+ {
+  "id": "door_natur_oak",
+  "name": "Natur Oak (шпон Mr.Wood)",
+  "category": "door",
+  "source": "procedural:tools/doors/textures/veneer.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/door_natur_oak",
+  "textures": {
+   "albedo": "door_natur_oak_albedo.jpg",
+   "normal": "door_natur_oak_normal.jpg",
+   "mask": "door_natur_oak_mask.png"
+  }
+ },
+ {
+  "id": "door_golden_oak",
+  "name": "Golden Oak (шпон Mr.Wood)",
+  "category": "door",
+  "source": "procedural:tools/doors/textures/veneer.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/door_golden_oak",
+  "textures": {
+   "albedo": "door_golden_oak_albedo.jpg",
+   "normal": "door_golden_oak_normal.jpg",
+   "mask": "door_golden_oak_mask.png"
+  }
+ },
+ {
+  "id": "door_veneer_ivory",
+  "name": "Ivory (шпон Mr.Wood)",
+  "category": "door",
+  "source": "procedural:tools/doors/textures/veneer.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/door_veneer_ivory",
+  "textures": {
+   "albedo": "door_veneer_ivory_albedo.jpg",
+   "normal": "door_veneer_ivory_normal.jpg",
+   "mask": "door_veneer_ivory_mask.png"
+  }
+ },
+ {
+  "id": "door_veneer_latte",
+  "name": "Latte (шпон Mr.Wood)",
+  "category": "door",
+  "source": "procedural:tools/doors/textures/veneer.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/door_veneer_latte",
+  "textures": {
+   "albedo": "door_veneer_latte_albedo.jpg",
+   "normal": "door_veneer_latte_normal.jpg",
+   "mask": "door_veneer_latte_mask.png"
+  }
+ },
+ {
+  "id": "door_veneer_whitey",
+  "name": "Whitey (шпон Mr.Wood)",
+  "category": "door",
+  "source": "procedural:tools/doors/textures/veneer.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/door_veneer_whitey",
+  "textures": {
+   "albedo": "door_veneer_whitey_albedo.jpg",
+   "normal": "door_veneer_whitey_normal.jpg",
+   "mask": "door_veneer_whitey_mask.png"
+  }
+ }
+]

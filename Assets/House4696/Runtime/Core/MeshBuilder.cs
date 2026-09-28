@@ -46,6 +46,11 @@ namespace House4696.Core
         readonly List<Material> _mats = new List<Material>();
 
         public Matrix4x4 Transform = Matrix4x4.identity;
+        /// <summary>
+        /// Reverse the winding of every triangle: set it when <see cref="Transform"/> mirrors (negative determinant), so
+        /// front faces stay front faces (a left-hand door built from the right-hand design).
+        /// </summary>
+        public bool FlipWinding;
         public Vector2 UvOffset = Vector2.zero;
         public Color VertexColor = Color.white;
 
@@ -110,7 +115,8 @@ namespace House4696.Core
         {
             if (m == null) return;
             var t = _tris[Sub(m)];
-            t.Add(i0); t.Add(i1); t.Add(i2);
+            if (FlipWinding) { t.Add(i0); t.Add(i2); t.Add(i1); }
+            else { t.Add(i0); t.Add(i1); t.Add(i2); }
         }
 
         /// <summary>Quad a-b-c-d given counter-clockwise when looking at its front (normal side).</summary>
@@ -120,8 +126,8 @@ namespace House4696.Core
             var t = _tris[Sub(m)];
             int ia = AddVertex(a, n, ua), ib = AddVertex(b, n, ub), ic = AddVertex(c, n, uc), id = AddVertex(d, n, ud);
             // Unity front faces are clockwise when viewed from the front.
-            t.Add(ia); t.Add(id); t.Add(ic);
-            t.Add(ia); t.Add(ic); t.Add(ib);
+            if (FlipWinding) { t.Add(ia); t.Add(ic); t.Add(id); t.Add(ia); t.Add(ib); t.Add(ic); }
+            else { t.Add(ia); t.Add(id); t.Add(ic); t.Add(ia); t.Add(ic); t.Add(ib); }
         }
 
         public void Triangle(Vector3 a, Vector3 b, Vector3 c, Vector3 na, Vector3 nb, Vector3 nc, Vector2 ua, Vector2 ub, Vector2 uc, Material m)
@@ -129,7 +135,8 @@ namespace House4696.Core
             if (m == null) return;
             var t = _tris[Sub(m)];
             int ia = Corner(a, na, ua), ib = Corner(b, nb, ub), ic = Corner(c, nc, uc);
-            t.Add(ia); t.Add(ib); t.Add(ic);
+            if (FlipWinding) { t.Add(ia); t.Add(ic); t.Add(ib); }
+            else { t.Add(ia); t.Add(ib); t.Add(ic); }
         }
 
         /// <summary>Planar UV in meters for a point on a face with the given axis-aligned normal.</summary>
@@ -200,7 +207,14 @@ namespace House4696.Core
                 _c.Add(VertexColor);
             }
             var idx = mesh.triangles;
-            for (int i = 0; i < idx.Length; i++) t.Add(baseIndex + idx[i]);
+            // FlipWinding compensates a mirroring builder Transform; a mirroring m needs its own flip
+            bool flip = FlipWinding ^ (m.determinant < 0f);
+            for (int i = 0; i + 2 < idx.Length; i += 3)
+            {
+                t.Add(baseIndex + idx[i]);
+                t.Add(baseIndex + idx[flip ? i + 2 : i + 1]);
+                t.Add(baseIndex + idx[flip ? i + 1 : i + 2]);
+            }
         }
 
         public Material[] Materials => _mats.ToArray();

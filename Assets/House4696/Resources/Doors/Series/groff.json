@@ -1,0 +1,29 @@
+{
+  "id": "groff", "name": "GROFF", "line": "Входные двери", "kind": "entrance", "block": "t70", "order": 161,
+  "finishes": ["antik-silver", "antik-copper", "winorit-p4", "winorit-p25", "winorit-p28", "winorit-p26"],
+  "finishesIn": ["cappuccino-veralinga", "wenge-veralinga", "winorit-p4", "winorit-p25", "winorit-p28", "winorit-p26"],
+  "glass": ["wp", "bs"],
+  "rim": -13,
+  "escutcheon": "oval",
+  "models": [
+    { "id": "groff-t2-223", "name": "GROFF T2-223", "design": "groff-t2-223-outer", "inner": "groff-t2-223-inner",
+      "finishes": ["antik-silver", "antik-copper"], "finishesIn": ["cappuccino-veralinga", "wenge-veralinga"],
+      "glass": ["wp", "bs"], "sizes": [[0.86, 2.05], [0.96, 2.05]],
+      "photo": "p162_groff-t2-223__antik-med-wenge-veralinga-bs.jpg" },
+    { "id": "groff-p3-301", "name": "GROFF P3-301", "design": "groff-p3-301-outer", "inner": "groff-p3-301-inner",
+      "finishes": ["winorit-p4", "winorit-p25", "winorit-p28", "winorit-p26"],
+      "finishesIn": ["winorit-p4", "winorit-p25", "winorit-p28", "winorit-p26"],
+      "glass": [], "sizes": [[0.88, 2.05], [0.96, 2.05]],
+      "photo": "p163_groff-p3-301__p-28-temnaya-vishnya.jpg" },
+    { "id": "groff-p3-302", "name": "GROFF P3-302", "design": "groff-p3-302-outer", "inner": "groff-p3-302-inner",
+      "finishes": ["winorit-p4", "winorit-p25", "winorit-p28", "winorit-p26"],
+      "finishesIn": ["winorit-p4", "winorit-p25", "winorit-p28", "winorit-p26"],
+      "glass": [], "sizes": [[0.88, 2.05], [0.96, 2.05]],
+      "photo": "p164_groff-p3-302__p-4-zolotoy-dub.jpg" },
+    { "id": "groff-p3-303", "name": "GROFF P3-303", "design": "groff-p3-303-outer", "inner": "groff-p3-303-inner",
+      "finishes": ["winorit-p4", "winorit-p25", "winorit-p28", "winorit-p26"],
+      "finishesIn": ["winorit-p4", "winorit-p25", "winorit-p28", "winorit-p26"],
+      "glass": [], "sizes": [[0.88, 2.05], [0.96, 2.05]],
+      "photo": "p163_groff-p3-303__p-26-francuzskiy-dub-p-25-belenyy-dub.jpg" }
+  ]
+}

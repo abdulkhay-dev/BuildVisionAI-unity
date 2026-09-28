@@ -1,0 +1,20 @@
+{
+  "id": "porta-s-outer-9",
+  "name": "Porta S 9 — наружная панель",
+  "ref": [800, 2000],
+  "thickness": 10,
+  "fixX": [[0, 316]],
+  "fixY": [],
+  "edge": { "radius": 2 },
+  "handle": { "y": 993, "x": 75 },
+  "layout": { "grain": "v" },
+  "parts": [
+    { "type": "groove", "path": "M 137 0 L 137 2000", "width": 6, "depth": 3, "profile": "u", "face": "front" },
+    { "type": "groove", "path": "M 222 0 L 222 2000", "width": 6, "depth": 3, "profile": "u", "face": "front" },
+    { "type": "groove", "path": "M 316 310 L 800 310", "width": 6, "depth": 3, "profile": "u", "face": "front" },
+    { "type": "groove", "path": "M 316 661 L 800 661", "width": 6, "depth": 3, "profile": "u", "face": "front" },
+    { "type": "groove", "path": "M 316 1014 L 800 1014", "width": 6, "depth": 3, "profile": "u", "face": "front" },
+    { "type": "groove", "path": "M 316 1365 L 800 1365", "width": 6, "depth": 3, "profile": "u", "face": "front" },
+    { "type": "groove", "path": "M 316 1717 L 800 1717", "width": 6, "depth": 3, "profile": "u", "face": "front" }
+  ]
+}

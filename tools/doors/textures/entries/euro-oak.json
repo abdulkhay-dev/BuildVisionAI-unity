@@ -1,0 +1,74 @@
+[
+ {
+  "id": "door_real_oak",
+  "name": "Real Oak (ЕвроШпон)",
+  "category": "door",
+  "source": "procedural:tools/doors/textures/euro_oak.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/door_real_oak",
+  "textures": {
+   "albedo": "door_real_oak_albedo.jpg",
+   "normal": "door_real_oak_normal.jpg",
+   "mask": "door_real_oak_mask.png"
+  }
+ },
+ {
+  "id": "door_milk_oak",
+  "name": "Milk Oak (ЕвроШпон)",
+  "category": "door",
+  "source": "procedural:tools/doors/textures/euro_oak.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/door_milk_oak",
+  "textures": {
+   "albedo": "door_milk_oak_albedo.jpg",
+   "normal": "door_milk_oak_normal.jpg",
+   "mask": "door_milk_oak_mask.png"
+  }
+ },
+ {
+  "id": "door_brown_oak",
+  "name": "Brown Oak (ЕвроШпон)",
+  "category": "door",
+  "source": "procedural:tools/doors/textures/euro_oak.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/door_brown_oak",
+  "textures": {
+   "albedo": "door_brown_oak_albedo.jpg",
+   "normal": "door_brown_oak_normal.jpg",
+   "mask": "door_brown_oak_mask.png"
+  }
+ },
+ {
+  "id": "door_thermo_oak",
+  "name": "Thermo Oak (ЕвроШпон)",
+  "category": "door",
+  "source": "procedural:tools/doors/textures/euro_oak.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/door_thermo_oak",
+  "textures": {
+   "albedo": "door_thermo_oak_albedo.jpg",
+   "normal": "door_thermo_oak_normal.jpg",
+   "mask": "door_thermo_oak_mask.png"
+  }
+ }
+]

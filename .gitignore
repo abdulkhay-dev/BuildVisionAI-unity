@@ -36,3 +36,9 @@
 
 # Downloaded asset sources (tools/assets/fetch_polyhaven.py)
 /.cache/
+
+# Python bytecode (Blender tool scripts)
+__pycache__/
+
+# Door catalog extraction (tools/doors/catalog_index.py): catalogue photos, not ours to ship
+/tools/doors/.cache/

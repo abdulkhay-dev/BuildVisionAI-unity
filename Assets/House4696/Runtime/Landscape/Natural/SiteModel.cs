@@ -313,8 +313,23 @@ namespace House4696.Landscape.Natural
         public bool InPlot(float x, float z, float margin = 0f) =>
             x >= Plot.xMin + margin && x <= Plot.xMax - margin && z >= Plot.yMin + margin && z <= Plot.yMax - margin;
 
+        /// <summary>Built-over ground outside the house rectangle (pools): nothing grows there.</summary>
+        public readonly List<Vector2[]> Hard = new List<Vector2[]>();
+
         public bool InHouse(float x, float z, float margin = 0f) =>
-            x >= House.xMin - margin && x <= House.xMax + margin && z >= House.yMin - margin && z <= House.yMax + margin;
+            x >= House.xMin - margin && x <= House.xMax + margin && z >= House.yMin - margin && z <= House.yMax + margin || InHard(x, z, margin);
+
+        /// <summary>Inside a pool with its coping and a strip around it (plus <paramref name="margin"/>)?</summary>
+        public bool InHard(float x, float z, float margin = 0f)
+        {
+            foreach (var h in Hard)
+            {
+                var b = Generation.Polygon.Bounds(h);
+                float m = margin + 0.5f;   // the coping and a strip of paving around the pool
+                if (x >= b.xMin - m && x <= b.xMax + m && z >= b.yMin - m && z <= b.yMax + m) return true;
+            }
+            return false;
+        }
 
         /// <summary>What grows at a point (lawnNoise 0..1 wobbles the lawn edge).</summary>
         public Zone ZoneAt(float x, float z, float lawnNoise = 0.5f)

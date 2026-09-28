@@ -1,0 +1,93 @@
+[
+ {
+  "id": "royal-oak",
+  "name": "Royal Oak",
+  "line": "ЭкоШпон",
+  "material": "door_royal_oak",
+  "color": "#eeeeee"
+ },
+ {
+  "id": "antique-oak",
+  "name": "Antique Oak",
+  "line": "ЭкоШпон",
+  "material": "door_antique_oak",
+  "color": "#361a12"
+ },
+ {
+  "id": "silver-ash",
+  "name": "Silver Ash",
+  "line": "ЭкоШпон",
+  "material": "door_silver_ash",
+  "color": "#f3f3f3"
+ },
+ {
+  "id": "ivory",
+  "name": "Ivory",
+  "line": "ЭкоШпон",
+  "material": "door_ivory",
+  "color": "#eddecb"
+ },
+ {
+  "id": "virgin",
+  "name": "Virgin",
+  "line": "ЭкоШпон",
+  "material": "door_virgin",
+  "color": "#e3e3e3"
+ },
+ {
+  "id": "dark-oak",
+  "name": "Dark Oak",
+  "line": "ЭкоШпон",
+  "material": "door_dark_oak",
+  "color": "#3f2f22"
+ },
+ {
+  "id": "organic-oak",
+  "name": "Organic Oak",
+  "line": "ЭкоШпон",
+  "material": "door_organic_oak",
+  "color": "#b99f7a"
+ },
+ {
+  "id": "nordic-oak",
+  "name": "Nordic Oak",
+  "line": "ЭкоШпон",
+  "material": "door_nordic_oak",
+  "color": "#f5f1e6"
+ },
+ {
+  "id": "original-oak",
+  "name": "Original Oak",
+  "line": "ЭкоШпон",
+  "material": "door_original_oak",
+  "color": "#8d735b"
+ },
+ {
+  "id": "chalet-grande",
+  "name": "Chalet Grande",
+  "line": "ЭкоШпон",
+  "material": "door_chalet_grande",
+  "color": "#764b40"
+ },
+ {
+  "id": "chalet-grasse",
+  "name": "Chalet Grasse",
+  "line": "ЭкоШпон",
+  "material": "door_chalet_grasse",
+  "color": "#6b6b6d"
+ },
+ {
+  "id": "chalet-provence",
+  "name": "Chalet Provence",
+  "line": "ЭкоШпон",
+  "material": "door_chalet_provence",
+  "color": "#cecabf"
+ },
+ {
+  "id": "graphite-art",
+  "name": "Graphite Art",
+  "line": "ЭкоШпон",
+  "material": "door_graphite_art",
+  "color": "#595965"
+ }
+]

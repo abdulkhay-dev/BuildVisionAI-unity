@@ -39,6 +39,7 @@ namespace House4696.Generation
 
         public static HouseBuildResult Build(HouseDocument doc, MaterialLibrary lib, SceneWriter w)
         {
+            House4696.Doors.DoorSizing.Normalize(doc);
             var c = new HouseContext(doc, lib, w);
             var root = new GameObject("House_" + Sanitize(doc.Meta?.Name));
             c.Root = root.transform;
@@ -56,6 +57,7 @@ namespace House4696.Generation
             foreach (var r in doc.Roofs) roofs.Build(r);
             var stairs = new StairBuilder(c);
             foreach (var s in doc.Stairs) stairs.Build(s);
+            new EdgeGuards(c).Build();
             var elements = new ElementBuilder(c);
             foreach (var e in doc.Elements) elements.Build(e);
             foreach (var it in doc.Items) BuildItem(c, it);

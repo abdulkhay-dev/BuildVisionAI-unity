@@ -1,0 +1,37 @@
+[
+ {
+  "id": "natur-oak",
+  "name": "Natur Oak",
+  "line": "Шпон натуральный",
+  "material": "door_natur_oak",
+  "color": "#a6772f"
+ },
+ {
+  "id": "golden-oak",
+  "name": "Golden Oak",
+  "line": "Шпон натуральный",
+  "material": "door_golden_oak",
+  "color": "#513726"
+ },
+ {
+  "id": "veneer-ivory",
+  "name": "Ivory",
+  "line": "Шпон натуральный",
+  "material": "door_veneer_ivory",
+  "color": "#ebe4d1"
+ },
+ {
+  "id": "veneer-latte",
+  "name": "Latte",
+  "line": "Шпон натуральный",
+  "material": "door_veneer_latte",
+  "color": "#d0beb0"
+ },
+ {
+  "id": "veneer-whitey",
+  "name": "Whitey",
+  "line": "Шпон натуральный",
+  "material": "door_veneer_whitey",
+  "color": "#f9f5f2"
+ }
+]

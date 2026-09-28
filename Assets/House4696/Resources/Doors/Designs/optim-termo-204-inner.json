@@ -1,0 +1,9 @@
+{
+  "id": "optim-termo-204-inner",
+  "name": "Оптим Термо 204 (внутренняя панель 8 мм с зеркальными полосами)",
+  "ref": [800, 2000],
+  "thickness": 8,
+  "lock": "right",
+  "edge": {"radius": 1.5},
+  "layout": {"split": "y", "at": [375, 778, 1179.5, 1582], "sep": "mirror:26", "grain": "v"}
+}

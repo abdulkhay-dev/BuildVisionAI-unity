@@ -1,0 +1,10 @@
+{
+  "id": "eco-vetro", "name": "VETRO", "line": "ЭкоШпон", "kind": "interior", "block": "t70", "order": 49,
+  "finishes": ["cappuccino-veralinga", "wenge-veralinga", "grey-veralinga", "bianco-veralinga"],
+  "glass": ["bs", "wp", "s", "ww", "sa"],
+  "models": [
+    { "id": "v4", "name": "V4", "design": "v4", "glass": ["bs", "wp", "s", "ww"], "photo": "p049_v4-bs__wenge-veralinga.jpg" },
+    { "id": "vg2", "name": "VG2", "design": "vg2", "glass": ["bs", "wp", "s", "ww"], "photo": "p049_vg2-wp__cappuccino-veralinga.jpg" },
+    { "id": "vm4", "name": "VM4", "design": "vm4", "glass": ["sa"], "finishes": ["cappuccino-veralinga", "wenge-veralinga"], "photo": "p049_vm4-sa__wenge-veralinga.jpg" }
+  ]
+}

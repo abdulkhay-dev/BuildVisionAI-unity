@@ -48,6 +48,7 @@ namespace House4696.Generation
                 float slabBottom = floorY - L.Slab + (lowest ? 0.02f : 0f);
                 // stairwells: the floor opens over stairs arriving on this level, the ceiling over stairs rising through it
                 var floorHoles = Wells(g => g.To.Id == L.Id);
+                floorHoles.AddRange(_c.PoolCuts(floorY));   // an indoor pool sinks into the floor
                 var ceilHoles = Wells(g => g.From.Elevation < ceilY - 0.01f && g.To.Elevation > ceilY - 0.01f);
                 Polygon.Prism(slab, r.Outline, floorHoles, slabBottom, floorY, tiled ? null : floorMat, null, plaster);
                 if (tiled)

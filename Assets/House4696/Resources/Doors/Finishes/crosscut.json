@@ -1,0 +1,30 @@
+[
+ {
+  "id": "cappuccino-crosscut",
+  "name": "Cappuccino Crosscut",
+  "line": "ЭкоШпон",
+  "material": "door_cappuccino_crosscut",
+  "color": "#c4bab1"
+ },
+ {
+  "id": "grey-crosscut",
+  "name": "Grey Crosscut",
+  "line": "ЭкоШпон",
+  "material": "door_grey_crosscut",
+  "color": "#8a8a8c"
+ },
+ {
+  "id": "wenge-crosscut",
+  "name": "Wenge Crosscut",
+  "line": "ЭкоШпон",
+  "material": "door_wenge_crosscut",
+  "color": "#3d2f2e"
+ },
+ {
+  "id": "bianco-crosscut",
+  "name": "Bianco Crosscut",
+  "line": "ЭкоШпон",
+  "material": "door_bianco_crosscut",
+  "color": "#d4d5cf"
+ }
+]

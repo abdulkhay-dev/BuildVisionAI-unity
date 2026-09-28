@@ -1,0 +1,12 @@
+{
+  "id": "wood-flat-0-v",
+  "name": "Вуд Флэт-0.V",
+  "ref": [800, 2000],
+  "thickness": 36,
+  "fixX": [],
+  "fixY": [],
+  "edge": {"radius": 2},
+  "handle": {"y": 996, "x": 65, "style": "square", "finish": "chrome"},
+  "hinges": [189, 1814],
+  "layout": {"grain": "v"}
+}

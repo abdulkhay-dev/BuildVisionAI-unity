@@ -1,0 +1,197 @@
+[
+ {
+  "id": "doorglass_sprig",
+  "name": "Стекло Глейс SPRIG",
+  "category": "doorglass",
+  "source": "procedural:tools/doors/textures/art_glass.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 4096,
+  "folder": "Materials/doorglass_sprig",
+  "textures": {
+   "albedo": "doorglass_sprig_albedo.png",
+   "mask": "doorglass_sprig_mask.png"
+  },
+  "transparent": true
+ },
+ {
+  "id": "doorglass_twig",
+  "name": "Стекло Глейс TWIG",
+  "category": "doorglass",
+  "source": "procedural:tools/doors/textures/art_glass.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 4096,
+  "folder": "Materials/doorglass_twig",
+  "textures": {
+   "albedo": "doorglass_twig_albedo.png",
+   "mask": "doorglass_twig_mask.png"
+  },
+  "transparent": true
+ },
+ {
+  "id": "doorglass_twig_2",
+  "name": "Стекло Глейс TWIG (Глейс-2)",
+  "category": "doorglass",
+  "source": "procedural:tools/doors/textures/art_glass.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 4096,
+  "folder": "Materials/doorglass_twig_2",
+  "textures": {
+   "albedo": "doorglass_twig_2_albedo.png",
+   "mask": "doorglass_twig_2_mask.png"
+  },
+  "transparent": true
+ },
+ {
+  "id": "doorglass_vitrazh",
+  "name": "Белое сатинато «Витраж»",
+  "category": "doorglass",
+  "source": "procedural:tools/doors/textures/art_glass.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 4096,
+  "folder": "Materials/doorglass_vitrazh",
+  "textures": {
+   "albedo": "doorglass_vitrazh_albedo.png",
+   "mask": "doorglass_vitrazh_mask.png"
+  },
+  "transparent": true
+ },
+ {
+  "id": "doorglass_print",
+  "name": "Зеркало черное худ. «Print»",
+  "category": "doorglass",
+  "source": "procedural:tools/doors/textures/art_glass.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 4096,
+  "folder": "Materials/doorglass_print",
+  "textures": {
+   "albedo": "doorglass_print_albedo.jpg",
+   "mask": "doorglass_print_mask.png"
+  }
+ },
+ {
+  "id": "doorglass_stamp",
+  "name": "Зеркало черное худ. «Stamp»",
+  "category": "doorglass",
+  "source": "procedural:tools/doors/textures/art_glass.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 4096,
+  "folder": "Materials/doorglass_stamp",
+  "textures": {
+   "albedo": "doorglass_stamp_albedo.jpg",
+   "mask": "doorglass_stamp_mask.png"
+  }
+ },
+ {
+  "id": "doorglass_sa",
+  "name": "Зеркало белое худож-е «Silver Art» (SA)",
+  "category": "doorglass",
+  "source": "procedural:tools/doors/textures/art_glass.py",
+  "neutral": false,
+  "metersPerTile": [
+   0.6,
+   0.6
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/doorglass_sa",
+  "textures": {
+   "albedo": "doorglass_sa_albedo.jpg",
+   "normal": "doorglass_sa_normal.png",
+   "mask": "doorglass_sa_mask.png"
+  }
+ },
+ {
+  "id": "doorglass_wc",
+  "name": "Белое худож-е сатинато White Crystal (WC)",
+  "category": "doorglass",
+  "source": "procedural:tools/doors/textures/art_glass.py",
+  "neutral": false,
+  "metersPerTile": [
+   0.1065,
+   0.1579
+  ],
+  "maxSize": 1024,
+  "folder": "Materials/doorglass_wc",
+  "textures": {
+   "albedo": "doorglass_wc_albedo.png",
+   "mask": "doorglass_wc_mask.png"
+  },
+  "transparent": true
+ },
+ {
+  "id": "doorglass_mystic",
+  "name": "Белое худож-е «Mystic»",
+  "category": "doorglass",
+  "source": "procedural:tools/doors/textures/art_glass.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/doorglass_mystic",
+  "textures": {
+   "albedo": "doorglass_mystic_albedo.png",
+   "mask": "doorglass_mystic_mask.png"
+  },
+  "transparent": true
+ },
+ {
+  "id": "doorglass_mystic_small",
+  "name": "Белое худож-е «Mystic» (узкое)",
+  "category": "doorglass",
+  "source": "procedural:tools/doors/textures/art_glass.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 1024,
+  "folder": "Materials/doorglass_mystic_small",
+  "textures": {
+   "albedo": "doorglass_mystic_small_albedo.png",
+   "mask": "doorglass_mystic_small_mask.png"
+  },
+  "transparent": true
+ },
+ {
+  "id": "doorglass_mirror_art",
+  "name": "Зеркало белое худож-е",
+  "category": "doorglass",
+  "source": "procedural:tools/doors/textures/art_glass.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 4096,
+  "folder": "Materials/doorglass_mirror_art",
+  "textures": {
+   "albedo": "doorglass_mirror_art_albedo.jpg",
+   "mask": "doorglass_mirror_art_mask.png"
+  }
+ }
+]

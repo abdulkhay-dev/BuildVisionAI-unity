@@ -1,0 +1,30 @@
+{
+  "id": "porta-29",
+  "name": "Порта-29",
+  "ref": [800, 2000],
+  "thickness": 36,
+  "fixX": [[0, 125], [677, 800]],
+  "fixY": [[0, 125], [1877, 2000]],
+  "edge": { "radius": 2 },
+  "handle": { "y": 996, "x": 65 },
+  "hinges": [189, 1811],
+  "layout": { "split": "x", "at": [125, 677], "sep": "joint", "grain": "v", "radius": 1.5,
+    "cells": [
+      {},
+      { "split": "y", "at": [125, 1877], "sep": "joint", "grain": "h",
+        "cells": [
+          {},
+          { "split": "x", "at": [140, 322], "sep": "joint", "level": -3,
+            "cells": [
+              { "glass": true },
+              { "grain": "v" },
+              { "split": "y", "at": [338, 558, 779, 999, 1219, 1440, 1659], "sep": "glass:12" }
+            ]
+          },
+          {}
+        ]
+      },
+      {}
+    ]
+  }
+}

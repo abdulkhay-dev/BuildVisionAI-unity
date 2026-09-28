@@ -1,0 +1,16 @@
+[
+ {
+  "id": "cappuccino-softwood",
+  "name": "Cappuccino Softwood",
+  "line": "ЭкоШпон",
+  "material": "door_cappuccino_softwood",
+  "color": "#e9ddd2"
+ },
+ {
+  "id": "white-softwood",
+  "name": "White Softwood",
+  "line": "ЭкоШпон",
+  "material": "door_white_softwood",
+  "color": "#f7f7f7"
+ }
+]

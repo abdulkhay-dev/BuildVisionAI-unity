@@ -1,0 +1,52 @@
+{
+  "finishes": [
+    { "id": "cappuccino-veralinga", "name": "Cappuccino Veralinga", "line": "ЭкоШпон", "material": "door_cappuccino_veralinga", "color": "#c6bab2" },
+    { "id": "grey-veralinga", "name": "Grey Veralinga", "line": "ЭкоШпон", "material": "door_grey_veralinga", "color": "#7f7d7e" },
+    { "id": "wenge-veralinga", "name": "Wenge Veralinga", "line": "ЭкоШпон", "material": "door_wenge_veralinga", "color": "#3d2f2e" },
+    { "id": "bianco-veralinga", "name": "Bianco Veralinga", "line": "ЭкоШпон", "material": "door_bianco_veralinga", "color": "#d9d9d4" },
+    { "id": "snow-veralinga", "name": "Snow Veralinga", "line": "ЭкоШпон", "material": "door_snow_veralinga", "color": "#efefef" },
+    { "id": "anegri-veralinga", "name": "Anegri Veralinga", "line": "ЭкоШпон", "material": "door_anegri_veralinga", "color": "#c39868" },
+    { "id": "golden-reef", "name": "Golden Reef", "line": "ЭкоШпон", "material": "door_golden_reef", "color": "#af7349" },
+    { "id": "3d-cappuccino", "name": "3D Cappuccino", "line": "3D-Graf", "material": "door_3d_cappuccino", "color": "#c0b3aa" },
+    { "id": "3d-grey", "name": "3D Grey", "line": "3D-Graf", "material": "door_3d_grey", "color": "#838383" },
+    { "id": "3d-wenge", "name": "3D Wenge", "line": "3D-Graf", "material": "door_3d_wenge", "color": "#342219" }
+  ],
+  "glass": [
+    { "id": "mf", "name": "Белое сатинато Magic Fog (MF)", "role": "satin" },
+    { "id": "mf-diamond", "name": "Белое сатинато Magic Fog (MF), «Алмазная грань»", "role": "satin", "facet": 20 },
+    { "id": "tmf", "name": "Триплекс Magic Fog (TMF)", "role": "satin" },
+    { "id": "bs", "name": "Чёрный Lacobel «Black Star» (BS)", "role": "black" }
+  ],
+  "series": [
+    {
+      "id": "eco-porta-x", "name": "PORTA X", "line": "ЭкоШпон", "kind": "interior", "block": "t70",
+      "finishes": ["cappuccino-veralinga", "grey-veralinga", "wenge-veralinga", "bianco-veralinga", "snow-veralinga", "anegri-veralinga", "golden-reef"],
+      "glass": ["mf", "tmf", "bs", "wc"],
+      "models": [
+        { "id": "porta-11", "name": "Порта-11", "design": "porta-11", "glass": ["tmf"], "finishes": ["cappuccino-veralinga", "grey-veralinga", "wenge-veralinga", "bianco-veralinga"], "photo": "p019_porta-11-tmf__cappuccino-veralinga.jpg" },
+        { "id": "porta-13", "name": "Порта-13", "design": "porta-13", "glass": ["tmf"], "finishes": ["cappuccino-veralinga", "grey-veralinga", "wenge-veralinga", "bianco-veralinga"], "photo": "p019_porta-13-tmf__cappuccino-veralinga.jpg" },
+        { "id": "porta-21", "name": "Порта-21", "design": "porta-21", "glass": [], "photo": "p020_porta-21__cappuccino-veralinga.jpg" },
+        { "id": "porta-22", "name": "Порта-22", "design": "porta-22", "glass": ["mf", "bs"], "photo": "p021_porta-22-mf__cappuccino-veralinga.jpg" },
+        { "id": "porta-23", "name": "Порта-23", "design": "porta-23", "glass": ["mf"], "photo": "p022_porta-23-mf__cappuccino-veralinga.jpg" },
+        { "id": "porta-24", "name": "Порта-24", "design": "porta-24", "glass": ["mf"], "finishes": ["cappuccino-veralinga", "wenge-veralinga", "anegri-veralinga"], "photo": "p023_porta-24-mf__cappuccino-veralinga.jpg" },
+        { "id": "porta-25", "name": "Порта-25 ALU", "design": "porta-25", "glass": ["mf"], "photo": "p024_porta-25-mf-alu__cappuccino-veralinga.jpg" },
+        { "id": "porta-26", "name": "Порта-26", "design": "porta-26", "glass": [], "finishes": ["cappuccino-veralinga", "grey-veralinga", "wenge-veralinga", "bianco-veralinga"], "photo": "p025_porta-26__cappuccino-veralinga.jpg" },
+        { "id": "porta-27", "name": "Порта-27", "design": "porta-27", "glass": ["mf"], "finishes": ["cappuccino-veralinga", "grey-veralinga", "wenge-veralinga", "bianco-veralinga"], "photo": "p026_porta-27-mf__grey-veralinga.jpg" },
+        { "id": "porta-28", "name": "Порта-28", "design": "porta-28", "glass": ["mf"], "finishes": ["cappuccino-veralinga", "grey-veralinga", "wenge-veralinga", "bianco-veralinga"], "photo": "p026_porta-28-mf__cappuccino-veralinga.jpg" },
+        { "id": "porta-29", "name": "Порта-29", "design": "porta-29", "glass": ["mf", "bs"], "photo": "p027_porta-29-mf__cappuccino-veralinga.jpg" }
+      ]
+    },
+    {
+      "id": "3d-graf-porta-x", "name": "PORTA X", "line": "3D-Graf", "kind": "interior", "block": "t70",
+      "finishes": ["3d-cappuccino", "3d-grey", "3d-wenge"],
+      "glass": ["mf", "vitrazh", "mirror-art"],
+      "models": [
+        { "id": "porta-21", "name": "Порта-21", "design": "porta-21", "glass": [], "photo": "p009_porta-21__3d-wenge.jpg" },
+        { "id": "porta-22", "name": "Порта-22", "design": "porta-22", "glass": ["mf"], "photo": "p009_porta-22__3d-wenge.jpg" },
+        { "id": "porta-23", "name": "Порта-23", "design": "porta-23", "glass": ["mf"], "photo": "p010_porta-23__3d-cappuccino.jpg" },
+        { "id": "porta-25", "name": "Порта-25 ALU", "design": "porta-25", "glass": ["mf"], "photo": "p010_porta-25-alu__3d-cappuccino.jpg" },
+        { "id": "porta-29", "name": "Порта-29", "design": "porta-29", "glass": ["mf"], "photo": "p011_porta-29__3d-grey.jpg" }
+      ]
+    }
+  ]
+}

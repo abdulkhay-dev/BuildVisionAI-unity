@@ -1,0 +1,10 @@
+{
+  "id": "eco-trend", "name": "TREND", "line": "ЭкоШпон", "kind": "interior", "block": "t70", "order": 37,
+  "finishes": ["cappuccino-veralinga", "grey-veralinga", "wenge-veralinga", "snow-veralinga"],
+  "glass": ["mf"],
+  "models": [
+    { "id": "trend-0", "name": "Тренд-0", "design": "trend-0", "glass": [], "photo": "p037_trend-0__grey-veralinga.jpg" },
+    { "id": "trend-3", "name": "Тренд-3", "design": "trend-3", "glass": [], "finishes": ["cappuccino-veralinga", "wenge-veralinga"], "photo": "p037_trend-3__wenge-veralinga.jpg" },
+    { "id": "trend-4", "name": "Тренд-4", "design": "trend-4", "glass": ["mf"], "finishes": ["cappuccino-veralinga", "wenge-veralinga"], "photo": "p037_trend-4__wenge-veralinga.jpg" }
+  ]
+}

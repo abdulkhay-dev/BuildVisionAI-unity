@@ -1,0 +1,12 @@
+{
+  "id": "trend-0",
+  "name": "Тренд-0",
+  "ref": [800, 2000],
+  "thickness": 36,
+  "fixX": [],
+  "fixY": [],
+  "edge": {"radius": 2},
+  "handle": {"y": 1000, "x": 58},
+  "hinges": [189, 1812],
+  "layout": {"grain": "v"}
+}

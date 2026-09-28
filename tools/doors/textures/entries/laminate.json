@@ -1,0 +1,74 @@
+[
+ {
+  "id": "door_l_11_italoreh",
+  "name": "Л-11 ИталОрех (ламинат)",
+  "category": "door",
+  "source": "procedural:tools/doors/textures/laminate.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/door_l_11_italoreh",
+  "textures": {
+   "albedo": "door_l_11_italoreh_albedo.jpg",
+   "normal": "door_l_11_italoreh_normal.jpg",
+   "mask": "door_l_11_italoreh_mask.png"
+  }
+ },
+ {
+  "id": "door_l_12_milanoreh",
+  "name": "Л-12 МиланОрех (ламинат)",
+  "category": "door",
+  "source": "procedural:tools/doors/textures/laminate.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/door_l_12_milanoreh",
+  "textures": {
+   "albedo": "door_l_12_milanoreh_albedo.jpg",
+   "normal": "door_l_12_milanoreh_normal.jpg",
+   "mask": "door_l_12_milanoreh_mask.png"
+  }
+ },
+ {
+  "id": "door_l_13_wenge",
+  "name": "Л-13 Венге (ламинат)",
+  "category": "door",
+  "source": "procedural:tools/doors/textures/laminate.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/door_l_13_wenge",
+  "textures": {
+   "albedo": "door_l_13_wenge_albedo.jpg",
+   "normal": "door_l_13_wenge_normal.jpg",
+   "mask": "door_l_13_wenge_mask.png"
+  }
+ },
+ {
+  "id": "door_l_23_white",
+  "name": "Л-23 Белый (ламинат)",
+  "category": "door",
+  "source": "procedural:tools/doors/textures/laminate.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/door_l_23_white",
+  "textures": {
+   "albedo": "door_l_23_white_albedo.jpg",
+   "normal": "door_l_23_white_normal.jpg",
+   "mask": "door_l_23_white_mask.png"
+  }
+ }
+]

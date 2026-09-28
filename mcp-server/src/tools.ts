@@ -10,7 +10,7 @@ export const INSTRUCTIONS = `House — проектирование частны
 Порядок работы:
 1) house_guide — прочитай формат проекта (один раз за сессию).
 2) house_create_project (или house_list_projects + house_open_project).
-3) Этажи (house_upsert kind=level) → наружные стены по контуру (house_exterior_walls) → перегородки и проёмы (house_upsert wall/opening) → комнаты (room) → крыша/лестница/элементы → мебель (item, см. house_catalog) → свет и точки показа.
+3) Этажи (house_upsert kind=level) → наружные стены по контуру (house_exterior_walls) → перегородки и проёмы (house_upsert wall/opening; межкомнатные двери — модели из house_doors, размер полотна leaf) → комнаты (room) → крыша/лестница/элементы → мебель (item, см. house_catalog) → свет и точки показа.
 4) Каждый ответ на правку содержит issues: ошибки и предупреждения ПО ПОСТРОЕННОМУ дому (мебель в стене или в проходе, дверь в обрыв, проём выше стены или в углу, крыша сквозь комнату, лестница в стену, комната без крыши) — с готовым исправлением. Исправляй их сразу, до следующего шага.
 5) Не считай геометрию в уме: house_inspect даёт реальные числа (верх стен, проёмы в координатах, карниз и конёк крыши, габарит и проём лестницы, размеры предметов). house_catalog даёт реальные размеры моделей.
 6) Проверяй глазами: house_render (orbit — снаружи, plan — план этажа, walk — вид изнутри).
@@ -174,6 +174,20 @@ export function registerTools(server: McpServer): void {
     },
     annotations: readOnly,
   }, async (a) => run("catalog", a));
+
+  server.registerTool("house_doors", {
+    title: "Каталог дверей",
+    description: "Двери из каталога производителя (el'PORTA / BRAVO, ~50 серий): межкомнатные (распашные, купе, книжки, порталы, готовые блоки) " +
+      "и входные стальные. Без фильтра — обзор серий с моделями; цвета (finishes), стёкла и размеры — с фильтром series или id модели. " +
+      "Дверь ставится проёмом type door с полями model, finish, glass и leaf [ширина, высота] — проём в стене посчитается из полотна сам; " +
+      "у входных ещё finishIn (внутренняя панель), leaf = размер блока. " +
+      "Строится весь дверной блок (коробка, доборы, наличники или классический портал, петли, ручки); двери открываются в приложении.",
+    inputSchema: {
+      series: z.string().optional().describe("id серии (например eco-porta-x)"),
+      id: z.string().optional().describe("Одна модель по id (например porta-22)"),
+    },
+    annotations: readOnly,
+  }, async (a) => run("doors", a));
 
   server.registerTool("house_materials", {
     title: "Материалы",

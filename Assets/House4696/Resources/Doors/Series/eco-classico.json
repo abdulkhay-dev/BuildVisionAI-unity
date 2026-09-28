@@ -1,0 +1,34 @@
+{
+  "id": "eco-classico", "name": "CLASSICO", "line": "ЭкоШпон", "kind": "interior", "block": "classic", "order": 40,
+  "finishes": [
+    "royal-oak", "antique-oak", "ivory", "virgin",
+    "golden-reef", "cappuccino-softwood", "white-softwood", "dark-oak", "organic-oak", "nordic-oak", "wenge-veralinga",
+    "cappuccino-veralinga", "anegri-veralinga", "chalet-grande", "chalet-provence", "silver-ash"
+  ],
+  "glass": ["wc", "mf-diamond"],
+  "handles": {"golden-reef": "bronze", "anegri-veralinga": "bronze", "chalet-grande": "bronze"},
+  "models": [
+    { "id": "klassiko-12", "name": "Классико-12", "design": "klassiko-12", "glass": [],
+      "finishes": ["royal-oak", "antique-oak", "ivory", "virgin", "golden-reef", "cappuccino-softwood", "white-softwood",
+                   "anegri-veralinga", "chalet-grande", "chalet-provence", "silver-ash"],
+      "photo": "p041_klassiko-12__royal-oak.jpg" },
+    { "id": "klassiko-13", "name": "Классико-13", "design": "klassiko-13", "glass": ["wc"],
+      "finishes": ["royal-oak", "antique-oak", "ivory", "virgin", "golden-reef", "cappuccino-softwood", "white-softwood",
+                   "anegri-veralinga", "chalet-grande", "chalet-provence", "silver-ash"],
+      "photo": "p042_klassiko-13-wc__royal-oak.jpg" },
+    { "id": "klassiko-16", "name": "Классико-16", "design": "klassiko-16", "glass": [], "finishes": ["ivory", "virgin"],
+      "photo": "p043_klassiko-16__virgin.jpg" },
+    { "id": "klassiko-17-3", "name": "Классико-17.3", "design": "klassiko-17-3", "glass": ["mf-diamond"], "finishes": ["ivory", "virgin"],
+      "photo": "p043_klassiko-17-3-mf__virgin.jpg" },
+    { "id": "klassiko-32g-27", "name": "Классико-32G-27", "design": "klassiko-32g-27", "glass": [], "finishes": ["ivory", "virgin"],
+      "photo": "p043_klassiko-32g-27__ivory.jpg" },
+    { "id": "klassiko-33g-27", "name": "Классико-33G-27", "design": "klassiko-33g-27", "glass": ["mf-diamond"], "finishes": ["ivory", "virgin"],
+      "photo": "p043_klassiko-33g-27-mf__ivory.jpg" },
+    { "id": "klassiko-32", "name": "Классико-32", "design": "klassiko-32", "glass": [],
+      "finishes": ["cappuccino-softwood", "dark-oak", "organic-oak", "nordic-oak", "wenge-veralinga", "cappuccino-veralinga", "anegri-veralinga"],
+      "photo": "p044_klassiko-32__nordic-oak.jpg" },
+    { "id": "klassiko-33", "name": "Классико-33", "design": "klassiko-33", "glass": ["wc"],
+      "finishes": ["cappuccino-softwood", "dark-oak", "organic-oak", "nordic-oak", "wenge-veralinga", "cappuccino-veralinga", "anegri-veralinga"],
+      "photo": "p045_klassiko-33-wc__organic-oak.jpg" }
+  ]
+}

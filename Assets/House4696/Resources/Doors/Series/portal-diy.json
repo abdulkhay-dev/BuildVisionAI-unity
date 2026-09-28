@@ -1,0 +1,19 @@
+{
+  "id": "portal-diy",
+  "name": "Портал DIY",
+  "line": "Порталы",
+  "kind": "portal",
+  "block": "t70",
+  "order": 156,
+  "finishes": [
+    "cappuccino-veralinga", "wenge-veralinga", "grey-veralinga", "snow-veralinga", "anegri-veralinga", "bianco-veralinga",
+    "cappuccino-crosscut", "wenge-crosscut", "grey-crosscut", "bianco-crosscut",
+    "golden-reef", "virgin", "original-oak", "royal-oak", "antique-oak", "nordic-oak", "organic-oak", "dark-oak", "silver-ash",
+    "ivory", "cappuccino-softwood", "chalet-provence", "chalet-grande", "chalet-grasse", "graphite-art",
+    "milk-oak", "real-oak", "thermo-oak", "brown-oak"
+  ],
+  "glass": [],
+  "models": [
+    { "id": "portal-diy", "name": "Портал DIY", "photo": "p156_portal-diy__original-oak.jpg" }
+  ]
+}

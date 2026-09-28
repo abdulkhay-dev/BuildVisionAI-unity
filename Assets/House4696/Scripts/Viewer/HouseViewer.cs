@@ -119,10 +119,42 @@ namespace House4696.Runtime
                 for (int i = 0; i < 9; i++)
                     if (ViewerInput.Down(Key.Digit1 + i)) GoToPoint(i);
             }
+            bool wasLocked = Cursor.lockState == CursorLockMode.Locked;
             UpdateCursor();
+            UpdateDoorClick(wasLocked);
             _current?.Tick(Time.deltaTime);
             // any camera input leaves the viewpoint
             if (CurrentPoint >= 0 && UserMovedCamera()) SetPoint(-1);
+        }
+
+        // a click on a door (press and release without dragging the view) opens or closes it
+        bool _doorPress;
+        Vector2 _doorPressAt;
+        float _doorDrag;
+
+        void UpdateDoorClick(bool locked)
+        {
+            var mouse = ViewerInput.Mouse;
+            if (mouse == null || ViewerInput.PointerTool || _cam == null) { _doorPress = false; return; }
+            // the click that captures the cursor for mouse look is not a door click
+            if (ViewerInput.LeftDown && (locked || !_current.CapturesCursor))
+            {
+                _doorPress = true;
+                _doorPressAt = mouse.position.ReadValue();
+                _doorDrag = 0f;
+            }
+            if (!_doorPress) return;
+            _doorDrag += locked ? mouse.delta.ReadValue().magnitude : 0f;
+            if (mouse.leftButton.isPressed) _doorDrag = Mathf.Max(_doorDrag, (mouse.position.ReadValue() - _doorPressAt).magnitude);
+            if (!mouse.leftButton.wasReleasedThisFrame) return;
+            _doorPress = false;
+            if (_doorDrag > 6f || ViewerInput.PointerBlocked) return;
+            // walking: the door in front of you (through the screen centre, within reach); otherwise the one under the cursor
+            var ray = locked ? new Ray(_cam.transform.position, _cam.transform.forward) : _cam.ScreenPointToRay(_doorPressAt);
+            float reach = _mode == Mode.Walk ? 3f : 80f;
+            if (!Physics.Raycast(ray, out var hit, reach, ~(1 << 2), QueryTriggerInteraction.Ignore)) return;
+            var door = hit.collider.GetComponentInParent<Door>();
+            if (door != null) door.Toggle();
         }
 
         static bool UserMovedCamera() =>

@@ -1,0 +1,12 @@
+{
+  "id": "euro-legno", "name": "LEGNO", "line": "ЕвроШпон", "kind": "interior", "block": "t70", "order": 73,
+  "finishes": ["brown-oak", "milk-oak"],
+  "glass": ["mf"],
+  "models": [
+    { "id": "legno-21", "name": "Легно-21", "design": "legno-21", "glass": [], "photo": "p073_legno-21__brown-oak.jpg" },
+    { "id": "legno-22", "name": "Легно-22", "design": "legno-22", "glass": ["mf"], "photo": "p073_legno-22__brown-oak.jpg" },
+    { "id": "legno-23", "name": "Легно-23", "design": "legno-23", "glass": ["mf"], "photo": "p073_legno-23__brown-oak.jpg" },
+    { "id": "legno-38", "name": "Легно-38", "design": "legno-38", "glass": [], "photo": "p073_legno-38__brown-oak.jpg" },
+    { "id": "legno-39", "name": "Легно-39", "design": "legno-39", "glass": ["mf"], "photo": "p073_legno-39__brown-oak.jpg" }
+  ]
+}

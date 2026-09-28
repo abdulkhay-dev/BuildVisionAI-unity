@@ -1,0 +1,25 @@
+{
+  "id": "porta-s-inner-p22",
+  "name": "П22 — внутренняя панель",
+  "ref": [800, 2000],
+  "thickness": 22,
+  "lock": "right",
+  "fixX": [[0, 118.4], [688.6, 800]],
+  "fixY": [[0, 127], [1886.8, 2000]],
+  "edge": { "radius": 2 },
+  "layout": { "split": "x", "at": [118.4, 688.6], "sep": "joint", "grain": "v", "radius": 1.5,
+    "cells": [
+      {},
+      { "split": "y", "at": [127, 1886.8], "sep": "joint", "grain": "h",
+        "cells": [
+          {},
+          { "split": "y", "at": [219.2, 375.6, 533.2, 690.2, 847.1, 1004.7, 1161.8, 1319.2, 1475.8, 1634.1, 1790.5],
+            "sep": ["joint", "glass:15", "joint", "glass:15", "joint", "glass:15", "joint", "glass:15", "joint", "glass:15", "joint"],
+            "level": -3 },
+          {}
+        ]
+      },
+      {}
+    ]
+  }
+}

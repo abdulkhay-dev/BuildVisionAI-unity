@@ -1,0 +1,10 @@
+{
+  "id": "eco-porta-z", "name": "PORTA Z", "line": "ЭкоШпон", "kind": "interior", "block": "t70", "order": 31,
+  "finishes": ["cappuccino-crosscut", "grey-crosscut", "wenge-crosscut", "bianco-crosscut"],
+  "glass": ["sa", "s", "wp", "bs", "ww"],
+  "models": [
+    { "id": "porta-50", "name": "Порта-50", "design": "porta-50", "glass": [], "photo": "p031_porta-50__cappuccino-crosscut.jpg" },
+    { "id": "porta-50-a-6", "name": "Порта-50 A-6", "design": "porta-50-a-6", "glass": [], "photo": "p032_porta-50-a-6__wenge-crosscut.jpg" },
+    { "id": "porta-51", "name": "Порта-51", "design": "porta-51", "glass": ["sa", "s", "wp", "bs", "ww"], "photo": "p033_porta-51-sa__cappuccino-crosscut.jpg" }
+  ]
+}

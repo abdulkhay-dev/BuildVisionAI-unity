@@ -1,0 +1,38 @@
+[
+ {
+  "id": "door_cappuccino_softwood",
+  "name": "Cappuccino Softwood (ЭкоШпон)",
+  "category": "door",
+  "source": "procedural:tools/doors/textures/eco_oak.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/door_cappuccino_softwood",
+  "textures": {
+   "albedo": "door_cappuccino_softwood_albedo.jpg",
+   "normal": "door_cappuccino_softwood_normal.jpg",
+   "mask": "door_cappuccino_softwood_mask.png"
+  }
+ },
+ {
+  "id": "door_white_softwood",
+  "name": "White Softwood (ЭкоШпон)",
+  "category": "door",
+  "source": "procedural:tools/doors/textures/eco_oak.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/door_white_softwood",
+  "textures": {
+   "albedo": "door_white_softwood_albedo.jpg",
+   "normal": "door_white_softwood_normal.jpg",
+   "mask": "door_white_softwood_mask.png"
+  }
+ }
+]

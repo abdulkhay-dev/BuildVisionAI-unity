@@ -90,6 +90,44 @@ namespace House4696.Generation
             return g;
         }
 
+        /// <summary>
+        /// A strip of slab narrower than this between the well and a wall is not a floor but a floating beam in the
+        /// stair hall (and a shelf across a window): the well is extended to the wall's face instead.
+        /// </summary>
+        public const float SliverMax = 0.6f;
+
+        /// <summary>Extends well edges that run parallel to a wall less than <see cref="SliverMax"/> away up to its face.</summary>
+        public void SnapWell(IEnumerable<WallFrame> allWalls)
+        {
+            var walls = new List<WallFrame>();
+            foreach (var f in allWalls) if (f.Spans(To.Elevation + 0.5f)) walls.Add(f);
+            if (walls.Count == 0) return;
+            for (int r = 0; r < Well.Count; r++)
+            {
+                var q = Well[r];
+                for (int i = 0; i < 4; i++)
+                {
+                    Vector2 a = q[i], b = q[(i + 1) % 4], d = b - a;
+                    float len = d.magnitude;
+                    if (len < 0.2f) continue;
+                    var outward = new Vector2(d.y, -d.x) / len;
+                    if (DistanceToSegment((ArrivalA + ArrivalB) * 0.5f, a, b) < 0.05f) continue;   // people step off here
+                    // the whole edge must face the wall at about the same distance (5 probes, ends excluded)
+                    float lo = float.MaxValue, hi = 0f;
+                    for (int k = 0; k < 5; k++)
+                    {
+                        var p = a + d * (0.1f + 0.8f * k / 4f) + outward * 0.005f;
+                        float? t = WallFrame.Cast(walls, p, outward, SliverMax, out _);
+                        if (t == null) { lo = float.MaxValue; hi = float.MaxValue; break; }
+                        lo = Mathf.Min(lo, t.Value); hi = Mathf.Max(hi, t.Value);
+                    }
+                    if (hi >= float.MaxValue || lo < 0.02f || hi - lo > 0.05f) continue;
+                    var shift = outward * (lo + 0.005f);
+                    q[i] += shift; q[(i + 1) % 4] += shift;
+                }
+            }
+        }
+
         Vector2 W(float x, float z)
         {
             var p = Quaternion.Euler(0, Def.Direction, 0) * new Vector3(x, 0, z);

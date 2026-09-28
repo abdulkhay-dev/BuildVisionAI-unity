@@ -893,6 +893,701 @@ MonoBehaviour:
     Category: ground
     Material: {fileID: 2100000, guid: 047a1f6600ed54f0099cb6868339eb72, type: 2}
     Neutral: 0
+  - Id: door_cappuccino_veralinga
+    Name: "Cappuccino Veralinga (\u042D\u043A\u043E\u0428\u043F\u043E\u043D)"
+    Category: door
+    Material: {fileID: 2100000, guid: b78e768f8d20c49828964f7cc1b9e239, type: 2}
+    Neutral: 0
+  - Id: door_grey_veralinga
+    Name: "Grey Veralinga (\u042D\u043A\u043E\u0428\u043F\u043E\u043D)"
+    Category: door
+    Material: {fileID: 2100000, guid: ed836d0025fcc44eeb8f12e1b0fbd871, type: 2}
+    Neutral: 0
+  - Id: door_wenge_veralinga
+    Name: "Wenge Veralinga (\u042D\u043A\u043E\u0428\u043F\u043E\u043D)"
+    Category: door
+    Material: {fileID: 2100000, guid: 7fcb014579da744b98f0ac6537f96b0f, type: 2}
+    Neutral: 0
+  - Id: door_bianco_veralinga
+    Name: "Bianco Veralinga (\u042D\u043A\u043E\u0428\u043F\u043E\u043D)"
+    Category: door
+    Material: {fileID: 2100000, guid: 37390e568249343099ec72c14a34ddf5, type: 2}
+    Neutral: 0
+  - Id: door_snow_veralinga
+    Name: "Snow Veralinga (\u042D\u043A\u043E\u0428\u043F\u043E\u043D)"
+    Category: door
+    Material: {fileID: 2100000, guid: 66c57d90f4b90419e985bf082b340fbd, type: 2}
+    Neutral: 0
+  - Id: door_anegri_veralinga
+    Name: "Anegri Veralinga (\u042D\u043A\u043E\u0428\u043F\u043E\u043D)"
+    Category: door
+    Material: {fileID: 2100000, guid: 3b83a499705a84d148cbb1f262095505, type: 2}
+    Neutral: 0
+  - Id: door_golden_reef
+    Name: "Golden Reef (\u042D\u043A\u043E\u0428\u043F\u043E\u043D)"
+    Category: door
+    Material: {fileID: 2100000, guid: 12aa60ad192734093ad8ac1c76f0e81b, type: 2}
+    Neutral: 0
+  - Id: door_3d_cappuccino
+    Name: 3D Cappuccino (3D-Graf)
+    Category: door
+    Material: {fileID: 2100000, guid: 6e94bd4da0d0b4a138de75cbcd3ee1d0, type: 2}
+    Neutral: 0
+  - Id: door_3d_grey
+    Name: 3D Grey (3D-Graf)
+    Category: door
+    Material: {fileID: 2100000, guid: b6c1eb4781a4a4f3bbe66f267c76d8f5, type: 2}
+    Neutral: 0
+  - Id: door_3d_wenge
+    Name: 3D Wenge (3D-Graf)
+    Category: door
+    Material: {fileID: 2100000, guid: c9c3d03d6a95a4f529fca400b5405704, type: 2}
+    Neutral: 0
+  - Id: door_royal_oak
+    Name: "Royal Oak (\u042D\u043A\u043E\u0428\u043F\u043E\u043D)"
+    Category: door
+    Material: {fileID: 2100000, guid: bf5a86c572f064764829a9c8dac94438, type: 2}
+    Neutral: 0
+  - Id: door_antique_oak
+    Name: "Antique Oak (\u042D\u043A\u043E\u0428\u043F\u043E\u043D)"
+    Category: door
+    Material: {fileID: 2100000, guid: 0162f5229aeb94a7b8a58f366429fa6e, type: 2}
+    Neutral: 0
+  - Id: door_silver_ash
+    Name: "Silver Ash (\u042D\u043A\u043E\u0428\u043F\u043E\u043D)"
+    Category: door
+    Material: {fileID: 2100000, guid: b218089dbaadd42349dad7a1587e1716, type: 2}
+    Neutral: 0
+  - Id: door_ivory
+    Name: "Ivory (\u042D\u043A\u043E\u0428\u043F\u043E\u043D)"
+    Category: door
+    Material: {fileID: 2100000, guid: 9f69c25c3aa834598b9ab1d7e03add3e, type: 2}
+    Neutral: 0
+  - Id: door_virgin
+    Name: "Virgin (\u042D\u043A\u043E\u0428\u043F\u043E\u043D)"
+    Category: door
+    Material: {fileID: 2100000, guid: 2213d7db6879f4a4fb207c6ddd84f830, type: 2}
+    Neutral: 0
+  - Id: door_dark_oak
+    Name: "Dark Oak (\u042D\u043A\u043E\u0428\u043F\u043E\u043D)"
+    Category: door
+    Material: {fileID: 2100000, guid: 368673f93a3b244d48ccc215cb65ea9e, type: 2}
+    Neutral: 0
+  - Id: door_organic_oak
+    Name: "Organic Oak (\u042D\u043A\u043E\u0428\u043F\u043E\u043D)"
+    Category: door
+    Material: {fileID: 2100000, guid: 4322435fea21146deb314dc7555d3a0b, type: 2}
+    Neutral: 0
+  - Id: door_nordic_oak
+    Name: "Nordic Oak (\u042D\u043A\u043E\u0428\u043F\u043E\u043D)"
+    Category: door
+    Material: {fileID: 2100000, guid: 1345359deaff144d799fc406443e01c5, type: 2}
+    Neutral: 0
+  - Id: door_original_oak
+    Name: "Original Oak (\u042D\u043A\u043E\u0428\u043F\u043E\u043D)"
+    Category: door
+    Material: {fileID: 2100000, guid: 46c3f7700a3ed41efb218314b476330e, type: 2}
+    Neutral: 0
+  - Id: door_chalet_grande
+    Name: "Chalet Grande (\u042D\u043A\u043E\u0428\u043F\u043E\u043D)"
+    Category: door
+    Material: {fileID: 2100000, guid: ee6f8c8733d26441ba748c4a69caaabd, type: 2}
+    Neutral: 0
+  - Id: door_chalet_grasse
+    Name: "Chalet Grasse (\u042D\u043A\u043E\u0428\u043F\u043E\u043D)"
+    Category: door
+    Material: {fileID: 2100000, guid: be09ecbb82bf1406dbd2d44c8f43c47a, type: 2}
+    Neutral: 0
+  - Id: door_chalet_provence
+    Name: "Chalet Provence (\u042D\u043A\u043E\u0428\u043F\u043E\u043D)"
+    Category: door
+    Material: {fileID: 2100000, guid: 754856d4bf6624f04a1a8e9457914631, type: 2}
+    Neutral: 0
+  - Id: door_graphite_art
+    Name: "Graphite Art (\u042D\u043A\u043E\u0428\u043F\u043E\u043D)"
+    Category: door
+    Material: {fileID: 2100000, guid: b57c559882ec747a0a76ed8af7c5a51e, type: 2}
+    Neutral: 0
+  - Id: door_cappuccino_softwood
+    Name: "Cappuccino Softwood (\u042D\u043A\u043E\u0428\u043F\u043E\u043D)"
+    Category: door
+    Material: {fileID: 2100000, guid: e08b56f8961764f7fb9955f358a2ca51, type: 2}
+    Neutral: 0
+  - Id: door_white_softwood
+    Name: "White Softwood (\u042D\u043A\u043E\u0428\u043F\u043E\u043D)"
+    Category: door
+    Material: {fileID: 2100000, guid: 4338b77dc6df94f4a9abeb3ce25b5176, type: 2}
+    Neutral: 0
+  - Id: door_l_11_italoreh
+    Name: "\u041B-11 \u0418\u0442\u0430\u043B\u041E\u0440\u0435\u0445 (\u043B\u0430\u043C\u0438\u043D\u0430\u0442)"
+    Category: door
+    Material: {fileID: 2100000, guid: fb685e6d4cf3545e299d6959bb0f5722, type: 2}
+    Neutral: 0
+  - Id: door_l_12_milanoreh
+    Name: "\u041B-12 \u041C\u0438\u043B\u0430\u043D\u041E\u0440\u0435\u0445 (\u043B\u0430\u043C\u0438\u043D\u0430\u0442)"
+    Category: door
+    Material: {fileID: 2100000, guid: bbb0088039c5e4d84be2a573fc9fb268, type: 2}
+    Neutral: 0
+  - Id: door_l_13_wenge
+    Name: "\u041B-13 \u0412\u0435\u043D\u0433\u0435 (\u043B\u0430\u043C\u0438\u043D\u0430\u0442)"
+    Category: door
+    Material: {fileID: 2100000, guid: 45172b576c62045b4a17a336ffa84a47, type: 2}
+    Neutral: 0
+  - Id: door_l_23_white
+    Name: "\u041B-23 \u0411\u0435\u043B\u044B\u0439 (\u043B\u0430\u043C\u0438\u043D\u0430\u0442)"
+    Category: door
+    Material: {fileID: 2100000, guid: 44e2f8ec17585450fa2ef27086163b9d, type: 2}
+    Neutral: 0
+  - Id: door_cappuccino_crosscut
+    Name: "Cappuccino Crosscut (\u042D\u043A\u043E\u0428\u043F\u043E\u043D)"
+    Category: door
+    Material: {fileID: 2100000, guid: de46c9f63b87e4f378fa939d04709a73, type: 2}
+    Neutral: 0
+  - Id: door_grey_crosscut
+    Name: "Grey Crosscut (\u042D\u043A\u043E\u0428\u043F\u043E\u043D)"
+    Category: door
+    Material: {fileID: 2100000, guid: 6f43acf9d180e4b268d846a46b385b44, type: 2}
+    Neutral: 0
+  - Id: door_wenge_crosscut
+    Name: "Wenge Crosscut (\u042D\u043A\u043E\u0428\u043F\u043E\u043D)"
+    Category: door
+    Material: {fileID: 2100000, guid: a5ec26283789c4963b1fb34ea9b94c72, type: 2}
+    Neutral: 0
+  - Id: door_bianco_crosscut
+    Name: "Bianco Crosscut (\u042D\u043A\u043E\u0428\u043F\u043E\u043D)"
+    Category: door
+    Material: {fileID: 2100000, guid: 3e710824c75cb4082874b02c157a6ea7, type: 2}
+    Neutral: 0
+  - Id: door_real_oak
+    Name: "Real Oak (\u0415\u0432\u0440\u043E\u0428\u043F\u043E\u043D)"
+    Category: door
+    Material: {fileID: 2100000, guid: 2f7eae8d67b8846b19c1ff3de8dad038, type: 2}
+    Neutral: 0
+  - Id: door_milk_oak
+    Name: "Milk Oak (\u0415\u0432\u0440\u043E\u0428\u043F\u043E\u043D)"
+    Category: door
+    Material: {fileID: 2100000, guid: 45474cba2db1940b7b8c5793d377dabe, type: 2}
+    Neutral: 0
+  - Id: door_brown_oak
+    Name: "Brown Oak (\u0415\u0432\u0440\u043E\u0428\u043F\u043E\u043D)"
+    Category: door
+    Material: {fileID: 2100000, guid: b203d8e9fdad04a3483fe1a22470f9a7, type: 2}
+    Neutral: 0
+  - Id: door_thermo_oak
+    Name: "Thermo Oak (\u0415\u0432\u0440\u043E\u0428\u043F\u043E\u043D)"
+    Category: door
+    Material: {fileID: 2100000, guid: d1d22be75ff6640f595f81fe5bfcd8d8, type: 2}
+    Neutral: 0
+  - Id: door_p_23_white
+    Name: "\u041F-23 \u0411\u0435\u043B\u044B\u0439 (\u041F\u0412\u0425)"
+    Category: door
+    Material: {fileID: 2100000, guid: e132fe8980e18435ab547446fe56c440, type: 2}
+    Neutral: 0
+  - Id: door_p_34_shimo_light
+    Name: "\u041F-34 \u0428\u0438\u043C\u043E \u0421\u0432\u0435\u0442\u043B\u044B\u0439 (\u041F\u0412\u0425)"
+    Category: door
+    Material: {fileID: 2100000, guid: 72725ca327fe24ab09d1017a418f5332, type: 2}
+    Neutral: 0
+  - Id: door_p_35_shimo_dark
+    Name: "\u041F-35 \u0428\u0438\u043C\u043E \u0422\u0451\u043C\u043D\u044B\u0439 (\u041F\u0412\u0425)"
+    Category: door
+    Material: {fileID: 2100000, guid: 39a94f7c35f81485eb813ade2db19469, type: 2}
+    Neutral: 0
+  - Id: door_p_17_italoreh
+    Name: "\u041F-17 \u0418\u0442\u0430\u043B\u041E\u0440\u0435\u0445 (\u041F\u0412\u0425)"
+    Category: door
+    Material: {fileID: 2100000, guid: a952d8156442c4ace828c81dee5f643d, type: 2}
+    Neutral: 0
+  - Id: door_p_18_milanoreh
+    Name: "\u041F-18 \u041C\u0438\u043B\u0430\u043D\u041E\u0440\u0435\u0445 (\u041F\u0412\u0425)"
+    Category: door
+    Material: {fileID: 2100000, guid: a2461ac591b5d4b348d02bbb5eea5f1d, type: 2}
+    Neutral: 0
+  - Id: door_p_31_italoreh
+    Name: "\u041F-31 \u0418\u0442\u0430\u043B\u041E\u0440\u0435\u0445 (\u041F\u0412\u0425)"
+    Category: door
+    Material: {fileID: 2100000, guid: 06eac59691642420089857838a92d47b, type: 2}
+    Neutral: 0
+  - Id: door_p_32_milanoreh
+    Name: "\u041F-32 \u041C\u0438\u043B\u0430\u043D\u041E\u0440\u0435\u0445 (\u041F\u0412\u0425)"
+    Category: door
+    Material: {fileID: 2100000, guid: 1ea4d8eb5467c4e86b1b55950badbaa7, type: 2}
+    Neutral: 0
+  - Id: door_natur_oak
+    Name: "Natur Oak (\u0448\u043F\u043E\u043D Mr.Wood)"
+    Category: door
+    Material: {fileID: 2100000, guid: bc69c576f8e6647deaa653541fed6cb3, type: 2}
+    Neutral: 0
+  - Id: door_golden_oak
+    Name: "Golden Oak (\u0448\u043F\u043E\u043D Mr.Wood)"
+    Category: door
+    Material: {fileID: 2100000, guid: 612882b2862554385bf972c34de57b98, type: 2}
+    Neutral: 0
+  - Id: door_veneer_ivory
+    Name: "Ivory (\u0448\u043F\u043E\u043D Mr.Wood)"
+    Category: door
+    Material: {fileID: 2100000, guid: d43e0aff607c046bfb8657f1f9bcf833, type: 2}
+    Neutral: 0
+  - Id: door_veneer_latte
+    Name: "Latte (\u0448\u043F\u043E\u043D Mr.Wood)"
+    Category: door
+    Material: {fileID: 2100000, guid: a2570338be9a44b9fafa135ce32468a8, type: 2}
+    Neutral: 0
+  - Id: door_veneer_whitey
+    Name: "Whitey (\u0448\u043F\u043E\u043D Mr.Wood)"
+    Category: door
+    Material: {fileID: 2100000, guid: c894a22f423f54e85935629580ccdb67, type: 2}
+    Neutral: 0
+  - Id: door_enamel_whitey
+    Name: "Whitey (\u044D\u043C\u0430\u043B\u044C SKINNY)"
+    Category: door
+    Material: {fileID: 2100000, guid: 6113f52c73a3a4dadbe5e555c5eb1560, type: 2}
+    Neutral: 0
+  - Id: door_enamel_cream
+    Name: "Cream (\u044D\u043C\u0430\u043B\u044C SKINNY)"
+    Category: door
+    Material: {fileID: 2100000, guid: c594fb20563d5477ea8e4f43dc8e8113, type: 2}
+    Neutral: 0
+  - Id: door_enamel_mocca
+    Name: "Mocca (\u044D\u043C\u0430\u043B\u044C SKINNY)"
+    Category: door
+    Material: {fileID: 2100000, guid: 13ba0ce7315f041d5accd5b5d77e85d5, type: 2}
+    Neutral: 0
+  - Id: door_solid_pine
+    Name: "\u0411\u0435\u0437 \u043E\u0442\u0434\u0435\u043B\u043A\u0438 (\u043C\u0430\u0441\u0441\u0438\u0432 \u0441\u043E\u0441\u043D\u044B)"
+    Category: door
+    Material: {fileID: 2100000, guid: e0a5a1c399ac6497cb4a7d0dded02f40, type: 2}
+    Neutral: 0
+  - Id: door_f_01_oak
+    Name: "\u0424-01 \u0414\u0443\u0431 (\u0448\u043F\u043E\u043D \u0444\u0430\u0439\u043D-\u043B\u0430\u0439\u043D)"
+    Category: door
+    Material: {fileID: 2100000, guid: c8a0305d8752a482db37294d0efb68e6, type: 2}
+    Neutral: 0
+  - Id: door_f_11_walnut
+    Name: "\u0424-11 \u041E\u0440\u0435\u0445 (\u0448\u043F\u043E\u043D \u0444\u0430\u0439\u043D-\u043B\u0430\u0439\u043D)"
+    Category: door
+    Material: {fileID: 2100000, guid: c602e4fe5c8d14e44b1a0e6b0efb7ac7, type: 2}
+    Neutral: 0
+  - Id: door_f_15_makore
+    Name: "\u0424-15 \u041C\u0430\u043A\u043E\u0440\u0435 (\u0448\u043F\u043E\u043D \u0444\u0430\u0439\u043D-\u043B\u0430\u0439\u043D)"
+    Category: door
+    Material: {fileID: 2100000, guid: aae3a56f541974ad7afaa2076b8bbf1d, type: 2}
+    Neutral: 0
+  - Id: door_f_17_chocolate
+    Name: "\u0424-17 \u0428\u043E\u043A\u043E\u043B\u0430\u0434 (\u0448\u043F\u043E\u043D \u0444\u0430\u0439\u043D-\u043B\u0430\u0439\u043D)"
+    Category: door
+    Material: {fileID: 2100000, guid: 741ebeef517294c2aba8aa1d363e2053, type: 2}
+    Neutral: 0
+  - Id: door_f_22_white_oak
+    Name: "\u0424-22 \u0411\u0435\u043B\u0414\u0443\u0431 (\u0448\u043F\u043E\u043D \u0444\u0430\u0439\u043D-\u043B\u0430\u0439\u043D)"
+    Category: door
+    Material: {fileID: 2100000, guid: af46c186045be40ec869d182853a0bd6, type: 2}
+    Neutral: 0
+  - Id: door_f_27_wenge
+    Name: "\u0424-27 \u0412\u0435\u043D\u0433\u0435 (\u0448\u043F\u043E\u043D \u0444\u0430\u0439\u043D-\u043B\u0430\u0439\u043D)"
+    Category: door
+    Material: {fileID: 2100000, guid: 80e211f4156af4f3d9a993b165c8e76c, type: 2}
+    Neutral: 0
+  - Id: door_antik_silver
+    Name: "\u0410\u043D\u0442\u0438\u043A \u0421\u0435\u0440\u0435\u0431\u0440\u043E (\u043F\u043E\u0440\u043E\u0448\u043A\u043E\u0432\u0430\u044F \u043E\u043A\u0440\u0430\u0441\u043A\u0430)"
+    Category: door
+    Material: {fileID: 2100000, guid: 047b1bf4f435f4467a8029fe87773ffc, type: 2}
+    Neutral: 0
+  - Id: door_antik_copper
+    Name: "\u0410\u043D\u0442\u0438\u043A \u041C\u0435\u0434\u044C (\u043F\u043E\u0440\u043E\u0448\u043A\u043E\u0432\u0430\u044F \u043E\u043A\u0440\u0430\u0441\u043A\u0430)"
+    Category: door
+    Material: {fileID: 2100000, guid: 72648103456074d50b0eeae24f655e40, type: 2}
+    Neutral: 0
+  - Id: door_antik_copper_ekonom
+    Name: "\u0410\u043D\u0442\u0438\u043A \u041C\u0435\u0434\u044C (\u042D\u043A\u043E\u043D\u043E\u043C) (\u043F\u043E\u0440\u043E\u0448\u043A\u043E\u0432\u0430\u044F \u043E\u043A\u0440\u0430\u0441\u043A\u0430)"
+    Category: door
+    Material: {fileID: 2100000, guid: 0488a075135dc4f3887f6647fc23b919, type: 2}
+    Neutral: 0
+  - Id: door_moonstone
+    Name: "\u041B\u0443\u043D\u043D\u044B\u0439 \u043A\u0430\u043C\u0435\u043D\u044C (\u043F\u043E\u0440\u043E\u0448\u043A\u043E\u0432\u0430\u044F \u043E\u043A\u0440\u0430\u0441\u043A\u0430)"
+    Category: door
+    Material: {fileID: 2100000, guid: 0f52aa46d1bc544809eed2d4311c7953, type: 2}
+    Neutral: 0
+  - Id: door_winorit_p4
+    Name: "\u041F-4 (\u0417\u043E\u043B\u043E\u0442\u043E\u0439 \u0414\u0443\u0431) (WINORIT)"
+    Category: door
+    Material: {fileID: 2100000, guid: 78358353ab5a44d9cbf17c9b612ed5b4, type: 2}
+    Neutral: 0
+  - Id: door_winorit_p25
+    Name: "\u041F-25 (\u0411\u0435\u043B\u0435\u043D\u044B\u0439 \u0414\u0443\u0431) (WINORIT)"
+    Category: door
+    Material: {fileID: 2100000, guid: 0fcd131e747a648508b8ce7d37afc183, type: 2}
+    Neutral: 0
+  - Id: door_winorit_p26
+    Name: "\u041F-26 (\u0424\u0440\u0430\u043D\u0446\u0443\u0437\u0441\u043A\u0438\u0439 \u0414\u0443\u0431) (WINORIT)"
+    Category: door
+    Material: {fileID: 2100000, guid: d206736d5a38044d1a5743500f864bc7, type: 2}
+    Neutral: 0
+  - Id: door_winorit_p28
+    Name: "\u041F-28 (\u0422\u0451\u043C\u043D\u0430\u044F \u0412\u0438\u0448\u043D\u044F) (WINORIT)"
+    Category: door
+    Material: {fileID: 2100000, guid: 3555115f1a9434e109050f7dcb368ff5, type: 2}
+    Neutral: 0
+  - Id: door_almond_28
+    Name: Almond 28 (WINORIT)
+    Category: door
+    Material: {fileID: 2100000, guid: 1c710c9255c8842759cb0430ec3f486e, type: 2}
+    Neutral: 0
+  - Id: door_graphite_pro
+    Name: "Graphite Pro (\u042D\u043A\u043E \u041F\u0440\u043E)"
+    Category: door
+    Material: {fileID: 2100000, guid: 4b9a6a88036064069a7a380cb363682c, type: 2}
+    Neutral: 0
+  - Id: doorglass_sprig
+    Name: "\u0421\u0442\u0435\u043A\u043B\u043E \u0413\u043B\u0435\u0439\u0441 SPRIG"
+    Category: doorglass
+    Material: {fileID: 2100000, guid: 06f5c6de9fb9a41598a4870aeb7b1dd2, type: 2}
+    Neutral: 0
+  - Id: doorglass_twig
+    Name: "\u0421\u0442\u0435\u043A\u043B\u043E \u0413\u043B\u0435\u0439\u0441 TWIG"
+    Category: doorglass
+    Material: {fileID: 2100000, guid: ecdf83e036f1a49158dbb85ad2723277, type: 2}
+    Neutral: 0
+  - Id: doorglass_twig_2
+    Name: "\u0421\u0442\u0435\u043A\u043B\u043E \u0413\u043B\u0435\u0439\u0441 TWIG (\u0413\u043B\u0435\u0439\u0441-2)"
+    Category: doorglass
+    Material: {fileID: 2100000, guid: 1aec94c8eca1f41cca05319acda225ed, type: 2}
+    Neutral: 0
+  - Id: doorglass_vitrazh
+    Name: "\u0411\u0435\u043B\u043E\u0435 \u0441\u0430\u0442\u0438\u043D\u0430\u0442\u043E \xAB\u0412\u0438\u0442\u0440\u0430\u0436\xBB"
+    Category: doorglass
+    Material: {fileID: 2100000, guid: b06810bc0341c4376bfbff2294a1d4ba, type: 2}
+    Neutral: 0
+  - Id: doorglass_print
+    Name: "\u0417\u0435\u0440\u043A\u0430\u043B\u043E \u0447\u0435\u0440\u043D\u043E\u0435 \u0445\u0443\u0434. \xABPrint\xBB"
+    Category: doorglass
+    Material: {fileID: 2100000, guid: 4d80fa4d43585488886bc8817e6eac04, type: 2}
+    Neutral: 0
+  - Id: doorglass_stamp
+    Name: "\u0417\u0435\u0440\u043A\u0430\u043B\u043E \u0447\u0435\u0440\u043D\u043E\u0435 \u0445\u0443\u0434. \xABStamp\xBB"
+    Category: doorglass
+    Material: {fileID: 2100000, guid: f03db5e49e63f4d54b8669a2e4e7490d, type: 2}
+    Neutral: 0
+  - Id: doorglass_sa
+    Name: "\u0417\u0435\u0440\u043A\u0430\u043B\u043E \u0431\u0435\u043B\u043E\u0435 \u0445\u0443\u0434\u043E\u0436-\u0435 \xABSilver Art\xBB (SA)"
+    Category: doorglass
+    Material: {fileID: 2100000, guid: c593b2c3e44464aaab7eb105ffc9ad25, type: 2}
+    Neutral: 0
+  - Id: doorglass_wc
+    Name: "\u0411\u0435\u043B\u043E\u0435 \u0445\u0443\u0434\u043E\u0436-\u0435 \u0441\u0430\u0442\u0438\u043D\u0430\u0442\u043E White Crystal (WC)"
+    Category: doorglass
+    Material: {fileID: 2100000, guid: aa7e98fe9278943f2af045fff12e4857, type: 2}
+    Neutral: 0
+  - Id: doorglass_mystic
+    Name: "\u0411\u0435\u043B\u043E\u0435 \u0445\u0443\u0434\u043E\u0436-\u0435 \xABMystic\xBB"
+    Category: doorglass
+    Material: {fileID: 2100000, guid: 7268e0ae50c5a40239a0db4d3f677239, type: 2}
+    Neutral: 0
+  - Id: doorglass_mystic_small
+    Name: "\u0411\u0435\u043B\u043E\u0435 \u0445\u0443\u0434\u043E\u0436-\u0435 \xABMystic\xBB (\u0443\u0437\u043A\u043E\u0435)"
+    Category: doorglass
+    Material: {fileID: 2100000, guid: 942854b75380a423e97dee1eec009f4c, type: 2}
+    Neutral: 0
+  - Id: doorglass_mirror_art
+    Name: "\u0417\u0435\u0440\u043A\u0430\u043B\u043E \u0431\u0435\u043B\u043E\u0435 \u0445\u0443\u0434\u043E\u0436-\u0435"
+    Category: doorglass
+    Material: {fileID: 2100000, guid: 6447e7536e9f0489da7dcff4839b663e, type: 2}
+    Neutral: 0
+  - Id: doorglass_status_15
+    Name: "\u0421\u0442\u0430\u0442\u0443\u0441-15 \u0421\u0422-\u0425\u0443\u0434. (\u0443\u0437\u043E\u0440-\u0432\u0435\u043D\u0437\u0435\u043B\u044C)"
+    Category: doorglass
+    Material: {fileID: 2100000, guid: 1109c2e039bf14bd784e92d646187fe5, type: 2}
+    Neutral: 0
+  - Id: doorglass_pvc_skinny_33
+    Name: "\u0421\u043A\u0438\u043D\u043D\u0438-33 \u0421\u0422-\u0425\u0443\u0434. (\u0441\u0442\u0435\u0431\u043B\u0438 \u0441 \u0437\u043E\u043B\u043E\u0442\u044B\u043C\u0438 \u043B\u0438\u0441\u0442\u044C\u044F\u043C\u0438)"
+    Category: doorglass
+    Material: {fileID: 2100000, guid: 93392ff75d541481b968ebab34439a8a, type: 2}
+    Neutral: 0
+  - Id: doorglass_lotos_st_hud
+    Name: "\u041B\u043E\u0442\u043E\u0441 \u0421\u0422-\u0425\u0443\u0434. (\u043B\u0438\u043D\u0438\u0438 \u0438 \u043A\u0430\u043F\u043B\u0438)"
+    Category: doorglass
+    Material: {fileID: 2100000, guid: bd22bfad176574099b66b00a2f6c2b81, type: 2}
+    Neutral: 0
+  - Id: doorglass_orbita_plyus_st_hud
+    Name: "\u041E\u0440\u0431\u0438\u0442\u0430 \u041F\u043B\u044E\u0441 \u0421\u0422-\u0425\u0443\u0434. (\u0432\u0435\u043D\u0437\u0435\u043B\u044C \u0432 \u043E\u0432\u0430\u043B\u0435)"
+    Category: doorglass
+    Material: {fileID: 2100000, guid: 7eb50c4ccdde5402a867cae3517df931, type: 2}
+    Neutral: 0
+  - Id: doorglass_virazh_plyus_st_hud
+    Name: "\u0412\u0438\u0440\u0430\u0436 \u041F\u043B\u044E\u0441 \u0421\u0422-\u0425\u0443\u0434. (\u0448\u0442\u0440\u0438\u0445\u0438 \u0438 \u044F\u043D\u0442\u0430\u0440\u043D\u044B\u0435 \u0440\u043E\u043C\u0431\u0438\u043A\u0438)"
+    Category: doorglass
+    Material: {fileID: 2100000, guid: 9f53e004fae3e46219833791f8508950, type: 2}
+    Neutral: 0
+  - Id: doorglass_zk_uzor
+    Name: "\u0421\u0442\u0435\u043A\u043B\u043E \u0417\u041A-\u0423\u0437\u043E\u0440 (\u0434\u0443\u0433\u0438)"
+    Category: doorglass
+    Material: {fileID: 2100000, guid: 82937871a50a74d35a7e0474d79f4fb8, type: 2}
+    Neutral: 0
+  - Id: doorglass_bronze
+    Name: "\u0411\u0440\u043E\u043D\u0437\u043E\u0432\u043E\u0435 \u0441\u0430\u0442\u0438\u043D\u0430\u0442\u043E"
+    Category: doorglass
+    Material: {fileID: 2100000, guid: de4a3e4be4a844245beb0af213fbf2db, type: 2}
+    Neutral: 0
+  - Id: doorglass_bc
+    Name: "\u0411\u0440\u043E\u043D\u0437\u043E\u0432\u043E\u0435 \u0445\u0443\u0434\u043E\u0436. \u0441\u0430\u0442\u0438\u043D\u0430\u0442\u043E (\u0440\u043E\u043C\u0431\u044B)"
+    Category: doorglass
+    Material: {fileID: 2100000, guid: 86094414175a743839e401c7e61f512f, type: 2}
+    Neutral: 0
+  - Id: doorglass_bronze_wave
+    Name: "\u0411\u0440\u043E\u043D\u0437\u043E\u0432\u043E\u0435 \u0443\u0437\u043E\u0440\u0447\u0430\u0442\u043E\u0435 \xAB\u0432\u043E\u043B\u043D\u0430\xBB"
+    Category: doorglass
+    Material: {fileID: 2100000, guid: c0bd4ecdda20543a39efe0cee23365ef, type: 2}
+    Neutral: 0
+  - Id: doorglass_st_118
+    Name: "\u0421\u0442\u0435\u043A\u043B\u043E \u0445\u0443\u0434\u043E\u0436\u0435\u0441\u0442\u0432\u0435\u043D\u043D\u043E\u0435 \u0421\u0422-118"
+    Category: doorglass
+    Material: {fileID: 2100000, guid: b8616370463a44dde961efe1772d8d71, type: 2}
+    Neutral: 0
+  - Id: doorglass_st_121
+    Name: "\u0421\u0442\u0435\u043A\u043B\u043E \u0445\u0443\u0434\u043E\u0436\u0435\u0441\u0442\u0432\u0435\u043D\u043D\u043E\u0435 \u0421\u0422-121"
+    Category: doorglass
+    Material: {fileID: 2100000, guid: 9b9b73d8d6b464416a323f3501b43b71, type: 2}
+    Neutral: 0
+  - Id: doorart_wood_klassik_51
+    Name: "\u0412\u0443\u0434 \u041A\u043B\u0430\u0441\u0441\u0438\u043A-51: \u043E\u0440\u043D\u0430\u043C\u0435\u043D\u0442 \u043F\u043E \u0441\u0442\u0435\u043A\u043B\u0443"
+    Category: doorart
+    Material: {fileID: 2100000, guid: c3c3d47aba9724979b3b78cc22b26c23, type: 2}
+    Neutral: 0
+  - Id: doorart_wood_klassik_53
+    Name: "\u0412\u0443\u0434 \u041A\u043B\u0430\u0441\u0441\u0438\u043A-53: \u043E\u0440\u043D\u0430\u043C\u0435\u043D\u0442 \u043F\u043E \u0441\u0442\u0435\u043A\u043B\u0443"
+    Category: doorart
+    Material: {fileID: 2100000, guid: 395a1b2fee2ad4d1b904ba704374739b, type: 2}
+    Neutral: 0
+  - Id: doorart_skinny_12_art_top
+    Name: "\u0421\u043A\u0438\u043D\u043D\u0438-12 ART, \u0432\u0435\u0440\u0445 (\u0440\u0430\u043C\u043A\u0430-\u043B\u043E\u0437\u0430)"
+    Category: doorart
+    Material: {fileID: 2100000, guid: 3b206ad65e9a04f0185575887b85e044, type: 2}
+    Neutral: 0
+  - Id: doorart_skinny_12_art_bottom
+    Name: "\u0421\u043A\u0438\u043D\u043D\u0438-12 ART, \u043D\u0438\u0437 (\u0440\u0430\u043C\u043A\u0430-\u043B\u043E\u0437\u0430)"
+    Category: doorart
+    Material: {fileID: 2100000, guid: 10f4085c929ff4f3ab9c6ebe40725215, type: 2}
+    Neutral: 0
+  - Id: doorart_skinny_13_art_glass
+    Name: "\u0421\u043A\u0438\u043D\u043D\u0438-13 ART, \u0441\u0442\u0435\u043A\u043B\u043E (\u0440\u0430\u043C\u043A\u0430-\u043B\u043E\u0437\u0430)"
+    Category: doorart
+    Material: {fileID: 2100000, guid: 34b2ab27263c24355b37b6a1894e85b8, type: 2}
+    Neutral: 0
+  - Id: doorart_skinny_13_art_bottom
+    Name: "\u0421\u043A\u0438\u043D\u043D\u0438-13 ART, \u043D\u0438\u0437 (\u0440\u0430\u043C\u043A\u0430-\u043B\u043E\u0437\u0430)"
+    Category: doorart
+    Material: {fileID: 2100000, guid: 86bb1c0513977475ab9979dfc794e8fb, type: 2}
+    Neutral: 0
+  - Id: doorart_skinny_15_1_art_glass
+    Name: "\u0421\u043A\u0438\u043D\u043D\u0438-15.1 ART, \u0441\u0442\u0435\u043A\u043B\u043E (\u0431\u0430\u0440\u043E\u0447\u043D\u0430\u044F \u0440\u0430\u043C\u043A\u0430)"
+    Category: doorart
+    Material: {fileID: 2100000, guid: 861bc1e084c26422d895a26e6ffb2be1, type: 2}
+    Neutral: 0
+  - Id: doorart_skinny_14_art_top
+    Name: "\u0421\u043A\u0438\u043D\u043D\u0438-14 ART, \u0432\u0435\u0440\u0445 (\u0431\u0430\u0440\u043E\u0447\u043D\u0430\u044F \u0440\u0430\u043C\u043A\u0430)"
+    Category: doorart
+    Material: {fileID: 2100000, guid: e2660be88243a44f5a88be1dafe2f77e, type: 2}
+    Neutral: 0
+  - Id: doorart_skinny_14_art_middle
+    Name: "\u0421\u043A\u0438\u043D\u043D\u0438-14 ART, \u0441\u0440\u0435\u0434\u043D\u044F\u044F \u0444\u0438\u043B\u0451\u043D\u043A\u0430 (\u0437\u0430\u0432\u0438\u0442\u043E\u043A)"
+    Category: doorart
+    Material: {fileID: 2100000, guid: 018521422777645e1ad8e6016b679adf, type: 2}
+    Neutral: 0
+  - Id: doorart_skinny_15_1_art_middle
+    Name: "\u0421\u043A\u0438\u043D\u043D\u0438-15.1 ART, \u0441\u0440\u0435\u0434\u043D\u044F\u044F \u0444\u0438\u043B\u0451\u043D\u043A\u0430 (\u0437\u0430\u0432\u0438\u0442\u043E\u043A)"
+    Category: doorart
+    Material: {fileID: 2100000, guid: ea3876c617dee4022a95cb8755d6cc96, type: 2}
+    Neutral: 0
+  - Id: doorart_skinny_14_art_bottom
+    Name: "\u0421\u043A\u0438\u043D\u043D\u0438-14 ART, \u043D\u0438\u0437 (\u0431\u0430\u0440\u043E\u0447\u043D\u044B\u0439 \u0433\u0440\u0435\u0431\u0435\u043D\u044C)"
+    Category: doorart
+    Material: {fileID: 2100000, guid: 85e576a1f71334e93a0db870b8492157, type: 2}
+    Neutral: 0
+  - Id: doorart_skinny_15_1_art_bottom
+    Name: "\u0421\u043A\u0438\u043D\u043D\u0438-15.1 ART, \u043D\u0438\u0437 (\u0431\u0430\u0440\u043E\u0447\u043D\u044B\u0439 \u0433\u0440\u0435\u0431\u0435\u043D\u044C)"
+    Category: doorart
+    Material: {fileID: 2100000, guid: a7805ec11b2e7497d89d52eea6ae5774, type: 2}
+    Neutral: 0
+  - Id: doorart_skinny_21_art_glass
+    Name: "\u0421\u043A\u0438\u043D\u043D\u0438-21 ART, \u0441\u0442\u0435\u043A\u043B\u043E (\u043A\u0430\u0440\u0442\u0443\u0448)"
+    Category: doorart
+    Material: {fileID: 2100000, guid: a025edc6f0eb1440193e15735dcd496e, type: 2}
+    Neutral: 0
+  - Id: doorart_skinny_20_art_top
+    Name: "\u0421\u043A\u0438\u043D\u043D\u0438-20 ART, \u0432\u0435\u0440\u0445 (\u043A\u0430\u0440\u0442\u0443\u0448)"
+    Category: doorart
+    Material: {fileID: 2100000, guid: 9dc9cdb78257449cca4cb48bbe8c8945, type: 2}
+    Neutral: 0
+  - Id: doorart_skinny_20_art_oval
+    Name: "\u0421\u043A\u0438\u043D\u043D\u0438-20 ART, \u043E\u0432\u0430\u043B (\u0437\u0430\u0432\u0438\u0442\u043E\u043A)"
+    Category: doorart
+    Material: {fileID: 2100000, guid: 9a1e18cb2504749a5a08369892a2f4d2, type: 2}
+    Neutral: 0
+  - Id: doorart_skinny_21_art_oval
+    Name: "\u0421\u043A\u0438\u043D\u043D\u0438-21 ART, \u043E\u0432\u0430\u043B (\u0437\u0430\u0432\u0438\u0442\u043E\u043A)"
+    Category: doorart
+    Material: {fileID: 2100000, guid: fa4f823863a2b4e42ae89bdadaa2b3cc, type: 2}
+    Neutral: 0
+  - Id: doorart_skinny_20_art_bottom
+    Name: "\u0421\u043A\u0438\u043D\u043D\u0438-20 ART, \u043D\u0438\u0437 (\u0434\u0438\u0430\u0433\u043E\u043D\u0430\u043B\u044C\u043D\u044B\u0435 \u043F\u043E\u043B\u043E\u0441\u044B)"
+    Category: doorart
+    Material: {fileID: 2100000, guid: 52cb40864a5504699aad13680cdacfe3, type: 2}
+    Neutral: 0
+  - Id: doorart_skinny_21_art_bottom
+    Name: "\u0421\u043A\u0438\u043D\u043D\u0438-21 ART, \u043D\u0438\u0437 (\u0434\u0438\u0430\u0433\u043E\u043D\u0430\u043B\u044C\u043D\u044B\u0435 \u043F\u043E\u043B\u043E\u0441\u044B)"
+    Category: doorart
+    Material: {fileID: 2100000, guid: 5f96e5ef94c6d4031a402b7cb7d2f8da, type: 2}
+    Neutral: 0
+  - Id: doorglass_laminated_3p
+    Name: "3\u041F (\u043B\u0438\u043B\u0438\u044F)"
+    Category: doorglass
+    Material: {fileID: 2100000, guid: f2ccf6c1f68a34f9a98b78ccd3423617, type: 2}
+    Neutral: 0
+  - Id: doorglass_laminated_3x
+    Name: "3\u0425 (\u0434\u0430\u043C\u0430\u0441\u043A)"
+    Category: doorglass
+    Material: {fileID: 2100000, guid: 568e82a84822d455da22cfea888cc77a, type: 2}
+    Neutral: 0
+  - Id: doorglass_laminated_6p
+    Name: "6\u041F (\u043A\u0440\u0430\u0441\u043D\u044B\u0435 \u043B\u0435\u043F\u0435\u0441\u0442\u043A\u0438)"
+    Category: doorglass
+    Material: {fileID: 2100000, guid: 0745d145e4e314f6a965941358a91faa, type: 2}
+    Neutral: 0
+  - Id: doorglass_laminated_6f
+    Name: "6\u0424 (\u0441\u0435\u0440\u0435\u0431\u0440\u0438\u0441\u0442\u044B\u0435 \u043B\u0438\u043D\u0438\u0438)"
+    Category: doorglass
+    Material: {fileID: 2100000, guid: bd878efa08c3f467295a246a43cc599f, type: 2}
+    Neutral: 0
+  - Id: doorglass_laminated_8p
+    Name: "8\u041F (\u043E\u0440\u0430\u043D\u0436\u0435\u0432\u044B\u0435 \u043B\u0438\u0441\u0442\u044C\u044F)"
+    Category: doorglass
+    Material: {fileID: 2100000, guid: 9000fd196784743fd84a9876562d725a, type: 2}
+    Neutral: 0
+  - Id: doorglass_laminated_8f
+    Name: "8\u0424 (\u043A\u043E\u043B\u043E\u0441\u043A\u0438)"
+    Category: doorglass
+    Material: {fileID: 2100000, guid: 42dce5c8aede04924be8cb8758be71df, type: 2}
+    Neutral: 0
+  - Id: doorglass_laminated_11f
+    Name: "11\u0424 (\u0441\u0442\u0435\u0431\u043B\u0438 \u0441 \u043B\u0438\u0441\u0442\u044C\u044F\u043C\u0438)"
+    Category: doorglass
+    Material: {fileID: 2100000, guid: a5edab15e77fd4a3fa2216fa5b0a2b7f, type: 2}
+    Neutral: 0
+  - Id: doorglass_laminated_15f
+    Name: "15\u0424 (\u0437\u043E\u043B\u043E\u0442\u044B\u0435 \u043F\u0435\u0440\u044C\u044F)"
+    Category: doorglass
+    Material: {fileID: 2100000, guid: 88ae1410de3194fcc921d10a4598b9b6, type: 2}
+    Neutral: 0
+  - Id: doorglass_laminated_21x
+    Name: "21\u0425 (\u043C\u0435\u0430\u043D\u0434\u0440)"
+    Category: doorglass
+    Material: {fileID: 2100000, guid: b1bdacfc7a66249498c3b1743e92b553, type: 2}
+    Neutral: 0
+  - Id: doorglass_laminated_22x
+    Name: "22\u0425 (\u0442\u044E\u043B\u044C\u043F\u0430\u043D\u044B)"
+    Category: doorglass
+    Material: {fileID: 2100000, guid: 3551aa0a1dad44e8b9c988f63c28bd96, type: 2}
+    Neutral: 0
+  - Id: doorglass_laminated_23x
+    Name: "23\u0425 (\u0432\u0438\u0442\u0440\u0430\u0436)"
+    Category: doorglass
+    Material: {fileID: 2100000, guid: c4db9ee858f4040a781864c1cb91a785, type: 2}
+    Neutral: 0
+  - Id: doorglass_laminated_24x
+    Name: "24\u0425 (\u0444\u0438\u043B\u0438\u0433\u0440\u0430\u043D\u044C)"
+    Category: doorglass
+    Material: {fileID: 2100000, guid: 22f247431e4fe4d57b7fb923026ce14b, type: 2}
+    Neutral: 0
+  - Id: doorglass_laminated_25x
+    Name: "25\u0425 (\u0431\u0435\u043B\u044B\u0435 \u0432\u043E\u043B\u043D\u044B)"
+    Category: doorglass
+    Material: {fileID: 2100000, guid: 4b56a51c5ea1c45bb89b43183d554dce, type: 2}
+    Neutral: 0
+  - Id: doorglass_rondo_do
+    Name: "\u0420\u043E\u043D\u0434\u043E \u0421\u0422-\u0425\u0443\u0434. (\u043B\u043E\u0437\u0430 \u0441 \u043F\u0430\u043B\u044C\u043C\u0435\u0442\u0442\u0430\u043C\u0438)"
+    Category: doorglass
+    Material: {fileID: 2100000, guid: 00c5079609cff4b4f8b6289f700e09a9, type: 2}
+    Neutral: 0
+  - Id: doorglass_etyud_do
+    Name: "\u042D\u0442\u044E\u0434 \u0421\u0422-\u0425\u0443\u0434. (\u0442\u0440\u0430\u0432\u044B \u0438 \u0447\u0451\u0440\u043D\u044B\u0435 \u043B\u0438\u0441\u0442\u044C\u044F)"
+    Category: doorglass
+    Material: {fileID: 2100000, guid: f2273370d32b940eb8f2a7404b6f68d7, type: 2}
+    Neutral: 0
+  - Id: doorglass_afina_do
+    Name: "\u0410\u0444\u0438\u043D\u0430 \u0421\u0422-\u0425\u0443\u0434. (\u043A\u043E\u043D\u0442\u0443\u0440 \u0438 \u0437\u0432\u0435\u0437\u0434\u0430)"
+    Category: doorglass
+    Material: {fileID: 2100000, guid: d611db8a7d96641afa4fbcfd9993360e, type: 2}
+    Neutral: 0
+  - Id: doorglass_selena_do
+    Name: "\u0421\u0435\u043B\u0435\u043D\u0430 \u0421\u0422-\u0425\u0443\u0434. (\u0440\u0435\u0448\u0451\u0442\u043A\u0430, \u0433\u0438\u0440\u043B\u044F\u043D\u0434\u044B \u0438 \u043B\u0438\u043B\u0438\u044F)"
+    Category: doorglass
+    Material: {fileID: 2100000, guid: d5380b5e6ffb54cf0a025aaa87873aa2, type: 2}
+    Neutral: 0
+  - Id: doorglass_azaliya_do
+    Name: "\u0410\u0437\u0430\u043B\u0438\u044F \u0421\u0422-\u0425\u0443\u0434. (\u0443\u0433\u043B\u043E\u0432\u044B\u0435 \u043E\u0440\u043D\u0430\u043C\u0435\u043D\u0442\u044B)"
+    Category: doorglass
+    Material: {fileID: 2100000, guid: c8d60ab753efb4dde80b0220372c5344, type: 2}
+    Neutral: 0
+  - Id: doorglass_azaliya_do_2
+    Name: "\u0410\u0437\u0430\u043B\u0438\u044F \u0421\u0422-\u0425\u0443\u0434., \u043C\u0435\u0434\u0430\u043B\u044C\u043E\u043D"
+    Category: doorglass
+    Material: {fileID: 2100000, guid: af9c8a0cae44e463a8d5c124ef066ca8, type: 2}
+    Neutral: 0
+  - Id: doorart_azaliya
+    Name: "\u0410\u0437\u0430\u043B\u0438\u044F: \u0440\u0435\u0437\u043D\u043E\u0439 \u043E\u0440\u043D\u0430\u043C\u0435\u043D\u0442 \u0444\u0438\u043B\u0451\u043D\u043E\u043A"
+    Category: doorart
+    Material: {fileID: 2100000, guid: 3d22f8673188a43129e8eecf7a955c21, type: 2}
+    Neutral: 0
+  - Id: doorart_azaliya_do
+    Name: "\u0410\u0437\u0430\u043B\u0438\u044F \u0421\u0422-\u0425\u0443\u0434.: \u0440\u0435\u0437\u043D\u043E\u0439 \u043E\u0440\u043D\u0430\u043C\u0435\u043D\u0442 \u043D\u0438\u0436\u043D\u0435\u0439 \u0444\u0438\u043B\u0451\u043D\u043A\u0438"
+    Category: doorart
+    Material: {fileID: 2100000, guid: 5b6fc0a51834d433b8c56c428de70346, type: 2}
+    Neutral: 0
+  - Id: doorglass_stil_do
+    Name: "\u0421\u0442\u0438\u043B\u044C \u0421\u0422-\u0425\u0443\u0434. (\u0440\u0430\u043C\u043A\u0430 \u0438 \u0434\u0430\u043C\u0430\u0441\u0441\u043A\u0438\u0439 \u043C\u0435\u0434\u0430\u043B\u044C\u043E\u043D)"
+    Category: doorglass
+    Material: {fileID: 2100000, guid: 06bcb51fedde14a58bfbfbf1abd18db5, type: 2}
+    Neutral: 0
+  - Id: doorglass_stil_do_2
+    Name: "\u0421\u0442\u0438\u043B\u044C \u0421\u0422-\u0425\u0443\u0434., \u0443\u0437\u043A\u043E\u0435 \u0441\u0442\u0435\u043A\u043B\u043E (\u043F\u043B\u0435\u0442\u0451\u043D\u043A\u0430 \u0438 \u0437\u0430\u0432\u0438\u0442\u043A\u0438)"
+    Category: doorglass
+    Material: {fileID: 2100000, guid: 9d83123265d5942cc9dacb8035da362e, type: 2}
+    Neutral: 0
+  - Id: doorglass_liliya_do
+    Name: "\u041B\u0438\u043B\u0438\u044F \u0421\u0422-\u0425\u0443\u0434. (\u0441\u0442\u0435\u0431\u043B\u0438 \u0441 \u0431\u0443\u0442\u043E\u043D\u0430\u043C\u0438 \u043B\u0438\u043B\u0438\u0439)"
+    Category: doorglass
+    Material: {fileID: 2100000, guid: 8e447c2068b0a4e9bb9afe2e91d6fc63, type: 2}
+    Neutral: 0
+  - Id: doorglass_liliya_do_2
+    Name: "\u041B\u0438\u043B\u0438\u044F \u0421\u0422-\u0425\u0443\u0434., \u044F\u0437\u044B\u0447\u043E\u043A (\u0431\u0443\u0442\u043E\u043D\u044B)"
+    Category: doorglass
+    Material: {fileID: 2100000, guid: a4b22eab5e1d149159e0fe1fa4b4e915, type: 2}
+    Neutral: 0
+  - Id: doorglass_liliya_do_3
+    Name: "\u041B\u0438\u043B\u0438\u044F \u0421\u0422-\u0425\u0443\u0434., \u043C\u0430\u043B\u043E\u0435 \u0441\u0442\u0435\u043A\u043B\u043E"
+    Category: doorglass
+    Material: {fileID: 2100000, guid: 26a45204c5f264946bb04ece93a273c4, type: 2}
+    Neutral: 0
+  - Id: doorglass_laguna_do
+    Name: "\u041B\u0430\u0433\u0443\u043D\u0430 \u0421\u0422-\u0425\u0443\u0434. (\u0432\u0438\u043D\u043E\u0433\u0440\u0430\u0434\u043D\u0430\u044F \u043B\u043E\u0437\u0430)"
+    Category: doorglass
+    Material: {fileID: 2100000, guid: 8b4ccb320a5784fc2bdbfb0d0ddc6bf9, type: 2}
+    Neutral: 0
+  - Id: doorglass_eksklyuziv_do_hud
+    Name: "\u042D\u043A\u0441\u043A\u043B\u044E\u0437\u0438\u0432 \u0424-17 \u0421\u0422-\u0425\u0443\u0434. (\u0446\u0432\u0435\u0442\u044B \u043D\u0430 \u0441\u0442\u0435\u0431\u043B\u0435)"
+    Category: doorglass
+    Material: {fileID: 2100000, guid: 29141c63bcae74eee9920e45d22fffc4, type: 2}
+    Neutral: 0
+  - Id: doorglass_eksklyuziv_do_hud_2
+    Name: "\u042D\u043A\u0441\u043A\u043B\u044E\u0437\u0438\u0432 \u0424-17 \u0421\u0422-\u0425\u0443\u0434., \u0441\u0440\u0435\u0434\u043D\u0435\u0435 \u0441\u0442\u0435\u043A\u043B\u043E (\u0446\u0432\u0435\u0442\u043E\u043A)"
+    Category: doorglass
+    Material: {fileID: 2100000, guid: 12e70a4b7496e48138635ec800d3ccc4, type: 2}
+    Neutral: 0
+  - Id: doorglass_eksklyuziv_do_hud_3
+    Name: "\u042D\u043A\u0441\u043A\u043B\u044E\u0437\u0438\u0432 \u0424-17 \u0421\u0422-\u0425\u0443\u0434., \u043C\u0430\u043B\u043E\u0435 \u0441\u0442\u0435\u043A\u043B\u043E (\u0431\u0443\u0442\u043E\u043D)"
+    Category: doorglass
+    Material: {fileID: 2100000, guid: 4648aea92c0c848bc916d79db9101a22, type: 2}
+    Neutral: 0
   Models:
   - Id: armchair_modern
     Name: "\u041A\u0440\u0435\u0441\u043B\u043E: \u043A\u043E\u0436\u0430, \u0434\u0435\u0440\u0435\u0432\u044F\u043D\u043D\u044B\u0439 \u043A\u0430\u0440\u043A\u0430\u0441"

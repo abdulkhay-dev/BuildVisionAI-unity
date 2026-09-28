@@ -1,0 +1,14 @@
+{
+  "id": "twiggy-folding",
+  "name": "TWIGGY",
+  "line": "ЭкоШпон",
+  "kind": "folding",
+  "block": "t70",
+  "order": 152,
+  "finishes": ["cappuccino-veralinga", "wenge-veralinga", "grey-veralinga", "bianco-veralinga"],
+  "glass": ["mf", "crystalline"],
+  "models": [
+    { "id": "twiggy-m1", "name": "TWIGGY M1", "design": "twiggy-m1", "glass": [], "photo": "p153_twiggy-m1__cappuccino-veralinga.jpg" },
+    { "id": "twiggy-v4", "name": "TWIGGY V4", "design": "twiggy-v4", "glass": ["mf", "crystalline"], "photo": "p153_twiggy-v4-mf__cappuccino-veralinga.jpg" }
+  ]
+}

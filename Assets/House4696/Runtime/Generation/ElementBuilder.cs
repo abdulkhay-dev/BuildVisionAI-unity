@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using House4696.Core;
 using House4696.Model;
 using UnityEngine;
@@ -18,6 +19,7 @@ namespace House4696.Generation
             string id = e.Id ?? e.Type.ToString().ToLowerInvariant();
             string prefix = e.Collide ? "Element_" : "Decor_Element_";
             if (e.Type == ElementType.Railing) { Railing(e, prefix + id); return; }
+            if (e.Type == ElementType.Pool) { new PoolBuilder(_c).Build(e, "Pool_" + id); return; }
 
             var mb = new MeshBuilder();
             var capMb = new MeshBuilder();
@@ -28,7 +30,13 @@ namespace House4696.Generation
             var top = e.Top != null ? Face(e.Top, side) : capped ? null : side;
             var bottom = Face(e.Bottom, side);
             Vector3 mn = Vector3.Min(e.Min, e.Max), mx = Vector3.Max(e.Min, e.Max);
-            mb.Box(mn, mx, new BoxMats { XNeg = side, XPos = side, ZNeg = side, ZPos = side, YPos = top, YNeg = bottom });
+            // a pool sunk into a deck/terrace cuts its basin out of it
+            var cuts = e.Type == ElementType.Column ? null : _c.PoolCuts(mx.y);
+            var rect = new List<Vector2> { new Vector2(mn.x, mn.z), new Vector2(mx.x, mn.z), new Vector2(mx.x, mx.z), new Vector2(mn.x, mx.z) };
+            if (cuts != null && cuts.Exists(h => Polygon.BoundsOverlap(rect, h)))
+                Polygon.Prism(mb, rect, cuts, mn.y, mx.y, top, bottom, side);
+            else
+                mb.Box(mn, mx, new BoxMats { XNeg = side, XPos = side, ZNeg = side, ZPos = side, YPos = top, YNeg = bottom });
             if (capped)
             {
                 float o = e.CapOverhang;

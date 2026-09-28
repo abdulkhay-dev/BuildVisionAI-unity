@@ -1,0 +1,25 @@
+Tracing of the art glass (tools/doors/textures/art/*.json), from the catalogue renders in tools/doors/.cache/photos.
+Needs numpy, scipy, opencv-python, Pillow (the generator art_glass.py itself needs only numpy + Pillow). Run from any
+scratch directory (intermediate .npy / .pkl files land in the current directory); outputs go to ../<art>.json in the
+pane coordinates of the design that sells the glass (lib/finalize.py: traced pane -> design's visible glass).
+
+  sprig          trace_sprig.py                  stems row-tracked on the ink field of both big renders (p014, 0.4
+                                                 px/mm), widths from the ink integral across each stem; bud outlines,
+                                                 white rims and tip read off the field by hand; bud shading = the
+                                                 photos' grey (sprig_tone.png)
+  twig, twig-2   twig_fields.py twig | twig2     ink fields of the two small renders (0.16 px/mm) each
+                 twig_track.py twig | twig2      row tracking of the blades
+                 trace_twig.py                   blades = smoothing splines through the tracks, widths set so the ink
+                                                 matches the photos; tuft blades and seed heads placed by hand
+  vitrazh        vit_fields.py, vit_leaves.py,   leaves = almond shapes fitted to the averaged field of the three
+                 vit_track.py, trace_vitrazh.py  renders (IoU 0.93); the braid's four lines read off the field every
+                                                 25 mm (row peaks) and joined by hand across the crossings
+  print, stamp   trace_print.py print | stamp    binary super-resolution: a near-binary coverage at 3.2 / 2.5 px/mm
+                                                 whose box-downsampled, blurred image matches the render's print
+                                                 (Adam on data + perimeter + binarity terms), then smoothed contours
+  mystic         trace_mystic.py                 frame insets measured on p061; the corner scroll drawn from the
+                                                 glass swatch of catalogue p60 (control points in swatch pixels)
+
+lib/: tr.py (photo -> pane mm views, super-resolution solver), inks.py (ink maps: dark motif on satin, light print on
+a mirror), track.py (row tracking, linking), shapes.py (mask -> smoothed polygons), curves.py (Catmull-Rom, strokes),
+almond.py (pointed leaf shapes and their fitting), finalize.py (pane mapping, output), sr.py (single-view SR).

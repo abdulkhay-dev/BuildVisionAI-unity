@@ -1,0 +1,12 @@
+{
+  "id": "porta-50-a-6",
+  "name": "Порта-50 A-6",
+  "ref": [800, 2000],
+  "thickness": 36,
+  "fixX": [],
+  "fixY": [],
+  "edge": {"radius": 1, "material": "metal"},
+  "handle": {"y": 994, "x": 68, "style": "square", "finish": "chrome"},
+  "hinges": [188, 1812],
+  "layout": {"split": "y", "at": [394.5, 797.5, 1200.5, 1603.5], "sep": "metal:9", "grain": "v", "radius": 1}
+}

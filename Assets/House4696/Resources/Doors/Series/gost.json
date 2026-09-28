@@ -1,0 +1,9 @@
+{
+  "id": "gost", "name": "ГОСТ", "line": "Строительные ламинированные", "kind": "interior", "block": "t70", "order": 125,
+  "finishes": ["l-11-italoreh", "l-12-milanoreh", "l-13-wenge", "l-23-white"],
+  "glass": [],
+  "handles": {"l-13-wenge": "chrome", "l-23-white": "chrome"},
+  "models": [
+    { "id": "gost", "name": "ГОСТ", "design": "gost", "glass": [], "photo": "p125_gost-l-12__milanoreh.jpg" }
+  ]
+}

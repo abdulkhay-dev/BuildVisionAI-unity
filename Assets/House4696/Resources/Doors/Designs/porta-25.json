@@ -1,0 +1,33 @@
+{
+  "id": "porta-25",
+  "name": "Порта-25 ALU",
+  "ref": [800, 2000],
+  "thickness": 36,
+  "fixX": [[0, 125], [677, 800]],
+  "fixY": [[0, 122], [1879, 2000]],
+  "edge": { "radius": 2 },
+  "handle": { "y": 996, "x": 65 },
+  "hinges": [189, 1811],
+  "layout": { "split": "x", "at": [125, 677], "sep": "joint", "grain": "v", "radius": 1.5,
+    "cells": [
+      {},
+      { "split": "y", "at": [122, 1879], "sep": "joint", "grain": "h",
+        "cells": [
+          {},
+          { "split": "x", "at": [131, 272, 531, 669, 675], "sep": "joint", "level": -3, "grain": "v",
+            "cells": [
+              { "level": 0, "material": "metal" },
+              {},
+              { "glass": true },
+              {},
+              { "level": 0, "material": "metal" },
+              {}
+            ]
+          },
+          {}
+        ]
+      },
+      {}
+    ]
+  }
+}

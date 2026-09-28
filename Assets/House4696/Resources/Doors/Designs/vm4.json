@@ -1,0 +1,30 @@
+{
+  "id": "vm4",
+  "name": "VM4",
+  "ref": [800, 2000],
+  "thickness": 36,
+  "fixX": [[0, 133], [672.5, 800]],
+  "fixY": [],
+  "edge": {"radius": 2},
+  "handle": {"y": 995, "x": 68, "style": "square", "finish": "chrome"},
+  "hinges": [189, 1815],
+  "layout": {
+    "split": "x",
+    "at": [133, 672.5],
+    "sep": "joint",
+    "grain": "v",
+    "radius": 1.5,
+    "cells": [
+      {},
+      {
+        "split": "y",
+        "at": [285, 430, 712.6, 858.2, 1140.3, 1287.5, 1570.2, 1714.2],
+        "sep": "joint",
+        "level": -4,
+        "grain": "h",
+        "cells": [{}, {"glass": true}, {}, {"glass": true}, {}, {"glass": true}, {}, {"glass": true}, {}]
+      },
+      {}
+    ]
+  }
+}

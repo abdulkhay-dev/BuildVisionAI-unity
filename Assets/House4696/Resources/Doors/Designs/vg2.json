@@ -1,0 +1,30 @@
+{
+  "id": "vg2",
+  "name": "VG2",
+  "ref": [800, 2000],
+  "thickness": 36,
+  "fixX": [[0, 125], [676.5, 800]],
+  "fixY": [],
+  "edge": {"radius": 2},
+  "handle": {"y": 995, "x": 68, "style": "square", "finish": "chrome"},
+  "hinges": [189, 1815],
+  "layout": {
+    "split": "x",
+    "at": [125, 676.5],
+    "sep": "joint",
+    "grain": "v",
+    "radius": 1.5,
+    "cells": [
+      {},
+      {
+        "split": "y",
+        "at": [400, 800, 1200.5, 1603],
+        "sep": "joint",
+        "level": -4,
+        "grain": "h",
+        "cells": [{}, {"glass": true}, {}, {"glass": true}, {}]
+      },
+      {}
+    ]
+  }
+}

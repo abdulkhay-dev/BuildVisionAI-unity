@@ -1,0 +1,14 @@
+{
+  "id": "eco-legno", "name": "LEGNO", "line": "ЭкоШпон", "kind": "interior", "block": "t70", "order": 53,
+  "finishes": ["original-oak", "virgin", "golden-reef", "nordic-oak", "organic-oak", "dark-oak", "graphite-art", "chalet-grande",
+               "chalet-grasse", "chalet-provence", "cappuccino-softwood", "white-softwood"],
+  "glass": ["mf"],
+  "models": [
+    { "id": "legno-21", "name": "Легно-21", "design": "legno-21", "glass": [], "photo": "p053_legno-21__original-oak.jpg" },
+    { "id": "legno-22", "name": "Легно-22", "design": "legno-22", "glass": ["mf"], "photo": "p054_legno-22__original-oak.jpg" },
+    { "id": "legno-23", "name": "Легно-23", "design": "legno-23", "glass": ["mf"], "photo": "p055_legno-23__original-oak.jpg" },
+    { "id": "legno-28", "name": "Легно-28", "design": "legno-28", "glass": ["mf"], "finishes": ["chalet-grande", "chalet-grasse", "chalet-provence", "white-softwood", "cappuccino-softwood"], "photo": "p056_legno-28__chalet-grande.jpg" },
+    { "id": "legno-38", "name": "Легно-38", "design": "legno-38", "glass": [], "finishes": ["original-oak", "golden-reef", "virgin"], "photo": "p057_legno-38__original-oak.jpg" },
+    { "id": "legno-39", "name": "Легно-39", "design": "legno-39", "glass": ["mf"], "finishes": ["virgin", "golden-reef", "original-oak"], "photo": "p057_legno-39__virgin.jpg" }
+  ]
+}

@@ -1,0 +1,30 @@
+[
+ {
+  "id": "l-11-italoreh",
+  "name": "Л-11 ИталОрех",
+  "line": "Ламинированные",
+  "material": "door_l_11_italoreh",
+  "color": "#7b3620"
+ },
+ {
+  "id": "l-12-milanoreh",
+  "name": "Л-12 МиланОрех",
+  "line": "Ламинированные",
+  "material": "door_l_12_milanoreh",
+  "color": "#c98546"
+ },
+ {
+  "id": "l-13-wenge",
+  "name": "Л-13 Венге",
+  "line": "Ламинированные",
+  "material": "door_l_13_wenge",
+  "color": "#3c2418"
+ },
+ {
+  "id": "l-23-white",
+  "name": "Л-23 Белый",
+  "line": "Ламинированные",
+  "material": "door_l_23_white",
+  "color": "#d4d4d2"
+ }
+]

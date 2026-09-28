@@ -1,0 +1,11 @@
+{
+  "id": "econom-inner-metal",
+  "name": "Эконом — гладкий лист металла (внутренняя сторона)",
+  "ref": [800, 2000],
+  "thickness": 2,
+  "lock": "right",
+  "fixX": [],
+  "fixY": [],
+  "edge": { "radius": 1 },
+  "layout": { "grain": "h" }
+}

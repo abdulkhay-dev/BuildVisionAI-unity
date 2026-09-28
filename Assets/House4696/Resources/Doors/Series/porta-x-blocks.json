@@ -1,0 +1,21 @@
+{
+  "id": "porta-x-blocks",
+  "name": "PORTA X — дверные блоки в сборе",
+  "line": "ЭкоШпон",
+  "kind": "interior",
+  "block": "kit",
+  "order": 130,
+  "finishes": ["bianco-veralinga", "cappuccino-veralinga", "snow-veralinga", "wenge-veralinga", "anegri-veralinga"],
+  "glass": ["mf"],
+  "models": [
+    { "id": "porta-21-1p-03", "name": "Порта-21 (1П-03)", "design": "porta-21", "hinges": [257, 1743], "glass": [], "photo": "p130_porta-21-1p-03__bianco-veralinga.jpg" },
+    { "id": "porta-22-1p-03", "name": "Порта-22 (1П-03)", "design": "porta-22", "hinges": [257, 1743], "glass": ["mf"], "photo": "p130_porta-22-1p-03__cappuccino-veralinga.jpg" },
+    { "id": "porta-23-1p-03", "name": "Порта-23 (1П-03)", "design": "porta-23", "hinges": [257, 1743], "glass": ["mf"], "photo": "p131_porta-23-1p-03__wenge-veralinga.jpg" },
+    { "id": "porta-21-1p-02-wc", "name": "Порта-21 (1П-02) WC", "design": "porta-21", "hinges": [257, 1743], "glass": [], "lock": "wc", "photo": "p133_porta-21-1p-02-wc__wenge-veralinga.jpg" },
+    { "id": "porta-22-1p-02-wc", "name": "Порта-22 (1П-02) WC", "design": "porta-22", "hinges": [257, 1743], "glass": ["mf"], "lock": "wc", "photo": "p134_porta-22-1p-02-wc__wenge-veralinga.jpg" },
+    { "id": "porta-23-1p-02-wc", "name": "Порта-23 (1П-02) WC", "design": "porta-23", "hinges": [257, 1743], "glass": ["mf"], "lock": "wc", "photo": "p135_porta-23-1p-02-wc__wenge-veralinga.jpg" },
+    { "id": "porta-21-2p-03", "name": "Порта-21 (2П-03)", "design": "porta-21", "hinges": [257, 1743], "glass": [], "leaves": 2, "photo": "p137_porta-21-2p-03__bianco-veralinga.jpg" },
+    { "id": "porta-22-2p-03", "name": "Порта-22 (2П-03)", "design": "porta-22", "hinges": [257, 1743], "glass": ["mf"], "leaves": 2, "photo": "p138_porta-22-2p-03__bianco-veralinga.jpg" },
+    { "id": "porta-23-2p-03", "name": "Порта-23 (2П-03)", "design": "porta-23", "hinges": [257, 1743], "glass": ["mf"], "leaves": 2, "photo": "p139_porta-23-2p-03__bianco-veralinga.jpg" }
+  ]
+}

@@ -1,0 +1,110 @@
+[
+ {
+  "id": "door_winorit_p4",
+  "name": "П-4 (Золотой Дуб) (WINORIT)",
+  "category": "door",
+  "source": "procedural:tools/doors/textures/entrance.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/door_winorit_p4",
+  "textures": {
+   "albedo": "door_winorit_p4_albedo.jpg",
+   "normal": "door_winorit_p4_normal.jpg",
+   "mask": "door_winorit_p4_mask.png"
+  }
+ },
+ {
+  "id": "door_winorit_p25",
+  "name": "П-25 (Беленый Дуб) (WINORIT)",
+  "category": "door",
+  "source": "procedural:tools/doors/textures/entrance.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/door_winorit_p25",
+  "textures": {
+   "albedo": "door_winorit_p25_albedo.jpg",
+   "normal": "door_winorit_p25_normal.jpg",
+   "mask": "door_winorit_p25_mask.png"
+  }
+ },
+ {
+  "id": "door_winorit_p26",
+  "name": "П-26 (Французский Дуб) (WINORIT)",
+  "category": "door",
+  "source": "procedural:tools/doors/textures/entrance.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/door_winorit_p26",
+  "textures": {
+   "albedo": "door_winorit_p26_albedo.jpg",
+   "normal": "door_winorit_p26_normal.jpg",
+   "mask": "door_winorit_p26_mask.png"
+  }
+ },
+ {
+  "id": "door_winorit_p28",
+  "name": "П-28 (Тёмная Вишня) (WINORIT)",
+  "category": "door",
+  "source": "procedural:tools/doors/textures/entrance.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/door_winorit_p28",
+  "textures": {
+   "albedo": "door_winorit_p28_albedo.jpg",
+   "normal": "door_winorit_p28_normal.jpg",
+   "mask": "door_winorit_p28_mask.png"
+  }
+ },
+ {
+  "id": "door_almond_28",
+  "name": "Almond 28 (WINORIT)",
+  "category": "door",
+  "source": "procedural:tools/doors/textures/entrance.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/door_almond_28",
+  "textures": {
+   "albedo": "door_almond_28_albedo.jpg",
+   "normal": "door_almond_28_normal.jpg",
+   "mask": "door_almond_28_mask.png"
+  }
+ },
+ {
+  "id": "door_graphite_pro",
+  "name": "Graphite Pro (Эко Про)",
+  "category": "door",
+  "source": "procedural:tools/doors/textures/entrance.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/door_graphite_pro",
+  "textures": {
+   "albedo": "door_graphite_pro_albedo.jpg",
+   "normal": "door_graphite_pro_normal.jpg",
+   "mask": "door_graphite_pro_mask.png"
+  }
+ }
+]

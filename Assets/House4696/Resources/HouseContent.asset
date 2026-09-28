@@ -39,6 +39,26 @@ MonoBehaviour:
     Material: {fileID: 2100000, guid: c11c7aaf083e24a8ea6f9dee771976de, type: 2}
   - Name: M_DeciduousLeaves
     Material: {fileID: 2100000, guid: fc143791331f742bcbe3e727462b8bc8, type: 2}
+  - Name: M_DoorAluminium
+    Material: {fileID: 2100000, guid: f95100cd9347346b58c3b46ba8ee3191, type: 2}
+  - Name: M_DoorBronze
+    Material: {fileID: 2100000, guid: 1a24abf4af8a34ea1930f041251b4783, type: 2}
+  - Name: M_DoorGlassSatin
+    Material: {fileID: 2100000, guid: 5059fb44e30ef4a439d113665910b0ff, type: 2}
+  - Name: M_DoorLacobelBeige
+    Material: {fileID: 2100000, guid: 947c6e78c352540d7bb493694de1e3e6, type: 2}
+  - Name: M_DoorLacobelSmoke
+    Material: {fileID: 2100000, guid: a1526791666594d6e8bc1b91a505ae65, type: 2}
+  - Name: M_DoorLacobelWhite
+    Material: {fileID: 2100000, guid: f5e0c5b2bb3314a7182139fa9269c2ef, type: 2}
+  - Name: M_DoorPatinaDark
+    Material: {fileID: 2100000, guid: 3d0da99c2c1764cfd99095b55d4cff9f, type: 2}
+  - Name: M_DoorPatinaGold
+    Material: {fileID: 2100000, guid: e9917810d1e84445ab16509f93ea5028, type: 2}
+  - Name: M_DoorPatinaSilver
+    Material: {fileID: 2100000, guid: 860773bfe05474de88b3da36248867cc, type: 2}
+  - Name: M_DoorSeal
+    Material: {fileID: 2100000, guid: f5d530587a4c54dcc83e6c058959e649, type: 2}
   - Name: M_FrameAnthracite
     Material: {fileID: 2100000, guid: f65346497eeb14842aa090511ac25eb7, type: 2}
   - Name: M_FurnitureDark

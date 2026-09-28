@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using House4696.Model;
 using UnityEngine;
 
@@ -15,7 +16,11 @@ namespace House4696.Generation
         public readonly LevelDef Level;
         public readonly Vector3 N, A, O;
         public readonly Matrix4x4 ToWorld;
-        public readonly float S0, S1, T, Y0, Y1;
+        public readonly float T, Y0, Y1;
+        /// <summary>Wall-space s of the ends (may be extended past A/B, see <see cref="Extend"/>).</summary>
+        public float S0 { get; private set; }
+        public float S1 { get; private set; }
+        readonly float _origin;   // s of point A: openings and zones are measured from it
         public bool WrapStart, WrapEnd;
 
         public bool Exterior => Def.Kind == WallKind.Exterior;
@@ -39,6 +44,7 @@ namespace House4696.Generation
             O = N * Vector3.Dot(a, N);                              // foot of the world origin on the outer face line
             S0 = Vector3.Dot(a, A);
             S1 = Vector3.Dot(b, A);
+            _origin = S0;
             ToWorld = Matrix4x4.TRS(O, Quaternion.LookRotation(-N, Vector3.up), Vector3.one);
 
             var above = ctx.Above(Level);
@@ -63,9 +69,55 @@ namespace House4696.Generation
         public static Vector3 L(float s, float y, float d) => new Vector3(s, y, -d);
 
         /// <summary>Wall-space s of a distance measured from A along the wall.</summary>
-        public float SAt(float fromA) => S0 + fromA;
+        public float SAt(float fromA) => _origin + fromA;
 
         public Vector3 WorldA => P(S0, 0, 0);
         public Vector3 WorldB => P(S1, 0, 0);
+
+        /// <summary>Lengthens the wall at an end (openings stay where they are: they are measured from A).</summary>
+        public void Extend(bool atB, float by) { if (atB) S1 += by; else S0 -= by; }
+
+        /// <summary>Do the two walls stand in the same storey (overlap in height by more than 0.3 m)?</summary>
+        public bool SameStorey(WallFrame o) => Y0 < o.Y1 - 0.3f && o.Y0 < Y1 - 0.3f;
+
+        /// <summary>Plan point of wall-space (s, d).</summary>
+        public Vector2 Plan(float s, float d) { var p = P(s, 0, d); return new Vector2(p.x, p.z); }
+
+        /// <summary>Does the wall stand at this height (absolute)?</summary>
+        public bool Spans(float y) => Y0 < y && Y1 > y;
+
+        /// <summary>Plan rectangle of the wall body (counter-clockwise), grown by <paramref name="grow"/>.</summary>
+        public Vector2[] PlanBody(float grow = 0f)
+        {
+            var r = new[] { Plan(S0 - grow, grow), Plan(S1 + grow, grow), Plan(S1 + grow, -T - grow), Plan(S0 - grow, -T - grow) };
+            return Polygon.SignedArea(r) < 0 ? new[] { r[3], r[2], r[1], r[0] } : r;
+        }
+
+        /// <summary>Plan distance from a point to the wall body (0 inside).</summary>
+        public float DistanceTo(Vector2 p)
+        {
+            var body = PlanBody();
+            if (Polygon.Contains(body, p)) return 0f;
+            float best = float.MaxValue;
+            for (int i = 0; i < 4; i++) best = Mathf.Min(best, StairGeometry.DistanceToSegment(p, body[i], body[(i + 1) % 4]));
+            return best;
+        }
+
+        /// <summary>
+        /// Distance along a plan ray to the first wall body among <paramref name="walls"/> (null when none within
+        /// <paramref name="max"/>). Marches in 1 cm steps: walls are thicker than that.
+        /// </summary>
+        public static float? Cast(IEnumerable<WallFrame> walls, Vector2 from, Vector2 dir, float max, out WallFrame hit)
+        {
+            hit = null;
+            float? best = null;
+            foreach (var f in walls)
+            {
+                var body = f.PlanBody();
+                for (float t = 0f; t <= max && (best == null || t < best.Value); t += 0.01f)
+                    if (Polygon.Contains(body, from + dir * t)) { best = t; hit = f; break; }
+            }
+            return best;
+        }
     }
 }

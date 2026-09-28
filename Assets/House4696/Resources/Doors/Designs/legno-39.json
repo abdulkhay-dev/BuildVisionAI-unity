@@ -1,0 +1,47 @@
+{
+  "id": "legno-39",
+  "name": "Легно-39",
+  "ref": [800, 2000],
+  "thickness": 36,
+  "fixX": [[0, 125], [675.5, 800]],
+  "fixY": [[0, 121.5], [1880.5, 2000]],
+  "edge": {"radius": 2},
+  "handle": {"y": 995, "x": 68, "style": "square", "finish": "chrome"},
+  "hinges": [187, 1812],
+  "layout": { "pane": 8,
+    "split": "x",
+    "at": [125, 675.5],
+    "sep": "joint",
+    "grain": "v",
+    "radius": 1.5,
+    "cells": [
+      {},
+      {
+        "split": "y",
+        "at": [121.5, 1880.5],
+        "sep": "joint",
+        "grain": "h",
+        "cells": [
+          {},
+          {
+            "split": "y",
+            "at": [321, 556.5, 880, 1116, 1440, 1675.5],
+            "sep": "joint",
+            "level": -3,
+            "cells": [
+              {},
+              {"split": "x", "at": [501], "sep": "joint", "cells": [{"glass": true}, {"grain": "v"}]},
+              {},
+              {"split": "x", "at": [302.5], "sep": "joint", "cells": [{"grain": "v"}, {"glass": true}]},
+              {},
+              {"split": "x", "at": [501], "sep": "joint", "cells": [{"glass": true}, {"grain": "v"}]},
+              {}
+            ]
+          },
+          {}
+        ]
+      },
+      {}
+    ]
+  }
+}

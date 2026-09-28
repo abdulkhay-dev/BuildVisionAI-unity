@@ -1,0 +1,30 @@
+[
+ {
+  "id": "real-oak",
+  "name": "Real Oak",
+  "line": "ЕвроШпон",
+  "material": "door_real_oak",
+  "color": "#c59763"
+ },
+ {
+  "id": "milk-oak",
+  "name": "Milk Oak",
+  "line": "ЕвроШпон",
+  "material": "door_milk_oak",
+  "color": "#e1e0e5"
+ },
+ {
+  "id": "brown-oak",
+  "name": "Brown Oak",
+  "line": "ЕвроШпон",
+  "material": "door_brown_oak",
+  "color": "#583724"
+ },
+ {
+  "id": "thermo-oak",
+  "name": "Thermo Oak",
+  "line": "ЕвроШпон",
+  "material": "door_thermo_oak",
+  "color": "#3b2720"
+ }
+]

@@ -1,0 +1,16 @@
+{
+  "id": "orbita-plyus-st-hud",
+  "name": "Орбита плюс СТ-Худ.",
+  "ref": [800, 2000],
+  "thickness": 36,
+  "fixX": [[0, 158], [655, 800]],
+  "fixY": [[0, 226], [1756, 2000]],
+  "edge": {"radius": 2},
+  "handle": {"y": 930, "x": 65, "style": "round", "finish": "gold"},
+  "hinges": [189, 1821],
+  "layout": {"grain": "v"},
+  "parts": [
+    {"type": "groove", "width": 16, "depth": 4, "profile": "u", "path": "M 158 1756 L 158 226 C 230 226 260.5 111 406.5 111 C 552.5 111 583 226 655 226 L 655 1756 C 583 1756 552.5 1871.5 406.5 1871.5 C 260.5 1871.5 230 1756 158 1756 Z"},
+    {"type": "glass", "shape": {"ellipse": [404, 992, 122.5, 764]}, "bead": "none", "role": "art:doorglass_orbita_plyus_st_hud"}
+  ]
+}

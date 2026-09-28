@@ -1,0 +1,2522 @@
+{
+ "format": "house/1",
+ "meta": {
+  "name": "Современный дом: 12 интерьеров",
+  "description": "Двухэтажный дом 17 × 12 м по референсу из 12 интерьеров: гостиная и кухня, кабинет, прихожая, прачечная, кинотеатр; наверху спальня с гардеробной, ванной и балконом, детская, гостевая.",
+  "author": "House"
+ },
+ "site": {
+  "landscape": "garden",
+  "sunAzimuth": 215,
+  "sunElevation": 32
+ },
+ "levels": [
+  {
+   "id": "ground",
+   "name": "1 этаж",
+   "elevation": 0.3,
+   "height": 3.0,
+   "slab": 0.3
+  },
+  {
+   "id": "upper",
+   "name": "2 этаж",
+   "elevation": 3.6,
+   "height": 2.9,
+   "slab": 0.3
+  }
+ ],
+ "walls": [
+  {
+   "id": "south",
+   "level": "ground",
+   "a": [
+    0,
+    0
+   ],
+   "b": [
+    17,
+    0
+   ],
+   "outside": "render#e4ded3",
+   "inside": "plaster_beige",
+   "plinth": 0.3
+  },
+  {
+   "id": "east",
+   "level": "ground",
+   "a": [
+    17,
+    0
+   ],
+   "b": [
+    17,
+    12
+   ],
+   "outside": "render#e4ded3",
+   "inside": "plaster_beige",
+   "plinth": 0.3
+  },
+  {
+   "id": "north",
+   "level": "ground",
+   "a": [
+    17,
+    12
+   ],
+   "b": [
+    0,
+    12
+   ],
+   "outside": "render#e4ded3",
+   "inside": "plaster_beige",
+   "plinth": 0.3
+  },
+  {
+   "id": "west",
+   "level": "ground",
+   "a": [
+    0,
+    12
+   ],
+   "b": [
+    0,
+    0
+   ],
+   "outside": "render#e4ded3",
+   "inside": "plaster_beige",
+   "plinth": 0.3
+  },
+  {
+   "id": "south_u",
+   "level": "upper",
+   "a": [
+    0,
+    0
+   ],
+   "b": [
+    17,
+    0
+   ],
+   "outside": "render#e4ded3",
+   "inside": "plaster_beige"
+  },
+  {
+   "id": "east_u",
+   "level": "upper",
+   "a": [
+    17,
+    0
+   ],
+   "b": [
+    17,
+    12
+   ],
+   "outside": "render#e4ded3",
+   "inside": "plaster_beige"
+  },
+  {
+   "id": "north_u",
+   "level": "upper",
+   "a": [
+    17,
+    12
+   ],
+   "b": [
+    0,
+    12
+   ],
+   "outside": "cladding_cedar",
+   "inside": "plaster_beige"
+  },
+  {
+   "id": "west_u",
+   "level": "upper",
+   "a": [
+    0,
+    12
+   ],
+   "b": [
+    0,
+    0
+   ],
+   "outside": "render#e4ded3",
+   "inside": "plaster_beige"
+  },
+  {
+   "id": "g_z48_w",
+   "level": "ground",
+   "a": [
+    0.4,
+    4.8
+   ],
+   "b": [
+    7.4,
+    4.8
+   ],
+   "kind": "interior",
+   "outside": "plaster_white",
+   "inside": "plaster_beige"
+  },
+  {
+   "id": "g_z48_e",
+   "level": "ground",
+   "a": [
+    7.4,
+    4.8
+   ],
+   "b": [
+    16.6,
+    4.8
+   ],
+   "kind": "interior",
+   "outside": "plaster_beige",
+   "inside": "plaster_beige"
+  },
+  {
+   "id": "g_x44",
+   "level": "ground",
+   "a": [
+    4.4,
+    0.4
+   ],
+   "b": [
+    4.4,
+    4.8
+   ],
+   "kind": "interior",
+   "outside": "plaster_white",
+   "inside": "plaster_beige"
+  },
+  {
+   "id": "g_x80",
+   "level": "ground",
+   "a": [
+    8.0,
+    0.4
+   ],
+   "b": [
+    8.0,
+    4.8
+   ],
+   "kind": "interior",
+   "outside": "plaster_beige",
+   "inside": "plaster_white"
+  },
+  {
+   "id": "g_x106",
+   "level": "ground",
+   "a": [
+    10.6,
+    0.4
+   ],
+   "b": [
+    10.6,
+    4.8
+   ],
+   "kind": "interior",
+   "outside": "wood_panels_dark",
+   "inside": "plaster_white"
+  },
+  {
+   "id": "g_x126",
+   "level": "ground",
+   "a": [
+    12.6,
+    4.8
+   ],
+   "b": [
+    12.6,
+    11.6
+   ],
+   "kind": "interior",
+   "outside": "plaster_white",
+   "inside": "plaster_beige"
+  },
+  {
+   "id": "u_x36_bath",
+   "level": "upper",
+   "a": [
+    3.6,
+    0.4
+   ],
+   "b": [
+    3.6,
+    5.2
+   ],
+   "kind": "interior",
+   "outside": "marble_beige",
+   "inside": "plaster_beige"
+  },
+  {
+   "id": "u_x36_cor",
+   "level": "upper",
+   "a": [
+    3.6,
+    5.2
+   ],
+   "b": [
+    3.6,
+    6.6
+   ],
+   "kind": "interior",
+   "outside": "plaster_beige",
+   "inside": "plaster_beige"
+  },
+  {
+   "id": "u_z66",
+   "level": "upper",
+   "a": [
+    0.4,
+    6.6
+   ],
+   "b": [
+    12.6,
+    6.6
+   ],
+   "kind": "interior",
+   "outside": "plaster_beige",
+   "inside": "plaster_beige"
+  },
+  {
+   "id": "u_z52",
+   "level": "upper",
+   "a": [
+    3.6,
+    5.2
+   ],
+   "b": [
+    12.6,
+    5.2
+   ],
+   "kind": "interior",
+   "outside": "plaster_beige",
+   "inside": "marble_beige"
+  },
+  {
+   "id": "u_x74_s",
+   "level": "upper",
+   "a": [
+    7.4,
+    0.4
+   ],
+   "b": [
+    7.4,
+    5.2
+   ],
+   "kind": "interior",
+   "outside": "plaster_beige",
+   "inside": "marble_beige"
+  },
+  {
+   "id": "u_x74_n",
+   "level": "upper",
+   "a": [
+    7.4,
+    6.6
+   ],
+   "b": [
+    7.4,
+    11.6
+   ],
+   "kind": "interior",
+   "outside": "paint_smooth#c9ced4",
+   "inside": "plaster_beige"
+  },
+  {
+   "id": "u_x126",
+   "level": "upper",
+   "a": [
+    12.6,
+    0.4
+   ],
+   "b": [
+    12.6,
+    11.6
+   ],
+   "kind": "interior",
+   "outside": "plaster_beige",
+   "inside": "plaster_beige"
+  }
+ ],
+ "openings": [
+  {
+   "id": "office_win",
+   "wall": "south",
+   "type": "window",
+   "at": 1.2,
+   "width": 2.0,
+   "height": 1.6,
+   "sill": 0.9,
+   "columns": 2,
+   "curtain": "none"
+  },
+  {
+   "id": "entry",
+   "wall": "south",
+   "type": "solidDoor",
+   "at": 5.7,
+   "width": 1.1,
+   "height": 2.4,
+   "hinge": "start",
+   "swing": 1
+  },
+  {
+   "id": "entry_side",
+   "wall": "south",
+   "type": "glazing",
+   "at": 6.95,
+   "width": 0.7,
+   "height": 2.4,
+   "sill": 0
+  },
+  {
+   "id": "laundry_win",
+   "wall": "south",
+   "type": "window",
+   "at": 8.9,
+   "width": 1.2,
+   "height": 1.2,
+   "sill": 1.1
+  },
+  {
+   "id": "stair_win",
+   "wall": "east",
+   "type": "glazing",
+   "at": 6.4,
+   "width": 2.6,
+   "height": 2.6,
+   "sill": 0.2,
+   "columns": 2
+  },
+  {
+   "id": "kitchen_glazing",
+   "wall": "north",
+   "type": "glazing",
+   "at": 6.8,
+   "width": 2.4,
+   "height": 2.6,
+   "sill": 0,
+   "columns": 2
+  },
+  {
+   "id": "living_glazing",
+   "wall": "north",
+   "type": "glazing",
+   "at": 10.2,
+   "width": 5.8,
+   "height": 2.7,
+   "sill": 0,
+   "columns": 3,
+   "curtain": "full",
+   "curtainFraction": 0.18
+  },
+  {
+   "id": "living_west",
+   "wall": "west",
+   "type": "glazing",
+   "at": 2.0,
+   "width": 3.0,
+   "height": 2.6,
+   "sill": 0,
+   "columns": 2
+  },
+  {
+   "id": "office_west",
+   "wall": "west",
+   "type": "window",
+   "at": 8.6,
+   "width": 2.2,
+   "height": 1.6,
+   "sill": 0.9,
+   "columns": 2,
+   "curtain": "none"
+  },
+  {
+   "id": "closet_win",
+   "wall": "south_u",
+   "type": "window",
+   "at": 1.4,
+   "width": 1.1,
+   "height": 1.4,
+   "sill": 1.0,
+   "curtain": "none"
+  },
+  {
+   "id": "bath_win",
+   "wall": "south_u",
+   "type": "window",
+   "at": 5.0,
+   "width": 1.2,
+   "height": 1.1,
+   "sill": 1.3
+  },
+  {
+   "id": "guest_win",
+   "wall": "south_u",
+   "type": "window",
+   "at": 9.0,
+   "width": 2.0,
+   "height": 1.6,
+   "sill": 0.8,
+   "columns": 2
+  },
+  {
+   "id": "hall_win_u",
+   "wall": "south_u",
+   "type": "window",
+   "at": 13.6,
+   "width": 2.0,
+   "height": 1.6,
+   "sill": 0.8,
+   "columns": 2
+  },
+  {
+   "id": "bed_glazing",
+   "wall": "north_u",
+   "type": "glazing",
+   "at": 12.6,
+   "width": 3.2,
+   "height": 2.5,
+   "sill": 0,
+   "columns": 2,
+   "curtain": "full",
+   "curtainFraction": 0.2
+  },
+  {
+   "id": "balcony_door",
+   "wall": "north_u",
+   "type": "entryDoor",
+   "at": 11.4,
+   "width": 1.0,
+   "height": 2.4,
+   "sill": 0
+  },
+  {
+   "id": "kids_win",
+   "wall": "north_u",
+   "type": "window",
+   "at": 5.4,
+   "width": 3.0,
+   "height": 1.6,
+   "sill": 0.7,
+   "columns": 3,
+   "curtain": "none"
+  },
+  {
+   "id": "bed_west",
+   "wall": "west_u",
+   "type": "window",
+   "at": 2.2,
+   "width": 2.4,
+   "height": 1.8,
+   "sill": 0.6,
+   "columns": 2,
+   "curtain": "full",
+   "curtainFraction": 0.25
+  },
+  {
+   "id": "hall_east_u",
+   "wall": "east_u",
+   "type": "window",
+   "at": 6.6,
+   "width": 2.4,
+   "height": 1.6,
+   "sill": 0.8,
+   "columns": 2
+  },
+  {
+   "id": "hall_living",
+   "wall": "g_z48_w",
+   "type": "hole",
+   "at": 4.9,
+   "width": 1.8,
+   "height": 2.5
+  },
+  {
+   "id": "laundry_door",
+   "wall": "g_z48_e",
+   "type": "door",
+   "at": 1.0,
+   "width": 0.9,
+   "height": 2.1,
+   "hinge": "start",
+   "swing": -1
+  },
+  {
+   "id": "cinema_door",
+   "wall": "g_z48_e",
+   "type": "door",
+   "at": 3.9,
+   "width": 0.9,
+   "height": 2.1,
+   "hinge": "start",
+   "swing": -1
+  },
+  {
+   "id": "office_door",
+   "wall": "g_x44",
+   "type": "door",
+   "at": 3.3,
+   "width": 0.9,
+   "height": 2.1,
+   "hinge": "end",
+   "swing": -1
+  },
+  {
+   "id": "kitchen_stair",
+   "wall": "g_x126",
+   "type": "hole",
+   "at": 0.35,
+   "width": 1.5,
+   "height": 2.5
+  },
+  {
+   "id": "bath_door",
+   "wall": "u_x36_bath",
+   "type": "door",
+   "at": 1.6,
+   "width": 0.9,
+   "height": 2.1,
+   "hinge": "start",
+   "swing": 1
+  },
+  {
+   "id": "closet_door",
+   "wall": "u_z66",
+   "type": "door",
+   "at": 0.8,
+   "width": 0.9,
+   "height": 2.1,
+   "hinge": "start",
+   "swing": -1
+  },
+  {
+   "id": "bed_door",
+   "wall": "u_z66",
+   "type": "door",
+   "at": 4.9,
+   "width": 0.9,
+   "height": 2.1,
+   "hinge": "end",
+   "swing": -1
+  },
+  {
+   "id": "kids_door",
+   "wall": "u_z66",
+   "type": "door",
+   "at": 8.0,
+   "width": 0.9,
+   "height": 2.1,
+   "hinge": "start",
+   "swing": -1
+  },
+  {
+   "id": "guest_door",
+   "wall": "u_z52",
+   "type": "door",
+   "at": 5.0,
+   "width": 0.9,
+   "height": 2.1,
+   "hinge": "end",
+   "swing": 1
+  },
+  {
+   "id": "corridor_hall",
+   "wall": "u_x126",
+   "type": "hole",
+   "at": 4.85,
+   "width": 1.7,
+   "height": 2.4
+  }
+ ],
+ "rooms": [
+  {
+   "id": "office",
+   "name": "Кабинет",
+   "level": "ground",
+   "type": "office",
+   "outline": [
+    [
+     0.4,
+     0.4
+    ],
+    [
+     4.4,
+     0.4
+    ],
+    [
+     4.4,
+     4.8
+    ],
+    [
+     0.4,
+     4.8
+    ]
+   ],
+   "floor": "oak_planks"
+  },
+  {
+   "id": "hall",
+   "name": "Прихожая",
+   "level": "ground",
+   "type": "hall",
+   "outline": [
+    [
+     4.4,
+     0.4
+    ],
+    [
+     8.0,
+     0.4
+    ],
+    [
+     8.0,
+     4.8
+    ],
+    [
+     4.4,
+     4.8
+    ]
+   ],
+   "floor": "porcelain_grey"
+  },
+  {
+   "id": "laundry",
+   "name": "Прачечная",
+   "level": "ground",
+   "type": "utility",
+   "outline": [
+    [
+     8.0,
+     0.4
+    ],
+    [
+     10.6,
+     0.4
+    ],
+    [
+     10.6,
+     4.8
+    ],
+    [
+     8.0,
+     4.8
+    ]
+   ],
+   "floor": "porcelain_grey"
+  },
+  {
+   "id": "cinema",
+   "name": "Кинотеатр",
+   "level": "ground",
+   "type": "other",
+   "outline": [
+    [
+     10.6,
+     0.4
+    ],
+    [
+     16.6,
+     0.4
+    ],
+    [
+     16.6,
+     4.8
+    ],
+    [
+     10.6,
+     4.8
+    ]
+   ],
+   "floor": "carpet_loop#4a4744",
+   "ceiling": "paint_smooth#3a3836"
+  },
+  {
+   "id": "living",
+   "name": "Гостиная",
+   "level": "ground",
+   "type": "living",
+   "outline": [
+    [
+     0.4,
+     4.8
+    ],
+    [
+     7.4,
+     4.8
+    ],
+    [
+     7.4,
+     11.6
+    ],
+    [
+     0.4,
+     11.6
+    ]
+   ],
+   "floor": "oak_planks"
+  },
+  {
+   "id": "kitchen",
+   "name": "Кухня",
+   "level": "ground",
+   "type": "kitchen",
+   "outline": [
+    [
+     7.4,
+     4.8
+    ],
+    [
+     12.6,
+     4.8
+    ],
+    [
+     12.6,
+     11.6
+    ],
+    [
+     7.4,
+     11.6
+    ]
+   ],
+   "floor": "porcelain_grey"
+  },
+  {
+   "id": "stair_hall",
+   "name": "Холл с лестницей",
+   "level": "ground",
+   "type": "hall",
+   "outline": [
+    [
+     12.6,
+     4.8
+    ],
+    [
+     16.6,
+     4.8
+    ],
+    [
+     16.6,
+     11.6
+    ],
+    [
+     12.6,
+     11.6
+    ]
+   ],
+   "floor": "oak_planks"
+  },
+  {
+   "id": "closet",
+   "name": "Гардеробная",
+   "level": "upper",
+   "type": "wardrobe",
+   "outline": [
+    [
+     0.4,
+     0.4
+    ],
+    [
+     3.6,
+     0.4
+    ],
+    [
+     3.6,
+     6.6
+    ],
+    [
+     0.4,
+     6.6
+    ]
+   ],
+   "floor": "oak_planks"
+  },
+  {
+   "id": "bath",
+   "name": "Ванная комната",
+   "level": "upper",
+   "type": "bathroom",
+   "outline": [
+    [
+     3.6,
+     0.4
+    ],
+    [
+     7.4,
+     0.4
+    ],
+    [
+     7.4,
+     5.2
+    ],
+    [
+     3.6,
+     5.2
+    ]
+   ],
+   "floor": "marble_beige"
+  },
+  {
+   "id": "guest",
+   "name": "Гостевая спальня",
+   "level": "upper",
+   "type": "bedroom",
+   "outline": [
+    [
+     7.4,
+     0.4
+    ],
+    [
+     12.6,
+     0.4
+    ],
+    [
+     12.6,
+     5.2
+    ],
+    [
+     7.4,
+     5.2
+    ]
+   ],
+   "floor": "oak_planks"
+  },
+  {
+   "id": "corridor",
+   "name": "Коридор",
+   "level": "upper",
+   "type": "corridor",
+   "outline": [
+    [
+     3.6,
+     5.2
+    ],
+    [
+     12.6,
+     5.2
+    ],
+    [
+     12.6,
+     6.6
+    ],
+    [
+     3.6,
+     6.6
+    ]
+   ],
+   "floor": "oak_planks"
+  },
+  {
+   "id": "bedroom",
+   "name": "Спальня",
+   "level": "upper",
+   "type": "bedroom",
+   "outline": [
+    [
+     0.4,
+     6.6
+    ],
+    [
+     7.4,
+     6.6
+    ],
+    [
+     7.4,
+     11.6
+    ],
+    [
+     0.4,
+     11.6
+    ]
+   ],
+   "floor": "oak_planks"
+  },
+  {
+   "id": "kids",
+   "name": "Детская комната",
+   "level": "upper",
+   "type": "bedroom",
+   "outline": [
+    [
+     7.4,
+     6.6
+    ],
+    [
+     12.6,
+     6.6
+    ],
+    [
+     12.6,
+     11.6
+    ],
+    [
+     7.4,
+     11.6
+    ]
+   ],
+   "floor": "laminate_light"
+  },
+  {
+   "id": "upper_hall",
+   "name": "Холл 2 этажа",
+   "level": "upper",
+   "type": "hall",
+   "outline": [
+    [
+     12.6,
+     0.4
+    ],
+    [
+     16.6,
+     0.4
+    ],
+    [
+     16.6,
+     11.6
+    ],
+    [
+     12.6,
+     11.6
+    ]
+   ],
+   "floor": "oak_planks"
+  }
+ ],
+ "roofs": [
+  {
+   "id": "main",
+   "type": "flat",
+   "outline": [
+    [
+     0.4,
+     0.4
+    ],
+    [
+     16.6,
+     0.4
+    ],
+    [
+     16.6,
+     11.6
+    ],
+    [
+     0.4,
+     11.6
+    ]
+   ],
+   "overhang": 0,
+   "parapet": 0,
+   "material": "coping"
+  }
+ ],
+ "stairs": [
+  {
+   "id": "stair",
+   "type": "u",
+   "from": "ground",
+   "to": "upper",
+   "start": [
+    13.35,
+    5.45
+   ],
+   "direction": 0,
+   "width": 1.1,
+   "going": 0.27,
+   "risers": 18,
+   "firstFlight": 9,
+   "turn": "right",
+   "gap": 0.1,
+   "landing": 1.15,
+   "style": "floating_oak"
+  }
+ ],
+ "elements": [
+  {
+   "id": "balcony",
+   "type": "platform",
+   "min": [
+    0.6,
+    3.3000000000000003,
+    12.0
+   ],
+   "max": [
+    6.6,
+    3.6,
+    14.2
+   ],
+   "material": "stucco",
+   "top": "deck_boards",
+   "bottom": "soffit"
+  },
+  {
+   "id": "balcony_rail",
+   "type": "railing",
+   "path": [
+    [
+     0.6,
+     12.0
+    ],
+    [
+     0.6,
+     14.2
+    ],
+    [
+     6.6,
+     14.2
+    ],
+    [
+     6.6,
+     12.0
+    ]
+   ],
+   "y": 3.6,
+   "height": 1.05,
+   "style": "glass"
+  }
+ ],
+ "items": [
+  {
+   "id": "tv_console",
+   "model": "media_console_floating",
+   "level": "ground",
+   "position": [
+    3.0,
+    0.45,
+    4.86
+   ],
+   "rotation": 0
+  },
+  {
+   "id": "tv",
+   "model": "tv_flat_75",
+   "level": "ground",
+   "position": [
+    3.0,
+    1.45,
+    4.86
+   ],
+   "rotation": 0
+  },
+  {
+   "id": "sofa",
+   "model": "sofa_corner_lounge",
+   "level": "ground",
+   "position": [
+    3.2,
+    0.0,
+    9.55
+   ],
+   "rotation": 180
+  },
+  {
+   "id": "rug",
+   "model": "rug_living_abstract",
+   "level": "ground",
+   "position": [
+    3.1,
+    0.0,
+    7.75
+   ],
+   "rotation": 0
+  },
+  {
+   "id": "coffee_table",
+   "model": "coffee_table_drum",
+   "level": "ground",
+   "position": [
+    2.85,
+    0.0,
+    7.75
+   ],
+   "rotation": 0
+  },
+  {
+   "id": "coffee_decor",
+   "model": "decor_table_set",
+   "level": "ground",
+   "position": [
+    2.85,
+    0.4,
+    7.75
+   ],
+   "rotation": 20
+  },
+  {
+   "id": "pouf",
+   "model": "pouf_round_tufted",
+   "level": "ground",
+   "position": [
+    4.45,
+    0.0,
+    6.35
+   ],
+   "rotation": 0
+  },
+  {
+   "id": "arc_lamp",
+   "model": "floor_lamp_arc",
+   "level": "ground",
+   "position": [
+    5.55,
+    0.0,
+    9.4
+   ],
+   "rotation": 200
+  },
+  {
+   "id": "chandelier",
+   "model": "chandelier_rings",
+   "level": "ground",
+   "position": [
+    2.9,
+    3.0,
+    7.75
+   ],
+   "rotation": 0
+  },
+  {
+   "id": "art",
+   "model": "art_abstract_canvas",
+   "level": "ground",
+   "position": [
+    0.46,
+    1.55,
+    5.95
+   ],
+   "rotation": 90
+  },
+  {
+   "id": "plant_living",
+   "model": "plant_large",
+   "level": "ground",
+   "position": [
+    0.95,
+    0.0,
+    11.0
+   ],
+   "rotation": 135
+  },
+  {
+   "id": "plant_living2",
+   "model": "plant_ficus",
+   "level": "ground",
+   "position": [
+    0.95,
+    0.0,
+    5.35
+   ],
+   "rotation": 90
+  },
+  {
+   "id": "fridge",
+   "model": "kitchen_fridge_black",
+   "level": "ground",
+   "position": [
+    12.54,
+    0.0,
+    11.05
+   ],
+   "rotation": 270
+  },
+  {
+   "id": "oven",
+   "model": "kitchen_oven_column",
+   "level": "ground",
+   "position": [
+    12.54,
+    0.0,
+    10.3
+   ],
+   "rotation": 270
+  },
+  {
+   "id": "pantry",
+   "model": "kitchen_tall_cabinet",
+   "level": "ground",
+   "position": [
+    12.54,
+    0.0,
+    9.7
+   ],
+   "rotation": 270
+  },
+  {
+   "id": "base_1",
+   "model": "kitchen_cooktop_base",
+   "level": "ground",
+   "position": [
+    12.54,
+    0.0,
+    9.1
+   ],
+   "rotation": 270
+  },
+  {
+   "id": "base_2",
+   "model": "kitchen_sink_base",
+   "level": "ground",
+   "position": [
+    12.54,
+    0.0,
+    8.2
+   ],
+   "rotation": 270
+  },
+  {
+   "id": "base_3",
+   "model": "kitchen_base_600",
+   "level": "ground",
+   "position": [
+    12.54,
+    0.0,
+    7.45
+   ],
+   "rotation": 270
+  },
+  {
+   "id": "wall_cab_1",
+   "model": "kitchen_wall_cabinet",
+   "level": "ground",
+   "position": [
+    12.54,
+    1.95,
+    8.65
+   ],
+   "rotation": 270
+  },
+  {
+   "id": "wall_cab_2",
+   "model": "kitchen_wall_cabinet",
+   "level": "ground",
+   "position": [
+    12.54,
+    1.95,
+    7.75
+   ],
+   "rotation": 270
+  },
+  {
+   "id": "island",
+   "model": "kitchen_island_waterfall",
+   "level": "ground",
+   "position": [
+    10.2,
+    0.0,
+    8.9
+   ],
+   "rotation": 270
+  },
+  {
+   "id": "stool_1",
+   "model": "bar_stool_upholstered",
+   "level": "ground",
+   "position": [
+    9.2,
+    0.0,
+    8.0
+   ],
+   "rotation": 90
+  },
+  {
+   "id": "stool_2",
+   "model": "bar_stool_upholstered",
+   "level": "ground",
+   "position": [
+    9.2,
+    0.0,
+    8.9
+   ],
+   "rotation": 90
+  },
+  {
+   "id": "stool_3",
+   "model": "bar_stool_upholstered",
+   "level": "ground",
+   "position": [
+    9.2,
+    0.0,
+    9.8
+   ],
+   "rotation": 90
+  },
+  {
+   "id": "pendant_1",
+   "model": "pendant_cylinder_black",
+   "level": "ground",
+   "position": [
+    10.2,
+    3.0,
+    7.9
+   ],
+   "rotation": 0
+  },
+  {
+   "id": "pendant_2",
+   "model": "pendant_cylinder_black",
+   "level": "ground",
+   "position": [
+    10.2,
+    3.0,
+    8.9
+   ],
+   "rotation": 0
+  },
+  {
+   "id": "pendant_3",
+   "model": "pendant_cylinder_black",
+   "level": "ground",
+   "position": [
+    10.2,
+    3.0,
+    9.9
+   ],
+   "rotation": 0
+  },
+  {
+   "id": "plant_kitchen",
+   "model": "plant_ficus",
+   "level": "ground",
+   "position": [
+    7.9,
+    0.0,
+    11.1
+   ],
+   "rotation": 180
+  },
+  {
+   "id": "hall_wardrobe_1",
+   "model": "wardrobe_hall_flush",
+   "level": "ground",
+   "position": [
+    4.46,
+    0.0,
+    1.0
+   ],
+   "rotation": 90
+  },
+  {
+   "id": "hall_wardrobe_2",
+   "model": "wardrobe_hall_flush",
+   "level": "ground",
+   "position": [
+    4.46,
+    0.0,
+    2.0
+   ],
+   "rotation": 90
+  },
+  {
+   "id": "hall_console",
+   "model": "console_hall_floating",
+   "level": "ground",
+   "position": [
+    7.94,
+    0.85,
+    3.6
+   ],
+   "rotation": 270
+  },
+  {
+   "id": "hall_mirror",
+   "model": "mirror_round_backlit",
+   "level": "ground",
+   "position": [
+    7.94,
+    1.65,
+    3.6
+   ],
+   "rotation": 270
+  },
+  {
+   "id": "hall_bench",
+   "model": "bench_entry_upholstered",
+   "level": "ground",
+   "position": [
+    7.94,
+    0.0,
+    1.7
+   ],
+   "rotation": 270
+  },
+  {
+   "id": "hall_hooks",
+   "model": "coat_hooks_wall",
+   "level": "ground",
+   "position": [
+    7.94,
+    1.5,
+    1.7
+   ],
+   "rotation": 270
+  },
+  {
+   "id": "hall_runner",
+   "model": "rug_runner",
+   "level": "ground",
+   "position": [
+    6.25,
+    0.0,
+    2.8
+   ],
+   "rotation": 90
+  },
+  {
+   "id": "hall_mat",
+   "model": "doormat_entry",
+   "level": "ground",
+   "position": [
+    6.25,
+    0.0,
+    0.85
+   ],
+   "rotation": 0
+  },
+  {
+   "id": "plant_hall",
+   "model": "plant_succulent",
+   "level": "ground",
+   "position": [
+    7.94,
+    1.02,
+    3.6
+   ],
+   "rotation": 270
+  },
+  {
+   "id": "bookcase_1",
+   "model": "bookcase_wall_led",
+   "level": "ground",
+   "position": [
+    1.4,
+    0.0,
+    4.74
+   ],
+   "rotation": 180
+  },
+  {
+   "id": "bookcase_2",
+   "model": "bookcase_wall_led",
+   "level": "ground",
+   "position": [
+    2.6,
+    0.0,
+    4.74
+   ],
+   "rotation": 180
+  },
+  {
+   "id": "desk",
+   "model": "desk_executive",
+   "level": "ground",
+   "position": [
+    2.3,
+    0.0,
+    1.75
+   ],
+   "rotation": 0
+  },
+  {
+   "id": "office_chair",
+   "model": "office_chair_mesh",
+   "level": "ground",
+   "position": [
+    2.3,
+    0.0,
+    2.55
+   ],
+   "rotation": 180
+  },
+  {
+   "id": "monitor",
+   "model": "monitor_27",
+   "level": "ground",
+   "position": [
+    2.3,
+    0.75,
+    1.55
+   ],
+   "rotation": 0
+  },
+  {
+   "id": "office_lamp",
+   "model": "desk_lamp",
+   "level": "ground",
+   "position": [
+    3.0,
+    0.75,
+    1.55
+   ],
+   "rotation": 200
+  },
+  {
+   "id": "keyboard",
+   "model": "keyboard_mouse_pad",
+   "level": "ground",
+   "position": [
+    2.3,
+    0.75,
+    1.9
+   ],
+   "rotation": 0
+  },
+  {
+   "id": "plant_office",
+   "model": "plant_large",
+   "level": "ground",
+   "position": [
+    0.95,
+    0.0,
+    0.95
+   ],
+   "rotation": 45
+  },
+  {
+   "id": "laundry_run",
+   "model": "laundry_counter_run",
+   "level": "ground",
+   "position": [
+    10.54,
+    0.0,
+    2.6
+   ],
+   "rotation": 270
+  },
+  {
+   "id": "laundry_upper",
+   "model": "laundry_wall_units",
+   "level": "ground",
+   "position": [
+    10.54,
+    1.95,
+    2.6
+   ],
+   "rotation": 270
+  },
+  {
+   "id": "washer",
+   "model": "washer_front_white",
+   "level": "ground",
+   "position": [
+    10.54,
+    0.0,
+    3.2
+   ],
+   "rotation": 270
+  },
+  {
+   "id": "dryer",
+   "model": "dryer_front_white",
+   "level": "ground",
+   "position": [
+    10.54,
+    0.0,
+    2.6
+   ],
+   "rotation": 270
+  },
+  {
+   "id": "laundry_basket",
+   "model": "laundry_basket_white",
+   "level": "ground",
+   "position": [
+    8.45,
+    0.0,
+    1.4
+   ],
+   "rotation": 90
+  },
+  {
+   "id": "screen",
+   "model": "cinema_screen_wall",
+   "level": "ground",
+   "position": [
+    10.66,
+    1.55,
+    2.6
+   ],
+   "rotation": 90
+  },
+  {
+   "id": "cinema_console",
+   "model": "media_console_low_black",
+   "level": "ground",
+   "position": [
+    10.66,
+    0.0,
+    2.6
+   ],
+   "rotation": 90
+  },
+  {
+   "id": "cinema_sofa",
+   "model": "sofa_theater_sectional",
+   "level": "ground",
+   "position": [
+    15.9,
+    0.0,
+    2.6
+   ],
+   "rotation": 270
+  },
+  {
+   "id": "cinema_table",
+   "model": "coffee_table_rect_black",
+   "level": "ground",
+   "position": [
+    12.9,
+    0.0,
+    2.6
+   ],
+   "rotation": 90
+  },
+  {
+   "id": "cinema_rug",
+   "model": "rug_cinema",
+   "level": "ground",
+   "position": [
+    13.3,
+    0.0,
+    2.6
+   ],
+   "rotation": 90
+  },
+  {
+   "id": "panel_s1",
+   "model": "acoustic_panel_dark",
+   "level": "ground",
+   "position": [
+    11.2,
+    1.3,
+    0.46
+   ],
+   "rotation": 0
+  },
+  {
+   "id": "panel_s2",
+   "model": "acoustic_panel_dark",
+   "level": "ground",
+   "position": [
+    11.9,
+    1.3,
+    0.46
+   ],
+   "rotation": 0
+  },
+  {
+   "id": "panel_s3",
+   "model": "acoustic_panel_dark",
+   "level": "ground",
+   "position": [
+    12.6,
+    1.3,
+    0.46
+   ],
+   "rotation": 0
+  },
+  {
+   "id": "panel_s4",
+   "model": "acoustic_panel_dark",
+   "level": "ground",
+   "position": [
+    13.3,
+    1.3,
+    0.46
+   ],
+   "rotation": 0
+  },
+  {
+   "id": "panel_s5",
+   "model": "acoustic_panel_dark",
+   "level": "ground",
+   "position": [
+    14.0,
+    1.3,
+    0.46
+   ],
+   "rotation": 0
+  },
+  {
+   "id": "panel_n1",
+   "model": "acoustic_panel_dark",
+   "level": "ground",
+   "position": [
+    12.8,
+    1.3,
+    4.74
+   ],
+   "rotation": 180
+  },
+  {
+   "id": "panel_n2",
+   "model": "acoustic_panel_dark",
+   "level": "ground",
+   "position": [
+    13.5,
+    1.3,
+    4.74
+   ],
+   "rotation": 180
+  },
+  {
+   "id": "panel_n3",
+   "model": "acoustic_panel_dark",
+   "level": "ground",
+   "position": [
+    14.2,
+    1.3,
+    4.74
+   ],
+   "rotation": 180
+  },
+  {
+   "id": "panel_n4",
+   "model": "acoustic_panel_dark",
+   "level": "ground",
+   "position": [
+    14.9,
+    1.3,
+    4.74
+   ],
+   "rotation": 180
+  },
+  {
+   "id": "sconce_s1",
+   "model": "sconce_up_down",
+   "level": "ground",
+   "position": [
+    14.8,
+    1.9,
+    0.46
+   ],
+   "rotation": 0
+  },
+  {
+   "id": "sconce_s2",
+   "model": "sconce_up_down",
+   "level": "ground",
+   "position": [
+    16.0,
+    1.9,
+    0.46
+   ],
+   "rotation": 0
+  },
+  {
+   "id": "bed",
+   "model": "bed_king_panel",
+   "level": "upper",
+   "position": [
+    7.34,
+    0.0,
+    9.15
+   ],
+   "rotation": 270
+  },
+  {
+   "id": "nightstand_l",
+   "model": "nightstand_float_dark",
+   "level": "upper",
+   "position": [
+    7.34,
+    0.0,
+    7.68
+   ],
+   "rotation": 270
+  },
+  {
+   "id": "nightstand_r",
+   "model": "nightstand_float_dark",
+   "level": "upper",
+   "position": [
+    7.34,
+    0.0,
+    10.62
+   ],
+   "rotation": 270
+  },
+  {
+   "id": "lamp_l",
+   "model": "table_lamp_drum",
+   "level": "upper",
+   "position": [
+    7.12,
+    0.5,
+    7.68
+   ],
+   "rotation": 270
+  },
+  {
+   "id": "lamp_r",
+   "model": "table_lamp_drum",
+   "level": "upper",
+   "position": [
+    7.12,
+    0.5,
+    10.62
+   ],
+   "rotation": 270
+  },
+  {
+   "id": "bed_art",
+   "model": "art_ink_framed",
+   "level": "upper",
+   "position": [
+    7.34,
+    1.75,
+    9.15
+   ],
+   "rotation": 270
+  },
+  {
+   "id": "bed_rug",
+   "model": "rug_bedroom",
+   "level": "upper",
+   "position": [
+    5.6,
+    0.0,
+    9.15
+   ],
+   "rotation": 90
+  },
+  {
+   "id": "plant_bed",
+   "model": "plant_large",
+   "level": "upper",
+   "position": [
+    0.95,
+    0.0,
+    11.1
+   ],
+   "rotation": 135
+  },
+  {
+   "id": "closet_w1",
+   "model": "closet_shelf_unit",
+   "level": "upper",
+   "position": [
+    0.4,
+    0.0,
+    0.95
+   ],
+   "rotation": 90
+  },
+  {
+   "id": "closet_w2",
+   "model": "closet_hanging_unit",
+   "level": "upper",
+   "position": [
+    0.4,
+    0.0,
+    1.95
+   ],
+   "rotation": 90
+  },
+  {
+   "id": "closet_w3",
+   "model": "closet_hanging_unit",
+   "level": "upper",
+   "position": [
+    0.4,
+    0.0,
+    2.95
+   ],
+   "rotation": 90
+  },
+  {
+   "id": "closet_w4",
+   "model": "closet_shelf_unit",
+   "level": "upper",
+   "position": [
+    0.4,
+    0.0,
+    3.95
+   ],
+   "rotation": 90
+  },
+  {
+   "id": "closet_w5",
+   "model": "closet_hanging_unit",
+   "level": "upper",
+   "position": [
+    0.4,
+    0.0,
+    4.95
+   ],
+   "rotation": 90
+  },
+  {
+   "id": "closet_w6",
+   "model": "closet_shelf_unit",
+   "level": "upper",
+   "position": [
+    0.4,
+    0.0,
+    5.95
+   ],
+   "rotation": 90
+  },
+  {
+   "id": "closet_e1",
+   "model": "closet_hanging_unit",
+   "level": "upper",
+   "position": [
+    3.54,
+    0.0,
+    3.5
+   ],
+   "rotation": 270
+  },
+  {
+   "id": "closet_e2",
+   "model": "closet_shelf_unit",
+   "level": "upper",
+   "position": [
+    3.54,
+    0.0,
+    4.5
+   ],
+   "rotation": 270
+  },
+  {
+   "id": "closet_e3",
+   "model": "closet_hanging_unit",
+   "level": "upper",
+   "position": [
+    3.54,
+    0.0,
+    5.5
+   ],
+   "rotation": 270
+  },
+  {
+   "id": "closet_ottoman",
+   "model": "ottoman_rect_tufted",
+   "level": "upper",
+   "position": [
+    2.0,
+    0.0,
+    3.3
+   ],
+   "rotation": 90
+  },
+  {
+   "id": "vanity",
+   "model": "vanity_float_double",
+   "level": "upper",
+   "position": [
+    5.5,
+    0.6,
+    5.14
+   ],
+   "rotation": 180
+  },
+  {
+   "id": "bath_mirror",
+   "model": "mirror_led_rect",
+   "level": "upper",
+   "position": [
+    5.5,
+    1.55,
+    5.14
+   ],
+   "rotation": 180
+  },
+  {
+   "id": "shower",
+   "model": "shower_glass_black",
+   "level": "upper",
+   "position": [
+    7.34,
+    0.0,
+    1.1
+   ],
+   "rotation": 270
+  },
+  {
+   "id": "toilet",
+   "model": "toilet_wall_hung",
+   "level": "upper",
+   "position": [
+    7.34,
+    0.0,
+    3.0
+   ],
+   "rotation": 270
+  },
+  {
+   "id": "towel",
+   "model": "towel_ladder_black",
+   "level": "upper",
+   "position": [
+    3.66,
+    1.0,
+    4.2
+   ],
+   "rotation": 90
+  },
+  {
+   "id": "bath_mat",
+   "model": "bath_mat",
+   "level": "upper",
+   "position": [
+    5.4,
+    0.0,
+    3.9
+   ],
+   "rotation": 0
+  },
+  {
+   "id": "kids_bed",
+   "model": "bed_single_storage",
+   "level": "upper",
+   "position": [
+    12.54,
+    0.0,
+    10.35
+   ],
+   "rotation": 270
+  },
+  {
+   "id": "poster_1",
+   "model": "poster_rocket",
+   "level": "upper",
+   "position": [
+    12.54,
+    1.55,
+    9.35
+   ],
+   "rotation": 270
+  },
+  {
+   "id": "poster_2",
+   "model": "poster_rocket_2",
+   "level": "upper",
+   "position": [
+    12.54,
+    1.55,
+    10.05
+   ],
+   "rotation": 270
+  },
+  {
+   "id": "poster_3",
+   "model": "poster_rocket_3",
+   "level": "upper",
+   "position": [
+    12.54,
+    1.55,
+    10.75
+   ],
+   "rotation": 270
+  },
+  {
+   "id": "kids_desk",
+   "model": "desk_kids_wall",
+   "level": "upper",
+   "position": [
+    7.46,
+    0.0,
+    9.3
+   ],
+   "rotation": 90
+  },
+  {
+   "id": "kids_chair",
+   "model": "chair_kids_swivel",
+   "level": "upper",
+   "position": [
+    8.25,
+    0.0,
+    9.3
+   ],
+   "rotation": 270
+  },
+  {
+   "id": "kids_shelf",
+   "model": "shelf_open_kids",
+   "level": "upper",
+   "position": [
+    12.54,
+    0.0,
+    7.7
+   ],
+   "rotation": 270
+  },
+  {
+   "id": "bean_bag",
+   "model": "bean_bag_blue",
+   "level": "upper",
+   "position": [
+    10.2,
+    0.0,
+    7.8
+   ],
+   "rotation": 0
+  },
+  {
+   "id": "kids_rug",
+   "model": "rug_round_blue",
+   "level": "upper",
+   "position": [
+    10.0,
+    0.0,
+    9.2
+   ],
+   "rotation": 0
+  },
+  {
+   "id": "guest_bed",
+   "model": "bed_modern",
+   "level": "upper",
+   "position": [
+    12.54,
+    0.0,
+    2.8
+   ],
+   "rotation": 270
+  },
+  {
+   "id": "guest_ns",
+   "model": "nightstand_classic",
+   "level": "upper",
+   "position": [
+    12.35,
+    0.0,
+    1.45
+   ],
+   "rotation": 270
+  },
+  {
+   "id": "guest_art",
+   "model": "picture_frame_landscape",
+   "level": "upper",
+   "position": [
+    12.54,
+    1.6,
+    2.8
+   ],
+   "rotation": 270
+  },
+  {
+   "id": "plant_upper",
+   "model": "plant_ficus",
+   "level": "upper",
+   "position": [
+    16.1,
+    0.0,
+    11.1
+   ],
+   "rotation": 225
+  },
+  {
+   "id": "balcony_chair_1",
+   "model": "lounge_chair_rattan",
+   "level": "upper",
+   "position": [
+    2.0,
+    0.0,
+    13.3
+   ],
+   "rotation": 0
+  },
+  {
+   "id": "balcony_chair_2",
+   "model": "lounge_chair_rattan",
+   "level": "upper",
+   "position": [
+    3.9,
+    0.0,
+    13.3
+   ],
+   "rotation": 0
+  },
+  {
+   "id": "balcony_table",
+   "model": "side_table_round_wood",
+   "level": "upper",
+   "position": [
+    2.95,
+    0.0,
+    13.45
+   ],
+   "rotation": 0
+  },
+  {
+   "id": "balcony_plant",
+   "model": "plant_large",
+   "level": "upper",
+   "position": [
+    6.1,
+    0.0,
+    12.5
+   ],
+   "rotation": 0
+  }
+ ],
+ "lights": [
+  {
+   "id": "chandelier",
+   "type": "point",
+   "level": "ground",
+   "position": [
+    2.9,
+    2.2,
+    7.75
+   ],
+   "color": "warm",
+   "intensity": 1.4,
+   "range": 8,
+   "shadows": true
+  },
+  {
+   "id": "arc_lamp",
+   "type": "point",
+   "level": "ground",
+   "position": [
+    4.9,
+    1.7,
+    7.6
+   ],
+   "color": "warm",
+   "intensity": 0.6,
+   "range": 4,
+   "shadows": false
+  },
+  {
+   "id": "island",
+   "type": "point",
+   "level": "ground",
+   "position": [
+    10.2,
+    2.2,
+    8.9
+   ],
+   "color": "warm",
+   "intensity": 1.2,
+   "range": 6,
+   "shadows": true
+  },
+  {
+   "id": "hall_mirror",
+   "type": "point",
+   "level": "ground",
+   "position": [
+    7.6,
+    1.65,
+    3.6
+   ],
+   "color": "warm",
+   "intensity": 0.35,
+   "range": 3,
+   "shadows": false
+  },
+  {
+   "id": "office",
+   "type": "point",
+   "level": "ground",
+   "position": [
+    2.3,
+    2.3,
+    2.5
+   ],
+   "color": "warm",
+   "intensity": 0.8,
+   "range": 6,
+   "shadows": false
+  },
+  {
+   "id": "cinema_screen",
+   "type": "point",
+   "level": "ground",
+   "position": [
+    11.2,
+    1.5,
+    2.6
+   ],
+   "color": "#cfe0f0",
+   "intensity": 0.5,
+   "range": 5,
+   "shadows": false
+  },
+  {
+   "id": "bed_l",
+   "type": "point",
+   "level": "upper",
+   "position": [
+    7.0,
+    0.8,
+    7.75
+   ],
+   "color": "warm",
+   "intensity": 0.35,
+   "range": 3,
+   "shadows": false
+  },
+  {
+   "id": "bed_r",
+   "type": "point",
+   "level": "upper",
+   "position": [
+    7.0,
+    0.8,
+    10.55
+   ],
+   "color": "warm",
+   "intensity": 0.35,
+   "range": 3,
+   "shadows": false
+  },
+  {
+   "id": "bath_mirror",
+   "type": "point",
+   "level": "upper",
+   "position": [
+    5.5,
+    1.6,
+    4.9
+   ],
+   "color": "warm",
+   "intensity": 0.45,
+   "range": 3.5,
+   "shadows": false
+  },
+  {
+   "id": "closet",
+   "type": "point",
+   "level": "upper",
+   "position": [
+    2.0,
+    2.3,
+    3.5
+   ],
+   "color": "warm",
+   "intensity": 0.7,
+   "range": 5,
+   "shadows": false
+  }
+ ],
+ "views": [
+  {
+   "name": "Гостиная",
+   "type": "walk",
+   "position": [
+    6.6,
+    0.3,
+    5.6
+   ],
+   "yaw": 315,
+   "pitch": -6
+  },
+  {
+   "name": "Кухня",
+   "type": "walk",
+   "position": [
+    7.9,
+    0.3,
+    6.0
+   ],
+   "yaw": 45,
+   "pitch": -6
+  },
+  {
+   "name": "Спальня",
+   "type": "walk",
+   "position": [
+    1.2,
+    3.6,
+    7.1
+   ],
+   "yaw": 60,
+   "pitch": -6
+  },
+  {
+   "name": "Кабинет",
+   "type": "walk",
+   "position": [
+    2.3,
+    0.3,
+    4.4
+   ],
+   "yaw": 180,
+   "pitch": -8
+  },
+  {
+   "name": "Ванная комната",
+   "type": "walk",
+   "position": [
+    4.0,
+    3.6,
+    0.8
+   ],
+   "yaw": 30,
+   "pitch": -8
+  },
+  {
+   "name": "Детская комната",
+   "type": "walk",
+   "position": [
+    7.9,
+    3.6,
+    7.1
+   ],
+   "yaw": 60,
+   "pitch": -8
+  },
+  {
+   "name": "Прихожая",
+   "type": "walk",
+   "position": [
+    6.2,
+    0.3,
+    4.4
+   ],
+   "yaw": 180,
+   "pitch": -6
+  },
+  {
+   "name": "Гардеробная",
+   "type": "walk",
+   "position": [
+    2.0,
+    3.6,
+    6.3
+   ],
+   "yaw": 180,
+   "pitch": -6
+  },
+  {
+   "name": "Кинотеатр",
+   "type": "walk",
+   "position": [
+    16.3,
+    0.3,
+    4.4
+   ],
+   "yaw": 245,
+   "pitch": -8
+  },
+  {
+   "name": "Прачечная",
+   "type": "walk",
+   "position": [
+    8.4,
+    0.3,
+    1.0
+   ],
+   "yaw": 45,
+   "pitch": -6
+  },
+  {
+   "name": "Балкон",
+   "type": "walk",
+   "position": [
+    6.2,
+    3.6,
+    12.3
+   ],
+   "yaw": 295,
+   "pitch": -6
+  }
+ ]
+}

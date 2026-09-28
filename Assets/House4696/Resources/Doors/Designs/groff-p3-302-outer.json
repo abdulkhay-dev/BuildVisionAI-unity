@@ -1,0 +1,242 @@
+{
+  "id": "groff-p3-302-outer",
+  "name": "GROFF P3-302 (снаружи): дизайн-панель WINORIT 10 мм",
+  "ref": [800, 2000],
+  "thickness": 11,
+  "edge": {"radius": 2},
+  "handle": {"y": 985, "x": 71},
+  "layout": {"grain": "v"},
+  "parts": [
+    {"type": "groove", "path": "M 152 0 L 152 2000", "width": 8, "depth": 2.5, "profile": "u", "face": "front"},
+    {
+      "type": "groove",
+      "path": "M 646 0 L 646 685.7 A 646.8 646.8 0 0 1 646 1314.3 L 646 2000",
+      "width": 8,
+      "depth": 2.5,
+      "profile": "u",
+      "face": "front"
+    },
+    {"type": "groove", "path": "M 0 1845.8 L 800 1845.8", "width": 8, "depth": 2.5, "profile": "u", "face": "front"},
+    {"type": "groove", "path": "M 0 156.7 L 800 156.7", "width": 8, "depth": 2.5, "profile": "u", "face": "front"},
+    {"type": "groove", "path": "M 199 215 L 199 1791", "width": 22, "depth": 4, "profile": "u", "face": "front"},
+    {"type": "groove", "path": "M 232 247 L 232 1760", "width": 10, "depth": 3, "profile": "u", "face": "front"},
+    {
+      "type": "groove",
+      "path": "M 199 1791 L 591 1791 L 591 1405.1 A 570 570 0 0 1 199 1569.9",
+      "width": 22,
+      "depth": 4,
+      "profile": "u",
+      "face": "front"
+    },
+    {
+      "type": "groove",
+      "path": "M 232 1760 L 563 1760 L 563 1472.5 A 602 602 0 0 1 232 1600.5",
+      "width": 10,
+      "depth": 3,
+      "profile": "u",
+      "face": "front"
+    },
+    {
+      "type": "groove",
+      "path": "M 199 215 L 591 215 L 591 594.9 A 570 570 0 0 0 199 430.1",
+      "width": 22,
+      "depth": 4,
+      "profile": "u",
+      "face": "front"
+    },
+    {
+      "type": "groove",
+      "path": "M 232 247 L 563 247 L 563 527.5 A 602 602 0 0 0 232 399.5",
+      "width": 10,
+      "depth": 3,
+      "profile": "u",
+      "face": "front"
+    },
+    {
+      "type": "groove",
+      "path": "M 199 1451.9 A 452 452 0 0 0 199 548.1",
+      "width": 22,
+      "depth": 4,
+      "profile": "u",
+      "face": "front"
+    },
+    {
+      "type": "groove",
+      "path": "M 199 1427.9 A 428 428 0 0 0 199 572.1",
+      "width": 10,
+      "depth": 3,
+      "profile": "u",
+      "face": "front"
+    },
+    {
+      "type": "groove",
+      "path": "M 232 1224.1 A 228 228 0 0 0 232 775.9",
+      "width": 22,
+      "depth": 4,
+      "profile": "u",
+      "face": "front"
+    },
+    {
+      "type": "groove",
+      "path": "M 232 1116.7 A 124 124 0 0 0 232 883.3",
+      "width": 22,
+      "depth": 4,
+      "profile": "u",
+      "face": "front"
+    },
+    {
+      "type": "groove",
+      "path": "M 232 1084.1 A 94 94 0 0 0 232 915.9",
+      "width": 10,
+      "depth": 3,
+      "profile": "u",
+      "face": "front"
+    },
+    {
+      "type": "groove",
+      "path": "M 232 1254.6 A 258 258 0 0 0 447.4 1017.8",
+      "width": 10,
+      "depth": 3,
+      "profile": "u",
+      "face": "front"
+    },
+    {
+      "type": "groove",
+      "path": "M 447.2 979.2 A 258 258 0 0 0 232 745.4",
+      "width": 10,
+      "depth": 3,
+      "profile": "u",
+      "face": "front"
+    },
+    {"type": "groove", "path": "M 408 979.2 L 641 979.2", "width": 10, "depth": 3, "profile": "u", "face": "front"},
+    {"type": "groove", "path": "M 396 1017.8 L 623 1017.8", "width": 10, "depth": 3, "profile": "u", "face": "front"},
+    {
+      "type": "groove",
+      "path": "M 220.1 1256.2 L 238.4 1412.2 A 415 415 0 0 0 355.5 1380.6 L 292.9 1236.6",
+      "width": 8,
+      "depth": 3,
+      "profile": "u",
+      "face": "front"
+    },
+    {
+      "type": "groove",
+      "path": "M 226.3 1309.3 A 311.4 311.4 0 0 0 263.2 1302.7 L 277.7 1362.9 A 373.4 373.4 0 0 0 304.1 1355.5 L 272.7 1257.6",
+      "width": 8,
+      "depth": 3,
+      "profile": "u",
+      "face": "front"
+    },
+    {
+      "type": "groove",
+      "path": "M 220.1 743.8 L 238.4 587.8 A 415 415 0 0 1 355.5 619.4 L 292.9 763.4",
+      "width": 8,
+      "depth": 3,
+      "profile": "u",
+      "face": "front"
+    },
+    {
+      "type": "groove",
+      "path": "M 226.3 690.7 A 311.4 311.4 0 0 1 263.2 697.3 L 277.7 637.1 A 373.4 373.4 0 0 1 304.1 644.5 L 272.7 742.4",
+      "width": 8,
+      "depth": 3,
+      "profile": "u",
+      "face": "front"
+    },
+    {
+      "type": "groove",
+      "path": "M 309.1 1228.8 L 381.6 1368.1 A 415 415 0 0 0 479.8 1297 L 370.2 1184.6",
+      "width": 8,
+      "depth": 3,
+      "profile": "u",
+      "face": "front"
+    },
+    {
+      "type": "groove",
+      "path": "M 333.8 1276.2 A 311.4 311.4 0 0 0 365.9 1257 L 400.9 1308.1 A 373.4 373.4 0 0 0 422.9 1291.9 L 358.8 1211.5",
+      "width": 8,
+      "depth": 3,
+      "profile": "u",
+      "face": "front"
+    },
+    {
+      "type": "groove",
+      "path": "M 309.1 771.2 L 381.6 631.9 A 415 415 0 0 1 479.8 703 L 370.2 815.4",
+      "width": 8,
+      "depth": 3,
+      "profile": "u",
+      "face": "front"
+    },
+    {
+      "type": "groove",
+      "path": "M 333.8 723.8 A 311.4 311.4 0 0 1 365.9 743 L 400.9 691.9 A 373.4 373.4 0 0 1 422.9 708.1 L 358.8 788.5",
+      "width": 8,
+      "depth": 3,
+      "profile": "u",
+      "face": "front"
+    },
+    {
+      "type": "groove",
+      "path": "M 387.1 1166.5 L 507 1267.9 A 415 415 0 0 0 567.3 1172.8 L 424.6 1107.4",
+      "width": 8,
+      "depth": 3,
+      "profile": "u",
+      "face": "front"
+    },
+    {
+      "type": "groove",
+      "path": "M 427.8 1201 A 311.4 311.4 0 0 0 448.7 1173.2 L 500.3 1207.7 A 373.4 373.4 0 0 0 513.7 1186.2 L 424.5 1134.9",
+      "width": 8,
+      "depth": 3,
+      "profile": "u",
+      "face": "front"
+    },
+    {
+      "type": "groove",
+      "path": "M 387.1 833.5 L 507 732.1 A 415 415 0 0 1 567.3 827.2 L 424.6 892.6",
+      "width": 8,
+      "depth": 3,
+      "profile": "u",
+      "face": "front"
+    },
+    {
+      "type": "groove",
+      "path": "M 427.8 799 A 311.4 311.4 0 0 1 448.7 826.8 L 500.3 792.3 A 373.4 373.4 0 0 1 513.7 813.8 L 424.5 865.1",
+      "width": 8,
+      "depth": 3,
+      "profile": "u",
+      "face": "front"
+    },
+    {
+      "type": "groove",
+      "path": "M 431.7 1090.4 L 578.7 1145.3 A 415 415 0 0 0 603.1 1039.8 L 446.8 1024.7",
+      "width": 8,
+      "depth": 3,
+      "profile": "u",
+      "face": "front"
+    },
+    {
+      "type": "groove",
+      "path": "M 481.7 1109 A 311.4 311.4 0 0 0 491.7 1077.2 L 551.7 1092.5 A 373.4 373.4 0 0 0 557 1068.7 L 455.9 1049.8",
+      "width": 8,
+      "depth": 3,
+      "profile": "u",
+      "face": "front"
+    },
+    {
+      "type": "groove",
+      "path": "M 431.7 909.6 L 578.7 854.7 A 415 415 0 0 1 603.1 960.2 L 446.8 975.3",
+      "width": 8,
+      "depth": 3,
+      "profile": "u",
+      "face": "front"
+    },
+    {
+      "type": "groove",
+      "path": "M 481.7 891 A 311.4 311.4 0 0 1 491.7 922.8 L 551.7 907.5 A 373.4 373.4 0 0 1 557 931.3 L 455.9 950.2",
+      "width": 8,
+      "depth": 3,
+      "profile": "u",
+      "face": "front"
+    }
+  ]
+}

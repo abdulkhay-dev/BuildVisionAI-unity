@@ -1,0 +1,110 @@
+{
+  "id": "azaliya-do",
+  "name": "Азалия",
+  "ref": [
+    800,
+    2000
+  ],
+  "thickness": 40,
+  "fixX": [
+    [
+      0,
+      166
+    ],
+    [
+      634,
+      800
+    ]
+  ],
+  "fixY": [
+    [
+      0,
+      208
+    ],
+    [
+      587,
+      962
+    ],
+    [
+      1919,
+      2000
+    ]
+  ],
+  "edge": {
+    "radius": 2
+  },
+  "handle": {
+    "y": 921,
+    "x": 47,
+    "style": "round",
+    "finish": "gold"
+  },
+  "hinges": [
+    152,
+    1845
+  ],
+  "layout": {
+    "grain": "v"
+  },
+  "parts": [
+    {
+      "type": "groove",
+      "width": 34,
+      "depth": 8,
+      "profile": "u",
+      "material": "patina-dark",
+      "path": "M 115 858 L 115 1838 A 541.9 541.9 0 0 0 685 1838 L 685 858 A 717.8 717.8 0 0 1 115 858 Z"
+    },
+    {
+      "type": "groove",
+      "width": 34,
+      "depth": 8,
+      "profile": "u",
+      "material": "patina-dark",
+      "path": "M 115 156 L 685 156 L 685 705 A 639.7 639.7 0 0 0 115 705 Z"
+    },
+    {
+      "type": "groove",
+      "width": 5,
+      "depth": 1.5,
+      "profile": "v",
+      "path": "M 166 208 L 634 208 L 634 626.8 A 691.7 691.7 0 0 0 166 626.8 Z"
+    },
+    {
+      "type": "glass",
+      "shape": {
+        "path": "M 156 917 L 156 1795.6 L 178.4 1809.5 L 196.9 1819.8 L 215.8 1829.2 L 235.2 1837.7 L 254.9 1845.2 L 275 1851.7 L 295.4 1857.3 L 316 1861.8 L 336.8 1865.4 L 357.8 1868 L 378.9 1869.5 L 400 1870 L 421.1 1869.5 L 442.2 1868 L 463.2 1865.4 L 484 1861.8 L 504.6 1857.3 L 525 1851.7 L 545.1 1845.2 L 564.8 1837.7 L 584.2 1829.2 L 603.1 1819.8 L 621.6 1809.5 L 644 1795.6 L 644 917 L 612.5 925.4 L 574.4 934.2 L 536 941.2 L 516.7 944.1 L 478 948.5 L 458.5 950 L 439 951.1 L 400 952 L 361 951.1 L 341.5 950 L 322 948.5 L 283.3 944.1 L 264 941.2 L 225.6 934.2 L 187.5 925.4 Z"
+      },
+      "bead": "flat",
+      "role": "art:doorglass_azaliya_do",
+      "material": "patina-dark"
+    },
+    {
+      "type": "glass",
+      "shape": {
+        "ellipse": [
+          400,
+          770,
+          235,
+          102
+        ]
+      },
+      "bead": "round",
+      "role": "art:doorglass_azaliya_do_2",
+      "material": "patina-dark"
+    },
+    {
+      "type": "decal",
+      "shape": {
+        "rect": [
+          100,
+          120,
+          700,
+          720
+        ]
+      },
+      "image": "doorart_azaliya_do",
+      "level": 0
+    }
+  ]
+}

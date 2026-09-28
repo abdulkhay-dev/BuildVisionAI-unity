@@ -1,0 +1,81 @@
+{
+  "id": "etyud-do",
+  "name": "Этюд",
+  "ref": [
+    800,
+    2000
+  ],
+  "thickness": 40,
+  "fixX": [
+    [
+      0,
+      153
+    ],
+    [
+      651,
+      800
+    ]
+  ],
+  "fixY": [
+    [
+      0,
+      198
+    ],
+    [
+      1802,
+      2000
+    ]
+  ],
+  "edge": {
+    "radius": 2
+  },
+  "handle": {
+    "y": 915,
+    "x": 65,
+    "style": "round",
+    "finish": "chrome"
+  },
+  "hinges": [
+    188,
+    1811
+  ],
+  "layout": {
+    "split": "x",
+    "at": [
+      153,
+      651
+    ],
+    "sep": "joint",
+    "grain": "v",
+    "cells": [
+      {},
+      {
+        "grain": "h",
+        "material": "finish2"
+      },
+      {}
+    ]
+  },
+  "parts": [
+    {
+      "type": "glass",
+      "shape": {
+        "rect": [
+          294,
+          198,
+          506,
+          1786
+        ]
+      },
+      "bead": "round",
+      "role": "art:doorglass_etyud_do",
+      "material": "finish2"
+    },
+    {
+      "type": "molding",
+      "path": "M 279 181 L 521 181 L 521 1803 L 279 1803 Z",
+      "profile": "baget-30",
+      "material": "finish2"
+    }
+  ]
+}

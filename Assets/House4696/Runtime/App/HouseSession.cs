@@ -55,6 +55,7 @@ namespace House4696.App
         public void Open(string id)
         {
             var doc = Store.Load(id);
+            House4696.Doors.DoorSizing.Normalize(doc);
             ProjectId = id;
             Doc = doc;
             _undo.Clear();
@@ -132,6 +133,7 @@ namespace House4696.App
         public List<Issue> Apply(HouseDocument next)
         {
             if (!HasProject) throw new InvalidOperationException("нет открытого проекта — открой или создай проект");
+            House4696.Doors.DoorSizing.Normalize(next);
             var items = ItemDiff(Doc, next);
             PushUndo(null);
             Doc = next;

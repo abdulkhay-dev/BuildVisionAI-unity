@@ -79,6 +79,7 @@ namespace House4696.Generation
                     E(p, $"проём выходит за стену '{w.Id}' длиной {len:0.##} м (at {o.At:0.##} + width {o.Width:0.##})");
                 bool isDoor = o.Type == OpeningType.Door || o.Type == OpeningType.EntryDoor || o.Type == OpeningType.SolidDoor;
                 if (isDoor && o.Height < 1.9f) W(p, $"дверь ниже 1.9 м ({o.Height:0.##})");
+                if (!string.IsNullOrEmpty(o.Model)) DoorIssues(o, w, p, E, W);
                 if (!byWall.TryGetValue(o.Wall, out var ol)) byWall[o.Wall] = ol = new List<OpeningDef>();
                 ol.Add(o);
             }
@@ -162,7 +163,10 @@ namespace House4696.Generation
                     W(p, $"над лестницей меньше 2 м до перекрытия: пол комнаты '{hit}' этажа '{toId}' накрывает марш — вырежи проём в её контуре");
             }
             foreach (var e in d.Elements)
+            {
                 if (e.Type == ElementType.Railing && e.Path.Count < 2) E($"elements/{e.Id}", "ограждению нужен путь из 2+ точек");
+                if (e.Type == ElementType.Pool && PoolShape.From(e, out var poolError) == null) E($"elements/{e.Id}", poolError);
+            }
 
             // ---------------- items, lights, views
             var itemIds = new HashSet<string>();
@@ -313,6 +317,52 @@ namespace House4696.Generation
                 if (Polygon.Contains(a, q) && Polygon.Contains(b, q)) hits++;
             }
             return hits * step * step;
+        }
+
+        /// <summary>A catalogue door: model / finish / glass exist, the leaf is sensible, the wall takes the frame.</summary>
+        static void DoorIssues(OpeningDef o, WallDef w, string p, System.Action<string, string> E, System.Action<string, string> W)
+        {
+            var kind = House4696.Doors.DoorSizing.KindOf(o);
+            if (!House4696.Doors.DoorSizing.IsDoor(o.Type) && !(o.Type == OpeningType.Hole && kind == House4696.Doors.DoorKind.Portal))
+            {
+                W(p, $"model '{o.Model}' задаётся только дверям (type door); у проёма type {o.Type}");
+                return;
+            }
+            if (o.Kind != null && kind == House4696.Doors.DoorKind.Swing && o.Kind.Trim().ToLowerInvariant() != "swing")
+                W(p, $"неизвестный kind '{o.Kind}': swing (распашная), sliding (купе), folding (книжка), portal (портал)");
+            var problems = new List<string>();
+            var door = House4696.Doors.DoorCatalog.Resolve(o, problems);
+            foreach (var m in problems) W(p, m);
+            if (door == null) return;
+            float t = w.Thickness ?? (w.Kind == WallKind.Exterior ? 0.4f : 0.12f);
+            if (w.System == WallSystem.SteelGlass) W(p, "в стеклянной перегородке (steelGlass) каталожная дверь не ставится — будет стеклянная дверь перегородки");
+            if (kind == House4696.Doors.DoorKind.Portal) return;
+            var leaf = House4696.Doors.DoorSizing.LeafOf(o);
+            int n = House4696.Doors.DoorSizing.LeavesOf(o);
+            if (o.Leaves.HasValue && o.Leaves.Value != n)
+                W(p, kind == House4696.Doors.DoorKind.Folding ? $"у книжки 2 или 4 створки (leaves), не {o.Leaves}" : $"у двери 1 или 2 полотна (leaves), не {o.Leaves}");
+            if (kind == House4696.Doors.DoorKind.Folding)
+            {
+                if (!House4696.Doors.DoorSizing.IsStandard(o, leaf))
+                    W(p, $"створка книжки {leaf.x:0.###}×{leaf.y:0.###} м — в каталоге 0.35 или 0.4 × 2.0 (проём 77–80 / 87–90 см на 2 створки, 147–150 / 167–170 на 4)");
+            }
+            else if (leaf.x < 0.4f || leaf.x > 1.0f)
+                W(p, $"полотно {leaf.x:0.###} м: полотна бывают 0.4–1.0 м (стандарт 0.6/0.7/0.8/0.9); шире — две створки (leaves: 2)");
+            else if (!House4696.Doors.DoorSizing.IsStandard(o, leaf))
+                W(p, $"нестандартное полотно {leaf.x:0.###}×{leaf.y:0.###} м — делается под заказ; стандарт 0.6/0.7/0.8/0.9 × 2.0 " +
+                     "(задай leaf — проём посчитается сам)");
+            if (leaf.y < 1.8f || leaf.y > 2.4f) W(p, $"высота полотна {leaf.y:0.###} м — обычно 2.0 (бывает 1.9–2.3)");
+            if (kind == House4696.Doors.DoorKind.Swing && t < 0.07f)
+                W(p, $"стена '{w.Id}' тоньше коробки двери ({t * 1000:0} мм < 70 мм): коробка выступит, наличник ляжет на неё");
+            if (kind == House4696.Doors.DoorKind.Sliding)
+            {
+                // the leaf parks beside the opening along the wall: it needs that much wall
+                float len = (w.B - w.A).magnitude, room = o.Hinge == Hinge.Start ? o.At : len - o.At - o.Width;
+                float need = n == 1 ? leaf.x : leaf.x;
+                if (room < need - 0.05f)
+                    W(p, $"полотну купе некуда отъехать: вдоль стены у {(o.Hinge == Hinge.Start ? "a" : "b")} {room:0.##} м, нужно {need:0.##} " +
+                         "(hinge — сторона, куда едет полотно; или leaves: 2)");
+            }
         }
     }
 }

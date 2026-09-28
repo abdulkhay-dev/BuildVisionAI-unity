@@ -1,0 +1,13 @@
+{
+  "id": "eco-simple", "name": "SIMPLE", "line": "ЭкоШпон", "kind": "interior", "block": "t70", "order": 60,
+  "finishes": ["cappuccino-veralinga", "wenge-veralinga", "anegri-veralinga"],
+  "glass": ["mf", "mystic"],
+  "models": [
+    { "id": "simpl-12", "name": "Симпл-12", "design": "simpl-12", "glass": [], "photo": "p061_simpl-12__cappuccino-veralinga.jpg" },
+    { "id": "simpl-13", "name": "Симпл-13", "design": "simpl-13", "glass": ["mf"], "photo": "p061_simpl-13-mf__cappuccino-veralinga.jpg" },
+    { "id": "simpl-14", "name": "Симпл-14", "design": "simpl-14", "glass": [], "finishes": ["cappuccino-veralinga", "wenge-veralinga"],
+      "photo": "p061_simpl-14__cappuccino-veralinga.jpg" },
+    { "id": "simpl-15-2", "name": "Симпл-15.2", "design": "simpl-15-2", "glass": ["mystic"], "finishes": ["cappuccino-veralinga", "wenge-veralinga"],
+      "photo": "p061_simpl-15-2-m__cappuccino-veralinga.jpg" }
+  ]
+}

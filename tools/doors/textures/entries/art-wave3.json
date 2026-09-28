@@ -1,0 +1,1067 @@
+[
+ {
+  "id": "doorglass_status_15",
+  "name": "Статус-15 СТ-Худ. (узор-вензель)",
+  "category": "doorglass",
+  "source": "procedural:tools/doors/textures/art_wave3.py",
+  "neutral": false,
+  "transparent": true,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/doorglass_status_15",
+  "textures": {
+   "albedo": "doorglass_status_15_albedo.png",
+   "mask": "doorglass_status_15_mask.png"
+  }
+ },
+ {
+  "id": "doorglass_pvc_skinny_33",
+  "name": "Скинни-33 СТ-Худ. (стебли с золотыми листьями)",
+  "category": "doorglass",
+  "source": "procedural:tools/doors/textures/art_wave3.py",
+  "neutral": false,
+  "transparent": true,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/doorglass_pvc_skinny_33",
+  "textures": {
+   "albedo": "doorglass_pvc_skinny_33_albedo.png",
+   "mask": "doorglass_pvc_skinny_33_mask.png"
+  }
+ },
+ {
+  "id": "doorglass_lotos_st_hud",
+  "name": "Лотос СТ-Худ. (линии и капли)",
+  "category": "doorglass",
+  "source": "procedural:tools/doors/textures/art_wave3.py",
+  "neutral": false,
+  "transparent": true,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/doorglass_lotos_st_hud",
+  "textures": {
+   "albedo": "doorglass_lotos_st_hud_albedo.png",
+   "mask": "doorglass_lotos_st_hud_mask.png"
+  }
+ },
+ {
+  "id": "doorglass_orbita_plyus_st_hud",
+  "name": "Орбита Плюс СТ-Худ. (вензель в овале)",
+  "category": "doorglass",
+  "source": "procedural:tools/doors/textures/art_wave3.py",
+  "neutral": false,
+  "transparent": true,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/doorglass_orbita_plyus_st_hud",
+  "textures": {
+   "albedo": "doorglass_orbita_plyus_st_hud_albedo.png",
+   "mask": "doorglass_orbita_plyus_st_hud_mask.png"
+  }
+ },
+ {
+  "id": "doorglass_virazh_plyus_st_hud",
+  "name": "Вираж Плюс СТ-Худ. (штрихи и янтарные ромбики)",
+  "category": "doorglass",
+  "source": "procedural:tools/doors/textures/art_wave3.py",
+  "neutral": false,
+  "transparent": true,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/doorglass_virazh_plyus_st_hud",
+  "textures": {
+   "albedo": "doorglass_virazh_plyus_st_hud_albedo.png",
+   "mask": "doorglass_virazh_plyus_st_hud_mask.png"
+  }
+ },
+ {
+  "id": "doorglass_zk_uzor",
+  "name": "Стекло ЗК-Узор (дуги)",
+  "category": "doorglass",
+  "source": "procedural:tools/doors/textures/art_wave3.py",
+  "neutral": false,
+  "transparent": true,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/doorglass_zk_uzor",
+  "textures": {
+   "albedo": "doorglass_zk_uzor_albedo.png",
+   "mask": "doorglass_zk_uzor_mask.png"
+  }
+ },
+ {
+  "id": "doorglass_bronze",
+  "name": "Бронзовое сатинато",
+  "category": "doorglass",
+  "source": "procedural:tools/doors/textures/art_wave3.py",
+  "neutral": false,
+  "transparent": true,
+  "metersPerTile": [
+   0.256,
+   0.256
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/doorglass_bronze",
+  "textures": {
+   "albedo": "doorglass_bronze_albedo.png",
+   "mask": "doorglass_bronze_mask.png"
+  }
+ },
+ {
+  "id": "doorglass_bc",
+  "name": "Бронзовое худож. сатинато (ромбы)",
+  "category": "doorglass",
+  "source": "procedural:tools/doors/textures/art_wave3.py",
+  "neutral": false,
+  "transparent": true,
+  "metersPerTile": [
+   0.195,
+   0.304
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/doorglass_bc",
+  "textures": {
+   "albedo": "doorglass_bc_albedo.png",
+   "mask": "doorglass_bc_mask.png"
+  }
+ },
+ {
+  "id": "doorglass_bronze_wave",
+  "name": "Бронзовое узорчатое «волна»",
+  "category": "doorglass",
+  "source": "procedural:tools/doors/textures/art_wave3.py",
+  "neutral": false,
+  "transparent": true,
+  "metersPerTile": [
+   0.3,
+   0.3
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/doorglass_bronze_wave",
+  "textures": {
+   "albedo": "doorglass_bronze_wave_albedo.png",
+   "normal": "doorglass_bronze_wave_normal.png",
+   "mask": "doorglass_bronze_wave_mask.png"
+  }
+ },
+ {
+  "id": "doorglass_st_118",
+  "name": "Стекло художественное СТ-118",
+  "category": "doorglass",
+  "source": "procedural:tools/doors/textures/art_wave3.py",
+  "neutral": false,
+  "transparent": true,
+  "metersPerTile": [
+   0.25,
+   0.25
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/doorglass_st_118",
+  "textures": {
+   "albedo": "doorglass_st_118_albedo.png",
+   "normal": "doorglass_st_118_normal.png",
+   "mask": "doorglass_st_118_mask.png"
+  }
+ },
+ {
+  "id": "doorglass_st_121",
+  "name": "Стекло художественное СТ-121",
+  "category": "doorglass",
+  "source": "procedural:tools/doors/textures/art_wave3.py",
+  "neutral": false,
+  "transparent": true,
+  "metersPerTile": [
+   0.4,
+   0.4
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/doorglass_st_121",
+  "textures": {
+   "albedo": "doorglass_st_121_albedo.png",
+   "normal": "doorglass_st_121_normal.png",
+   "mask": "doorglass_st_121_mask.png"
+  }
+ },
+ {
+  "id": "doorart_wood_klassik_51",
+  "name": "Вуд Классик-51: орнамент по стеклу",
+  "category": "doorart",
+  "source": "procedural:tools/doors/textures/art_wave3.py",
+  "neutral": false,
+  "transparent": true,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/doorart_wood_klassik_51",
+  "textures": {
+   "albedo": "doorart_wood_klassik_51_albedo.png",
+   "mask": "doorart_wood_klassik_51_mask.png"
+  }
+ },
+ {
+  "id": "doorart_wood_klassik_53",
+  "name": "Вуд Классик-53: орнамент по стеклу",
+  "category": "doorart",
+  "source": "procedural:tools/doors/textures/art_wave3.py",
+  "neutral": false,
+  "transparent": true,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/doorart_wood_klassik_53",
+  "textures": {
+   "albedo": "doorart_wood_klassik_53_albedo.png",
+   "mask": "doorart_wood_klassik_53_mask.png"
+  }
+ },
+ {
+  "id": "doorart_skinny_12_art_top",
+  "name": "Скинни-12 ART, верх (рамка-лоза)",
+  "category": "doorart",
+  "source": "procedural:tools/doors/textures/art_wave3.py",
+  "neutral": false,
+  "transparent": true,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/doorart_skinny_12_art_top",
+  "textures": {
+   "albedo": "doorart_skinny_12_art_top_albedo.png",
+   "mask": "doorart_skinny_12_art_top_mask.png"
+  }
+ },
+ {
+  "id": "doorart_skinny_12_art_bottom",
+  "name": "Скинни-12 ART, низ (рамка-лоза)",
+  "category": "doorart",
+  "source": "procedural:tools/doors/textures/art_wave3.py",
+  "neutral": false,
+  "transparent": true,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/doorart_skinny_12_art_bottom",
+  "textures": {
+   "albedo": "doorart_skinny_12_art_bottom_albedo.png",
+   "mask": "doorart_skinny_12_art_bottom_mask.png"
+  }
+ },
+ {
+  "id": "doorart_skinny_13_art_glass",
+  "name": "Скинни-13 ART, стекло (рамка-лоза)",
+  "category": "doorart",
+  "source": "procedural:tools/doors/textures/art_wave3.py",
+  "neutral": false,
+  "transparent": true,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/doorart_skinny_13_art_glass",
+  "textures": {
+   "albedo": "doorart_skinny_13_art_glass_albedo.png",
+   "mask": "doorart_skinny_13_art_glass_mask.png"
+  }
+ },
+ {
+  "id": "doorart_skinny_13_art_bottom",
+  "name": "Скинни-13 ART, низ (рамка-лоза)",
+  "category": "doorart",
+  "source": "procedural:tools/doors/textures/art_wave3.py",
+  "neutral": false,
+  "transparent": true,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/doorart_skinny_13_art_bottom",
+  "textures": {
+   "albedo": "doorart_skinny_13_art_bottom_albedo.png",
+   "mask": "doorart_skinny_13_art_bottom_mask.png"
+  }
+ },
+ {
+  "id": "doorart_skinny_15_1_art_glass",
+  "name": "Скинни-15.1 ART, стекло (барочная рамка)",
+  "category": "doorart",
+  "source": "procedural:tools/doors/textures/art_wave3.py",
+  "neutral": false,
+  "transparent": true,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/doorart_skinny_15_1_art_glass",
+  "textures": {
+   "albedo": "doorart_skinny_15_1_art_glass_albedo.png",
+   "mask": "doorart_skinny_15_1_art_glass_mask.png"
+  }
+ },
+ {
+  "id": "doorart_skinny_14_art_top",
+  "name": "Скинни-14 ART, верх (барочная рамка)",
+  "category": "doorart",
+  "source": "procedural:tools/doors/textures/art_wave3.py",
+  "neutral": false,
+  "transparent": true,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/doorart_skinny_14_art_top",
+  "textures": {
+   "albedo": "doorart_skinny_14_art_top_albedo.png",
+   "mask": "doorart_skinny_14_art_top_mask.png"
+  }
+ },
+ {
+  "id": "doorart_skinny_14_art_middle",
+  "name": "Скинни-14 ART, средняя филёнка (завиток)",
+  "category": "doorart",
+  "source": "procedural:tools/doors/textures/art_wave3.py",
+  "neutral": false,
+  "transparent": true,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/doorart_skinny_14_art_middle",
+  "textures": {
+   "albedo": "doorart_skinny_14_art_middle_albedo.png",
+   "mask": "doorart_skinny_14_art_middle_mask.png"
+  }
+ },
+ {
+  "id": "doorart_skinny_15_1_art_middle",
+  "name": "Скинни-15.1 ART, средняя филёнка (завиток)",
+  "category": "doorart",
+  "source": "procedural:tools/doors/textures/art_wave3.py",
+  "neutral": false,
+  "transparent": true,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/doorart_skinny_15_1_art_middle",
+  "textures": {
+   "albedo": "doorart_skinny_15_1_art_middle_albedo.png",
+   "mask": "doorart_skinny_15_1_art_middle_mask.png"
+  }
+ },
+ {
+  "id": "doorart_skinny_14_art_bottom",
+  "name": "Скинни-14 ART, низ (барочный гребень)",
+  "category": "doorart",
+  "source": "procedural:tools/doors/textures/art_wave3.py",
+  "neutral": false,
+  "transparent": true,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/doorart_skinny_14_art_bottom",
+  "textures": {
+   "albedo": "doorart_skinny_14_art_bottom_albedo.png",
+   "mask": "doorart_skinny_14_art_bottom_mask.png"
+  }
+ },
+ {
+  "id": "doorart_skinny_15_1_art_bottom",
+  "name": "Скинни-15.1 ART, низ (барочный гребень)",
+  "category": "doorart",
+  "source": "procedural:tools/doors/textures/art_wave3.py",
+  "neutral": false,
+  "transparent": true,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/doorart_skinny_15_1_art_bottom",
+  "textures": {
+   "albedo": "doorart_skinny_15_1_art_bottom_albedo.png",
+   "mask": "doorart_skinny_15_1_art_bottom_mask.png"
+  }
+ },
+ {
+  "id": "doorart_skinny_21_art_glass",
+  "name": "Скинни-21 ART, стекло (картуш)",
+  "category": "doorart",
+  "source": "procedural:tools/doors/textures/art_wave3.py",
+  "neutral": false,
+  "transparent": true,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/doorart_skinny_21_art_glass",
+  "textures": {
+   "albedo": "doorart_skinny_21_art_glass_albedo.png",
+   "mask": "doorart_skinny_21_art_glass_mask.png"
+  }
+ },
+ {
+  "id": "doorart_skinny_20_art_top",
+  "name": "Скинни-20 ART, верх (картуш)",
+  "category": "doorart",
+  "source": "procedural:tools/doors/textures/art_wave3.py",
+  "neutral": false,
+  "transparent": true,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/doorart_skinny_20_art_top",
+  "textures": {
+   "albedo": "doorart_skinny_20_art_top_albedo.png",
+   "mask": "doorart_skinny_20_art_top_mask.png"
+  }
+ },
+ {
+  "id": "doorart_skinny_20_art_oval",
+  "name": "Скинни-20 ART, овал (завиток)",
+  "category": "doorart",
+  "source": "procedural:tools/doors/textures/art_wave3.py",
+  "neutral": false,
+  "transparent": true,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/doorart_skinny_20_art_oval",
+  "textures": {
+   "albedo": "doorart_skinny_20_art_oval_albedo.png",
+   "mask": "doorart_skinny_20_art_oval_mask.png"
+  }
+ },
+ {
+  "id": "doorart_skinny_21_art_oval",
+  "name": "Скинни-21 ART, овал (завиток)",
+  "category": "doorart",
+  "source": "procedural:tools/doors/textures/art_wave3.py",
+  "neutral": false,
+  "transparent": true,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/doorart_skinny_21_art_oval",
+  "textures": {
+   "albedo": "doorart_skinny_21_art_oval_albedo.png",
+   "mask": "doorart_skinny_21_art_oval_mask.png"
+  }
+ },
+ {
+  "id": "doorart_skinny_20_art_bottom",
+  "name": "Скинни-20 ART, низ (диагональные полосы)",
+  "category": "doorart",
+  "source": "procedural:tools/doors/textures/art_wave3.py",
+  "neutral": false,
+  "transparent": true,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/doorart_skinny_20_art_bottom",
+  "textures": {
+   "albedo": "doorart_skinny_20_art_bottom_albedo.png",
+   "mask": "doorart_skinny_20_art_bottom_mask.png"
+  }
+ },
+ {
+  "id": "doorart_skinny_21_art_bottom",
+  "name": "Скинни-21 ART, низ (диагональные полосы)",
+  "category": "doorart",
+  "source": "procedural:tools/doors/textures/art_wave3.py",
+  "neutral": false,
+  "transparent": true,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/doorart_skinny_21_art_bottom",
+  "textures": {
+   "albedo": "doorart_skinny_21_art_bottom_albedo.png",
+   "mask": "doorart_skinny_21_art_bottom_mask.png"
+  }
+ },
+ {
+  "id": "doorglass_laminated_3p",
+  "name": "3П (лилия)",
+  "category": "doorglass",
+  "source": "procedural:tools/doors/textures/art_wave3.py",
+  "neutral": false,
+  "transparent": true,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/doorglass_laminated_3p",
+  "textures": {
+   "albedo": "doorglass_laminated_3p_albedo.png",
+   "mask": "doorglass_laminated_3p_mask.png"
+  }
+ },
+ {
+  "id": "doorglass_laminated_3x",
+  "name": "3Х (дамаск)",
+  "category": "doorglass",
+  "source": "procedural:tools/doors/textures/art_wave3.py",
+  "neutral": false,
+  "transparent": true,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/doorglass_laminated_3x",
+  "textures": {
+   "albedo": "doorglass_laminated_3x_albedo.png",
+   "mask": "doorglass_laminated_3x_mask.png"
+  }
+ },
+ {
+  "id": "doorglass_laminated_6p",
+  "name": "6П (красные лепестки)",
+  "category": "doorglass",
+  "source": "procedural:tools/doors/textures/art_wave3.py",
+  "neutral": false,
+  "transparent": true,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/doorglass_laminated_6p",
+  "textures": {
+   "albedo": "doorglass_laminated_6p_albedo.png",
+   "mask": "doorglass_laminated_6p_mask.png"
+  }
+ },
+ {
+  "id": "doorglass_laminated_6f",
+  "name": "6Ф (серебристые линии)",
+  "category": "doorglass",
+  "source": "procedural:tools/doors/textures/art_wave3.py",
+  "neutral": false,
+  "transparent": true,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/doorglass_laminated_6f",
+  "textures": {
+   "albedo": "doorglass_laminated_6f_albedo.png",
+   "mask": "doorglass_laminated_6f_mask.png"
+  }
+ },
+ {
+  "id": "doorglass_laminated_8p",
+  "name": "8П (оранжевые листья)",
+  "category": "doorglass",
+  "source": "procedural:tools/doors/textures/art_wave3.py",
+  "neutral": false,
+  "transparent": true,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/doorglass_laminated_8p",
+  "textures": {
+   "albedo": "doorglass_laminated_8p_albedo.png",
+   "mask": "doorglass_laminated_8p_mask.png"
+  }
+ },
+ {
+  "id": "doorglass_laminated_8f",
+  "name": "8Ф (колоски)",
+  "category": "doorglass",
+  "source": "procedural:tools/doors/textures/art_wave3.py",
+  "neutral": false,
+  "transparent": true,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/doorglass_laminated_8f",
+  "textures": {
+   "albedo": "doorglass_laminated_8f_albedo.png",
+   "mask": "doorglass_laminated_8f_mask.png"
+  }
+ },
+ {
+  "id": "doorglass_laminated_11f",
+  "name": "11Ф (стебли с листьями)",
+  "category": "doorglass",
+  "source": "procedural:tools/doors/textures/art_wave3.py",
+  "neutral": false,
+  "transparent": true,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/doorglass_laminated_11f",
+  "textures": {
+   "albedo": "doorglass_laminated_11f_albedo.png",
+   "mask": "doorglass_laminated_11f_mask.png"
+  }
+ },
+ {
+  "id": "doorglass_laminated_15f",
+  "name": "15Ф (золотые перья)",
+  "category": "doorglass",
+  "source": "procedural:tools/doors/textures/art_wave3.py",
+  "neutral": false,
+  "transparent": true,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/doorglass_laminated_15f",
+  "textures": {
+   "albedo": "doorglass_laminated_15f_albedo.png",
+   "mask": "doorglass_laminated_15f_mask.png"
+  }
+ },
+ {
+  "id": "doorglass_laminated_21x",
+  "name": "21Х (меандр)",
+  "category": "doorglass",
+  "source": "procedural:tools/doors/textures/art_wave3.py",
+  "neutral": false,
+  "transparent": true,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/doorglass_laminated_21x",
+  "textures": {
+   "albedo": "doorglass_laminated_21x_albedo.png",
+   "mask": "doorglass_laminated_21x_mask.png"
+  }
+ },
+ {
+  "id": "doorglass_laminated_22x",
+  "name": "22Х (тюльпаны)",
+  "category": "doorglass",
+  "source": "procedural:tools/doors/textures/art_wave3.py",
+  "neutral": false,
+  "transparent": true,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/doorglass_laminated_22x",
+  "textures": {
+   "albedo": "doorglass_laminated_22x_albedo.png",
+   "mask": "doorglass_laminated_22x_mask.png"
+  }
+ },
+ {
+  "id": "doorglass_laminated_23x",
+  "name": "23Х (витраж)",
+  "category": "doorglass",
+  "source": "procedural:tools/doors/textures/art_wave3.py",
+  "neutral": false,
+  "transparent": true,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/doorglass_laminated_23x",
+  "textures": {
+   "albedo": "doorglass_laminated_23x_albedo.png",
+   "mask": "doorglass_laminated_23x_mask.png"
+  }
+ },
+ {
+  "id": "doorglass_laminated_24x",
+  "name": "24Х (филигрань)",
+  "category": "doorglass",
+  "source": "procedural:tools/doors/textures/art_wave3.py",
+  "neutral": false,
+  "transparent": true,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/doorglass_laminated_24x",
+  "textures": {
+   "albedo": "doorglass_laminated_24x_albedo.png",
+   "mask": "doorglass_laminated_24x_mask.png"
+  }
+ },
+ {
+  "id": "doorglass_laminated_25x",
+  "name": "25Х (белые волны)",
+  "category": "doorglass",
+  "source": "procedural:tools/doors/textures/art_wave3.py",
+  "neutral": false,
+  "transparent": true,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/doorglass_laminated_25x",
+  "textures": {
+   "albedo": "doorglass_laminated_25x_albedo.png",
+   "mask": "doorglass_laminated_25x_mask.png"
+  }
+ },
+ {
+  "id": "doorglass_rondo_do",
+  "name": "Рондо СТ-Худ. (лоза с пальметтами)",
+  "category": "doorglass",
+  "source": "procedural:tools/doors/textures/art_wave3.py",
+  "neutral": false,
+  "transparent": true,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/doorglass_rondo_do",
+  "textures": {
+   "albedo": "doorglass_rondo_do_albedo.png",
+   "mask": "doorglass_rondo_do_mask.png"
+  }
+ },
+ {
+  "id": "doorglass_etyud_do",
+  "name": "Этюд СТ-Худ. (травы и чёрные листья)",
+  "category": "doorglass",
+  "source": "procedural:tools/doors/textures/art_wave3.py",
+  "neutral": false,
+  "transparent": true,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/doorglass_etyud_do",
+  "textures": {
+   "albedo": "doorglass_etyud_do_albedo.png",
+   "mask": "doorglass_etyud_do_mask.png"
+  }
+ },
+ {
+  "id": "doorglass_afina_do",
+  "name": "Афина СТ-Худ. (контур и звезда)",
+  "category": "doorglass",
+  "source": "procedural:tools/doors/textures/art_wave3.py",
+  "neutral": false,
+  "transparent": true,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/doorglass_afina_do",
+  "textures": {
+   "albedo": "doorglass_afina_do_albedo.png",
+   "mask": "doorglass_afina_do_mask.png"
+  }
+ },
+ {
+  "id": "doorglass_selena_do",
+  "name": "Селена СТ-Худ. (решётка, гирлянды и лилия)",
+  "category": "doorglass",
+  "source": "procedural:tools/doors/textures/art_wave3.py",
+  "neutral": false,
+  "transparent": true,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/doorglass_selena_do",
+  "textures": {
+   "albedo": "doorglass_selena_do_albedo.png",
+   "mask": "doorglass_selena_do_mask.png"
+  }
+ },
+ {
+  "id": "doorglass_azaliya_do",
+  "name": "Азалия СТ-Худ. (угловые орнаменты)",
+  "category": "doorglass",
+  "source": "procedural:tools/doors/textures/art_wave3.py",
+  "neutral": false,
+  "transparent": true,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/doorglass_azaliya_do",
+  "textures": {
+   "albedo": "doorglass_azaliya_do_albedo.png",
+   "mask": "doorglass_azaliya_do_mask.png"
+  }
+ },
+ {
+  "id": "doorglass_azaliya_do_2",
+  "name": "Азалия СТ-Худ., медальон",
+  "category": "doorglass",
+  "source": "procedural:tools/doors/textures/art_wave3.py",
+  "neutral": false,
+  "transparent": true,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/doorglass_azaliya_do_2",
+  "textures": {
+   "albedo": "doorglass_azaliya_do_2_albedo.png",
+   "mask": "doorglass_azaliya_do_2_mask.png"
+  }
+ },
+ {
+  "id": "doorart_azaliya",
+  "name": "Азалия: резной орнамент филёнок",
+  "category": "doorart",
+  "source": "procedural:tools/doors/textures/art_wave3.py",
+  "neutral": false,
+  "transparent": true,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/doorart_azaliya",
+  "textures": {
+   "albedo": "doorart_azaliya_albedo.png",
+   "mask": "doorart_azaliya_mask.png"
+  }
+ },
+ {
+  "id": "doorart_azaliya_do",
+  "name": "Азалия СТ-Худ.: резной орнамент нижней филёнки",
+  "category": "doorart",
+  "source": "procedural:tools/doors/textures/art_wave3.py",
+  "neutral": false,
+  "transparent": true,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/doorart_azaliya_do",
+  "textures": {
+   "albedo": "doorart_azaliya_do_albedo.png",
+   "mask": "doorart_azaliya_do_mask.png"
+  }
+ },
+ {
+  "id": "doorglass_stil_do",
+  "name": "Стиль СТ-Худ. (рамка и дамасский медальон)",
+  "category": "doorglass",
+  "source": "procedural:tools/doors/textures/art_wave3.py",
+  "neutral": false,
+  "transparent": true,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/doorglass_stil_do",
+  "textures": {
+   "albedo": "doorglass_stil_do_albedo.png",
+   "mask": "doorglass_stil_do_mask.png"
+  }
+ },
+ {
+  "id": "doorglass_stil_do_2",
+  "name": "Стиль СТ-Худ., узкое стекло (плетёнка и завитки)",
+  "category": "doorglass",
+  "source": "procedural:tools/doors/textures/art_wave3.py",
+  "neutral": false,
+  "transparent": true,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/doorglass_stil_do_2",
+  "textures": {
+   "albedo": "doorglass_stil_do_2_albedo.png",
+   "mask": "doorglass_stil_do_2_mask.png"
+  }
+ },
+ {
+  "id": "doorglass_liliya_do",
+  "name": "Лилия СТ-Худ. (стебли с бутонами лилий)",
+  "category": "doorglass",
+  "source": "procedural:tools/doors/textures/art_wave3.py",
+  "neutral": false,
+  "transparent": true,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/doorglass_liliya_do",
+  "textures": {
+   "albedo": "doorglass_liliya_do_albedo.png",
+   "mask": "doorglass_liliya_do_mask.png"
+  }
+ },
+ {
+  "id": "doorglass_liliya_do_2",
+  "name": "Лилия СТ-Худ., язычок (бутоны)",
+  "category": "doorglass",
+  "source": "procedural:tools/doors/textures/art_wave3.py",
+  "neutral": false,
+  "transparent": true,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/doorglass_liliya_do_2",
+  "textures": {
+   "albedo": "doorglass_liliya_do_2_albedo.png",
+   "mask": "doorglass_liliya_do_2_mask.png"
+  }
+ },
+ {
+  "id": "doorglass_liliya_do_3",
+  "name": "Лилия СТ-Худ., малое стекло",
+  "category": "doorglass",
+  "source": "procedural:tools/doors/textures/art_wave3.py",
+  "neutral": false,
+  "transparent": true,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/doorglass_liliya_do_3",
+  "textures": {
+   "albedo": "doorglass_liliya_do_3_albedo.png",
+   "mask": "doorglass_liliya_do_3_mask.png"
+  }
+ },
+ {
+  "id": "doorglass_laguna_do",
+  "name": "Лагуна СТ-Худ. (виноградная лоза)",
+  "category": "doorglass",
+  "source": "procedural:tools/doors/textures/art_wave3.py",
+  "neutral": false,
+  "transparent": true,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/doorglass_laguna_do",
+  "textures": {
+   "albedo": "doorglass_laguna_do_albedo.png",
+   "mask": "doorglass_laguna_do_mask.png"
+  }
+ },
+ {
+  "id": "doorglass_eksklyuziv_do_hud",
+  "name": "Эксклюзив Ф-17 СТ-Худ. (цветы на стебле)",
+  "category": "doorglass",
+  "source": "procedural:tools/doors/textures/art_wave3.py",
+  "neutral": false,
+  "transparent": true,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/doorglass_eksklyuziv_do_hud",
+  "textures": {
+   "albedo": "doorglass_eksklyuziv_do_hud_albedo.png",
+   "mask": "doorglass_eksklyuziv_do_hud_mask.png"
+  }
+ },
+ {
+  "id": "doorglass_eksklyuziv_do_hud_2",
+  "name": "Эксклюзив Ф-17 СТ-Худ., среднее стекло (цветок)",
+  "category": "doorglass",
+  "source": "procedural:tools/doors/textures/art_wave3.py",
+  "neutral": false,
+  "transparent": true,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/doorglass_eksklyuziv_do_hud_2",
+  "textures": {
+   "albedo": "doorglass_eksklyuziv_do_hud_2_albedo.png",
+   "mask": "doorglass_eksklyuziv_do_hud_2_mask.png"
+  }
+ },
+ {
+  "id": "doorglass_eksklyuziv_do_hud_3",
+  "name": "Эксклюзив Ф-17 СТ-Худ., малое стекло (бутон)",
+  "category": "doorglass",
+  "source": "procedural:tools/doors/textures/art_wave3.py",
+  "neutral": false,
+  "transparent": true,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/doorglass_eksklyuziv_do_hud_3",
+  "textures": {
+   "albedo": "doorglass_eksklyuziv_do_hud_3_albedo.png",
+   "mask": "doorglass_eksklyuziv_do_hud_3_mask.png"
+  }
+ }
+]

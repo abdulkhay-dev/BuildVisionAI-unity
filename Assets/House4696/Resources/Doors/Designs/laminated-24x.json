@@ -1,0 +1,16 @@
+{
+  "id": "laminated-24x",
+  "name": "24Х",
+  "ref": [800, 2000],
+  "thickness": 36,
+  "fixX": [[271.2, 534.0]],
+  "fixY": [],
+  "edge": {"radius": 2},
+  "handle": {"y": 922, "x": 79, "style": "round", "finish": "gold"},
+  "hinges": [188, 1810],
+  "layout": {"grain": "v"},
+  "parts": [
+    {"type": "glass", "shape": {"path": "M 271.2 187 H 534 V 1812.3 H 271.2 Z"}, "bead": "none", "role": "art:doorglass_laminated_24x"},
+    {"type": "molding", "path": "M 271.2 187 H 534 V 1812.3 H 271.2 Z", "profile": [[-10.0, 0.0], [-10.0, 0.8], [-9.51, 2.41], [-8.09, 3.86], [-5.88, 5.01], [-3.09, 5.75], [0.0, 6.0], [3.09, 5.75], [5.88, 5.01], [8.09, 3.86], [9.51, 2.41], [10.0, 0.8], [10.0, -16.0]]}
+  ]
+}

@@ -1,0 +1,236 @@
+[
+ {
+  "id": "door_royal_oak",
+  "name": "Royal Oak (ЭкоШпон)",
+  "category": "door",
+  "source": "procedural:tools/doors/textures/eco_oak.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/door_royal_oak",
+  "textures": {
+   "albedo": "door_royal_oak_albedo.jpg",
+   "normal": "door_royal_oak_normal.jpg",
+   "mask": "door_royal_oak_mask.png"
+  }
+ },
+ {
+  "id": "door_antique_oak",
+  "name": "Antique Oak (ЭкоШпон)",
+  "category": "door",
+  "source": "procedural:tools/doors/textures/eco_oak.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/door_antique_oak",
+  "textures": {
+   "albedo": "door_antique_oak_albedo.jpg",
+   "normal": "door_antique_oak_normal.jpg",
+   "mask": "door_antique_oak_mask.png"
+  }
+ },
+ {
+  "id": "door_silver_ash",
+  "name": "Silver Ash (ЭкоШпон)",
+  "category": "door",
+  "source": "procedural:tools/doors/textures/eco_oak.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/door_silver_ash",
+  "textures": {
+   "albedo": "door_silver_ash_albedo.jpg",
+   "normal": "door_silver_ash_normal.jpg",
+   "mask": "door_silver_ash_mask.png"
+  }
+ },
+ {
+  "id": "door_ivory",
+  "name": "Ivory (ЭкоШпон)",
+  "category": "door",
+  "source": "procedural:tools/doors/textures/eco_oak.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/door_ivory",
+  "textures": {
+   "albedo": "door_ivory_albedo.jpg",
+   "normal": "door_ivory_normal.jpg",
+   "mask": "door_ivory_mask.png"
+  }
+ },
+ {
+  "id": "door_virgin",
+  "name": "Virgin (ЭкоШпон)",
+  "category": "door",
+  "source": "procedural:tools/doors/textures/eco_oak.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/door_virgin",
+  "textures": {
+   "albedo": "door_virgin_albedo.jpg",
+   "normal": "door_virgin_normal.jpg",
+   "mask": "door_virgin_mask.png"
+  }
+ },
+ {
+  "id": "door_dark_oak",
+  "name": "Dark Oak (ЭкоШпон)",
+  "category": "door",
+  "source": "procedural:tools/doors/textures/eco_oak.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/door_dark_oak",
+  "textures": {
+   "albedo": "door_dark_oak_albedo.jpg",
+   "normal": "door_dark_oak_normal.jpg",
+   "mask": "door_dark_oak_mask.png"
+  }
+ },
+ {
+  "id": "door_organic_oak",
+  "name": "Organic Oak (ЭкоШпон)",
+  "category": "door",
+  "source": "procedural:tools/doors/textures/eco_oak.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/door_organic_oak",
+  "textures": {
+   "albedo": "door_organic_oak_albedo.jpg",
+   "normal": "door_organic_oak_normal.jpg",
+   "mask": "door_organic_oak_mask.png"
+  }
+ },
+ {
+  "id": "door_nordic_oak",
+  "name": "Nordic Oak (ЭкоШпон)",
+  "category": "door",
+  "source": "procedural:tools/doors/textures/eco_oak.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/door_nordic_oak",
+  "textures": {
+   "albedo": "door_nordic_oak_albedo.jpg",
+   "normal": "door_nordic_oak_normal.jpg",
+   "mask": "door_nordic_oak_mask.png"
+  }
+ },
+ {
+  "id": "door_original_oak",
+  "name": "Original Oak (ЭкоШпон)",
+  "category": "door",
+  "source": "procedural:tools/doors/textures/eco_oak.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/door_original_oak",
+  "textures": {
+   "albedo": "door_original_oak_albedo.jpg",
+   "normal": "door_original_oak_normal.jpg",
+   "mask": "door_original_oak_mask.png"
+  }
+ },
+ {
+  "id": "door_chalet_grande",
+  "name": "Chalet Grande (ЭкоШпон)",
+  "category": "door",
+  "source": "procedural:tools/doors/textures/eco_oak.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/door_chalet_grande",
+  "textures": {
+   "albedo": "door_chalet_grande_albedo.jpg",
+   "normal": "door_chalet_grande_normal.jpg",
+   "mask": "door_chalet_grande_mask.png"
+  }
+ },
+ {
+  "id": "door_chalet_grasse",
+  "name": "Chalet Grasse (ЭкоШпон)",
+  "category": "door",
+  "source": "procedural:tools/doors/textures/eco_oak.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/door_chalet_grasse",
+  "textures": {
+   "albedo": "door_chalet_grasse_albedo.jpg",
+   "normal": "door_chalet_grasse_normal.jpg",
+   "mask": "door_chalet_grasse_mask.png"
+  }
+ },
+ {
+  "id": "door_chalet_provence",
+  "name": "Chalet Provence (ЭкоШпон)",
+  "category": "door",
+  "source": "procedural:tools/doors/textures/eco_oak.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/door_chalet_provence",
+  "textures": {
+   "albedo": "door_chalet_provence_albedo.jpg",
+   "normal": "door_chalet_provence_normal.jpg",
+   "mask": "door_chalet_provence_mask.png"
+  }
+ },
+ {
+  "id": "door_graphite_art",
+  "name": "Graphite Art (ЭкоШпон)",
+  "category": "door",
+  "source": "procedural:tools/doors/textures/eco_oak.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/door_graphite_art",
+  "textures": {
+   "albedo": "door_graphite_art_albedo.jpg",
+   "normal": "door_graphite_art_normal.jpg",
+   "mask": "door_graphite_art_mask.png"
+  }
+ }
+]

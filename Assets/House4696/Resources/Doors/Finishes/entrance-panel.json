@@ -1,0 +1,44 @@
+[
+ {
+  "id": "winorit-p4",
+  "name": "П-4 (Золотой Дуб)",
+  "line": "WINORIT",
+  "material": "door_winorit_p4",
+  "color": "#8c5f23"
+ },
+ {
+  "id": "winorit-p25",
+  "name": "П-25 (Беленый Дуб)",
+  "line": "WINORIT",
+  "material": "door_winorit_p25",
+  "color": "#e7e2da"
+ },
+ {
+  "id": "winorit-p26",
+  "name": "П-26 (Французский Дуб)",
+  "line": "WINORIT",
+  "material": "door_winorit_p26",
+  "color": "#5c3b1a"
+ },
+ {
+  "id": "winorit-p28",
+  "name": "П-28 (Тёмная Вишня)",
+  "line": "WINORIT",
+  "material": "door_winorit_p28",
+  "color": "#392a27"
+ },
+ {
+  "id": "almond-28",
+  "name": "Almond 28",
+  "line": "WINORIT",
+  "material": "door_almond_28",
+  "color": "#412c27"
+ },
+ {
+  "id": "graphite-pro",
+  "name": "Graphite Pro",
+  "line": "Эко про",
+  "material": "door_graphite_pro",
+  "color": "#434750"
+ }
+]

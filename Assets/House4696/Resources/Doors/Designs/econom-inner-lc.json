@@ -1,0 +1,11 @@
+{
+  "id": "econom-inner-lc",
+  "name": "Эконом — внутренняя панель LC (4 мм)",
+  "ref": [800, 2000],
+  "thickness": 4,
+  "lock": "right",
+  "fixX": [],
+  "fixY": [],
+  "edge": { "radius": 1 },
+  "layout": { "grain": "v" }
+}

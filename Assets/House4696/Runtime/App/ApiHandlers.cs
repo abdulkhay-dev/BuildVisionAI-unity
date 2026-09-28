@@ -39,6 +39,7 @@ namespace House4696.App
             {
                 case "status": c.Done.SetResult(Status()); return;
                 case "catalog": c.Done.SetResult(Catalog((string)a["category"], (string)a["id"])); return;
+                case "doors": c.Done.SetResult(Doors((string)a["series"], (string)a["id"])); return;
                 case "materials": c.Done.SetResult(Materials((string)a["category"])); return;
                 case "inspect": RequireProject(); c.Done.SetResult(HouseInspector.Inspect(_s.Result, (string)a["section"], (string)a["id"])); return;
                 case "list_projects": c.Done.SetResult(JArray.FromObject(_s.Store.List(), Camel)); return;
@@ -148,8 +149,10 @@ namespace House4696.App
             HouseDocument doc;
             try { doc = HouseJson.Deserialize(d.ToString()); }
             catch (Exception e) { throw new ArgumentException("документ не читается: " + e.Message); }
+            var notes = new List<string> { "проект заменён целиком" };
+            House4696.Doors.DoorSizing.Normalize(doc, notes);
             _s.Apply(doc);
-            return Changed(new List<string> { "проект заменён целиком" });
+            return Changed(notes);
         }
 
         JObject ExteriorWalls(JObject a)
@@ -223,6 +226,92 @@ namespace House4696.App
                             "front — вперёд по rotation, back — назад (к стене), left/right — влево/вправо, если стоять за предметом лицом по rotation.",
                 ["categories"] = new JArray(cats),
                 ["models"] = arr,
+            };
+        }
+
+        /// <summary>
+        /// The door catalogue for openings: series with their models, finishes and glass, standard sizes and how an opening
+        /// follows its leaf. Filtered by series id or model id (the full list grows with the catalogue).
+        /// </summary>
+        const string DoorsHowTo =
+            "Дверь из каталога — проём type door с полями model (id модели), finish (id цвета серии), glass (id стекла модели, " +
+            "если у модели есть стекло) и leaf [ширина, высота] — размер полотна, м. Проём в стене (width/height) считается из полотна " +
+            "сам: +0.095 по ширине и +0.07 по высоте (таблица каталога), поэтому для таких дверей задавай leaf, а не width. " +
+            "Строится весь дверной блок: коробка, доборы под толщину стены, наличники с двух сторон (классика — пилястры, капители, карниз), петли, ручки. " +
+            "hinge — сторона петель (start/end), swing — куда открывается (1 — влево от a→b стены, -1 — вправо), open: true — показать открытой. " +
+            "kind: swing (распашная; leaves: 2 — двустворчатая), sliding (купе; едет вдоль стены к стороне hinge), " +
+            "folding (книжка; leaf 0.35/0.4, leaves 2 или 4), portal (только обрамление проёма, нужен finish). Серии купе/книжек/порталов " +
+            "дают kind сами. Готовые блоки (серия porta-x-blocks: 1П-03, 1П-02 WC, 2П-03) несут свои створки и замок. " +
+            "Входные двери (kind серии entrance): ставь в наружную стену, leaf = размер блока из sizes серии (например [0.96, 2.05]), " +
+            "finish — наружная отделка, finishIn — внутренняя панель (finishesIn), glass — стекло/зеркало внутренней панели.";
+
+        static JObject Doors(string series, string id)
+        {
+            var cat = House4696.Doors.DoorCatalog.File;
+            // no filter: a compact overview (the full catalogue is ~300 models) — series with their model ids and names
+            if (string.IsNullOrEmpty(series) && string.IsNullOrEmpty(id))
+            {
+                var overview = new JArray();
+                foreach (var s in cat.Series)
+                    overview.Add(new JObject
+                    {
+                        ["id"] = s.Id, ["name"] = s.Name, ["line"] = s.Line, ["kind"] = s.Kind,
+                        ["models"] = new JArray(s.Models.Select(m => (object)$"{m.Id} ({m.Name})")),
+                    });
+                return new JObject
+                {
+                    ["howTo"] = "Каталог дверей по сериям. Цвета (finish) и стёкла (glass) серии — house_doors с series=<id серии> " +
+                                "или id=<id модели>. " + DoorsHowTo,
+                    ["series"] = overview,
+                };
+            }
+            var usedFinishes = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+            var usedGlass = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+            var list = new JArray();
+            foreach (var s in cat.Series)
+            {
+                if (!string.IsNullOrEmpty(series) && !string.Equals(s.Id, series, StringComparison.OrdinalIgnoreCase)) continue;
+                var models = new JArray();
+                foreach (var m in s.Models)
+                {
+                    if (!string.IsNullOrEmpty(id) && !string.Equals(m.Id, id, StringComparison.OrdinalIgnoreCase)) continue;
+                    var mo = new JObject { ["id"] = m.Id, ["name"] = m.Name };
+                    var g = House4696.Doors.DoorCatalog.GlassOf(s, m);
+                    if (g.Count > 0) mo["glass"] = new JArray(g);
+                    if (m.Finishes != null) mo["finishes"] = new JArray(m.Finishes);
+                    foreach (var x in g) usedGlass.Add(x);
+                    foreach (var x in House4696.Doors.DoorCatalog.FinishesOf(s, m)) usedFinishes.Add(x);
+                    models.Add(mo);
+                }
+                if (models.Count == 0) continue;
+                var so = new JObject
+                {
+                    ["id"] = s.Id, ["name"] = s.Name, ["line"] = s.Line, ["kind"] = s.Kind,
+                    ["finishes"] = new JArray(s.Finishes), ["models"] = models,
+                };
+                if (s.IsEntrance)
+                {
+                    if (s.FinishesIn != null) so["finishesIn"] = new JArray(s.FinishesIn);
+                    var sizes = s.Sizes ?? new List<float[]> { new[] { 0.86f, 2.05f }, new[] { 0.96f, 2.05f } };
+                    so["sizes"] = new JArray(sizes.Select(z => (object)new JArray(z[0], z[1])));
+                    foreach (var x in s.FinishesIn ?? new List<string>()) usedFinishes.Add(x);
+                }
+                list.Add(so);
+            }
+            return new JObject
+            {
+                ["howTo"] = DoorsHowTo,
+                ["sizes"] = new JObject
+                {
+                    ["leafWidths"] = new JArray(House4696.Doors.DoorSizing.Widths.Select(w => (object)w)),
+                    ["leafHeight"] = House4696.Doors.DoorSizing.Height,
+                    ["opening"] = "leaf + [0.095, 0.07]",
+                },
+                ["finishes"] = new JArray(cat.Finishes.Where(f => usedFinishes.Contains(f.Id))
+                    .Select(f => new JObject { ["id"] = f.Id, ["name"] = f.Name, ["line"] = f.Line })),
+                ["glass"] = new JArray(cat.Glass.Where(g => usedGlass.Contains(g.Id))
+                    .Select(g => new JObject { ["id"] = g.Id, ["name"] = g.Name })),
+                ["series"] = list,
             };
         }
 

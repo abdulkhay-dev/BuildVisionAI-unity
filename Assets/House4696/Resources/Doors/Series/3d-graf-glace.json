@@ -1,0 +1,9 @@
+{
+  "id": "3d-graf-glace", "name": "GLACE", "line": "3D-Graf", "kind": "interior", "block": "t70", "order": 14,
+  "finishes": ["3d-cappuccino", "3d-wenge"],
+  "glass": ["sprig", "twig"],
+  "models": [
+    { "id": "glace-1", "name": "Глейс-1", "design": "glace-1", "glass": ["sprig", "twig"], "photo": "p014_gleys-1-sprig__3d-cappuccino.jpg" },
+    { "id": "glace-2", "name": "Глейс-2", "design": "glace-2", "glass": ["twig"], "photo": "p014_gleys-2-twig__3d-wenge.jpg" }
+  ]
+}

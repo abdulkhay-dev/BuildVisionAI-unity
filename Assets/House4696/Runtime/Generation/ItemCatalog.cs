@@ -175,6 +175,7 @@ namespace House4696.Generation
             R("washer_stack", "Стиральная и сушильная машины", "utility", "", WasherStack);
             R("rattan_lounge_chair", "Плетёное кресло", "outdoor", "", RattanChair);
             R("bistro_set", "Столик с двумя стульями", "outdoor", "", BistroSet);
+            R("sun_lounger", "Шезлонг у бассейна", "outdoor", "cushion=cushion frame=furniture_dark back=45 (изголовье к +Z, ноги к фасаду -Z)", SunLounger);
         }
 
         // ------------------------------------------------------------------ composite models
@@ -265,6 +266,30 @@ namespace House4696.Generation
             b.F.Box(new Vector3(-0.36f, 0.42f, -0.36f), new Vector3(-0.26f, 0.64f, 0.36f), BoxMats.All(rattan));
             b.F.Box(new Vector3(0.26f, 0.42f, -0.36f), new Vector3(0.36f, 0.64f, 0.36f), BoxMats.All(rattan));
             b.F.Box(new Vector3(-0.26f, 0.42f, -0.3f), new Vector3(0.26f, 0.52f, 0.22f), BoxMats.All(cushion));
+        }
+
+        /// <summary>Pool sun lounger, 0.7 × 2.0 m: dark aluminium frame, a thick cushion, the backrest raised at the +Z end.</summary>
+        static void SunLounger(ItemBuild b)
+        {
+            var frame = b.P.M("frame", b.C.Lib.FurnitureDark);
+            var cushion = b.P.M("cushion", b.C.Lib.Cushion);
+            float back = Mathf.Clamp(b.P.F("back", 45f), 0f, 80f);
+            const float hw = 0.34f, z0 = -1.0f, z1 = 1.0f, hinge = 0.3f, bedY = 0.26f;
+            // side rails and legs
+            foreach (float x in new[] { -hw, hw - 0.03f })
+            {
+                b.F.Box(new Vector3(x, bedY - 0.06f, z0), new Vector3(x + 0.03f, bedY, z1), frame);
+                b.F.Box(new Vector3(x, 0f, z0 + 0.05f), new Vector3(x + 0.03f, bedY - 0.06f, z0 + 0.09f), frame);
+                b.F.Box(new Vector3(x, 0f, z1 - 0.12f), new Vector3(x + 0.03f, bedY - 0.06f, z1 - 0.08f), frame);
+            }
+            b.F.Box(new Vector3(-hw, bedY - 0.06f, z0), new Vector3(hw, bedY - 0.02f, z0 + 0.03f), frame);
+            // flat part of the cushion
+            b.D.RoundBox(new Vector3(-hw + 0.02f, bedY - 0.02f, z0 + 0.02f), new Vector3(hw - 0.02f, bedY + 0.07f, hinge), 0.03f, cushion);
+            // backrest: frame plate and cushion tilted about the hinge line
+            using (b.F.Place(new Vector3(0, bedY, hinge), Quaternion.Euler(-back, 0, 0)))
+                b.F.Box(new Vector3(-hw, -0.04f, 0f), new Vector3(hw, -0.01f, z1 - hinge), frame);
+            using (b.D.Place(new Vector3(0, bedY, hinge), Quaternion.Euler(-back, 0, 0)))
+                b.D.RoundBox(new Vector3(-hw + 0.02f, -0.02f, 0.01f), new Vector3(hw - 0.02f, 0.07f, z1 - hinge - 0.02f), 0.03f, cushion);
         }
 
         static void BistroSet(ItemBuild b)

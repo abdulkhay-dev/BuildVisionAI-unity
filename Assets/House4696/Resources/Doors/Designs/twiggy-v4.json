@@ -1,0 +1,25 @@
+{
+  "id": "twiggy-v4",
+  "name": "TWIGGY V4",
+  "ref": [800, 2000],
+  "thickness": 36,
+  "fixX": [[0, 55], [745, 800]],
+  "fixY": [[0, 47], [1953, 2000]],
+  "edge": { "radius": 2 },
+  "handle": { "y": 1000, "x": 30 },
+  "layout": { "split": "x", "at": [55, 745], "sep": "joint", "grain": "v", "radius": 1.5,
+    "cells": [
+      {},
+      { "split": "y", "at": [47, 1953], "sep": "joint", "grain": "h",
+        "cells": [
+          {},
+          { "split": "y", "at": [486, 532, 977, 1021, 1468, 1513], "sep": "joint",
+            "cells": [ { "glass": true }, {}, { "glass": true }, {}, { "glass": true }, {}, { "glass": true } ]
+          },
+          {}
+        ]
+      },
+      {}
+    ]
+  }
+}

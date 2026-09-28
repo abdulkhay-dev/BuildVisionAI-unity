@@ -1,0 +1,13 @@
+{
+  "id": "3d-graf-master", "name": "MASTER", "line": "3D-Graf", "kind": "interior", "block": "t70", "order": 15,
+  "finishes": ["3d-cappuccino", "3d-wenge"],
+  "glass": ["mf"],
+  "models": [
+    { "id": "master-5", "name": "Мастер-5", "design": "master-5", "glass": [], "photo": "p015_master-5__3d-cappuccino.jpg" },
+    { "id": "master-6", "name": "Мастер-6", "design": "master-6", "glass": ["mf"], "photo": "p015_master-6__3d-wenge.jpg" },
+    { "id": "master-7", "name": "Мастер-7", "design": "master-7", "glass": [], "photo": "p015_master-7__3d-cappuccino.jpg" },
+    { "id": "master-8", "name": "Мастер-8", "design": "master-8", "glass": ["mf"], "photo": "p015_master-8__3d-wenge.jpg" },
+    { "id": "master-9", "name": "Мастер-9", "design": "master-9", "glass": [], "photo": "p015_master-9__3d-cappuccino.jpg" },
+    { "id": "master-10", "name": "Мастер-10", "design": "master-10", "glass": ["mf"], "photo": "p015_master-10__3d-wenge.jpg" }
+  ]
+}

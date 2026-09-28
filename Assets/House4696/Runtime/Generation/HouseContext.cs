@@ -41,13 +41,32 @@ namespace House4696.Generation
             foreach (var l in doc.Levels) if (!string.IsNullOrEmpty(l.Id)) _levels[l.Id] = l;
             foreach (var wd in doc.Walls) _walls[wd.Id ?? ("wall" + _walls.Count)] = new WallFrame(wd, this);
             DetectCorners();
+            SnapPartitionEnds();
+            foreach (var e in doc.Elements)
+                if (e.Type == ElementType.Pool && PoolShape.From(e, out _) is PoolShape pool) Pools.Add(pool);
             foreach (var s in doc.Stairs)
             {
                 var from = Level(s.From);
                 var to = s.To != null ? (_levels.TryGetValue(s.To, out var t) ? t : null) : Above(from);
                 var g = StairGeometry.Compute(s, from, to);
-                if (g != null) _stairs[s] = g;
+                if (g == null) continue;
+                g.SnapWell(_walls.Values);
+                _stairs[s] = g;
             }
+        }
+
+        /// <summary>Pools of the document that resolve (invalid ones are reported by the builder/validator).</summary>
+        public readonly List<PoolShape> Pools = new List<PoolShape>();
+
+        /// <summary>
+        /// Plan outlines (basin + walls, convex) of the pools that sink into a solid whose top is at <paramref name="y"/>:
+        /// the ground (0), a deck/platform, a room floor. Their builders cut these out.
+        /// </summary>
+        public List<Vector2[]> PoolCuts(float y)
+        {
+            var list = new List<Vector2[]>();
+            foreach (var p in Pools) if (p.Cuts(y)) list.Add(p.Cut);
+            return list;
         }
 
         /// <summary>Plan geometry of a stair (null when its levels do not make a stair).</summary>
@@ -89,6 +108,56 @@ namespace House4696.Generation
             if (best > float.MinValue) return best;
             var top = Doc.Levels.Count > 0 ? Doc.Levels[Doc.Levels.Count - 1] : new LevelDef();
             return top.Elevation + top.Height + 0.3f;
+        }
+
+        /// <summary>
+        /// Height above which an exterior wall of the top level is outdoors on its inner side too — a parapet: the top
+        /// of the flat roof that covers the room behind it. Null when the wall has a level above, stands under a pitched
+        /// roof, or no flat roof reaches it. The roof may be outlined along the walls' outer or inner faces, so the test
+        /// looks just inside the inner face.
+        /// </summary>
+        public float? ParapetFrom(WallFrame f)
+        {
+            if (!f.Exterior || Above(f.Level) != null) return null;
+            float? best = null;
+            foreach (var r in Doc.Roofs)
+            {
+                if (r.Type != RoofType.Flat || r.Outline == null || r.Outline.Count < 3) continue;
+                var grown = RoofBuilder.Offset(Polygon.CounterClockwise(r.Outline), 0.05f);
+                int inside = 0;
+                for (int i = 0; i < 5; i++)
+                    if (Polygon.Contains(grown, f.Plan(Mathf.Lerp(f.S0, f.S1, (i + 0.5f) / 5f), -f.T - 0.1f))) inside++;
+                if (inside < 3) continue;
+                float top = RoofBase(r) + r.Thickness;
+                if (best == null || top > best.Value) best = top;
+            }
+            return best;
+        }
+
+        /// <summary>A gap narrower than this between a partition's end and a wall is a see-through slit, not a passage.</summary>
+        public const float SlitMax = 0.6f;
+
+        /// <summary>
+        /// Partitions that stop short of a wall by less than <see cref="SlitMax"/> run on to its face. The usual cause is
+        /// measuring to an axis instead of the wall's face (e.g. a partition ends on the line of the inner faces, but the
+        /// exterior wall there is set back); the slit left behind shows through between rooms.
+        /// </summary>
+        void SnapPartitionEnds()
+        {
+            var all = new List<WallFrame>(_walls.Values);
+            foreach (var f in all)
+            {
+                if (f.Exterior) continue;
+                var others = all.FindAll(g => g != f && g.SameStorey(f));
+                foreach (bool atB in new[] { false, true })
+                {
+                    var p = f.Plan(atB ? f.S1 : f.S0, -f.T * 0.5f);
+                    if (others.Exists(g => g.DistanceTo(p) < 0.03f)) continue;
+                    var dir = new Vector2(f.A.x, f.A.z) * (atB ? 1f : -1f);
+                    float? t = WallFrame.Cast(others, p, dir, SlitMax, out _);
+                    if (t != null && t.Value >= 0.03f) f.Extend(atB, t.Value);
+                }
+            }
         }
 
         /// <summary>

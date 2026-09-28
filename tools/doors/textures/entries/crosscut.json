@@ -1,0 +1,74 @@
+[
+ {
+  "id": "door_cappuccino_crosscut",
+  "name": "Cappuccino Crosscut (ЭкоШпон)",
+  "category": "door",
+  "source": "procedural:tools/doors/textures/crosscut.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/door_cappuccino_crosscut",
+  "textures": {
+   "albedo": "door_cappuccino_crosscut_albedo.jpg",
+   "normal": "door_cappuccino_crosscut_normal.jpg",
+   "mask": "door_cappuccino_crosscut_mask.png"
+  }
+ },
+ {
+  "id": "door_grey_crosscut",
+  "name": "Grey Crosscut (ЭкоШпон)",
+  "category": "door",
+  "source": "procedural:tools/doors/textures/crosscut.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/door_grey_crosscut",
+  "textures": {
+   "albedo": "door_grey_crosscut_albedo.jpg",
+   "normal": "door_grey_crosscut_normal.jpg",
+   "mask": "door_grey_crosscut_mask.png"
+  }
+ },
+ {
+  "id": "door_wenge_crosscut",
+  "name": "Wenge Crosscut (ЭкоШпон)",
+  "category": "door",
+  "source": "procedural:tools/doors/textures/crosscut.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/door_wenge_crosscut",
+  "textures": {
+   "albedo": "door_wenge_crosscut_albedo.jpg",
+   "normal": "door_wenge_crosscut_normal.jpg",
+   "mask": "door_wenge_crosscut_mask.png"
+  }
+ },
+ {
+  "id": "door_bianco_crosscut",
+  "name": "Bianco Crosscut (ЭкоШпон)",
+  "category": "door",
+  "source": "procedural:tools/doors/textures/crosscut.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/door_bianco_crosscut",
+  "textures": {
+   "albedo": "door_bianco_crosscut_albedo.jpg",
+   "normal": "door_bianco_crosscut_normal.jpg",
+   "mask": "door_bianco_crosscut_mask.png"
+  }
+ }
+]

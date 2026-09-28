@@ -445,7 +445,10 @@ def main():
         if not only or entry["id"] in only:
             by_id[entry["id"]] = process_material(entry)
             print("material", entry["id"])
-    manifest["materials"] = [by_id[e["id"]] for e in catalog["materials"] if e["id"] in by_id]
+    mat_ids = {e["id"] for e in catalog["materials"]}
+    # materials made elsewhere (door finishes: tools/doors/textures) keep their entries after the catalogue's own
+    manifest["materials"] = [by_id[e["id"]] for e in catalog["materials"] if e["id"] in by_id] + \
+        [m for m in manifest["materials"] if m["id"] not in mat_ids]
     models = {e["id"]: e for e in manifest["models"]}
     for entry in catalog["models"]:
         if only and entry["id"] not in only:
@@ -456,7 +459,10 @@ def main():
             models[entry["id"]] = BUILDERS[entry["blender"]](entry)
         m = models[entry["id"]]
         print("model", m["id"], "size", m["size"], "tris", m["triangles"], "slots", [s["slot"] for s in m["slots"]])
-    manifest["models"] = [models[e["id"]] for e in catalog["models"] if e["id"] in models]
+    ids = {e["id"] for e in catalog["models"]}
+    # models built elsewhere (tools/interior/build.py) keep their entries after the catalogue's own
+    manifest["models"] = [models[e["id"]] for e in catalog["models"] if e["id"] in models] + \
+        [m for m in manifest["models"] if m["id"] not in ids]
     os.makedirs(OUT, exist_ok=True)
     with open(manifest_path, "w") as f:
         json.dump(manifest, f, ensure_ascii=False, indent=1)

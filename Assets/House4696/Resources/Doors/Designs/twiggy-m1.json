@@ -1,0 +1,23 @@
+{
+  "id": "twiggy-m1",
+  "name": "TWIGGY M1",
+  "ref": [800, 2000],
+  "thickness": 36,
+  "fixX": [[0, 55], [745, 800]],
+  "fixY": [[0, 47], [1953, 2000]],
+  "edge": { "radius": 2 },
+  "handle": { "y": 1000, "x": 30 },
+  "layout": { "split": "x", "at": [55, 745], "sep": "joint", "grain": "v", "radius": 1.5,
+    "cells": [
+      {},
+      { "split": "y", "at": [47, 1953], "sep": "joint", "grain": "h",
+        "cells": [
+          {},
+          { "level": -3, "grain": "v" },
+          {}
+        ]
+      },
+      {}
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "econom", "name": "Эконом", "line": "Входные двери", "kind": "entrance", "block": "t70", "order": 185,
+  "finishes": ["antik-copper-ekonom"],
+  "finishesIn": ["l-11-italoreh", "antik-copper-ekonom"],
+  "glass": [],
+  "sizes": [[0.85, 2.05], [0.95, 2.05]],
+  "locks": 1,
+  "models": [
+    { "id": "ultra-layt", "name": "Ультра Лайт", "design": "econom-outer-flat", "inner": "econom-inner-lc",
+      "finishesIn": ["l-11-italoreh"], "glass": [], "photo": "p186_ultra-layt__antik-med-l-11-italoreh.jpg" },
+    { "id": "ultra-plyus", "name": "Ультра Плюс", "design": "econom-outer-flat", "inner": "econom-inner-metal",
+      "finishesIn": ["antik-copper-ekonom"], "glass": [], "photo": "p187_ultra-plyus__antik-med.jpg" },
+    { "id": "ultra-star", "sizes": [[0.88, 2.066], [0.98, 2.066]], "name": "Ультра Стар", "design": "econom-outer-flat", "inner": "econom-inner-metal",
+      "finishesIn": ["antik-copper-ekonom"], "glass": [], "photo": "p186_ultra-star__antik-med.jpg" }
+  ]
+}

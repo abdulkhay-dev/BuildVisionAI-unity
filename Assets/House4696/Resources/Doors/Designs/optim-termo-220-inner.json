@@ -1,0 +1,18 @@
+{
+  "id": "optim-termo-220-inner",
+  "name": "Оптим Термо 220 (внутренняя панель с зеркалом)",
+  "ref": [800, 2000],
+  "thickness": 22,
+  "lock": "right",
+  "fixX": [[0, 114], [688, 800]],
+  "fixY": [[0, 113], [1890, 2000]],
+  "edge": {"radius": 2},
+  "layout": {
+    "split": "x",
+    "at": [114, 688],
+    "sep": "joint",
+    "grain": "v",
+    "radius": 1.5,
+    "cells": [{}, {"split": "y", "at": [113, 1890], "sep": "joint", "grain": "h", "cells": [{}, {"glass": true}, {}]}, {}]
+  }
+}

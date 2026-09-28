@@ -1,0 +1,12 @@
+{
+  "id": "solid", "name": "Массив без отделки", "line": "Массив", "kind": "interior", "block": "t70", "order": 105,
+  "finishes": ["solid-pine"],
+  "glass": ["mf", "wc"],
+  "models": [
+    { "id": "porta-21", "name": "Порта-21", "design": "porta-21-solid", "glass": [], "photo": "p105_porta-21__bez-otdelki.jpg" },
+    { "id": "porta-22", "name": "Порта-22", "design": "porta-22-solid", "glass": ["mf"], "photo": "p105_porta-22-wf__bez-otdelki.jpg" },
+    { "id": "porta-23", "name": "Порта-23", "design": "porta-23-solid", "glass": ["mf"], "photo": "p105_porta-23-wf__bez-otdelki.jpg" },
+    { "id": "klassiko-12", "name": "Классико-12", "design": "klassiko-12", "glass": [], "block": "classic", "photo": "p105_klassiko-12__bez-otdelki.jpg" },
+    { "id": "klassiko-13", "name": "Классико-13", "design": "klassiko-13", "glass": ["wc"], "block": "classic", "photo": "p105_klasiko-13-wc__bez-otdelki.jpg" }
+  ]
+}

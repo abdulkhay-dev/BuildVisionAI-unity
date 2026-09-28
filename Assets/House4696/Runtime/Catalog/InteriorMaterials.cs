@@ -18,7 +18,10 @@ namespace House4696.Catalog
             Linen, Boucle, Sage, Terracotta, Charcoal, Bedding, Leather, Rug, RugDark, Towel,
             BlackMetal, Brass, Chrome, Ceramic, Stoneware, Mirror, Glass, Screen, BlackGlass,
             LampShade, Globe, Led, Downlight, Fire, Art, Soil,
-            GlossWhite, SlatWood, Felt, Cloth, LeatherWhite, WhiteMetal, SoftWhite;
+            GlossWhite, SlatWood, Felt, Cloth, LeatherWhite, WhiteMetal, SoftWhite,
+            // doors of the catalogue (House4696.Doors): glass roles, aluminium inserts, the frame's seal
+            DoorSatin, DoorAluminium, DoorSeal, DoorLacobelBeige, DoorLacobelWhite, DoorLacobelSmoke, DoorBronze,
+            DoorPatinaGold, DoorPatinaSilver, DoorPatinaDark;
 
         public InteriorMaterials(MaterialLibrary shell)
         {
@@ -83,6 +86,27 @@ namespace House4696.Catalog
             SoftWhite = Fabric("M_IntSoftWhite", new Color(0.93f, 0.92f, 0.9f), 0.25f, 0.8f);
             LeatherWhite = Lit("M_IntLeatherWhite", new Color(0.9f, 0.88f, 0.84f), 0.62f);
             WhiteMetal = Lit("M_IntWhiteMetal", new Color(0.9f, 0.9f, 0.89f), 0.55f, 0.2f);
+
+            // satin (acid-etched) glass: milky, lets light and shapes through faintly
+            // (it glows faintly: light passes through and scatters, which a lit transparent surface alone does not show)
+            var satin = LitOptions.Of(new Color(0.95f, 0.925f, 0.89f, 0.9f), 0.4f);
+            satin.Transparent = true;
+            satin.Emission = new Color(0.11f, 0.104f, 0.094f);
+            DoorSatin = MaterialLibrary.Lit("M_DoorGlassSatin", satin);
+            // aluminium profiles and edges ("МатХром", ALU): brushed, satin sheen
+            DoorAluminium = Lit("M_DoorAluminium", new Color(0.78f, 0.78f, 0.80f), 0.62f, 1f);
+            DoorSeal = Lit("M_DoorSeal", new Color(0.07f, 0.07f, 0.075f), 0.2f);
+            // door furniture: antique bronze (classic handles)
+            DoorBronze = Lit("M_DoorBronze", new Color(0.42f, 0.30f, 0.18f), 0.55f, 1f);
+            // patina: metallic paint on the crests of classic mouldings (Classico G-27)
+            DoorPatinaGold = Lit("M_DoorPatinaGold", new Color(0.86f, 0.66f, 0.34f), 0.5f, 0.8f);
+            DoorPatinaSilver = Lit("M_DoorPatinaSilver", new Color(0.80f, 0.80f, 0.80f), 0.5f, 0.8f);
+            // toning of milled profiles on veneer doors (fine-line): a dark walnut stain in the channels
+            DoorPatinaDark = Lit("M_DoorPatinaDark", new Color(0.17f, 0.105f, 0.065f), 0.35f);
+            // lacobel: glass painted on the back — opaque, glossy
+            DoorLacobelBeige = Lit("M_DoorLacobelBeige", new Color(0.86f, 0.80f, 0.70f), 0.93f);
+            DoorLacobelWhite = Lit("M_DoorLacobelWhite", new Color(0.92f, 0.92f, 0.91f), 0.93f);
+            DoorLacobelSmoke = Lit("M_DoorLacobelSmoke", new Color(0.30f, 0.30f, 0.30f), 0.93f);
         }
 
         static Material Lit(string name, Color c, float smooth, float metallic = 0f)

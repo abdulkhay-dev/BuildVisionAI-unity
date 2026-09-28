@@ -1,0 +1,110 @@
+[
+ {
+  "id": "door_f_01_oak",
+  "name": "Ф-01 Дуб (шпон файн-лайн)",
+  "category": "door",
+  "source": "procedural:tools/doors/textures/fine_line.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/door_f_01_oak",
+  "textures": {
+   "albedo": "door_f_01_oak_albedo.jpg",
+   "normal": "door_f_01_oak_normal.jpg",
+   "mask": "door_f_01_oak_mask.png"
+  }
+ },
+ {
+  "id": "door_f_11_walnut",
+  "name": "Ф-11 Орех (шпон файн-лайн)",
+  "category": "door",
+  "source": "procedural:tools/doors/textures/fine_line.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/door_f_11_walnut",
+  "textures": {
+   "albedo": "door_f_11_walnut_albedo.jpg",
+   "normal": "door_f_11_walnut_normal.jpg",
+   "mask": "door_f_11_walnut_mask.png"
+  }
+ },
+ {
+  "id": "door_f_15_makore",
+  "name": "Ф-15 Макоре (шпон файн-лайн)",
+  "category": "door",
+  "source": "procedural:tools/doors/textures/fine_line.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/door_f_15_makore",
+  "textures": {
+   "albedo": "door_f_15_makore_albedo.jpg",
+   "normal": "door_f_15_makore_normal.jpg",
+   "mask": "door_f_15_makore_mask.png"
+  }
+ },
+ {
+  "id": "door_f_17_chocolate",
+  "name": "Ф-17 Шоколад (шпон файн-лайн)",
+  "category": "door",
+  "source": "procedural:tools/doors/textures/fine_line.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/door_f_17_chocolate",
+  "textures": {
+   "albedo": "door_f_17_chocolate_albedo.jpg",
+   "normal": "door_f_17_chocolate_normal.jpg",
+   "mask": "door_f_17_chocolate_mask.png"
+  }
+ },
+ {
+  "id": "door_f_22_white_oak",
+  "name": "Ф-22 БелДуб (шпон файн-лайн)",
+  "category": "door",
+  "source": "procedural:tools/doors/textures/fine_line.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/door_f_22_white_oak",
+  "textures": {
+   "albedo": "door_f_22_white_oak_albedo.jpg",
+   "normal": "door_f_22_white_oak_normal.jpg",
+   "mask": "door_f_22_white_oak_mask.png"
+  }
+ },
+ {
+  "id": "door_f_27_wenge",
+  "name": "Ф-27 Венге (шпон файн-лайн)",
+  "category": "door",
+  "source": "procedural:tools/doors/textures/fine_line.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/door_f_27_wenge",
+  "textures": {
+   "albedo": "door_f_27_wenge_albedo.jpg",
+   "normal": "door_f_27_wenge_normal.jpg",
+   "mask": "door_f_27_wenge_mask.png"
+  }
+ }
+]

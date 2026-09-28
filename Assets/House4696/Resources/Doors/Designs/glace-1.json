@@ -1,0 +1,16 @@
+{
+  "id": "glace-1",
+  "name": "Глейс-1",
+  "ref": [800, 2000],
+  "thickness": 36,
+  "fixX": [[0, 295.5]],
+  "fixY": [],
+  "edge": {"radius": 2},
+  "handle": {"y": 1000, "x": 58},
+  "hinges": [189, 1812],
+  "layout": { "pane": 34,"split": "x", "at": [131.85, 286.25], "sep": ["metal:18.5:0.5", "metal:18.5:0.5"], "grain": "v", "cells": [
+    {},
+    {"glass": true},
+    {}
+  ]}
+}

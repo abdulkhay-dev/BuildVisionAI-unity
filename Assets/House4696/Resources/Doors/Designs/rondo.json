@@ -1,0 +1,13 @@
+{
+  "id": "rondo",
+  "name": "Рондо",
+  "ref": [800, 2000],
+  "thickness": 40,
+  "fixX": [[0, 153], [650, 800]],
+  "fixY": [],
+  "edge": { "radius": 2 },
+  "handle": { "y": 919, "x": 66, "style": "round", "finish": "gold" },
+  "hinges": [187, 1810],
+  "layout": { "split": "x", "at": [153, 650], "sep": "none", "grain": "v",
+    "cells": [ {}, { "grain": "h" }, {} ] }
+}

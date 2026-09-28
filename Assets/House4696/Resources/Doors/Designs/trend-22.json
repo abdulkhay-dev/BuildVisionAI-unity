@@ -1,0 +1,28 @@
+{
+  "id": "trend-22",
+  "name": "Тренд-22",
+  "ref": [800, 2000],
+  "thickness": 36,
+  "fixX": [[0, 143.1], [662, 800]],
+  "fixY": [[0, 195], [1792, 2000]],
+  "edge": {"radius": 2},
+  "handle": {"y": 1000, "x": 58},
+  "hinges": [189, 1812],
+  "layout": {"grain": "v"},
+  "parts": [
+    {"type": "glass", "shape": {"rect": [143.1, 195, 662, 1792]}},
+    {"type": "molding", "path": "M 143.1 195 H 662 V 1792 H 143.1 Z", "profile": [[-20, 0], [-18, 2.1], [-16, 3.47], [-14, 4.34], [-12, 4.84], [-10, 5], [-8, 4.84], [-6, 4.34], [-4, 3.47], [-2, 2.1], [0, 0]]},
+    {"type": "piece", "shape": {"rect": [143.1, 195, 662, 300.9]}, "level": -13, "grain": "h", "radius": 1.5},
+    {"type": "piece", "shape": {"rect": [143.1, 300.9, 662, 432.5]}, "level": -13.05, "grain": "h", "radius": 1.5},
+    {"type": "piece", "shape": {"rect": [143.1, 448, 662, 579.6]}, "level": -13, "grain": "h", "radius": 1.5},
+    {"type": "piece", "shape": {"rect": [143.1, 579.6, 662, 711.2]}, "level": -13.05, "grain": "h", "radius": 1.5},
+    {"type": "piece", "shape": {"rect": [143.1, 726.7, 662, 858.3]}, "level": -13, "grain": "h", "radius": 1.5},
+    {"type": "piece", "shape": {"rect": [143.1, 858.3, 662, 989.9]}, "level": -13.05, "grain": "h", "radius": 1.5},
+    {"type": "piece", "shape": {"rect": [143.1, 1005.4, 662, 1137]}, "level": -13, "grain": "h", "radius": 1.5},
+    {"type": "piece", "shape": {"rect": [143.1, 1137, 662, 1268.6]}, "level": -13.05, "grain": "h", "radius": 1.5},
+    {"type": "piece", "shape": {"rect": [143.1, 1284.1, 662, 1415.7]}, "level": -13, "grain": "h", "radius": 1.5},
+    {"type": "piece", "shape": {"rect": [143.1, 1415.7, 662, 1547.3]}, "level": -13.05, "grain": "h", "radius": 1.5},
+    {"type": "piece", "shape": {"rect": [143.1, 1562.8, 662, 1694.4]}, "level": -13, "grain": "h", "radius": 1.5},
+    {"type": "piece", "shape": {"rect": [143.1, 1694.4, 662, 1792]}, "level": -13.05, "grain": "h", "radius": 1.5}
+  ]
+}

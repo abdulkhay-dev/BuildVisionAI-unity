@@ -1,0 +1,22 @@
+{
+  "id": "porta-21-solid",
+  "name": "Порта-21",
+  "ref": [800, 2000],
+  "thickness": 36,
+  "fixX": [[0, 117], [685, 800]],
+  "fixY": [[0, 126], [1890, 2000]],
+  "edge": {"radius": 2},
+  "handle": {"y": 1001, "x": 57, "style": "square", "finish": "chrome"},
+  "hinges": [188, 1822],
+  "layout": {"split": "x", "at": [117, 685], "sep": "joint", "grain": "v", "radius": 1.5,
+    "cells": [
+      {},
+      {"split": "y", "at": [126, 1890], "sep": "joint", "grain": "h",
+      "cells": [
+        {},
+        {"split": "y", "at": [257, 408, 559, 709, 860, 1010, 1158, 1310, 1460, 1610, 1761], "sep": "joint", "level": -3},
+        {}
+      ]},
+      {}
+    ]}
+}

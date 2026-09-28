@@ -1,0 +1,28 @@
+{
+  "id": "trend-21",
+  "name": "Тренд-21",
+  "ref": [800, 2000],
+  "thickness": 36,
+  "fixX": [[0, 143.1], [662, 800]],
+  "fixY": [[0, 195], [1792, 2000]],
+  "edge": {"radius": 2},
+  "handle": {"y": 1000, "x": 58},
+  "hinges": [189, 1812],
+  "layout": {"grain": "v"},
+  "parts": [
+    {"type": "panel", "shape": {"rect": [143.1, 195, 662, 1792]}, "profile": [[0, 0], [0, -16]]},
+    {"type": "molding", "path": "M 143.1 195 H 662 V 1792 H 143.1 Z", "profile": [[-20, 0], [-18, 2.1], [-16, 3.47], [-14, 4.34], [-12, 4.84], [-10, 5], [-8, 4.84], [-6, 4.34], [-4, 3.47], [-2, 2.1], [0, 0]]},
+    {"type": "piece", "shape": {"rect": [143.1, 195, 662, 331.6]}, "level": -13, "grain": "h", "radius": 1.5},
+    {"type": "piece", "shape": {"rect": [143.1, 331.6, 662, 464.5]}, "level": -13.05, "grain": "h", "radius": 1.5},
+    {"type": "piece", "shape": {"rect": [143.1, 464.5, 662, 597.3]}, "level": -13, "grain": "h", "radius": 1.5},
+    {"type": "piece", "shape": {"rect": [143.1, 597.3, 662, 730.2]}, "level": -13.05, "grain": "h", "radius": 1.5},
+    {"type": "piece", "shape": {"rect": [143.1, 730.2, 662, 863]}, "level": -13, "grain": "h", "radius": 1.5},
+    {"type": "piece", "shape": {"rect": [143.1, 863, 662, 995.9]}, "level": -13.05, "grain": "h", "radius": 1.5},
+    {"type": "piece", "shape": {"rect": [143.1, 995.9, 662, 1128.8]}, "level": -13, "grain": "h", "radius": 1.5},
+    {"type": "piece", "shape": {"rect": [143.1, 1128.8, 662, 1261.6]}, "level": -13.05, "grain": "h", "radius": 1.5},
+    {"type": "piece", "shape": {"rect": [143.1, 1261.6, 662, 1394.5]}, "level": -13, "grain": "h", "radius": 1.5},
+    {"type": "piece", "shape": {"rect": [143.1, 1394.5, 662, 1527.3]}, "level": -13.05, "grain": "h", "radius": 1.5},
+    {"type": "piece", "shape": {"rect": [143.1, 1527.3, 662, 1660.2]}, "level": -13, "grain": "h", "radius": 1.5},
+    {"type": "piece", "shape": {"rect": [143.1, 1660.2, 662, 1792]}, "level": -13.05, "grain": "h", "radius": 1.5}
+  ]
+}

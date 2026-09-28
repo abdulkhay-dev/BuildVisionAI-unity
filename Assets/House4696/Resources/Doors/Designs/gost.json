@@ -1,0 +1,12 @@
+{
+  "id": "gost",
+  "name": "ГОСТ",
+  "ref": [800, 2000],
+  "thickness": 36,
+  "fixX": [],
+  "fixY": [],
+  "edge": {"radius": 2},
+  "handle": {"y": 925, "x": 70, "style": "round", "finish": "gold"},
+  "hinges": [188, 1811],
+  "layout": {"grain": "v"}
+}

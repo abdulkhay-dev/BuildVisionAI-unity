@@ -1,0 +1,17 @@
+{
+  "id": "optim-outer-layn",
+  "name": "Оптим Лайн / Техно — наружная сторона (тиснение)",
+  "ref": [800, 2000],
+  "thickness": 7,
+  "fixX": [],
+  "fixY": [],
+  "edge": {"radius": 3},
+  "handle": {"y": 1041, "x": 77},
+  "layout": {"grain": "h"},
+  "parts": [
+    {"type": "groove", "face": "front", "path": "M 78.4 1758.9 L 711.9 1758.9", "width": 16, "depth": 2, "profile": "u"},
+    {"type": "groove", "face": "front", "path": "M 143.1 1248.2 L 711.9 1248.2", "width": 16, "depth": 2, "profile": "u"},
+    {"type": "groove", "face": "front", "path": "M 143.1 737.0 L 711.9 737.0", "width": 16, "depth": 2, "profile": "u"},
+    {"type": "groove", "face": "front", "path": "M 78.4 224.0 L 711.9 224.0", "width": 16, "depth": 2, "profile": "u"}
+  ]
+}

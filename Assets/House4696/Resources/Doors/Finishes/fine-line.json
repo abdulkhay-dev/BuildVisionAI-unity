@@ -1,0 +1,44 @@
+[
+ {
+  "id": "f-01-oak",
+  "name": "Ф-01 Дуб",
+  "line": "Шпон файн-лайн",
+  "material": "door_f_01_oak",
+  "color": "#d6a27d"
+ },
+ {
+  "id": "f-11-walnut",
+  "name": "Ф-11 Орех",
+  "line": "Шпон файн-лайн",
+  "material": "door_f_11_walnut",
+  "color": "#8e5a32"
+ },
+ {
+  "id": "f-15-makore",
+  "name": "Ф-15 Макоре",
+  "line": "Шпон файн-лайн",
+  "material": "door_f_15_makore",
+  "color": "#733224"
+ },
+ {
+  "id": "f-17-chocolate",
+  "name": "Ф-17 Шоколад",
+  "line": "Шпон файн-лайн",
+  "material": "door_f_17_chocolate",
+  "color": "#552e1a"
+ },
+ {
+  "id": "f-22-white-oak",
+  "name": "Ф-22 БелДуб",
+  "line": "Шпон файн-лайн",
+  "material": "door_f_22_white_oak",
+  "color": "#ede4db"
+ },
+ {
+  "id": "f-27-wenge",
+  "name": "Ф-27 Венге",
+  "line": "Шпон файн-лайн",
+  "material": "door_f_27_wenge",
+  "color": "#3f261a"
+ }
+]

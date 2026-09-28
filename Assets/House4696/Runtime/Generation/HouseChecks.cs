@@ -53,6 +53,8 @@ namespace House4696.Generation
                 }
             }
 
+            // partitions stopping just short of a wall are extended to it by HouseContext (no slit, no warning)
+
             // ---------------------------------------------------------------- openings
             foreach (var o in doc.Openings)
             {
@@ -155,7 +157,9 @@ namespace House4696.Generation
             for (int j = i + 1; j < items.Count; j++)
             {
                 var a = items[i]; var b = items[j];
-                if (Skip(a) || Skip(b) || Small(a) || Small(b) || Pair(a, b, "seating", "tables") || Pair(a, b, "seating", "kitchen")) continue;
+                // chairs go under tables and counters, appliances (washers, dishwashers) under worktops
+                if (Skip(a) || Skip(b) || Small(a) || Small(b) || Pair(a, b, "seating", "tables") || Pair(a, b, "seating", "kitchen") ||
+                    Pair(a, b, "utility", "kitchen")) continue;
                 float yo = Mathf.Min(a.Y1, b.Y1) - Mathf.Max(a.Y0, b.Y0);
                 if (yo < 0.2f) continue;
                 if (!Polygon.BoundsOverlap(a.Footprint(), b.Footprint())) continue;
@@ -180,6 +184,38 @@ namespace House4696.Generation
                 if (c.StairGeometries != null)
                     foreach (var g in c.StairGeometries)
                         if (g.To.Id == L.Id && g.InWell(pc)) { W($"items/{it.Id}", $"'{it.Model}' попал в проём лестницы '{g.Def.Id}'"); break; }
+            }
+
+            // ---------------------------------------------------------------- pools
+            foreach (var pool in c.Pools)
+            {
+                string path = $"elements/{pool.Def.Id}";
+                var cut = pool.Cut;
+                foreach (var f in walls)
+                {
+                    if (f.Y1 < pool.Floor + 0.1f || f.Y0 > pool.Top - 0.05f) continue;
+                    if (OverlapArea(cut, Body(f, -0.02f)) > 0.01f)
+                    {
+                        W(path, $"бассейн заходит в стену '{f.Def.Id}' — чаша со стенками (0.2 м) и бортом должна стоять отдельно: сдвинь min/max");
+                        break;
+                    }
+                }
+                foreach (var it in items)
+                {
+                    if (Skip(it)) continue;
+                    var p = new Vector2(it.Position.x, it.Position.z);
+                    if (it.Y0 < pool.Top + 0.3f && it.Y1 > pool.Floor && Polygon.Contains(cut, p))
+                        W($"items/{it.Id}", $"'{it.Model}' стоит в бассейне '{pool.Def.Id}' (точка {Fmt(p)}) — перенеси на борт или террасу");
+                }
+                // the rim should sit on something: the ground, a deck or a floor around it
+                bool onGround = Mathf.Abs(pool.Top) < 0.35f;
+                bool onDeck = doc.Elements.Exists(e => (e.Type == ElementType.Platform || e.Type == ElementType.Box) &&
+                    Mathf.Abs(Mathf.Max(e.Min.y, e.Max.y) - pool.Top) < 0.35f && Polygon.BoundsOverlap(
+                        new[] { new Vector2(e.Min.x, e.Min.z), new Vector2(e.Max.x, e.Min.z), new Vector2(e.Max.x, e.Max.z), new Vector2(e.Min.x, e.Max.z) }, cut));
+                bool onFloor = doc.Rooms.Exists(r => r.Outline.Count >= 3 && Mathf.Abs(c.Level(r.Level).Elevation - pool.Top) < 0.35f && Polygon.BoundsOverlap(r.Outline, cut));
+                if (!onGround && !onDeck && !onFloor && pool.Top > 0.35f)
+                    W(path, $"борт бассейна на {pool.Top:0.##} м, а вокруг ни террасы, ни пола на этой высоте — бассейн стоит на земле как бак. " +
+                        "Опусти max.y до уровня земли/террасы или поставь вокруг platform с верхом на этой высоте");
             }
 
             // ---------------------------------------------------------------- roofs
@@ -210,7 +246,7 @@ namespace House4696.Generation
                 }
             }
             // before any roof exists this is the normal order of work, not a mistake: one reminder instead of one per room
-            bool noRoofYet = doc.Roofs.Count == 0 && !doc.Elements.Exists(e => e.Type != ElementType.Railing);
+            bool noRoofYet = doc.Roofs.Count == 0 && !doc.Elements.Exists(e => e.Type != ElementType.Railing && e.Type != ElementType.Pool);
             if (noRoofYet && doc.Rooms.Exists(r => r.Type != RoomType.Terrace))
                 W("roofs", "крыши пока нет — добавь её (roof), когда стены и комнаты готовы; base указывать не нужно");
             foreach (var room in doc.Rooms)
@@ -218,62 +254,35 @@ namespace House4696.Generation
                 if (noRoofYet || room.Type == RoomType.Terrace || room.Outline.Count < 3) continue;
                 var L = c.Level(room.Level);
                 float ceilY = L.Elevation + (room.Height ?? L.Height);
-                var pc = Polygon.Centroid(room.Outline);
-                if (!Polygon.Contains(room.Outline, pc)) pc = room.Outline[0] + (Polygon.Centroid(room.Outline) - room.Outline[0]) * 0.1f;
-                bool covered = doc.Rooms.Exists(o => o != room && o.Outline.Count >= 3 && c.Level(o.Level).Elevation >= ceilY - 0.05f && Polygon.Contains(o.Outline, pc));
-                if (!covered)
-                    covered = doc.Elements.Exists(e => e.Type != ElementType.Railing && Mathf.Min(e.Min.y, e.Max.y) >= ceilY - 0.3f &&
-                        pc.x >= Mathf.Min(e.Min.x, e.Max.x) && pc.x <= Mathf.Max(e.Min.x, e.Max.x) && pc.y >= Mathf.Min(e.Min.z, e.Max.z) && pc.y <= Mathf.Max(e.Min.z, e.Max.z));
-                if (!covered)
+                // covered = a floor above, a slab element, a roof or the body of a wall above; the room counts as open
+                // when over a fifth of its plan (0.5 m grid) is not covered — one sample point may land in a wall
+                bool Covered(Vector2 pc)
+                {
+                    if (doc.Rooms.Exists(o => o != room && o.Outline.Count >= 3 && c.Level(o.Level).Elevation >= ceilY - 0.05f && Polygon.Contains(o.Outline, pc))) return true;
+                    if (doc.Elements.Exists(e => e.Type != ElementType.Railing && e.Type != ElementType.Pool && Mathf.Min(e.Min.y, e.Max.y) >= ceilY - 0.3f &&
+                            pc.x >= Mathf.Min(e.Min.x, e.Max.x) && pc.x <= Mathf.Max(e.Min.x, e.Max.x) && pc.y >= Mathf.Min(e.Min.z, e.Max.z) && pc.y <= Mathf.Max(e.Min.z, e.Max.z))) return true;
                     foreach (var r in doc.Roofs)
                     {
                         var u = RoofBuilder.UndersideAt(r, c.RoofBase(r), pc);
-                        if (u != null && u.Value >= ceilY - 0.15f) { covered = true; break; }
+                        if (u != null && u.Value >= ceilY - 0.15f) return true;
                     }
-                if (!covered)
-                    W($"rooms/{room.Id}", $"над комнатой нет ни крыши, ни этажа выше (точка {Fmt(pc)}, потолок {ceilY:0.##} м) — добавь крышу (roof) над этим контуром");
-            }
-
-            // ---------------------------------------------------------------- open edges over a double-height room
-            foreach (var low in doc.Rooms)
-            {
-                if (low.Outline.Count < 3 || low.Type == RoomType.Terrace) continue;
-                var L = c.Level(low.Level);
-                var up = c.Above(L);
-                if (up == null || (low.Height ?? L.Height) < up.Elevation - L.Elevation + 0.1f) continue;   // not double-height
-                float y = up.Elevation;
-                var rails = doc.Elements.FindAll(e => e.Type == ElementType.Railing && Mathf.Abs(e.Y - y) < 0.4f && e.Path.Count >= 2);
-                foreach (var room in doc.Rooms)
+                    return walls.Exists(w => w.Spans(ceilY + 0.2f) && w.DistanceTo(pc) < 0.01f);
+                }
+                int total = 0, open = 0; Vector2 firstOpen = default;
+                foreach (var pc in Samples(room.Outline))
                 {
-                    if (room.Level != up.Id || room.Outline.Count < 3) continue;
-                    var o = Polygon.CounterClockwise(room.Outline);
-                    for (int i = 0; i < o.Count; i++)
-                    {
-                        Vector2 a = o[i], b = o[(i + 1) % o.Count], d = b - a;
-                        float len = d.magnitude;
-                        if (len < 0.3f) continue;
-                        var outward = new Vector2(d.y, -d.x) / len;
-                        float open = 0f; Vector2 from = default, to = default; bool run = false;
-                        int n = Mathf.CeilToInt(len / 0.1f);
-                        for (int k = 0; k < n; k++)
-                        {
-                            var p = a + d * ((k + 0.5f) / n);
-                            var q = p + outward * 0.2f;
-                            bool edge = Polygon.Contains(low.Outline, q) && !doc.Rooms.Exists(r => r.Level == up.Id && r.Outline.Count >= 3 && Polygon.Contains(r.Outline, q))
-                                        && !walls.Exists(w => w.Y0 < y + 0.5f && w.Y1 > y + 0.5f && DistanceToBody(w, p) < 0.1f)
-                                        && !rails.Exists(e => { for (int j = 0; j + 1 < e.Path.Count; j++) if (StairGeometry.DistanceToSegment(p, e.Path[j], e.Path[j + 1]) < 0.25f) return true; return false; })
-                                        && !c.StairGeometries.Any(g => g.To.Id == up.Id && (g.InWell(q) || g.OnArrival(p, 0.3f)));
-                            if (!edge) continue;
-                            open += len / n;
-                            if (!run) { from = a + d * (k / (float)n); run = true; }
-                            to = a + d * ((k + 1f) / n);
-                        }
-                        if (open >= 0.3f)
-                            W($"rooms/{room.Id}", $"край пола над вторым светом '{low.Id}' открыт ({open:0.#} м, от {Fmt(from)} до {Fmt(to)}) — нужно ограждение: " +
-                                $"element railing с path [{Fmt(from)}, {Fmt(to)}], y {y:0.##}, height 1.0");
-                    }
+                    total++;
+                    if (Covered(pc)) continue;
+                    if (open++ == 0) firstOpen = pc;
+                }
+                if (total > 0 && open > total * 0.2f)
+                {
+                    var pc = firstOpen;
+                    W($"rooms/{room.Id}", $"над комнатой нет ни крыши, ни этажа выше (точка {Fmt(pc)}, потолок {ceilY:0.##} м) — добавь крышу (roof) над этим контуром");
                 }
             }
+
+            // open floor edges (stairwells, double-height rooms) get glass guards automatically: EdgeGuards
 
             // ---------------------------------------------------------------- stairs
             foreach (var g in c.StairGeometries)
@@ -319,7 +328,7 @@ namespace House4696.Generation
             o.Type == OpeningType.Door || o.Type == OpeningType.EntryDoor || o.Type == OpeningType.SolidDoor ||
             o.Type == OpeningType.Hole && o.Sill < 0.15f && o.Height >= PassHeight;
 
-        static bool SameStorey(WallFrame a, WallFrame b) => a.Y0 < b.Y1 - 0.3f && b.Y0 < a.Y1 - 0.3f;
+        static bool SameStorey(WallFrame a, WallFrame b) => a.SameStorey(b);
 
         /// <summary>Rugs, curtains and hanging fittings do not block anything.</summary>
         static bool Skip(ItemBox it) =>
@@ -361,22 +370,9 @@ namespace House4696.Generation
             return false;
         }
 
-        /// <summary>Plan rectangle of the wall body (counter-clockwise), grown by <paramref name="grow"/>.</summary>
-        static Vector2[] Body(WallFrame f, float grow = 0f)
-        {
-            Vector2 P(float s, float d) { var p = f.P(s, 0, d); return new Vector2(p.x, p.z); }
-            var r = new[] { P(f.S0 - grow, grow), P(f.S1 + grow, grow), P(f.S1 + grow, -f.T - grow), P(f.S0 - grow, -f.T - grow) };
-            return Polygon.SignedArea(r) < 0 ? new[] { r[3], r[2], r[1], r[0] } : r;
-        }
+        static Vector2[] Body(WallFrame f, float grow = 0f) => f.PlanBody(grow);
 
-        static float DistanceToBody(WallFrame f, Vector2 p)
-        {
-            var body = Body(f);
-            if (Polygon.Contains(body, p)) return 0f;
-            float best = float.MaxValue;
-            for (int i = 0; i < 4; i++) best = Mathf.Min(best, StairGeometry.DistanceToSegment(p, body[i], body[(i + 1) % 4]));
-            return best;
-        }
+        static float DistanceToBody(WallFrame f, Vector2 p) => f.DistanceTo(p);
 
         /// <summary>Thickness of the exterior wall that meets this one at its start/end corner (0 = free end or no corner).</summary>
         public static float CornerDepth(HouseContext c, WallFrame f, List<WallFrame> walls, bool atStart)
@@ -421,7 +417,7 @@ namespace House4696.Generation
             string by = "земля";
             foreach (var e in c.Doc.Elements)
             {
-                if (e.Type == ElementType.Railing) continue;
+                if (e.Type == ElementType.Railing || e.Type == ElementType.Pool) continue;
                 float top = Mathf.Max(e.Min.y, e.Max.y);
                 if (top > floor + 0.05f || top <= support) continue;
                 if (p.x < Mathf.Min(e.Min.x, e.Max.x) || p.x > Mathf.Max(e.Min.x, e.Max.x) || p.y < Mathf.Min(e.Min.z, e.Max.z) || p.y > Mathf.Max(e.Min.z, e.Max.z)) continue;

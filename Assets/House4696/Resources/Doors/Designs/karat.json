@@ -1,0 +1,63 @@
+{
+  "id": "karat",
+  "name": "Карат",
+  "ref": [
+    800,
+    2000
+  ],
+  "thickness": 40,
+  "fixX": [
+    [
+      0,
+      27
+    ],
+    [
+      773,
+      800
+    ]
+  ],
+  "fixY": [],
+  "edge": {
+    "radius": 2
+  },
+  "handle": {
+    "y": 989,
+    "x": 61,
+    "style": "round",
+    "finish": "chrome"
+  },
+  "hinges": [
+    187,
+    1808
+  ],
+  "layout": {
+    "split": "x",
+    "at": [
+      27,
+      269.5,
+      530.5,
+      773
+    ],
+    "sep": [
+      "none",
+      "metal:13",
+      "metal:13",
+      "none"
+    ],
+    "grain": "v",
+    "cells": [
+      {},
+      {
+        "grain": "h"
+      },
+      {
+        "glass": true
+      },
+      {
+        "grain": "h"
+      },
+      {}
+    ]
+  },
+  "parts": []
+}

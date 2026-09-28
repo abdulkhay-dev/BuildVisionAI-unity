@@ -1,0 +1,30 @@
+[
+ {
+  "id": "antik-silver",
+  "name": "Антик Серебро",
+  "line": "Металл",
+  "material": "door_antik_silver",
+  "color": "#575757"
+ },
+ {
+  "id": "antik-copper",
+  "name": "Антик Медь",
+  "line": "Металл",
+  "material": "door_antik_copper",
+  "color": "#693a34"
+ },
+ {
+  "id": "antik-copper-ekonom",
+  "name": "Антик Медь (Эконом)",
+  "line": "Металл",
+  "material": "door_antik_copper_ekonom",
+  "color": "#48342d"
+ },
+ {
+  "id": "moonstone",
+  "name": "Лунный камень",
+  "line": "Металл",
+  "material": "door_moonstone",
+  "color": "#333237"
+ }
+]

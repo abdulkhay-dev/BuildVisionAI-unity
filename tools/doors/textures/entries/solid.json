@@ -1,0 +1,20 @@
+[
+ {
+  "id": "door_solid_pine",
+  "name": "Без отделки (массив сосны)",
+  "category": "door",
+  "source": "procedural:tools/doors/textures/solid.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/door_solid_pine",
+  "textures": {
+   "albedo": "door_solid_pine_albedo.jpg",
+   "normal": "door_solid_pine_normal.jpg",
+   "mask": "door_solid_pine_mask.png"
+  }
+ }
+]

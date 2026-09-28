@@ -1,0 +1,47 @@
+{
+ "id": "glace-2",
+ "name": "Глейс-2",
+ "ref": [
+  800,
+  2000
+ ],
+ "thickness": 36,
+ "fixX": [
+  [
+   246.1,
+   539.1
+  ]
+ ],
+ "fixY": [],
+ "edge": {
+  "radius": 2
+ },
+ "handle": {
+  "y": 1000,
+  "x": 58
+ },
+ "hinges": [
+  189,
+  1812
+ ],
+ "layout": {
+  "pane": 34,
+  "split": "x",
+  "at": [
+   255.35,
+   529.85
+  ],
+  "sep": [
+   "metal:18.5:0.5",
+   "metal:18.5:0.5"
+  ],
+  "grain": "v",
+  "cells": [
+   {},
+   {
+    "glass": "art:doorglass_twig_2"
+   },
+   {}
+  ]
+ }
+}

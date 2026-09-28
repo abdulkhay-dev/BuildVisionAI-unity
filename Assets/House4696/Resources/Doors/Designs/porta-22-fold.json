@@ -1,0 +1,29 @@
+{
+  "id": "porta-22-fold",
+  "name": "Порта-22 (складная)",
+  "ref": [800, 2000],
+  "thickness": 36,
+  "fixX": [[0, 125], [677, 800]],
+  "fixY": [[0, 125], [1882, 2000]],
+  "edge": { "radius": 2 },
+  "handle": { "y": 998, "x": 59 },
+  "hinges": [189, 1811],
+  "layout": { "split": "x", "at": [125, 677], "sep": "joint", "grain": "v", "radius": 1.5,
+    "cells": [
+      {},
+      { "split": "y", "at": [125, 1882], "sep": "joint", "grain": "h",
+        "cells": [
+          {},
+          {
+            "split": "y",
+            "at": [263, 412, 566, 707, 855, 1002, 1149, 1297, 1445, 1592, 1737],
+            "sep": ["joint", "glass:12", "joint", "glass:12", "joint", "glass:12", "joint", "glass:12", "joint", "glass:12", "joint"],
+            "level": -3
+          },
+          {}
+        ]
+      },
+      {}
+    ]
+  }
+}

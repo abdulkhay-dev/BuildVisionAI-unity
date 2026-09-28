@@ -1,0 +1,22 @@
+{
+  "id": "graffiti-4",
+  "name": "Граффити-4",
+  "ref": [800, 2000],
+  "thickness": 36,
+  "fixX": [[0, 135], [678, 800]],
+  "fixY": [[0, 128], [1877.5, 2000]],
+  "edge": {"radius": 2},
+  "handle": {"y": 996, "x": 65, "style": "square", "finish": "chrome"},
+  "hinges": [187, 1808],
+  "layout": {"grain": "v"},
+  "parts": [
+    {"type": "groove", "path": "M 135 0 L 135 2000", "width": 6, "depth": 2, "profile": "v"},
+    {"type": "groove", "path": "M 678 0 L 678 2000", "width": 6, "depth": 2, "profile": "v"},
+    {"type": "groove", "path": "M 135 128 L 678 128", "width": 6, "depth": 2, "profile": "v"},
+    {"type": "groove", "path": "M 135 477.5 L 678 477.5", "width": 6, "depth": 2, "profile": "v"},
+    {"type": "groove", "path": "M 135 826.5 L 678 826.5", "width": 6, "depth": 2, "profile": "v"},
+    {"type": "groove", "path": "M 135 1175.5 L 678 1175.5", "width": 6, "depth": 2, "profile": "v"},
+    {"type": "groove", "path": "M 135 1526.5 L 678 1526.5", "width": 6, "depth": 2, "profile": "v"},
+    {"type": "groove", "path": "M 135 1877.5 L 678 1877.5", "width": 6, "depth": 2, "profile": "v"}
+  ]
+}

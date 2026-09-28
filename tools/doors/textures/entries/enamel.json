@@ -1,0 +1,56 @@
+[
+ {
+  "id": "door_enamel_whitey",
+  "name": "Whitey (эмаль SKINNY)",
+  "category": "door",
+  "source": "procedural:tools/doors/textures/enamel.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/door_enamel_whitey",
+  "textures": {
+   "albedo": "door_enamel_whitey_albedo.jpg",
+   "normal": "door_enamel_whitey_normal.jpg",
+   "mask": "door_enamel_whitey_mask.png"
+  }
+ },
+ {
+  "id": "door_enamel_cream",
+  "name": "Cream (эмаль SKINNY)",
+  "category": "door",
+  "source": "procedural:tools/doors/textures/enamel.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/door_enamel_cream",
+  "textures": {
+   "albedo": "door_enamel_cream_albedo.jpg",
+   "normal": "door_enamel_cream_normal.jpg",
+   "mask": "door_enamel_cream_mask.png"
+  }
+ },
+ {
+  "id": "door_enamel_mocca",
+  "name": "Mocca (эмаль SKINNY)",
+  "category": "door",
+  "source": "procedural:tools/doors/textures/enamel.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/door_enamel_mocca",
+  "textures": {
+   "albedo": "door_enamel_mocca_albedo.jpg",
+   "normal": "door_enamel_mocca_normal.jpg",
+   "mask": "door_enamel_mocca_mask.png"
+  }
+ }
+]

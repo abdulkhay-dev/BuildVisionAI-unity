@@ -1,0 +1,302 @@
+{
+  "id": "stil-do",
+  "name": "Стиль",
+  "ref": [
+    800,
+    2000
+  ],
+  "thickness": 40,
+  "fixX": [
+    [
+      0,
+      196
+    ],
+    [
+      604,
+      800
+    ]
+  ],
+  "fixY": [
+    [
+      0,
+      199
+    ],
+    [
+      518,
+      979.5
+    ],
+    [
+      1848.5,
+      2000
+    ]
+  ],
+  "edge": {
+    "radius": 2
+  },
+  "handle": {
+    "y": 921,
+    "x": 47,
+    "style": "round",
+    "finish": "gold"
+  },
+  "hinges": [
+    152,
+    1845
+  ],
+  "layout": {
+    "grain": "v"
+  },
+  "parts": [
+    {
+      "type": "groove",
+      "width": 4,
+      "depth": 1.5,
+      "profile": "v",
+      "shape": {
+        "rect": [
+          139.5,
+          923.0,
+          660.5,
+          1905.0
+        ]
+      }
+    },
+    {
+      "type": "groove",
+      "width": 4,
+      "depth": 1.5,
+      "profile": "v",
+      "shape": {
+        "rect": [
+          152.5,
+          936.0,
+          647.5,
+          1892.0
+        ]
+      }
+    },
+    {
+      "type": "groove",
+      "width": 4,
+      "depth": 1.5,
+      "profile": "v",
+      "shape": {
+        "rect": [
+          165.5,
+          949.0,
+          634.5,
+          1879.0
+        ]
+      }
+    },
+    {
+      "type": "groove",
+      "width": 16,
+      "depth": 6,
+      "profile": "u",
+      "material": "patina-dark",
+      "shape": {
+        "rect": [
+          188.0,
+          971.5,
+          612.0,
+          1856.5
+        ]
+      }
+    },
+    {
+      "type": "groove",
+      "width": 4,
+      "depth": 1.5,
+      "profile": "v",
+      "shape": {
+        "rect": [
+          139.5,
+          664.0,
+          660.5,
+          836.0
+        ]
+      }
+    },
+    {
+      "type": "groove",
+      "width": 4,
+      "depth": 1.5,
+      "profile": "v",
+      "shape": {
+        "rect": [
+          152.5,
+          677.0,
+          647.5,
+          823.0
+        ]
+      }
+    },
+    {
+      "type": "groove",
+      "width": 4,
+      "depth": 1.5,
+      "profile": "v",
+      "shape": {
+        "rect": [
+          165.5,
+          690.0,
+          634.5,
+          810.0
+        ]
+      }
+    },
+    {
+      "type": "groove",
+      "width": 16,
+      "depth": 6,
+      "profile": "u",
+      "material": "patina-dark",
+      "shape": {
+        "rect": [
+          188.0,
+          712.5,
+          612.0,
+          787.5
+        ]
+      }
+    },
+    {
+      "type": "groove",
+      "width": 4,
+      "depth": 1.5,
+      "profile": "v",
+      "shape": {
+        "rect": [
+          139.5,
+          142.0,
+          660.5,
+          575.0
+        ]
+      }
+    },
+    {
+      "type": "groove",
+      "width": 4,
+      "depth": 1.5,
+      "profile": "v",
+      "shape": {
+        "rect": [
+          152.5,
+          155.0,
+          647.5,
+          562.0
+        ]
+      }
+    },
+    {
+      "type": "groove",
+      "width": 4,
+      "depth": 1.5,
+      "profile": "v",
+      "shape": {
+        "rect": [
+          165.5,
+          168.0,
+          634.5,
+          549.0
+        ]
+      }
+    },
+    {
+      "type": "groove",
+      "width": 16,
+      "depth": 6,
+      "profile": "u",
+      "material": "patina-dark",
+      "shape": {
+        "rect": [
+          188.0,
+          190.5,
+          612.0,
+          526.5
+        ]
+      }
+    },
+    {
+      "type": "piece",
+      "shape": {
+        "ellipse": [
+          152.5,
+          935.5,
+          11,
+          11
+        ]
+      },
+      "level": 1.5,
+      "radius": 1.5
+    },
+    {
+      "type": "piece",
+      "shape": {
+        "ellipse": [
+          152.5,
+          1892,
+          11,
+          11
+        ]
+      },
+      "level": 1.5,
+      "radius": 1.5
+    },
+    {
+      "type": "piece",
+      "shape": {
+        "ellipse": [
+          647.5,
+          935.5,
+          11,
+          11
+        ]
+      },
+      "level": 1.5,
+      "radius": 1.5
+    },
+    {
+      "type": "piece",
+      "shape": {
+        "ellipse": [
+          647.5,
+          1892,
+          11,
+          11
+        ]
+      },
+      "level": 1.5,
+      "radius": 1.5
+    },
+    {
+      "type": "glass",
+      "shape": {
+        "rect": [
+          197,
+          980.5,
+          603,
+          1847.5
+        ]
+      },
+      "bead": "none",
+      "role": "art:doorglass_stil_do",
+      "material": "patina-dark"
+    },
+    {
+      "type": "glass",
+      "shape": {
+        "rect": [
+          197,
+          721.5,
+          603,
+          778.5
+        ]
+      },
+      "bead": "none",
+      "role": "art:doorglass_stil_do_2",
+      "material": "patina-dark"
+    }
+  ]
+}

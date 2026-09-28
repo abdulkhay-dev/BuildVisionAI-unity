@@ -81,9 +81,20 @@ namespace House4696.App
                     ["footprint"] = Poly(it.Footprint()),
                 }));
             if (Want("elements"))
-                o["elements"] = new JArray(c.Doc.Elements.Where(e => Pick(e.Id)).Select(e => e.Type == ElementType.Railing
-                    ? new JObject { ["id"] = e.Id, ["type"] = "railing", ["path"] = new JArray(e.Path.Select(P)), ["y"] = new JArray(R(e.Y), R(e.Y + e.Height)) }
-                    : new JObject { ["id"] = e.Id, ["type"] = e.Type.ToString().ToLowerInvariant(), ["min"] = V(Vector3.Min(e.Min, e.Max)), ["max"] = V(Vector3.Max(e.Min, e.Max)) }));
+                o["elements"] = new JArray(c.Doc.Elements.Where(e => Pick(e.Id)).Select(e =>
+                {
+                    if (e.Type == ElementType.Railing)
+                        return new JObject { ["id"] = e.Id, ["type"] = "railing", ["path"] = new JArray(e.Path.Select(P)), ["y"] = new JArray(R(e.Y), R(e.Y + e.Height)) };
+                    if (e.Type == ElementType.Pool && c.Pools.FirstOrDefault(p => p.Def == e) is PoolShape pool)
+                        return new JObject
+                        {
+                            ["id"] = e.Id, ["type"] = "pool", ["outline"] = new JArray(pool.Outline.Select(P)),
+                            ["rim"] = R(pool.Top + 0.02f), ["water"] = R(pool.Water), ["floor"] = R(pool.Floor),
+                            ["footprint"] = new JArray(pool.Grown(PoolShape.Coping, PoolBuilder.Pane).Select(P)),
+                            ["glass"] = new JArray(pool.GlassEdges.OrderBy(i => i)),
+                        };
+                    return new JObject { ["id"] = e.Id, ["type"] = e.Type.ToString().ToLowerInvariant(), ["min"] = V(Vector3.Min(e.Min, e.Max)), ["max"] = V(Vector3.Max(e.Min, e.Max)) };
+                }));
             o["note"] = "Всё в абсолютных метрах: Y — высота над землёй; точки плана [x, z]. size предмета = ширина (поперёк фасада) × глубина (вдоль rotation) × высота.";
             return o;
         }
@@ -105,12 +116,28 @@ namespace House4696.App
                 float floor = f.Level.Elevation;
                 // on the wall's own line a→b (the line the author gave), like "at"
                 var dir = (d.B - d.A).normalized;
-                return new JObject
+                var jo = new JObject
                 {
                     ["id"] = op.Id, ["type"] = op.Type.ToString().ToLowerInvariant(), ["at"] = R(op.At), ["width"] = R(op.Width),
                     ["from"] = P(d.A + dir * op.At), ["to"] = P(d.A + dir * (op.At + op.Width)),
                     ["bottom"] = R(floor + op.Sill), ["top"] = R(floor + op.Sill + op.Height),
                 };
+                // a catalogue door: what was built (model, finish, glass, leaf) and how the block fits the wall
+                if (House4696.Doors.DoorSizing.IsCatalogueDoor(op) && House4696.Doors.DoorCatalog.Resolve(op) is House4696.Doors.ResolvedDoor door)
+                {
+                    var leaf = House4696.Doors.DoorSizing.LeafOf(op);
+                    jo["door"] = new JObject
+                    {
+                        ["model"] = door.Model.Id, ["name"] = door.Title, ["glass"] = door.Glass?.Id,
+                        ["leaf"] = new JArray(R(leaf.x), R(leaf.y)),
+                        ["standard"] = House4696.Doors.DoorSizing.IsStandard(leaf),
+                        ["frame"] = "коробка 70 мм" + (f.T > House4696.Doors.DoorBlockBuilder.FrameDepth + 0.004f
+                            ? $" + добор {Mathf.RoundToInt((f.T - House4696.Doors.DoorBlockBuilder.FrameDepth) * 1000)} мм" : ""),
+                        ["opensTo"] = op.Swing >= 0 ? "влево от a→b" : "вправо от a→b",
+                        ["hinges"] = op.Hinge == Hinge.Start ? "у a" : "у b",
+                    };
+                }
+                return jo;
             }).ToList();
             if (ops.Count > 0) j["openings"] = new JArray(ops);
             // free stretches of the wall (room for new openings or furniture), from point a

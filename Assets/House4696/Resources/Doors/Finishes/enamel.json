@@ -1,0 +1,23 @@
+[
+ {
+  "id": "enamel-whitey",
+  "name": "Whitey",
+  "line": "Окрашенные (эмаль)",
+  "material": "door_enamel_whitey",
+  "color": "#e2e2e2"
+ },
+ {
+  "id": "enamel-cream",
+  "name": "Cream",
+  "line": "Окрашенные (эмаль)",
+  "material": "door_enamel_cream",
+  "color": "#fbefdf"
+ },
+ {
+  "id": "enamel-mocca",
+  "name": "Mocca",
+  "line": "Окрашенные (эмаль)",
+  "material": "door_enamel_mocca",
+  "color": "#7c6a60"
+ }
+]

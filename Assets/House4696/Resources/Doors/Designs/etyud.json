@@ -1,0 +1,51 @@
+{
+  "id": "etyud",
+  "name": "Этюд",
+  "ref": [
+    800,
+    2000
+  ],
+  "thickness": 40,
+  "fixX": [
+    [
+      0,
+      153
+    ],
+    [
+      651,
+      800
+    ]
+  ],
+  "fixY": [],
+  "edge": {
+    "radius": 2
+  },
+  "handle": {
+    "y": 915,
+    "x": 65,
+    "style": "round",
+    "finish": "chrome"
+  },
+  "hinges": [
+    188,
+    1811
+  ],
+  "layout": {
+    "split": "x",
+    "at": [
+      153,
+      651
+    ],
+    "sep": "joint",
+    "grain": "v",
+    "cells": [
+      {},
+      {
+        "grain": "h",
+        "material": "finish2"
+      },
+      {}
+    ]
+  },
+  "parts": []
+}

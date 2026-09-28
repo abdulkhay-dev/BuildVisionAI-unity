@@ -2991,6 +2991,2508 @@
     "normal": "sand_normal.jpg",
     "mask": "sand_mask.png"
    }
+  },
+  {
+   "id": "door_cappuccino_veralinga",
+   "name": "Cappuccino Veralinga (ЭкоШпон)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/make_finishes.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_cappuccino_veralinga",
+   "textures": {
+    "albedo": "door_cappuccino_veralinga_albedo.jpg",
+    "normal": "door_cappuccino_veralinga_normal.jpg",
+    "mask": "door_cappuccino_veralinga_mask.png"
+   }
+  },
+  {
+   "id": "door_grey_veralinga",
+   "name": "Grey Veralinga (ЭкоШпон)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/make_finishes.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_grey_veralinga",
+   "textures": {
+    "albedo": "door_grey_veralinga_albedo.jpg",
+    "normal": "door_grey_veralinga_normal.jpg",
+    "mask": "door_grey_veralinga_mask.png"
+   }
+  },
+  {
+   "id": "door_wenge_veralinga",
+   "name": "Wenge Veralinga (ЭкоШпон)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/make_finishes.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_wenge_veralinga",
+   "textures": {
+    "albedo": "door_wenge_veralinga_albedo.jpg",
+    "normal": "door_wenge_veralinga_normal.jpg",
+    "mask": "door_wenge_veralinga_mask.png"
+   }
+  },
+  {
+   "id": "door_bianco_veralinga",
+   "name": "Bianco Veralinga (ЭкоШпон)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/make_finishes.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_bianco_veralinga",
+   "textures": {
+    "albedo": "door_bianco_veralinga_albedo.jpg",
+    "normal": "door_bianco_veralinga_normal.jpg",
+    "mask": "door_bianco_veralinga_mask.png"
+   }
+  },
+  {
+   "id": "door_snow_veralinga",
+   "name": "Snow Veralinga (ЭкоШпон)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/make_finishes.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_snow_veralinga",
+   "textures": {
+    "albedo": "door_snow_veralinga_albedo.jpg",
+    "normal": "door_snow_veralinga_normal.jpg",
+    "mask": "door_snow_veralinga_mask.png"
+   }
+  },
+  {
+   "id": "door_anegri_veralinga",
+   "name": "Anegri Veralinga (ЭкоШпон)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/make_finishes.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_anegri_veralinga",
+   "textures": {
+    "albedo": "door_anegri_veralinga_albedo.jpg",
+    "normal": "door_anegri_veralinga_normal.jpg",
+    "mask": "door_anegri_veralinga_mask.png"
+   }
+  },
+  {
+   "id": "door_golden_reef",
+   "name": "Golden Reef (ЭкоШпон)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/make_finishes.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_golden_reef",
+   "textures": {
+    "albedo": "door_golden_reef_albedo.jpg",
+    "normal": "door_golden_reef_normal.jpg",
+    "mask": "door_golden_reef_mask.png"
+   }
+  },
+  {
+   "id": "door_3d_cappuccino",
+   "name": "3D Cappuccino (3D-Graf)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/make_finishes.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_3d_cappuccino",
+   "textures": {
+    "albedo": "door_3d_cappuccino_albedo.jpg",
+    "normal": "door_3d_cappuccino_normal.jpg",
+    "mask": "door_3d_cappuccino_mask.png"
+   }
+  },
+  {
+   "id": "door_3d_grey",
+   "name": "3D Grey (3D-Graf)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/make_finishes.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_3d_grey",
+   "textures": {
+    "albedo": "door_3d_grey_albedo.jpg",
+    "normal": "door_3d_grey_normal.jpg",
+    "mask": "door_3d_grey_mask.png"
+   }
+  },
+  {
+   "id": "door_3d_wenge",
+   "name": "3D Wenge (3D-Graf)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/make_finishes.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_3d_wenge",
+   "textures": {
+    "albedo": "door_3d_wenge_albedo.jpg",
+    "normal": "door_3d_wenge_normal.jpg",
+    "mask": "door_3d_wenge_mask.png"
+   }
+  },
+  {
+   "id": "door_royal_oak",
+   "name": "Royal Oak (ЭкоШпон)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/eco_oak.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_royal_oak",
+   "textures": {
+    "albedo": "door_royal_oak_albedo.jpg",
+    "normal": "door_royal_oak_normal.jpg",
+    "mask": "door_royal_oak_mask.png"
+   }
+  },
+  {
+   "id": "door_antique_oak",
+   "name": "Antique Oak (ЭкоШпон)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/eco_oak.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_antique_oak",
+   "textures": {
+    "albedo": "door_antique_oak_albedo.jpg",
+    "normal": "door_antique_oak_normal.jpg",
+    "mask": "door_antique_oak_mask.png"
+   }
+  },
+  {
+   "id": "door_silver_ash",
+   "name": "Silver Ash (ЭкоШпон)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/eco_oak.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_silver_ash",
+   "textures": {
+    "albedo": "door_silver_ash_albedo.jpg",
+    "normal": "door_silver_ash_normal.jpg",
+    "mask": "door_silver_ash_mask.png"
+   }
+  },
+  {
+   "id": "door_ivory",
+   "name": "Ivory (ЭкоШпон)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/eco_oak.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_ivory",
+   "textures": {
+    "albedo": "door_ivory_albedo.jpg",
+    "normal": "door_ivory_normal.jpg",
+    "mask": "door_ivory_mask.png"
+   }
+  },
+  {
+   "id": "door_virgin",
+   "name": "Virgin (ЭкоШпон)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/eco_oak.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_virgin",
+   "textures": {
+    "albedo": "door_virgin_albedo.jpg",
+    "normal": "door_virgin_normal.jpg",
+    "mask": "door_virgin_mask.png"
+   }
+  },
+  {
+   "id": "door_dark_oak",
+   "name": "Dark Oak (ЭкоШпон)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/eco_oak.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_dark_oak",
+   "textures": {
+    "albedo": "door_dark_oak_albedo.jpg",
+    "normal": "door_dark_oak_normal.jpg",
+    "mask": "door_dark_oak_mask.png"
+   }
+  },
+  {
+   "id": "door_organic_oak",
+   "name": "Organic Oak (ЭкоШпон)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/eco_oak.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_organic_oak",
+   "textures": {
+    "albedo": "door_organic_oak_albedo.jpg",
+    "normal": "door_organic_oak_normal.jpg",
+    "mask": "door_organic_oak_mask.png"
+   }
+  },
+  {
+   "id": "door_nordic_oak",
+   "name": "Nordic Oak (ЭкоШпон)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/eco_oak.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_nordic_oak",
+   "textures": {
+    "albedo": "door_nordic_oak_albedo.jpg",
+    "normal": "door_nordic_oak_normal.jpg",
+    "mask": "door_nordic_oak_mask.png"
+   }
+  },
+  {
+   "id": "door_original_oak",
+   "name": "Original Oak (ЭкоШпон)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/eco_oak.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_original_oak",
+   "textures": {
+    "albedo": "door_original_oak_albedo.jpg",
+    "normal": "door_original_oak_normal.jpg",
+    "mask": "door_original_oak_mask.png"
+   }
+  },
+  {
+   "id": "door_chalet_grande",
+   "name": "Chalet Grande (ЭкоШпон)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/eco_oak.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_chalet_grande",
+   "textures": {
+    "albedo": "door_chalet_grande_albedo.jpg",
+    "normal": "door_chalet_grande_normal.jpg",
+    "mask": "door_chalet_grande_mask.png"
+   }
+  },
+  {
+   "id": "door_chalet_grasse",
+   "name": "Chalet Grasse (ЭкоШпон)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/eco_oak.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_chalet_grasse",
+   "textures": {
+    "albedo": "door_chalet_grasse_albedo.jpg",
+    "normal": "door_chalet_grasse_normal.jpg",
+    "mask": "door_chalet_grasse_mask.png"
+   }
+  },
+  {
+   "id": "door_chalet_provence",
+   "name": "Chalet Provence (ЭкоШпон)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/eco_oak.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_chalet_provence",
+   "textures": {
+    "albedo": "door_chalet_provence_albedo.jpg",
+    "normal": "door_chalet_provence_normal.jpg",
+    "mask": "door_chalet_provence_mask.png"
+   }
+  },
+  {
+   "id": "door_graphite_art",
+   "name": "Graphite Art (ЭкоШпон)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/eco_oak.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_graphite_art",
+   "textures": {
+    "albedo": "door_graphite_art_albedo.jpg",
+    "normal": "door_graphite_art_normal.jpg",
+    "mask": "door_graphite_art_mask.png"
+   }
+  },
+  {
+   "id": "door_cappuccino_softwood",
+   "name": "Cappuccino Softwood (ЭкоШпон)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/eco_oak.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_cappuccino_softwood",
+   "textures": {
+    "albedo": "door_cappuccino_softwood_albedo.jpg",
+    "normal": "door_cappuccino_softwood_normal.jpg",
+    "mask": "door_cappuccino_softwood_mask.png"
+   }
+  },
+  {
+   "id": "door_white_softwood",
+   "name": "White Softwood (ЭкоШпон)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/eco_oak.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_white_softwood",
+   "textures": {
+    "albedo": "door_white_softwood_albedo.jpg",
+    "normal": "door_white_softwood_normal.jpg",
+    "mask": "door_white_softwood_mask.png"
+   }
+  },
+  {
+   "id": "door_l_11_italoreh",
+   "name": "Л-11 ИталОрех (ламинат)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/laminate.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_l_11_italoreh",
+   "textures": {
+    "albedo": "door_l_11_italoreh_albedo.jpg",
+    "normal": "door_l_11_italoreh_normal.jpg",
+    "mask": "door_l_11_italoreh_mask.png"
+   }
+  },
+  {
+   "id": "door_l_12_milanoreh",
+   "name": "Л-12 МиланОрех (ламинат)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/laminate.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_l_12_milanoreh",
+   "textures": {
+    "albedo": "door_l_12_milanoreh_albedo.jpg",
+    "normal": "door_l_12_milanoreh_normal.jpg",
+    "mask": "door_l_12_milanoreh_mask.png"
+   }
+  },
+  {
+   "id": "door_l_13_wenge",
+   "name": "Л-13 Венге (ламинат)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/laminate.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_l_13_wenge",
+   "textures": {
+    "albedo": "door_l_13_wenge_albedo.jpg",
+    "normal": "door_l_13_wenge_normal.jpg",
+    "mask": "door_l_13_wenge_mask.png"
+   }
+  },
+  {
+   "id": "door_l_23_white",
+   "name": "Л-23 Белый (ламинат)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/laminate.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_l_23_white",
+   "textures": {
+    "albedo": "door_l_23_white_albedo.jpg",
+    "normal": "door_l_23_white_normal.jpg",
+    "mask": "door_l_23_white_mask.png"
+   }
+  },
+  {
+   "id": "door_cappuccino_crosscut",
+   "name": "Cappuccino Crosscut (ЭкоШпон)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/crosscut.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_cappuccino_crosscut",
+   "textures": {
+    "albedo": "door_cappuccino_crosscut_albedo.jpg",
+    "normal": "door_cappuccino_crosscut_normal.jpg",
+    "mask": "door_cappuccino_crosscut_mask.png"
+   }
+  },
+  {
+   "id": "door_grey_crosscut",
+   "name": "Grey Crosscut (ЭкоШпон)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/crosscut.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_grey_crosscut",
+   "textures": {
+    "albedo": "door_grey_crosscut_albedo.jpg",
+    "normal": "door_grey_crosscut_normal.jpg",
+    "mask": "door_grey_crosscut_mask.png"
+   }
+  },
+  {
+   "id": "door_wenge_crosscut",
+   "name": "Wenge Crosscut (ЭкоШпон)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/crosscut.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_wenge_crosscut",
+   "textures": {
+    "albedo": "door_wenge_crosscut_albedo.jpg",
+    "normal": "door_wenge_crosscut_normal.jpg",
+    "mask": "door_wenge_crosscut_mask.png"
+   }
+  },
+  {
+   "id": "door_bianco_crosscut",
+   "name": "Bianco Crosscut (ЭкоШпон)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/crosscut.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_bianco_crosscut",
+   "textures": {
+    "albedo": "door_bianco_crosscut_albedo.jpg",
+    "normal": "door_bianco_crosscut_normal.jpg",
+    "mask": "door_bianco_crosscut_mask.png"
+   }
+  },
+  {
+   "id": "door_real_oak",
+   "name": "Real Oak (ЕвроШпон)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/euro_oak.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_real_oak",
+   "textures": {
+    "albedo": "door_real_oak_albedo.jpg",
+    "normal": "door_real_oak_normal.jpg",
+    "mask": "door_real_oak_mask.png"
+   }
+  },
+  {
+   "id": "door_milk_oak",
+   "name": "Milk Oak (ЕвроШпон)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/euro_oak.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_milk_oak",
+   "textures": {
+    "albedo": "door_milk_oak_albedo.jpg",
+    "normal": "door_milk_oak_normal.jpg",
+    "mask": "door_milk_oak_mask.png"
+   }
+  },
+  {
+   "id": "door_brown_oak",
+   "name": "Brown Oak (ЕвроШпон)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/euro_oak.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_brown_oak",
+   "textures": {
+    "albedo": "door_brown_oak_albedo.jpg",
+    "normal": "door_brown_oak_normal.jpg",
+    "mask": "door_brown_oak_mask.png"
+   }
+  },
+  {
+   "id": "door_thermo_oak",
+   "name": "Thermo Oak (ЕвроШпон)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/euro_oak.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_thermo_oak",
+   "textures": {
+    "albedo": "door_thermo_oak_albedo.jpg",
+    "normal": "door_thermo_oak_normal.jpg",
+    "mask": "door_thermo_oak_mask.png"
+   }
+  },
+  {
+   "id": "door_p_23_white",
+   "name": "П-23 Белый (ПВХ)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/pvc.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_p_23_white",
+   "textures": {
+    "albedo": "door_p_23_white_albedo.jpg",
+    "normal": "door_p_23_white_normal.jpg",
+    "mask": "door_p_23_white_mask.png"
+   }
+  },
+  {
+   "id": "door_p_34_shimo_light",
+   "name": "П-34 Шимо Светлый (ПВХ)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/pvc.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_p_34_shimo_light",
+   "textures": {
+    "albedo": "door_p_34_shimo_light_albedo.jpg",
+    "normal": "door_p_34_shimo_light_normal.jpg",
+    "mask": "door_p_34_shimo_light_mask.png"
+   }
+  },
+  {
+   "id": "door_p_35_shimo_dark",
+   "name": "П-35 Шимо Тёмный (ПВХ)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/pvc.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_p_35_shimo_dark",
+   "textures": {
+    "albedo": "door_p_35_shimo_dark_albedo.jpg",
+    "normal": "door_p_35_shimo_dark_normal.jpg",
+    "mask": "door_p_35_shimo_dark_mask.png"
+   }
+  },
+  {
+   "id": "door_p_17_italoreh",
+   "name": "П-17 ИталОрех (ПВХ)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/pvc.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_p_17_italoreh",
+   "textures": {
+    "albedo": "door_p_17_italoreh_albedo.jpg",
+    "normal": "door_p_17_italoreh_normal.jpg",
+    "mask": "door_p_17_italoreh_mask.png"
+   }
+  },
+  {
+   "id": "door_p_18_milanoreh",
+   "name": "П-18 МиланОрех (ПВХ)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/pvc.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_p_18_milanoreh",
+   "textures": {
+    "albedo": "door_p_18_milanoreh_albedo.jpg",
+    "normal": "door_p_18_milanoreh_normal.jpg",
+    "mask": "door_p_18_milanoreh_mask.png"
+   }
+  },
+  {
+   "id": "door_p_31_italoreh",
+   "name": "П-31 ИталОрех (ПВХ)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/pvc.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_p_31_italoreh",
+   "textures": {
+    "albedo": "door_p_31_italoreh_albedo.jpg",
+    "normal": "door_p_31_italoreh_normal.jpg",
+    "mask": "door_p_31_italoreh_mask.png"
+   }
+  },
+  {
+   "id": "door_p_32_milanoreh",
+   "name": "П-32 МиланОрех (ПВХ)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/pvc.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_p_32_milanoreh",
+   "textures": {
+    "albedo": "door_p_32_milanoreh_albedo.jpg",
+    "normal": "door_p_32_milanoreh_normal.jpg",
+    "mask": "door_p_32_milanoreh_mask.png"
+   }
+  },
+  {
+   "id": "door_natur_oak",
+   "name": "Natur Oak (шпон Mr.Wood)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/veneer.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_natur_oak",
+   "textures": {
+    "albedo": "door_natur_oak_albedo.jpg",
+    "normal": "door_natur_oak_normal.jpg",
+    "mask": "door_natur_oak_mask.png"
+   }
+  },
+  {
+   "id": "door_golden_oak",
+   "name": "Golden Oak (шпон Mr.Wood)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/veneer.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_golden_oak",
+   "textures": {
+    "albedo": "door_golden_oak_albedo.jpg",
+    "normal": "door_golden_oak_normal.jpg",
+    "mask": "door_golden_oak_mask.png"
+   }
+  },
+  {
+   "id": "door_veneer_ivory",
+   "name": "Ivory (шпон Mr.Wood)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/veneer.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_veneer_ivory",
+   "textures": {
+    "albedo": "door_veneer_ivory_albedo.jpg",
+    "normal": "door_veneer_ivory_normal.jpg",
+    "mask": "door_veneer_ivory_mask.png"
+   }
+  },
+  {
+   "id": "door_veneer_latte",
+   "name": "Latte (шпон Mr.Wood)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/veneer.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_veneer_latte",
+   "textures": {
+    "albedo": "door_veneer_latte_albedo.jpg",
+    "normal": "door_veneer_latte_normal.jpg",
+    "mask": "door_veneer_latte_mask.png"
+   }
+  },
+  {
+   "id": "door_veneer_whitey",
+   "name": "Whitey (шпон Mr.Wood)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/veneer.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_veneer_whitey",
+   "textures": {
+    "albedo": "door_veneer_whitey_albedo.jpg",
+    "normal": "door_veneer_whitey_normal.jpg",
+    "mask": "door_veneer_whitey_mask.png"
+   }
+  },
+  {
+   "id": "door_enamel_whitey",
+   "name": "Whitey (эмаль SKINNY)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/enamel.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_enamel_whitey",
+   "textures": {
+    "albedo": "door_enamel_whitey_albedo.jpg",
+    "normal": "door_enamel_whitey_normal.jpg",
+    "mask": "door_enamel_whitey_mask.png"
+   }
+  },
+  {
+   "id": "door_enamel_cream",
+   "name": "Cream (эмаль SKINNY)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/enamel.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_enamel_cream",
+   "textures": {
+    "albedo": "door_enamel_cream_albedo.jpg",
+    "normal": "door_enamel_cream_normal.jpg",
+    "mask": "door_enamel_cream_mask.png"
+   }
+  },
+  {
+   "id": "door_enamel_mocca",
+   "name": "Mocca (эмаль SKINNY)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/enamel.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_enamel_mocca",
+   "textures": {
+    "albedo": "door_enamel_mocca_albedo.jpg",
+    "normal": "door_enamel_mocca_normal.jpg",
+    "mask": "door_enamel_mocca_mask.png"
+   }
+  },
+  {
+   "id": "door_solid_pine",
+   "name": "Без отделки (массив сосны)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/solid.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_solid_pine",
+   "textures": {
+    "albedo": "door_solid_pine_albedo.jpg",
+    "normal": "door_solid_pine_normal.jpg",
+    "mask": "door_solid_pine_mask.png"
+   }
+  },
+  {
+   "id": "door_f_01_oak",
+   "name": "Ф-01 Дуб (шпон файн-лайн)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/fine_line.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_f_01_oak",
+   "textures": {
+    "albedo": "door_f_01_oak_albedo.jpg",
+    "normal": "door_f_01_oak_normal.jpg",
+    "mask": "door_f_01_oak_mask.png"
+   }
+  },
+  {
+   "id": "door_f_11_walnut",
+   "name": "Ф-11 Орех (шпон файн-лайн)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/fine_line.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_f_11_walnut",
+   "textures": {
+    "albedo": "door_f_11_walnut_albedo.jpg",
+    "normal": "door_f_11_walnut_normal.jpg",
+    "mask": "door_f_11_walnut_mask.png"
+   }
+  },
+  {
+   "id": "door_f_15_makore",
+   "name": "Ф-15 Макоре (шпон файн-лайн)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/fine_line.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_f_15_makore",
+   "textures": {
+    "albedo": "door_f_15_makore_albedo.jpg",
+    "normal": "door_f_15_makore_normal.jpg",
+    "mask": "door_f_15_makore_mask.png"
+   }
+  },
+  {
+   "id": "door_f_17_chocolate",
+   "name": "Ф-17 Шоколад (шпон файн-лайн)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/fine_line.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_f_17_chocolate",
+   "textures": {
+    "albedo": "door_f_17_chocolate_albedo.jpg",
+    "normal": "door_f_17_chocolate_normal.jpg",
+    "mask": "door_f_17_chocolate_mask.png"
+   }
+  },
+  {
+   "id": "door_f_22_white_oak",
+   "name": "Ф-22 БелДуб (шпон файн-лайн)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/fine_line.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_f_22_white_oak",
+   "textures": {
+    "albedo": "door_f_22_white_oak_albedo.jpg",
+    "normal": "door_f_22_white_oak_normal.jpg",
+    "mask": "door_f_22_white_oak_mask.png"
+   }
+  },
+  {
+   "id": "door_f_27_wenge",
+   "name": "Ф-27 Венге (шпон файн-лайн)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/fine_line.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_f_27_wenge",
+   "textures": {
+    "albedo": "door_f_27_wenge_albedo.jpg",
+    "normal": "door_f_27_wenge_normal.jpg",
+    "mask": "door_f_27_wenge_mask.png"
+   }
+  },
+  {
+   "id": "door_antik_silver",
+   "name": "Антик Серебро (порошковая окраска)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/entrance.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_antik_silver",
+   "textures": {
+    "albedo": "door_antik_silver_albedo.jpg",
+    "normal": "door_antik_silver_normal.jpg",
+    "mask": "door_antik_silver_mask.png"
+   }
+  },
+  {
+   "id": "door_antik_copper",
+   "name": "Антик Медь (порошковая окраска)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/entrance.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_antik_copper",
+   "textures": {
+    "albedo": "door_antik_copper_albedo.jpg",
+    "normal": "door_antik_copper_normal.jpg",
+    "mask": "door_antik_copper_mask.png"
+   }
+  },
+  {
+   "id": "door_antik_copper_ekonom",
+   "name": "Антик Медь (Эконом) (порошковая окраска)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/entrance.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_antik_copper_ekonom",
+   "textures": {
+    "albedo": "door_antik_copper_ekonom_albedo.jpg",
+    "normal": "door_antik_copper_ekonom_normal.jpg",
+    "mask": "door_antik_copper_ekonom_mask.png"
+   }
+  },
+  {
+   "id": "door_moonstone",
+   "name": "Лунный камень (порошковая окраска)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/entrance.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_moonstone",
+   "textures": {
+    "albedo": "door_moonstone_albedo.jpg",
+    "normal": "door_moonstone_normal.jpg",
+    "mask": "door_moonstone_mask.png"
+   }
+  },
+  {
+   "id": "door_winorit_p4",
+   "name": "П-4 (Золотой Дуб) (WINORIT)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/entrance.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_winorit_p4",
+   "textures": {
+    "albedo": "door_winorit_p4_albedo.jpg",
+    "normal": "door_winorit_p4_normal.jpg",
+    "mask": "door_winorit_p4_mask.png"
+   }
+  },
+  {
+   "id": "door_winorit_p25",
+   "name": "П-25 (Беленый Дуб) (WINORIT)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/entrance.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_winorit_p25",
+   "textures": {
+    "albedo": "door_winorit_p25_albedo.jpg",
+    "normal": "door_winorit_p25_normal.jpg",
+    "mask": "door_winorit_p25_mask.png"
+   }
+  },
+  {
+   "id": "door_winorit_p26",
+   "name": "П-26 (Французский Дуб) (WINORIT)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/entrance.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_winorit_p26",
+   "textures": {
+    "albedo": "door_winorit_p26_albedo.jpg",
+    "normal": "door_winorit_p26_normal.jpg",
+    "mask": "door_winorit_p26_mask.png"
+   }
+  },
+  {
+   "id": "door_winorit_p28",
+   "name": "П-28 (Тёмная Вишня) (WINORIT)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/entrance.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_winorit_p28",
+   "textures": {
+    "albedo": "door_winorit_p28_albedo.jpg",
+    "normal": "door_winorit_p28_normal.jpg",
+    "mask": "door_winorit_p28_mask.png"
+   }
+  },
+  {
+   "id": "door_almond_28",
+   "name": "Almond 28 (WINORIT)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/entrance.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_almond_28",
+   "textures": {
+    "albedo": "door_almond_28_albedo.jpg",
+    "normal": "door_almond_28_normal.jpg",
+    "mask": "door_almond_28_mask.png"
+   }
+  },
+  {
+   "id": "door_graphite_pro",
+   "name": "Graphite Pro (Эко Про)",
+   "category": "door",
+   "source": "procedural:tools/doors/textures/entrance.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/door_graphite_pro",
+   "textures": {
+    "albedo": "door_graphite_pro_albedo.jpg",
+    "normal": "door_graphite_pro_normal.jpg",
+    "mask": "door_graphite_pro_mask.png"
+   }
+  },
+  {
+   "id": "doorglass_sprig",
+   "name": "Стекло Глейс SPRIG",
+   "category": "doorglass",
+   "source": "procedural:tools/doors/textures/art_glass.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 4096,
+   "folder": "Materials/doorglass_sprig",
+   "textures": {
+    "albedo": "doorglass_sprig_albedo.png",
+    "mask": "doorglass_sprig_mask.png"
+   },
+   "transparent": true
+  },
+  {
+   "id": "doorglass_twig",
+   "name": "Стекло Глейс TWIG",
+   "category": "doorglass",
+   "source": "procedural:tools/doors/textures/art_glass.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 4096,
+   "folder": "Materials/doorglass_twig",
+   "textures": {
+    "albedo": "doorglass_twig_albedo.png",
+    "mask": "doorglass_twig_mask.png"
+   },
+   "transparent": true
+  },
+  {
+   "id": "doorglass_twig_2",
+   "name": "Стекло Глейс TWIG (Глейс-2)",
+   "category": "doorglass",
+   "source": "procedural:tools/doors/textures/art_glass.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 4096,
+   "folder": "Materials/doorglass_twig_2",
+   "textures": {
+    "albedo": "doorglass_twig_2_albedo.png",
+    "mask": "doorglass_twig_2_mask.png"
+   },
+   "transparent": true
+  },
+  {
+   "id": "doorglass_vitrazh",
+   "name": "Белое сатинато «Витраж»",
+   "category": "doorglass",
+   "source": "procedural:tools/doors/textures/art_glass.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 4096,
+   "folder": "Materials/doorglass_vitrazh",
+   "textures": {
+    "albedo": "doorglass_vitrazh_albedo.png",
+    "mask": "doorglass_vitrazh_mask.png"
+   },
+   "transparent": true
+  },
+  {
+   "id": "doorglass_print",
+   "name": "Зеркало черное худ. «Print»",
+   "category": "doorglass",
+   "source": "procedural:tools/doors/textures/art_glass.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 4096,
+   "folder": "Materials/doorglass_print",
+   "textures": {
+    "albedo": "doorglass_print_albedo.jpg",
+    "mask": "doorglass_print_mask.png"
+   }
+  },
+  {
+   "id": "doorglass_stamp",
+   "name": "Зеркало черное худ. «Stamp»",
+   "category": "doorglass",
+   "source": "procedural:tools/doors/textures/art_glass.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 4096,
+   "folder": "Materials/doorglass_stamp",
+   "textures": {
+    "albedo": "doorglass_stamp_albedo.jpg",
+    "mask": "doorglass_stamp_mask.png"
+   }
+  },
+  {
+   "id": "doorglass_sa",
+   "name": "Зеркало белое худож-е «Silver Art» (SA)",
+   "category": "doorglass",
+   "source": "procedural:tools/doors/textures/art_glass.py",
+   "neutral": false,
+   "metersPerTile": [
+    0.6,
+    0.6
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/doorglass_sa",
+   "textures": {
+    "albedo": "doorglass_sa_albedo.jpg",
+    "normal": "doorglass_sa_normal.png",
+    "mask": "doorglass_sa_mask.png"
+   }
+  },
+  {
+   "id": "doorglass_wc",
+   "name": "Белое худож-е сатинато White Crystal (WC)",
+   "category": "doorglass",
+   "source": "procedural:tools/doors/textures/art_glass.py",
+   "neutral": false,
+   "metersPerTile": [
+    0.1065,
+    0.1579
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/doorglass_wc",
+   "textures": {
+    "albedo": "doorglass_wc_albedo.png",
+    "mask": "doorglass_wc_mask.png"
+   },
+   "transparent": true
+  },
+  {
+   "id": "doorglass_mystic",
+   "name": "Белое худож-е «Mystic»",
+   "category": "doorglass",
+   "source": "procedural:tools/doors/textures/art_glass.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/doorglass_mystic",
+   "textures": {
+    "albedo": "doorglass_mystic_albedo.png",
+    "mask": "doorglass_mystic_mask.png"
+   },
+   "transparent": true
+  },
+  {
+   "id": "doorglass_mystic_small",
+   "name": "Белое худож-е «Mystic» (узкое)",
+   "category": "doorglass",
+   "source": "procedural:tools/doors/textures/art_glass.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/doorglass_mystic_small",
+   "textures": {
+    "albedo": "doorglass_mystic_small_albedo.png",
+    "mask": "doorglass_mystic_small_mask.png"
+   },
+   "transparent": true
+  },
+  {
+   "id": "doorglass_mirror_art",
+   "name": "Зеркало белое худож-е",
+   "category": "doorglass",
+   "source": "procedural:tools/doors/textures/art_glass.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 4096,
+   "folder": "Materials/doorglass_mirror_art",
+   "textures": {
+    "albedo": "doorglass_mirror_art_albedo.jpg",
+    "mask": "doorglass_mirror_art_mask.png"
+   }
+  },
+  {
+   "id": "doorglass_status_15",
+   "name": "Статус-15 СТ-Худ. (узор-вензель)",
+   "category": "doorglass",
+   "source": "procedural:tools/doors/textures/art_wave3.py",
+   "neutral": false,
+   "transparent": true,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/doorglass_status_15",
+   "textures": {
+    "albedo": "doorglass_status_15_albedo.png",
+    "mask": "doorglass_status_15_mask.png"
+   }
+  },
+  {
+   "id": "doorglass_pvc_skinny_33",
+   "name": "Скинни-33 СТ-Худ. (стебли с золотыми листьями)",
+   "category": "doorglass",
+   "source": "procedural:tools/doors/textures/art_wave3.py",
+   "neutral": false,
+   "transparent": true,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/doorglass_pvc_skinny_33",
+   "textures": {
+    "albedo": "doorglass_pvc_skinny_33_albedo.png",
+    "mask": "doorglass_pvc_skinny_33_mask.png"
+   }
+  },
+  {
+   "id": "doorglass_lotos_st_hud",
+   "name": "Лотос СТ-Худ. (линии и капли)",
+   "category": "doorglass",
+   "source": "procedural:tools/doors/textures/art_wave3.py",
+   "neutral": false,
+   "transparent": true,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/doorglass_lotos_st_hud",
+   "textures": {
+    "albedo": "doorglass_lotos_st_hud_albedo.png",
+    "mask": "doorglass_lotos_st_hud_mask.png"
+   }
+  },
+  {
+   "id": "doorglass_orbita_plyus_st_hud",
+   "name": "Орбита Плюс СТ-Худ. (вензель в овале)",
+   "category": "doorglass",
+   "source": "procedural:tools/doors/textures/art_wave3.py",
+   "neutral": false,
+   "transparent": true,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/doorglass_orbita_plyus_st_hud",
+   "textures": {
+    "albedo": "doorglass_orbita_plyus_st_hud_albedo.png",
+    "mask": "doorglass_orbita_plyus_st_hud_mask.png"
+   }
+  },
+  {
+   "id": "doorglass_virazh_plyus_st_hud",
+   "name": "Вираж Плюс СТ-Худ. (штрихи и янтарные ромбики)",
+   "category": "doorglass",
+   "source": "procedural:tools/doors/textures/art_wave3.py",
+   "neutral": false,
+   "transparent": true,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/doorglass_virazh_plyus_st_hud",
+   "textures": {
+    "albedo": "doorglass_virazh_plyus_st_hud_albedo.png",
+    "mask": "doorglass_virazh_plyus_st_hud_mask.png"
+   }
+  },
+  {
+   "id": "doorglass_zk_uzor",
+   "name": "Стекло ЗК-Узор (дуги)",
+   "category": "doorglass",
+   "source": "procedural:tools/doors/textures/art_wave3.py",
+   "neutral": false,
+   "transparent": true,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/doorglass_zk_uzor",
+   "textures": {
+    "albedo": "doorglass_zk_uzor_albedo.png",
+    "mask": "doorglass_zk_uzor_mask.png"
+   }
+  },
+  {
+   "id": "doorglass_bronze",
+   "name": "Бронзовое сатинато",
+   "category": "doorglass",
+   "source": "procedural:tools/doors/textures/art_wave3.py",
+   "neutral": false,
+   "transparent": true,
+   "metersPerTile": [
+    0.256,
+    0.256
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/doorglass_bronze",
+   "textures": {
+    "albedo": "doorglass_bronze_albedo.png",
+    "mask": "doorglass_bronze_mask.png"
+   }
+  },
+  {
+   "id": "doorglass_bc",
+   "name": "Бронзовое худож. сатинато (ромбы)",
+   "category": "doorglass",
+   "source": "procedural:tools/doors/textures/art_wave3.py",
+   "neutral": false,
+   "transparent": true,
+   "metersPerTile": [
+    0.195,
+    0.304
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/doorglass_bc",
+   "textures": {
+    "albedo": "doorglass_bc_albedo.png",
+    "mask": "doorglass_bc_mask.png"
+   }
+  },
+  {
+   "id": "doorglass_bronze_wave",
+   "name": "Бронзовое узорчатое «волна»",
+   "category": "doorglass",
+   "source": "procedural:tools/doors/textures/art_wave3.py",
+   "neutral": false,
+   "transparent": true,
+   "metersPerTile": [
+    0.3,
+    0.3
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/doorglass_bronze_wave",
+   "textures": {
+    "albedo": "doorglass_bronze_wave_albedo.png",
+    "normal": "doorglass_bronze_wave_normal.png",
+    "mask": "doorglass_bronze_wave_mask.png"
+   }
+  },
+  {
+   "id": "doorglass_st_118",
+   "name": "Стекло художественное СТ-118",
+   "category": "doorglass",
+   "source": "procedural:tools/doors/textures/art_wave3.py",
+   "neutral": false,
+   "transparent": true,
+   "metersPerTile": [
+    0.25,
+    0.25
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/doorglass_st_118",
+   "textures": {
+    "albedo": "doorglass_st_118_albedo.png",
+    "normal": "doorglass_st_118_normal.png",
+    "mask": "doorglass_st_118_mask.png"
+   }
+  },
+  {
+   "id": "doorglass_st_121",
+   "name": "Стекло художественное СТ-121",
+   "category": "doorglass",
+   "source": "procedural:tools/doors/textures/art_wave3.py",
+   "neutral": false,
+   "transparent": true,
+   "metersPerTile": [
+    0.4,
+    0.4
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/doorglass_st_121",
+   "textures": {
+    "albedo": "doorglass_st_121_albedo.png",
+    "normal": "doorglass_st_121_normal.png",
+    "mask": "doorglass_st_121_mask.png"
+   }
+  },
+  {
+   "id": "doorart_wood_klassik_51",
+   "name": "Вуд Классик-51: орнамент по стеклу",
+   "category": "doorart",
+   "source": "procedural:tools/doors/textures/art_wave3.py",
+   "neutral": false,
+   "transparent": true,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/doorart_wood_klassik_51",
+   "textures": {
+    "albedo": "doorart_wood_klassik_51_albedo.png",
+    "mask": "doorart_wood_klassik_51_mask.png"
+   }
+  },
+  {
+   "id": "doorart_wood_klassik_53",
+   "name": "Вуд Классик-53: орнамент по стеклу",
+   "category": "doorart",
+   "source": "procedural:tools/doors/textures/art_wave3.py",
+   "neutral": false,
+   "transparent": true,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/doorart_wood_klassik_53",
+   "textures": {
+    "albedo": "doorart_wood_klassik_53_albedo.png",
+    "mask": "doorart_wood_klassik_53_mask.png"
+   }
+  },
+  {
+   "id": "doorart_skinny_12_art_top",
+   "name": "Скинни-12 ART, верх (рамка-лоза)",
+   "category": "doorart",
+   "source": "procedural:tools/doors/textures/art_wave3.py",
+   "neutral": false,
+   "transparent": true,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/doorart_skinny_12_art_top",
+   "textures": {
+    "albedo": "doorart_skinny_12_art_top_albedo.png",
+    "mask": "doorart_skinny_12_art_top_mask.png"
+   }
+  },
+  {
+   "id": "doorart_skinny_12_art_bottom",
+   "name": "Скинни-12 ART, низ (рамка-лоза)",
+   "category": "doorart",
+   "source": "procedural:tools/doors/textures/art_wave3.py",
+   "neutral": false,
+   "transparent": true,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/doorart_skinny_12_art_bottom",
+   "textures": {
+    "albedo": "doorart_skinny_12_art_bottom_albedo.png",
+    "mask": "doorart_skinny_12_art_bottom_mask.png"
+   }
+  },
+  {
+   "id": "doorart_skinny_13_art_glass",
+   "name": "Скинни-13 ART, стекло (рамка-лоза)",
+   "category": "doorart",
+   "source": "procedural:tools/doors/textures/art_wave3.py",
+   "neutral": false,
+   "transparent": true,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/doorart_skinny_13_art_glass",
+   "textures": {
+    "albedo": "doorart_skinny_13_art_glass_albedo.png",
+    "mask": "doorart_skinny_13_art_glass_mask.png"
+   }
+  },
+  {
+   "id": "doorart_skinny_13_art_bottom",
+   "name": "Скинни-13 ART, низ (рамка-лоза)",
+   "category": "doorart",
+   "source": "procedural:tools/doors/textures/art_wave3.py",
+   "neutral": false,
+   "transparent": true,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/doorart_skinny_13_art_bottom",
+   "textures": {
+    "albedo": "doorart_skinny_13_art_bottom_albedo.png",
+    "mask": "doorart_skinny_13_art_bottom_mask.png"
+   }
+  },
+  {
+   "id": "doorart_skinny_15_1_art_glass",
+   "name": "Скинни-15.1 ART, стекло (барочная рамка)",
+   "category": "doorart",
+   "source": "procedural:tools/doors/textures/art_wave3.py",
+   "neutral": false,
+   "transparent": true,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/doorart_skinny_15_1_art_glass",
+   "textures": {
+    "albedo": "doorart_skinny_15_1_art_glass_albedo.png",
+    "mask": "doorart_skinny_15_1_art_glass_mask.png"
+   }
+  },
+  {
+   "id": "doorart_skinny_14_art_top",
+   "name": "Скинни-14 ART, верх (барочная рамка)",
+   "category": "doorart",
+   "source": "procedural:tools/doors/textures/art_wave3.py",
+   "neutral": false,
+   "transparent": true,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/doorart_skinny_14_art_top",
+   "textures": {
+    "albedo": "doorart_skinny_14_art_top_albedo.png",
+    "mask": "doorart_skinny_14_art_top_mask.png"
+   }
+  },
+  {
+   "id": "doorart_skinny_14_art_middle",
+   "name": "Скинни-14 ART, средняя филёнка (завиток)",
+   "category": "doorart",
+   "source": "procedural:tools/doors/textures/art_wave3.py",
+   "neutral": false,
+   "transparent": true,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/doorart_skinny_14_art_middle",
+   "textures": {
+    "albedo": "doorart_skinny_14_art_middle_albedo.png",
+    "mask": "doorart_skinny_14_art_middle_mask.png"
+   }
+  },
+  {
+   "id": "doorart_skinny_15_1_art_middle",
+   "name": "Скинни-15.1 ART, средняя филёнка (завиток)",
+   "category": "doorart",
+   "source": "procedural:tools/doors/textures/art_wave3.py",
+   "neutral": false,
+   "transparent": true,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/doorart_skinny_15_1_art_middle",
+   "textures": {
+    "albedo": "doorart_skinny_15_1_art_middle_albedo.png",
+    "mask": "doorart_skinny_15_1_art_middle_mask.png"
+   }
+  },
+  {
+   "id": "doorart_skinny_14_art_bottom",
+   "name": "Скинни-14 ART, низ (барочный гребень)",
+   "category": "doorart",
+   "source": "procedural:tools/doors/textures/art_wave3.py",
+   "neutral": false,
+   "transparent": true,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/doorart_skinny_14_art_bottom",
+   "textures": {
+    "albedo": "doorart_skinny_14_art_bottom_albedo.png",
+    "mask": "doorart_skinny_14_art_bottom_mask.png"
+   }
+  },
+  {
+   "id": "doorart_skinny_15_1_art_bottom",
+   "name": "Скинни-15.1 ART, низ (барочный гребень)",
+   "category": "doorart",
+   "source": "procedural:tools/doors/textures/art_wave3.py",
+   "neutral": false,
+   "transparent": true,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/doorart_skinny_15_1_art_bottom",
+   "textures": {
+    "albedo": "doorart_skinny_15_1_art_bottom_albedo.png",
+    "mask": "doorart_skinny_15_1_art_bottom_mask.png"
+   }
+  },
+  {
+   "id": "doorart_skinny_21_art_glass",
+   "name": "Скинни-21 ART, стекло (картуш)",
+   "category": "doorart",
+   "source": "procedural:tools/doors/textures/art_wave3.py",
+   "neutral": false,
+   "transparent": true,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/doorart_skinny_21_art_glass",
+   "textures": {
+    "albedo": "doorart_skinny_21_art_glass_albedo.png",
+    "mask": "doorart_skinny_21_art_glass_mask.png"
+   }
+  },
+  {
+   "id": "doorart_skinny_20_art_top",
+   "name": "Скинни-20 ART, верх (картуш)",
+   "category": "doorart",
+   "source": "procedural:tools/doors/textures/art_wave3.py",
+   "neutral": false,
+   "transparent": true,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/doorart_skinny_20_art_top",
+   "textures": {
+    "albedo": "doorart_skinny_20_art_top_albedo.png",
+    "mask": "doorart_skinny_20_art_top_mask.png"
+   }
+  },
+  {
+   "id": "doorart_skinny_20_art_oval",
+   "name": "Скинни-20 ART, овал (завиток)",
+   "category": "doorart",
+   "source": "procedural:tools/doors/textures/art_wave3.py",
+   "neutral": false,
+   "transparent": true,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/doorart_skinny_20_art_oval",
+   "textures": {
+    "albedo": "doorart_skinny_20_art_oval_albedo.png",
+    "mask": "doorart_skinny_20_art_oval_mask.png"
+   }
+  },
+  {
+   "id": "doorart_skinny_21_art_oval",
+   "name": "Скинни-21 ART, овал (завиток)",
+   "category": "doorart",
+   "source": "procedural:tools/doors/textures/art_wave3.py",
+   "neutral": false,
+   "transparent": true,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/doorart_skinny_21_art_oval",
+   "textures": {
+    "albedo": "doorart_skinny_21_art_oval_albedo.png",
+    "mask": "doorart_skinny_21_art_oval_mask.png"
+   }
+  },
+  {
+   "id": "doorart_skinny_20_art_bottom",
+   "name": "Скинни-20 ART, низ (диагональные полосы)",
+   "category": "doorart",
+   "source": "procedural:tools/doors/textures/art_wave3.py",
+   "neutral": false,
+   "transparent": true,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/doorart_skinny_20_art_bottom",
+   "textures": {
+    "albedo": "doorart_skinny_20_art_bottom_albedo.png",
+    "mask": "doorart_skinny_20_art_bottom_mask.png"
+   }
+  },
+  {
+   "id": "doorart_skinny_21_art_bottom",
+   "name": "Скинни-21 ART, низ (диагональные полосы)",
+   "category": "doorart",
+   "source": "procedural:tools/doors/textures/art_wave3.py",
+   "neutral": false,
+   "transparent": true,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/doorart_skinny_21_art_bottom",
+   "textures": {
+    "albedo": "doorart_skinny_21_art_bottom_albedo.png",
+    "mask": "doorart_skinny_21_art_bottom_mask.png"
+   }
+  },
+  {
+   "id": "doorglass_laminated_3p",
+   "name": "3П (лилия)",
+   "category": "doorglass",
+   "source": "procedural:tools/doors/textures/art_wave3.py",
+   "neutral": false,
+   "transparent": true,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/doorglass_laminated_3p",
+   "textures": {
+    "albedo": "doorglass_laminated_3p_albedo.png",
+    "mask": "doorglass_laminated_3p_mask.png"
+   }
+  },
+  {
+   "id": "doorglass_laminated_3x",
+   "name": "3Х (дамаск)",
+   "category": "doorglass",
+   "source": "procedural:tools/doors/textures/art_wave3.py",
+   "neutral": false,
+   "transparent": true,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/doorglass_laminated_3x",
+   "textures": {
+    "albedo": "doorglass_laminated_3x_albedo.png",
+    "mask": "doorglass_laminated_3x_mask.png"
+   }
+  },
+  {
+   "id": "doorglass_laminated_6p",
+   "name": "6П (красные лепестки)",
+   "category": "doorglass",
+   "source": "procedural:tools/doors/textures/art_wave3.py",
+   "neutral": false,
+   "transparent": true,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/doorglass_laminated_6p",
+   "textures": {
+    "albedo": "doorglass_laminated_6p_albedo.png",
+    "mask": "doorglass_laminated_6p_mask.png"
+   }
+  },
+  {
+   "id": "doorglass_laminated_6f",
+   "name": "6Ф (серебристые линии)",
+   "category": "doorglass",
+   "source": "procedural:tools/doors/textures/art_wave3.py",
+   "neutral": false,
+   "transparent": true,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/doorglass_laminated_6f",
+   "textures": {
+    "albedo": "doorglass_laminated_6f_albedo.png",
+    "mask": "doorglass_laminated_6f_mask.png"
+   }
+  },
+  {
+   "id": "doorglass_laminated_8p",
+   "name": "8П (оранжевые листья)",
+   "category": "doorglass",
+   "source": "procedural:tools/doors/textures/art_wave3.py",
+   "neutral": false,
+   "transparent": true,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/doorglass_laminated_8p",
+   "textures": {
+    "albedo": "doorglass_laminated_8p_albedo.png",
+    "mask": "doorglass_laminated_8p_mask.png"
+   }
+  },
+  {
+   "id": "doorglass_laminated_8f",
+   "name": "8Ф (колоски)",
+   "category": "doorglass",
+   "source": "procedural:tools/doors/textures/art_wave3.py",
+   "neutral": false,
+   "transparent": true,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/doorglass_laminated_8f",
+   "textures": {
+    "albedo": "doorglass_laminated_8f_albedo.png",
+    "mask": "doorglass_laminated_8f_mask.png"
+   }
+  },
+  {
+   "id": "doorglass_laminated_11f",
+   "name": "11Ф (стебли с листьями)",
+   "category": "doorglass",
+   "source": "procedural:tools/doors/textures/art_wave3.py",
+   "neutral": false,
+   "transparent": true,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/doorglass_laminated_11f",
+   "textures": {
+    "albedo": "doorglass_laminated_11f_albedo.png",
+    "mask": "doorglass_laminated_11f_mask.png"
+   }
+  },
+  {
+   "id": "doorglass_laminated_15f",
+   "name": "15Ф (золотые перья)",
+   "category": "doorglass",
+   "source": "procedural:tools/doors/textures/art_wave3.py",
+   "neutral": false,
+   "transparent": true,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/doorglass_laminated_15f",
+   "textures": {
+    "albedo": "doorglass_laminated_15f_albedo.png",
+    "mask": "doorglass_laminated_15f_mask.png"
+   }
+  },
+  {
+   "id": "doorglass_laminated_21x",
+   "name": "21Х (меандр)",
+   "category": "doorglass",
+   "source": "procedural:tools/doors/textures/art_wave3.py",
+   "neutral": false,
+   "transparent": true,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/doorglass_laminated_21x",
+   "textures": {
+    "albedo": "doorglass_laminated_21x_albedo.png",
+    "mask": "doorglass_laminated_21x_mask.png"
+   }
+  },
+  {
+   "id": "doorglass_laminated_22x",
+   "name": "22Х (тюльпаны)",
+   "category": "doorglass",
+   "source": "procedural:tools/doors/textures/art_wave3.py",
+   "neutral": false,
+   "transparent": true,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/doorglass_laminated_22x",
+   "textures": {
+    "albedo": "doorglass_laminated_22x_albedo.png",
+    "mask": "doorglass_laminated_22x_mask.png"
+   }
+  },
+  {
+   "id": "doorglass_laminated_23x",
+   "name": "23Х (витраж)",
+   "category": "doorglass",
+   "source": "procedural:tools/doors/textures/art_wave3.py",
+   "neutral": false,
+   "transparent": true,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/doorglass_laminated_23x",
+   "textures": {
+    "albedo": "doorglass_laminated_23x_albedo.png",
+    "mask": "doorglass_laminated_23x_mask.png"
+   }
+  },
+  {
+   "id": "doorglass_laminated_24x",
+   "name": "24Х (филигрань)",
+   "category": "doorglass",
+   "source": "procedural:tools/doors/textures/art_wave3.py",
+   "neutral": false,
+   "transparent": true,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/doorglass_laminated_24x",
+   "textures": {
+    "albedo": "doorglass_laminated_24x_albedo.png",
+    "mask": "doorglass_laminated_24x_mask.png"
+   }
+  },
+  {
+   "id": "doorglass_laminated_25x",
+   "name": "25Х (белые волны)",
+   "category": "doorglass",
+   "source": "procedural:tools/doors/textures/art_wave3.py",
+   "neutral": false,
+   "transparent": true,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/doorglass_laminated_25x",
+   "textures": {
+    "albedo": "doorglass_laminated_25x_albedo.png",
+    "mask": "doorglass_laminated_25x_mask.png"
+   }
+  },
+  {
+   "id": "doorglass_rondo_do",
+   "name": "Рондо СТ-Худ. (лоза с пальметтами)",
+   "category": "doorglass",
+   "source": "procedural:tools/doors/textures/art_wave3.py",
+   "neutral": false,
+   "transparent": true,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/doorglass_rondo_do",
+   "textures": {
+    "albedo": "doorglass_rondo_do_albedo.png",
+    "mask": "doorglass_rondo_do_mask.png"
+   }
+  },
+  {
+   "id": "doorglass_etyud_do",
+   "name": "Этюд СТ-Худ. (травы и чёрные листья)",
+   "category": "doorglass",
+   "source": "procedural:tools/doors/textures/art_wave3.py",
+   "neutral": false,
+   "transparent": true,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/doorglass_etyud_do",
+   "textures": {
+    "albedo": "doorglass_etyud_do_albedo.png",
+    "mask": "doorglass_etyud_do_mask.png"
+   }
+  },
+  {
+   "id": "doorglass_afina_do",
+   "name": "Афина СТ-Худ. (контур и звезда)",
+   "category": "doorglass",
+   "source": "procedural:tools/doors/textures/art_wave3.py",
+   "neutral": false,
+   "transparent": true,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/doorglass_afina_do",
+   "textures": {
+    "albedo": "doorglass_afina_do_albedo.png",
+    "mask": "doorglass_afina_do_mask.png"
+   }
+  },
+  {
+   "id": "doorglass_selena_do",
+   "name": "Селена СТ-Худ. (решётка, гирлянды и лилия)",
+   "category": "doorglass",
+   "source": "procedural:tools/doors/textures/art_wave3.py",
+   "neutral": false,
+   "transparent": true,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/doorglass_selena_do",
+   "textures": {
+    "albedo": "doorglass_selena_do_albedo.png",
+    "mask": "doorglass_selena_do_mask.png"
+   }
+  },
+  {
+   "id": "doorglass_azaliya_do",
+   "name": "Азалия СТ-Худ. (угловые орнаменты)",
+   "category": "doorglass",
+   "source": "procedural:tools/doors/textures/art_wave3.py",
+   "neutral": false,
+   "transparent": true,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/doorglass_azaliya_do",
+   "textures": {
+    "albedo": "doorglass_azaliya_do_albedo.png",
+    "mask": "doorglass_azaliya_do_mask.png"
+   }
+  },
+  {
+   "id": "doorglass_azaliya_do_2",
+   "name": "Азалия СТ-Худ., медальон",
+   "category": "doorglass",
+   "source": "procedural:tools/doors/textures/art_wave3.py",
+   "neutral": false,
+   "transparent": true,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/doorglass_azaliya_do_2",
+   "textures": {
+    "albedo": "doorglass_azaliya_do_2_albedo.png",
+    "mask": "doorglass_azaliya_do_2_mask.png"
+   }
+  },
+  {
+   "id": "doorart_azaliya",
+   "name": "Азалия: резной орнамент филёнок",
+   "category": "doorart",
+   "source": "procedural:tools/doors/textures/art_wave3.py",
+   "neutral": false,
+   "transparent": true,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/doorart_azaliya",
+   "textures": {
+    "albedo": "doorart_azaliya_albedo.png",
+    "mask": "doorart_azaliya_mask.png"
+   }
+  },
+  {
+   "id": "doorart_azaliya_do",
+   "name": "Азалия СТ-Худ.: резной орнамент нижней филёнки",
+   "category": "doorart",
+   "source": "procedural:tools/doors/textures/art_wave3.py",
+   "neutral": false,
+   "transparent": true,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/doorart_azaliya_do",
+   "textures": {
+    "albedo": "doorart_azaliya_do_albedo.png",
+    "mask": "doorart_azaliya_do_mask.png"
+   }
+  },
+  {
+   "id": "doorglass_stil_do",
+   "name": "Стиль СТ-Худ. (рамка и дамасский медальон)",
+   "category": "doorglass",
+   "source": "procedural:tools/doors/textures/art_wave3.py",
+   "neutral": false,
+   "transparent": true,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/doorglass_stil_do",
+   "textures": {
+    "albedo": "doorglass_stil_do_albedo.png",
+    "mask": "doorglass_stil_do_mask.png"
+   }
+  },
+  {
+   "id": "doorglass_stil_do_2",
+   "name": "Стиль СТ-Худ., узкое стекло (плетёнка и завитки)",
+   "category": "doorglass",
+   "source": "procedural:tools/doors/textures/art_wave3.py",
+   "neutral": false,
+   "transparent": true,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/doorglass_stil_do_2",
+   "textures": {
+    "albedo": "doorglass_stil_do_2_albedo.png",
+    "mask": "doorglass_stil_do_2_mask.png"
+   }
+  },
+  {
+   "id": "doorglass_liliya_do",
+   "name": "Лилия СТ-Худ. (стебли с бутонами лилий)",
+   "category": "doorglass",
+   "source": "procedural:tools/doors/textures/art_wave3.py",
+   "neutral": false,
+   "transparent": true,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/doorglass_liliya_do",
+   "textures": {
+    "albedo": "doorglass_liliya_do_albedo.png",
+    "mask": "doorglass_liliya_do_mask.png"
+   }
+  },
+  {
+   "id": "doorglass_liliya_do_2",
+   "name": "Лилия СТ-Худ., язычок (бутоны)",
+   "category": "doorglass",
+   "source": "procedural:tools/doors/textures/art_wave3.py",
+   "neutral": false,
+   "transparent": true,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/doorglass_liliya_do_2",
+   "textures": {
+    "albedo": "doorglass_liliya_do_2_albedo.png",
+    "mask": "doorglass_liliya_do_2_mask.png"
+   }
+  },
+  {
+   "id": "doorglass_liliya_do_3",
+   "name": "Лилия СТ-Худ., малое стекло",
+   "category": "doorglass",
+   "source": "procedural:tools/doors/textures/art_wave3.py",
+   "neutral": false,
+   "transparent": true,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/doorglass_liliya_do_3",
+   "textures": {
+    "albedo": "doorglass_liliya_do_3_albedo.png",
+    "mask": "doorglass_liliya_do_3_mask.png"
+   }
+  },
+  {
+   "id": "doorglass_laguna_do",
+   "name": "Лагуна СТ-Худ. (виноградная лоза)",
+   "category": "doorglass",
+   "source": "procedural:tools/doors/textures/art_wave3.py",
+   "neutral": false,
+   "transparent": true,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/doorglass_laguna_do",
+   "textures": {
+    "albedo": "doorglass_laguna_do_albedo.png",
+    "mask": "doorglass_laguna_do_mask.png"
+   }
+  },
+  {
+   "id": "doorglass_eksklyuziv_do_hud",
+   "name": "Эксклюзив Ф-17 СТ-Худ. (цветы на стебле)",
+   "category": "doorglass",
+   "source": "procedural:tools/doors/textures/art_wave3.py",
+   "neutral": false,
+   "transparent": true,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/doorglass_eksklyuziv_do_hud",
+   "textures": {
+    "albedo": "doorglass_eksklyuziv_do_hud_albedo.png",
+    "mask": "doorglass_eksklyuziv_do_hud_mask.png"
+   }
+  },
+  {
+   "id": "doorglass_eksklyuziv_do_hud_2",
+   "name": "Эксклюзив Ф-17 СТ-Худ., среднее стекло (цветок)",
+   "category": "doorglass",
+   "source": "procedural:tools/doors/textures/art_wave3.py",
+   "neutral": false,
+   "transparent": true,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/doorglass_eksklyuziv_do_hud_2",
+   "textures": {
+    "albedo": "doorglass_eksklyuziv_do_hud_2_albedo.png",
+    "mask": "doorglass_eksklyuziv_do_hud_2_mask.png"
+   }
+  },
+  {
+   "id": "doorglass_eksklyuziv_do_hud_3",
+   "name": "Эксклюзив Ф-17 СТ-Худ., малое стекло (бутон)",
+   "category": "doorglass",
+   "source": "procedural:tools/doors/textures/art_wave3.py",
+   "neutral": false,
+   "transparent": true,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/doorglass_eksklyuziv_do_hud_3",
+   "textures": {
+    "albedo": "doorglass_eksklyuziv_do_hud_3_albedo.png",
+    "mask": "doorglass_eksklyuziv_do_hud_3_mask.png"
+   }
   }
  ],
  "models": [

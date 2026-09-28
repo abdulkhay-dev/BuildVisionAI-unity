@@ -1,0 +1,15 @@
+{
+  "id": "optim-outer-flesh",
+  "name": "Оптим Флэш — наружная сторона (тиснение)",
+  "ref": [800, 2000],
+  "thickness": 7,
+  "fixX": [],
+  "fixY": [],
+  "edge": {"radius": 3},
+  "handle": {"y": 980, "x": 77},
+  "layout": {"grain": "h"},
+  "parts": [
+    {"type": "groove", "face": "front", "path": "M 149.4 111 L 149.4 1892", "width": 16, "depth": 2, "profile": "u"},
+    {"type": "groove", "face": "front", "path": "M 644.9 111 L 644.9 1892", "width": 16, "depth": 2, "profile": "u"}
+  ]
+}

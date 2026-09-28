@@ -1,0 +1,7 @@
+[
+  { "id": "wp", "name": "Бежевый Lacobel «White Pearl» (WP)", "role": "lacobel-beige" },
+  { "id": "ww", "name": "Белый Lacobel «White Waltz» (WW)", "role": "lacobel-white" },
+  { "id": "s", "name": "Серый Lacobel «Smoke» (S)", "role": "lacobel-smoke" },
+  { "id": "reflex", "name": "Зеркало белое «Reflex»", "role": "mirror" },
+  { "id": "crystalline", "name": "Crystalline просветлённое", "role": "clear" }
+]

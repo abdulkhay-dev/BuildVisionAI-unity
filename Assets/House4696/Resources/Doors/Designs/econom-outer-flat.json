@@ -1,0 +1,11 @@
+{
+  "id": "econom-outer-flat",
+  "name": "Эконом — гладкий лист металла (наружная сторона)",
+  "ref": [800, 2000],
+  "thickness": 2,
+  "fixX": [],
+  "fixY": [],
+  "edge": { "radius": 1 },
+  "handle": {"y": 981, "x": 61, "style": "plate", "finish": "copper"},
+  "layout": { "grain": "h" }
+}

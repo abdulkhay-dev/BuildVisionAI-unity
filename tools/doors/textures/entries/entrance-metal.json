@@ -1,0 +1,74 @@
+[
+ {
+  "id": "door_antik_silver",
+  "name": "Антик Серебро (порошковая окраска)",
+  "category": "door",
+  "source": "procedural:tools/doors/textures/entrance.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/door_antik_silver",
+  "textures": {
+   "albedo": "door_antik_silver_albedo.jpg",
+   "normal": "door_antik_silver_normal.jpg",
+   "mask": "door_antik_silver_mask.png"
+  }
+ },
+ {
+  "id": "door_antik_copper",
+  "name": "Антик Медь (порошковая окраска)",
+  "category": "door",
+  "source": "procedural:tools/doors/textures/entrance.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/door_antik_copper",
+  "textures": {
+   "albedo": "door_antik_copper_albedo.jpg",
+   "normal": "door_antik_copper_normal.jpg",
+   "mask": "door_antik_copper_mask.png"
+  }
+ },
+ {
+  "id": "door_antik_copper_ekonom",
+  "name": "Антик Медь (Эконом) (порошковая окраска)",
+  "category": "door",
+  "source": "procedural:tools/doors/textures/entrance.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/door_antik_copper_ekonom",
+  "textures": {
+   "albedo": "door_antik_copper_ekonom_albedo.jpg",
+   "normal": "door_antik_copper_ekonom_normal.jpg",
+   "mask": "door_antik_copper_ekonom_mask.png"
+  }
+ },
+ {
+  "id": "door_moonstone",
+  "name": "Лунный камень (порошковая окраска)",
+  "category": "door",
+  "source": "procedural:tools/doors/textures/entrance.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/door_moonstone",
+  "textures": {
+   "albedo": "door_moonstone_albedo.jpg",
+   "normal": "door_moonstone_normal.jpg",
+   "mask": "door_moonstone_mask.png"
+  }
+ }
+]

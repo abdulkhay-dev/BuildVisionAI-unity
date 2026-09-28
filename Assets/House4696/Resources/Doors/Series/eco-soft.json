@@ -1,0 +1,8 @@
+{
+  "id": "eco-soft", "name": "SOFT", "line": "ЭкоШпон", "kind": "interior", "block": "t70", "order": 65,
+  "finishes": ["wenge-veralinga"],
+  "glass": ["print", "reflex", "stamp"],
+  "models": [
+    { "id": "s-13", "name": "S-13", "design": "s-13", "glass": ["print", "reflex", "stamp"], "photo": "p065_s-13-print__wenge-veralinga.jpg" }
+  ]
+}

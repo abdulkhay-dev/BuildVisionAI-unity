@@ -1,0 +1,128 @@
+[
+ {
+  "id": "door_p_23_white",
+  "name": "П-23 Белый (ПВХ)",
+  "category": "door",
+  "source": "procedural:tools/doors/textures/pvc.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/door_p_23_white",
+  "textures": {
+   "albedo": "door_p_23_white_albedo.jpg",
+   "normal": "door_p_23_white_normal.jpg",
+   "mask": "door_p_23_white_mask.png"
+  }
+ },
+ {
+  "id": "door_p_34_shimo_light",
+  "name": "П-34 Шимо Светлый (ПВХ)",
+  "category": "door",
+  "source": "procedural:tools/doors/textures/pvc.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/door_p_34_shimo_light",
+  "textures": {
+   "albedo": "door_p_34_shimo_light_albedo.jpg",
+   "normal": "door_p_34_shimo_light_normal.jpg",
+   "mask": "door_p_34_shimo_light_mask.png"
+  }
+ },
+ {
+  "id": "door_p_35_shimo_dark",
+  "name": "П-35 Шимо Тёмный (ПВХ)",
+  "category": "door",
+  "source": "procedural:tools/doors/textures/pvc.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/door_p_35_shimo_dark",
+  "textures": {
+   "albedo": "door_p_35_shimo_dark_albedo.jpg",
+   "normal": "door_p_35_shimo_dark_normal.jpg",
+   "mask": "door_p_35_shimo_dark_mask.png"
+  }
+ },
+ {
+  "id": "door_p_17_italoreh",
+  "name": "П-17 ИталОрех (ПВХ)",
+  "category": "door",
+  "source": "procedural:tools/doors/textures/pvc.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/door_p_17_italoreh",
+  "textures": {
+   "albedo": "door_p_17_italoreh_albedo.jpg",
+   "normal": "door_p_17_italoreh_normal.jpg",
+   "mask": "door_p_17_italoreh_mask.png"
+  }
+ },
+ {
+  "id": "door_p_18_milanoreh",
+  "name": "П-18 МиланОрех (ПВХ)",
+  "category": "door",
+  "source": "procedural:tools/doors/textures/pvc.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/door_p_18_milanoreh",
+  "textures": {
+   "albedo": "door_p_18_milanoreh_albedo.jpg",
+   "normal": "door_p_18_milanoreh_normal.jpg",
+   "mask": "door_p_18_milanoreh_mask.png"
+  }
+ },
+ {
+  "id": "door_p_31_italoreh",
+  "name": "П-31 ИталОрех (ПВХ)",
+  "category": "door",
+  "source": "procedural:tools/doors/textures/pvc.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/door_p_31_italoreh",
+  "textures": {
+   "albedo": "door_p_31_italoreh_albedo.jpg",
+   "normal": "door_p_31_italoreh_normal.jpg",
+   "mask": "door_p_31_italoreh_mask.png"
+  }
+ },
+ {
+  "id": "door_p_32_milanoreh",
+  "name": "П-32 МиланОрех (ПВХ)",
+  "category": "door",
+  "source": "procedural:tools/doors/textures/pvc.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/door_p_32_milanoreh",
+  "textures": {
+   "albedo": "door_p_32_milanoreh_albedo.jpg",
+   "normal": "door_p_32_milanoreh_normal.jpg",
+   "mask": "door_p_32_milanoreh_mask.png"
+  }
+ }
+]

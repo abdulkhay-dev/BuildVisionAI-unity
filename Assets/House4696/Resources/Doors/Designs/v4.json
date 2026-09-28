@@ -1,0 +1,29 @@
+{
+  "id": "v4",
+  "name": "V4",
+  "ref": [800, 2000],
+  "thickness": 36,
+  "fixX": [[0, 151.3], [651.5, 800]],
+  "fixY": [],
+  "edge": {"radius": 2},
+  "handle": {"y": 995, "x": 68, "style": "square", "finish": "chrome"},
+  "hinges": [189, 1815],
+  "layout": {
+    "split": "x",
+    "at": [151.3, 651.5],
+    "sep": "joint",
+    "grain": "v",
+    "radius": 1.5,
+    "cells": [
+      {},
+      {
+        "split": "y",
+        "at": [400, 800, 1200.5, 1603],
+        "sep": "metal:4",
+        "level": -14,
+        "cells": [{"glass": true}, {"glass": true}, {"glass": true}, {"glass": true}, {"glass": true}]
+      },
+      {}
+    ]
+  }
+}

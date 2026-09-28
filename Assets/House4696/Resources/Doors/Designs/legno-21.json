@@ -1,0 +1,29 @@
+{
+  "id": "legno-21",
+  "name": "Легно-21",
+  "ref": [800, 2000],
+  "thickness": 36,
+  "fixX": [[0, 119.7], [677.8, 800]],
+  "fixY": [[0, 122.5], [1887, 2000]],
+  "edge": {"radius": 2},
+  "handle": {"y": 995, "x": 68, "style": "square", "finish": "chrome"},
+  "hinges": [189, 1818],
+  "layout": {
+    "split": "x",
+    "at": [119.7, 677.8],
+    "sep": "joint",
+    "grain": "v",
+    "radius": 1.5,
+    "cells": [
+      {},
+      {
+        "split": "y",
+        "at": [122.5, 1887],
+        "sep": "joint",
+        "grain": "h",
+        "cells": [{}, {"split": "y", "at": [407.6, 705.6, 1001.2, 1299.4, 1595.0], "sep": "joint", "level": -3}, {}]
+      },
+      {}
+    ]
+  }
+}

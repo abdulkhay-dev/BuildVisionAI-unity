@@ -1,0 +1,10 @@
+{
+  "id": "euro-classico", "name": "CLASSICO", "line": "ЕвроШпон", "kind": "interior", "block": "classic", "order": 68,
+  "finishes": ["real-oak", "milk-oak", "brown-oak", "thermo-oak"],
+  "glass": ["mf-diamond"],
+  "handles": {"real-oak": "bronze", "brown-oak": "bronze", "thermo-oak": "bronze"},
+  "models": [
+    { "id": "klassiko-12", "name": "Классико-12", "design": "klassiko-12", "glass": [], "photo": "p069_klassiko-12__real-oak.jpg" },
+    { "id": "klassiko-13", "name": "Классико-13", "design": "klassiko-13", "glass": ["mf-diamond"], "photo": "p069_klassiko-13__real-oak.jpg" }
+  ]
+}

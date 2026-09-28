@@ -1,0 +1,20 @@
+{
+  "id": "optim-termo", "name": "Термо", "line": "Входные двери", "kind": "entrance", "block": "t70", "order": 165,
+  "finishes": ["antik-silver"],
+  "finishesIn": ["cappuccino-veralinga", "wenge-veralinga"],
+  "glass": ["wp", "bs", "reflex"],
+  "sizes": [[0.86, 2.05], [0.96, 2.05]],
+  "rim": 14,
+  "escutcheon": "oval",
+  "models": [
+    { "id": "optim-termo-220", "name": "Оптим Термо 220", "design": "optim-termo-222-outer", "inner": "optim-termo-220-inner",
+      "glass": ["reflex"], "photo": "p167_optim-termo-220__antik-serebro-cappuccino-veralinga-reflex.jpg" },
+    { "id": "optim-termo-222", "name": "Оптим Термо 222", "design": "optim-termo-222-outer", "inner": "porta-s-inner-p22",
+      "glass": ["wp", "bs"], "photo": "p166_optim-termo-222__antik-serebro-cappuccino-veralinga-wp.jpg" },
+    { "id": "optim-termo-204", "name": "Оптим Термо 204", "design": "optim-termo-204-outer", "inner": "optim-termo-204-inner",
+      "glass": [], "photo": "p168_optim-termo-204__antik-serebro-cappuccino-veralinga.jpg" },
+    { "id": "groff-p3-204", "name": "GROFF P3-204", "design": "optim-termo-204-outer", "inner": "optim-termo-204-inner",
+      "finishes": ["antik-silver"], "finishesIn": ["wenge-veralinga"],
+      "glass": [], "photo": "p168_groff-p3-204__p-28-temnaya-vishnya-wenge-veralinga.jpg" }
+  ]
+}

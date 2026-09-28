@@ -1,0 +1,18 @@
+{
+  "id": "graffiti-2",
+  "name": "Граффити-2",
+  "ref": [800, 2000],
+  "thickness": 36,
+  "fixX": [],
+  "fixY": [],
+  "edge": {"radius": 2},
+  "handle": {"y": 996, "x": 65, "style": "square", "finish": "chrome"},
+  "hinges": [187, 1808],
+  "layout": {"grain": "v"},
+  "parts": [
+    {"type": "groove", "path": "M 0 353 L 800 353", "width": 6, "depth": 2, "profile": "v"},
+    {"type": "groove", "path": "M 0 779 L 800 779", "width": 6, "depth": 2, "profile": "v"},
+    {"type": "groove", "path": "M 0 1205 L 800 1205", "width": 6, "depth": 2, "profile": "v"},
+    {"type": "groove", "path": "M 0 1631 L 800 1631", "width": 6, "depth": 2, "profile": "v"}
+  ]
+}

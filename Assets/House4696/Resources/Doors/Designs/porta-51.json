@@ -1,0 +1,12 @@
+{
+  "id": "porta-51",
+  "name": "Порта-51",
+  "ref": [800, 2000],
+  "thickness": 36,
+  "fixX": [[0, 299]],
+  "fixY": [],
+  "edge": {"radius": 1},
+  "handle": {"y": 994, "x": 68, "style": "square", "finish": "chrome"},
+  "hinges": [188, 1812],
+  "layout": { "pane": 34,"split": "x", "at": [157, 299], "sep": "joint", "grain": "v", "radius": 1, "cells": [{}, {"glass": true}, {}]}
+}

@@ -1,0 +1,9 @@
+{
+  "id": "pvc-graffiti", "name": "GRAFFITI", "line": "ПВХ", "kind": "interior", "block": "t70", "order": 77,
+  "finishes": ["p-23-white"],
+  "glass": [],
+  "models": [
+    { "id": "graffiti-2", "name": "Граффити-2", "design": "graffiti-2", "glass": [], "photo": "p077_graffiti-2-p-23__belyy.jpg" },
+    { "id": "graffiti-4", "name": "Граффити-4", "design": "graffiti-4", "glass": [], "photo": "p077_graffiti-4-p-23__belyy.jpg" }
+  ]
+}

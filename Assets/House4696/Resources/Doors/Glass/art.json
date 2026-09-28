@@ -1,0 +1,11 @@
+[
+  {"id": "sprig", "name": "Стекло Глейс SPRIG", "role": "satin", "material": "doorglass_sprig", "fit": true},
+  {"id": "twig", "name": "Стекло Глейс TWIG", "role": "satin", "material": "doorglass_twig", "fit": true},
+  {"id": "vitrazh", "name": "Белое сатинато «Витраж»", "role": "satin", "material": "doorglass_vitrazh", "fit": true},
+  {"id": "print", "name": "Зеркало черное худ. «Print»", "role": "black", "material": "doorglass_print", "fit": true},
+  {"id": "stamp", "name": "Зеркало черное худ. «Stamp»", "role": "black", "material": "doorglass_stamp", "fit": true},
+  {"id": "sa", "name": "Зеркало белое худож-е «Silver Art» (SA)", "role": "mirror", "material": "doorglass_sa"},
+  {"id": "wc", "name": "Белое худож-е сатинато White Crystal (WC)", "role": "satin", "material": "doorglass_wc"},
+  {"id": "mystic", "name": "Белое худож-е «Mystic»", "role": "satin", "material": "doorglass_mystic", "fit": true},
+  {"id": "mirror-art", "name": "Зеркало белое худож-е", "role": "mirror", "material": "doorglass_mirror_art", "fit": true}
+]

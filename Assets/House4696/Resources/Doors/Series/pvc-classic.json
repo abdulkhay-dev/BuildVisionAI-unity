@@ -1,0 +1,31 @@
+{
+  "id": "pvc-classic", "name": "Двери с отделкой ПВХ", "line": "ПВХ", "kind": "interior", "block": "t70", "order": 77,
+  "finishes": ["p-23-white", "p-34-shimo-light", "p-35-shimo-dark", "p-17-italoreh", "p-18-milanoreh", "p-31-italoreh", "p-32-milanoreh"],
+  "glass": ["st-hud", "st-118"],
+  "models": [
+    { "id": "status-14", "name": "Статус-14", "design": "status-14", "glass": [],
+      "finishes": ["p-23-white", "p-34-shimo-light", "p-35-shimo-dark"], "photo": "p077_status-14-p-35__shimo-temnyy.jpg" },
+    { "id": "status-15", "name": "Статус-15", "design": "status-15", "glass": ["st-hud"],
+      "finishes": ["p-23-white", "p-34-shimo-light", "p-35-shimo-dark"], "photo": "p077_status-15-p-35__shimo-temnyy.jpg" },
+    { "id": "pvc-skinny-32", "name": "Скинни-32", "design": "pvc-skinny-32", "glass": [], "block": "classic",
+      "finishes": ["p-31-italoreh", "p-32-milanoreh"], "photo": "p078_skinni-32-p-31__italoreh.jpg" },
+    { "id": "pvc-skinny-33", "name": "Скинни-33", "design": "pvc-skinny-33", "glass": ["st-hud"], "block": "classic",
+      "finishes": ["p-31-italoreh", "p-32-milanoreh"], "photo": "p078_skinni-33-p-31__italoreh-st-hud.jpg" },
+    { "id": "alfa", "name": "Альфа", "design": "alfa", "glass": [],
+      "finishes": ["p-17-italoreh", "p-18-milanoreh"], "photo": "p078_alfa-p-17__italoreh.jpg" },
+    { "id": "alfa-st-118", "name": "Альфа СТ-118", "design": "alfa-st-118", "glass": ["st-118"],
+      "finishes": ["p-17-italoreh", "p-18-milanoreh"], "photo": "p078_alfa-p-17__italoreh-st-118.jpg" },
+    { "id": "lotos", "name": "Лотос", "design": "lotos", "glass": [],
+      "finishes": ["p-17-italoreh", "p-18-milanoreh"], "photo": "p078_lotos-p-17__italoreh.jpg" },
+    { "id": "lotos-st-hud", "name": "Лотос СТ-Худ.", "design": "lotos-st-hud", "glass": ["st-hud"],
+      "finishes": ["p-17-italoreh", "p-18-milanoreh"], "photo": "p078_lotos-p-17__italoreh-st-hud.jpg" },
+    { "id": "virazh-plyus", "name": "Вираж плюс", "design": "virazh-plyus", "glass": [],
+      "finishes": ["p-17-italoreh", "p-18-milanoreh"], "photo": "p079_virazh-plyus-p-17__italoreh.jpg" },
+    { "id": "virazh-plyus-st-hud", "name": "Вираж плюс СТ-Худ.", "design": "virazh-plyus-st-hud", "glass": ["st-hud"],
+      "finishes": ["p-17-italoreh", "p-18-milanoreh"], "photo": "p079_virazh-plyus-p-17__italoreh-st-hud.jpg" },
+    { "id": "orbita-plyus", "name": "Орбита плюс", "design": "orbita-plyus", "glass": [],
+      "finishes": ["p-17-italoreh", "p-18-milanoreh"], "photo": "p079_orbita-plyus-p-17__italoreh.jpg" },
+    { "id": "orbita-plyus-st-hud", "name": "Орбита плюс СТ-Худ.", "design": "orbita-plyus-st-hud", "glass": ["st-hud"],
+      "finishes": ["p-17-italoreh", "p-18-milanoreh"], "photo": "p079_orbita-plyus-p-17__italoreh-st-hud.jpg" }
+  ]
+}

@@ -25,11 +25,15 @@ namespace House4696.Generation
                 case LandscapePreset.Catalog4696:
                     return new LandscapeGenerator(_c.Lib, _c.W, CameraSpec.Position, CameraSpec.Forward).Build();
                 case LandscapePreset.Natural:
-                    return new House4696.Landscape.Natural.NaturalSiteBuilder(_c.Doc.Site, LandscapeKit.Load(), _c.W, _c.Veg, _c.Lib, _c.Mats, _c.Warnings).Build(footprint);
+                    return new House4696.Landscape.Natural.NaturalSiteBuilder(_c.Doc.Site, LandscapeKit.Load(), _c.W, _c.Veg, _c.Lib, _c.Mats, _c.Warnings)
+                        { Holes = _c.PoolCuts(0f) }.Build(footprint);
             }
             var root = new GameObject("Landscape");
             var ground = new MeshBuilder();
-            ground.Box(new Vector3(-900, -0.3f, -900), new Vector3(900, 0f, 900), BoxMats.All(null).With(yp: _c.Lib.Lawn));
+            // pools dug into the ground cut it (and the gravel apron)
+            var pools = _c.PoolCuts(0f);
+            Polygon.Prism(ground, new[] { new Vector2(-900, -900), new Vector2(900, -900), new Vector2(900, 900), new Vector2(-900, 900) },
+                pools, -0.3f, 0f, _c.Lib.Lawn, null, null);
             _c.W.Emit("Lawn", root.transform, ground, castShadows: false, probeStatic: true);
             if (_c.Doc.Site.Landscape == LandscapePreset.Lawn) return root;
 
@@ -38,7 +42,8 @@ namespace House4696.Generation
             var top = BoxMats.All(_c.Lib.Gravel).Without(yn: true);
             const float apron = 0.8f, gy = 0.022f;
             var r = footprint;
-            gravel.Box(new Vector3(r.xMin - apron, 0, r.yMin - apron), new Vector3(r.xMax + apron, gy, r.yMax + apron), top);
+            var apronRect = new[] { new Vector2(r.xMin - apron, r.yMin - apron), new Vector2(r.xMax + apron, r.yMin - apron), new Vector2(r.xMax + apron, r.yMax + apron), new Vector2(r.xMin - apron, r.yMax + apron) };
+            Polygon.Prism(gravel, apronRect, pools, 0f, gy, _c.Lib.Gravel, null, _c.Lib.Gravel);
             _c.W.Emit("Gravel", root.transform, gravel, castShadows: false, probeStatic: true);
             var site = _c.Doc.Site;
             if (site.Path != "none")

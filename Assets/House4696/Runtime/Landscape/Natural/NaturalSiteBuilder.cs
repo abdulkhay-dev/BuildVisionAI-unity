@@ -31,6 +31,9 @@ namespace House4696.Landscape.Natural
 
         public SiteModel Model => _m;
 
+        /// <summary>Plan outlines (convex) of pools dug into the ground: holes in the terrain, nothing planted there.</summary>
+        public List<Vector2[]> Holes = new List<Vector2[]>();
+
         public NaturalSiteBuilder(SiteDef def, LandscapeKit kit, SceneWriter w, VegetationFactory veg, MaterialLibrary lib,
             Generation.MaterialResolver mats, List<string> warnings)
         {
@@ -41,6 +44,7 @@ namespace House4696.Landscape.Natural
         {
             var sw = System.Diagnostics.Stopwatch.StartNew();
             _m = new SiteModel(_def, footprint);
+            _m.Hard.AddRange(Holes);
             _plan = new PlantingPlan(_m.Planting, _m.Terrain.Seed);
             _rng = new Rng(_m.Terrain.Seed + 31);
             var root = new GameObject(RootName);
@@ -106,6 +110,7 @@ namespace House4696.Landscape.Natural
             data.alphamapResolution = res - 1;
             data.terrainLayers = new[] { _kit.TerrainLayer("soil"), _kit.TerrainLayer("grass"), _kit.TerrainLayer("pebbles"), _kit.TerrainLayer("mud") };
             Splat(data, res - 1);
+            CutHoles(data, res, step);
             data.name = "SiteTerrain";
 
             var go = Terrain.CreateTerrainGameObject(data);
@@ -115,6 +120,25 @@ namespace House4696.Landscape.Natural
             var t = go.GetComponent<Terrain>();
             Configure(t, detailed: true);
             return t;
+        }
+
+        /// <summary>Terrain holes where pools are dug in: cells whose centre is inside a pool cut (the coping hides the jagged edge).</summary>
+        void CutHoles(TerrainData data, int res, float step)
+        {
+            if (Holes.Count == 0) return;
+            int n = res - 1;
+            var solid = new bool[n, n];
+            var area = _m.Area;
+            bool any = false;
+            for (int j = 0; j < n; j++)
+            for (int i = 0; i < n; i++)
+            {
+                var p = new Vector2(area.xMin + (i + 0.5f) * step, area.yMin + (j + 0.5f) * step);
+                bool hole = Holes.Exists(h => Generation.Polygon.Contains(h, p));
+                solid[j, i] = !hole;
+                any |= hole;
+            }
+            if (any) data.SetHoles(0, 0, solid);
         }
 
         void Configure(Terrain t, bool detailed)

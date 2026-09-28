@@ -1,0 +1,19 @@
+{
+  "id": "porta-11",
+  "name": "Порта-11",
+  "ref": [800, 2000],
+  "thickness": 36,
+  "fixX": [[0, 257], [670, 800]],
+  "fixY": [],
+  "edge": { "radius": 2 },
+  "handle": { "y": 996, "x": 65 },
+  "hinges": [189, 1811],
+  "layout": { "split": "x", "at": [133, 257, 670], "sep": "joint", "grain": "v", "radius": 1.5,
+    "cells": [
+      {},
+      { "glass": true },
+      { "level": -4 },
+      {}
+    ]
+  }
+}

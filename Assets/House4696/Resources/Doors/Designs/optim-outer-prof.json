@@ -1,0 +1,20 @@
+{
+  "id": "optim-outer-prof",
+  "name": "Оптим Проф — наружная сторона (тиснение)",
+  "ref": [800, 2000],
+  "thickness": 7,
+  "fixX": [[0, 323.7]],
+  "fixY": [],
+  "edge": {"radius": 3},
+  "handle": {"y": 980, "x": 77},
+  "layout": {"grain": "h"},
+  "parts": [
+    {"type": "groove", "face": "front", "path": "M 149.4 111 L 149.4 1891", "width": 16, "depth": 2, "profile": "u"},
+    {"type": "groove", "face": "front", "path": "M 234.0 111 L 234.0 1891", "width": 16, "depth": 2, "profile": "u"},
+    {"type": "groove", "face": "front", "path": "M 323.7 1716.1 L 709.6 1716.1", "width": 16, "depth": 2, "profile": "u"},
+    {"type": "groove", "face": "front", "path": "M 323.7 1363.5 L 709.6 1363.5", "width": 16, "depth": 2, "profile": "u"},
+    {"type": "groove", "face": "front", "path": "M 323.7 1011.8 L 709.6 1011.8", "width": 16, "depth": 2, "profile": "u"},
+    {"type": "groove", "face": "front", "path": "M 323.7 660.0 L 709.6 660.0", "width": 16, "depth": 2, "profile": "u"},
+    {"type": "groove", "face": "front", "path": "M 323.7 307.6 L 709.6 307.6", "width": 16, "depth": 2, "profile": "u"}
+  ]
+}

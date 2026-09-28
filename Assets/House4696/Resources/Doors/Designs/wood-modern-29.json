@@ -1,0 +1,27 @@
+{
+  "id": "wood-modern-29",
+  "name": "Вуд Модерн-29",
+  "ref": [800, 2000],
+  "thickness": 36,
+  "fixX": [[0, 130.5], [684.5, 800]],
+  "fixY": [[0, 121], [1892, 2000]],
+  "edge": {"radius": 2},
+  "handle": {"y": 1001, "x": 57, "style": "square", "finish": "chrome"},
+  "hinges": [189, 1823],
+  "layout": {"split": "x", "at": [118, 684.5], "sep": "joint", "grain": "v", "radius": 1.5,
+    "cells": [
+      {},
+      {"split": "y", "at": [121, 1892], "sep": "joint", "grain": "h",
+      "cells": [
+        {},
+        {"split": "x", "at": [130.5, 317], "sep": "joint", "level": -3,
+        "cells": [
+          {"glass": true},
+          {"grain": "v"},
+          {"split": "y", "at": [338.5, 559.5, 782, 1003.5, 1225, 1446.5, 1668], "sep": "glass:12"}
+        ]},
+        {}
+      ]},
+      {}
+    ]}
+}

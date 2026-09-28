@@ -1,0 +1,17 @@
+{
+  "id": "dim-universal", "name": "ДиМ", "line": "Входные двери", "kind": "entrance", "block": "t70", "order": 169,
+  "finishes": ["antik-copper", "moonstone", "antik-silver"],
+  "finishesIn": ["bianco-veralinga", "cappuccino-veralinga", "grey-veralinga", "wenge-veralinga"],
+  "glass": ["wp", "ww", "s", "bs"],
+  "sizes": [[0.88, 2.05], [0.96, 2.05]],
+  "rim": 14,
+  "escutcheon": "oval",
+  "models": [
+    { "id": "dim-universal-ep-22", "name": "ДиМ Универсал ЭП-22", "design": "dim-universal-ep-22-outer", "inner": "porta-s-inner-p22",
+      "glass": ["wp", "ww", "s", "bs"], "photo": "p170_dim-universal-ep-22__antik-serebro-cappuccino-veralinga-wp.jpg" },
+    { "id": "dim-universal-ep-29", "name": "ДиМ Универсал ЭП-29", "design": "dim-universal-ep-22-outer", "inner": "porta-s-inner-p29",
+      "glass": ["wp", "ww", "s", "bs"], "photo": "p171_dim-universal-ep-29__antik-med-cappuccino-veralinga-wp.jpg" },
+    { "id": "dim-universal-ep-62", "name": "ДиМ Универсал ЭП-62", "design": "dim-universal-ep-22-outer", "inner": "dim-universal-ep-62-inner",
+      "glass": [], "photo": "p172_dim-universal-ep-62__lunnyy-kamen-cappuccino-veralinga.jpg" }
+  ]
+}

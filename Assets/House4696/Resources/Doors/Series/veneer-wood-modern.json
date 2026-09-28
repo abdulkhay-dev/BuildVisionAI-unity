@@ -1,0 +1,11 @@
+{
+  "id": "veneer-wood-modern", "name": "WOOD MODERN", "line": "Шпон натуральный", "kind": "interior", "block": "t70", "order": 85,
+  "finishes": ["natur-oak", "golden-oak", "veneer-ivory", "veneer-latte", "veneer-whitey"],
+  "glass": ["mf", "bs"],
+  "models": [
+    { "id": "wood-modern-21", "name": "Вуд Модерн-21", "design": "wood-modern-21", "glass": [], "finishes": ["natur-oak", "veneer-latte", "veneer-whitey"], "photo": "p085_vud-modern-21__latte.jpg" },
+    { "id": "wood-modern-22", "name": "Вуд Модерн-22", "design": "wood-modern-22", "glass": ["mf", "bs"], "photo": "p086_vud-modern-22-bs__natur-oak.jpg" },
+    { "id": "wood-modern-23", "name": "Вуд Модерн-23", "design": "wood-modern-23", "glass": ["mf"], "finishes": ["natur-oak", "veneer-latte", "veneer-whitey"], "photo": "p087_vud-modern-23-mf__latte.jpg" },
+    { "id": "wood-modern-29", "name": "Вуд Модерн-29", "design": "wood-modern-29", "glass": ["mf"], "finishes": ["natur-oak", "veneer-latte", "veneer-whitey"], "photo": "p087_vud-modern-29-mf__whitey.jpg" }
+  ]
+}

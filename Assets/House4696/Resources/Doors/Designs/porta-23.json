@@ -1,0 +1,43 @@
+{
+  "id": "porta-23",
+  "name": "Порта-23",
+  "ref": [800, 2000],
+  "thickness": 36,
+  "fixX": [[0, 125], [677, 800]],
+  "fixY": [[0, 125], [1877, 2000]],
+  "edge": { "radius": 2 },
+  "handle": { "y": 996, "x": 65 },
+  "hinges": [189, 1811],
+  "layout": { "split": "x", "at": [125, 677], "sep": "joint", "grain": "v", "radius": 1.5,
+    "cells": [
+      {},
+      { "split": "y", "at": [125, 1877], "sep": "joint", "grain": "h",
+        "cells": [
+          {},
+          {
+            "split": "y",
+            "at": [263, 413, 556, 701, 853, 998, 1140, 1292, 1435, 1579, 1728],
+            "sep": "joint",
+            "level": -3,
+            "cells": [
+              {},
+              { "glass": true },
+              {},
+              {},
+              { "glass": true },
+              {},
+              {},
+              { "glass": true },
+              {},
+              {},
+              { "glass": true },
+              {}
+            ]
+          },
+          {}
+        ]
+      },
+      {}
+    ]
+  }
+}

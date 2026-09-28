@@ -1,0 +1,14 @@
+{
+  "id": "skinny-10",
+  "name": "Скинни-10",
+  "ref": [800, 2000],
+  "thickness": 40,
+  "fixX": [],
+  "fixY": [],
+  "edge": {"radius": 2},
+  "handle": {"y": 1002, "x": 52, "style": "square", "finish": "chrome"},
+  "hinges": [190, 1826],
+  "layout": {},
+  "parts": [
+  ]
+}

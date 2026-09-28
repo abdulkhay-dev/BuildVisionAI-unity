@@ -35,6 +35,14 @@ namespace House4696.Build
             EditorApplication.Exit(r.StartsWith("[AppBuild] OK", StringComparison.Ordinal) ? 0 : 1);
         }
 
+        /// <summary>CI / batch mode: <c>-buildTarget Win64 -executeMethod House4696.Build.AppBuild.BuildWindowsCli</c>.</summary>
+        public static void BuildWindowsCli()
+        {
+            var r = Build(BuildTarget.StandaloneWindows64);
+            Log(r);
+            EditorApplication.Exit(r.StartsWith("[AppBuild] OK", StringComparison.Ordinal) ? 0 : 1);
+        }
+
         public static string Build(BuildTarget target)
         {
             bool mac = target == BuildTarget.StandaloneOSX;

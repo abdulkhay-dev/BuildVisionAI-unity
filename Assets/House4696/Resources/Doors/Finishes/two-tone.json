@@ -1,0 +1,4 @@
+[
+  {"id": "f-27-f-01", "name": "Ф-27/Ф-01 (Венге/Дуб)", "line": "Шпон файн-лайн", "material": "door_f_27_wenge", "color": "#3b2a22", "material2": "door_f_01_oak", "color2": "#b98a55"},
+  {"id": "f-01-f-17", "name": "Ф-01/Ф-17 (Дуб/Шоколад)", "line": "Шпон файн-лайн", "material": "door_f_01_oak", "color": "#d5a27d", "material2": "door_f_17_chocolate", "color2": "#552e1a"}
+]

@@ -1,0 +1,11 @@
+{
+  "id": "porta-s-inner-p50",
+  "name": "П50 — внутренняя панель",
+  "ref": [800, 2000],
+  "thickness": 24,
+  "lock": "right",
+  "fixX": [],
+  "fixY": [],
+  "edge": { "radius": 2 },
+  "layout": { "split": "y", "at": [375.5, 771.4, 1168.5, 1579.5], "sep": "black:6.5", "grain": "h", "radius": 1 }
+}

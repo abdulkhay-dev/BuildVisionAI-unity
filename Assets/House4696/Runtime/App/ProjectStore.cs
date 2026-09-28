@@ -181,16 +181,35 @@ namespace House4696.App
             return map;
         }
 
+        /// <summary>Samples of the first releases: an old marker (a timestamp) means these were offered already.</summary>
+        static readonly string[] FirstSamples = { "46-96", "barnhouse" };
+
+        /// <summary>
+        /// Copies every bundled sample in once: the marker lists the samples already offered, so a sample added in a
+        /// later version appears in existing installs too, and a sample the user deleted does not come back.
+        /// </summary>
         void SeedSamples()
         {
             string marker = Path.Combine(Root, ".seeded");
-            if (File.Exists(marker)) return;
+            var offered = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+            if (File.Exists(marker))
+            {
+                var lines = File.ReadAllLines(marker);
+                bool legacy = lines.Length > 0 && DateTime.TryParse(lines[0], out _);
+                if (legacy) offered.UnionWith(FirstSamples);
+                foreach (var l in lines)
+                    if (!string.IsNullOrWhiteSpace(l) && !DateTime.TryParse(l, out _)) offered.Add(l.Trim());
+            }
+            bool changed = !File.Exists(marker);
             foreach (var kv in Samples())
             {
+                if (offered.Contains(kv.Key)) continue;
                 try { if (!Exists(kv.Key)) Save(kv.Key, HouseJson.Deserialize(File.ReadAllText(kv.Value))); }
                 catch (Exception e) { Debug.LogWarning($"[ProjectStore] sample {kv.Key}: {e.Message}"); }
+                offered.Add(kv.Key);
+                changed = true;
             }
-            File.WriteAllText(marker, DateTime.UtcNow.ToString("o"));
+            if (changed) File.WriteAllLines(marker, offered);
         }
 
         static readonly string[] Translit =

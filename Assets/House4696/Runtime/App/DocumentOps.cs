@@ -84,6 +84,9 @@ namespace House4696.App
                     item[k.Key] = id;
                 }
                 var existing = arr.Children<JObject>().FirstOrDefault(e => (string)e[k.Key] == id);
+                // a catalogue door resized by its opening (width/height without leaf): the leaf is derived again from the opening
+                if (existing != null && k.Array == "openings" && item["leaf"] == null && (item["width"] != null || item["height"] != null))
+                    existing.Remove("leaf");
                 if (existing != null)
                 {
                     existing.Merge(item, new JsonMergeSettings { MergeArrayHandling = MergeArrayHandling.Replace, MergeNullValueHandling = MergeNullValueHandling.Merge });
@@ -95,7 +98,9 @@ namespace House4696.App
                     notes.Add($"добавлено {kind} '{id}'");
                 }
             }
-            return FromJ(root);
+            var result = FromJ(root);
+            if (k.Array == "openings") House4696.Doors.DoorSizing.Normalize(result, notes);
+            return result;
         }
 
         /// <summary>Removes elements by id; removing a wall also removes its openings, a level everything on it.</summary>

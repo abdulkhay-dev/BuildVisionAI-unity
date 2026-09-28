@@ -1,0 +1,12 @@
+{
+  "id": "veneer-wood-flat", "name": "WOOD FLAT", "line": "Шпон натуральный", "kind": "interior", "block": "t70", "order": 83,
+  "finishes": ["natur-oak", "golden-oak", "veneer-ivory", "veneer-latte", "veneer-whitey"],
+  "glass": [],
+  "models": [
+    { "id": "wood-flat-0v1-h", "name": "Вуд Флэт-0V1 H", "design": "wood-flat-0-h", "glass": [], "finishes": ["natur-oak", "golden-oak", "veneer-ivory"], "photo": "p083_vud-flet-0v1__natur-oak-h.jpg" },
+    { "id": "wood-flat-0v1-v", "name": "Вуд Флэт-0V1 V", "design": "wood-flat-0-v", "glass": [], "finishes": ["natur-oak", "golden-oak", "veneer-ivory"], "photo": "p084_vud-flet-0v1__natur-oak-v.jpg" },
+    { "id": "wood-flat-0-h", "name": "Вуд Флэт-0.H", "design": "wood-flat-0-h", "glass": [], "finishes": ["veneer-latte", "veneer-whitey"], "photo": "p083_vud-flet-0-h__latte.jpg" },
+    { "id": "wood-flat-0-v", "name": "Вуд Флэт-0.V", "design": "wood-flat-0-v", "glass": [], "finishes": ["veneer-latte", "veneer-whitey"], "photo": "p084_vud-flet-0-v__latte.jpg" },
+    { "id": "wood-flat-1v1", "name": "Вуд Флэт-1V1", "design": "wood-flat-1v1", "glass": [], "finishes": ["natur-oak", "golden-oak", "veneer-ivory"], "photo": "p085_vud-flet-1v1__natur-oak.jpg" }
+  ]
+}

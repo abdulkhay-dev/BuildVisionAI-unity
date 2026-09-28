@@ -1,0 +1,17 @@
+{
+  "id": "porta-s-outer-4",
+  "name": "Porta S 4 — наружная панель",
+  "ref": [800, 2000],
+  "thickness": 10,
+  "fixX": [],
+  "fixY": [],
+  "edge": { "radius": 2 },
+  "handle": { "y": 993, "x": 75 },
+  "layout": { "grain": "v" },
+  "parts": [
+    { "type": "groove", "path": "M 0 402 L 800 402", "width": 6, "depth": 3, "profile": "u", "face": "front" },
+    { "type": "groove", "path": "M 0 802 L 800 802", "width": 6, "depth": 3, "profile": "u", "face": "front" },
+    { "type": "groove", "path": "M 0 1199 L 800 1199", "width": 6, "depth": 3, "profile": "u", "face": "front" },
+    { "type": "groove", "path": "M 0 1596 L 800 1596", "width": 6, "depth": 3, "profile": "u", "face": "front" }
+  ]
+}

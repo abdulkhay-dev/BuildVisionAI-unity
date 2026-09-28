@@ -1,0 +1,51 @@
+[
+ {
+  "id": "p-23-white",
+  "name": "П-23 Белый",
+  "line": "ПВХ",
+  "material": "door_p_23_white",
+  "color": "#e3e3e1"
+ },
+ {
+  "id": "p-34-shimo-light",
+  "name": "П-34 Шимо Светлый",
+  "line": "ПВХ",
+  "material": "door_p_34_shimo_light",
+  "color": "#c7b8a0"
+ },
+ {
+  "id": "p-35-shimo-dark",
+  "name": "П-35 Шимо Тёмный",
+  "line": "ПВХ",
+  "material": "door_p_35_shimo_dark",
+  "color": "#9c735f"
+ },
+ {
+  "id": "p-17-italoreh",
+  "name": "П-17 ИталОрех",
+  "line": "ПВХ",
+  "material": "door_p_17_italoreh",
+  "color": "#7b3620"
+ },
+ {
+  "id": "p-18-milanoreh",
+  "name": "П-18 МиланОрех",
+  "line": "ПВХ",
+  "material": "door_p_18_milanoreh",
+  "color": "#c78547"
+ },
+ {
+  "id": "p-31-italoreh",
+  "name": "П-31 ИталОрех",
+  "line": "ПВХ",
+  "material": "door_p_31_italoreh",
+  "color": "#7f3a21"
+ },
+ {
+  "id": "p-32-milanoreh",
+  "name": "П-32 МиланОрех",
+  "line": "ПВХ",
+  "material": "door_p_32_milanoreh",
+  "color": "#cf884a"
+ }
+]

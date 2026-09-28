@@ -1,0 +1,27 @@
+{
+  "id": "optim", "name": "Оптим", "line": "Входные двери", "kind": "entrance", "block": "t70", "order": 179,
+  "finishes": ["moonstone", "antik-silver"],
+  "finishesIn": ["cappuccino-veralinga", "wenge-veralinga", "cappuccino-crosscut", "grey-crosscut", "wenge-crosscut", "p-34-shimo-light"],
+  "glass": ["wp", "bs", "reflex"],
+  "escutcheon": "square",
+  "models": [
+    { "id": "optim-layn", "name": "Оптим Лайн", "design": "optim-outer-layn", "inner": "optim-inner-layn",
+      "finishes": ["moonstone"], "finishesIn": ["cappuccino-crosscut", "grey-crosscut", "wenge-crosscut"],
+      "glass": [], "photo": "p180_optim-layn__lunnyy-kamen-cappuccino-crosscut.jpg" },
+    { "id": "optim-tehno", "name": "Оптим Техно", "design": "optim-outer-layn", "inner": "porta-s-inner-p22",
+      "finishes": ["moonstone"], "finishesIn": ["cappuccino-veralinga", "wenge-veralinga"],
+      "glass": ["wp", "bs"], "photo": "p181_optim-tehno__lunnyy-kamen-cappuccino-veralinga-wp.jpg" },
+    { "id": "optim-flesh", "name": "Оптим Флэш", "design": "optim-outer-flesh", "inner": "porta-s-inner-p61",
+      "finishes": ["antik-silver"], "finishesIn": ["cappuccino-veralinga", "wenge-veralinga"],
+      "glass": ["reflex"], "photo": "p182_optim-flesh__antik-serebro-wenge-veralinga-reflex.jpg" },
+    { "id": "optim-prof", "name": "Оптим Проф", "design": "optim-outer-prof", "inner": "porta-s-inner-p29",
+      "finishes": ["antik-silver"], "finishesIn": ["cappuccino-veralinga", "wenge-veralinga"],
+      "glass": ["wp", "bs"], "photo": "p183_optim-prof__antik-serebro-cappuccino-veralinga-wp.jpg" },
+    { "id": "optim-nova", "name": "Оптим Нова", "design": "optim-outer-nova", "inner": "optim-inner-nova",
+      "finishes": ["antik-silver"], "finishesIn": ["p-34-shimo-light"],
+      "glass": [], "photo": "p184_optim-nova__antik-serebro-p-34-shimo-svetlyy.jpg" },
+    { "id": "optim-trio", "name": "Оптим Трио", "design": "optim-outer-nova", "inner": "optim-inner-trio",
+      "finishes": ["antik-silver"], "finishesIn": ["p-34-shimo-light"],
+      "glass": [], "photo": "p184_optim-trio__antik-serebro-p-34-shimo-svetlyy.jpg" }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "optim-termo-204-outer",
+  "name": "Оптим Термо 204 (снаружи): гладкий лист металла",
+  "ref": [800, 2000],
+  "thickness": 4,
+  "edge": {"radius": 2},
+  "handle": {"y": 996, "x": 85},
+  "layout": {"grain": "v"}
+}

@@ -1,0 +1,11 @@
+{
+  "id": "optim-inner-layn",
+  "name": "Оптим Лайн — внутренняя панель",
+  "ref": [800, 2000],
+  "thickness": 6,
+  "lock": "right",
+  "fixX": [],
+  "fixY": [],
+  "edge": { "radius": 1.5 },
+  "layout": { "split": "y", "at": [398.4, 806.6, 1206.9, 1622.9], "sep": "metal:24", "grain": "h", "radius": 1 }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "3d-graf-trend", "name": "TREND", "line": "3D-Graf", "kind": "interior", "block": "t70", "order": 11,
+  "finishes": ["3d-cappuccino", "3d-grey", "3d-wenge"],
+  "glass": ["mf", "vitrazh"],
+  "models": [
+    { "id": "trend-0", "name": "Тренд-0", "design": "trend-0", "glass": [], "photo": "p011_trend-0__3d-grey.jpg" },
+    { "id": "trend-3", "name": "Тренд-3", "design": "trend-3", "glass": [], "photo": "p012_trend-3__3d-cappuccino.jpg" },
+    { "id": "trend-4", "name": "Тренд-4", "design": "trend-4", "glass": ["mf"], "photo": "p012_trend-4__3d-wenge.jpg" },
+    { "id": "trend-13", "name": "Тренд-13", "design": "trend-13", "glass": [], "photo": "p012_trend-13__3d-wenge.jpg" },
+    { "id": "trend-14", "name": "Тренд-14", "design": "trend-14", "glass": ["vitrazh"], "photo": "p012_trend-14__3d-cappuccino.jpg" },
+    { "id": "trend-21", "name": "Тренд-21", "design": "trend-21", "glass": [], "photo": "p013_trend-21__3d-cappuccino.jpg" },
+    { "id": "trend-22", "name": "Тренд-22", "design": "trend-22", "glass": ["mf"], "photo": "p013_trend-22__3d-grey.jpg" },
+    { "id": "trend-23", "name": "Тренд-23", "design": "trend-23", "glass": ["mf"], "photo": "p013_trend-23__3d-cappuccino.jpg" },
+    { "id": "trend-25", "name": "Тренд-25", "design": "trend-25", "glass": ["mf"], "photo": "p013_trend-25__3d-wenge.jpg" }
+  ]
+}

@@ -204,6 +204,35 @@ namespace House4696.Model
         public Hinge Hinge = Hinge.Start;
         /// <summary>Doors: +1 swings to the wall's left side (inside for exterior walls), -1 to the right.</summary>
         public int Swing = 1;
+        /// <summary>
+        /// Doors: model of the door catalogue ("porta-22"; Resources/Doors/catalog.json). Null = the plain built-in door.
+        /// A catalogue door is a whole door block: leaf, frame, extensions to the wall thickness, casings, hardware.
+        /// </summary>
+        public string Model;
+        /// <summary>Doors: catalogue finish of a model ("cappuccino-veralinga"); null = the model's first finish.</summary>
+        public string Finish;
+        /// <summary>Doors: glass option of a model ("mf", "bs"); null = the model's first.</summary>
+        public string Glass;
+        /// <summary>
+        /// Doors with a model: leaf size [width, height] in metres (standard 0.6/0.7/0.8/0.9 × 2.0). The opening
+        /// (<see cref="Width"/>, <see cref="Height"/>) follows from it by the catalogue's table (see DoorSizing); without
+        /// it the leaf is derived from the opening.
+        /// </summary>
+        public Vector2? Leaf;
+        /// <summary>Doors: shown open when the house is built.</summary>
+        public bool? Open;
+        /// <summary>
+        /// Catalogue doors: how the door opens — "swing" (default, hinged), "sliding" (coupe: the leaf runs on a rail along
+        /// the wall face on the <see cref="Swing"/> side), "folding" (book: panels fold to the hinge side), "portal" (the
+        /// opening is only framed: extensions and casings, no leaf).
+        /// </summary>
+        public string Kind;
+        /// <summary>Catalogue doors: leaves of a swing / sliding door (1 or 2), panels of a folding one (2 or 4); null = 1 (2 for folding).</summary>
+        public int? Leaves;
+        /// <summary>Entrance doors of the catalogue: finish of the inner panel ("cappuccino-veralinga"); <see cref="Finish"/> is the outer one.</summary>
+        public string FinishIn;
+        /// <summary>Catalogue doors: "wc" — a bathroom thumb-turn under the handle; "none" — no lock; null = the model's.</summary>
+        public string Lock;
     }
 
     public enum RoomType { Living, Kitchen, Dining, Bedroom, Bathroom, Hall, Corridor, Wardrobe, Utility, Office, Stair, Garage, Terrace, Other }
@@ -283,11 +312,12 @@ namespace House4696.Model
         public string Well = "auto";
     }
 
-    public enum ElementType { Box, Column, Railing, Platform, Beam }
+    public enum ElementType { Box, Column, Railing, Platform, Beam, Pool }
 
     /// <summary>
     /// Architectural element: <c>box</c> (belts, canopies, parapets — Min/Max absolute), <c>column</c>,
-    /// <c>railing</c> (Path in plan, Y = its base), <c>platform</c> (terrace/porch with a step), <c>beam</c>.
+    /// <c>railing</c> (Path in plan, Y = its base), <c>platform</c> (terrace/porch with a step), <c>beam</c>,
+    /// <c>pool</c> (swimming pool: plan = Path or the Min/Max rectangle, rim = Max.y or Y, floor = Min.y or Y − Height).
     /// </summary>
     public sealed class ElementDef
     {
@@ -302,6 +332,13 @@ namespace House4696.Model
         public float CapHeight = 0.035f, CapOverhang = 0.012f;
         public string Style;
         public bool Collide = true;
+        /// <summary>
+        /// Pool: finish of the basin's outer walls where they stand above the ground/deck, the sides built of glass
+        /// ("north"/"east"/"south"/"west" of a rectangle, or edge indices of <see cref="Path"/>: edge i runs from point i
+        /// to i+1), and the water colour "#rrggbb".
+        /// </summary>
+        public string Outside, Water;
+        public List<string> Glass = new List<string>();
     }
 
     /// <summary>

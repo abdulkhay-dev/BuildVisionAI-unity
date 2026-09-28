@@ -1,0 +1,12 @@
+{
+  "id": "porta-50",
+  "name": "Порта-50",
+  "ref": [800, 2000],
+  "thickness": 36,
+  "fixX": [],
+  "fixY": [],
+  "edge": {"radius": 1},
+  "handle": {"y": 994, "x": 68, "style": "square", "finish": "chrome"},
+  "hinges": [188, 1812],
+  "layout": {"grain": "v"}
+}

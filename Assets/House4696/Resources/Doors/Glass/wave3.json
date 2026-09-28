@@ -1,0 +1,9 @@
+[
+  {"id": "st-hud", "name": "Стекло художественное (СТ-Худ.)", "role": "satin"},
+  {"id": "st-118", "name": "Стекло художественное СТ-118", "role": "satin", "material": "doorglass_st_118"},
+  {"id": "st-121", "name": "Стекло художественное СТ-121", "role": "satin", "material": "doorglass_st_121"},
+  {"id": "zk-uzor", "name": "Стекло ЗК-Узор", "role": "satin", "material": "doorglass_zk_uzor", "fit": true},
+  {"id": "bc", "name": "Бронзовое худож. сатинато (ромбы)", "role": "satin", "material": "doorglass_bc"},
+  {"id": "bronze", "name": "Бронзовое сатинато", "role": "satin", "material": "doorglass_bronze"},
+  {"id": "bronze-wave", "name": "Бронзовое узорчатое «волна»", "role": "satin", "material": "doorglass_bronze_wave"}
+]

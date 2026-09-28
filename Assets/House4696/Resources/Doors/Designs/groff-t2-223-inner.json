@@ -1,0 +1,42 @@
+{
+  "id": "groff-t2-223-inner",
+  "name": "GROFF T2-223 (внутренняя панель)",
+  "ref": [800, 2000],
+  "thickness": 22,
+  "lock": "right",
+  "fixX": [[0, 127], [678, 800]],
+  "fixY": [[0, 140], [1860, 2000]],
+  "edge": { "radius": 2 },
+  "layout": { "split": "x", "at": [127, 678], "sep": "joint", "grain": "v", "radius": 1.5,
+    "cells": [
+      {},
+      { "split": "y", "at": [140, 1860], "sep": "joint", "grain": "h",
+        "cells": [
+          {},
+          {
+            "split": "y",
+            "at": [288, 430, 572, 716, 860, 1001, 1147, 1288, 1429, 1575, 1716],
+            "sep": "joint",
+            "level": -3,
+            "cells": [
+              {},
+              { "glass": true },
+              {},
+              {},
+              { "glass": true },
+              {},
+              {},
+              { "glass": true },
+              {},
+              {},
+              { "glass": true },
+              {}
+            ]
+          },
+          {}
+        ]
+      },
+      {}
+    ]
+  }
+}

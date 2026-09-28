@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using House4696.Core;
+using House4696.Doors;
 using House4696.Model;
 using House4696.Runtime;
 using UnityEngine;
@@ -21,7 +22,11 @@ namespace House4696.Generation
         public const float RevealDepth = 0.12f;   // structural face → outer face of window frames
 
         readonly HouseContext _c;
-        public WallBuilder(HouseContext c) { _c = c; }
+        readonly DoorBlockBuilder _doors;
+        public WallBuilder(HouseContext c) { _c = c; _doors = new DoorBlockBuilder(c); }
+
+        /// <summary>The catalogue door of an opening (model, finish, glass, design), or null for the built-in door.</summary>
+        static ResolvedDoor Catalogue(OpeningRect o) => DoorSizing.IsCatalogueDoor(o.Def) ? DoorCatalog.Resolve(o.Def) : null;
 
         struct OpeningRect
         {
@@ -110,8 +115,16 @@ namespace House4696.Generation
             foreach (var z in f.Def.Zones)
                 zones.Add((Rect.MinMaxRect(f.SAt(Mathf.Min(z.From, z.To)), z.Bottom, f.SAt(Mathf.Max(z.From, z.To)), z.Top), z.Finish));
 
+            // a wall rising above the flat roof behind it is a parapet: outdoors on both sides from the roof top up
+            float? parapet = _c.ParapetFrom(f);
+            if (parapet.HasValue && parapet.Value > f.Y1 - 0.05f) parapet = null;
             var sBreaks = Breaks(f.S0, f.S1, openings, zones, true);
             var yBreaks = Breaks(f.Y0, f.Y1, openings, zones, false);
+            if (parapet.HasValue && parapet.Value > f.Y0 + 0.05f && !yBreaks.Exists(y => Mathf.Abs(y - parapet.Value) < 1e-3f))
+            {
+                yBreaks.Add(parapet.Value);
+                yBreaks.Sort();
+            }
             int ns = sBreaks.Count - 1, ny = yBreaks.Count - 1;
             var hole = new bool[ns, ny];
             var fin = new string[ns, ny];
@@ -135,20 +148,29 @@ namespace House4696.Generation
                 if (hole[i, j]) continue;
                 float sa = sBreaks[i], sb = sBreaks[i + 1], ya = yBreaks[j], yb = yBreaks[j + 1];
                 bool hl = Hole(i - 1, j), hr = Hole(i + 1, j), hd = Hole(i, j - 1), hu = Hole(i, j + 1);
+                var clad = CladOf(fin[i, j]);
+                // the top and the ends are closed too: seen from above (a lower roof, a terrace, an orbit view) or at a
+                // free end an open box shows the room through the wall; hidden faces under slabs and in corners cost nothing
+                bool top = j == ny - 1, s0 = i == 0, s1 = i == ns - 1;
+                bool outdoors = parapet.HasValue && ya >= parapet.Value - 1e-3f;
+                var inner = outdoors ? (clad == Clad.Wood ? L.Wood : CladMat(clad, fin[i, j])) : plaster;
+                var cap = top ? L.Coping : null;
+                var end = clad == Clad.Wood ? L.SlatBacking : CladMat(clad, fin[i, j]);
 
                 // structural core: outer part (dark reveal faces) and inner part (plaster reveal faces)
-                WBox(core, sa, sb, ya, yb, -RevealDepth, 0f, null, null, hl ? frame : null, hr ? frame : null, hd ? frame : null, hu ? frame : null);
-                WBox(core, sa, sb, ya, yb, -T, -RevealDepth, null, plaster, hl ? plaster : null, hr ? plaster : null, hd ? plaster : null, hu ? plaster : null);
+                WBox(core, sa, sb, ya, yb, -RevealDepth, 0f, null, null, hl ? frame : s0 ? end : null, hr ? frame : s1 ? end : null,
+                    hd ? frame : null, hu ? frame : cap);
+                WBox(core, sa, sb, ya, yb, -T, -RevealDepth, null, inner, hl || s0 ? inner : null, hr || s1 ? inner : null,
+                    hd ? plaster : null, hu ? plaster : cap);
 
                 // cladding
-                var clad = CladOf(fin[i, j]);
                 float ca = sa, cb = sb;
                 float t = CladT(clad) + (clad == Clad.Wood ? SlatD - BackingD : 0f);
                 if (i == 0 && f.WrapStart) ca -= t;
                 if (i == ns - 1 && f.WrapEnd) cb += t;
                 if (clad == Clad.Wood)
                 {
-                    WBox(core, ca, cb, ya, yb, 0f, BackingD, L.SlatBacking, null, hl ? frame : null, hr ? frame : null, hd ? frame : null, hu ? frame : null);
+                    WBox(core, ca, cb, ya, yb, 0f, BackingD, L.SlatBacking, null, hl ? frame : null, hr ? frame : null, hd ? frame : null, hu ? frame : cap);
                 }
                 else
                 {
@@ -156,9 +178,13 @@ namespace House4696.Generation
                     bool topExposed = hu || (j == ny - 1 && clad == Clad.Plinth);
                     bool plinthTop = j + 1 < ny && clad == Clad.Plinth && CladOf(fin[i, j + 1]) != Clad.Plinth && !hole[i, j + 1];
                     WBox(core, ca, cb, ya, yb, 0f, CladT(clad), mat, null, hl ? mat : null, hr ? mat : null, hd ? mat : null,
-                        (topExposed || plinthTop) ? mat : null);
+                        (topExposed || plinthTop || top) ? mat : null);
                 }
             }
+
+            // metal coping over a parapet (a wall top level with the roof is flashed by the roof's own coping)
+            if (parapet.HasValue)
+                WBox(core, f.S0 - (f.WrapStart ? 0.05f : 0f), f.S1 + (f.WrapEnd ? 0.05f : 0f), f.Y1, f.Y1 + 0.04f, -T - 0.03f, 0.05f, L.Coping);
 
             // battens: vertical runs of wood cells per column, on a slat grid aligned with s = 0
             int seed = StableHash(f.Def.Id ?? "wall");
@@ -188,6 +214,14 @@ namespace House4696.Generation
             foreach (var o in openings)
             {
                 if (o.Def.Type == OpeningType.Hole) continue;
+                var door = Catalogue(o);
+                if (door != null)
+                {
+                    // a catalogue door in a facade wall: casing indoors only, the facade keeps its reveal
+                    _doors.Build(f, o.Def, door, o.S0, o.S1, o.Y0, o.Y1, casingOut: false, casingIn: true);
+                    Threshold(frames, f, o);
+                    continue;
+                }
                 var leaf = new MeshBuilder { Transform = f.ToWorld };
                 ExteriorOpening(o, frames, glass, curtains, leaf);
                 if (!leaf.IsEmpty) DoorPivot("Door_" + (o.Def.Id ?? id), f, o, leaf, ExteriorHinge(f, o), -f.N);
@@ -195,6 +229,25 @@ namespace House4696.Generation
             _c.W.Emit("Frames_" + id, _c.Shell, frames);
             _c.W.Emit("Glass_" + id, _c.Shell, glass, castShadows: false);
             _c.W.Emit("Curtains_" + id, _c.Shell, curtains, castShadows: false);
+        }
+
+        /// <summary>Height bands of a wall that are structure, not room: slabs of upper levels and the build-up above the top ceiling.</summary>
+        List<(float, float)> Spandrels(WallFrame f)
+        {
+            var bands = new List<(float, float)>();
+            void Add(float a, float b)
+            {
+                a = Mathf.Max(a, f.Y0); b = Mathf.Min(b, f.Y1);
+                if (b - a > 0.05f) bands.Add((a, b));
+            }
+            LevelDef top = null;
+            foreach (var l in _c.Doc.Levels)
+            {
+                if (!_c.IsLowest(l)) Add(l.Elevation - l.Slab, l.Elevation);
+                top = l;
+            }
+            if (top != null) Add(top.Elevation + top.Height, f.Y1);
+            return bands;
         }
 
         void EmitSlats(MeshBuilder mb, float sa, float sb, float ya, float yb, int seed)
@@ -407,7 +460,12 @@ namespace House4696.Generation
             foreach (var o in openings)
             {
                 if (IsDoor(o.Def.Type) || o.Def.Type == OpeningType.Hole) Threshold(mb, f, o);
-                if (IsDoor(o.Def.Type)) InteriorDoor(f, o);
+                if (IsDoor(o.Def.Type))
+                {
+                    var door = Catalogue(o);
+                    if (door != null) _doors.Build(f, o.Def, door, o.S0, o.S1, o.Y0, o.Y1);
+                    else InteriorDoor(f, o);
+                }
                 else if (o.Def.Type == OpeningType.Window || o.Def.Type == OpeningType.Glazing)
                     WBox(glass, o.S0, o.S1, o.Y0, o.Y1, -f.T * 0.5f - 0.005f, -f.T * 0.5f + 0.005f, _c.M.Glass);
             }
@@ -457,7 +515,9 @@ namespace House4696.Generation
         {
             const float t = 0.045f, w = 0.035f;
             float z0 = f.S0, z1 = f.S1, y0 = f.Y0, y1 = f.Y1;
-            float bar = y0 + 0.95f, head = y0 + 2.4f;
+            // transoms from the floor of the wall's level (an upper wall starts under its slab)
+            float floorY = Mathf.Max(y0, f.Level.Elevation);
+            float bar = floorY + 0.95f, head = floorY + 2.4f;
             float c = -f.T * 0.5f;
             var frame = new MeshBuilder { Transform = f.ToWorld };
             var glass = new MeshBuilder { Transform = f.ToWorld };
@@ -505,6 +565,10 @@ namespace House4696.Generation
                 s = dz1 + w;
             }
             Fixed(s, z1 - w);
+            // an exterior glass wall passing a floor slab or the roof build-up gets an opaque spandrel there: otherwise
+            // the slab edge (and the void above the top ceiling) shows through the glass as a floating white band
+            if (f.Exterior)
+                foreach (var (ya, yb) in Spandrels(f)) Prof(frame, z0, z1, ya, yb);
             _c.W.Emit("Steel_Partition_" + f.Def.Id, _c.Interior, frame);
             _c.W.Emit("Threshold_" + f.Def.Id, _c.Interior, sill);
             _c.W.Emit("Steel_Glass_" + f.Def.Id, _c.Interior, glass, castShadows: false);

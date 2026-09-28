@@ -1,0 +1,17 @@
+{
+  "id": "optim-outer-nova",
+  "name": "Оптим Нова / Трио — наружная сторона (тиснение)",
+  "ref": [800, 2000],
+  "thickness": 7,
+  "fixX": [],
+  "fixY": [],
+  "edge": {"radius": 3},
+  "handle": {"y": 981, "x": 77},
+  "layout": {"grain": "h"},
+  "parts": [
+    {"type": "groove", "face": "front", "path": "M 92.3 1781.4 L 699.7 1781.4", "width": 16, "depth": 2, "profile": "u"},
+    {"type": "groove", "face": "front", "path": "M 92.3 1670.6 L 699.7 1670.6", "width": 16, "depth": 2, "profile": "u"},
+    {"type": "groove", "face": "front", "path": "M 92.3 353.0 L 699.7 353.0", "width": 16, "depth": 2, "profile": "u"},
+    {"type": "groove", "face": "front", "path": "M 92.3 243.2 L 699.7 243.2", "width": 16, "depth": 2, "profile": "u"}
+  ]
+}

@@ -106,7 +106,7 @@ namespace House4696.Landscape.Natural
                     {
                         var c = p + n * off * width;
                         if (_m.StreamAt(c.x, c.y, out float d, out _, out float hw, out _, out _) && d < hw + 0.3f) continue;
-                        if (!_m.Area.Contains(c)) continue;
+                        if (!_m.Area.Contains(c) || _m.InHard(c.x, c.y)) continue;   // no stones in a pool
                         Slab(mb, c, size);
                     }
                     s += size * _rng.Range(1.05f, 1.25f);

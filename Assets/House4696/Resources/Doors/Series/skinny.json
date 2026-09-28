@@ -1,0 +1,24 @@
+{
+  "id": "skinny", "name": "SKINNY", "line": "Окрашенные (эмаль)", "kind": "interior", "block": "classic", "order": 108,
+  "finishes": ["enamel-whitey", "enamel-cream", "enamel-mocca"],
+  "glass": ["wc", "mf"],
+  "models": [
+    { "id": "skinny-10", "name": "Скинни-10", "design": "skinny-10", "glass": [], "finishes": ["enamel-whitey"], "block": "t70", "photo": "p109_skinni-10__whitey.jpg" },
+    { "id": "skinny-12", "name": "Скинни-12", "design": "skinny-12", "glass": [], "photo": "p109_skinni-12__whitey.jpg" },
+    { "id": "skinny-12-art", "name": "Скинни-12 ART", "design": "skinny-12-art", "glass": [], "finishes": ["enamel-whitey"], "photo": "p109_skinni-12-art__whitey.jpg" },
+    { "id": "skinny-13", "name": "Скинни-13", "design": "skinny-13", "glass": ["wc"], "photo": "p110_skinni-13__whitey.jpg" },
+    { "id": "skinny-13-art", "name": "Скинни-13 ART", "design": "skinny-13-art", "glass": ["mf"], "finishes": ["enamel-whitey"], "photo": "p110_skinni-13-art__whitey.jpg" },
+    { "id": "skinny-14", "name": "Скинни-14", "design": "skinny-14", "glass": [], "finishes": ["enamel-whitey", "enamel-cream"], "photo": "p110_skinni-14__whitey.jpg" },
+    { "id": "skinny-14-art", "name": "Скинни-14 ART", "design": "skinny-14-art", "glass": [], "finishes": ["enamel-whitey"], "photo": "p110_skinni-14-art__whitey.jpg" },
+    { "id": "skinny-15-1", "name": "Скинни-15.1", "design": "skinny-15-1", "glass": ["wc"], "finishes": ["enamel-whitey", "enamel-cream"], "photo": "p110_skinni-15-1__whitey.jpg" },
+    { "id": "skinny-15-1-art", "name": "Скинни-15.1 ART", "design": "skinny-15-1-art", "glass": ["mf"], "finishes": ["enamel-whitey"], "photo": "p110_skinni-15-1-art__whitey.jpg" },
+    { "id": "skinny-20", "name": "Скинни-20", "design": "skinny-20", "glass": [], "finishes": ["enamel-whitey", "enamel-cream"], "photo": "p110_skinni-20__whitey.jpg" },
+    { "id": "skinny-20-art", "name": "Скинни-20 ART", "design": "skinny-20-art", "glass": [], "finishes": ["enamel-whitey"], "photo": "p110_skinni-20-art__whitey.jpg" },
+    { "id": "skinny-21", "name": "Скинни-21", "design": "skinny-21", "glass": ["wc"], "finishes": ["enamel-whitey", "enamel-cream"], "photo": "p111_skinni-21__whitey.jpg" },
+    { "id": "skinny-21-art", "name": "Скинни-21 ART", "design": "skinny-21-art", "glass": ["mf"], "finishes": ["enamel-whitey"], "photo": "p111_skinni-21-art__whitey.jpg" },
+    { "id": "skinny-30", "name": "Скинни-30", "design": "skinny-30", "glass": [], "finishes": ["enamel-whitey"], "photo": "p111_skinni-30__whitey.jpg" },
+    { "id": "skinny-31", "name": "Скинни-31", "design": "skinny-31", "glass": ["wc"], "finishes": ["enamel-whitey"], "photo": "p111_skinni-31__whitey.jpg" },
+    { "id": "skinny-32", "name": "Скинни-32", "design": "skinny-32", "glass": [], "finishes": ["enamel-whitey"], "photo": "p111_skinni-32__whitey.jpg" },
+    { "id": "skinny-33", "name": "Скинни-33", "design": "skinny-33", "glass": ["wc"], "finishes": ["enamel-whitey"], "photo": "p111_skinni-33__whitey.jpg" }
+  ]
+}

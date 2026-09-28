@@ -1,0 +1,15 @@
+{
+  "id": "porta-x-folding",
+  "name": "PORTA X",
+  "line": "ЭкоШпон",
+  "kind": "folding",
+  "block": "t70",
+  "order": 146,
+  "finishes": ["cappuccino-veralinga", "wenge-veralinga", "grey-veralinga", "bianco-veralinga", "anegri-veralinga"],
+  "glass": ["mf"],
+  "models": [
+    { "id": "porta-21", "name": "Порта-21", "design": "porta-21-fold", "glass": [], "photo": "p147_porta-21__cappuccino-veralinga.jpg" },
+    { "id": "porta-22", "name": "Порта-22", "design": "porta-22-fold", "glass": ["mf"], "photo": "p148_porta-22__grey-veralinga.jpg" },
+    { "id": "porta-23", "name": "Порта-23", "design": "porta-23-fold", "glass": ["mf"], "photo": "p149_porta-23__wenge-veralinga.jpg" }
+  ]
+}

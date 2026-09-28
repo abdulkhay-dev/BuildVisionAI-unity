@@ -49,9 +49,17 @@ namespace House4696.Setup
                 string folder = Source + "/" + (string)m["folder"];
                 var tex = (JObject)m["textures"];
                 var tile = (JArray)m["metersPerTile"];
-                // 1K everywhere: at walk-through distances 2K floors were indistinguishable and cost ~80 MB
-                var mat = LitMaterial((string)m["id"], folder, tex, 1024,
-                    new Vector2(1f / (float)tile[0], 1f / (float)tile[1]), cutout: false, transparent: false, emission: Color.black);
+                // 1K everywhere: at walk-through distances 2K floors were indistinguishable and cost ~80 MB; door
+                // finishes ask for 2K along the grain (a 2 m stile is one tile)
+                // door glass with a picture or pattern: transparent where the texture's alpha says so
+                bool see = (bool?)m["transparent"] ?? false;
+                // art glass keeps the faint glow of the palette's satin glass (M_DoorGlassSatin), so a picture's frosted
+                // areas read like the plain Magic Fog next to them
+                bool glass = see && (string)m["category"] == "doorglass";
+                var mat = LitMaterial((string)m["id"], folder, tex, (int?)m["maxSize"] ?? 1024,
+                    new Vector2(1f / (float)tile[0], 1f / (float)tile[1]), cutout: false, transparent: see,
+                    emission: glass ? new Color(0.11f, 0.104f, 0.094f) : Color.black,
+                    factors: m["factors"] as JObject, opacity: see ? 1f : 0.25f, maskMax: MaskMax(m));
                 catalog.Materials.Add(new ExternalCatalog.MaterialEntry
                 {
                     Id = (string)m["id"], Name = (string)m["name"], Category = (string)m["category"], Material = mat, Neutral = (bool?)m["neutral"] ?? false,
@@ -122,8 +130,10 @@ namespace House4696.Setup
                     bool transparent = slot.Contains("glass") || (!textured && (bool?)s["transparent"] == true);
                     bool cutout = !transparent && (bool?)s["cutout"] == true;
                     // Poly Haven drives glow with an emission texture we do not import: the factor alone would light the
-                    // whole body, so it only lights untextured parts (bulbs, flames, opal globes)
-                    var em = !textured && s["emissive"] is JArray e ? new Color((float)e[0], (float)e[1], (float)e[2]) * 1.5f : Color.black;
+                    // whole body, so it only lights untextured parts (bulbs, flames, opal globes). Our Blender models' own
+                    // textured slots (screens, backlit pictures) glow with their albedo as the emission map.
+                    bool ownModel = ((string)m["source"] ?? "").StartsWith("blender:");
+                    var em = (!textured || ownModel) && s["emissive"] is JArray e ? new Color((float)e[0], (float)e[1], (float)e[2]) * 1.5f : Color.black;
                     mat = LitMaterial($"{id}_{slot}", folder, tex, 1024, Vector2.one, cutout, transparent, em, s);
                 }
                 own[slot] = new ExternalCatalog.Slot
@@ -156,8 +166,18 @@ namespace House4696.Setup
             return entry;
         }
 
+        /// <summary>
+        /// Largest mask (metallic / smoothness) texture of a library material: 512 is plenty for tiling surfaces; pictures
+        /// (art glass, painted ornaments) keep their masks as sharp as their albedo — a print's metal edges must not blur.
+        /// </summary>
+        static int MaskMax(JObject m)
+        {
+            string cat = (string)m["category"];
+            return (int?)m["maskSize"] ?? (cat == "doorglass" || cat == "doorart" ? (int?)m["maxSize"] ?? 1024 : 512);
+        }
+
         static Material LitMaterial(string name, string folder, JObject tex, int maxSize, Vector2 tiling, bool cutout, bool transparent,
-            Color emission, JObject factors = null)
+            Color emission, JObject factors = null, float opacity = 0.25f, int maskMax = 512)
         {
             string path = $"{Out}/Materials/M_{name}.mat";
             _written.Add(path);
@@ -170,13 +190,14 @@ namespace House4696.Setup
             }
             m.shader = shader;
             m.shaderKeywords = new string[0];
-            var albedo = Texture(folder, (string)tex["albedo"], TextureKind.Albedo, maxSize, cutout);
+            // an albedo with alpha drives cutouts and (door glass) transparency
+            var albedo = Texture(folder, (string)tex["albedo"], TextureKind.Albedo, maxSize, cutout || transparent && opacity >= 0.99f);
             var normal = Texture(folder, (string)tex["normal"], TextureKind.Normal, maxSize, false);
-            var mask = Texture(folder, (string)tex["mask"], TextureKind.Mask, maxSize, false);
+            var mask = Texture(folder, (string)tex["mask"], TextureKind.Mask, maxSize, false, maskMax);
 
             var color = Color.white;
             if (albedo == null && factors?["baseColor"] is JArray bc) color = new Color((float)bc[0], (float)bc[1], (float)bc[2], 1f).gamma;
-            if (transparent) color.a = 0.25f;
+            if (transparent) color.a = opacity;
             m.SetFloat("_WorkflowMode", 1f);
             m.SetColor("_BaseColor", color);
             m.SetTexture("_BaseMap", albedo);
@@ -210,11 +231,13 @@ namespace House4696.Setup
             if (emission.maxColorComponent > 0f)
             {
                 m.SetColor("_EmissionColor", emission);
+                m.SetTexture("_EmissionMap", albedo);   // null for untextured parts: plain colour glow
                 m.globalIlluminationFlags = MaterialGlobalIlluminationFlags.RealtimeEmissive;
                 m.EnableKeyword("_EMISSION");
             }
             else
             {
+                m.SetTexture("_EmissionMap", null);
                 m.SetColor("_EmissionColor", Color.black);
                 m.globalIlluminationFlags = MaterialGlobalIlluminationFlags.EmissiveIsBlack;
             }
@@ -229,24 +252,24 @@ namespace House4696.Setup
 
         internal enum TextureKind { Albedo, Normal, Mask }
 
-        static Texture2D Texture(string folder, string file, TextureKind kind, int maxSize, bool alpha)
+        static Texture2D Texture(string folder, string file, TextureKind kind, int maxSize, bool alpha, int maskMax = 512)
         {
             if (string.IsNullOrEmpty(file)) return null;
             string path = folder + "/" + file;
             var ti = (TextureImporter)AssetImporter.GetAtPath(path);
             if (ti == null) { Debug.LogWarning("[External] missing texture " + path); return null; }
-            if (Configure(ti, kind, maxSize, alpha)) ti.SaveAndReimport();
+            if (Configure(ti, kind, maxSize, alpha, maskMax)) ti.SaveAndReimport();
             return AssetDatabase.LoadAssetAtPath<Texture2D>(path);
         }
 
         /// <summary>Import settings of a library texture; true when something changed (a reimport is needed).</summary>
-        internal static bool Configure(TextureImporter ti, TextureKind kind, int maxSize, bool alpha)
+        internal static bool Configure(TextureImporter ti, TextureKind kind, int maxSize, bool alpha, int maskMax = 512)
         {
             var type = kind == TextureKind.Normal ? TextureImporterType.NormalMap : TextureImporterType.Default;
             bool srgb = kind == TextureKind.Albedo;
             var alphaSource = kind == TextureKind.Mask || alpha ? TextureImporterAlphaSource.FromInput : TextureImporterAlphaSource.None;
             int aniso = kind == TextureKind.Albedo ? 4 : 2;
-            int size = kind == TextureKind.Mask ? Mathf.Min(maxSize, 512) : maxSize;
+            int size = kind == TextureKind.Mask ? Mathf.Min(maxSize, maskMax) : maxSize;
             int quality = kind == TextureKind.Normal ? 80 : 65;
             if (ti.textureType == type && ti.sRGBTexture == srgb && ti.alphaSource == alphaSource && ti.alphaIsTransparency == alpha &&
                 ti.mipmapEnabled && ti.wrapMode == TextureWrapMode.Repeat && ti.anisoLevel == aniso && ti.maxTextureSize == size &&
@@ -273,22 +296,23 @@ namespace House4696.Setup
         /// </summary>
         static void ConfigureAllTextures(JObject manifest)
         {
-            var files = new List<string>();
+            var files = new List<(string path, int max, int maskMax)>();
             foreach (JObject m in manifest["materials"])
-                foreach (var t in (JObject)m["textures"]) files.Add(Source + "/" + (string)m["folder"] + "/" + (string)t.Value);
+                foreach (var t in (JObject)m["textures"])
+                    files.Add((Source + "/" + (string)m["folder"] + "/" + (string)t.Value, (int?)m["maxSize"] ?? 1024, MaskMax(m)));
             foreach (JObject m in manifest["models"])
                 foreach (JObject s in m["slots"])
                     if (s["textures"] is JObject tex)
-                        foreach (var t in tex) files.Add(Source + "/" + (string)m["folder"] + "/" + (string)t.Value);
+                        foreach (var t in tex) files.Add((Source + "/" + (string)m["folder"] + "/" + (string)t.Value, 1024, 512));
             int changed = 0;
             AssetDatabase.StartAssetEditing();
             try
             {
-                foreach (var path in files)
+                foreach (var (path, max, maskMax) in files)
                 {
                     if (!(AssetImporter.GetAtPath(path) is TextureImporter ti)) continue;
                     var kind = path.Contains("_normal.") ? TextureKind.Normal : path.Contains("_mask.") ? TextureKind.Mask : TextureKind.Albedo;
-                    if (Configure(ti, kind, 1024, kind == TextureKind.Albedo && path.EndsWith(".png"))) { ti.SaveAndReimport(); changed++; }
+                    if (Configure(ti, kind, max, kind == TextureKind.Albedo && path.EndsWith(".png"), maskMax)) { ti.SaveAndReimport(); changed++; }
                 }
             }
             finally { AssetDatabase.StopAssetEditing(); }

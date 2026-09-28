@@ -45,22 +45,29 @@ namespace House4696.Generation
             void TreadX(float x0, float x1, float z0, float z1, float top) => TreadZ(x0, x1, z0, z1, top);
 
             int k = s.Type == StairType.Straight ? n : Mathf.Clamp(s.FirstFlight ?? n / 2 + 1, 2, n - 2);
-            // flight 1 (the last riser of a straight stair lands on the upper floor)
+            float wallX = side > 0 ? -hw : hw;           // flight 1 usually runs along a wall on the outer side
+            float landY1 = k * rise, zl1 = (k - 1) * g;   // top of flight 1: the landing (or the upper floor)
+            float zEnd1 = s.Type == StairType.Straight ? (n - 1) * g : zl1;
+            // a side with no wall along it gets a steel stringer under the tread ends and a glass guard: floating treads
+            // need a wall to hang on, and a handrail needs something to be fixed to
+            bool walled1 = Walled(m, new Vector3(wallX, 0, 0), new Vector3(wallX, 0, zEnd1), Vector3.right * Mathf.Sign(wallX), landY1 * 0.5f + 1f);
+            // flight 1
             for (int i = 1; i < k; i++)
             {
                 float top = i * rise, z0 = (i - 1) * g;
                 TreadZ(-hw, hw, z0, z0 + g + 0.02f, top);
-                if (!solid && i % 2 == 1) StepLight(lights, side > 0 ? -hw + 0.004f : hw - 0.004f, top + 0.22f, z0 + g * 0.5f, side < 0);
+                if (!solid && walled1 && i % 2 == 1) StepLight(lights, side > 0 ? -hw + 0.004f : hw - 0.004f, top + 0.22f, z0 + g * 0.5f, side < 0);
             }
-            float wallX = side > 0 ? -hw : hw;           // flight 1 runs along a wall on the outer side
             Vector3 r0 = new Vector3(wallX - Mathf.Sign(wallX) * 0.07f, 0.9f + rise, 0f);
+            var flight1 = FlightZ(0f, zEnd1, 0f, rise, s.Type == StairType.Straight ? H : landY1, sl: rise / g);
+            if (walled1) Handrail(rails, r0, new Vector3(r0.x, (s.Type == StairType.Straight ? H : landY1) + 0.9f, zEnd1), wallX);
+            else OpenSide(mb, glass, rails, wallX, Mathf.Sign(wallX), flight1, solid);
+            // the other side of a straight or L flight (a U has the glass between its flights there)
+            if (s.Type != StairType.U &&
+                !Walled(m, new Vector3(-wallX, 0, 0), new Vector3(-wallX, 0, s.Type == StairType.L ? zl1 : zEnd1), Vector3.right * -Mathf.Sign(wallX), landY1 * 0.5f + 1f))
+                OpenSide(mb, glass, rails, -wallX, -Mathf.Sign(wallX), s.Type == StairType.L ? FlightZ(0f, zl1, 0f, rise, landY1, rise / g) : flight1, solid);
 
-            if (s.Type == StairType.Straight)
-            {
-                Vector3 r1 = new Vector3(r0.x, H + 0.9f, (n - 1) * g);
-                Handrail(rails, r0, r1, wallX);
-            }
-            else
+            if (s.Type != StairType.Straight)
             {
                 float landY = k * rise, zl = (k - 1) * g, depth = s.Landing ?? w;
                 int rest = n - k;
@@ -94,7 +101,13 @@ namespace House4696.Generation
                             rails.Rod(new Vector3(guardA, H + 1.0f, zt), new Vector3(guardB, H + 1.0f, zt), 0.022f, _c.M.BlackMetal, 12);
                         }
                     }
-                    Handrail(rails, r0, new Vector3(r0.x, landY + 0.9f, zl), wallX);
+                    // outer side of flight 2 and the free edges of the landing
+                    float x2o = x2 + side * hw;
+                    var flight2 = FlightZ(zl, zt, landY, rise, H, rise / g);
+                    if (Walled(m, new Vector3(x2o, 0, zt), new Vector3(x2o, 0, zl), Vector3.right * side, (landY + H) * 0.5f + 1f))
+                        Handrail(rails, new Vector3(x2o - side * 0.07f, landY + rise + 0.9f, zl), new Vector3(x2o - side * 0.07f, H + 0.9f, zt), x2o);
+                    else OpenSide(mb, glass, rails, x2o, side, flight2, solid);
+                    LandingEdges(m, mb, glass, rails, lx0, lx1, zl, zl + depth, landY, skipSide: 0f);
                 }
                 else // L: square landing, second flight runs sideways
                 {
@@ -107,78 +120,146 @@ namespace House4696.Generation
                         float xa = Mathf.Min(x1, x1 + side * (g + 0.02f)), xb = Mathf.Max(x1, x1 + side * (g + 0.02f));
                         TreadX(xa, xb, zl, zl + depth, top);
                     }
-                    Handrail(rails, r0, new Vector3(r0.x, landY + 0.9f, zl), wallX);
+                    // flight 2 runs sideways: its sides are handled in a frame where it runs along +z'
+                    var turn = m * Matrix4x4.TRS(new Vector3(edge, 0, zl + depth * 0.5f), Quaternion.Euler(0, side > 0 ? 90f : -90f, 0), Vector3.one);
+                    mb.Transform = glass.Transform = rails.Transform = turn;
+                    var flight2 = FlightZ(0f, (rest - 1) * g, landY, rise, H, rise / g);
+                    float hd = depth * 0.5f;
+                    foreach (float sx in new[] { -1f, 1f })
+                        if (!Walled(turn, new Vector3(sx * hd, 0, 0), new Vector3(sx * hd, 0, flight2.Z1), Vector3.right * sx, (landY + H) * 0.5f + 1f))
+                            OpenSide(mb, glass, rails, sx * hd, sx, flight2, solid);
+                    mb.Transform = glass.Transform = rails.Transform = m;
+                    LandingEdges(m, mb, glass, rails, -hw, hw, zl, zl + depth, landY, skipSide: side);
                 }
             }
 
             string id = s.Id ?? "stair";
-            WellGuards(s, id);
             _c.W.Emit("Stair_" + id, _c.Interior, mb);
             _c.W.Emit("Stair_Glass_" + id, _c.Interior, glass, castShadows: false);
             _c.W.Emit("Stair_Rails_" + id, _c.Interior, rails);
             _c.W.Emit("Decor_StepLights_" + id, _c.Interior, lights, castShadows: false);
         }
 
-        /// <summary>
-        /// Glass guards on the open edges of the stairwell in the upper floor: every edge of the well except the arrival
-        /// edge, edges along walls, edges over no floor (a double-height space) and edges an author's railing already covers.
-        /// </summary>
-        void WellGuards(StairDef s, string id)
+        /// <summary>A flight in the stair frame running along z: from (<see cref="Z0"/>, first tread top <see cref="Y0"/>) to (<see cref="Z1"/>, <see cref="Y1"/>).</summary>
+        struct Flight
         {
-            var g = _c.Stair(s);
-            if (g == null || g.Well.Count == 0 || s.Well != "auto") return;
-            float y = g.To.Elevation;
-            var rooms = _c.Doc.Rooms.FindAll(r => r.Level == g.To.Id && r.Outline != null && r.Outline.Count >= 3);
+            public float Z0, Z1, Y0, Y1;
+            /// <summary>What the flight starts from: the floor (0) or the landing top.</summary>
+            public float Base;
+        }
+
+        static Flight FlightZ(float z0, float z1, float baseY, float rise, float topY, float sl) =>
+            new Flight { Z0 = z0, Z1 = z1, Base = baseY, Y0 = baseY + rise, Y1 = topY };
+
+        /// <summary>
+        /// Is there a solid wall (not glass) within 15 cm beyond the stair edge la→lb (stair frame <paramref name="m"/>)
+        /// along most of its length, at a height <paramref name="yLocal"/> above the lower floor?
+        /// </summary>
+        bool Walled(Matrix4x4 m, Vector3 la, Vector3 lb, Vector3 outLocal, float yLocal)
+        {
+            float y = m.MultiplyPoint(new Vector3(0, yLocal, 0)).y;
             var walls = new List<WallFrame>();
-            foreach (var f in _c.Walls) if (f.Y0 < y + 0.5f && f.Y1 > y + 0.5f) walls.Add(f);
-            var rails = _c.Doc.Elements.FindAll(e => e.Type == ElementType.Railing && Mathf.Abs(e.Y - y) < 0.4f && e.Path.Count >= 2);
-
-            bool Open(Vector2 p, Vector2 outward)
+            foreach (var f in _c.Walls) if (f.Def.System != WallSystem.SteelGlass && f.Spans(y)) walls.Add(f);
+            var dir3 = m.MultiplyVector(outLocal);
+            var dir = new Vector2(dir3.x, dir3.z).normalized;
+            int hits = 0;
+            foreach (float t in new[] { 0.2f, 0.5f, 0.8f })
             {
-                var q = p + outward * 0.15f;
-                if (g.InWell(q) || g.OnArrival(p, 0.08f)) return false;
-                if (!rooms.Exists(r => Polygon.Contains(r.Outline, q))) return false;
-                foreach (var f in walls)
-                {
-                    var a2 = f.P(f.S0, 0, -f.T * 0.5f); var b2 = f.P(f.S1, 0, -f.T * 0.5f);
-                    if (StairGeometry.DistanceToSegment(p, new Vector2(a2.x, a2.z), new Vector2(b2.x, b2.z)) < f.T * 0.5f + 0.2f) return false;
-                }
-                foreach (var e in rails)
-                    for (int i = 0; i + 1 < e.Path.Count; i++)
-                        if (StairGeometry.DistanceToSegment(p, e.Path[i], e.Path[i + 1]) < 0.2f) return false;
-                return true;
+                var p3 = m.MultiplyPoint(Vector3.Lerp(la, lb, t));
+                if (WallFrame.Cast(walls, new Vector2(p3.x, p3.z) + dir * 0.005f, dir, 0.15f, out _) != null) hits++;
             }
+            return hits >= 2;
+        }
 
-            var elements = new ElementBuilder(_c);
-            int n = 0;
-            foreach (var h in g.Well)
-                for (int i = 0; i < h.Length; i++)
-                {
-                    Vector2 a = h[i], b = h[(i + 1) % h.Length], d = b - a;
-                    float len = d.magnitude;
-                    if (len < 0.3f) continue;
-                    d /= len;
-                    var outward = new Vector2(d.y, -d.x);
-                    const float step = 0.05f;
-                    int steps = Mathf.Max(1, Mathf.RoundToInt(len / step));
-                    int runStart = -1;
-                    for (int k = 0; k <= steps; k++)
-                    {
-                        bool open = k < steps && Open(a + d * (len * (k + 0.5f) / steps), outward);
-                        if (open && runStart < 0) runStart = k;
-                        if (open || runStart < 0) continue;
-                        float t0 = len * runStart / steps, t1 = len * k / steps;
-                        runStart = -1;
-                        if (t1 - t0 < 0.3f) continue;
-                        // on the slab, just outside the opening
-                        var off = outward * 0.03f;
-                        elements.Build(new ElementDef
-                        {
-                            Id = $"{id}_well{++n}", Type = ElementType.Railing, Y = y, Height = 1.0f, Style = "glass",
-                            Path = new List<Vector2> { a + d * t0 + off, a + d * t1 + off },
-                        });
-                    }
-                }
+        /// <summary>
+        /// Open side of a flight at x (tread ends; <paramref name="sgn"/> points away from the treads): a black steel
+        /// stringer under the tread ends (not for solid stairs) and a glass guard with a walnut handrail on top.
+        /// </summary>
+        void OpenSide(MeshBuilder mb, MeshBuilder glass, MeshBuilder rails, float x, float sgn, Flight f, bool solid)
+        {
+            const float Plate = 0.012f, Depth = 0.28f, Guard = 0.9f;
+            float yA = f.Y0 + 0.03f, yB = f.Y1;
+            if (!solid && Mathf.Abs(f.Z1 - f.Z0) > 0.05f)
+            {
+                float slope = (yB - yA) / (f.Z1 - f.Z0);
+                // the plate's lower edge runs parallel to the nosing line and meets the floor/landing it starts from
+                float foot = f.Base > 0.01f ? f.Base - 0.2f : 0f;
+                float zf = f.Z0 + (foot - (yA - Depth)) / slope;
+                var pts = new List<Vector2> { new Vector2(f.Z0, foot), new Vector2(f.Z0, yA), new Vector2(f.Z1, yB), new Vector2(f.Z1, yB - Depth) };
+                if ((zf - f.Z0) * (f.Z1 - f.Z0) > 0f && Mathf.Abs(zf - f.Z0) < Mathf.Abs(f.Z1 - f.Z0)) pts.Add(new Vector2(zf, foot));
+                PlateX(mb, x, x + sgn * Plate, pts, _c.M.BlackMetal);
+            }
+            float xg = x + sgn * (Plate + 0.02f);
+            GlassPanel(glass, xg, new[] { new Vector2(f.Z0, yA), new Vector2(f.Z1, yB + 0.03f), new Vector2(f.Z1, yB + Guard), new Vector2(f.Z0, yA + Guard) });
+            rails.Rod(new Vector3(xg, yA + Guard, f.Z0), new Vector3(xg, yB + Guard, f.Z1), 0.022f, _c.M.Walnut, 12);
+        }
+
+        /// <summary>
+        /// Guards on the free edges of a landing (x0..x1 × z0..z1, top at y) and steel posts under its far corners
+        /// when nothing carries them. The near edge (where flight 1 arrives) is skipped; <paramref name="skipSide"/>
+        /// ±1 skips the side edge a sideways second flight leaves from.
+        /// </summary>
+        void LandingEdges(Matrix4x4 m, MeshBuilder mb, MeshBuilder glass, MeshBuilder rails, float x0, float x1, float z0, float z1, float y, float skipSide)
+        {
+            const float Guard = 1.0f, In = 0.02f;
+            var edges = new List<(Vector3 a, Vector3 b, Vector3 o)>
+            {
+                (new Vector3(x0, 0, z1), new Vector3(x1, 0, z1), Vector3.forward),
+            };
+            if (skipSide >= 0f) edges.Add((new Vector3(x0, 0, z0), new Vector3(x0, 0, z1), Vector3.left));
+            if (skipSide <= 0f) edges.Add((new Vector3(x1, 0, z0), new Vector3(x1, 0, z1), Vector3.right));
+            bool farOpen = false;
+            foreach (var (a, b, o) in edges)
+            {
+                if (Walled(m, a, b, o, y + 1f)) continue;
+                if (o == Vector3.forward) farOpen = true;
+                var lo = Vector3.Min(a, b) - o * In; var hi = Vector3.Max(a, b) - o * In;
+                var pad = new Vector3(o.x == 0 ? 0 : 0.006f, 0, o.z == 0 ? 0 : 0.006f);
+                glass.Box(new Vector3(lo.x, y, lo.z) - pad, new Vector3(hi.x, y + Guard, hi.z) + pad, _c.M.Glass);
+                rails.Rod(new Vector3(lo.x, y + Guard, lo.z), new Vector3(hi.x, y + Guard, hi.z), 0.022f, _c.M.Walnut, 12);
+            }
+            if (!farOpen) return;
+            foreach (float px in new[] { x0 + 0.06f, x1 - 0.06f })
+            {
+                var w = m.MultiplyPoint(new Vector3(px, 0, z1 - 0.06f));
+                var p = new Vector2(w.x, w.z);
+                bool carried = false;
+                foreach (var f in _c.Walls) if (f.Spans(w.y + 1f) && f.DistanceTo(p) < 0.15f) { carried = true; break; }
+                if (!carried) mb.Box(new Vector3(px - 0.03f, 0f, z1 - 0.09f), new Vector3(px + 0.03f, y - 0.2f, z1 - 0.03f), _c.M.BlackMetal);
+            }
+        }
+
+        /// <summary>Convex plate between the planes x = xa and x = xb; outline points (z, y) in any order around it.</summary>
+        static void PlateX(MeshBuilder mb, float xa, float xb, List<Vector2> zy, Material mat)
+        {
+            var c = Vector2.zero; foreach (var p in zy) c += p; c /= zy.Count;
+            zy.Sort((p, q) => Mathf.Atan2(p.y - c.y, p.x - c.x).CompareTo(Mathf.Atan2(q.y - c.y, q.x - c.x)));
+            float lo = Mathf.Min(xa, xb), hi = Mathf.Max(xa, xb);
+            Vector3 P(float x, Vector2 v) => new Vector3(x, v.y, v.x);
+            // same winding rule as GlassPanel: the face shows towards n
+            void Tri(Vector3 a, Vector3 b, Vector3 d, Vector3 n)
+            {
+                Vector2 U(Vector3 v) => Mathf.Abs(n.x) > 0.5f ? new Vector2(v.z, v.y) : new Vector2(v.x + v.z, v.y);
+                if (Vector3.Dot(Vector3.Cross(b - a, d - a), n) > 0) mb.Triangle(a, b, d, n, n, n, U(a), U(b), U(d), mat);
+                else mb.Triangle(a, d, b, n, n, n, U(a), U(d), U(b), mat);
+            }
+            for (int i = 1; i + 1 < zy.Count; i++)
+            {
+                Tri(P(hi, zy[0]), P(hi, zy[i]), P(hi, zy[i + 1]), Vector3.right);
+                Tri(P(lo, zy[0]), P(lo, zy[i]), P(lo, zy[i + 1]), Vector3.left);
+            }
+            for (int i = 0; i < zy.Count; i++)
+            {
+                Vector2 a = zy[i], b = zy[(i + 1) % zy.Count], e = b - a;
+                if (e.sqrMagnitude < 1e-8f) continue;
+                // outward normal of the edge in the (z, y) plane
+                var mid = (a + b) * 0.5f - c;
+                var n2 = new Vector2(e.y, -e.x);
+                if (Vector2.Dot(n2, mid) < 0) n2 = -n2;
+                var n = new Vector3(0, n2.y, n2.x).normalized;
+                Tri(P(lo, a), P(lo, b), P(hi, b), n);
+                Tri(P(lo, a), P(hi, b), P(hi, a), n);
+            }
         }
 
         /// <summary>Wall-mounted walnut handrail with black brackets towards the wall at <paramref name="wallX"/>.</summary>

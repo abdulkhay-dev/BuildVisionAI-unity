@@ -1,0 +1,30 @@
+{
+  "id": "wood-classic", "name": "WOOD CLASSIC", "line": "Шпон натуральный", "kind": "interior", "block": "classic-rosette", "order": 88,
+  "finishes": ["natur-oak", "golden-oak", "veneer-ivory", "veneer-whitey"],
+  "glass": ["bc", "wc", "mf", "bronze", "bronze-wave"],
+  "handles": {"veneer-ivory": "satin", "veneer-whitey": "satin"},
+  "models": [
+    { "id": "wood-klassik-12", "name": "Вуд Классик-12", "design": "wood-klassik-12", "glass": [],
+      "photo": "p088_vud-klassik-12__natur-oak.jpg" },
+    { "id": "wood-klassik-13", "name": "Вуд Классик-13", "design": "wood-klassik-13", "glass": ["bc", "wc"],
+      "photo": "p088_vud-klassik-13__natur-oak.jpg" },
+    { "id": "wood-klassik-14", "name": "Вуд Классик-14", "design": "wood-klassik-14", "glass": [],
+      "photo": "p089_vud-klassik-14__natur-oak.jpg" },
+    { "id": "wood-klassik-15-1", "name": "Вуд Классик-15.1", "design": "wood-klassik-15-1", "glass": ["bc", "wc"],
+      "photo": "p089_vud-klassik-15-1__natur-oak.jpg" },
+    { "id": "wood-klassik-32", "name": "Вуд Классик-32", "design": "wood-klassik-32", "glass": [],
+      "finishes": ["natur-oak", "golden-oak", "veneer-ivory"], "photo": "p090_vud-klassik-32__natur-oak.jpg" },
+    { "id": "wood-klassik-33", "name": "Вуд Классик-33", "design": "wood-klassik-33", "glass": ["bronze-wave"],
+      "finishes": ["natur-oak", "golden-oak"], "photo": "p090_vud-klassik-33__natur-oak.jpg" },
+    { "id": "wood-klassik-33-wc", "name": "Вуд Классик-33 WC", "design": "wood-klassik-33-wc", "glass": ["wc"],
+      "finishes": ["veneer-ivory"], "photo": "p090_vud-klassik-33__ivory.jpg" },
+    { "id": "wood-klassik-50", "name": "Вуд Классик-50", "design": "wood-klassik-50", "glass": [],
+      "finishes": ["natur-oak", "golden-oak", "veneer-ivory"], "photo": "p090_vud-klassik-50__natur-oak.jpg" },
+    { "id": "wood-klassik-51", "name": "Вуд Классик-51", "design": "wood-klassik-51", "glass": ["bronze", "mf"],
+      "finishes": ["natur-oak", "golden-oak", "veneer-ivory"], "photo": "p090_vud-klassik-51__natur-oak.jpg" },
+    { "id": "wood-klassik-52", "name": "Вуд Классик-52", "design": "wood-klassik-52", "glass": [],
+      "finishes": ["natur-oak", "golden-oak", "veneer-ivory"], "photo": "p091_vud-klassik-52__natur-oak.jpg" },
+    { "id": "wood-klassik-53", "name": "Вуд Классик-53", "design": "wood-klassik-53", "glass": ["bronze", "mf"],
+      "finishes": ["natur-oak", "golden-oak", "veneer-ivory"], "photo": "p091_vud-klassik-53__natur-oak.jpg" }
+  ]
+}
