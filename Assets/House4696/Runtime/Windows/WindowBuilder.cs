@@ -252,7 +252,7 @@ namespace House4696.Windows
             }
             else if (outside == "stone")
             {
-                var m = _c.Mats.Get(s.Material ?? "sandstone_light", _c.Lib.Stone);
+                var m = _c.Mats.Get(s.Material ?? "door_enamel_whitey#e4d9c2", _c.Lib.Stone);
                 Box(mb, -s.Ears, W + s.Ears, 5f - s.Thickness, 5f, face - s.Overhang, fz0, m);
             }
             if ((s.Inside ?? "board").ToLowerInvariant() == "board")

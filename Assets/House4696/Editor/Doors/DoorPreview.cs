@@ -147,9 +147,11 @@ namespace House4696.Doors
                     W = 900; H = 1100;
                     cam.orthographic = false;
                     cam.fieldOfView = 40f;
-                    var eye = center + new Vector3(-1.6f, 0.2f, sideZ * 2.6f);
+                    // big subjects (window panoramas) are seen from further away
+                    float far = s.FrontSize.HasValue ? Mathf.Max(1f, Mathf.Max(s.FrontSize.Value.x, s.FrontSize.Value.y) / 2.2f) : 1f;
+                    var eye = center + new Vector3(-1.6f, 0.2f, sideZ * 2.6f) * far;
                     camGo.transform.SetPositionAndRotation(eye, Quaternion.LookRotation(center - eye));
-                    cam.nearClipPlane = 0.05f; cam.farClipPlane = 30f;
+                    cam.nearClipPlane = 0.05f; cam.farClipPlane = 60f;
                 }
                 rt = new RenderTexture(W * ss, H * ss, 24, RenderTextureFormat.ARGB32, RenderTextureReadWrite.sRGB);
                 cam.targetTexture = rt;

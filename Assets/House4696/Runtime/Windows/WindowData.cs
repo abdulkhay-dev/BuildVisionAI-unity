@@ -59,7 +59,7 @@ namespace House4696.Windows
 
         /// <summary>Cell: "fixed" (glass in the frame), "turn" / "tilt-turn" (sash on side hinges), "tilt" (hinged at the bottom), "slide".</summary>
         public string Sash;
-        /// <summary>Turn sashes: hinge side seen from inside ("left" / "right"); slide: the way the sash slides ("left" / "right").</summary>
+        /// <summary>Turn sashes: hinge side seen from outside ("left" / "right"); slide: the way the sash slides, seen from outside.</summary>
         public string Hinge;
         /// <summary>Glass of this cell (overrides the design's).</summary>
         public string Glass;
@@ -92,7 +92,7 @@ namespace House4696.Windows
     {
         /// <summary>Band width round the opening, how far it stands out of the facade, mm; material: library id or "frame" (the window's finish).</summary>
         public float Width = 150f, Depth = 40f;
-        public string Material = "sandstone_light";
+        public string Material = "door_enamel_whitey#e4d9c2";
         /// <summary>Extra height of the head (a cornice-like lintel), mm.</summary>
         public float Head;
     }

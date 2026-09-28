@@ -33,7 +33,7 @@ another size (frame edges, mullions, a fanlight's height); the rest stretches. P
   "layout": { … },                // divisions (below)
   "sill": { "outside": "stone", "inside": "board", "overhang": 50, "thickness": 60, "ears": 60, "material": null },
                                   // outside: metal (отлив) | stone | none; inside: board (подоконник) | none
-  "surround": { "width": 150, "depth": 40, "material": "sandstone_light", "head": 0 }
+  "surround": { "width": 150, "depth": 40, "material": "door_enamel_whitey#e4d9c2", "head": 0 }
                                   // optional band round the window on the facade (stone architrave; "material": "frame" =
                                   // a portal in the window's own finish, e.g. a thick oak portal); head = extra lintel height
 }

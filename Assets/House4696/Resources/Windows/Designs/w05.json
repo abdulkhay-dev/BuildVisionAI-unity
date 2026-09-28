@@ -10,5 +10,5 @@
       { "sash": "turn", "hinge": "left", "bars": { "cols": 2, "rows": 4, "width": 18 } },
       { "sash": "turn", "hinge": "right", "bars": { "cols": 2, "rows": 4, "width": 18 } } ] },
   "sill": { "outside": "stone", "inside": "board", "overhang": 70, "thickness": 90, "ears": 260 },
-  "surround": { "width": 220, "depth": 40, "material": "sandstone_light", "head": 0 }
+  "surround": { "width": 220, "depth": 40, "material": "door_enamel_whitey#e4d9c2", "head": 0 }
 }
