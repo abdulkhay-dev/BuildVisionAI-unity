@@ -5,5 +5,5 @@
   "frame": { "width": 60, "depth": 75, "inset": 80 },
   "layout": { "split": "x", "at": [1200, 2400, 3600, 4800], "mullion": 80,
     "cells": [ { "sash": "fixed" }, { "sash": "fixed" }, { "sash": "fixed" }, { "sash": "fixed" }, { "sash": "fixed" } ] },
-  "sill": { "outside": "metal", "inside": "board", "overhang": 40, "material": "metal_painted#b4b7b8" }
+  "sill": { "outside": "metal", "inside": "board", "overhang": 40, "material": "door_enamel_whitey#b4b7b8" }
 }

@@ -4,6 +4,6 @@
   "fixX": [[0, 25], [1875, 1900]], "fixY": [[0, 925], [3275, 3300]],
   "frame": { "width": 25, "depth": 200, "inset": 0 },
   "layout": { "split": "y", "at": [900], "mullion": 50,
-    "cells": [ { "panel": "metal_painted#8c9094" }, { "sash": "fixed" } ] },
+    "cells": [ { "panel": "door_enamel_whitey#8c9094" }, { "sash": "fixed" } ] },
   "sill": { "outside": "none", "inside": "none" }
 }

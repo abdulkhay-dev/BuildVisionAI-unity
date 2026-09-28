@@ -9,5 +9,5 @@
       { "split": "x", "at": [1200], "mullion": 50,
         "cells": [ { "sash": "tilt-turn", "hinge": "left" }, { "sash": "tilt-turn", "hinge": "right" } ] },
       { "sash": "fixed" } ] },
-  "sill": { "outside": "metal", "inside": "board", "overhang": 40, "material": "metal_painted#eceeed" }
+  "sill": { "outside": "metal", "inside": "board", "overhang": 40, "material": "door_enamel_whitey#eceeed" }
 }

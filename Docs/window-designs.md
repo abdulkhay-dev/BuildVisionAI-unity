@@ -75,7 +75,7 @@ light frames, satin aluminium otherwise), sliding sashes a pull. Glazing bars si
 ### Extras (design level)
 
 ```jsonc
-"members": [ { "path": "M 0 2350 L 2400 2350", "width": 180, "depth": 25, "z": -260, "material": "metal_painted#b8bbbe",
+"members": [ { "path": "M 0 2350 L 2400 2350", "width": 180, "depth": 25, "z": -260, "material": "door_enamel_whitey#b8bbbe",
                "count": 5, "stepY": 150 } ],
       // members swept along a path (ref mm): z = null → in the frame's depth (bars on the glass, diagrid, art-deco grid);
       // z = a number → their outer face that far from the facade (negative = in front: louvres, fins); repeated count ×
@@ -98,7 +98,7 @@ A frameless look: `"frame": { "width": 0 }` (cells then reach the outline; use `
 ```
 
 Finishes are library materials (tintable `name#rrggbb`): painted PVC / wood `door_enamel_whitey#…`, powder-coated
-aluminium `metal_painted#…`, wood `door_organic_oak` (light oak), `door_natur_oak`, `door_f_17_chocolate` (dark walnut).
+aluminium `door_enamel_whitey#…`, wood `door_organic_oak` (light oak), `door_natur_oak`, `door_f_17_chocolate` (dark walnut).
 A model's `size` and `sillHeight` are the typical opening for the AI placing it; `finish` is the picture's colour.
 
 ## Tools

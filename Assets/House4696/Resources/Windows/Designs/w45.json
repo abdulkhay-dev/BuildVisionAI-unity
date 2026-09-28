@@ -8,6 +8,6 @@
       { "split": "x", "at": [1000, 2000, 3000], "mullion": 60,
         "cells": [ { "sash": "fixed" }, { "sash": "fixed" }, { "sash": "fixed" }, { "sash": "fixed" } ] },
       { "split": "x", "at": [1000, 2000, 3000], "mullion": 20,
-        "cells": [ { "panel": "metal_painted#a9adb0" }, { "panel": "metal_painted#a9adb0" }, { "panel": "metal_painted#a9adb0" }, { "panel": "metal_painted#a9adb0" } ] } ] },
+        "cells": [ { "panel": "door_enamel_whitey#a9adb0" }, { "panel": "door_enamel_whitey#a9adb0" }, { "panel": "door_enamel_whitey#a9adb0" }, { "panel": "door_enamel_whitey#a9adb0" } ] } ] },
   "sill": { "outside": "none", "inside": "none" }
 }

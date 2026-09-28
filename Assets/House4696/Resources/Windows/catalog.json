@@ -9,7 +9,7 @@
     {
       "id": "white-alu",
       "name": "Белый (алюминий)",
-      "material": "metal_painted#eceeed",
+      "material": "door_enamel_whitey#eceeed",
       "color": "#eceeed"
     },
     {
@@ -45,37 +45,37 @@
     {
       "id": "graphite",
       "name": "Графит",
-      "material": "metal_painted#3a3c3f",
+      "material": "door_enamel_whitey#3a3c3f",
       "color": "#3a3c3f"
     },
     {
       "id": "anthracite",
       "name": "Антрацит",
-      "material": "metal_painted#2e3134",
+      "material": "door_enamel_whitey#2e3134",
       "color": "#2e3134"
     },
     {
       "id": "black",
       "name": "Чёрный",
-      "material": "metal_painted#1c1d1f",
+      "material": "door_enamel_whitey#1c1d1f",
       "color": "#1c1d1f"
     },
     {
       "id": "grey",
       "name": "Серый",
-      "material": "metal_painted#5d6166",
+      "material": "door_enamel_whitey#5d6166",
       "color": "#5d6166"
     },
     {
       "id": "silver",
       "name": "Серебристый",
-      "material": "metal_painted#b8bbbe",
+      "material": "door_enamel_whitey#b8bbbe",
       "color": "#b8bbbe"
     },
     {
       "id": "bronze",
       "name": "Бронза",
-      "material": "metal_painted#5b4632",
+      "material": "door_enamel_whitey#5b4632",
       "color": "#5b4632"
     },
     {
@@ -93,25 +93,25 @@
     {
       "id": "sand",
       "name": "Песочный",
-      "material": "metal_painted#b9ab8e",
+      "material": "door_enamel_whitey#b9ab8e",
       "color": "#b9ab8e"
     },
     {
       "id": "brass",
       "name": "Латунный",
-      "material": "metal_painted#a68a55",
+      "material": "door_enamel_whitey#a68a55",
       "color": "#a68a55"
     },
     {
       "id": "light-grey",
       "name": "Светло-серый",
-      "material": "metal_painted#b4b7b8",
+      "material": "door_enamel_whitey#b4b7b8",
       "color": "#b4b7b8"
     },
     {
       "id": "warm-grey",
       "name": "Тёплый серый",
-      "material": "metal_painted#6e6a63",
+      "material": "door_enamel_whitey#6e6a63",
       "color": "#6e6a63"
     }
   ],

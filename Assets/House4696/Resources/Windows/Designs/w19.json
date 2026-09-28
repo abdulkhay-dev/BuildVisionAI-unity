@@ -9,9 +9,9 @@
       { "split": "y", "at": [1650], "mullion": 20, "cells": [ { "sash": "fixed" }, { "sash": "fixed" } ] } ] },
   "fixings": { "size": 110 },
   "members": [
-    { "path": "M 0 420 L 3000 420", "width": 840, "depth": 40, "z": 300, "material": "metal_painted#7d8286" },
-    { "path": "M 60 0 L 60 3300 M 2940 0 L 2940 3300", "width": 120, "depth": 140, "z": 200, "material": "metal_painted#9a9ea2" },
-    { "path": "M 0 900 L 3000 900 M 0 3240 L 3000 3240", "width": 120, "depth": 140, "z": 200, "material": "metal_painted#9a9ea2" },
-    { "path": "M 170 1010 L 2830 1010 L 2830 3130 L 170 3130 Z", "width": 60, "depth": 70, "z": 230, "material": "metal_painted#9a9ea2" } ],
+    { "path": "M 0 420 L 3000 420", "width": 840, "depth": 40, "z": 300, "material": "door_enamel_whitey#7d8286" },
+    { "path": "M 60 0 L 60 3300 M 2940 0 L 2940 3300", "width": 120, "depth": 140, "z": 200, "material": "door_enamel_whitey#9a9ea2" },
+    { "path": "M 0 900 L 3000 900 M 0 3240 L 3000 3240", "width": 120, "depth": 140, "z": 200, "material": "door_enamel_whitey#9a9ea2" },
+    { "path": "M 170 1010 L 2830 1010 L 2830 3130 L 170 3130 Z", "width": 60, "depth": 70, "z": 230, "material": "door_enamel_whitey#9a9ea2" } ],
   "sill": { "outside": "none", "inside": "none" }
 }

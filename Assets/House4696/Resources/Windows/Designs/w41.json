@@ -6,5 +6,5 @@
   "sash": { "width": 50, "depth": 75, "offset": 6 },
   "layout": { "split": "x", "at": [700, 2650], "mullion": 50,
     "cells": [ { "sash": "tilt-turn", "hinge": "left" }, { "sash": "fixed" }, { "sash": "tilt-turn", "hinge": "right" } ] },
-  "sill": { "outside": "metal", "inside": "board", "overhang": 40, "material": "metal_painted#b8bbbe" }
+  "sill": { "outside": "metal", "inside": "board", "overhang": 40, "material": "door_enamel_whitey#b8bbbe" }
 }

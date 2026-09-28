@@ -5,10 +5,10 @@
   "frame": { "width": 30, "depth": 220, "inset": 0 },
   "layout": { "split": "y", "at": [380], "mullion": 40,
     "cells": [
-      { "panel": "metal_painted#9a9ea3" },
+      { "panel": "door_enamel_whitey#9a9ea3" },
       { "split": "x", "at": [900, 1800, 2700], "mullion": 50,
         "cells": [ { "sash": "fixed" }, { "sash": "fixed" }, { "sash": "fixed" }, { "sash": "fixed" } ] } ] },
   "members": [ { "path": "M 0 0 L 1800 3400 M 1800 0 L 0 3400 M 1800 0 L 3600 3400 M 3600 0 L 1800 3400",
-                 "width": 300, "depth": 280, "material": "metal_painted#eceeed" } ],
+                 "width": 300, "depth": 280, "material": "door_enamel_whitey#eceeed" } ],
   "sill": { "outside": "none", "inside": "none" }
 }
