@@ -1,0 +1,13 @@
+{
+  "id": "w04", "name": "Французское окно",
+  "ref": [1300, 2400],
+  "fixX": [[0, 30], [635, 665], [1270, 1300]], "fixY": [[0, 30], [2370, 2400]],
+  "frame": { "width": 30, "depth": 70, "inset": 120 },
+  "sash": { "width": 50, "depth": 70, "offset": 6 },
+  "layout": { "split": "x", "at": [650], "mullion": 30,
+    "cells": [
+      { "sash": "turn", "hinge": "left", "bars": { "cols": 2, "rows": 5, "width": 20 } },
+      { "sash": "turn", "hinge": "right", "bars": { "cols": 2, "rows": 5, "width": 20 } } ] },
+  "sill": { "outside": "stone", "inside": "none", "overhang": 80, "thickness": 80, "ears": 260 },
+  "surround": { "width": 190, "depth": 50, "material": "sandstone_light", "head": 120 }
+}

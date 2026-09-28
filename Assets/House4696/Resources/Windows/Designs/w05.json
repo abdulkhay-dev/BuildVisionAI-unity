@@ -1,0 +1,14 @@
+{
+  "id": "w05", "name": "Арка прованс",
+  "ref": [1300, 1750],
+  "shape": { "arch": [0, 0, 1300, 1750], "rise": 500 },
+  "fixX": [[0, 30], [640, 660], [1270, 1300]], "fixY": [[0, 30], [1250, 1750]],
+  "frame": { "width": 30, "depth": 70, "inset": 100 },
+  "sash": { "width": 55, "depth": 70, "offset": 6 },
+  "layout": { "split": "x", "at": [650], "mullion": 15,
+    "cells": [
+      { "sash": "turn", "hinge": "left", "bars": { "cols": 2, "rows": 4, "width": 18 } },
+      { "sash": "turn", "hinge": "right", "bars": { "cols": 2, "rows": 4, "width": 18 } } ] },
+  "sill": { "outside": "stone", "inside": "board", "overhang": 70, "thickness": 90, "ears": 260 },
+  "surround": { "width": 220, "depth": 40, "material": "sandstone_light", "head": 0 }
+}

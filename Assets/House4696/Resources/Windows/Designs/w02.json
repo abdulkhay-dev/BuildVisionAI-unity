@@ -1,0 +1,9 @@
+{
+  "id": "w02", "name": "Тёплый сканди",
+  "ref": [2400, 1800],
+  "fixX": [[0, 60], [2340, 2400]], "fixY": [[0, 60], [1740, 1800]],
+  "frame": { "width": 60, "depth": 200, "inset": 30 },
+  "sash": { "width": 60, "depth": 70, "offset": 6 },
+  "layout": { "sash": "fixed" },
+  "sill": { "outside": "metal", "inside": "board", "overhang": 40 }
+}

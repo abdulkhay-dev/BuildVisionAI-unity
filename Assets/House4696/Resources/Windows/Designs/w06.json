@@ -1,0 +1,14 @@
+{
+  "id": "w06", "name": "Английская решётка",
+  "ref": [1800, 1800],
+  "fixX": [[0, 80], [570, 630], [1170, 1230], [1720, 1800]], "fixY": [[0, 80], [1720, 1800]],
+  "frame": { "width": 80, "depth": 80, "inset": 60 },
+  "sash": { "width": 45, "depth": 60, "offset": 6 },
+  "layout": { "split": "x", "at": [600, 1200], "mullion": 60,
+    "cells": [
+      { "sash": "turn", "hinge": "left", "bars": { "rows": 4, "width": 25 } },
+      { "sash": "tilt", "bars": { "rows": 4, "width": 25 } },
+      { "sash": "turn", "hinge": "right", "bars": { "rows": 4, "width": 25 } } ] },
+  "sill": { "outside": "stone", "inside": "board", "overhang": 60, "thickness": 100, "ears": 180 },
+  "surround": { "width": 30, "depth": 20, "material": "frame", "head": 60 }
+}

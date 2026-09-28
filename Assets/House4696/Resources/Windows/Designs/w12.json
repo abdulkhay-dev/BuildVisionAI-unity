@@ -1,0 +1,14 @@
+{
+  "id": "w12", "name": "Раздвижная панорама",
+  "ref": [4800, 2600],
+  "fixX": [[0, 45], [1180, 1220], [2350, 2450], [3580, 3620], [4755, 4800]], "fixY": [[0, 45], [2555, 2600]],
+  "frame": { "width": 45, "depth": 180, "inset": 60 },
+  "sash": { "width": 60, "depth": 60, "offset": 6, "overlap": 30 },
+  "layout": { "split": "x", "at": [1200, 2400, 3600], "mullion": [40, 100, 40],
+    "cells": [
+      { "sash": "slide", "hinge": "right" },
+      { "sash": "fixed" },
+      { "sash": "fixed" },
+      { "sash": "slide", "hinge": "left" } ] },
+  "sill": { "outside": "none", "inside": "none" }
+}

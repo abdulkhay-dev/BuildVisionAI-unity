@@ -1,0 +1,9 @@
+{
+  "id": "w09", "name": "Угловой обзор",
+  "ref": [3200, 2600],
+  "fixX": [[0, 55], [3145, 3200]], "fixY": [[0, 55], [2545, 2600]],
+  "frame": { "width": 55, "depth": 120, "inset": 60 },
+  "sash": { "width": 60, "depth": 70, "offset": 6 },
+  "layout": { "sash": "fixed" },
+  "sill": { "outside": "none", "inside": "none" }
+}

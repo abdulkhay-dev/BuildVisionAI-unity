@@ -1,0 +1,12 @@
+{
+  "id": "w10", "name": "Окно под скатом",
+  "ref": [4000, 2200],
+  "shape": { "path": "M 0 0 L 4000 0 L 4000 1000 L 2000 2200 L 0 1000 Z" },
+  "fixX": [[0, 90], [1175, 1325], [2675, 2825], [3910, 4000]], "fixY": [[0, 90]],
+  "frame": { "width": 90, "depth": 90, "inset": 60 },
+  "sash": { "width": 60, "depth": 70, "offset": 6 },
+  "layout": { "split": "x", "at": [1250, 2750], "mullion": 150,
+    "cells": [ { "sash": "fixed" }, { "sash": "fixed" }, { "sash": "fixed" } ] },
+  "sill": { "outside": "metal", "inside": "board", "overhang": 40 },
+  "surround": { "width": 80, "depth": 30, "material": "frame", "head": 0 }
+}

@@ -80,3 +80,16 @@ A model's `size` and `sillHeight` are the typical opening for the AI placing it;
 - Unity: `House4696.Windows.WindowPreview.RenderDesign(designPath, finish, outPath, view, width, height, sill, open)` —
   views `front` (orthographic from outside), `inside`, `angle`; `open: true` opens the sashes.
 - Reference pictures: `tools/windows/reference/wNN.jpg` (catalogue numbers).
+
+## Known gaps (pilot, windows 1–12)
+
+Things the pictures show that the format cannot say yet; the designs approximate them:
+
+- **Rails of different widths** — a sash has one face width, so the tall bottom rail of French casements (w04) and sash
+  windows is drawn like the other rails; likewise the frame has one width (no thicker bottom track, w09 / w12).
+- **Vertically sliding (hung) sashes** — English sash windows (w06, w08) have no `sash` kind; w08 uses two `tilt` sashes
+  (a sash profile that stays shut), w06 is drawn as a three-light casement.
+- **A fixed pane with a sash profile** — in sliding systems the fixed panels have the same profile as the sliding ones;
+  `fixed` puts the glass straight in the frame, so those panels have a slimmer border (w03, w12).
+- **Surround** — always runs all the way round the outline (also under the sill); no keystone (w05), no plinth blocks.
+- **Glazing bars** — one width per cell; no thicker meeting rail between the bar rows, no sash horns (w06, w08).

@@ -1,0 +1,13 @@
+{
+  "id": "w11", "name": "Горизонтальная лента",
+  "ref": [3000, 700],
+  "fixX": [[0, 40], [975, 1025], [1975, 2025], [2960, 3000]], "fixY": [[0, 40], [660, 700]],
+  "frame": { "width": 40, "depth": 75, "inset": 60 },
+  "sash": { "width": 55, "depth": 75, "offset": 6 },
+  "layout": { "split": "x", "at": [1000, 2000], "mullion": 50,
+    "cells": [
+      { "sash": "tilt-turn", "hinge": "left" },
+      { "sash": "tilt" },
+      { "sash": "tilt-turn", "hinge": "right" } ] },
+  "sill": { "outside": "metal", "inside": "board", "overhang": 50 }
+}

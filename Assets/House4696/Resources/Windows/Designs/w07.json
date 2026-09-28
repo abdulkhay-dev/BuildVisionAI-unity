@@ -1,0 +1,9 @@
+{
+  "id": "w07", "name": "Круглый акцент",
+  "ref": [1000, 1000],
+  "shape": { "ellipse": [500, 500, 500, 500] },
+  "frame": { "width": 80, "depth": 160, "inset": 40 },
+  "sash": { "width": 60, "depth": 70, "offset": 6 },
+  "layout": { "sash": "fixed" },
+  "sill": { "outside": "none", "inside": "none" }
+}

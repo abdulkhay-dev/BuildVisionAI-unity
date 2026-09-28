@@ -1,0 +1,10 @@
+{
+  "id": "w03", "name": "Чёрная панорама",
+  "ref": [4500, 2600],
+  "fixX": [[0, 40], [1485, 1515], [2990, 3010], [4460, 4500]], "fixY": [[0, 40], [2560, 2600]],
+  "frame": { "width": 40, "depth": 160, "inset": 60 },
+  "sash": { "width": 45, "depth": 60, "offset": 6, "overlap": 20 },
+  "layout": { "split": "x", "at": [1500, 3000], "mullion": [30, 0],
+    "cells": [ { "sash": "fixed" }, { "sash": "slide", "hinge": "left" }, { "sash": "slide", "hinge": "left" } ] },
+  "sill": { "outside": "none", "inside": "none" }
+}
