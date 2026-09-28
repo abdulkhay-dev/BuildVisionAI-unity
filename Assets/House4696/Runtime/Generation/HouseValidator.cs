@@ -322,10 +322,18 @@ namespace House4696.Generation
         /// <summary>A catalogue door: model / finish / glass exist, the leaf is sensible, the wall takes the frame.</summary>
         static void DoorIssues(OpeningDef o, WallDef w, string p, System.Action<string, string> E, System.Action<string, string> W)
         {
+            // a window / glazing names a window model (house_windows)
+            if (o.Type == OpeningType.Window || o.Type == OpeningType.Glazing)
+            {
+                var wp = new List<string>();
+                House4696.Windows.WindowCatalog.Resolve(o, wp);
+                foreach (var m in wp) W(p, m);
+                return;
+            }
             var kind = House4696.Doors.DoorSizing.KindOf(o);
             if (!House4696.Doors.DoorSizing.IsDoor(o.Type) && !(o.Type == OpeningType.Hole && kind == House4696.Doors.DoorKind.Portal))
             {
-                W(p, $"model '{o.Model}' задаётся только дверям (type door); у проёма type {o.Type}");
+                W(p, $"model '{o.Model}' задаётся дверям (type door) и окнам (type window); у проёма type {o.Type}");
                 return;
             }
             if (o.Kind != null && kind == House4696.Doors.DoorKind.Swing && o.Kind.Trim().ToLowerInvariant() != "swing")
