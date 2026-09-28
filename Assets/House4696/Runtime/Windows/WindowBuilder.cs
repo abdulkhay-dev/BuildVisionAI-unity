@@ -14,9 +14,12 @@ namespace House4696.Windows
     /// <summary>
     /// Builds a catalogue window in its wall opening. Window space (mm): x from the opening's left edge seen from outside,
     /// y up from the opening's bottom, z into the wall from its structural outer face (the facade's cladding is at z &lt; 0,
-    /// the inside face at z = wall thickness). The frame, mullions and sashes are prisms of 2D regions (Clipper), so any
-    /// outline works: rectangles, arches, circles, gables. A shaped window fills the rest of its rectangular wall hole.
-    /// Turn sashes swing inwards, sliding sashes slide (Door component); fixed glass and tilt sashes stay.
+    /// the inside face at z = wall thickness).
+    /// The frame with its mullions is one region (the outline minus the cells); its faces are flat fills and every edge
+    /// is a profile swept along the contours with mitred corners: rounded outer edges, rebates for the sashes, glazing
+    /// beads with black gaskets round the glass. Sashes are rings built the same way. Glass is a double-glazed unit with
+    /// its spacer bar. Turn sashes (with handles) swing inwards, sliding and hung sashes slide (Door component).
+    /// A shaped window fills the rest of its rectangular wall hole.
     /// </summary>
     public sealed class WindowBuilder
     {
@@ -35,131 +38,208 @@ namespace House4696.Windows
         {
             public WindowNode Node;
             public Rect R;
+            public PathsD C;
+            public string Kind;
         }
+
+        // profile sizes, mm
+        const float EdgeR = 2.5f;      // rounding of outer edges
+        const float BeadW = 14f;       // glazing bead on the inside
+        const float GlassHalf = 12f;   // half the double-glazed unit (24 mm)
+        const float Tuck = 10f;        // glass runs under the frame / sash
+
+        Material _frame, _seal, _spacer, _handle;
+        WindowDesign _d;
+        ResizeMap _mx, _my;
 
         public void Build(WallFrame f, OpeningDef o, ResolvedWindow w, float s0, float s1, float y0, float y1, WallSide wall)
         {
-            var d = w.Design;
+            var d = _d = w.Design;
             float W = (s1 - s0) * 1000f, H = (y1 - y0) * 1000f, T = f.T * 1000f;
-            var mx = new ResizeMap(d.RefW, W, d.FixX);
-            var my = new ResizeMap(d.RefH, H, d.FixY);
+            var mx = _mx = new ResizeMap(d.RefW, W, d.FixX);
+            var my = _my = new ResizeMap(d.RefH, H, d.FixY);
             var toWorld = f.ToWorld * Matrix4x4.Translate(new Vector3(s0, y0, 0f));
             var solid = new MeshBuilder { Transform = toWorld };
             var glass = new MeshBuilder { Transform = toWorld };
             var L = _c.Lib;
-            var frameMat = w.Finish != null ? _c.Mats.Get(w.Finish.Material, L.Frame) : L.Frame;
+            _frame = w.Finish != null ? _c.Mats.Get(w.Finish.Material, L.Frame) : L.Frame;
+            _seal = _c.M.DoorSeal ?? L.Frame;
+            _spacer = _c.M.DoorAluminium ?? L.Frame;
+            _handle = HandleMaterial(w.Finish);
+            float zFace = -wall.CladT * 1000f;
 
             // outline of the frame and its inside
             var outline = d.Shape != null ? Shape2D.Parse(d.Shape) : new List<Poly> { Shape2D.RoundRect(0f, 0f, d.RefW, d.RefH, 0f, 0.5f) };
             Shape2D.Map(outline, mx, my);
             var O = Relief.Union(Rings(outline));
             if (O.Count == 0) O = Relief.Rect(Rect.MinMaxRect(0f, 0f, W, H));
-            float fw = Mathf.Max(10f, d.Frame.Width), fd = Mathf.Max(20f, d.Frame.Depth);
-            var I = Relief.Inflate(O, -fw);
-            float fz0 = Mathf.Clamp(d.Frame.Inset, 0f, Mathf.Max(0f, T - fd)), fz1 = fz0 + fd;
+            float fw = Mathf.Max(0f, d.Frame.Width), fd = Mathf.Max(20f, d.Frame.Depth);
+            var I = fw > 0.5f ? Relief.Inflate(O, -fw) : O;
+            float fz0 = Mathf.Clamp(d.Frame.Inset, zFace, Mathf.Max(zFace, T - fd)), fz1 = fz0 + fd;
 
-            // a shaped window: the wall fills its rectangular hole round the outline
-            // (a millimetre larger than the hole, so an outline touching its edges — a circle — leaves one ring with a hole)
+            // a shaped window: the wall fills its rectangular hole round the outline (a millimetre larger than the hole,
+            // so an outline touching its edges — a circle — leaves one ring with a hole)
             var hole = Relief.Rect(Rect.MinMaxRect(-1f, -1f, W + 1f, H + 1f));
             var infill = Relief.Difference(hole, O);
             if (Relief.Area(infill) > 100f + 2f * (W + H) + 4f)
             {
-                float zc = -wall.CladT * 1000f;
-                Relief.Fill(solid, infill, -zc, -1f, wall.Outside, mm => mm / 1000f);
+                Relief.Fill(solid, infill, -zFace, -1f, wall.Outside, mm => mm / 1000f);
                 Relief.Fill(solid, infill, T, 1f, wall.Inside, mm => mm / 1000f);
-                foreach (var p in O) Walls(solid, p, zc, T, wall.Outside, inward: true);
+                foreach (var p in O) Walls(solid, p, zFace, T, wall.Outside, inward: true);
             }
 
-            // frame ring and mullions
-            Prism(solid, Relief.Difference(O, I), fz0, fz1, frameMat, frameMat, frameMat);
+            // layout → cells (mullions are what the cells leave of the frame's inside)
             var cells = new List<Cell>();
             var bounds = Clipper.GetBounds(I);
-            Walk(d.Layout, Rect.MinMaxRect((float)bounds.left, (float)bounds.top, (float)bounds.right, (float)bounds.bottom), mx, my, I, cells,
-                 band => Prism(solid, band, fz0, fz1, frameMat, frameMat, frameMat));
+            Walk(d.Layout, Rect.MinMaxRect((float)bounds.left, (float)bounds.top, (float)bounds.right, (float)bounds.bottom), cells);
+            foreach (var c in cells)
+            {
+                c.C = Relief.Intersect(Relief.Rect(c.R), I);
+                c.Kind = (c.Node.Sash ?? "fixed").ToLowerInvariant();
+                if (c.Kind == "tilt-turn") c.Kind = "turn";
+            }
+            cells.RemoveAll(c => Relief.Area(c.C) < 100f);
 
-            // cells: fixed glass or sashes
-            int slideIndex = 0;
+            // the frame: faces, the outer edge, and an edge round every cell (a glazing edge for fixed glass / panels,
+            // a plain rebate where a sash sits)
+            var cellsUnion = new PathsD();
+            foreach (var c in cells) cellsUnion.AddRange(c.C);
+            var R = Relief.Difference(O, Relief.Union(cellsUnion));
+            float gzFrame = (fz0 + fz1) * 0.5f;
+            if (R.Count > 0)
+            {
+                var outFace = Relief.Inflate(O, -EdgeR);
+                var inFace = outFace;
+                var outCut = new PathsD();
+                var inCut = new PathsD();
+                foreach (var c in cells)
+                {
+                    bool glazed = Glazed(c.Kind);
+                    outCut.AddRange(Relief.Inflate(c.C, EdgeR));
+                    inCut.AddRange(Relief.Inflate(c.C, glazed ? BeadW : EdgeR));
+                }
+                var edges = Segments(O, cells);
+                FillGrain(solid, Relief.Difference(outFace, Relief.Union(outCut)), -fz0, -1f, _frame, edges);
+                FillGrain(solid, Relief.Difference(inFace, Relief.Union(inCut)), fz1, 1f, _frame, edges);
+                foreach (var p in O) Sweep(solid, Relief.Points(p), OuterEdge(fz0, fz1), _frame);
+                foreach (var c in cells)
+                    foreach (var p in c.C)
+                    {
+                        var pts = Relief.Points(p);
+                        if (Glazed(c.Kind)) Glazing(solid, pts, fz0, fz1, gzFrame);
+                        else Sweep(solid, pts, RebateEdge(fz0, fz1), _frame);
+                    }
+            }
+
+            // cells
+            int track = 0;
             var doors = new List<Door>();
             foreach (var cell in cells)
             {
-                var C = Relief.Intersect(Relief.Rect(cell.R), I);
-                if (Relief.Area(C) < 100f) continue;
-                string kind = (cell.Node.Sash ?? "fixed").ToLowerInvariant();
                 string role = cell.Node.Glass ?? d.Glass;
-                if (kind == "fixed")
+                if (Glazed(cell.Kind))
                 {
-                    float pz = (fz0 + fz1) * 0.5f;
-                    Pane(glass, C, pz, role, cell.Node.Frosted, cell.R);
-                    Bars(solid, C, cell, pz, mx, my, frameMat);
+                    Infill(solid, glass, cell, cell.C, gzFrame, role);
+                    Bars(solid, cell.C, cell, gzFrame);
                     continue;
                 }
-                // a sash: its own frame inside the cell, its glass and bars; it moves as one piece
                 var sashSolid = new MeshBuilder { Transform = toWorld };
                 var sashGlass = new MeshBuilder { Transform = toWorld };
-                var so = C;
-                float track = 0f;
-                if (kind == "slide")
+                var so = cell.C;
+                float offset = 0f;
+                if (cell.Kind == "slide" || cell.Kind == "hung")
                 {
-                    // sliding sashes overlap their neighbours (interlock) and run in alternate tracks
+                    // sliding / hung sashes overlap their neighbours (interlock) and run in alternate tracks
                     var wide = cell.R;
-                    wide.xMin -= d.Sash.Overlap * 0.5f;
-                    wide.xMax += d.Sash.Overlap * 0.5f;
+                    float ov = d.Sash.Overlap * 0.5f;
+                    if (cell.Kind == "slide") { wide.xMin -= ov; wide.xMax += ov; }
+                    else { wide.yMin -= ov; wide.yMax += ov; }
                     so = Relief.Intersect(Relief.Rect(wide), I);
-                    track = (slideIndex++ % 2) * d.Sash.Depth * 0.55f;
+                    offset = (track++ % 2) * d.Sash.Depth * 0.55f;
                 }
-                float sw = Mathf.Max(10f, d.Sash.Width);
-                var si = Relief.Inflate(so, -sw);
-                float sz0 = fz0 + d.Sash.Offset + track, sz1 = sz0 + d.Sash.Depth;
-                Prism(sashSolid, Relief.Difference(so, si), sz0, sz1, frameMat, frameMat, frameMat);
-                float spz = (sz0 + sz1) * 0.5f;
-                Pane(sashGlass, si, spz, role, cell.Node.Frosted, cell.R);
-                Bars(sashSolid, si, cell, spz, mx, my, frameMat);
+                var si = SashInside(so, cell.Node.Rails, d.Sash.Width);
+                float sz0 = fz0 + d.Sash.Offset + offset, sz1 = sz0 + d.Sash.Depth, gz = (sz0 + sz1) * 0.5f;
+                var ring = Relief.Difference(so, si);
+                var sashEdges = Segments(so, null);
+                sashEdges.AddRange(Segments(si, null));
+                FillGrain(sashSolid, Relief.Difference(Relief.Inflate(so, -EdgeR), Relief.Inflate(si, EdgeR)), -sz0, -1f, _frame, sashEdges);
+                FillGrain(sashSolid, Relief.Difference(Relief.Inflate(so, -EdgeR), Relief.Inflate(si, BeadW)), sz1, 1f, _frame, sashEdges);
+                foreach (var p in so) Sweep(sashSolid, Relief.Points(p), OuterEdge(sz0, sz1), _frame);
+                foreach (var p in si) Glazing(sashSolid, Relief.Points(p), sz0, sz1, gz);
+                Infill(sashSolid, sashGlass, cell, si, gz, role);
+                Bars(sashSolid, si, cell, gz);
 
                 var sb = Clipper.GetBounds(so);
-                float x0 = (float)sb.left, x1 = (float)sb.right, yb = (float)sb.top;
+                float x0 = (float)sb.left, x1 = (float)sb.right, yb = (float)sb.top, yt = (float)sb.bottom;
                 string hinge = (cell.Node.Hinge ?? "left").ToLowerInvariant();
+                bool right = hinge.StartsWith("r");
                 Vector3 World(float x, float y, float z) => toWorld.MultiplyPoint3x4(new Vector3(x, y, z) / 1000f);
                 Vector3 inside = toWorld.MultiplyVector(Vector3.forward).normalized;
-                if (kind == "turn" || kind == "tilt-turn")
+                string name = "Window_" + o.Id + "_" + doors.Count;
+                if (cell.Kind == "turn" || cell.Kind == "door")
                 {
-                    // hinge side as seen from outside; the sash swings into the room
-                    float hx = hinge.StartsWith("r") ? x1 : x0;
-                    var at = World(hx, yb, sz1);
-                    var along = (World(hinge.StartsWith("r") ? x0 : x1, yb, sz1) - at).normalized;
-                    var door = Pivot("Window_" + o.Id + "_" + doors.Count, at, sashSolid, sashGlass);
+                    // hinge side as seen from outside; the lever on the inside at the lock side
+                    float lockX = right ? x0 + d.Sash.Width * 0.5f : x1 - d.Sash.Width * 0.5f;
+                    float hy = cell.Kind == "door" ? Mathf.Min(yb + 1000f, yt - 200f) : Mathf.Clamp((yb + yt) * 0.5f, yb + 150f, yt - 150f);
+                    Handle(sashSolid, lockX, hy, sz1, right);
+                    var at = World(right ? x1 : x0, yb, sz1);
+                    var along = (World(right ? x0 : x1, yb, sz1) - at).normalized;
+                    var door = Pivot(name, at, sashSolid, sashGlass);
                     door.OpenAngle = Vector3.Dot(Quaternion.AngleAxis(90f, Vector3.up) * along, inside) > 0f ? 80f : -80f;
                     doors.Add(door);
                 }
-                else if (kind == "slide")
+                else if (cell.Kind == "slide")
                 {
-                    var at = World((x0 + x1) * 0.5f, yb, sz0);
-                    var door = Pivot("Window_" + o.Id + "_" + doors.Count, at, sashSolid, sashGlass);
+                    // a pull on the inside of the leading stile
+                    float px = right ? x0 + d.Sash.Width * 0.5f : x1 - d.Sash.Width * 0.5f;
+                    Pull(sashSolid, px, (yb + yt) * 0.5f, sz1);
+                    var door = Pivot(name, World((x0 + x1) * 0.5f, yb, sz0), sashSolid, sashGlass);
                     door.Motion = DoorMotion.Slide;
                     float dist = (x1 - x0) - d.Sash.Overlap;
-                    door.SlideBy = toWorld.MultiplyVector(new Vector3(hinge.StartsWith("r") ? dist : -dist, 0f, 0f) / 1000f);
+                    door.SlideBy = toWorld.MultiplyVector(new Vector3(right ? dist : -dist, 0f, 0f) / 1000f);
                     doors.Add(door);
                 }
-                else
+                else if (cell.Kind == "hung")
                 {
-                    // tilt (and anything else): part of the fixed frame
-                    Emit("WindowSash_" + o.Id, sashSolid, sashGlass);
+                    // the lower sash of a sash window slides up behind the upper one
+                    bool lower = yb < (float)bounds.top + 1f;
+                    if (lower)
+                    {
+                        var door = Pivot(name, World((x0 + x1) * 0.5f, yb, sz0), sashSolid, sashGlass);
+                        door.Motion = DoorMotion.Slide;
+                        door.SlideBy = toWorld.MultiplyVector(new Vector3(0f, (yt - yb) - d.Sash.Overlap, 0f) / 1000f);
+                        doors.Add(door);
+                    }
+                    else Emit("WindowSash_" + o.Id, sashSolid, sashGlass);
                 }
+                else Emit("WindowSash_" + o.Id, sashSolid, sashGlass);   // tilt: a sash that stays shut
             }
             foreach (var door in doors) if (o.Open == true) door.SetOpen(true, instant: true);
 
-            Sill(solid, d, W, T, fz0, fz1, wall, frameMat);
-            if (d.Surround != null) Surround(solid, d.Surround, O, W, H, wall, frameMat);
+            if (d.Fixings != null) Fixings(solid, cells, zFace, d.Fixings);
+            if (d.Members != null) foreach (var m in d.Members) Member(solid, m, fz0, fz1, zFace);
+            Sill(solid, d, W, T, fz0, fz1, zFace);
+            if (d.Surround != null) Surround(solid, d.Surround, O, W, H, zFace);
+            if (d.Shelf != null) ShelfBoard(solid, d.Shelf, W, zFace);
+            if (d.Awning != null) Awning(solid, d.Awning, W, H, zFace);
             Emit("Window_" + o.Id, solid, glass);
         }
 
+        static bool Glazed(string kind) => kind == "fixed" || kind == "panel";
+
         // ------------------------------------------------------------------ layout
-        void Walk(WindowNode n, Rect r, ResizeMap mx, ResizeMap my, PathsD inside, List<Cell> cells, Action<PathsD> mullion)
+        void Walk(WindowNode n, Rect r, List<Cell> cells)
         {
             if (n == null) { cells.Add(new Cell { Node = new WindowNode(), R = r }); return; }
             bool split = (n.Split == "x" || n.Split == "y") && n.At != null && n.Cells != null && n.Cells.Count == n.At.Length + 1;
-            if (!split) { cells.Add(new Cell { Node = n, R = r }); return; }
+            if (!split)
+            {
+                if (!string.IsNullOrEmpty(n.Panel) && string.IsNullOrEmpty(n.Sash)) n.Sash = "panel";
+                cells.Add(new Cell { Node = n, R = r });
+                return;
+            }
             bool alongX = n.Split == "x";
-            var map = alongX ? mx : my;
+            var map = alongX ? _mx : _my;
             float lo = alongX ? r.xMin : r.yMin;
             for (int i = 0; i <= n.At.Length; i++)
             {
@@ -167,14 +247,7 @@ namespace House4696.Windows
                 float wNext = i < n.At.Length ? MullionWidth(n, i) : 0f;
                 float cellHi = i < n.At.Length ? hi - wNext * 0.5f : hi;
                 var cr = alongX ? Rect.MinMaxRect(lo, r.yMin, cellHi, r.yMax) : Rect.MinMaxRect(r.xMin, lo, r.xMax, cellHi);
-                Walk(n.Cells[i], cr, mx, my, inside, cells, mullion);
-                if (i < n.At.Length && wNext > 0.5f)
-                {
-                    var band = alongX ? Rect.MinMaxRect(hi - wNext * 0.5f, r.yMin - 1f, hi + wNext * 0.5f, r.yMax + 1f)
-                                      : Rect.MinMaxRect(r.xMin - 1f, hi - wNext * 0.5f, r.xMax + 1f, hi + wNext * 0.5f);
-                    var region = Relief.Intersect(Relief.Rect(band), inside);
-                    if (region.Count > 0) mullion(region);
-                }
+                Walk(n.Cells[i], cr, cells);
                 lo = hi + wNext * 0.5f;
             }
         }
@@ -187,11 +260,123 @@ namespace House4696.Windows
             return (float)t;
         }
 
-        // ------------------------------------------------------------------ parts
-        /// <summary>Glass over a region (it runs 8 mm under the frame round it); a frosted band from the cell's bottom when asked.</summary>
+        /// <summary>The glass opening of a sash: the ring's inside, with its own rails where the design gives them.</summary>
+        static PathsD SashInside(PathsD so, RailsSpec rails, float width)
+        {
+            float w = Mathf.Max(10f, width);
+            var si = Relief.Inflate(so, -(rails?.Side ?? w));
+            if (rails == null || (!rails.Top.HasValue && !rails.Bottom.HasValue)) return si;
+            var b = Clipper.GetBounds(so);
+            var r = Rect.MinMaxRect((float)b.left - 1f, (float)b.top + (rails.Bottom ?? w), (float)b.right + 1f, (float)b.bottom - (rails.Top ?? w));
+            return Relief.Intersect(si, Relief.Rect(r));
+        }
+
+        // ------------------------------------------------------------------ profiles (u across the contour, + = its inside; z depth; material on the right)
+        static Vector2[] OuterEdge(float z0, float z1) => new[]
+        {
+            new Vector2(EdgeR, z0), new Vector2(EdgeR * 0.3f, z0 + EdgeR * 0.3f), new Vector2(0f, z0 + EdgeR),
+            new Vector2(0f, z1 - EdgeR), new Vector2(EdgeR * 0.3f, z1 - EdgeR * 0.3f), new Vector2(EdgeR, z1),
+        };
+
+        static Vector2[] RebateEdge(float z0, float z1) => new[]
+        {
+            new Vector2(-EdgeR, z1), new Vector2(0f, z1 - EdgeR), new Vector2(0f, z0 + EdgeR), new Vector2(-EdgeR, z0),
+        };
+
+        /// <summary>The edge round glass: a sloped glazing bead inside, a small lip outside, black gaskets on both sides, the unit's spacer bar.</summary>
+        void Glazing(MeshBuilder mb, List<Vector2> path, float z0, float z1, float gz)
+        {
+            float gi = gz + GlassHalf, go = gz - GlassHalf;
+            Sweep(mb, path, new[]
+            {
+                new Vector2(-BeadW, z1), new Vector2(-BeadW + 1.5f, z1 - 1.5f), new Vector2(-3f, gi + 5f), new Vector2(0f, gi + 2f),
+                new Vector2(0f, z0 + EdgeR), new Vector2(-EdgeR, z0),
+            }, _frame);
+            Sweep(mb, path, new[] { new Vector2(-1f, gi + 2.5f), new Vector2(2f, gi) }, _seal);
+            Sweep(mb, path, new[] { new Vector2(2f, go), new Vector2(-1f, go - 2.5f) }, _seal);
+            Sweep(mb, path, new[] { new Vector2(11f, go + 1f), new Vector2(2f, go + 1f) }, _spacer);
+            Sweep(mb, path, new[] { new Vector2(2f, gi - 1f), new Vector2(11f, gi - 1f) }, _spacer);
+        }
+
+        static void Sweep(MeshBuilder mb, List<Vector2> path, Vector2[] profile, Material m)
+        {
+            if (path == null || path.Count < 3) return;
+            Relief.Sweep(mb, path, true, profile, 0f, 1f, m, 0f, 0, 30f);
+        }
+
+        static Vector2 FaceUv(Vector2 mm) => new Vector2(mm.y, mm.x) / 1000f;
+
+        /// <summary>The straight pieces of a frame's contours (the outline and the cells), for the wood grain of its members.</summary>
+        static List<(Vector2 a, Vector2 b)> Segments(PathsD outline, List<Cell> cells)
+        {
+            var list = new List<(Vector2, Vector2)>();
+            void Add(PathsD paths)
+            {
+                foreach (var p in paths)
+                    for (int i = 0; i < p.Count; i++)
+                    {
+                        var a = new Vector2((float)p[i].x, (float)p[i].y);
+                        var b = new Vector2((float)p[(i + 1) % p.Count].x, (float)p[(i + 1) % p.Count].y);
+                        if ((b - a).sqrMagnitude > 1f) list.Add((a, b));
+                    }
+            }
+            Add(outline);
+            if (cells != null) foreach (var c in cells) Add(c.C);
+            return list;
+        }
+
+        /// <summary>
+        /// A flat face whose texture runs along the member each triangle belongs to (the nearest contour piece): the grain of
+        /// a wooden frame follows its stiles, rails and arches and meets itself at the mitres.
+        /// </summary>
+        static void FillGrain(MeshBuilder mb, PathsD region, float zMm, float face, Material m, List<(Vector2 a, Vector2 b)> edges)
+        {
+            if (m == null || region == null || region.Count == 0) return;
+            if (Clipper.Triangulate(region, 2, out PathsD tris) != TriangulateResult.success || tris == null) return;
+            var n = new Vector3(0f, 0f, face);
+            float z = face * zMm / 1000f;
+            foreach (var t in tris)
+            {
+                if (t.Count < 3) continue;
+                Vector2 a = new Vector2((float)t[0].x, (float)t[0].y), b = new Vector2((float)t[1].x, (float)t[1].y), c = new Vector2((float)t[2].x, (float)t[2].y);
+                var centre = (a + b + c) / 3f;
+                Vector2 dir = Vector2.up;
+                float best = float.MaxValue;
+                foreach (var (p, q) in edges)
+                {
+                    var pq = q - p;
+                    float k = Mathf.Clamp01(Vector2.Dot(centre - p, pq) / pq.sqrMagnitude);
+                    float dist = (p + pq * k - centre).sqrMagnitude;
+                    if (dist < best) { best = dist; dir = pq.normalized; }
+                }
+                var perp = new Vector2(-dir.y, dir.x);
+                Vector2 Uv(Vector2 v) => new Vector2(Vector2.Dot(v, dir), Vector2.Dot(v, perp)) / 1000f;
+                DoorGeo.Tri(mb, new Vector3(a.x, a.y, zMm * face) / 1000f, new Vector3(b.x, b.y, zMm * face) / 1000f, new Vector3(c.x, c.y, zMm * face) / 1000f,
+                    n, n, n, Uv(a), Uv(b), Uv(c), m);
+            }
+        }
+
+        // ------------------------------------------------------------------ glass, panels, bars, blinds
+        void Infill(MeshBuilder solid, MeshBuilder glass, Cell cell, PathsD region, float gz, string role)
+        {
+            if (cell.Kind == "panel" || !string.IsNullOrEmpty(cell.Node.Panel))
+            {
+                string p = cell.Node.Panel ?? "frame";
+                if (p == "frosted") { Pane(glass, region, gz, "frosted", null, cell.R); return; }
+                var m = p == "frame" ? _frame : _c.Mats.Get(p, _frame);
+                var slab = Relief.Inflate(region, Tuck);
+                Relief.Fill(solid, slab, -(gz - GlassHalf), -1f, m, FaceUv);
+                Relief.Fill(solid, slab, gz + GlassHalf, 1f, m, FaceUv);
+                return;
+            }
+            Pane(glass, region, gz, role, cell.Node.Frosted, cell.R);
+            if (cell.Node.Blinds == true) Blinds(solid, region, gz);
+        }
+
+        /// <summary>A double-glazed unit over a region (it runs under the frame round it); a frosted band from the cell's bottom when asked.</summary>
         void Pane(MeshBuilder mb, PathsD region, float z, string role, float? frosted, Rect cell)
         {
-            var pane = Relief.Inflate(region, 8f);
+            var pane = Relief.Inflate(region, Tuck);
             if (frosted.HasValue && frosted.Value > 1f)
             {
                 var band = Relief.Rect(Rect.MinMaxRect(cell.xMin - 20f, cell.yMin - 20f, cell.xMax + 20f, cell.yMin + frosted.Value));
@@ -214,12 +399,12 @@ namespace House4696.Windows
                 case "mirror": outer = M.Mirror; inner = L.GlassInner; break;
                 default: outer = L.Glass; inner = L.GlassInner; break;
             }
-            Relief.Fill(mb, pane, -(z - 2f), -1f, outer, mm => mm / 1000f);
-            Relief.Fill(mb, pane, z + 2f, 1f, inner, mm => mm / 1000f);
+            Relief.Fill(mb, pane, -(z - GlassHalf), -1f, outer, mm => mm / 1000f);
+            Relief.Fill(mb, pane, z + GlassHalf, 1f, inner, mm => mm / 1000f);
         }
 
         /// <summary>Glazing bars across a glass region: at reference positions (their centres move with the size) or a regular grid.</summary>
-        void Bars(MeshBuilder mb, PathsD region, Cell cell, float z, ResizeMap mx, ResizeMap my, Material m)
+        void Bars(MeshBuilder mb, PathsD region, Cell cell, float z)
         {
             var b = cell.Node.Bars;
             if (b == null || region.Count == 0) return;
@@ -227,70 +412,227 @@ namespace House4696.Windows
             float x0 = (float)rb.left, x1 = (float)rb.right, y0 = (float)rb.top, y1 = (float)rb.bottom, w = Mathf.Max(8f, b.Width);
             var xs = new List<float>();
             var ys = new List<float>();
-            if (b.X != null) foreach (var x in b.X) xs.Add(mx.Map(x));
-            if (b.Y != null) foreach (var y in b.Y) ys.Add(my.Map(y));
+            if (b.X != null) foreach (var x in b.X) xs.Add(_mx.Map(x));
+            if (b.Y != null) foreach (var y in b.Y) ys.Add(_my.Map(y));
             if (b.Cols.HasValue) for (int i = 1; i < b.Cols.Value; i++) xs.Add(Mathf.Lerp(x0, x1, i / (float)b.Cols.Value));
             if (b.Rows.HasValue) for (int i = 1; i < b.Rows.Value; i++) ys.Add(Mathf.Lerp(y0, y1, i / (float)b.Rows.Value));
-            float depth = 22f;
-            foreach (var x in xs)
-                Prism(mb, Relief.Intersect(Relief.Rect(Rect.MinMaxRect(x - w * 0.5f, y0 - 1f, x + w * 0.5f, y1 + 1f)), region), z - depth, z + depth, m, m, m);
-            foreach (var y in ys)
-                Prism(mb, Relief.Intersect(Relief.Rect(Rect.MinMaxRect(x0 - 1f, y - w * 0.5f, x1 + 1f, y + w * 0.5f)), region), z - depth, z + depth, m, m, m);
+            // bars on both faces of the unit with a shallow rounded top, a dark spacer bar between the panes
+            float z0 = z - GlassHalf - 9f, z1 = z + GlassHalf + 9f;
+            var bars = new PathsD();
+            foreach (var x in xs) bars.AddRange(Relief.Rect(Rect.MinMaxRect(x - w * 0.5f, y0 - 1f, x + w * 0.5f, y1 + 1f)));
+            foreach (var y in ys) bars.AddRange(Relief.Rect(Rect.MinMaxRect(x0 - 1f, y - w * 0.5f, x1 + 1f, y + w * 0.5f)));
+            var grid = Relief.Intersect(Relief.Union(bars), region);
+            if (grid.Count == 0) return;
+            Relief.Fill(mb, Relief.Inflate(grid, -1.5f), -z0, -1f, _frame, FaceUv);
+            Relief.Fill(mb, Relief.Inflate(grid, -1.5f), z1, 1f, _frame, FaceUv);
+            foreach (var p in grid)
+            {
+                var pts = Relief.Points(p);
+                Sweep(mb, pts, new[] { new Vector2(1.5f, z0), new Vector2(0f, z0 + 1.5f), new Vector2(0f, z - GlassHalf) }, _frame);
+                Sweep(mb, pts, new[] { new Vector2(0f, z + GlassHalf), new Vector2(0f, z1 - 1.5f), new Vector2(1.5f, z1) }, _frame);
+            }
+            Relief.Fill(mb, grid, -(z - GlassHalf + 1f), -1f, _spacer, FaceUv);
+            Relief.Fill(mb, grid, z + GlassHalf - 1f, 1f, _spacer, FaceUv);
+        }
+
+        /// <summary>Venetian blinds between the panes: slats every 25 mm, tilted a little.</summary>
+        void Blinds(MeshBuilder mb, PathsD region, float gz)
+        {
+            var rb = Clipper.GetBounds(region);
+            var m = _c.Mats.Get("door_enamel_whitey#e9e9e6", _frame);
+            for (float y = (float)rb.top + 15f; y < (float)rb.bottom - 5f; y += 25f)
+            {
+                var slat = Relief.Intersect(Relief.Rect(Rect.MinMaxRect((float)rb.left, y, (float)rb.right, y + 1.2f)), region);
+                foreach (var p in slat)
+                {
+                    var b = Clipper.GetBounds(new PathsD { p });
+                    float x0 = (float)b.left + 4f, x1 = (float)b.right - 4f;
+                    if (x1 <= x0) continue;
+                    var n = new Vector3(0f, 0.55f, -0.83f).normalized;
+                    Vector3 A = new Vector3(x0, y, gz - 8f) / 1000f, B = new Vector3(x1, y, gz - 8f) / 1000f, C = new Vector3(x1, y + 10f, gz + 8f) / 1000f, D = new Vector3(x0, y + 10f, gz + 8f) / 1000f;
+                    DoorGeo.Quad(mb, A, B, C, D, n, Vector2.zero, new Vector2(1f, 0f), Vector2.one, new Vector2(0f, 1f), m);
+                    DoorGeo.Quad(mb, D, C, B, A, -n, Vector2.zero, new Vector2(1f, 0f), Vector2.one, new Vector2(0f, 1f), m);
+                }
+            }
+        }
+
+        // ------------------------------------------------------------------ hardware
+        Material HandleMaterial(WindowFinish finish)
+        {
+            if (finish != null && ColorUtility.TryParseHtmlString(finish.Color ?? "", out var c) && c.grayscale > 0.72f)
+                return _c.Mats.Get("door_enamel_whitey#f4f4f2", _c.M.Chrome);
+            return _c.M.DoorAluminium ?? _c.M.Chrome;
+        }
+
+        /// <summary>A window handle on the inside face of a sash: a rounded base plate and a lever pointing down.</summary>
+        void Handle(MeshBuilder mb, float x, float y, float zIn, bool hingeRight)
+        {
+            if (_handle == null) return;
+            float z = zIn;
+            mb.RoundBox(new Vector3(x - 15f, y - 40f, z) / 1000f, new Vector3(x + 15f, y + 40f, z + 11f) / 1000f, 0.006f, _handle, 2);
+            mb.Rod(new Vector3(x, y, z + 11f) / 1000f, new Vector3(x, y, z + 26f) / 1000f, 0.0075f, _handle, 12);
+            mb.RoundBox(new Vector3(x - 9f, y - 105f, z + 20f) / 1000f, new Vector3(x + 9f, y + 8f, z + 32f) / 1000f, 0.005f, _handle, 2);
+        }
+
+        /// <summary>A vertical pull on the inside of a sliding sash.</summary>
+        void Pull(MeshBuilder mb, float x, float y, float zIn)
+        {
+            if (_handle == null) return;
+            mb.RoundBox(new Vector3(x - 12f, y - 160f, zIn) / 1000f, new Vector3(x + 12f, y + 160f, zIn + 26f) / 1000f, 0.008f, _handle, 2);
+        }
+
+        /// <summary>Stainless spider fittings at the cell corners of frameless glass (outside).</summary>
+        void Fixings(MeshBuilder mb, List<Cell> cells, float zFace, FixingsSpec s)
+        {
+            var m = _c.M.Chrome;
+            var pts = new HashSet<Vector2Int>();
+            foreach (var c in cells)
+            {
+                var b = Clipper.GetBounds(c.C);
+                foreach (var p in new[] { new Vector2((float)b.left, (float)b.top), new Vector2((float)b.right, (float)b.top),
+                                          new Vector2((float)b.left, (float)b.bottom), new Vector2((float)b.right, (float)b.bottom) })
+                    pts.Add(new Vector2Int(Mathf.RoundToInt(p.x / 20f), Mathf.RoundToInt(p.y / 20f)));
+            }
+            float z = Mathf.Min(zFace, _d.Frame.Inset) - 30f;
+            foreach (var k in pts)
+            {
+                var c = new Vector3(k.x * 20f, k.y * 20f, z);
+                mb.Sphere(c / 1000f, 0.018f, m, 14, 8);
+                foreach (var dir in new[] { new Vector3(1, 1, 0), new Vector3(-1, 1, 0), new Vector3(1, -1, 0), new Vector3(-1, -1, 0) })
+                    mb.Rod(c / 1000f, (c + dir.normalized * s.Size * 0.6f) / 1000f, 0.007f, m, 8);
+                mb.Rod(c / 1000f, (c + new Vector3(0f, 0f, 60f)) / 1000f, 0.012f, m, 10);
+            }
+        }
+
+        // ------------------------------------------------------------------ members, sills, surround, shelf, awning
+        /// <summary>A member swept along a path: bars on the glass, diagrid, outside fins and louvres (repeated by stepX / stepY).</summary>
+        void Member(MeshBuilder mb, MemberSpec s, float fz0, float fz1, float zFace)
+        {
+            if (string.IsNullOrEmpty(s.Path)) return;
+            var polys = Shape2D.Parse(new JObject { ["path"] = s.Path });
+            Shape2D.Map(polys, _mx, _my);
+            var m = s.Material == null || s.Material == "frame" ? _frame : _c.Mats.Get(s.Material, _frame);
+            float z0 = s.Z.HasValue ? zFace + s.Z.Value : (fz0 + fz1) * 0.5f - s.Depth * 0.5f, z1 = z0 + s.Depth, hw = s.Width * 0.5f;
+            var profile = new[] { new Vector2(-hw, z0), new Vector2(-hw, z1), new Vector2(hw, z1), new Vector2(hw, z0), new Vector2(-hw, z0) };
+            for (int k = 0; k < Mathf.Max(1, s.Count); k++)
+                foreach (var p in polys)
+                {
+                    var pts = new List<Vector2>();
+                    foreach (var v in p.P) pts.Add(v + new Vector2(s.StepX * k, s.StepY * k));
+                    if (pts.Count < 2) continue;
+                    Relief.Sweep(mb, pts, p.Closed, profile, 0f, 1f, m, 0f, p.Closed ? 0 : 1, 30f);
+                }
         }
 
         /// <summary>Outside: a metal drip or a stone sill under the frame; inside: a window board.</summary>
-        void Sill(MeshBuilder mb, WindowDesign d, float W, float T, float fz0, float fz1, WallSide wall, Material frame)
+        void Sill(MeshBuilder mb, WindowDesign d, float W, float T, float fz0, float fz1, float face)
         {
             var s = d.Sill ?? new SillSpec();
-            float face = -wall.CladT * 1000f;
             string outside = (s.Outside ?? "metal").ToLowerInvariant();
             if (outside == "metal")
             {
-                var m = s.Material != null ? _c.Mats.Get(s.Material, _c.Lib.Coping) : _c.Lib.Coping;
+                var m = s.Material != null ? _c.Mats.Get(s.Material, _c.Lib.Coping) : _frame;
                 Box(mb, 0f, W, 2f, 5f, face - s.Overhang, fz0, m);
                 Box(mb, 0f, W, -28f, 5f, face - s.Overhang - 2f, face - s.Overhang, m);
             }
             else if (outside == "stone")
             {
                 var m = _c.Mats.Get(s.Material ?? "door_enamel_whitey#e4d9c2", _c.Lib.Stone);
-                Box(mb, -s.Ears, W + s.Ears, 5f - s.Thickness, 5f, face - s.Overhang, fz0, m);
+                // a sloped top that drips away from the wall, a drip groove under the nose
+                float y0 = 5f - s.Thickness, zOut = face - s.Overhang;
+                mb.RoundBox(new Vector3(-s.Ears, y0, zOut) / 1000f, new Vector3(W + s.Ears, 5f, fz0) / 1000f, 0.004f, m, 2);
             }
             if ((s.Inside ?? "board").ToLowerInvariant() == "board")
             {
-                var m = s.InsideMaterial != null ? _c.Mats.Get(s.InsideMaterial, frame) : _c.Mats.Get("door_enamel_whitey#f4f3ef", frame);
-                Box(mb, -s.InsideOverhang, W + s.InsideOverhang, 0f, 20f, fz1, T + s.InsideOverhang, m);
+                var m = s.InsideMaterial != null ? _c.Mats.Get(s.InsideMaterial, _frame) : _c.Mats.Get("door_enamel_whitey#f4f3ef", _frame);
+                mb.RoundBox(new Vector3(-s.InsideOverhang, -2f, fz1 - 20f) / 1000f, new Vector3(W + s.InsideOverhang, 20f, T + s.InsideOverhang) / 1000f, 0.004f, m, 2);
             }
         }
 
-        /// <summary>A band round the window on the facade (stone architrave, wooden portal), following its outline.</summary>
-        void Surround(MeshBuilder mb, SurroundSpec s, PathsD outline, float W, float H, WallSide wall, Material frame)
+        /// <summary>A band round the window on the facade (stone architrave, wooden portal), following its outline; a keystone on top.</summary>
+        void Surround(MeshBuilder mb, SurroundSpec s, PathsD outline, float W, float H, float face)
         {
-            var m = string.Equals(s.Material, "frame", StringComparison.OrdinalIgnoreCase) ? frame : _c.Mats.Get(s.Material, _c.Lib.Stone);
+            var m = string.Equals(s.Material, "frame", StringComparison.OrdinalIgnoreCase) ? _frame : _c.Mats.Get(s.Material, _c.Lib.Stone);
             var outer = Relief.Inflate(outline, s.Width);
+            var hb = Clipper.GetBounds(outer);
             if (s.Head > 0.5f)
-            {
-                var hb = Clipper.GetBounds(outer);
                 outer = Relief.Union(new PathsD(outer) { Relief.Rect(Rect.MinMaxRect((float)hb.left - 15f, H, (float)hb.right + 15f, (float)hb.bottom + s.Head))[0] });
-            }
             var ring = Relief.Difference(outer, outline);
-            float face = -wall.CladT * 1000f;
-            Prism(mb, ring, face - s.Depth, face + 5f, m, m, m);
+            if (!s.Bottom) ring = Relief.Difference(ring, Relief.Rect(Rect.MinMaxRect((float)hb.left - 100f, (float)hb.top - 100f, (float)hb.right + 100f, 0f)));
+            float z0 = face - s.Depth, z1 = face + 5f;
+            Relief.Fill(mb, Relief.Inflate(ring, -3f), -z0, -1f, m, mm => mm / 1000f);
+            foreach (var p in ring)
+                Relief.Sweep(mb, Relief.Points(p), true, new[] { new Vector2(3f, z0), new Vector2(0.8f, z0 + 0.8f), new Vector2(0f, z0 + 3f), new Vector2(0f, z1) }, 0f, 1f, m, 0f, 0, 30f);
+            if (s.Keystone != null)
+            {
+                var k = s.Keystone;
+                float top = (float)Clipper.GetBounds(outline).bottom, cx = W * 0.5f;
+                var key = Relief.Path(new List<Vector2>
+                {
+                    new Vector2(cx - k.Width * 0.4f, top - k.Height * 0.25f), new Vector2(cx + k.Width * 0.4f, top - k.Height * 0.25f),
+                    new Vector2(cx + k.Width * 0.5f, top + k.Height * 0.75f), new Vector2(cx - k.Width * 0.5f, top + k.Height * 0.75f),
+                });
+                var kp = new PathsD { key };
+                float kz0 = z0 - k.Proud;
+                Relief.Fill(mb, kp, -kz0, -1f, m, mm => mm / 1000f);
+                Relief.Sweep(mb, Relief.Points(key), true, new[] { new Vector2(0f, kz0), new Vector2(0f, z1) }, 0f, 1f, m, 0f, 0, 30f);
+            }
+        }
+
+        /// <summary>A board outside under the window (a serving hatch's counter) on two black brackets.</summary>
+        void ShelfBoard(MeshBuilder mb, ShelfSpec s, float W, float face)
+        {
+            var m = _c.Mats.Get(s.Material, _frame);
+            float y1 = s.Y, y0 = y1 - s.Thickness, z0 = face - s.Depth;
+            mb.RoundBox(new Vector3(-s.Ears, y0, z0) / 1000f, new Vector3(W + s.Ears, y1, face + 20f) / 1000f, 0.004f, m, 2);
+            if (!s.Brackets) return;
+            var b = _c.Lib.Coping;
+            foreach (float x in new[] { W * 0.15f, W * 0.85f })
+            {
+                Box(mb, x - 8f, x + 8f, y0 - s.Depth * 0.6f, y0, face - 12f, face, b);
+                mb.Rod(new Vector3(x, y0 - s.Depth * 0.55f, face - 6f) / 1000f, new Vector3(x, y0 - 4f, z0 + 40f) / 1000f, 0.007f, b, 8);
+            }
+        }
+
+        /// <summary>A striped fabric awning over the window: a sloped canopy from the wall and a valance hanging from its front.</summary>
+        void Awning(MeshBuilder mb, AwningSpec s, float W, float H, float face)
+        {
+            var colors = s.Colors != null && s.Colors.Length > 0 ? s.Colors : new[] { "#efe9dc" };
+            float x0 = -s.Ears, x1 = W + s.Ears, yWall = H + s.Height, yFront = yWall - s.Drop, zWall = face - 5f, zFront = face - s.Depth;
+            var up = new Vector3(0f, s.Depth, -s.Drop).normalized;
+            var n = Vector3.Cross(Vector3.right, up).normalized;
+            if (n.y < 0f) n = -n;
+            int k = 0;
+            for (float x = x0; x < x1 - 1f; x += s.Stripe, k++)
+            {
+                float xa = x, xb = Mathf.Min(x1, x + s.Stripe);
+                var m = _c.Mats.Get("linen_rough" + colors[k % colors.Length], _frame);
+                Vector3 A = new Vector3(xa, yWall, zWall) / 1000f, B = new Vector3(xb, yWall, zWall) / 1000f;
+                Vector3 C = new Vector3(xb, yFront, zFront) / 1000f, D = new Vector3(xa, yFront, zFront) / 1000f;
+                DoorGeo.Quad(mb, A, B, C, D, n, new Vector2(xa, 0f) / 1000f, new Vector2(xb, 0f) / 1000f, new Vector2(xb, 1f), new Vector2(xa, 1f), m);
+                DoorGeo.Quad(mb, D, C, B, A, -n, new Vector2(xa, 0f) / 1000f, new Vector2(xb, 0f) / 1000f, new Vector2(xb, 1f), new Vector2(xa, 1f), m);
+                // the valance: a scalloped strip hanging from the front edge
+                float mid = (xa + xb) * 0.5f;
+                Vector3 V0 = new Vector3(xa, yFront, zFront) / 1000f, V1 = new Vector3(xb, yFront, zFront) / 1000f;
+                Vector3 V2 = new Vector3(xb, yFront - s.Valance * 0.7f, zFront) / 1000f, V3 = new Vector3(mid, yFront - s.Valance, zFront) / 1000f,
+                        V4 = new Vector3(xa, yFront - s.Valance * 0.7f, zFront) / 1000f;
+                foreach (var dir in new[] { -1f, 1f })
+                {
+                    var nn = new Vector3(0f, 0f, dir);
+                    DoorGeo.Quad(mb, V0, V1, V2, V4, nn, Vector2.zero, Vector2.right, Vector2.one, Vector2.up, m);
+                    DoorGeo.Tri(mb, V4, V2, V3, nn, nn, nn, Vector2.zero, Vector2.right, Vector2.one, m);
+                }
+            }
+            // the frame's arms
+            var arm = _c.Lib.Coping;
+            foreach (float x in new[] { x0 + 30f, x1 - 30f })
+                mb.Rod(new Vector3(x, yWall - s.Drop * 2.2f, face) / 1000f, new Vector3(x, yFront, zFront + 20f) / 1000f, 0.01f, arm, 8);
         }
 
         // ------------------------------------------------------------------ geometry
-        /// <summary>A prism of a 2D region between depths z0 (outside face, normal −z) and z1 (inside face, normal +z), with its side walls.</summary>
-        static void Prism(MeshBuilder mb, PathsD region, float z0, float z1, Material outside, Material inside, Material side)
-        {
-            if (region == null || region.Count == 0) return;
-            Relief.Fill(mb, region, -z0, -1f, outside, mm => new Vector2(mm.y, mm.x) / 1000f);
-            Relief.Fill(mb, region, z1, 1f, inside, mm => new Vector2(mm.y, mm.x) / 1000f);
-            foreach (var p in region) Walls(mb, p, z0, z1, side, inward: false);
-        }
-
         /// <summary>
-        /// Side walls along a contour between z0 and z1. Clipper keeps the region on the left of every contour (outer rings
-        /// counter-clockwise, holes clockwise), so the outward normal is the right-hand one; <paramref name="inward"/> flips it.
-        /// Normals are smoothed across gentle bends (arches, circles) and kept sharp at corners.
+        /// Side walls along a contour between z0 and z1. Clipper keeps the region on the left of every contour, so the
+        /// outward normal is the right-hand one; <paramref name="inward"/> flips it. Smooth across gentle bends.
         /// </summary>
         static void Walls(MeshBuilder mb, PathD p, float z0, float z1, Material m, bool inward)
         {
@@ -304,7 +646,7 @@ namespace House4696.Windows
                 Vector2 a = pts[i], b = pts[(i + 1) % n], t = (b - a).normalized;
                 return new Vector2(t.y, -t.x) * sign;
             }
-            const float cosSmooth = 0.94f;   // ~20°
+            const float cosSmooth = 0.94f;
             float along = 0f;
             for (int i = 0; i < n; i++)
             {

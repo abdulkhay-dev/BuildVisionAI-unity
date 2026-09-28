@@ -89,6 +89,30 @@
       "name": "Мятный",
       "material": "door_enamel_whitey#9fc4b0",
       "color": "#9fc4b0"
+    },
+    {
+      "id": "sand",
+      "name": "Песочный",
+      "material": "metal_painted#b9ab8e",
+      "color": "#b9ab8e"
+    },
+    {
+      "id": "brass",
+      "name": "Латунный",
+      "material": "metal_painted#a68a55",
+      "color": "#a68a55"
+    },
+    {
+      "id": "light-grey",
+      "name": "Светло-серый",
+      "material": "metal_painted#b4b7b8",
+      "color": "#b4b7b8"
+    },
+    {
+      "id": "warm-grey",
+      "name": "Тёплый серый",
+      "material": "metal_painted#6e6a63",
+      "color": "#6e6a63"
     }
   ],
   "models": [
@@ -283,6 +307,582 @@
       ],
       "sillHeight": 0.0,
       "photo": "w12.jpg"
+    },
+    {
+      "id": "w13",
+      "number": 13,
+      "name": "Строгая модульная сетка",
+      "section": "tower",
+      "style": "Деловой",
+      "note": "Повторяющиеся прямоугольные фасадные модули. Офисная башня. Серебристый алюминий.",
+      "design": "w13",
+      "finish": "silver",
+      "size": [
+        1.5,
+        1.6
+      ],
+      "sillHeight": 0.8,
+      "photo": "w13.jpg"
+    },
+    {
+      "id": "w14",
+      "number": 14,
+      "name": "Вертикальный ритм",
+      "section": "tower",
+      "style": "Современный",
+      "note": "Узкие высокие секции подчёркивают высоту. Высотный деловой центр. Графит.",
+      "design": "w14",
+      "finish": "graphite",
+      "size": [
+        1.2,
+        3.2
+      ],
+      "sillHeight": 0.0,
+      "photo": "w14.jpg"
+    },
+    {
+      "id": "w15",
+      "number": 15,
+      "name": "Горизонтальные пояса",
+      "section": "tower",
+      "style": "Модернизм",
+      "note": "Ленты стекла чередуются с глухими поясами. Многоэтажный офис. Серый алюминий.",
+      "design": "w15",
+      "finish": "grey",
+      "size": [
+        3.6,
+        1.6
+      ],
+      "sillHeight": 0.9,
+      "photo": "w15.jpg"
+    },
+    {
+      "id": "w16",
+      "number": 16,
+      "name": "Структурная гладь",
+      "section": "tower",
+      "style": "Хай-тек",
+      "note": "Визуально цельная плоскость с тонкими швами. Представительская башня.",
+      "design": "w16",
+      "finish": "black",
+      "size": [
+        3.0,
+        3.2
+      ],
+      "sillHeight": 0.0,
+      "photo": "w16.jpg"
+    },
+    {
+      "id": "w17",
+      "number": 17,
+      "name": "Бронзовый фасад",
+      "section": "tower",
+      "style": "Современная классика",
+      "note": "Тёплые металлические линии на светлом стекле. Гостиничная башня.",
+      "design": "w17",
+      "finish": "bronze",
+      "size": [
+        2.4,
+        3.0
+      ],
+      "sillHeight": 0.0,
+      "photo": "w17.jpg"
+    },
+    {
+      "id": "w18",
+      "number": 18,
+      "name": "Наружные ламели",
+      "section": "tower",
+      "style": "Биоклиматический образ",
+      "note": "Вертикальные рёбра создают глубину и тень. Офисный небоскрёб. Песочный алюминий.",
+      "design": "w18",
+      "finish": "sand",
+      "size": [
+        2.4,
+        3.2
+      ],
+      "sillHeight": 0.0,
+      "photo": "w18.jpg"
+    },
+    {
+      "id": "w19",
+      "number": 19,
+      "name": "Двойной контур",
+      "section": "tower",
+      "style": "Технологичный",
+      "note": "Внешний экран показан перед основной сеткой. Деловой комплекс. Серебристый.",
+      "design": "w19",
+      "finish": "silver",
+      "size": [
+        3.0,
+        3.2
+      ],
+      "sillHeight": 0.0,
+      "photo": "w19.jpg"
+    },
+    {
+      "id": "w20",
+      "number": 20,
+      "name": "Угловой модуль",
+      "section": "tower",
+      "style": "Панорамный",
+      "note": "Остекление двух фасадов объединено по высоте. Угловая зона. Антрацит.",
+      "design": "w20",
+      "finish": "anthracite",
+      "size": [
+        3.2,
+        3.0
+      ],
+      "sillHeight": 0.0,
+      "photo": "w20.jpg"
+    },
+    {
+      "id": "w21",
+      "number": 21,
+      "name": "Шахматная композиция",
+      "section": "tower",
+      "style": "Динамичный",
+      "note": "Стеклянные и непрозрачные ячейки чередуются. Жилая башня. Графит.",
+      "design": "w21",
+      "finish": "graphite",
+      "size": [
+        2.4,
+        3.0
+      ],
+      "sillHeight": 0.0,
+      "photo": "w21.jpg"
+    },
+    {
+      "id": "w22",
+      "number": 22,
+      "name": "Диагональный рисунок",
+      "section": "tower",
+      "style": "Футуристический",
+      "note": "Диагональная графика поверх модульного стекла. Знаковая башня. Белый профиль.",
+      "design": "w22",
+      "finish": "white-alu",
+      "size": [
+        3.6,
+        3.4
+      ],
+      "sillHeight": 0.0,
+      "photo": "w22.jpg"
+    },
+    {
+      "id": "w23",
+      "number": 23,
+      "name": "Ступенчатый ритм",
+      "section": "tower",
+      "style": "Авангардный",
+      "note": "Смещённые вертикальные деления оживляют фасад. Тёмно-серый.",
+      "design": "w23",
+      "finish": "anthracite",
+      "size": [
+        2.8,
+        3.0
+      ],
+      "sillHeight": 0.0,
+      "photo": "w23.jpg"
+    },
+    {
+      "id": "w24",
+      "number": 24,
+      "name": "Светлые каменные порталы",
+      "section": "tower",
+      "style": "Неоклассический",
+      "note": "Глубокие светлые порталы вокруг парных окон. Высотная гостиница.",
+      "design": "w24",
+      "finish": "bronze",
+      "size": [
+        1.5,
+        2.8
+      ],
+      "sillHeight": 0.3,
+      "photo": "w24.jpg"
+    },
+    {
+      "id": "w25",
+      "number": 25,
+      "name": "Открытая витрина",
+      "section": "shop",
+      "style": "Минимализм",
+      "note": "Крупное стекло оставляет товары в центре внимания. Чёрный алюминий.",
+      "design": "w25",
+      "finish": "black",
+      "size": [
+        4.0,
+        2.6
+      ],
+      "sillHeight": 0.4,
+      "photo": "w25.jpg"
+    },
+    {
+      "id": "w26",
+      "number": 26,
+      "name": "Витрина с фрамугой",
+      "section": "shop",
+      "style": "Городской",
+      "note": "Верхняя полоса объединяет основные секции. Серый алюминий.",
+      "design": "w26",
+      "finish": "grey",
+      "size": [
+        4.0,
+        2.8
+      ],
+      "sillHeight": 0.4,
+      "photo": "w26.jpg"
+    },
+    {
+      "id": "w27",
+      "number": 27,
+      "name": "Чёрный лофт",
+      "section": "shop",
+      "style": "Индустриальный",
+      "note": "Тонкая тёмная сетка задаёт промышленный характер. Шоурум.",
+      "design": "w27",
+      "finish": "black",
+      "size": [
+        4.2,
+        3.0
+      ],
+      "sillHeight": 0.4,
+      "photo": "w27.jpg"
+    },
+    {
+      "id": "w28",
+      "number": 28,
+      "name": "Арочная витрина",
+      "section": "shop",
+      "style": "Исторический",
+      "note": "Высокая арка и тёплая рама создают камерный образ. Бронза.",
+      "design": "w28",
+      "finish": "bronze",
+      "size": [
+        3.0,
+        3.2
+      ],
+      "sillHeight": 0.4,
+      "photo": "w28.jpg"
+    },
+    {
+      "id": "w29",
+      "number": 29,
+      "name": "Угловая витрина",
+      "section": "shop",
+      "style": "Современный",
+      "note": "Экспозиция разворачивается на две стороны. Графит.",
+      "design": "w29",
+      "finish": "graphite",
+      "size": [
+        4.0,
+        3.0
+      ],
+      "sillHeight": 0.3,
+      "photo": "w29.jpg"
+    },
+    {
+      "id": "w30",
+      "number": 30,
+      "name": "Ретро с цоколем",
+      "section": "shop",
+      "style": "Винтажный",
+      "note": "Низкая декоративная панель под стеклом, дверь по центру. Шалфейная окраска.",
+      "design": "w30",
+      "finish": "sage",
+      "size": [
+        4.2,
+        3.0
+      ],
+      "sillHeight": 0.0,
+      "photo": "w30.jpg"
+    },
+    {
+      "id": "w31",
+      "number": 31,
+      "name": "Портал из дерева",
+      "section": "shop",
+      "style": "Натуральный",
+      "note": "Массивное тёплое обрамление и простые деления. Дуб.",
+      "design": "w31",
+      "finish": "natural-oak",
+      "size": [
+        3.6,
+        2.4
+      ],
+      "sillHeight": 0.5,
+      "photo": "w31.jpg"
+    },
+    {
+      "id": "w32",
+      "number": 32,
+      "name": "Витрина с маркизой",
+      "section": "shop",
+      "style": "Средиземноморский",
+      "note": "Текстильный навес завершает композицию, дверь сбоку. Кремовая рама.",
+      "design": "w32",
+      "finish": "ivory",
+      "size": [
+        4.4,
+        3.0
+      ],
+      "sillHeight": 0.0,
+      "photo": "w32.jpg"
+    },
+    {
+      "id": "w33",
+      "number": 33,
+      "name": "Геометрия ар-деко",
+      "section": "shop",
+      "style": "Ар-деко",
+      "note": "Ступенчатая декоративная графика на стекле. Латунный оттенок.",
+      "design": "w33",
+      "finish": "brass",
+      "size": [
+        3.6,
+        3.0
+      ],
+      "sillHeight": 0.5,
+      "photo": "w33.jpg"
+    },
+    {
+      "id": "w34",
+      "number": 34,
+      "name": "Витрина с матовым низом",
+      "section": "shop",
+      "style": "Сдержанный",
+      "note": "Нижняя полоса скрывает часть обстановки, дверь справа. Серый алюминий.",
+      "design": "w34",
+      "finish": "grey",
+      "size": [
+        4.2,
+        3.0
+      ],
+      "sillHeight": 0.0,
+      "photo": "w34.jpg"
+    },
+    {
+      "id": "w35",
+      "number": 35,
+      "name": "Три выставочных окна",
+      "section": "shop",
+      "style": "Галерейный",
+      "note": "Три отдельных проёма для разных экспозиций. Белый окрашенный профиль.",
+      "design": "w35",
+      "finish": "white-alu",
+      "size": [
+        1.2,
+        2.6
+      ],
+      "sillHeight": 0.3,
+      "photo": "w35.jpg"
+    },
+    {
+      "id": "w36",
+      "number": 36,
+      "name": "Окно выдачи",
+      "section": "shop",
+      "style": "Практичный",
+      "note": "Компактный проём с нижней полкой и боковой секцией. Антрацит.",
+      "design": "w36",
+      "finish": "anthracite",
+      "size": [
+        2.2,
+        1.3
+      ],
+      "sillHeight": 0.9,
+      "photo": "w36.jpg"
+    },
+    {
+      "id": "w37",
+      "number": 37,
+      "name": "Спокойная симметрия",
+      "section": "clinic",
+      "style": "Нейтральный",
+      "note": "Две равные секции в светлой раме. Палата.",
+      "design": "w37",
+      "finish": "white-alu",
+      "size": [
+        1.8,
+        1.5
+      ],
+      "sillHeight": 0.9,
+      "photo": "w37.jpg"
+    },
+    {
+      "id": "w38",
+      "number": 38,
+      "name": "Верхняя световая полоса",
+      "section": "clinic",
+      "style": "Современный",
+      "note": "Основное стекло дополнено узкой верхней фрамугой. Кабинет.",
+      "design": "w38",
+      "finish": "white-alu",
+      "size": [
+        2.4,
+        1.9
+      ],
+      "sillHeight": 0.8,
+      "photo": "w38.jpg"
+    },
+    {
+      "id": "w39",
+      "number": 39,
+      "name": "Приватный нижний пояс",
+      "section": "clinic",
+      "style": "Деликатный",
+      "note": "Матовое оформление нижней части остекления. Смотровой кабинет. Светло-серый.",
+      "design": "w39",
+      "finish": "light-grey",
+      "size": [
+        2.8,
+        1.8
+      ],
+      "sillHeight": 0.7,
+      "photo": "w39.jpg"
+    },
+    {
+      "id": "w40",
+      "number": 40,
+      "name": "Высокая световая лента",
+      "section": "clinic",
+      "style": "Минимализм",
+      "note": "Проём расположен высоко на стене. Вспомогательная зона.",
+      "design": "w40",
+      "finish": "white-alu",
+      "size": [
+        3.6,
+        0.7
+      ],
+      "sillHeight": 1.8,
+      "photo": "w40.jpg"
+    },
+    {
+      "id": "w41",
+      "number": 41,
+      "name": "Трёхчастный обзор",
+      "section": "clinic",
+      "style": "Современный",
+      "note": "Широкая центральная секция и узкие боковые. Зал ожидания. Серебристый.",
+      "design": "w41",
+      "finish": "silver",
+      "size": [
+        3.4,
+        2.0
+      ],
+      "sillHeight": 0.6,
+      "photo": "w41.jpg"
+    },
+    {
+      "id": "w42",
+      "number": 42,
+      "name": "Лента коридора",
+      "section": "clinic",
+      "style": "Функциональный",
+      "note": "Повторяющиеся окна образуют непрерывный ритм. Светло-серый.",
+      "design": "w42",
+      "finish": "light-grey",
+      "size": [
+        6.0,
+        1.4
+      ],
+      "sillHeight": 0.9,
+      "photo": "w42.jpg"
+    },
+    {
+      "id": "w43",
+      "number": 43,
+      "name": "Окно с внутренними жалюзи",
+      "section": "clinic",
+      "style": "Технологичный образ",
+      "note": "Горизонтальные линии жалюзи видны за стеклом. Кабинет.",
+      "design": "w43",
+      "finish": "white-alu",
+      "size": [
+        2.4,
+        1.6
+      ],
+      "sillHeight": 0.8,
+      "photo": "w43.jpg"
+    },
+    {
+      "id": "w44",
+      "number": 44,
+      "name": "Мягкий цветной акцент",
+      "section": "clinic",
+      "style": "Доброжелательный",
+      "note": "Пастельное обрамление добавляет цвет фасаду. Детское отделение. Мятный.",
+      "design": "w44",
+      "finish": "mint",
+      "size": [
+        2.6,
+        1.6
+      ],
+      "sillHeight": 0.8,
+      "photo": "w44.jpg"
+    },
+    {
+      "id": "w45",
+      "number": 45,
+      "name": "Угловая зона ожидания",
+      "section": "clinic",
+      "style": "Панорамный",
+      "note": "Остеклённый угол визуально расширяет пространство. Светло-серый.",
+      "design": "w45",
+      "finish": "light-grey",
+      "size": [
+        4.0,
+        2.8
+      ],
+      "sillHeight": 0.3,
+      "photo": "w45.jpg"
+    },
+    {
+      "id": "w46",
+      "number": 46,
+      "name": "Вертикальный свет",
+      "section": "clinic",
+      "style": "Лаконичный",
+      "note": "Высокий узкий проём с горизонтальными делениями. Лестничный холл.",
+      "design": "w46",
+      "finish": "white-alu",
+      "size": [
+        0.9,
+        3.2
+      ],
+      "sillHeight": 0.4,
+      "photo": "w46.jpg"
+    },
+    {
+      "id": "w47",
+      "number": 47,
+      "name": "Окно с внешним экраном",
+      "section": "clinic",
+      "style": "Современный",
+      "note": "Наружные горизонтальные ламели перед стеклом. Солнечный фасад. Серебристый.",
+      "design": "w47",
+      "finish": "silver",
+      "size": [
+        3.2,
+        1.7
+      ],
+      "sillHeight": 0.8,
+      "photo": "w47.jpg"
+    },
+    {
+      "id": "w48",
+      "number": 48,
+      "name": "Остекление внутреннего сада",
+      "section": "clinic",
+      "style": "Природный",
+      "note": "Высокая сетка стекла обращена к озеленённому двору. Тёплый серый.",
+      "design": "w48",
+      "finish": "warm-grey",
+      "size": [
+        4.4,
+        3.4
+      ],
+      "sillHeight": 0.0,
+      "photo": "w48.jpg"
     }
   ]
 }

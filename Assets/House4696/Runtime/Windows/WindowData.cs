@@ -22,8 +22,12 @@ namespace House4696.Windows
         public SillSpec Sill = new SillSpec();
         /// <summary>A surround on the facade round the window (stone architrave, wooden portal); null = none.</summary>
         public SurroundSpec Surround;
-        /// <summary>Things on the window: awning, louvres, blinds, shelf (see the docs).</summary>
-        public List<JObject> Extras;
+        /// <summary>Extra straight or shaped members: diagonal / decorative bars on the glass, outside fins and louvres.</summary>
+        public List<MemberSpec> Members;
+        /// <summary>A fabric awning over the window, a shelf under it (a serving hatch), point fixings of frameless glass.</summary>
+        public AwningSpec Awning;
+        public ShelfSpec Shelf;
+        public FixingsSpec Fixings;
 
         public float RefW => Ref != null && Ref.Length > 0 ? Ref[0] : 1200f;
         public float RefH => Ref != null && Ref.Length > 1 ? Ref[1] : 1400f;
@@ -66,6 +70,55 @@ namespace House4696.Windows
         public BarsSpec Bars;
         /// <summary>Frosted band from the bottom of the pane up to this height, mm (privacy).</summary>
         public float? Frosted;
+        /// <summary>Sash rails when they differ from the sash's width (a French window's tall bottom rail), mm.</summary>
+        public RailsSpec Rails;
+        /// <summary>An opaque panel instead of glass: "frame" (the window's finish), "frosted", or a library material.</summary>
+        public string Panel;
+        /// <summary>Venetian blinds inside the glass unit.</summary>
+        public bool? Blinds;
+    }
+
+    public sealed class RailsSpec
+    {
+        public float? Top, Bottom, Side;
+    }
+
+    /// <summary>
+    /// A member swept along a path (ref mm, open or closed): a rectangle "width" across the path × "depth" deep.
+    /// "z": null = in the frame's depth (bars on the glass, diagrid); a number = its outer face that far in front of the
+    /// facade (negative = outside: fins, louvres). "angle": louvre blades tilted about their axis, degrees.
+    /// </summary>
+    public sealed class MemberSpec
+    {
+        public string Path;
+        public float Width = 40f, Depth = 40f;
+        public float? Z;
+        public string Material = "frame";
+        /// <summary>Repeat the member: "stepY": n copies every stepY mm (louvres), "stepX" (fins).</summary>
+        public int Count = 1;
+        public float StepX, StepY;
+    }
+
+    public sealed class AwningSpec
+    {
+        /// <summary>How far it reaches out, how far its front drops, its height above the window's top, mm; stripe colours and width.</summary>
+        public float Depth = 900f, Drop = 300f, Height = 250f, Stripe = 150f, Valance = 180f;
+        public string[] Colors = { "#efe9dc", "#4f6b56" };
+        /// <summary>How far it runs past the window on each side, mm.</summary>
+        public float Ears = 150f;
+    }
+
+    public sealed class ShelfSpec
+    {
+        public float Depth = 320f, Thickness = 40f, Ears = 150f, Y = 0f;
+        public string Material = "door_natur_oak";
+        public bool Brackets = true;
+    }
+
+    public sealed class FixingsSpec
+    {
+        /// <summary>Stainless point fixings (spiders) at the corners of every cell: their reach, mm.</summary>
+        public float Size = 110f;
     }
 
     /// <summary>Glazing bars (раскладка) across a cell's glass at reference positions; their width stays on any size.</summary>
@@ -95,6 +148,15 @@ namespace House4696.Windows
         public string Material = "door_enamel_whitey#e4d9c2";
         /// <summary>Extra height of the head (a cornice-like lintel), mm.</summary>
         public float Head;
+        /// <summary>false = no band under the window (the sill takes its place).</summary>
+        public bool Bottom = true;
+        /// <summary>A keystone at the top of the head: its width, height and how far it stands out beyond the band, mm.</summary>
+        public KeystoneSpec Keystone;
+    }
+
+    public sealed class KeystoneSpec
+    {
+        public float Width = 160f, Height = 220f, Proud = 15f;
     }
 
     public sealed class WindowCatalogFile

@@ -280,6 +280,8 @@ def render(design, W, H, finish="#f1f0eb", pxmm=0.4):
         for poly in polys:
             cv.poly(grown, offset_poly(poly, -sur.get("width", 150)))
         ring = lsub(grown, outline)
+        if sur.get("bottom", True) is False:
+            ring = lsub(ring, cv.rect(cv.mask(), -9999, -9999, 9999, 0))
         if sur.get("head", 0) > 0:
             head = cv.rect(cv.mask(), -sur.get("width", 150) - 15, H, W + sur.get("width", 150) + 15, H + sur.get("width", 150) + sur["head"])
             from PIL import ImageChops
@@ -318,18 +320,35 @@ def render(design, W, H, finish="#f1f0eb", pxmm=0.4):
     walk(design.get("layout"), (x0, y0, x1, y1))
 
     for node, r in cells:
-        kind = (node.get("sash") or "fixed").lower()
+        kind = (node.get("sash") or ("panel" if node.get("panel") else "fixed")).lower()
         c = land(cv.rect(cv.mask(), *r), inner)
         glass = c
-        if kind != "fixed":
+        if kind not in ("fixed", "panel"):
             so = c
+            ov = sash["overlap"] / 2
             if kind == "slide":
-                ov = sash["overlap"] / 2
                 so = land(cv.rect(cv.mask(), r[0] - ov, r[1], r[2] + ov, r[3]), inner)
-            si = cv.erode(so, sash["width"])
+            elif kind == "hung":
+                so = land(cv.rect(cv.mask(), r[0], r[1] - ov, r[2], r[3] + ov), inner)
+            rails = node.get("rails") or {}
+            si = cv.erode(so, rails.get("side", sash["width"]))
+            if rails.get("top") or rails.get("bottom"):
+                bb3 = so.getbbox()
+                if bb3:
+                    sx0 = bb3[0] / pxmm - margin; sx1 = bb3[2] / pxmm - margin
+                    sy1 = H + margin - bb3[1] / pxmm; sy0 = H + margin - bb3[3] / pxmm
+                    si = land(si, cv.rect(cv.mask(), sx0 - 1, sy0 + rails.get("bottom", sash["width"]), sx1 + 1, sy1 - rails.get("top", sash["width"])))
             img.paste(shade(col, 0.93), mask=lsub(so, si))
             glass = si
-        img.paste(glass_c, mask=glass)
+        if kind == "panel" and node.get("panel", "frame") != "frosted":
+            img.paste(shade(col, 0.97), mask=glass)
+            continue
+        img.paste(glass_c if node.get("panel") != "frosted" else frost_c, mask=glass)
+        if node.get("blinds"):
+            bb4 = glass.getbbox()
+            if bb4:
+                for yy in range(bb4[1], bb4[3], max(2, int(25 * pxmm))):
+                    ImageDraw.Draw(img).line([(bb4[0], yy), (bb4[2], yy)], fill=(215, 215, 212), width=1)
         fr = node.get("frosted")
         if fr:
             img.paste(frost_c, mask=land(glass, cv.rect(cv.mask(), r[0] - 20, r[1] - 20, r[2] + 20, r[1] + fr)))
@@ -347,8 +366,34 @@ def render(design, W, H, finish="#f1f0eb", pxmm=0.4):
                 for y in ys:
                     img.paste(col, mask=land(cv.rect(cv.mask(), gx0 - 1, y - w / 2, gx1 + 1, y + w / 2), glass))
 
-    sill = {"outside": "metal", "overhang": 40, "thickness": 50, "ears": 40, **design.get("sill", {})}
     d = ImageDraw.Draw(img)
+    # members (bars, diagrid, fins, louvres) — drawn as thick polylines
+    for m in design.get("members", []) or []:
+        mcol = col if m.get("material", "frame") == "frame" else (184, 187, 190)
+        for k in range(max(1, m.get("count", 1))):
+            for poly in parse_path(m["path"]):
+                pts = [cv.px(mx.map(x) + m.get("stepX", 0) * k, my.map(y) + m.get("stepY", 0) * k) for x, y in poly]
+                if len(pts) > 1:
+                    d.line(pts + ([pts[0]] if m["path"].strip().upper().endswith("Z") else []), fill=mcol, width=max(1, int(m.get("width", 40) * pxmm)))
+    aw = design.get("awning")
+    if aw:
+        cols = aw.get("colors", ["#efe9dc", "#4f6b56"])
+        ytop, drop, ears, stripe = H + aw.get("height", 250), aw.get("drop", 300), aw.get("ears", 150), aw.get("stripe", 150)
+        x, k = -ears, 0
+        while x < W + ears:
+            a_, b_ = cv.px(x, ytop), cv.px(min(W + ears, x + stripe), ytop - drop - aw.get("valance", 180))
+            d.rectangle([a_[0], a_[1], b_[0], b_[1]], fill=hexrgb(cols[k % len(cols)]))
+            x += stripe; k += 1
+    sh = design.get("shelf")
+    if sh:
+        a_, b_ = cv.px(-sh.get("ears", 150), sh.get("y", 0)), cv.px(W + sh.get("ears", 150), sh.get("y", 0) - sh.get("thickness", 40))
+        d.rectangle([a_[0], a_[1], b_[0], b_[1]], fill=(160, 118, 70))
+    if sur and sur.get("keystone"):
+        k_ = sur["keystone"]; top = max(y for poly in polys for x, y in poly)
+        pts = [cv.px(W / 2 - k_.get("width", 160) * 0.4, top - k_.get("height", 220) * 0.25), cv.px(W / 2 + k_.get("width", 160) * 0.4, top - k_.get("height", 220) * 0.25),
+               cv.px(W / 2 + k_.get("width", 160) * 0.5, top + k_.get("height", 220) * 0.75), cv.px(W / 2 - k_.get("width", 160) * 0.5, top + k_.get("height", 220) * 0.75)]
+        d.polygon(pts, fill=shade(stone_c, 0.95))
+    sill = {"outside": "metal", "overhang": 40, "thickness": 50, "ears": 40, **design.get("sill", {})}
     if sill["outside"] == "stone":
         a, b = cv.px(-sill["ears"], 5), cv.px(W + sill["ears"], 5 - sill["thickness"])
         d.rectangle([a[0], a[1], b[0], b[1]], fill=stone_c)

@@ -58,7 +58,35 @@ A cell (a leaf of the tree):
 | `bars` | glazing bars: `{"cols": 2, "rows": 4, "width": 22}` (a regular grid over the glass) or `{"x": [..], "y": [..], "width": 25}` (ref positions) |
 | `frosted` | height (mm) of a frosted band from the bottom of the glass (privacy) |
 
+| `sash` (more) | `door` (a side-hung glazed door in a shopfront: lever at 1 m), `hung` (sash window: the lower sash slides up behind the upper one; stack two `hung` cells in a `y` split with `mullion: 0`), `panel` |
+| `rails` | a sash's own rail widths when they differ: `{"bottom": 140, "top": 70, "side": 70}` (French windows, doors, sash windows) |
+| `panel` | an opaque panel instead of glass: `"frame"` (the window's finish — spandrels, a shopfront's low panel), `"frosted"`, or a library material |
+| `blinds` | `true`: venetian blinds inside the glass unit |
+
 Cells are clipped to the frame's inside, so an arched or gable window just splits its bounding rectangle.
+
+### How it is built (what you get for free)
+
+Every edge is a real profile swept along the contours with mitred corners: rounded outer edges, rebates where sashes
+sit, sloped glazing beads with black gaskets on the inside, a small lip outside, double glazing with its spacer bar.
+Wood grain runs along each member and meets at the mitres. Turn sashes and doors get a lever handle inside (white on
+light frames, satin aluminium otherwise), sliding sashes a pull. Glazing bars sit on both faces of the unit.
+
+### Extras (design level)
+
+```jsonc
+"members": [ { "path": "M 0 2350 L 2400 2350", "width": 180, "depth": 25, "z": -260, "material": "metal_painted#b8bbbe",
+               "count": 5, "stepY": 150 } ],
+      // members swept along a path (ref mm): z = null → in the frame's depth (bars on the glass, diagrid, art-deco grid);
+      // z = a number → their outer face that far from the facade (negative = in front: louvres, fins); repeated count ×
+      // stepX / stepY; material "frame" or a library id
+"awning": { "depth": 1000, "drop": 350, "height": 200, "stripe": 150, "valance": 180, "ears": 150, "colors": ["#efe9dc", "#4f6b56"] },
+"shelf": { "depth": 320, "thickness": 40, "y": 0, "ears": 150, "material": "door_natur_oak", "brackets": true },
+"fixings": { "size": 110 },         // stainless spider fittings at every cell corner (frameless / structural glazing)
+"surround": { …, "bottom": false, "keystone": { "width": 160, "height": 220, "proud": 15 } }
+```
+
+A frameless look: `"frame": { "width": 0 }` (cells then reach the outline; use `fixings` or thin mullions).
 
 ## catalog.json
 
