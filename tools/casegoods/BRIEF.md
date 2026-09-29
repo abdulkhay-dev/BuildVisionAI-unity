@@ -22,6 +22,19 @@ what the engine cannot do. **Do not edit C#** or anything outside the paths list
 - `tools/casegoods/reference/<slug>/cutlists/<model id>.json` — each module's cut list (parts, three sizes, count), and
   `pages/<model id>.png` (the table page: the front / back views with the part numbers) + `-cover.png` (the overall
   drawing with the sizes). Some rows are missing in the JSON (broken text in the PDF): read them from the page image.
+  Four table formats exist: the current one (code + three sizes), «номер, код, наименование, кол.» without sizes (the
+  sizes are dimension lines on the drawing — read them), «наименование, материал (ЛДСП 16мм ДУБ КАНЬОН), кол., two
+  sizes» (it names each part's decor: use it for the finish roles) and «наименование, AхB, кол.». Instructions without a
+  text layer have `pages/<id>-p1.png … -p4.png` instead: read the table from the pictures.
+  **About a third of the modules have an instruction.** For the others there is no cut list: build them from the
+  catalogue (the module cut-outs on the collection's last spread, the interior photos, the close-ups) and the site's
+  product photos, with the collection's instructed modules as the model of its construction (the same board
+  thicknesses, fronts, gaps, mouldings, legs, plinth, handles, drawer boxes); the extent must still equal the catalogue
+  size. Say in the notes which modules are "by photo".
+- Product photos: `index.json` → `photos` (pinskdrev.by, no login; `curl -A "Mozilla/5.0" -o x.jpg <url>`), `site`
+  (the product page on pinskdrev.by: more photos, the colour variants). The .ru site is behind a JS check — use .by.
+  Instructions not yet in `reference/`: `pdf` (a.pinskdrev.ru, curl works) → `python3 tools/casegoods/prepare_refs.py
+  --collections <slug>`.
 - `tools/casegoods/reference/catalog_km2.pdf` — the catalogue (148 pages = spreads). The interior photos, the module
   cut-outs, the swatches of the colours and the close-ups of fronts and handles are there: render a page with
   `pdftoppm -r 150 -f N -l N -png` (poppler; `apt-get install poppler-utils` or use PyMuPDF) and crop what you need.

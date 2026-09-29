@@ -33,6 +33,20 @@ def collection_of(name):
 
 
 CHAIRS = "Стулья, табуреты, банкетки"
+TR = dict(zip("абвгдеёжзийклмнопрстуфхцчшщъыьэюя", ["a", "b", "v", "g", "d", "e", "e", "zh", "z", "i", "y", "k", "l", "m", "n", "o", "p", "r", "s", "t",
+                                                   "u", "f", "h", "ts", "ch", "sh", "sch", "", "y", "", "e", "yu", "ya"]))
+
+
+SLUGS = {"Джио": "djio"}
+
+
+def translit(name):
+    if name == CHAIRS:
+        return "stulya"
+    if name in SLUGS:
+        return SLUGS[name]
+    s = "".join(TR.get(ch, ch) for ch in name.lower())
+    return re.sub(r"[^a-z0-9]+", "-", s).strip("-")
 
 
 def series(code):
@@ -127,6 +141,10 @@ def main():
         for code, it in items.items():
             if code in links:
                 it.update(links[code])
+    # every article gets its collection's slug: the site's collection address is the transliterated name
+    # (a crawl of collection pages mixes other collections' products in, so it is not trusted for this)
+    for it in items.values():
+        it["slug"] = translit(it["collection"]) if it.get("collection") else None
     os.makedirs(os.path.dirname(os.path.abspath(a.out)), exist_ok=True)
     with open(a.out, "w") as fh:
         json.dump(list(items.values()), fh, ensure_ascii=False, indent=1)

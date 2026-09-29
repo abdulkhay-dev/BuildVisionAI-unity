@@ -119,15 +119,21 @@ def check(d, cat, model, is_pdf):
         for r in rows:
             have = [p for p in parts if str(p.get("n")) == r["n"]]
             cov = sum(1 for p in parts for c in (p.get("covers") or []) if str(c) == r["n"])
+            label = r.get("name") or r.get("code") or ""
+            sizes = " × ".join(f"{s:g}" for s in r["size"]) if r.get("size") else "размеры на чертеже"
             if len(have) + cov != r["count"]:
-                errors.append(f'деталь {r["n"]} ({r["code"]}, {" × ".join(f"{s:g}" for s in r["size"])}): '
-                              f'в спецификации {r["count"]} шт, в чертеже {len(have)} + covers {cov}')
+                errors.append(f'деталь {r["n"]} ({label}, {sizes}): в спецификации {r["count"]} шт, в чертеже {len(have)} + covers {cov}')
+            if not r.get("size"):
+                continue
             want = sorted(r["size"])
             for p in have:
                 b = box_of(p)
                 if not b:
                     continue
                 got = sorted([b[3] - b[0], b[4] - b[1], b[5] - b[2]])
+                # two sizes (the thickness not listed): compare the two biggest
+                if len(want) == 2:
+                    got = got[1:]
                 if any(abs(g - w) > 1.0 for g, w in zip(got, want)):
                     errors.append(f'деталь {pid(p)}: размеры {" × ".join(f"{g:g}" for g in got)}, '
                                   f'по спецификации {" × ".join(f"{w:g}" for w in want)}')

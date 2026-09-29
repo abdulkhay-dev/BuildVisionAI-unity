@@ -6,7 +6,8 @@
 For every article of tools/casegoods/reference/index.json that has an instruction ("pdf", from the site crawl): downloads
 the PDF into tools/casegoods/.cache/is/ (git-ignored) and writes into tools/casegoods/reference/<collection slug>/:
   cutlists/<model id>.json   — the cut list (cutlist.py; rows with broken text are missing: read the page)
-  pages/<model id>.png       — the table page with the front / back views and part numbers (grey)
+  pages/<model id>.png       — the table page with the front / back views and part numbers (grey); when the PDF has no
+                               text layer: pages/<model id>-p1…p4.png (read the table from the picture)
   pages/<model id>-cover.png — the first page: the overall drawing with the catalogue sizes
 Model id = <collection slug>-<the code's last groups>: П6.980.0.01 → flora-0-01.
 """
@@ -16,7 +17,6 @@ import os
 import re
 import subprocess
 import sys
-import urllib.request
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, "..", ".."))
@@ -33,17 +33,21 @@ def model_id(slug, code):
 
 
 def fetch(url, path):
+    """curl from a.pinskdrev.ru; files only on a.pinskdrev.by come from there (its certificate chain is incomplete, so that
+    host is fetched without verification — public instruction PDFs only)."""
     if os.path.exists(path) and os.path.getsize(path) > 1000:
         return True
     os.makedirs(os.path.dirname(path), exist_ok=True)
-    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-    try:
-        with urllib.request.urlopen(req, timeout=60) as r, open(path, "wb") as fh:
-            fh.write(r.read())
-        return os.path.getsize(path) > 1000
-    except Exception as e:  # noqa: BLE001
-        print(f"  ! {url}: {e}")
-        return False
+    name = url.rsplit("/", 1)[-1]
+    for host, extra in (("a.pinskdrev.ru", []), ("a.pinskdrev.by", ["-k"])):
+        r = subprocess.run(["curl", "-s", "-L", "--max-time", "120", "-A", "Mozilla/5.0", *extra, "-o", path, "-w", "%{http_code}",
+                            f"https://{host}/web/pdf/{name}"], capture_output=True, text=True)
+        if r.stdout.strip() == "200" and os.path.exists(path) and os.path.getsize(path) > 1000:
+            return True
+    print(f"  ! {name}: not on a.pinskdrev.ru / .by")
+    if os.path.exists(path):
+        os.remove(path)
+    return False
 
 
 def grey(png, dpi_note=None):
@@ -83,6 +87,15 @@ def main():
         if page and not os.path.exists(base + ".png"):
             subprocess.run(["pdftoppm", "-f", str(page), "-l", str(page), "-r", str(a.dpi), "-png", "-singlefile", local, base], check=False)
             grey(base + ".png")
+        elif not page:
+            # no text layer (a scan, or drawn as curves): its first pages as pictures — the parts table is read by eye
+            info = subprocess.run(["pdfinfo", local], capture_output=True, text=True).stdout
+            n = int(re.search(r"Pages:\s+(\d+)", info).group(1)) if "Pages:" in info else 1
+            for k in range(1, min(n, 4) + 1):
+                png = f"{base}-p{k}"
+                if not os.path.exists(png + ".png"):
+                    subprocess.run(["pdftoppm", "-f", str(k), "-l", str(k), "-r", str(a.dpi), "-png", "-singlefile", local, png], check=False)
+                    grey(png + ".png")
         if not os.path.exists(base + "-cover.png"):
             subprocess.run(["pdftoppm", "-f", "1", "-l", "1", "-r", "60", "-png", "-singlefile", local, base + "-cover"], check=False)
             grey(base + "-cover.png")
