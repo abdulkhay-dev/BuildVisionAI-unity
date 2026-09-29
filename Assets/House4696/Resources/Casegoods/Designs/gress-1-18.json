@@ -1,0 +1,13 @@
+{
+  "id": "gress-1-18",
+  "size": [930, 35, 705],
+  "parts": [
+    {"id": "board", "grain": "x", "box": [0, 0, 0, 930, 705, 19]},
+    {"id": "strip-1", "kind": "front", "grain": "y", "box": [0, 0, 19, 80, 705, 35], "face": {"type": "fluted", "dir": "x", "pitch": 10, "depth": 1.5, "flute": "groove", "gap": 7, "margin": 8}},
+    {"id": "strip-2", "kind": "front", "grain": "y", "box": [850, 0, 19, 930, 705, 35], "face": {"type": "fluted", "dir": "x", "pitch": 10, "depth": 1.5, "flute": "groove", "gap": 7, "margin": 8}},
+    {"id": "mirror", "kind": "mirror", "box": [85, 60, 19, 845, 645, 23]}
+  ],
+  "moves": [
+
+  ]
+}

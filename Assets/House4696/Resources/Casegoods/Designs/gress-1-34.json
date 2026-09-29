@@ -1,0 +1,21 @@
+{
+  "id": "gress-1-34",
+  "size": [930, 587, 480],
+  "parts": [
+    {"n": "1", "grain": "y", "box": [0, 0, 3.0, 16, 455, 564.0]},
+    {"n": "2", "grain": "y", "box": [914, 0, 3.0, 930, 455, 564.0]},
+    {"n": "4", "grain": "x", "box": [0, 455, 0, 930, 480.0, 587]},
+    {"n": "5", "grain": "x", "box": [16, 0, 3.0, 914, 16, 564.0]},
+    {"id": "back", "kind": "back", "box": [2, 0, 0, 928, 455, 3]},
+    {"id": "strip-l", "kind": "front", "grain": "y", "box": [1, 0, 564.0, 81, 454, 580.0], "face": {"type": "fluted", "dir": "x", "pitch": 10, "depth": 1.5, "flute": "groove", "gap": 7, "margin": 8}},
+    {"id": "strip-r", "kind": "front", "grain": "y", "box": [849, 0, 564.0, 929, 454, 580.0], "face": {"type": "fluted", "dir": "x", "pitch": 10, "depth": 1.5, "flute": "groove", "gap": 7, "margin": 8}},
+    {"id": "door-l", "kind": "front", "grain": "y", "box": [83, 1, 564.0, 463, 453, 580.0]},
+    {"id": "h-door-l", "kind": "handle", "model": "bar", "mat": "metal", "at": [273, 108.5], "dir": "right", "d": 136, "band": 10, "t": 8, "standoff": 21, "post": 8, "section": "square", "z": 580.0},
+    {"id": "door-r", "kind": "front", "grain": "y", "box": [466, 1, 564.0, 847, 453, 580.0]},
+    {"id": "h-door-r", "kind": "handle", "model": "bar", "mat": "metal", "at": [656, 108.5], "dir": "right", "d": 136, "band": 10, "t": 8, "standoff": 21, "post": 8, "section": "square", "z": 580.0}
+  ],
+  "moves": [
+    {"type": "door", "name": "door_door-l", "parts": ["door-l", "h-door-l"], "hinge": "left", "angle": 105},
+    {"type": "door", "name": "door_door-r", "parts": ["door-r", "h-door-r"], "hinge": "right", "angle": 105}
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": "gress-3-05",
+  "size": [900, 266, 1400],
+  "parts": [
+    {"n": "1", "grain": "y", "box": [0, 0, 0, 900, 1400, 16]},
+    {"n": "3", "id": "3-1", "kind": "front", "grain": "y", "box": [0, 0, 16, 80, 699.5, 32], "face": {"type": "fluted", "dir": "x", "pitch": 10, "depth": 1.5, "flute": "groove", "gap": 7, "margin": 8}},
+    {"n": "3", "id": "3-2", "kind": "front", "grain": "y", "box": [0, 700.5, 16, 80, 1400, 32], "face": {"type": "fluted", "dir": "x", "pitch": 10, "depth": 1.5, "flute": "groove", "gap": 7, "margin": 8}},
+    {"n": "3", "id": "3-3", "kind": "front", "grain": "y", "box": [820, 0, 16, 900, 699.5, 32], "face": {"type": "fluted", "dir": "x", "pitch": 10, "depth": 1.5, "flute": "groove", "gap": 7, "margin": 8}},
+    {"n": "3", "id": "3-4", "kind": "front", "grain": "y", "box": [820, 700.5, 16, 900, 1400, 32], "face": {"type": "fluted", "dir": "x", "pitch": 10, "depth": 1.5, "flute": "groove", "gap": 7, "margin": 8}},
+    {"n": "2", "grain": "x", "box": [80, 1120, 16, 820, 1136, 266]},
+    {"id": "hook-1", "kind": "handle", "model": "knob", "mat": "metal", "at": [235, 1000], "d": 18, "t": 14, "standoff": 40, "z": 16},
+    {"id": "hook-2", "kind": "handle", "model": "knob", "mat": "metal", "at": [450, 1000], "d": 18, "t": 14, "standoff": 40, "z": 16},
+    {"id": "hook-3", "kind": "handle", "model": "knob", "mat": "metal", "at": [665, 1000], "d": 18, "t": 14, "standoff": 40, "z": 16},
+    {"id": "hook-4", "kind": "handle", "model": "knob", "mat": "metal", "at": [340, 720], "d": 18, "t": 14, "standoff": 40, "z": 16},
+    {"id": "hook-5", "kind": "handle", "model": "knob", "mat": "metal", "at": [560, 720], "d": 18, "t": 14, "standoff": 40, "z": 16}
+  ],
+  "moves": [
+
+  ]
+}

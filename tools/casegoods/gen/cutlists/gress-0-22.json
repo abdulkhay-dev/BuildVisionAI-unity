@@ -1,0 +1,96 @@
+{
+ "code": "П6.501.0.22",
+ "source": "table picture of the instruction (numbers, names, counts); sizes read off the vector drawing (front / side views, scale from the overall size, ±1.5 mm) and the collection's construction — see notes/gress.md",
+ "rows": [
+  {
+   "n": "1",
+   "name": "Полукрышка",
+   "size": [
+    910,
+    800,
+    25
+   ],
+   "count": 2
+  },
+  {
+   "n": "2",
+   "name": "Царга",
+   "size": [
+    1370,
+    100,
+    16
+   ],
+   "count": 2
+  },
+  {
+   "n": "3",
+   "name": "Царга",
+   "size": [
+    652,
+    100,
+    16
+   ],
+   "count": 2
+  },
+  {
+   "n": "4",
+   "name": "Опора",
+   "size": [
+    745,
+    115,
+    25
+   ],
+   "count": 2
+  },
+  {
+   "n": "5",
+   "name": "Опора",
+   "size": [
+    745,
+    115,
+    25
+   ],
+   "count": 2
+  },
+  {
+   "n": "6",
+   "name": "Опора",
+   "size": [
+    745,
+    104,
+    25
+   ],
+   "count": 2
+  },
+  {
+   "n": "7",
+   "name": "Опора",
+   "size": [
+    745,
+    104,
+    25
+   ],
+   "count": 2
+  },
+  {
+   "n": "8",
+   "name": "Вкладыш",
+   "size": [
+    870,
+    500,
+    25
+   ],
+   "count": 1
+  },
+  {
+   "n": "9",
+   "name": "Элемент опорный",
+   "size": [
+    878,
+    60,
+    25
+   ],
+   "count": 2
+  }
+ ]
+}

@@ -1,0 +1,36 @@
+{
+ "code": "П6.501.3.05",
+ "source": "table picture of the instruction (numbers, names, counts); sizes read off the vector drawing (front / side views, scale from the overall size, ±1.5 mm) and the collection's construction — see notes/gress.md",
+ "rows": [
+  {
+   "n": "1",
+   "name": "Основание",
+   "size": [
+    1400,
+    900,
+    16
+   ],
+   "count": 1
+  },
+  {
+   "n": "2",
+   "name": "Стенка горизонтальная",
+   "size": [
+    740,
+    250,
+    16
+   ],
+   "count": 1
+  },
+  {
+   "n": "3",
+   "name": "Накладка",
+   "size": [
+    699.5,
+    80,
+    16
+   ],
+   "count": 4
+  }
+ ]
+}

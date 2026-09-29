@@ -1,0 +1,116 @@
+{
+ "code": "П6.501.1.21",
+ "source": "table picture of the instruction (numbers, names, counts); sizes read off the vector drawing (front / side views, scale from the overall size, ±1.5 mm) and the collection's construction — see notes/gress.md",
+ "rows": [
+  {
+   "n": "1",
+   "name": "Стенка вертикальная",
+   "size": [
+    561.0,
+    455,
+    16
+   ],
+   "count": 1
+  },
+  {
+   "n": "2",
+   "name": "Стенка вертикальная",
+   "size": [
+    561.0,
+    455,
+    16
+   ],
+   "count": 1
+  },
+  {
+   "n": "3",
+   "name": "Перегородка",
+   "size": [
+    561.0,
+    439,
+    16
+   ],
+   "count": 1
+  },
+  {
+   "n": "4",
+   "name": "Стенка горизонтальная",
+   "size": [
+    1562,
+    587,
+    25.0
+   ],
+   "count": 1
+  },
+  {
+   "n": "5",
+   "name": "Стенка горизонтальная",
+   "size": [
+    1530,
+    561.0,
+    16
+   ],
+   "count": 1
+  },
+  {
+   "n": "6",
+   "name": "Накладка",
+   "size": [
+    454,
+    80,
+    16.0
+   ],
+   "count": 1
+  },
+  {
+   "n": "7",
+   "name": "Накладка",
+   "size": [
+    454,
+    80,
+    16.0
+   ],
+   "count": 1
+  },
+  {
+   "n": "8",
+   "name": "Дверь",
+   "size": [
+    462,
+    452,
+    16.0
+   ],
+   "count": 1
+  },
+  {
+   "n": "9",
+   "name": "Дверь",
+   "size": [
+    463,
+    452,
+    16.0
+   ],
+   "count": 2
+  },
+  {
+   "n": "10",
+   "name": "Стенка задняя",
+   "size": [
+    1012,
+    455,
+    3
+   ],
+   "count": 1
+  },
+  {
+   "n": "11",
+   "name": "Стенка задняя",
+   "size": [
+    546,
+    455,
+    3
+   ],
+   "count": 1
+  }
+ ]
+}

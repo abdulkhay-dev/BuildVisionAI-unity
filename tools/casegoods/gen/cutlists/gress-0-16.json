@@ -1,0 +1,86 @@
+{
+ "code": "П6.501.0.16",
+ "source": "table picture of the instruction (numbers, names, counts); sizes read off the vector drawing (front / side views, scale from the overall size, ±1.5 mm) and the collection's construction — see notes/gress.md",
+ "rows": [
+  {
+   "n": "1",
+   "name": "Крышка",
+   "size": [
+    750,
+    750,
+    22
+   ],
+   "count": 1
+  },
+  {
+   "n": "2",
+   "name": "Опора",
+   "size": [
+    478,
+    100,
+    22
+   ],
+   "count": 2
+  },
+  {
+   "n": "3",
+   "name": "Опора",
+   "size": [
+    478,
+    100,
+    22
+   ],
+   "count": 2
+  },
+  {
+   "n": "4",
+   "name": "Опора",
+   "size": [
+    478,
+    78,
+    22
+   ],
+   "count": 2
+  },
+  {
+   "n": "5",
+   "name": "Опора",
+   "size": [
+    478,
+    78,
+    22
+   ],
+   "count": 2
+  },
+  {
+   "n": "6",
+   "name": "Стенка горизонтальная",
+   "size": [
+    616,
+    616,
+    16
+   ],
+   "count": 1
+  },
+  {
+   "n": "7",
+   "name": "Царга",
+   "size": [
+    460,
+    80,
+    16
+   ],
+   "count": 2
+  },
+  {
+   "n": "8",
+   "name": "Царга",
+   "size": [
+    460,
+    80,
+    16
+   ],
+   "count": 2
+  }
+ ]
+}

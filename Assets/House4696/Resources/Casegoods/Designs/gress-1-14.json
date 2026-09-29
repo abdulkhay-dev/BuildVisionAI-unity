@@ -1,0 +1,41 @@
+{
+  "id": "gress-1-14",
+  "size": [930, 587, 1920],
+  "parts": [
+    {"id": "foot-1", "mat": "feet", "edge": 2, "box": [11, 0, 1, 101, 20.0, 57]},
+    {"id": "foot-2", "mat": "feet", "edge": 2, "box": [11, 0, 528, 101, 20.0, 584]},
+    {"id": "foot-3", "mat": "feet", "edge": 2, "box": [829, 0, 1, 919, 20.0, 57]},
+    {"id": "foot-4", "mat": "feet", "edge": 2, "box": [829, 0, 528, 919, 20.0, 584]},
+    {"n": "1", "grain": "y", "box": [0, 45.0, 3.0, 16, 1895.0, 564.0]},
+    {"n": "2", "grain": "y", "box": [914, 45.0, 3.0, 930, 1895.0, 564.0]},
+    {"n": "3", "grain": "y", "box": [67, 45, 3.0, 83, 246, 564.0]},
+    {"n": "4", "grain": "y", "box": [847, 45, 3.0, 863, 246, 564.0]},
+    {"n": "5", "grain": "x", "box": [0, 1895.0, 0, 930, 1920.0, 587]},
+    {"n": "6", "grain": "x", "box": [0, 20.0, 0, 930, 45.0, 587]},
+    {"n": "7", "grain": "x", "box": [16, 246, 3.0, 914, 262, 564.0]},
+    {"id": "rail-16", "kind": "tube", "mat": "metal", "box": [19, 1770, 273.5, 911, 1790, 293.5]},
+    {"n": "16", "id": "16-1", "kind": "back", "box": [2, 45, 0, 465, 1895, 3]},
+    {"n": "16", "id": "16-2", "kind": "back", "box": [465, 45, 0, 928, 1895, 3]},
+    {"n": "15", "grain": "y", "box": [440, 262, 3.0, 490, 1895, 19.0]},
+    {"n": "10", "kind": "front", "grain": "y", "box": [1, 46, 564.0, 81, 969.5, 580.0], "face": {"type": "fluted", "dir": "x", "pitch": 10, "depth": 1.5, "flute": "groove", "gap": 7, "margin": 8}},
+    {"n": "11", "kind": "front", "grain": "y", "box": [849, 46, 564.0, 929, 969.5, 580.0], "face": {"type": "fluted", "dir": "x", "pitch": 10, "depth": 1.5, "flute": "groove", "gap": 7, "margin": 8}},
+    {"n": "8", "kind": "front", "grain": "y", "box": [1, 970.5, 564.0, 81, 1894, 580.0], "face": {"type": "fluted", "dir": "x", "pitch": 10, "depth": 1.5, "flute": "groove", "gap": 7, "margin": 8}},
+    {"n": "9", "kind": "front", "grain": "y", "box": [849, 970.5, 564.0, 929, 1894, 580.0], "face": {"type": "fluted", "dir": "x", "pitch": 10, "depth": 1.5, "flute": "groove", "gap": 7, "margin": 8}},
+    {"n": "12.1", "id": "12.1-1", "kind": "front", "grain": "x", "face": {"type": "fluted", "dir": "x", "pitch": 10, "depth": 1.5, "flute": "groove", "gap": 7, "margin": 8}, "box": [83, 47, 564.0, 847, 262, 580.0]},
+    {"n": "12.5", "id": "12.5-1", "kind": "back", "box": [95.5, 58, 64.0, 834.5, 61, 569.0]},
+    {"n": "12.2", "id": "12.2-1", "grain": "z", "box": [95.5, 61, 64.0, 111.5, 211, 564.0]},
+    {"n": "12.3", "id": "12.3-1", "grain": "z", "box": [818.5, 61, 64.0, 834.5, 211, 564.0]},
+    {"n": "12.4", "id": "12.4-1", "grain": "x", "box": [111.5, 61, 64.0, 818.5, 201, 80.0]},
+    {"id": "h-1a", "kind": "handle", "model": "bar", "mat": "metal", "at": [241, 155], "dir": "right", "d": 136, "band": 10, "t": 8, "standoff": 21, "post": 8, "section": "square", "z": 580.0},
+    {"id": "h-1b", "kind": "handle", "model": "bar", "mat": "metal", "at": [689, 155], "dir": "right", "d": 136, "band": 10, "t": 8, "standoff": 21, "post": 8, "section": "square", "z": 580.0},
+    {"n": "13", "id": "13", "kind": "front", "grain": "y", "box": [83, 265, 564.0, 463, 1894, 580.0]},
+    {"id": "h-13", "kind": "handle", "model": "bar", "mat": "metal", "at": [273, 1079.5], "dir": "right", "d": 136, "band": 10, "t": 8, "standoff": 21, "post": 8, "section": "square", "z": 580.0},
+    {"n": "14", "id": "14", "kind": "front", "grain": "y", "box": [466, 265, 564.0, 847, 1894, 580.0]},
+    {"id": "h-14", "kind": "handle", "model": "bar", "mat": "metal", "at": [656, 1079.5], "dir": "right", "d": 136, "band": 10, "t": 8, "standoff": 21, "post": 8, "section": "square", "z": 580.0}
+  ],
+  "moves": [
+    {"type": "drawer", "name": "drawer_1", "parts": ["12.1-1", "12.5-1", "12.2-1", "12.3-1", "12.4-1", "h-1a", "h-1b"], "travel": 320},
+    {"type": "door", "name": "door_13", "parts": ["13", "h-13"], "hinge": "left", "angle": 105},
+    {"type": "door", "name": "door_14", "parts": ["14", "h-14"], "hinge": "right", "angle": 105}
+  ]
+}

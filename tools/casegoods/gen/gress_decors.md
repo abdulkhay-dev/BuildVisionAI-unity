@@ -1,0 +1,3 @@
+# Textured decors of «Гресс» (to append to tools/casegoods/decors.md)
+
+- «Дуб Сонома 325» (the site: «Дуб Сонома светлый») — Гресс (body of gress-sonoma: every board — carcass, tops, fronts, the reeded strips, beds, tables) — p. 104 (the «Вариант цветового исполнения» swatch, `catpage.py 104 --swatch 0.725,0.86,0.775,0.9`), close-ups p. 98–103 and the site photo shkaf_gress_p501_12.jpg — light grey-beige sawn oak (Sonoma): straight pale fibres with darker grey-brown pore streaks, faint cathedrals, short horizontal saw-cut marks across the grain, matt — grain along the long side (vertical on sides, doors, strips; x on tops, bottoms, drawer fronts, shelves; the reeded strips' grooves run across it); provisional #caab92.
