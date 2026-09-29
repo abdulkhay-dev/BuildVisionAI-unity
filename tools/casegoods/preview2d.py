@@ -56,10 +56,37 @@ def pid(p):
     return p.get("id") or p.get("n")
 
 
+def turned(box, rot):
+    """The box of a turned part (rot: axis, deg, about) — the bounds of its turned corners."""
+    if not rot or not rot.get("deg"):
+        return box
+    ax = rot.get("axis", "x")
+    c = rot.get("about") or [(box[0] + box[3]) / 2, (box[1] + box[4]) / 2, (box[2] + box[5]) / 2]
+    t = math.radians(rot["deg"])
+    i, j = {"x": (1, 2), "y": (2, 0), "z": (0, 1)}[ax]   # deg > 0 turns axis i towards axis j
+    pts = []
+    for x in (box[0], box[3]):
+        for y in (box[1], box[4]):
+            for z in (box[2], box[5]):
+                q = [x - c[0], y - c[1], z - c[2]]
+                qi, qj = q[i], q[j]
+                q[i], q[j] = qi * math.cos(t) - qj * math.sin(t), qi * math.sin(t) + qj * math.cos(t)
+                pts.append([q[0] + c[0], q[1] + c[1], q[2] + c[2]])
+    return [min(p[0] for p in pts), min(p[1] for p in pts), min(p[2] for p in pts),
+            max(p[0] for p in pts), max(p[1] for p in pts), max(p[2] for p in pts)]
+
+
 def box_of(p):
+    if p.get("kind") == "rod" and p.get("from") and p.get("to") and not p.get("box"):
+        f, t = p["from"], p["to"]
+        r = max(p.get("d", 25), p.get("d2", 0) or 0) / 2
+        L = math.dist(f, t) or 1.0
+        # the ends are cut square to the axis: the radius pads each axis by r·sin(angle to the rod)
+        pad = [r * math.sqrt(max(0.0, 1 - ((t[k] - f[k]) / L) ** 2)) for k in range(3)]
+        return turned([min(f[k], t[k]) - pad[k] for k in range(3)] + [max(f[k], t[k]) + pad[k] for k in range(3)], p.get("rot"))
     b = p.get("box")
     if b:
-        return [min(b[0], b[3]), min(b[1], b[4]), min(b[2], b[5]), max(b[0], b[3]), max(b[1], b[4]), max(b[2], b[5])]
+        return turned([min(b[0], b[3]), min(b[1], b[4]), min(b[2], b[5]), max(b[0], b[3]), max(b[1], b[4]), max(b[2], b[5])], p.get("rot"))
     if p.get("kind") == "handle" and p.get("at"):
         r = p.get("d", 80) / 2
         x, y, z = p["at"][0], p["at"][1], p.get("z", 0)
@@ -89,7 +116,11 @@ def check(d, cat, model, is_pdf):
     parts = d.get("parts", [])
     size = d.get("size") or (model or {}).get("size")
     # extent
-    boxes = [box_of(p) for p in parts]
+    # rods without a box (turned / tapered legs) stay out of the extent: their cut-list size is the blank, and their
+    # square ends poke into the carcass; a rod that should count gives its box
+    def counted(p):
+        return not (p.get("kind") == "rod" and not p.get("box"))
+    boxes = [box_of(p) for p in parts if counted(p)]
     boxes = [b for b in boxes if b]
     if boxes and size:
         ext = [max(b[3] for b in boxes) - min(b[0] for b in boxes), max(b[5] for b in boxes) - min(b[2] for b in boxes),
@@ -127,7 +158,7 @@ def check(d, cat, model, is_pdf):
                 continue
             want = sorted(r["size"])
             for p in have:
-                b = box_of(p)
+                b = box_of(p) if counted(p) else None
                 if not b:
                     continue
                 got = sorted([b[3] - b[0], b[4] - b[1], b[5] - b[2]])

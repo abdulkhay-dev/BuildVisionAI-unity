@@ -22,11 +22,53 @@ namespace House4696.CasegoodsEditor
     {
         static readonly Vector3 Studio = new Vector3(0f, 0f, -600f);
 
-        public static string Render(string model, string finish, string outPath, string view = "front", bool open = false, float pxPerM = 500f)
+        // ------------------------------------------------------------------ batch
+        static Queue<(string model, string finish, string path, string view, bool open)> _queue;
+        static int _batchDone, _batchTotal;
+
+        /// <summary>
+        /// Renders every model in <paramref name="models"/> (all catalogue models when null) into <paramref name="dir"/>
+        /// (&lt;id&gt;-&lt;view&gt;.png, one per editor tick); returns at once, logs "[CasePreview] batch done" at the end.
+        /// </summary>
+        public static string Batch(IEnumerable<string> models, string dir, string view = "angle", bool open = false, string finish = null)
         {
-            // designs edited outside the editor (the 2D tools, a cloud session) reach Resources only after an import
+            if (_queue != null) return "[CasePreview] busy: " + _batchDone + "/" + _batchTotal;
             UnityEditor.AssetDatabase.Refresh();
             CaseCatalog.Reload();
+            var ids = models?.ToList() ?? CaseCatalog.File.Models.Select(m => m.Id).ToList();
+            _queue = new Queue<(string, string, string, string, bool)>();
+            foreach (var id in ids) _queue.Enqueue((id, finish, Path.Combine(dir, id + "-" + view + (open ? "-open" : "") + ".png"), view, open));
+            _batchTotal = _queue.Count;
+            _batchDone = 0;
+            UnityEditor.EditorApplication.update += Tick;
+            return $"[CasePreview] batch started: {_batchTotal} → {dir}";
+        }
+
+        static void Tick()
+        {
+            if (_queue == null) return;
+            if (_queue.Count == 0)
+            {
+                UnityEditor.EditorApplication.update -= Tick;
+                _queue = null;
+                Debug.Log($"[CasePreview] batch done: {_batchDone}/{_batchTotal}");
+                return;
+            }
+            var j = _queue.Dequeue();
+            try { Debug.Log(Render(j.model, j.finish, j.path, j.view, j.open, 400f, refresh: false)); }
+            catch (System.Exception e) { Debug.LogError($"[CasePreview] {j.model}: {e.Message}"); }
+            _batchDone++;
+        }
+
+        public static string Render(string model, string finish, string outPath, string view = "front", bool open = false, float pxPerM = 500f,
+                                    bool refresh = true)
+        {
+            // designs edited outside the editor (the 2D tools, a cloud session) reach Resources only after an import
+            if (refresh)
+            {
+                UnityEditor.AssetDatabase.Refresh();
+                CaseCatalog.Reload();
+            }
             var cm = CaseCatalog.Model(model);
             if (cm == null) return "[CasePreview] no model " + model;
             var lib = MaterialLibrary.Create();

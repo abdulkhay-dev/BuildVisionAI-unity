@@ -42,6 +42,7 @@ Every part has a `kind` (default `panel`), a `box` `[x0, y0, z0, x1, y1, z1]` (m
 | `mat` | material role (below); default by kind |
 | `edge` | rounding of the edges, mm (panel 1, front 1.5, back 0.3) |
 | `grain` | `x` / `y` / `z`: the direction a wood decor runs on this part (default: its longest side) |
+| `rot` | a turned part: `{"axis": "x", "deg": -8, "about": [x, y, z]}` — deg > 0 about x turns y towards z (a headboard's top forward; −8 leans it back), about y turns z towards x, about z turns x towards y; `about` defaults to the box's centre. The box is the part before the turn |
 | `shape` | `rect` (default; `radius` rounds its corners) · `circle` / `ring` (an ellipse in the box, cut through its thinnest axis; `inner` = the ring's hole diameter) · `path` with `outline`: an SVG path (`M L H V C Q A Z`, absolute mm) in the plane across the box's thinnest axis — front plane (x, y), top plane (x, z) or side plane (z, y); clipped to the box |
 
 Kinds:
@@ -55,7 +56,7 @@ Kinds:
 | `mirror` | mirror | |
 | `moulding` | a profile swept along a path | `profile`, `path`, `closed`, `z`, `plane`, `side` (below) |
 | `tube` | round bar along the box's longest axis, as thick as its smaller side | legs, hanger rails; `mat` default `metal` |
-| `rod` | bar between two points | `from` / `to` `[x, y, z]`, `d` (diameter at `from`), `d2` (at `to`: taper), `section` `round`/`square` — splayed and tapered legs, hairpins, metal frames, X-bases |
+| `rod` | bar between two points | `from` / `to` `[x, y, z]`, `d` (diameter at `from`), `d2` (at `to`: taper), `section` `round`/`square` — splayed and tapered legs, hairpins, metal frames, X-bases. Without a `box` a rod is left out of the checker's extent and size checks (a leg's cut-list size is its blank); give it `box` when it should count |
 | `handle` | handle on a front face | `model`, `at` `[x, y]`, `z` (the face it stands on), `dir`, `d`, `band`, `t`, `standoff` (below) |
 | `soft` | upholstered panel | `box`; `channels` N (vertical channels) or `tufts` `[columns, rows]` (buttoned); `mat` default `fabric` |
 | `light` | LED puck / strip | glows; `shape: circle` for a puck |
@@ -76,6 +77,8 @@ Kinds:
   * `grooves` — milled lines `lines: [[a0, b0, a1, b1], …]` (absolute mm in the face plane), `w` wide, `depth` deep, `flute`
     `v` or `u` — pull grooves, fake joints, patterns.
   * `diamond` — pyramids `cell: [w, h]`, `depth` high, inside `margin` (3D relief fronts).
+  * `"side": "-"` puts the face on the board's other side (−x of a left side panel, the back of a free-standing piece).
+  * fluted `"area": [a0, b0, a1, b1]` — ribs on that part of the face only, standing on the flat face (applied reeds).
 * `"print": "<library material>"` — a picture over the whole face (kids' fronts).
 * Cut-outs (a handle notch): give the front a `shape: path` outline.
 
@@ -95,15 +98,18 @@ Kinds:
 
 #### Handles
 
-`model`: `ring-half` — a flat half ring (Flora): `at` = the middle of its cut line, `dir` = where its arc bulges (`up`, `down`,
+`model`: `edge` — an L profile over a front's top edge (`at` = [middle, the top edge y], `d` length, `band` the leg on the
+face, `t` metal thickness, `standoff` the lip's depth = front thickness + t) · `ring-half` — a flat half ring (Flora): `at` = the middle of its cut line, `dir` = where its arc bulges (`up`, `down`,
 `left`, `right`); two halves on two fronts make a ring across their joint · `knob` · `bar` (`dir` = its direction, `d` =
-length, `band` = thickness). Sizes: `d` outer diameter / length, `band`, `t` thickness, `standoff` from the face; `z` = the
-front's face.
+length, `band` = thickness; `post` = post size, `section: "square"` = square posts). Sizes: `d` outer diameter / length,
+`band`, `t` thickness, `standoff` from the face; `z` = the front's face; `"on": "back"` = on a back face (z = that face,
+the handle stands out towards −z: a table's back drawer).
 
 ### Material roles (`mat`)
 
 `body` (carcass decor), `front` (fronts, mouldings), `back`, `metal` (the collection's handles and legs), `gold`, `chrome`,
-`black`, `white`, `glass`, `mirror`, `led`, `fabric`, `bedding`, `gloss#rrggbb` (high gloss lacquer), any other role the
+`black`, `white`, `glass`, `mirror`, `led`, `fabric`, `bedding`, `gloss#rrggbb` (high gloss lacquer), `<decor>@gloss` (a
+decor under high gloss lacquer, e.g. a finish role `"body": "birch_flame@gloss"`), any other role the
 finish defines (`top`, `accent`, `frame` … in the finish's `roles`), or a library material name (`"door_enamel_whitey#c9a877"`).
 
 ### Moves

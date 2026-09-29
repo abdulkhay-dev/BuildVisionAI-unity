@@ -114,6 +114,16 @@ namespace House4696.Casegoods
         static float[] PartBox(CasePart p)
         {
             if (p.Box != null && p.Box.Length >= 6) return p.Box;
+            if (p.From != null && p.To != null && p.From.Length >= 3 && p.To.Length >= 3)
+            {
+                float r = Mathf.Max(p.D, p.D2, 1f) * 0.5f;
+                var a = new Vector3(p.From[0], p.From[1], p.From[2]); var b = new Vector3(p.To[0], p.To[1], p.To[2]);
+                var ax = (b - a).normalized;
+                // the ends are cut square to the axis: the radius pads each axis by r·sin(angle to the rod)
+                var pad = new Vector3(Mathf.Sqrt(Mathf.Max(0f, 1f - ax.x * ax.x)), Mathf.Sqrt(Mathf.Max(0f, 1f - ax.y * ax.y)), Mathf.Sqrt(Mathf.Max(0f, 1f - ax.z * ax.z))) * r;
+                var lo = Vector3.Min(a, b) - pad; var hi = Vector3.Max(a, b) + pad;
+                return new[] { lo.x, lo.y, lo.z, hi.x, hi.y, hi.z };
+            }
             if (p.At != null && p.At.Length >= 2)
             {
                 float r = Mathf.Max(p.D, 10f) * 0.5f;
@@ -134,6 +144,33 @@ namespace House4696.Casegoods
             _g.Grain = kind == "panel" || kind == "back" || kind == "front"
                 ? AxisOf(p.Grain) ?? (p.Box != null && p.Box.Length >= 6 ? CaseGeo.LongestAxis(p.Box) : -1)
                 : -1;
+            var turned = TurnOn(p);
+            try { Build(p, kind); }
+            finally { foreach (var mb in turned) mb.Transform = Matrix4x4.identity; }
+        }
+
+        /// <summary>A turned part: every mesh builder it may write to gets the turn in the item's local space.</summary>
+        List<MeshBuilder> TurnOn(CasePart p)
+        {
+            var list = new List<MeshBuilder>();
+            if (p.Rot == null || Mathf.Abs(p.Rot.Deg) < 1e-4f) return list;
+            var about = p.Rot.About != null && p.Rot.About.Length >= 3 ? new Vector3(p.Rot.About[0], p.Rot.About[1], p.Rot.About[2])
+                : p.Box != null && p.Box.Length >= 6 ? new Vector3((p.Box[0] + p.Box[3]) * 0.5f, (p.Box[1] + p.Box[4]) * 0.5f, (p.Box[2] + p.Box[5]) * 0.5f)
+                : Vector3.zero;
+            float d = p.Rot.Deg;
+            // design space is right-handed with z to the front, local space has z to the back (see CaseGeo.P)
+            var q = (p.Rot.Axis ?? "x").ToLowerInvariant() == "y" ? Quaternion.Euler(0f, -d, 0f)
+                  : (p.Rot.Axis ?? "x").ToLowerInvariant() == "z" ? Quaternion.Euler(0f, 0f, d)
+                  : Quaternion.Euler(-d, 0f, 0f);
+            var c = _g.P(about);
+            var m = Matrix4x4.Translate(c) * Matrix4x4.Rotate(q) * Matrix4x4.Translate(-c);
+            foreach (var mb in new[] { Solid(p), Glass(p), _b.D })
+                if (!list.Contains(mb)) { mb.Transform = m; list.Add(mb); }
+            return list;
+        }
+
+        void Build(CasePart p, string kind)
+        {
             switch (kind)
             {
                 case "panel":
@@ -222,6 +259,12 @@ namespace House4696.Casegoods
             string type = (f?.Type ?? "flat").ToLowerInvariant();
             if (type == "flat" || p.Box == null) { Slab(p, mb, m, edge); return; }
             var (pl, a0, b0, a1, b1, w0, w1) = CaseGeo.Thin(p.Box);
+            if (string.Equals(f.Side, "-", StringComparison.Ordinal) || string.Equals(f.Side, "back", StringComparison.OrdinalIgnoreCase))
+            {
+                // the face on the −W side: the same plane looking the other way (depths negate)
+                pl = new CasePlane(pl.Origin, pl.U, pl.V, -pl.W);
+                (w0, w1) = (-w1, -w0);
+            }
             var region = Region(p, a0, b0, a1, b1);
             float depth = Mathf.Clamp(f.Depth, 0.2f, (w1 - w0) * 0.8f);
             switch (type)
@@ -232,7 +275,15 @@ namespace House4696.Casegoods
                     // ribs run along b: swap the plane's axes for ribs along a
                     var fp = alongA ? new CasePlane(pl.Origin, pl.V, pl.U, pl.W) : pl;
                     float s0 = alongA ? b0 : a0, s1 = alongA ? b1 : a1, t0 = alongA ? a0 : b0, t1 = alongA ? a1 : b1;
-                    _g.Slab(mb, pl, region, w0, w1 - depth, edge, m);
+                    // a part of the face only: the ribs stand on the flat face (applied reeds)
+                    bool part = f.Area != null && f.Area.Length >= 4;
+                    float wb = part ? w1 : w1 - depth;
+                    if (part)
+                    {
+                        s0 = alongA ? f.Area[1] : f.Area[0]; s1 = alongA ? f.Area[3] : f.Area[2];
+                        t0 = alongA ? f.Area[0] : f.Area[1]; t1 = alongA ? f.Area[2] : f.Area[3];
+                    }
+                    _g.Slab(mb, pl, region, w0, wb, edge, m);
                     float pitch = Mathf.Max(f.Pitch, 2f), rib = Mathf.Max(pitch - Mathf.Max(f.Gap, 0f), 1f);
                     int n = Mathf.Max(1, Mathf.FloorToInt((s1 - s0 - 2f * f.Margin + f.Gap) / pitch));
                     float start = s0 + ((s1 - s0) - (n * pitch - f.Gap)) * 0.5f;
@@ -246,8 +297,8 @@ namespace House4696.Casegoods
                         float u = 2f * t / rib - 1f, c = Mathf.Sqrt(Mathf.Max(0f, 1f - u * u));
                         return reed ? depth * c : depth * (1f - c);
                     }
-                    float inset = edge;   // the rounded edge of the base stays visible round the ribs
-                    _g.Corrugated(mb, fp, s0 + inset, s1 - inset, t0 + inset, t1 - inset, w1 - depth, H, n * 14, m);
+                    float inset = part ? 0f : edge;   // the rounded edge of the base stays visible round the ribs
+                    _g.Corrugated(mb, fp, s0 + inset, s1 - inset, t0 + inset, t1 - inset, wb, H, n * 14, m);
                     break;
                 }
                 case "frame":
@@ -434,25 +485,32 @@ namespace House4696.Casegoods
             var m = Mat(p.Mat ?? "metal");
             float x = p.At[0], y = p.At[1];
             float d = p.D > 0 ? p.D : 80f, band = p.Band > 0 ? p.Band : 10f, t = p.T > 0 ? p.T : 6f, off = p.Standoff > 0 ? p.Standoff : 8f;
-            var pl = CasePlane.Front;
+            bool back = string.Equals(p.On, "back", StringComparison.OrdinalIgnoreCase);
+            // a back face looks towards −z: the front plane turned round, its depths negated
+            var pl = back ? new CasePlane(Vector3.zero, Vector3.right, Vector3.up, Vector3.back) : CasePlane.Front;
+            float z = back ? -p.Z : p.Z;
+            bool squarePosts = string.Equals(p.Section, "square", StringComparison.OrdinalIgnoreCase);
+            float post = p.Post > 0 ? p.Post : band * 0.7f;
+            PathD Post(float cx, float cy) => squarePosts ? CaseGeo.Rect(cx - post * 0.5f, cy - post * 0.5f, cx + post * 0.5f, cy + post * 0.5f)
+                                                          : CaseGeo.Ellipse(cx, cy, post * 0.5f, post * 0.5f, 14);
             string model = (p.Model ?? "ring-half").ToLowerInvariant();
             if (model == "ring-half")
             {
                 var dir = Dir(p.Dir);
                 float ro = d * 0.5f, ri = ro - band;
-                _g.Slab(mb, pl, new PathsD { CaseGeo.HalfRing(x, y, ro, ri, dir) }, p.Z + off, p.Z + off + t, 0.8f, m);
+                _g.Slab(mb, pl, new PathsD { CaseGeo.HalfRing(x, y, ro, ri, dir) }, z + off, z + off + t, 0.8f, m);
                 // posts near both ends of the arc, into the front
                 float rm = (ro + ri) * 0.5f, a0 = Mathf.Atan2(dir.y, dir.x);
                 foreach (float a in new[] { a0 - Mathf.PI * 0.5f + 0.35f, a0 + Mathf.PI * 0.5f - 0.35f })
                 {
                     var c = CaseGeo.Ellipse(x + rm * Mathf.Cos(a), y + rm * Mathf.Sin(a), band * 0.3f, band * 0.3f, 14);
-                    _g.Slab(mb, pl, new PathsD { c }, p.Z, p.Z + off + 0.5f, 0.3f, m, back: false);
+                    _g.Slab(mb, pl, new PathsD { c }, z, z + off + 0.5f, 0.3f, m, back: false);
                 }
             }
             else if (model == "knob")
             {
-                _g.Slab(mb, pl, new PathsD { CaseGeo.Ellipse(x, y, d * 0.5f, d * 0.5f) }, p.Z + off, p.Z + off + t, Mathf.Min(t * 0.4f, 3f), m);
-                _g.Slab(mb, pl, new PathsD { CaseGeo.Ellipse(x, y, d * 0.22f, d * 0.22f, 16) }, p.Z, p.Z + off + 0.5f, 0.3f, m, back: false);
+                _g.Slab(mb, pl, new PathsD { CaseGeo.Ellipse(x, y, d * 0.5f, d * 0.5f) }, z + off, z + off + t, Mathf.Min(t * 0.4f, 3f), m);
+                _g.Slab(mb, pl, new PathsD { CaseGeo.Ellipse(x, y, d * 0.22f, d * 0.22f, 16) }, z, z + off + 0.5f, 0.3f, m, back: false);
             }
             else if (model == "bar")
             {
@@ -462,12 +520,21 @@ namespace House4696.Casegoods
                 var perp = new Vector2(-dir.y, dir.x) * band * 0.5f;
                 var bar = new PathD { new PointD(a.x - perp.x, a.y - perp.y), new PointD(b.x - perp.x, b.y - perp.y), new PointD(b.x + perp.x, b.y + perp.y), new PointD(a.x + perp.x, a.y + perp.y) };
                 if (Clipper.Area(bar) < 0) bar.Reverse();
-                _g.Slab(mb, pl, new PathsD { bar }, p.Z + off, p.Z + off + t, Mathf.Min(band, t) * 0.4f, m);
+                _g.Slab(mb, pl, new PathsD { bar }, z + off, z + off + t, Mathf.Min(band, t) * 0.4f, m);
                 foreach (float s in new[] { -0.4f, 0.4f })
                 {
                     var c = new Vector2(x, y) + dir * (hl * 2f * s);
-                    _g.Slab(mb, pl, new PathsD { CaseGeo.Ellipse(c.x, c.y, band * 0.35f, band * 0.35f, 14) }, p.Z, p.Z + off + 0.5f, 0.3f, m, back: false);
+                    _g.Slab(mb, pl, new PathsD { Post(c.x, c.y) }, z, z + off + 0.5f, 0.3f, m, back: false);
                 }
+            }
+            else if (model == "edge")
+            {
+                // an edge pull: an L profile over the front's top edge — a leg `band` high on the face and a lip over the
+                // edge `standoff` deep (the front's thickness + the metal); at = [the middle, the top edge], d = length
+                float hl = d * 0.5f, mt = p.T > 0 ? p.T : 2f, lip = p.Standoff > 0 ? p.Standoff : 18f;
+                _g.Slab(mb, pl, new PathsD { CaseGeo.Rect(x - hl, y - band, x + hl, y) }, z, z + mt, 0.4f, m);
+                var top = new CasePlane(Vector3.zero, Vector3.right, back ? Vector3.back : Vector3.forward, Vector3.up);
+                _g.Slab(mb, top, new PathsD { CaseGeo.Rect(x - hl, z + mt - lip, x + hl, z + mt) }, y, y + mt, 0.4f, m);
             }
             else throw new Exception($"нет модели ручки '{p.Model}'");
         }

@@ -46,6 +46,8 @@ namespace House4696.Casegoods
         public float Radius;
         /// <summary>Wood grain / texture direction on a panel: x, y or z (default: the longest side).</summary>
         public string Grain;
+        /// <summary>A turned part: <see cref="PartRot.Deg"/> degrees about a line along <see cref="PartRot.Axis"/> through <see cref="PartRot.About"/>.</summary>
+        public PartRot Rot;
 
         // ---- front
         /// <summary>A glazed front: frame width and glass rebate; null = a solid front.</summary>
@@ -89,6 +91,18 @@ namespace House4696.Casegoods
         public string Dir;
         /// <summary>Handle size: outer diameter / length, band width, thickness, stand-off from the face (mm).</summary>
         public float D, Band, T, Standoff;
+        /// <summary>Handles: bar posts' size (default ≈ band × 0.7) — square posts with <see cref="Section"/> "square";
+        /// <see cref="On"/> "back" = on a back face (a table's back drawer: <see cref="Z"/> is that face, the handle stands out towards −z).</summary>
+        public float Post;
+        public string On;
+    }
+
+    /// <summary>Turn of a part: deg &gt; 0 about x turns y towards z (a headboard's top forward), about y turns z towards x, about z turns x towards y.</summary>
+    public sealed class PartRot
+    {
+        public string Axis = "x";
+        public float Deg;
+        public float[] About;
     }
 
     public sealed class FrontGlass
@@ -117,6 +131,10 @@ namespace House4696.Casegoods
         public float Pitch = 20f, Depth = 3f, Gap = 0f, Border = 60f, R = 2f, W = 4f, Margin = 0f;
         public float[] Cell;
         public List<float[]> Lines;
+        /// <summary>The face on the board's other side (−W: a left side's outer face, the back of a free-standing piece).</summary>
+        public string Side;
+        /// <summary>fluted: only this area [a0, b0, a1, b1] of the face (the ribs stand on the flat face).</summary>
+        public float[] Area;
     }
 
     public sealed class CaseMove

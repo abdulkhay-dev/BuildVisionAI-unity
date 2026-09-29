@@ -164,7 +164,7 @@ def extent_without_handles(d, errors):
     vanish without the handles, they are replaced by a note of how far the handles stand out."""
     if not any(e.startswith("габарит") for e in errors):
         return errors
-    boxes = [preview2d.box_of(p) for p in d.get("parts", []) if p.get("kind") != "handle"]
+    boxes = [preview2d.box_of(p) for p in d.get("parts", []) if p.get("kind") != "handle" and not (p.get("kind") == "rod" and not p.get("box"))]
     boxes = [b for b in boxes if b]
     size = d.get("size")
     if not boxes or not size:
