@@ -1,0 +1,21 @@
+{
+  "id": "luna-1-71",
+  "size": [1000, 250, 400],
+  "parts": [
+    {"id": "bottom", "box": [0.0, 0.0, 4.0, 780.0, 16.0, 234.0]},
+    {"id": "top", "box": [0.0, 384.0, 4.0, 780.0, 400.0, 234.0]},
+    {"id": "side-l", "box": [0.0, 16.0, 4.0, 16.0, 384.0, 234.0]},
+    {"id": "side-r", "box": [764.0, 16.0, 4.0, 780.0, 384.0, 234.0]},
+    {"id": "shelf", "box": [16.5, 192.0, 6.0, 763.5, 208.0, 230.0]},
+    {"id": "back", "box": [2.0, 2.0, 0.0, 778.0, 398.0, 4.0], "kind": "back", "mat": "white"},
+    {"id": "cube-bottom", "box": [780.0, 0.0, 4.0, 1000.0, 16.0, 250.0], "mat": "accent"},
+    {"id": "cube-top", "box": [780.0, 324.0, 4.0, 1000.0, 340.0, 250.0], "mat": "accent"},
+    {"id": "cube-side", "box": [984.0, 16.0, 4.0, 1000.0, 324.0, 250.0], "mat": "accent"},
+    {"id": "cube-back", "box": [782.0, 2.0, 0.0, 998.0, 338.0, 4.0], "kind": "back", "mat": "accent"},
+    {"id": "flap", "box": [2.0, 2.0, 234.0, 778.0, 398.0, 250.0], "kind": "front"},
+    {"id": "k-flap", "kind": "handle", "model": "bar", "mat": "metal", "at": [390.0, 40.0], "dir": "right", "d": 160, "band": 12, "t": 10, "standoff": 25, "z": 250.0, "covers": ["D"], "post": 10, "section": "square"}
+  ],
+  "moves": [
+    {"type": "flap", "name": "flap", "parts": ["flap", "k-flap"], "hinge": "top", "angle": 95}
+  ]
+}

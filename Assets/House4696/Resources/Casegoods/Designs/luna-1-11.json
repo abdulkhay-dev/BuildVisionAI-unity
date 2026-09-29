@@ -1,0 +1,36 @@
+{
+  "id": "luna-1-11",
+  "size": [800, 600, 2017],
+  "parts": [
+    {"id": "bottom", "box": [0.0, 17.0, 4.0, 800.0, 33.0, 584.0]},
+    {"id": "lb-side-l", "box": [0.0, 33.0, 4.0, 16.0, 449.0, 584.0]},
+    {"id": "lb-side-r", "box": [784.0, 33.0, 4.0, 800.0, 449.0, 584.0]},
+    {"id": "lb-top", "box": [0.0, 449.0, 4.0, 800.0, 465.0, 584.0]},
+    {"id": "w-side-l", "box": [0.0, 465.0, 4.0, 16.0, 2001.0, 584.0]},
+    {"id": "w-side-r", "box": [584.0, 465.0, 4.0, 600.0, 2001.0, 584.0], "mat": "accent"},
+    {"id": "w-top", "box": [0.0, 2001.0, 4.0, 600.0, 2017.0, 584.0]},
+    {"id": "c-side", "box": [784.0, 465.0, 4.0, 800.0, 1969.0, 584.0], "mat": "accent"},
+    {"id": "c-top", "box": [600.0, 1969.0, 4.0, 800.0, 1985.0, 584.0], "mat": "accent"},
+    {"id": "c-shelf-1", "box": [600.0, 753.0, 6.0, 784.0, 769.0, 584.0], "mat": "accent"},
+    {"id": "c-shelf-2", "box": [600.0, 1057.0, 6.0, 784.0, 1073.0, 584.0], "mat": "accent"},
+    {"id": "c-shelf-3", "box": [600.0, 1361.0, 6.0, 784.0, 1377.0, 584.0], "mat": "accent"},
+    {"id": "c-shelf-4", "box": [600.0, 1665.0, 6.0, 784.0, 1681.0, 584.0], "mat": "accent"},
+    {"id": "w-shelf-1", "box": [16.5, 1760.0, 6.0, 583.5, 1776.0, 580.0]},
+    {"id": "rail", "box": [16.0, 1690.0, 286.5, 584.0, 1720.0, 301.5], "covers": ["N"], "kind": "tube", "mat": "chrome"},
+    {"id": "back-low", "box": [2.0, 18.0, 0.0, 798.0, 465.0, 4.0], "kind": "back", "mat": "white"},
+    {"id": "back-w", "box": [2.0, 465.0, 0.0, 598.0, 2015.0, 4.0], "kind": "back", "mat": "white"},
+    {"id": "back-c", "box": [598.0, 465.0, 0.0, 798.0, 1983.0, 4.0], "kind": "back", "mat": "accent"},
+    {"id": "flap", "box": [2.0, 19.0, 584.0, 798.0, 463.0, 600.0], "kind": "front"},
+    {"id": "k-flap", "kind": "handle", "model": "bar", "mat": "metal", "at": [400.0, 400.0], "dir": "right", "d": 160, "band": 12, "t": 10, "standoff": 25, "z": 600.0, "covers": ["D"], "post": 10, "section": "square"},
+    {"id": "door", "box": [2.0, 467.0, 584.0, 598.0, 2015.0, 600.0], "kind": "front"},
+    {"id": "k-door", "kind": "handle", "model": "bar", "mat": "metal", "at": [560.0, 1250.0], "dir": "up", "d": 160, "band": 12, "t": 10, "standoff": 25, "z": 600.0, "covers": ["D"], "post": 10, "section": "square"},
+    {"id": "f-1", "box": [15.0, 0.0, 15.0, 65.0, 17.0, 65.0], "covers": ["F"], "kind": "tube", "mat": "black"},
+    {"id": "f-2", "box": [15.0, 0.0, 515.0, 65.0, 17.0, 565.0], "covers": ["F"], "kind": "tube", "mat": "black"},
+    {"id": "f-3", "box": [735.0, 0.0, 15.0, 785.0, 17.0, 65.0], "covers": ["F"], "kind": "tube", "mat": "black"},
+    {"id": "f-4", "box": [735.0, 0.0, 515.0, 785.0, 17.0, 565.0], "covers": ["F"], "kind": "tube", "mat": "black"}
+  ],
+  "moves": [
+    {"type": "flap", "name": "flap", "parts": ["flap", "k-flap"], "hinge": "bottom", "angle": 90},
+    {"type": "door", "name": "door", "parts": ["door", "k-door"], "hinge": "left", "angle": 100}
+  ]
+}

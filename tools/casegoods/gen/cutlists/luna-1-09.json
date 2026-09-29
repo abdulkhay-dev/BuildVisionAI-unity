@@ -1,0 +1,16 @@
+{
+ "code": "П7.049.1.09",
+ "source": "P049-1401.pdf p. 3 (table picture «№, наименование, a×b, n»; ЛДСП 16, ДВП 4 — the thickness is not printed)",
+ "rows": [
+  {
+   "n": "1",
+   "name": "Стенка вертикальная",
+   "size": [
+    900,
+    400,
+    16
+   ],
+   "count": 1
+  }
+ ]
+}

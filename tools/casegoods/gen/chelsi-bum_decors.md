@@ -1,0 +1,4 @@
+## «Челси Бум» (chelsi-bum)
+
+- «Металл Бруклин 808» — Челси Бум (body of chelsi-bum-metall-bordo: carcass, tops, bed ends and rails, the door overlays «накладка», coupe carcass and the lower door panels) — p. 120 («Вариант цветового исполнения», `catpage.py 120 --swatch 0.715,0.865,0.738,0.90`, ±2.3); close-ups in the site photos (komod_chelsi_3-587-1-03) — dark anthracite-blue metal / concrete look: fine brushed streaks and faint oxidised clouds, no wood grain, matt — no direction (or along the long side); provisional #4c4b51.
+- «Дуб Бордо лайт 380 SWN» — Челси Бум (front of chelsi-bum-metall-bordo: doors, drawer fronts and boxes, the shelving's back and shelves, the shelf's plate, the upper coupe door panels); the same decor as Агата / Сорренто / Верес — p. 120 (crop 0.749,0.865,0.772,0.90, ±3.1) — near-white bleached oak, faint grey pore lines and cracks, soft cathedrals — vertical on doors, horizontal on drawer fronts and shelves; provisional #cecece.

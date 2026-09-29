@@ -1,0 +1,4 @@
+## «Луна» (luna)
+
+- «Сосна Рандерс 540 SWN» — Луна (body / front of luna-sosna-oniks: carcass, fronts, tops, bed); the same decor as Парма's «Сосна Рандерс» — p. 122 («Вариант цветового исполнения», `catpage.py 122 --swatch 0.715,0.865,0.738,0.90`, ±2.0), close-up p. 122 (crop 0.23,0.70,0.42,0.91) — white-washed grey-white pine: long straight fibres, faint grey streaks, small pale knots, matt synchronised pores — vertical on doors and sides, along x on tops, drawer fronts and shelves; provisional #c7c8c3.
+- «Оникс 817 TM» — Луна (role `accent` of luna-sosna-oniks: the open shelf towers, the chest's shelf unit, the desks' pedestals, the shelving 2.61 / 2.62) — p. 122 (crop 0.749,0.865,0.772,0.90, ±7.0 — textured) and the site photo Stelazh_Luna_P049-601_onix — grey-brown stone / slate: soft marbled clouds, pale veins and darker patches, no grain, matt — no direction (large-scale, ~600 mm repeat); provisional #726e65.
