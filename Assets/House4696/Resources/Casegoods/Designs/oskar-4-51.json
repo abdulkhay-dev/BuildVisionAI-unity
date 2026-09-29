@@ -1,0 +1,34 @@
+{
+  "id": "oskar-4-51",
+  "size": [1100, 700, 750],
+  "parts": [
+    {"id": "top-left", "box": [0, 728, 0, 550.0, 750, 700], "edge": 2, "grain": "x", "shape": "path", "outline": "M 550.0 0 L 150 0 C 40 0 0 60 0 150 L 0 550 C 0 640 40 700 150 700 L 550.0 700 Z"},
+    {"id": "top-right", "box": [550.0, 728, 0, 1100, 750, 700], "edge": 2, "grain": "x", "shape": "path", "outline": "M 550.0 0 L 950 0 C 1060 0 1100 60 1100 150 L 1100 550 C 1100 640 1060 700 950 700 L 550.0 700 Z"},
+    {"id": "apron-front", "box": [82, 628, 622, 1018, 728, 638], "grain": "x"},
+    {"id": "apron-back", "box": [82, 628, 62, 1018, 728, 78], "grain": "x"},
+    {"id": "apron-end-l", "box": [82, 628, 78, 98, 728, 622], "grain": "z"},
+    {"id": "apron-end-r", "box": [1002, 628, 78, 1018, 728, 622], "grain": "z"},
+    {"id": "runner-f", "mat": "metal", "edge": 0.5, "box": [98, 698, 610, 1002, 728, 622]},
+    {"id": "runner-b", "mat": "metal", "edge": 0.5, "box": [98, 698, 78, 1002, 728, 90]},
+    {"id": "leaf-a", "box": [300, 705, 175, 800, 727, 525], "edge": 2, "grain": "z"},
+    {"id": "leaf-b", "box": [300, 682, 175, 800, 704, 525], "edge": 2, "grain": "z"},
+    {"id": "leg-1-a", "kind": "rod", "mat": "legs", "from": [60, 728, 60], "to": [40, 340, 60], "d": 40},
+    {"id": "leg-1-b", "kind": "rod", "mat": "legs", "from": [40, 340, 60], "to": [45, 15, 60], "d": 40},
+    {"id": "leg-1-glide", "kind": "tube", "mat": "black", "box": [25, 0, 40, 65, 15, 80]},
+    {"id": "leg-2-a", "kind": "rod", "mat": "legs", "from": [60, 728, 640], "to": [40, 340, 640], "d": 40},
+    {"id": "leg-2-b", "kind": "rod", "mat": "legs", "from": [40, 340, 640], "to": [45, 15, 640], "d": 40},
+    {"id": "leg-2-glide", "kind": "tube", "mat": "black", "box": [25, 0, 620, 65, 15, 660]},
+    {"id": "leg-3-a", "kind": "rod", "mat": "legs", "from": [1040, 728, 60], "to": [1060, 340, 60], "d": 40},
+    {"id": "leg-3-b", "kind": "rod", "mat": "legs", "from": [1060, 340, 60], "to": [1055, 15, 60], "d": 40},
+    {"id": "leg-3-glide", "kind": "tube", "mat": "black", "box": [1035, 0, 40, 1075, 15, 80]},
+    {"id": "leg-4-a", "kind": "rod", "mat": "legs", "from": [1040, 728, 640], "to": [1060, 340, 640], "d": 40},
+    {"id": "leg-4-b", "kind": "rod", "mat": "legs", "from": [1060, 340, 640], "to": [1055, 15, 640], "d": 40},
+    {"id": "leg-4-glide", "kind": "tube", "mat": "black", "box": [1035, 0, 620, 1075, 15, 660]}
+  ],
+  "moves": [
+    {"type": "slide", "name": "extend_left", "parts": ["top-left"], "by": [-250, 0, 0]},
+    {"type": "slide", "name": "extend_right", "parts": ["top-right"], "by": [250, 0, 0]},
+    {"type": "slide", "name": "leaf_a", "parts": ["leaf-a"], "by": [0, 23, 175]},
+    {"type": "slide", "name": "leaf_b", "parts": ["leaf-b"], "by": [0, 46, -175]}
+  ]
+}

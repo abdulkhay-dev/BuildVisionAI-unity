@@ -1,0 +1,25 @@
+{
+  "id": "myunhen-4-03",
+  "size": [1200, 800, 780],
+  "parts": [
+    {"id": "top-left", "box": [0, 758, 0, 600, 780, 800], "edge": 2, "grain": "x", "shape": "path", "outline": "M 600 0 L 100 0 Q 0 0 0 100 L 0 700 Q 0 800 100 800 L 600 800 Z"},
+    {"id": "top-right", "box": [600, 758, 0, 1200, 780, 800], "edge": 2, "grain": "x", "shape": "path", "outline": "M 600 0 L 1100 0 Q 1200 0 1200 100 L 1200 700 Q 1200 800 1100 800 L 600 800 Z"},
+    {"id": "apron-end-l", "box": [216, 678, 186, 232, 758, 614], "grain": "z"},
+    {"id": "apron-end-r", "box": [968, 678, 186, 984, 758, 614], "grain": "z"},
+    {"id": "runner-f", "mat": "metal", "edge": 0.5, "box": [232, 728, 602, 968, 758, 614]},
+    {"id": "runner-b", "mat": "metal", "edge": 0.5, "box": [232, 728, 186, 968, 758, 198]},
+    {"id": "leaf-a", "box": [400, 734, 200, 800, 756, 600], "edge": 2, "grain": "z"},
+    {"id": "leaf-b", "box": [400, 710, 200, 800, 732, 600], "edge": 2, "grain": "z"},
+    {"id": "plate", "box": [200, 0, 150, 1000, 22, 650], "grain": "x", "edge": 2, "radius": 60},
+    {"id": "ped-front", "box": [200.0, 22, 614, 1000.0, 758, 630], "grain": "y", "shape": "path", "outline": "M 350 22 L 850 22 L 1000 758 L 200 758 Z"},
+    {"id": "ped-back", "box": [200.0, 22, 170, 1000.0, 758, 186], "grain": "y", "shape": "path", "outline": "M 350 22 L 850 22 L 1000 758 L 200 758 Z"},
+    {"id": "ped-side-l", "box": [283.3, 17.9, 186, 299.3, 682.1, 614], "grain": "y", "rot": {"axis": "z", "deg": 11.52}},
+    {"id": "ped-side-r", "box": [900.7, 17.9, 186, 916.7, 682.1, 614], "grain": "y", "rot": {"axis": "z", "deg": -11.52}}
+  ],
+  "moves": [
+    {"type": "slide", "name": "extend_left", "parts": ["top-left"], "by": [-200, 0, 0]},
+    {"type": "slide", "name": "extend_right", "parts": ["top-right"], "by": [200, 0, 0]},
+    {"type": "slide", "name": "leaf_a", "parts": ["leaf-a"], "by": [0, 24, 200]},
+    {"type": "slide", "name": "leaf_b", "parts": ["leaf-b"], "by": [0, 48, -200]}
+  ]
+}

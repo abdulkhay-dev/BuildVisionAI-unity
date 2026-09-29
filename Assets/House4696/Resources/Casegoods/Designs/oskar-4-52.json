@@ -1,0 +1,29 @@
+{
+  "id": "oskar-4-52",
+  "size": [800, 600, 750],
+  "parts": [
+    {"id": "leaf-lower", "box": [0, 718, 0, 800, 734, 600], "edge": 2, "grain": "x"},
+    {"id": "leaf-upper", "box": [0, 734, 0, 800, 750, 600], "edge": 2, "grain": "x"},
+    {"id": "apron-front", "box": [92, 618, 492, 708, 718, 508], "grain": "x"},
+    {"id": "apron-back", "box": [92, 618, 92, 708, 718, 108], "grain": "x"},
+    {"id": "apron-end-l", "box": [92, 618, 108, 108, 718, 492], "grain": "z"},
+    {"id": "apron-end-r", "box": [692, 618, 108, 708, 718, 492], "grain": "z"},
+    {"id": "swivel", "mat": "metal", "edge": 1, "box": [340, 712, 240, 460, 718, 360]},
+    {"id": "leg-1-a", "kind": "rod", "mat": "legs", "from": [72, 718, 72], "to": [52, 340, 72], "d": 40},
+    {"id": "leg-1-b", "kind": "rod", "mat": "legs", "from": [52, 340, 72], "to": [57, 15, 72], "d": 40},
+    {"id": "leg-1-glide", "kind": "tube", "mat": "black", "box": [37, 0, 52, 77, 15, 92]},
+    {"id": "leg-2-a", "kind": "rod", "mat": "legs", "from": [72, 718, 528], "to": [52, 340, 528], "d": 40},
+    {"id": "leg-2-b", "kind": "rod", "mat": "legs", "from": [52, 340, 528], "to": [57, 15, 528], "d": 40},
+    {"id": "leg-2-glide", "kind": "tube", "mat": "black", "box": [37, 0, 508, 77, 15, 548]},
+    {"id": "leg-3-a", "kind": "rod", "mat": "legs", "from": [728, 718, 72], "to": [748, 340, 72], "d": 40},
+    {"id": "leg-3-b", "kind": "rod", "mat": "legs", "from": [748, 340, 72], "to": [743, 15, 72], "d": 40},
+    {"id": "leg-3-glide", "kind": "tube", "mat": "black", "box": [723, 0, 52, 763, 15, 92]},
+    {"id": "leg-4-a", "kind": "rod", "mat": "legs", "from": [728, 718, 528], "to": [748, 340, 528], "d": 40},
+    {"id": "leg-4-b", "kind": "rod", "mat": "legs", "from": [748, 340, 528], "to": [743, 15, 528], "d": 40},
+    {"id": "leg-4-glide", "kind": "tube", "mat": "black", "box": [723, 0, 508, 763, 15, 548]}
+  ],
+  "moves": [
+    {"type": "slide", "name": "unfold_lower", "parts": ["leaf-lower"], "by": [0, 0, -300]},
+    {"type": "slide", "name": "unfold_upper", "parts": ["leaf-upper"], "by": [0, -16, 300]}
+  ]
+}

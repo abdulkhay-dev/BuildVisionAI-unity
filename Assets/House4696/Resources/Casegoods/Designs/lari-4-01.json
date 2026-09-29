@@ -1,0 +1,18 @@
+{
+  "id": "lari-4-01",
+  "size": [1000, 1000, 765],
+  "parts": [
+    {"id": "top", "shape": "circle", "box": [0, 740, 0, 1000, 765, 1000], "edge": 2, "grain": "x"},
+    {"id": "frame-a-top", "kind": "rod", "mat": "metal", "from": [121.5, 720, 500], "to": [878.5, 720, 500], "d": 40, "section": "square"},
+    {"id": "frame-a-leg-l", "kind": "rod", "mat": "metal", "from": [151.5, 700, 500], "to": [77, 40, 500], "d": 60, "section": "square"},
+    {"id": "frame-a-leg-r", "kind": "rod", "mat": "metal", "from": [848.5, 700, 500], "to": [923, 40, 500], "d": 60, "section": "square"},
+    {"id": "frame-a-floor", "kind": "rod", "mat": "metal", "from": [47, 20, 500], "to": [953, 20, 500], "d": 40, "section": "square", "box": [47, 0, 480, 953, 40, 520]},
+    {"id": "frame-b-top", "kind": "rod", "mat": "metal", "from": [500, 720, 121.5], "to": [500, 720, 878.5], "d": 40, "section": "square"},
+    {"id": "frame-b-leg-l", "kind": "rod", "mat": "metal", "from": [500, 700, 151.5], "to": [500, 40, 77], "d": 60, "section": "square"},
+    {"id": "frame-b-leg-r", "kind": "rod", "mat": "metal", "from": [500, 700, 848.5], "to": [500, 40, 923], "d": 60, "section": "square"},
+    {"id": "frame-b-floor", "kind": "rod", "mat": "metal", "from": [500, 20, 47], "to": [500, 20, 953], "d": 40, "section": "square", "box": [480, 0, 47, 520, 40, 953]}
+  ],
+  "moves": [
+
+  ]
+}

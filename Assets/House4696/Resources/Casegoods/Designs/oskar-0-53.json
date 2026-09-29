@@ -1,0 +1,26 @@
+{
+  "id": "oskar-0-53",
+  "size": [450, 450, 650],
+  "parts": [
+    {"id": "base", "shape": "circle", "box": [0, 40, 0, 450, 56, 450], "edge": 2, "grain": "x"},
+    {"id": "top", "shape": "circle", "box": [0, 630, 0, 450, 646, 450], "edge": 2, "grain": "x"},
+    {"id": "glass", "shape": "circle", "mat": "gloss#141414", "edge": 1, "box": [5, 646, 5, 445, 650, 445]},
+    {"id": "col-side-l", "box": [30, 56, 125, 46, 630, 325], "grain": "y"},
+    {"id": "col-side-r", "box": [164, 56, 125, 180, 630, 325], "grain": "y"},
+    {"id": "col-back-stile-l", "box": [46, 56, 125, 66, 630, 141], "grain": "y"},
+    {"id": "col-back-stile-r", "box": [144, 56, 125, 164, 630, 141], "grain": "y"},
+    {"id": "col-back-rail-t", "box": [66, 585, 125, 144, 630, 141], "grain": "x"},
+    {"id": "col-back-rail-b", "box": [66, 56, 125, 144, 116, 141], "grain": "x"},
+    {"id": "col-front-stile-l", "box": [46, 56, 309, 66, 630, 325], "grain": "y"},
+    {"id": "col-front-stile-r", "box": [144, 56, 309, 164, 630, 325], "grain": "y"},
+    {"id": "col-front-rail-t", "box": [66, 585, 309, 144, 630, 325], "grain": "x"},
+    {"id": "col-front-rail-b", "box": [66, 56, 309, 144, 116, 325], "grain": "x"},
+    {"id": "castor-1", "kind": "tube", "mat": "black", "box": [75, 0, 210, 105, 40, 240]},
+    {"id": "castor-2", "kind": "tube", "mat": "black", "box": [345, 0, 95, 375, 40, 125]},
+    {"id": "castor-3", "kind": "tube", "mat": "black", "box": [345, 0, 325, 375, 40, 355]},
+    {"id": "castor-4", "kind": "tube", "mat": "black", "box": [210, 0, 210, 240, 40, 240]}
+  ],
+  "moves": [
+
+  ]
+}

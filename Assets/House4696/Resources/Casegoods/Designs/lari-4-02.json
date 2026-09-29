@@ -1,0 +1,30 @@
+{
+  "id": "lari-4-02",
+  "size": [1000, 1000, 770],
+  "parts": [
+    {"id": "top-left", "box": [0, 745, 0, 500, 770, 1000], "edge": 2, "grain": "x", "shape": "path", "outline": "M 500 0 C 223.8 0 0 223.8 0 500 C 0 776.2 223.8 1000 500 1000 Z"},
+    {"id": "top-right", "box": [500, 745, 0, 1000, 770, 1000], "edge": 2, "grain": "x", "shape": "path", "outline": "M 500 0 C 776.2 0 1000 223.8 1000 500 C 1000 776.2 776.2 1000 500 1000 Z"},
+    {"id": "frame-front", "mat": "metal", "edge": 1, "box": [90, 635, 754, 910, 745, 770]},
+    {"id": "frame-back", "mat": "metal", "edge": 1, "box": [90, 635, 230, 910, 745, 246]},
+    {"id": "frame-end-l", "mat": "metal", "edge": 1, "box": [90, 635, 246, 106, 745, 754]},
+    {"id": "frame-end-r", "mat": "metal", "edge": 1, "box": [894, 635, 246, 910, 745, 754]},
+    {"id": "hub", "mat": "metal", "edge": 1, "box": [106, 635, 440, 894, 645, 560]},
+    {"id": "leaf-a", "box": [305, 718, 250, 695, 743, 750], "edge": 2, "grain": "z"},
+    {"id": "leaf-b", "box": [305, 691, 250, 695, 716, 750], "edge": 2, "grain": "z"},
+    {"id": "column", "kind": "panel", "mat": "metal", "edge": 2, "box": [440, 470, 440, 560, 635, 560]},
+    {"id": "leg-1", "kind": "rod", "mat": "metal", "from": [460, 530, 460], "to": [267, 25, 267], "d": 50, "section": "square"},
+    {"id": "foot-1", "kind": "tube", "mat": "black", "box": [245, 0, 245, 289, 8, 289]},
+    {"id": "leg-2", "kind": "rod", "mat": "metal", "from": [460, 530, 540], "to": [267, 25, 733], "d": 50, "section": "square"},
+    {"id": "foot-2", "kind": "tube", "mat": "black", "box": [245, 0, 711, 289, 8, 755]},
+    {"id": "leg-3", "kind": "rod", "mat": "metal", "from": [540, 530, 460], "to": [733, 25, 267], "d": 50, "section": "square"},
+    {"id": "foot-3", "kind": "tube", "mat": "black", "box": [711, 0, 245, 755, 8, 289]},
+    {"id": "leg-4", "kind": "rod", "mat": "metal", "from": [540, 530, 540], "to": [733, 25, 733], "d": 50, "section": "square"},
+    {"id": "foot-4", "kind": "tube", "mat": "black", "box": [711, 0, 711, 755, 8, 755]}
+  ],
+  "moves": [
+    {"type": "slide", "name": "extend_left", "parts": ["top-left"], "by": [-195, 0, 0]},
+    {"type": "slide", "name": "extend_right", "parts": ["top-right"], "by": [195, 0, 0]},
+    {"type": "slide", "name": "leaf_a", "parts": ["leaf-a"], "by": [0, 27, 250]},
+    {"type": "slide", "name": "leaf_b", "parts": ["leaf-b"], "by": [0, 54, -250]}
+  ]
+}
