@@ -1,0 +1,12 @@
+{
+  "id": "arista-1-39",
+  "size": [350, 20, 350],
+  "parts": [
+    {"id": "frame", "shape": "ring", "inner": 304, "edge": 6, "box": [0, 0, 7, 350, 350, 20]},
+    {"id": "mirror", "kind": "mirror", "shape": "circle", "box": [19, 19, 3, 331, 331, 7]},
+    {"id": "back", "kind": "back", "shape": "circle", "mat": "white", "box": [25, 25, 0, 325, 325, 3]}
+  ],
+  "moves": [
+
+  ]
+}

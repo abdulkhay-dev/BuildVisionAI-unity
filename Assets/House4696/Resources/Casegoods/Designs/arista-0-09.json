@@ -1,0 +1,23 @@
+{
+  "id": "arista-0-09",
+  "size": [900, 500, 451],
+  "parts": [
+    {"id": "top", "box": [0, 435, 0, 900, 451, 500]},
+    {"id": "bottom", "box": [0, 110, 0, 900, 126, 500]},
+    {"id": "side-l", "box": [0, 126, 0, 16, 435, 500]},
+    {"id": "side-r", "box": [884, 126, 0, 900, 435, 500]},
+    {"id": "part", "mat": "oak", "box": [500, 126, 0, 516, 435, 500]},
+    {"id": "shelf", "mat": "oak", "box": [16, 272, 0, 500, 288, 500]},
+    {"id": "leg-1", "kind": "rod", "mat": "metal", "section": "square", "d": 40, "d2": 30, "from": [71, 110, 70], "to": [59, 3, 62.8], "covers": ["g"]},
+    {"id": "leg-1-glide", "kind": "panel", "mat": "black", "edge": 0.5, "box": [44.0, 0, 47.8, 74.0, 3, 77.8]},
+    {"id": "leg-2", "kind": "rod", "mat": "metal", "section": "square", "d": 40, "d2": 30, "from": [71, 110, 430], "to": [59, 3, 437.2], "covers": ["g"]},
+    {"id": "leg-2-glide", "kind": "panel", "mat": "black", "edge": 0.5, "box": [44.0, 0, 422.2, 74.0, 3, 452.2]},
+    {"id": "leg-3", "kind": "rod", "mat": "metal", "section": "square", "d": 40, "d2": 30, "from": [829, 110, 70], "to": [841, 3, 62.8], "covers": ["g"]},
+    {"id": "leg-3-glide", "kind": "panel", "mat": "black", "edge": 0.5, "box": [826.0, 0, 47.8, 856.0, 3, 77.8]},
+    {"id": "leg-4", "kind": "rod", "mat": "metal", "section": "square", "d": 40, "d2": 30, "from": [829, 110, 430], "to": [841, 3, 437.2], "covers": ["g"]},
+    {"id": "leg-4-glide", "kind": "panel", "mat": "black", "edge": 0.5, "box": [826.0, 0, 422.2, 856.0, 3, 452.2]}
+  ],
+  "moves": [
+
+  ]
+}

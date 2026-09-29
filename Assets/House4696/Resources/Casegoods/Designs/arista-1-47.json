@@ -1,0 +1,30 @@
+{
+  "id": "arista-1-47",
+  "size": [500, 416, 554],
+  "parts": [
+    {"id": "top", "mat": "body", "box": [0, 538, 3, 500, 554, 413]},
+    {"id": "base", "box": [0, 110, 3, 500, 126, 397]},
+    {"id": "side-l", "box": [0, 126, 3, 16, 538, 397]},
+    {"id": "side-r", "box": [484, 126, 3, 500, 538, 397]},
+    {"id": "back", "kind": "back", "mat": "white", "box": [1, 111, 0, 499, 553, 3]},
+    {"id": "d1-front-1", "kind": "front", "box": [2, 112, 397, 498, 272, 416], "mat": "accent"},
+    {"id": "d1-front-2", "kind": "front", "box": [2, 272, 397, 498, 333, 416]},
+    {"id": "d1-side-l", "mat": "white", "box": [29, 136, 20, 45, 297, 397]},
+    {"id": "d1-side-r", "mat": "white", "box": [455, 136, 20, 471, 297, 397]},
+    {"id": "d1-back", "mat": "white", "box": [45, 136, 20, 455, 297, 36]},
+    {"id": "d1-bottom", "kind": "back", "mat": "white", "box": [39, 144, 26, 461, 147, 395]},
+    {"id": "h-d1", "kind": "handle", "model": "bar", "at": [250, 300], "dir": "right", "d": 176, "band": 10, "t": 10, "standoff": 22, "z": 416, "covers": ["c3"]},
+    {"id": "niche-bottom", "mat": "white", "box": [16, 336, 3, 484, 352, 397]},
+    {"id": "leg-1", "kind": "rod", "mat": "metal", "section": "square", "d": 40, "d2": 30, "from": [80, 110, 60], "to": [72, 3, 55.2], "covers": ["g"]},
+    {"id": "leg-1-glide", "kind": "panel", "mat": "black", "edge": 0.5, "box": [57.0, 0, 40.2, 87.0, 3, 70.2]},
+    {"id": "leg-2", "kind": "rod", "mat": "metal", "section": "square", "d": 40, "d2": 30, "from": [80, 110, 356], "to": [72, 3, 360.8], "covers": ["g"]},
+    {"id": "leg-2-glide", "kind": "panel", "mat": "black", "edge": 0.5, "box": [57.0, 0, 345.8, 87.0, 3, 375.8]},
+    {"id": "leg-3", "kind": "rod", "mat": "metal", "section": "square", "d": 40, "d2": 30, "from": [420, 110, 60], "to": [428, 3, 55.2], "covers": ["g"]},
+    {"id": "leg-3-glide", "kind": "panel", "mat": "black", "edge": 0.5, "box": [413.0, 0, 40.2, 443.0, 3, 70.2]},
+    {"id": "leg-4", "kind": "rod", "mat": "metal", "section": "square", "d": 40, "d2": 30, "from": [420, 110, 356], "to": [428, 3, 360.8], "covers": ["g"]},
+    {"id": "leg-4-glide", "kind": "panel", "mat": "black", "edge": 0.5, "box": [413.0, 0, 345.8, 443.0, 3, 375.8]}
+  ],
+  "moves": [
+    {"type": "drawer", "name": "drawer_1", "parts": ["d1-front-1", "d1-front-2", "d1-side-l", "d1-side-r", "d1-back", "d1-bottom", "h-d1"], "travel": 302}
+  ]
+}

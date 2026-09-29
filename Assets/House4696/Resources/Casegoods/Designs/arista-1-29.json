@@ -1,0 +1,34 @@
+{
+  "id": "arista-1-29",
+  "size": [902, 583, 2292],
+  "parts": [
+    {"id": "top", "box": [0, 2276, 3, 902, 2292, 580]},
+    {"id": "base", "box": [0, 20, 3, 902, 36, 564]},
+    {"id": "side-l", "box": [0, 36, 3, 16, 2276, 564]},
+    {"id": "side-r", "box": [886, 36, 3, 902, 2276, 564]},
+    {"id": "in-bottom", "mat": "white", "box": [16.5, 400, 3, 885.5, 416, 563]},
+    {"id": "in-top", "mat": "white", "box": [16.5, 1896, 3, 885.5, 1912, 563]},
+    {"id": "in-rail", "kind": "tube", "mat": "chrome", "box": [20, 1815, 276, 882, 1845, 291]},
+    {"id": "rail-back", "mat": "white", "box": [16.5, 1092, 3, 885.5, 1220, 19]},
+    {"id": "back-1", "kind": "back", "mat": "white", "box": [2, 21, 0, 900, 407, 3]},
+    {"id": "back-2", "kind": "back", "mat": "white", "box": [2, 1905, 0, 900, 2291, 3]},
+    {"id": "back-m1", "kind": "back", "mat": "white", "box": [2, 409, 0, 450, 1155, 3]},
+    {"id": "back-m2", "kind": "back", "mat": "white", "box": [452, 409, 0, 900, 1155, 3]},
+    {"id": "back-m3", "kind": "back", "mat": "white", "box": [2, 1157, 0, 450, 1903, 3]},
+    {"id": "back-m4", "kind": "back", "mat": "white", "box": [452, 1157, 0, 900, 1903, 3]},
+    {"id": "d1-oak", "kind": "front", "mat": "accent", "grain": "y", "box": [3.5, 22, 564, 163.5, 2274, 583]},
+    {"id": "d1-w", "kind": "front", "box": [163.5, 22, 564, 449.5, 2274, 583]},
+    {"id": "h-d1", "kind": "handle", "model": "bar", "at": [387, 1150], "dir": "up", "d": 176, "band": 10, "t": 10, "standoff": 22, "z": 583, "covers": ["c3"]},
+    {"id": "d2-w", "kind": "front", "box": [452.5, 22, 564, 738.5, 2274, 583]},
+    {"id": "d2-oak", "kind": "front", "mat": "accent", "grain": "y", "box": [738.5, 22, 564, 898.5, 2274, 583]},
+    {"id": "h-d2", "kind": "handle", "model": "bar", "at": [515, 1150], "dir": "up", "d": 176, "band": 10, "t": 10, "standoff": 22, "z": 583, "covers": ["c3"]},
+    {"id": "k2-1", "kind": "panel", "mat": "black", "edge": 2, "box": [20.0, 0, 6.0, 108.0, 20, 60.0], "covers": ["k2"]},
+    {"id": "k2-2", "kind": "panel", "mat": "black", "edge": 2, "box": [20.0, 0, 507.0, 108.0, 20, 561.0], "covers": ["k2"]},
+    {"id": "k2-3", "kind": "panel", "mat": "black", "edge": 2, "box": [794.0, 0, 6.0, 882.0, 20, 60.0], "covers": ["k2"]},
+    {"id": "k2-4", "kind": "panel", "mat": "black", "edge": 2, "box": [794.0, 0, 507.0, 882.0, 20, 561.0], "covers": ["k2"]}
+  ],
+  "moves": [
+    {"type": "door", "name": "door_1", "parts": ["d1-oak", "d1-w", "h-d1"], "hinge": "left", "angle": 100, "axis": [3.5, 583]},
+    {"type": "door", "name": "door_2", "parts": ["d2-w", "d2-oak", "h-d2"], "hinge": "right", "angle": 100, "axis": [898.5, 583]}
+  ]
+}
