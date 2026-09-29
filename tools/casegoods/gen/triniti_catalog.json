@@ -1,0 +1,25 @@
+{
+  "finishes": [
+    {"id": "triniti-vanil", "name": "Ваниль / Гикори Кингстон 579 SWN", "body": "door_enamel_whitey#a1876f", "front": "door_enamel_whitey#e3e4df", "swatch": "#e3e4df"},
+    {"id": "triniti-antracit", "name": "Антрацит / Гикори Кингстон 579 SWN", "body": "door_enamel_whitey#a1876f", "front": "door_enamel_whitey#3c3f41", "swatch": "#3c3f41"}
+  ],
+  "profiles": {
+    "triniti-hb-1-1": {"name": "Изголовье «Тринити»: щит 1.1 (700 × 16) на наклоне 8°", "pts": [[0.0, 157.0], [2.26, 172.84], [695.26, 74.09], [693.0, 58.25]]},
+    "triniti-hb-6": {"name": "Изголовье «Тринити»: панель 6 (499 × 19.5) на щите 1.1", "pts": [[2.26, 172.84], [5.01, 192.14], [499.02, 121.75], [496.27, 102.45]]},
+    "triniti-hb-5": {"name": "Изголовье «Тринити»: планка 5 (200 × 16.5) с пирамидами на щите 1.1", "pts": [[497.26, 102.3], [499.58, 118.64], [697.58, 90.42], [695.26, 74.09]]}
+  },
+  "collections": [
+    {"id": "triniti", "name": "Тринити", "brand": "Пинскдрев", "finishes": ["triniti-vanil", "triniti-antracit"], "metal": "chrome", "note": "Каталог «Корпусная мебель ч. II» 2025, с. 9–11 (с. 14–19 по нумерации каталога). Корпус ЛДСП 16 «Гикори Кингстон» (крышка и дно на всю ширину, боковины и перегородки между ними), вкладные фасады МДФ 19 / 19,5 с фрезерованными пирамидами 100×100 и гладкие, push-to-open без ручек, наклонные конические опоры 130 из массива."}
+  ],
+  "models": [
+    {"id": "triniti-0-01", "code": "П6.114.0.01", "name": "Шкаф «Тринити»", "collection": "triniti", "category": "living", "size": [638, 435, 2030], "is": "IS-P6-114-0-01-SHkaf.pdf", "page": 9, "note": "универсальный, с витриной"},
+    {"id": "triniti-0-02", "code": "П6.114.0.02", "name": "Тумба «Тринити»", "collection": "triniti", "category": "living", "size": [1644, 435, 570], "is": "IS-P6-114-0-02-Tumba.pdf", "page": 9, "note": "ТВ"},
+    {"id": "triniti-0-04", "code": "П6.114.0.04", "name": "Тумба «Тринити»", "collection": "triniti", "category": "living", "size": [1242, 435, 1370], "is": "IS-P6-114-0-04.pdf", "page": 9},
+    {"id": "triniti-0-05", "code": "П6.114.0.05", "name": "Тумба «Тринити»", "collection": "triniti", "category": "living", "size": [1644, 435, 975], "is": "IS-P6-114-0-05.pdf", "page": 9},
+    {"id": "triniti-1-01", "code": "П6.114.1.01", "name": "Шкаф для одежды 3Д «Тринити»", "collection": "triniti", "category": "bedroom", "size": [1544, 590, 2300], "is": "IS-P6-114-1-01-SHkaf-dlya-odejdyi-3D.pdf", "page": 11},
+    {"id": "triniti-1-02", "code": "П6.114.1.02", "name": "Комод «Тринити»", "collection": "triniti", "category": "bedroom", "size": [1038, 435, 975], "is": "IS-P6-114-1-02-Komod.pdf", "page": 11},
+    {"id": "triniti-1-03", "code": "П6.114.1.03", "name": "Зеркало «Тринити»", "collection": "triniti", "category": "decor", "size": [1000, 20, 780], "is": "IS-P6-114-1-03-Zerkalo.pdf", "page": 11, "mount": "wall"},
+    {"id": "triniti-1-04", "code": "П6.114.1.04", "name": "Тумба прикроватная «Тринити»", "collection": "triniti", "category": "bedroom", "size": [538, 435, 470], "is": "IS-P6-114-1-04-Tumba-prikrovatnaya.pdf", "page": 11},
+    {"id": "triniti-1-05", "code": "П6.114.1.05", "name": "Кровать 2-16 «Тринити»", "collection": "triniti", "category": "bedroom", "size": [1700, 2217, 1143], "is": "IS-P6-114-1-05-Krovat-2-16.pdf", "page": 11, "note": "спальное место 2000×1600; размер по инструкции (в каталоге L2217×B1800×H1193)"}
+  ]
+}

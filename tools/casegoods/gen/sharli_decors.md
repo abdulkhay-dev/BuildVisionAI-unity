@@ -1,0 +1,1 @@
+- «Шарли керамика» — Шарли (top, backs of the niche) — p. 4 (photo only, no swatch) — warm grey-brown ceramic / stone-look decor with faint streaks, no clear grain; matte — direction x along the top

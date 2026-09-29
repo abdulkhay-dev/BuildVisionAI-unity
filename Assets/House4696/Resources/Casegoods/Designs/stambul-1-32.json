@@ -1,0 +1,16 @@
+{
+  "id": "stambul-1-32",
+  "size": [1190, 24, 557],
+  "parts": [
+    {"id": "base", "box": [0, 0, 0, 1190, 557, 16]},
+    {"id": "mirror", "box": [12, 50, 16, 960, 507, 20], "kind": "mirror"},
+    {"id": "frame-top", "box": [0, 507, 16, 1190, 557, 24], "kind": "front", "mat": "gloss"},
+    {"id": "frame-bottom", "box": [0, 0, 16, 1190, 50, 24], "kind": "front", "mat": "gloss"},
+    {"id": "frame-left", "box": [0, 50, 16, 12, 507, 24], "kind": "front", "mat": "gloss"},
+    {"id": "frame-right", "box": [960, 50, 16, 1190, 507, 24], "kind": "front", "mat": "gloss"},
+    {"id": "strip", "kind": "rod", "section": "square", "mat": "metal", "d": 8, "from": [994, 0, 22.0], "to": [994, 557, 22.0]}
+  ],
+  "moves": [
+
+  ]
+}

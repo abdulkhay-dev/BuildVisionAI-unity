@@ -1,0 +1,17 @@
+{
+  "finishes": [
+    { "id": "djio-bazalt-kedr", "name": "Базальт 683 PO / Кедр Орегон 537 SWN", "body": "door_enamel_whitey#4d4e49", "swatch": "#4d4e49",
+      "roles": { "top": "door_enamel_whitey#a47e5a" } }
+  ],
+  "profiles": {},
+  "collections": [
+    { "id": "djio", "name": "Джио", "brand": "Пинскдрев", "finishes": ["djio-bazalt-kedr"], "metal": "gold#9c8455",
+      "note": "Каталог «Корпусная мебель ч. II» 2025, с. 49 (Пинскдрев-Заславль). Корпус ЛДСП 16 на цоколе-плите 25 мм и опорах-брусках 40 мм, крышка 25 мм «Кедр Орегон», пилястры 70 с двумя пазами, рамочные двери МДФ (стекло / филёнка), ручки-кнопки." }
+  ],
+  "models": [
+    { "id": "djio-0-11", "code": "П7.060.0.11", "name": "Шкаф «Джио»", "collection": "djio", "category": "living", "size": [650, 450, 2200], "is": "SHkaf-Djio-P7-060-0-11.pdf", "page": 49 },
+    { "id": "djio-0-21", "code": "П7.060.0.21", "name": "Тумба «Джио»", "collection": "djio", "category": "living", "size": [1575, 450, 800], "is": "Tumba-Djio-P7-060-0-21.pdf", "page": 49, "note": "каталог пишет L1578; инструкция и спецификация (крышка 1575) — 1575" },
+    { "id": "djio-0-22", "code": "П7.060.0.22", "name": "Тумба «Джио»", "collection": "djio", "category": "living", "size": [1114, 450, 1200], "is": "Tumba-Djio-P7-060-0-22-1.pdf", "page": 49 },
+    { "id": "djio-0-23", "code": "П7.060.0.23", "name": "Тумба «Джио»", "collection": "djio", "category": "living", "size": [800, 450, 1200], "is": "Tumba-Djio-P7-060-0-23.pdf", "page": 49, "note": "каталог пишет B4500 (опечатка); крышка 800×450" }
+  ]
+}

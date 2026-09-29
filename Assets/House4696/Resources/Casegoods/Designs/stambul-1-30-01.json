@@ -1,0 +1,31 @@
+{
+  "id": "stambul-1-30-01",
+  "size": [690, 423, 513],
+  "parts": [
+    {"id": "side-l", "box": [674, 160, 0, 690, 497, 405]},
+    {"id": "side-r", "box": [0, 160, 0, 16, 497, 405]},
+    {"id": "top", "box": [0, 497, 0, 690, 513, 423], "mat": "gloss"},
+    {"id": "bottom", "box": [16, 160, 0, 674, 176, 405]},
+    {"id": "shelf", "box": [17, 330, 20, 673, 346, 385]},
+    {"id": "back", "box": [10, 170, 6, 680, 503, 9.5], "kind": "back"},
+    {"id": "panel", "box": [1.5, 163, 405, 208, 494, 423], "kind": "front", "mat": "gloss"},
+    {"id": "strip", "kind": "rod", "section": "square", "mat": "metal", "d": 8, "from": [214, 163, 419.0], "to": [214, 494, 419.0]},
+    {"id": "leg-lf-arm", "kind": "rod", "section": "square", "mat": "metal", "d": 12, "from": [677, 154, 380], "to": [545, 154, 380]},
+    {"id": "leg-lf", "kind": "rod", "mat": "metal", "d": 24, "d2": 15, "from": [665, 148, 380], "to": [669, 14, 380]},
+    {"id": "leg-lf-glide", "box": [662, 0, 373, 676, 14, 387], "kind": "tube", "mat": "metal"},
+    {"id": "leg-rf-arm", "kind": "rod", "section": "square", "mat": "metal", "d": 12, "from": [13, 154, 380], "to": [145, 154, 380]},
+    {"id": "leg-rf", "kind": "rod", "mat": "metal", "d": 24, "d2": 15, "from": [25, 148, 380], "to": [21, 14, 380]},
+    {"id": "leg-rf-glide", "box": [14, 0, 373, 28, 14, 387], "kind": "tube", "mat": "metal"},
+    {"id": "leg-lb-arm", "kind": "rod", "section": "square", "mat": "metal", "d": 12, "from": [677, 154, 30], "to": [545, 154, 30]},
+    {"id": "leg-lb", "kind": "rod", "mat": "metal", "d": 24, "d2": 15, "from": [665, 148, 30], "to": [669, 14, 30]},
+    {"id": "leg-lb-glide", "box": [662, 0, 23, 676, 14, 37], "kind": "tube", "mat": "metal"},
+    {"id": "leg-rb-arm", "kind": "rod", "section": "square", "mat": "metal", "d": 12, "from": [13, 154, 30], "to": [145, 154, 30]},
+    {"id": "leg-rb", "kind": "rod", "mat": "metal", "d": 24, "d2": 15, "from": [25, 148, 30], "to": [21, 14, 30]},
+    {"id": "leg-rb-glide", "box": [14, 0, 23, 28, 14, 37], "kind": "tube", "mat": "metal"},
+    {"id": "door", "box": [220, 163, 405, 688.5, 494, 423], "kind": "front", "mat": "gloss"},
+    {"id": "k-1", "kind": "handle", "model": "bar", "d": 144, "band": 12, "t": 10, "standoff": 25, "dir": "right", "at": [300, 345], "z": 423}
+  ],
+  "moves": [
+    {"type": "door", "name": "door", "parts": ["door", "k-1"], "hinge": "right", "angle": 100}
+  ]
+}

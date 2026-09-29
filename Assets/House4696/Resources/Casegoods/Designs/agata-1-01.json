@@ -1,0 +1,31 @@
+{
+  "id": "agata-1-01",
+  "size": [500, 400, 540],
+  "parts": [
+    {"id": "side-l", "box": [0, 100, 0, 16, 524, 382]},
+    {"id": "side-r", "box": [484, 100, 0, 500, 524, 382]},
+    {"id": "top", "box": [0, 524, 0, 500, 540, 400]},
+    {"id": "bottom", "box": [16, 100, 0, 484, 116, 382]},
+    {"id": "back", "kind": "back", "box": [10, 110, 6, 490, 530, 9.5]},
+    {"id": "front-1", "kind": "front", "box": [12, 113, 382, 488, 315.5, 400]},
+    {"id": "box-l-1", "box": [29, 133, 42, 45, 263, 382]},
+    {"id": "box-r-1", "box": [455, 133, 42, 471, 263, 382]},
+    {"id": "box-b-1", "box": [45, 133, 42, 455, 263, 58]},
+    {"id": "box-bottom-1", "kind": "back", "box": [40, 143, 46, 460, 146.5, 380]},
+    {"id": "k-1", "kind": "handle", "model": "bar", "at": [250.0, 304.5], "dir": "right", "d": 280, "band": 12, "t": 6, "standoff": 10, "z": 400},
+    {"id": "front-2", "kind": "front", "box": [12, 318.5, 382, 488, 521, 400]},
+    {"id": "box-l-2", "box": [29, 338.5, 42, 45, 468.5, 382]},
+    {"id": "box-r-2", "box": [455, 338.5, 42, 471, 468.5, 382]},
+    {"id": "box-b-2", "box": [45, 338.5, 42, 455, 468.5, 58]},
+    {"id": "box-bottom-2", "kind": "back", "box": [40, 348.5, 46, 460, 352.0, 380]},
+    {"id": "k-2", "kind": "handle", "model": "bar", "at": [250.0, 510], "dir": "right", "d": 280, "band": 12, "t": 6, "standoff": 10, "z": 400},
+    {"id": "leg-lf", "kind": "panel", "mat": "metal", "box": [0, 0, 352, 134, 100, 372], "shape": "path", "outline": "M 0 0 L 0 100 L 134 100 C 75 96 45 55.00000000000001 45 0 Z", "edge": 1.5},
+    {"id": "leg-rf", "kind": "panel", "mat": "metal", "box": [366, 0, 352, 500, 100, 372], "shape": "path", "outline": "M 500 0 L 500 100 L 366 100 C 425 96 455 55.00000000000001 455 0 Z", "edge": 1.5},
+    {"id": "leg-lb", "kind": "panel", "mat": "metal", "box": [0, 0, 10, 134, 100, 30], "shape": "path", "outline": "M 0 0 L 0 100 L 134 100 C 75 96 45 55.00000000000001 45 0 Z", "edge": 1.5},
+    {"id": "leg-rb", "kind": "panel", "mat": "metal", "box": [366, 0, 10, 500, 100, 30], "shape": "path", "outline": "M 500 0 L 500 100 L 366 100 C 425 96 455 55.00000000000001 455 0 Z", "edge": 1.5}
+  ],
+  "moves": [
+    {"type": "drawer", "name": "drawer_1", "parts": ["front-1", "box-l-1", "box-r-1", "box-b-1", "box-bottom-1", "k-1"], "travel": 255},
+    {"type": "drawer", "name": "drawer_2", "parts": ["front-2", "box-l-2", "box-r-2", "box-b-2", "box-bottom-2", "k-2"], "travel": 255}
+  ]
+}

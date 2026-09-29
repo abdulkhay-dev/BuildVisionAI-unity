@@ -1,0 +1,17 @@
+{
+  "finishes": [
+    { "id": "sharli-keramika-zhemchug", "name": "Шарли керамика / Персидский жемчуг 810 PO",
+      "body": "door_enamel_whitey#dfe3e2", "back": "door_enamel_whitey#68554e", "swatch": "#dfe3e2",
+      "roles": { "top": "door_enamel_whitey#68554e" } }
+  ],
+  "profiles": {},
+  "collections": [
+    { "id": "sharli", "name": "Шарли", "brand": "Пинскдрев", "finishes": ["sharli-keramika-zhemchug"], "metal": "gold#c9b98c",
+      "note": "Каталог «Корпусная мебель ч. II» 2025, с. 4. Корпус ЛДСП 16 на угловых стойках 80×19 (ножки заодно), фасады МДФ 19 с вертикальными каннелюрами, стеклянные двери без рамки под фрезерованной планкой, столешница «Шарли керамика», опоры-конусы." }
+  ],
+  "models": [
+    { "id": "sharli-0-01-01", "code": "П6.116.0.01-01", "name": "Шкаф «Шарли»", "collection": "sharli", "category": "living", "size": [614, 407, 2004], "is": "IS-P6-116-0-01-01-SHkaf-SHarli.pdf", "page": 4 },
+    { "id": "sharli-0-02", "code": "П6.116.0.02", "name": "Тумба «Шарли»", "collection": "sharli", "category": "living", "size": [1500, 407, 563], "is": "IS-P6-116-0-02-Tumba-SHarli.pdf", "page": 4 },
+    { "id": "sharli-0-03", "code": "П6.116.0.03", "name": "Шкаф 2Д «Шарли»", "collection": "sharli", "category": "living", "size": [1058, 407, 1504], "is": "IS-P6-116-0-03-SHkaf-2D-SHarli.pdf", "page": 4 }
+  ]
+}

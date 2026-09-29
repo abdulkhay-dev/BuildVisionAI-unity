@@ -1,0 +1,31 @@
+{
+  "id": "skarlett-1-30",
+  "size": [500, 428, 427],
+  "parts": [
+    {"id": "side-l", "box": [0, 0, 0, 16, 411, 428], "edge": 2},
+    {"id": "side-r", "box": [484, 0, 0, 500, 411, 428], "edge": 2},
+    {"id": "top", "box": [0, 411, 0, 500, 427, 428], "edge": 7},
+    {"id": "bottom", "box": [16, 45, 0, 484, 61, 408]},
+    {"id": "plinth-front", "box": [16, 0, 380, 484, 45, 396]},
+    {"id": "plinth-back", "box": [16, 0, 20, 484, 45, 36]},
+    {"id": "back", "box": [10, 55, 6, 490, 417, 9.5], "kind": "back"},
+    {"id": "front-1", "box": [18, 47, 410, 482, 265, 428], "kind": "front", "mat": "gloss"},
+    {"id": "dr1-l", "box": [29, 65, 30, 45, 245, 410]},
+    {"id": "dr1-r", "box": [455, 65, 30, 471, 245, 410]},
+    {"id": "dr1-back", "box": [45, 65, 30, 455, 245, 46]},
+    {"id": "dr1-front", "box": [45, 65, 394, 455, 245, 410]},
+    {"id": "dr1-bottom", "box": [39, 75, 40, 461, 78.5, 400], "kind": "back"},
+    {"id": "k-1", "kind": "handle", "model": "bar", "dir": "right", "d": 224, "band": 12, "t": 8, "standoff": 20, "at": [250.0, 188.7], "z": 428},
+    {"id": "front-2", "box": [18, 268, 410, 482, 408, 428], "kind": "front", "mat": "accent"},
+    {"id": "dr2-l", "box": [29, 288, 30, 45, 388, 410]},
+    {"id": "dr2-r", "box": [455, 288, 30, 471, 388, 410]},
+    {"id": "dr2-back", "box": [45, 288, 30, 455, 388, 46]},
+    {"id": "dr2-front", "box": [45, 288, 394, 455, 388, 410]},
+    {"id": "dr2-bottom", "box": [39, 298, 40, 461, 301.5, 400], "kind": "back"},
+    {"id": "k-2", "kind": "handle", "model": "bar", "dir": "right", "d": 224, "band": 12, "t": 8, "standoff": 20, "at": [250.0, 331.0], "z": 428}
+  ],
+  "moves": [
+    {"type": "drawer", "name": "drawer_1", "parts": ["front-1", "dr1-l", "dr1-r", "dr1-back", "dr1-front", "dr1-bottom", "k-1"], "travel": 276},
+    {"type": "drawer", "name": "drawer_2", "parts": ["front-2", "dr2-l", "dr2-r", "dr2-back", "dr2-front", "dr2-bottom", "k-2"], "travel": 276}
+  ]
+}
