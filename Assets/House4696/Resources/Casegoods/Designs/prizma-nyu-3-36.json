@@ -1,0 +1,13 @@
+{
+  "id": "prizma-nyu-3-36",
+  "size": [642, 112, 790],
+  "parts": [
+    {"id": "board", "mat": "front", "grain": "y", "box": [0, 0, 0, 430, 790, 16]},
+    {"id": "mirror", "kind": "mirror", "shape": "circle", "box": [56, 153, 16, 638, 735, 20]},
+    {"id": "ring", "kind": "panel", "shape": "ring", "inner": 578, "mat": "black", "edge": 1, "box": [52, 149, 20, 642, 739, 24]},
+    {"id": "ledge", "box": [15, 10, 16, 415, 26, 112]}
+  ],
+  "moves": [
+
+  ]
+}

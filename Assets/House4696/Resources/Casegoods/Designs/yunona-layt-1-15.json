@@ -1,0 +1,31 @@
+{
+  "id": "yunona-layt-1-15",
+  "size": [579, 252, 2292],
+  "parts": [
+    {"id": "top", "box": [0, 2276, 0, 579, 2292, 252]},
+    {"id": "bottom", "box": [0, 20, 0, 579, 36, 252]},
+    {"id": "side-l", "box": [0, 36, 0, 16, 2276, 252]},
+    {"id": "side-r", "box": [563, 36, 0, 579, 2276, 252]},
+    {"id": "shelf-1", "box": [16.5, 471.2, 10, 562.5, 487.2, 246]},
+    {"id": "shelf-2", "box": [16.5, 922.4, 10, 562.5, 938.4, 246]},
+    {"id": "shelf-3", "box": [16.5, 1373.6, 10, 562.5, 1389.6, 246]},
+    {"id": "shelf-4", "box": [16.5, 1824.8, 10, 562.5, 1840.8, 246]},
+    {"id": "back-low", "kind": "back", "box": [11, 31, 6, 568, 931, 9.2]},
+    {"id": "back-up", "kind": "back", "box": [11, 933, 6, 568, 2281, 9.2]},
+    {"id": "eb-top", "kind": "moulding", "mat": "edge", "profile": "yunona-layt-edge16", "plane": "front", "z": 252, "side": -1, "path": [[0, 2292], [579, 2292]], "box": [0, 2276, 252, 579, 2292, 252.6]},
+    {"id": "eb-bottom", "kind": "moulding", "mat": "edge", "profile": "yunona-layt-edge16", "plane": "front", "z": 252, "side": -1, "path": [[0, 36], [579, 36]], "box": [0, 20, 252, 579, 36, 252.6]},
+    {"id": "eb-side-l", "kind": "moulding", "mat": "edge", "profile": "yunona-layt-edge16", "plane": "front", "z": 252, "side": -1, "path": [[0, 36], [0, 2276]], "box": [0, 36, 252, 16, 2276, 252.6]},
+    {"id": "eb-side-r", "kind": "moulding", "mat": "edge", "profile": "yunona-layt-edge16", "plane": "front", "z": 252, "side": -1, "path": [[563, 36], [563, 2276]], "box": [563, 36, 252, 579, 2276, 252.6]},
+    {"id": "eb-shelf-1", "kind": "moulding", "mat": "edge", "profile": "yunona-layt-edge16", "plane": "front", "z": 246, "side": -1, "path": [[16.5, 487.2], [562.5, 487.2]], "box": [16.5, 471.2, 246, 562.5, 487.2, 246.6]},
+    {"id": "eb-shelf-2", "kind": "moulding", "mat": "edge", "profile": "yunona-layt-edge16", "plane": "front", "z": 246, "side": -1, "path": [[16.5, 938.4], [562.5, 938.4]], "box": [16.5, 922.4, 246, 562.5, 938.4, 246.6]},
+    {"id": "eb-shelf-3", "kind": "moulding", "mat": "edge", "profile": "yunona-layt-edge16", "plane": "front", "z": 246, "side": -1, "path": [[16.5, 1389.6], [562.5, 1389.6]], "box": [16.5, 1373.6, 246, 562.5, 1389.6, 246.6]},
+    {"id": "eb-shelf-4", "kind": "moulding", "mat": "edge", "profile": "yunona-layt-edge16", "plane": "front", "z": 246, "side": -1, "path": [[16.5, 1840.8], [562.5, 1840.8]], "box": [16.5, 1824.8, 246, 562.5, 1840.8, 246.6]},
+    {"id": "glide-1", "kind": "panel", "mat": "black", "edge": 2, "box": [16.0, 0, 13.0, 104.0, 20, 67.0], "covers": ["006"]},
+    {"id": "glide-2", "kind": "panel", "mat": "black", "edge": 2, "box": [16.0, 0, 185.0, 104.0, 20, 239.0], "covers": ["006"]},
+    {"id": "glide-3", "kind": "panel", "mat": "black", "edge": 2, "box": [475.0, 0, 13.0, 563.0, 20, 67.0], "covers": ["006"]},
+    {"id": "glide-4", "kind": "panel", "mat": "black", "edge": 2, "box": [475.0, 0, 185.0, 563.0, 20, 239.0], "covers": ["006"]}
+  ],
+  "moves": [
+
+  ]
+}

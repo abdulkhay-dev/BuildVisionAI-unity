@@ -1,0 +1,11 @@
+{
+  "id": "yunona-layt-1-25",
+  "size": [939, 20, 751],
+  "parts": [
+    {"id": "board", "box": [0, 0, 0, 939, 751, 16]},
+    {"id": "mirror", "kind": "mirror", "edge": 3, "box": [2, 2, 16, 937, 749, 20]}
+  ],
+  "moves": [
+
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "yunona-layt-1-60",
+  "size": [542, 441, 460],
+  "parts": [
+    {"n": "1", "box": [0, 444, 0, 542, 460, 441]},
+    {"n": "2", "box": [0, 20, 0, 542, 36, 441]},
+    {"n": "3", "box": [0, 36, 2, 16, 444, 441]},
+    {"n": "4", "box": [526, 36, 2, 542, 444, 441]},
+    {"id": "eb-1", "kind": "moulding", "mat": "edge", "profile": "yunona-layt-edge16", "plane": "front", "z": 441, "side": -1, "path": [[0, 460], [542, 460]], "box": [0, 444, 441, 542, 460, 441.6]},
+    {"id": "eb-2", "kind": "moulding", "mat": "edge", "profile": "yunona-layt-edge16", "plane": "front", "z": 441, "side": -1, "path": [[0, 36], [542, 36]], "box": [0, 20, 441, 542, 36, 441.6]},
+    {"id": "eb-3", "kind": "moulding", "mat": "edge", "profile": "yunona-layt-edge16", "plane": "front", "z": 441, "side": -1, "path": [[0, 36], [0, 444]], "box": [0, 36, 441, 16, 444, 441.6]},
+    {"id": "eb-4", "kind": "moulding", "mat": "edge", "profile": "yunona-layt-edge16", "plane": "front", "z": 441, "side": -1, "path": [[526, 36], [526, 444]], "box": [526, 36, 441, 542, 444, 441.6]},
+    {"n": "5", "kind": "back", "box": [12, 31, 6, 530, 449, 9.2]},
+    {"id": "glide-1", "kind": "panel", "mat": "black", "edge": 2, "box": [16.0, 0, 13.0, 104.0, 20, 67.0], "covers": ["006"]},
+    {"id": "glide-2", "kind": "panel", "mat": "black", "edge": 2, "box": [16.0, 0, 374.0, 104.0, 20, 428.0], "covers": ["006"]},
+    {"id": "glide-3", "kind": "panel", "mat": "black", "edge": 2, "box": [438.0, 0, 13.0, 526.0, 20, 67.0], "covers": ["006"]},
+    {"id": "glide-4", "kind": "panel", "mat": "black", "edge": 2, "box": [438.0, 0, 374.0, 526.0, 20, 428.0], "covers": ["006"]},
+    {"n": "6", "box": [17, 224, 365, 525, 240, 441]},
+    {"id": "eb-6", "kind": "moulding", "mat": "edge", "profile": "yunona-layt-edge16", "plane": "front", "z": 441, "side": -1, "path": [[17, 240], [525, 240]], "box": [17, 224, 441, 525, 240, 441.6]},
+    {"n": "7.4", "id": "7.4-7", "kind": "front", "mat": "kanon", "box": [19, 243, 425, 523, 441, 441]},
+    {"n": "7.1", "id": "7.1-7-l", "mat": "white", "box": [29.75, 263, 75, 45.75, 391, 425]},
+    {"n": "7.2", "id": "7.2-7-r", "mat": "white", "box": [496.25, 263, 75, 512.25, 391, 425]},
+    {"n": "7.3", "id": "7.3-7", "mat": "white", "box": [45.75, 282, 75, 496.25, 391, 91]},
+    {"n": "7.5", "id": "7.5-7", "kind": "back", "mat": "white", "box": [40.5, 278.8, 75, 501.5, 282, 430]},
+    {"id": "h-d7", "kind": "handle", "model": "bar", "at": [271, 392], "dir": "right", "d": 150, "band": 10, "t": 8, "standoff": 22, "post": 9, "z": 441, "covers": ["h"]}
+  ],
+  "moves": [
+    {"type": "drawer", "name": "drawer_7", "parts": ["7.4-7", "7.1-7-l", "7.2-7-r", "7.3-7", "7.5-7", "h-d7"], "travel": 280}
+  ]
+}

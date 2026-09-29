@@ -1,0 +1,4 @@
+## Каньон Лофт (kanon-loft)
+
+- «Дуб Каньон» (ЛДСП 16) — Каньон Лофт (body and front of kanon-loft-kanon-black: carcass, tops, fronts, aprons, oak strips, bed, desks, table tops) — p. 85 (swatch «Дуб Каньон» / «Черный», crop 0.715,0.865,0.738,0.905), close-up p. 85 (door edge), same swatch p. 86 — light grey-beige rustic oak: long straight sawn planks with pale grey streaks, lengthwise saw marks and fine cracks, small dark knots, hardly any cathedrals, matt — grain along the long side (vertical on doors, sides, strips; x on tops, aprons, drawer fronts, bed rails); provisional #b29e96.
+- «ДВП ламинированная ВЕНГЕ» — Каньон Лофт (role `wenge`: the backs of the vitrine cabinets 0.40 / 0.20, 0.29 / 0.09) — no swatch (product photos of 0.20, the open door) — dark brown wenge: dense straight dark-chocolate stripes with fine lighter lines, no knots — vertical; provisional #46382f.

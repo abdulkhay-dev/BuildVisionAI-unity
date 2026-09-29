@@ -1,0 +1,15 @@
+{
+  "id": "yunona-layt-1-64",
+  "size": [800, 230, 230],
+  "parts": [
+    {"id": "bottom", "box": [0, 0, 0, 800, 16, 230]},
+    {"id": "upright-l", "box": [0, 16, 0, 16, 230, 230]},
+    {"id": "upright-r", "box": [784, 16, 0, 800, 230, 230]},
+    {"id": "eb-bottom", "kind": "moulding", "mat": "edge", "profile": "yunona-layt-edge16", "plane": "front", "z": 230, "side": -1, "path": [[0, 16], [800, 16]], "box": [0, 0, 230, 800, 16, 230.6]},
+    {"id": "eb-upright-l", "kind": "moulding", "mat": "edge", "profile": "yunona-layt-edge16", "plane": "front", "z": 230, "side": -1, "path": [[0, 16], [0, 230]], "box": [0, 16, 230, 16, 230, 230.6]},
+    {"id": "eb-upright-r", "kind": "moulding", "mat": "edge", "profile": "yunona-layt-edge16", "plane": "front", "z": 230, "side": -1, "path": [[784, 16], [784, 230]], "box": [784, 16, 230, 800, 230, 230.6]}
+  ],
+  "moves": [
+
+  ]
+}

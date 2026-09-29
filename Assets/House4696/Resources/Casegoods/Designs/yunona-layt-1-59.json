@@ -1,0 +1,20 @@
+{
+  "id": "yunona-layt-1-59",
+  "size": [995, 20, 700],
+  "parts": [
+    {"id": "wing-l-board", "kind": "front", "mat": "kanon", "box": [0, 0, 0, 247, 700, 16]},
+    {"id": "wing-l-mirror", "kind": "mirror", "edge": 1, "box": [2, 2, 16, 245, 698, 20]},
+    {"id": "centre-board", "kind": "front", "mat": "kanon", "box": [249, 0, 0, 746, 700, 16]},
+    {"id": "centre-mirror", "kind": "mirror", "edge": 1, "box": [251, 2, 16, 744, 698, 20]},
+    {"id": "wing-r-board", "kind": "front", "mat": "kanon", "box": [748, 0, 0, 995, 700, 16]},
+    {"id": "wing-r-mirror", "kind": "mirror", "edge": 1, "box": [750, 2, 16, 993, 698, 20]},
+    {"id": "hinge-247-1", "kind": "panel", "mat": "gold", "edge": 0.3, "box": [247.3, 80, 2, 248.7, 140, 18]},
+    {"id": "hinge-247-2", "kind": "panel", "mat": "gold", "edge": 0.3, "box": [247.3, 560, 2, 248.7, 620, 18]},
+    {"id": "hinge-746-1", "kind": "panel", "mat": "gold", "edge": 0.3, "box": [746.3, 80, 2, 747.7, 140, 18]},
+    {"id": "hinge-746-2", "kind": "panel", "mat": "gold", "edge": 0.3, "box": [746.3, 560, 2, 747.7, 620, 18]}
+  ],
+  "moves": [
+    {"type": "door", "name": "wing_left", "parts": ["wing-l-board", "wing-l-mirror"], "hinge": "right", "angle": 35},
+    {"type": "door", "name": "wing_right", "parts": ["wing-r-board", "wing-r-mirror"], "hinge": "left", "angle": 35}
+  ]
+}

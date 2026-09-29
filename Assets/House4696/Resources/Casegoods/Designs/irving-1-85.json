@@ -1,0 +1,43 @@
+{
+  "id": "irving-1-85",
+  "size": [984, 2141, 960],
+  "parts": [
+    {"id": "post-hl", "grain": "y", "box": [0, 0, 0, 80, 960, 80]},
+    {"id": "post-fl", "grain": "y", "box": [0, 0, 2061, 80, 420, 2141]},
+    {"id": "post-hr", "grain": "y", "box": [904, 0, 0, 984, 960, 80]},
+    {"id": "post-fr", "grain": "y", "box": [904, 0, 2061, 984, 420, 2141]},
+    {"id": "head", "grain": "x", "shape": "path", "outline": "M 80 360 L 904 360 L 904 940 L 552.0 940 C 552.0 860.2 432.0 860.2 432.0 940 L 80 940 Z", "box": [80, 360, 29, 904, 940, 51]},
+    {"id": "head-rail", "grain": "x", "box": [80, 180, 29, 904, 360, 51]},
+    {"id": "foot", "grain": "x", "box": [80, 180, 2090, 904, 400, 2112]},
+    {"id": "rail-l", "grain": "z", "box": [20, 180, 80, 42, 400, 2061]},
+    {"id": "rail-r", "grain": "z", "box": [942, 180, 80, 964, 400, 2061]},
+    {"id": "base-rail-l", "mat": "black", "covers": ["основание"], "box": [42, 230, 82, 72, 260, 2059]},
+    {"id": "base-rail-r", "mat": "black", "box": [912, 230, 82, 942, 260, 2059]},
+    {"id": "slat-1-1", "mat": "door_enamel_whitey#c9a877", "box": [72, 252, 122.0, 912, 260, 175.0]},
+    {"id": "slat-1-2", "mat": "door_enamel_whitey#c9a877", "box": [72, 252, 209.81, 912, 260, 262.81]},
+    {"id": "slat-1-3", "mat": "door_enamel_whitey#c9a877", "box": [72, 252, 297.62, 912, 260, 350.62]},
+    {"id": "slat-1-4", "mat": "door_enamel_whitey#c9a877", "box": [72, 252, 385.43, 912, 260, 438.43]},
+    {"id": "slat-1-5", "mat": "door_enamel_whitey#c9a877", "box": [72, 252, 473.24, 912, 260, 526.24]},
+    {"id": "slat-1-6", "mat": "door_enamel_whitey#c9a877", "box": [72, 252, 561.05, 912, 260, 614.05]},
+    {"id": "slat-1-7", "mat": "door_enamel_whitey#c9a877", "box": [72, 252, 648.86, 912, 260, 701.86]},
+    {"id": "slat-1-8", "mat": "door_enamel_whitey#c9a877", "box": [72, 252, 736.67, 912, 260, 789.67]},
+    {"id": "slat-1-9", "mat": "door_enamel_whitey#c9a877", "box": [72, 252, 824.48, 912, 260, 877.48]},
+    {"id": "slat-1-10", "mat": "door_enamel_whitey#c9a877", "box": [72, 252, 912.29, 912, 260, 965.29]},
+    {"id": "slat-1-11", "mat": "door_enamel_whitey#c9a877", "box": [72, 252, 1000.1, 912, 260, 1053.1]},
+    {"id": "slat-1-12", "mat": "door_enamel_whitey#c9a877", "box": [72, 252, 1087.9, 912, 260, 1140.9]},
+    {"id": "slat-1-13", "mat": "door_enamel_whitey#c9a877", "box": [72, 252, 1175.71, 912, 260, 1228.71]},
+    {"id": "slat-1-14", "mat": "door_enamel_whitey#c9a877", "box": [72, 252, 1263.52, 912, 260, 1316.52]},
+    {"id": "slat-1-15", "mat": "door_enamel_whitey#c9a877", "box": [72, 252, 1351.33, 912, 260, 1404.33]},
+    {"id": "slat-1-16", "mat": "door_enamel_whitey#c9a877", "box": [72, 252, 1439.14, 912, 260, 1492.14]},
+    {"id": "slat-1-17", "mat": "door_enamel_whitey#c9a877", "box": [72, 252, 1526.95, 912, 260, 1579.95]},
+    {"id": "slat-1-18", "mat": "door_enamel_whitey#c9a877", "box": [72, 252, 1614.76, 912, 260, 1667.76]},
+    {"id": "slat-1-19", "mat": "door_enamel_whitey#c9a877", "box": [72, 252, 1702.57, 912, 260, 1755.57]},
+    {"id": "slat-1-20", "mat": "door_enamel_whitey#c9a877", "box": [72, 252, 1790.38, 912, 260, 1843.38]},
+    {"id": "slat-1-21", "mat": "door_enamel_whitey#c9a877", "box": [72, 252, 1878.19, 912, 260, 1931.19]},
+    {"id": "slat-1-22", "mat": "door_enamel_whitey#c9a877", "box": [72, 252, 1966.0, 912, 260, 2019.0]},
+    {"id": "mattress", "kind": "mattress", "box": [42, 260, 82, 942, 460, 2059]}
+  ],
+  "moves": [
+
+  ]
+}

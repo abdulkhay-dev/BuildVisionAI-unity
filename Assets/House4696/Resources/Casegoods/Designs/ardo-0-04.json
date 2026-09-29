@@ -1,0 +1,17 @@
+{
+  "id": "ardo-0-04",
+  "size": [1200, 215, 240],
+  "parts": [
+    {"id": "back-l", "kind": "panel", "mat": "front", "box": [45, 0, 0, 398, 240, 16]},
+    {"id": "back-r", "kind": "panel", "mat": "front", "box": [533, 0, 0, 1155, 240, 16]},
+    {"id": "strip-oak-1", "kind": "panel", "mat": "body", "grain": "y", "box": [398, 0, 0, 439.7, 240, 16]},
+    {"id": "strip-line-1", "kind": "panel", "mat": "black", "box": [439.7, 0, 0, 444.7, 240, 14]},
+    {"id": "strip-oak-2", "kind": "panel", "mat": "body", "grain": "y", "box": [444.7, 0, 0, 486.3, 240, 16]},
+    {"id": "strip-line-2", "kind": "panel", "mat": "black", "box": [486.3, 0, 0, 491.3, 240, 14]},
+    {"id": "strip-oak-3", "kind": "panel", "mat": "body", "grain": "y", "box": [491.3, 0, 0, 533.0, 240, 16]},
+    {"id": "shelf", "box": [0, 20, 16, 1200, 42, 215]}
+  ],
+  "moves": [
+
+  ]
+}

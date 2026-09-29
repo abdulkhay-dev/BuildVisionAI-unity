@@ -1,0 +1,32 @@
+{
+  "id": "ardo-0-01",
+  "size": [634, 420, 1958],
+  "parts": [
+    {"id": "top", "box": [0, 1942, 0, 634, 1958, 420]},
+    {"id": "bottom", "box": [0, 100, 0, 634, 116, 420]},
+    {"id": "side-l", "box": [0, 116, 0, 16, 1942, 420]},
+    {"id": "side-r", "box": [618, 116, 0, 634, 1942, 420]},
+    {"id": "back", "kind": "back", "mat": "white", "box": [9, 109, 6, 625, 1949, 9.5]},
+    {"id": "partition", "box": [454, 116, 10, 470, 1942, 402]},
+    {"id": "strip-oak-1", "kind": "front", "mat": "body", "grain": "y", "box": [463, 118, 404, 510.7, 1940, 420]},
+    {"id": "strip-line-1", "kind": "front", "mat": "black", "box": [510.7, 118, 404, 515.7, 1940, 418]},
+    {"id": "strip-oak-2", "kind": "front", "mat": "body", "grain": "y", "box": [515.7, 118, 404, 563.3, 1940, 420]},
+    {"id": "strip-line-2", "kind": "front", "mat": "black", "box": [563.3, 118, 404, 568.3, 1940, 418]},
+    {"id": "strip-oak-3", "kind": "front", "mat": "body", "grain": "y", "box": [568.3, 118, 404, 616.0, 1940, 420]},
+    {"id": "leg-1", "mat": "metal", "edge": 1, "covers": ["g"], "box": [30.0, 0, 30.0, 70.0, 100, 70.0]},
+    {"id": "leg-2", "mat": "metal", "edge": 1, "covers": ["g"], "box": [30.0, 0, 350.0, 70.0, 100, 390.0]},
+    {"id": "leg-3", "mat": "metal", "edge": 1, "covers": ["g"], "box": [564.0, 0, 30.0, 604.0, 100, 70.0]},
+    {"id": "leg-4", "mat": "metal", "edge": 1, "covers": ["g"], "box": [564.0, 0, 350.0, 604.0, 100, 390.0]},
+    {"id": "shelf-low", "box": [16, 530, 10, 454, 546, 402]},
+    {"id": "shelf-high", "box": [16, 1576, 10, 454, 1592, 402]},
+    {"id": "glass-1", "kind": "glass", "box": [17, 786, 30, 453, 792, 380]},
+    {"id": "glass-2", "kind": "glass", "box": [17, 1256, 30, 453, 1262, 380]},
+    {"id": "door-top", "kind": "front", "box": [18, 1592, 404, 461, 1940, 420]},
+    {"id": "door-glass", "kind": "glass", "box": [18, 548, 404, 461, 1590, 408]},
+    {"id": "door-bottom", "kind": "front", "box": [18, 118, 404, 461, 546, 420]},
+    {"id": "k-door", "kind": "handle", "model": "knob", "at": [95, 1010], "d": 30, "t": 12, "standoff": 20, "z": 408, "covers": ["k"]}
+  ],
+  "moves": [
+    {"type": "door", "name": "door", "parts": ["door-top", "door-glass", "door-bottom", "k-door"], "hinge": "right", "angle": 100, "axis": [461, 420]}
+  ]
+}

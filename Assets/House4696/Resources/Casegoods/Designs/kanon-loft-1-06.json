@@ -1,0 +1,38 @@
+{
+  "id": "kanon-loft-1-06",
+  "size": [1529, 650, 2292],
+  "parts": [
+    {"id": "side-l", "box": [0, 0, 0, 16, 2292, 650]},
+    {"id": "side-r", "box": [1513, 0, 0, 1529, 2292, 650]},
+    {"id": "top", "grain": "x", "box": [16, 2276, 0, 1513, 2292, 650]},
+    {"id": "bottom", "grain": "x", "box": [16, 60, 0, 1513, 76, 560]},
+    {"id": "plinth", "grain": "x", "box": [16, 0, 590, 1513, 60, 606]},
+    {"id": "plinth-back", "box": [16, 0, 20, 1513, 60, 36]},
+    {"id": "back", "kind": "back", "mat": "white", "box": [8, 68, 4, 1521, 2284, 7]},
+    {"id": "track-top", "mat": "metal", "edge": 0.5, "covers": ["профиль"], "box": [16, 2256, 560, 1513, 2276, 650]},
+    {"id": "track-bottom", "mat": "metal", "edge": 0.5, "box": [16, 76, 560, 1513, 80, 645]},
+    {"id": "partition", "mat": "white", "box": [917, 76, 10, 933, 2256, 560]},
+    {"id": "shelf-l1", "mat": "white", "box": [16, 1900, 10, 917, 1916, 550]},
+    {"id": "shelf-l2", "mat": "white", "box": [16, 460, 10, 917, 476, 550]},
+    {"id": "rail-l", "kind": "tube", "mat": "chrome", "box": [19, 1830, 262, 914, 1860, 277]},
+    {"id": "shelf-r1", "mat": "white", "box": [933, 490, 10, 1513, 506, 550]},
+    {"id": "shelf-r2", "mat": "white", "box": [933, 820, 10, 1513, 836, 550]},
+    {"id": "shelf-r3", "mat": "white", "box": [933, 1180, 10, 1513, 1196, 550]},
+    {"id": "shelf-r4", "mat": "white", "box": [933, 1540, 10, 1513, 1556, 550]},
+    {"id": "shelf-r5", "mat": "white", "box": [933, 1900, 10, 1513, 1916, 550]},
+    {"id": "panel-d1", "kind": "front", "grain": "y", "box": [31.0, 102, 617, 764.5, 2234, 627]},
+    {"id": "prof-l-d1", "mat": "metal", "edge": 1, "box": [16.0, 80, 612, 31.0, 2256, 632]},
+    {"id": "prof-r-d1", "mat": "metal", "edge": 1, "box": [764.5, 80, 612, 779.5, 2256, 632]},
+    {"id": "rail-b-d1", "mat": "metal", "box": [31.0, 80, 614, 764.5, 102, 630]},
+    {"id": "rail-t-d1", "mat": "metal", "box": [31.0, 2234, 614, 764.5, 2256, 630]},
+    {"id": "panel-d2", "kind": "front", "grain": "y", "box": [764.5, 102, 585, 1498.0, 2234, 595]},
+    {"id": "prof-l-d2", "mat": "metal", "edge": 1, "box": [749.5, 80, 580, 764.5, 2256, 600]},
+    {"id": "prof-r-d2", "mat": "metal", "edge": 1, "box": [1498.0, 80, 580, 1513.0, 2256, 600]},
+    {"id": "rail-b-d2", "mat": "metal", "box": [764.5, 80, 582, 1498.0, 102, 598]},
+    {"id": "rail-t-d2", "mat": "metal", "box": [764.5, 2234, 582, 1498.0, 2256, 598]}
+  ],
+  "moves": [
+    {"type": "slide", "name": "coupe_d1", "parts": ["panel-d1", "prof-l-d1", "prof-r-d1", "rail-b-d1", "rail-t-d1"], "by": [733.5, 0, 0]},
+    {"type": "slide", "name": "coupe_d2", "parts": ["panel-d2", "prof-l-d2", "prof-r-d2", "rail-b-d2", "rail-t-d2"], "by": [-733.5, 0, 0]}
+  ]
+}

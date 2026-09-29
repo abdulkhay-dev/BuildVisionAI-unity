@@ -1,0 +1,11 @@
+{
+  "id": "irving-1-62",
+  "size": [1060, 5, 600],
+  "parts": [
+    {"id": "backing", "kind": "back", "grain": "x", "box": [0, 0, 0, 1060, 600, 1]},
+    {"id": "mirror", "kind": "mirror", "box": [40, 40, 1, 1020, 560, 5]}
+  ],
+  "moves": [
+
+  ]
+}

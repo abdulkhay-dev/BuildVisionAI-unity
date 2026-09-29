@@ -1,0 +1,36 @@
+{
+  "id": "kanon-loft-0-06",
+  "size": [940, 600, 500],
+  "parts": [
+    {"id": "top", "grain": "x", "box": [0, 484, 0, 940, 500, 600]},
+    {"id": "leg-lf", "mat": "frame", "box": [30, 20, 564, 106, 484, 580]},
+    {"id": "leg-lb", "mat": "frame", "box": [30, 20, 20, 106, 484, 36]},
+    {"id": "runner-l", "mat": "frame", "box": [30, 4, 20, 106, 20, 580]},
+    {"id": "glide-1", "mat": "frame", "shape": "circle", "edge": 0.5, "covers": ["опора"], "box": [61, 0, 33, 75, 4, 47]},
+    {"id": "glide-2", "mat": "frame", "shape": "circle", "edge": 0.5, "covers": ["опора"], "box": [61, 0, 553, 75, 4, 567]},
+    {"id": "leg-rf", "mat": "frame", "box": [834, 20, 564, 910, 484, 580]},
+    {"id": "leg-rb", "mat": "frame", "box": [834, 20, 20, 910, 484, 36]},
+    {"id": "runner-r", "mat": "frame", "box": [834, 4, 20, 910, 20, 580]},
+    {"id": "glide-3", "mat": "frame", "shape": "circle", "edge": 0.5, "covers": ["опора"], "box": [865, 0, 33, 879, 4, 47]},
+    {"id": "glide-4", "mat": "frame", "shape": "circle", "edge": 0.5, "covers": ["опора"], "box": [865, 0, 553, 879, 4, 567]},
+    {"id": "apron-f", "mat": "frame", "box": [106, 374, 564, 834, 484, 580]},
+    {"id": "apron-b", "mat": "frame", "box": [106, 374, 20, 834, 484, 36]},
+    {"id": "drawer-floor", "mat": "frame", "box": [30, 358, 36, 910, 374, 564]},
+    {"id": "divider", "mat": "frame", "box": [462, 374, 36, 478, 484, 564]},
+    {"id": "shelf", "grain": "x", "box": [36, 150, 36, 904, 166, 564]},
+    {"id": "front-l", "kind": "front", "grain": "z", "box": [30, 376, 38, 46, 482, 562]},
+    {"id": "bs1-l", "box": [46, 386, 52, 396, 470, 68]},
+    {"id": "bs2-l", "box": [46, 386, 532, 396, 470, 548]},
+    {"id": "bb-l", "box": [380, 386, 68, 396, 470, 532]},
+    {"id": "bot-l", "kind": "back", "mat": "frame", "box": [46, 380, 60, 396, 383, 540]},
+    {"id": "front-r", "kind": "front", "grain": "z", "box": [894, 376, 38, 910, 482, 562]},
+    {"id": "bs1-r", "box": [544, 386, 52, 894, 470, 68]},
+    {"id": "bs2-r", "box": [544, 386, 532, 894, 470, 548]},
+    {"id": "bb-r", "box": [544, 386, 68, 560, 470, 532]},
+    {"id": "bot-r", "kind": "back", "mat": "frame", "box": [544, 380, 60, 894, 383, 540]}
+  ],
+  "moves": [
+    {"type": "slide", "name": "drawer_l", "parts": ["front-l", "bs1-l", "bs2-l", "bb-l", "bot-l"], "by": [-300, 0, 0]},
+    {"type": "slide", "name": "drawer_r", "parts": ["front-r", "bs1-r", "bs2-r", "bb-r", "bot-r"], "by": [300, 0, 0]}
+  ]
+}

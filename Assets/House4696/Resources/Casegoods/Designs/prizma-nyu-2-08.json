@@ -1,0 +1,32 @@
+{
+  "id": "prizma-nyu-2-08",
+  "size": [1200, 600, 760],
+  "parts": [
+    {"id": "top", "box": [0, 744, 0, 1200, 760, 600]},
+    {"id": "side-l", "box": [21, 4, 20, 37, 744, 580]},
+    {"id": "side-r", "box": [1163, 4, 20, 1179, 744, 580]},
+    {"id": "modesty", "box": [37, 238, 20, 1163, 744, 36]},
+    {"id": "block-wall", "box": [747, 393, 37, 763, 744, 580]},
+    {"id": "block-bottom", "box": [763, 393, 37, 1163, 409, 579]},
+    {"id": "dr1-front", "kind": "front", "box": [765, 412, 564, 1161, 575, 580]},
+    {"id": "dl-r1", "mat": "white", "box": [776.5, 426, 64, 792.5, 562, 564]},
+    {"id": "dr-r1", "mat": "white", "box": [1133.5, 426, 64, 1149.5, 562, 564]},
+    {"id": "db-r1", "mat": "white", "box": [792.5, 445, 64, 1133.5, 562, 80]},
+    {"id": "dbt-r1", "kind": "back", "mat": "white", "box": [787.0, 436, 64, 1139.0, 439, 569]},
+    {"id": "c2-dr1-1", "kind": "handle", "model": "bar", "at": [963.0, 493.5], "dir": "right", "d": 32, "band": 32, "t": 8, "standoff": 18, "post": 10, "section": "square", "z": 580, "covers": ["c2"]},
+    {"id": "dr2-front", "kind": "front", "box": [765, 578, 564, 1161, 741, 580]},
+    {"id": "dl-r2", "mat": "white", "box": [776.5, 592, 64, 792.5, 728, 564]},
+    {"id": "dr-r2", "mat": "white", "box": [1133.5, 592, 64, 1149.5, 728, 564]},
+    {"id": "db-r2", "mat": "white", "box": [792.5, 611, 64, 1133.5, 728, 80]},
+    {"id": "dbt-r2", "kind": "back", "mat": "white", "box": [787.0, 602, 64, 1139.0, 605, 569]},
+    {"id": "c2-dr2-1", "kind": "handle", "model": "bar", "at": [963.0, 659.5], "dir": "right", "d": 32, "band": 32, "t": 8, "standoff": 18, "post": 10, "section": "square", "z": 580, "covers": ["c2"]},
+    {"id": "k1-1", "kind": "panel", "shape": "circle", "mat": "door_enamel_whitey#8c8c8c", "edge": 0.5, "box": [21, 0, 32, 37, 4, 48], "covers": ["k1"]},
+    {"id": "k1-2", "kind": "panel", "shape": "circle", "mat": "door_enamel_whitey#8c8c8c", "edge": 0.5, "box": [21, 0, 552, 37, 4, 568], "covers": ["k1"]},
+    {"id": "k1-3", "kind": "panel", "shape": "circle", "mat": "door_enamel_whitey#8c8c8c", "edge": 0.5, "box": [1163, 0, 32, 1179, 4, 48], "covers": ["k1"]},
+    {"id": "k1-4", "kind": "panel", "shape": "circle", "mat": "door_enamel_whitey#8c8c8c", "edge": 0.5, "box": [1163, 0, 552, 1179, 4, 568], "covers": ["k1"]}
+  ],
+  "moves": [
+    {"type": "drawer", "name": "drawer_r1", "parts": ["dr1-front", "dl-r1", "dr-r1", "db-r1", "dbt-r1", "c2-dr1-1"], "travel": 375.0},
+    {"type": "drawer", "name": "drawer_r2", "parts": ["dr2-front", "dl-r2", "dr-r2", "db-r2", "dbt-r2", "c2-dr2-1"], "travel": 375.0}
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "id": "ardo-0-08",
+  "size": [1250, 1250, 755],
+  "parts": [
+    {"id": "top", "grain": "x", "box": [0, 739, 0, 1250, 755, 600]},
+    {"id": "side-r", "mat": "front", "box": [1234, 0, 0, 1250, 739, 600]},
+    {"id": "modesty", "mat": "front", "box": [450, 549, 16, 1234, 739, 32]},
+    {"id": "p-outer", "mat": "front", "box": [0, 10, 0, 16, 739, 1250]},
+    {"id": "p-end-back", "mat": "front", "box": [16, 10, 0, 450, 574, 16]},
+    {"id": "p-end-front", "mat": "front", "box": [16, 10, 1234, 450, 574, 1250]},
+    {"id": "p-top", "mat": "front", "box": [16, 574, 0, 450, 590, 1250]},
+    {"id": "p-bottom", "mat": "front", "box": [16, 10, 16, 450, 26, 1234]},
+    {"id": "p-partition", "mat": "front", "box": [16, 26, 616, 450, 574, 632]},
+    {"id": "p-shelf", "mat": "front", "box": [16, 300, 16, 450, 316, 616]},
+    {"id": "glide-1", "mat": "black", "covers": ["h"], "box": [45, 0, 25, 75, 10, 55]},
+    {"id": "glide-2", "mat": "black", "covers": ["h"], "box": [45, 0, 1195, 75, 10, 1225]},
+    {"id": "glide-3", "mat": "black", "covers": ["h"], "box": [375, 0, 25, 405, 10, 55]},
+    {"id": "glide-4", "mat": "black", "covers": ["h"], "box": [375, 0, 1195, 405, 10, 1225]},
+    {"id": "drawer_1-front", "kind": "front", "grain": "z", "box": [434, 28.0, 634, 450, 207.3, 1232]},
+    {"id": "drawer_1-side-a", "mat": "front", "box": [30, 43.0, 645, 434, 182.3, 661]},
+    {"id": "drawer_1-side-b", "mat": "front", "box": [30, 43.0, 1205, 434, 182.3, 1221]},
+    {"id": "drawer_1-back", "mat": "front", "box": [30, 43.0, 661, 46, 182.3, 1205]},
+    {"id": "drawer_1-bottom", "kind": "back", "mat": "white", "box": [36, 51.0, 655, 432, 54.5, 1211]},
+    {"id": "k-drawer_1", "kind": "handle", "model": "knob", "at": [450, 117.7], "d": 30, "t": 12, "standoff": 20, "z": 933.0, "rot": {"axis": "y", "deg": 90, "about": [450, 117.7, 933.0]}, "covers": ["k"]},
+    {"id": "drawer_2-front", "kind": "front", "grain": "z", "box": [434, 210.3, 634, 450, 389.7, 1232]},
+    {"id": "drawer_2-side-a", "mat": "front", "box": [30, 225.3, 645, 434, 364.7, 661]},
+    {"id": "drawer_2-side-b", "mat": "front", "box": [30, 225.3, 1205, 434, 364.7, 1221]},
+    {"id": "drawer_2-back", "mat": "front", "box": [30, 225.3, 661, 46, 364.7, 1205]},
+    {"id": "drawer_2-bottom", "kind": "back", "mat": "white", "box": [36, 233.3, 655, 432, 236.8, 1211]},
+    {"id": "k-drawer_2", "kind": "handle", "model": "knob", "at": [450, 300.0], "d": 30, "t": 12, "standoff": 20, "z": 933.0, "rot": {"axis": "y", "deg": 90, "about": [450, 300.0, 933.0]}, "covers": ["k"]},
+    {"id": "drawer_3-front", "kind": "front", "grain": "z", "box": [434, 392.7, 634, 450, 572.0, 1232]},
+    {"id": "drawer_3-side-a", "mat": "front", "box": [30, 407.7, 645, 434, 547.0, 661]},
+    {"id": "drawer_3-side-b", "mat": "front", "box": [30, 407.7, 1205, 434, 547.0, 1221]},
+    {"id": "drawer_3-back", "mat": "front", "box": [30, 407.7, 661, 46, 547.0, 1205]},
+    {"id": "drawer_3-bottom", "kind": "back", "mat": "white", "box": [36, 415.7, 655, 432, 419.2, 1211]},
+    {"id": "k-drawer_3", "kind": "handle", "model": "knob", "at": [450, 482.3], "d": 30, "t": 12, "standoff": 20, "z": 933.0, "rot": {"axis": "y", "deg": 90, "about": [450, 482.3, 933.0]}, "covers": ["k"]}
+  ],
+  "moves": [
+    {"type": "slide", "name": "drawer_1", "parts": ["drawer_1-front", "drawer_1-side-a", "drawer_1-side-b", "drawer_1-back", "drawer_1-bottom", "k-drawer_1"], "by": [330, 0, 0]},
+    {"type": "slide", "name": "drawer_2", "parts": ["drawer_2-front", "drawer_2-side-a", "drawer_2-side-b", "drawer_2-back", "drawer_2-bottom", "k-drawer_2"], "by": [330, 0, 0]},
+    {"type": "slide", "name": "drawer_3", "parts": ["drawer_3-front", "drawer_3-side-a", "drawer_3-side-b", "drawer_3-back", "drawer_3-bottom", "k-drawer_3"], "by": [330, 0, 0]}
+  ]
+}

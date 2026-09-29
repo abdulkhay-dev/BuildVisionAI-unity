@@ -1,0 +1,32 @@
+{
+  "id": "kanon-loft-0-17",
+  "size": [1500, 400, 510],
+  "parts": [
+    {"id": "top", "grain": "x", "box": [0, 494, 0, 1500, 510, 400]},
+    {"id": "side-l", "box": [2, 92, 0, 18, 494, 322.0]},
+    {"id": "side-r", "box": [1482, 92, 0, 1498, 494, 322.0]},
+    {"id": "post-l", "mat": "frame", "box": [2, 4, 322.0, 18, 494, 398.0]},
+    {"id": "post-r", "mat": "frame", "box": [1482, 4, 322.0, 1498, 494, 398.0]},
+    {"id": "bar-top", "mat": "frame", "box": [18, 478, 322.0, 1482, 494, 398.0]},
+    {"id": "apron", "grain": "x", "box": [18, 382, 366, 1482, 478, 382]},
+    {"id": "bar-floor", "mat": "frame", "box": [18, 4, 322.0, 1482, 20, 398.0]},
+    {"id": "plinth-back", "mat": "frame", "box": [2, 4, 0, 1498, 92, 16]},
+    {"id": "bottom", "mat": "frame", "box": [18, 92, 44.0, 1482, 108, 382]},
+    {"id": "glide-1", "mat": "frame", "shape": "circle", "edge": 0.5, "covers": ["опора"], "box": [3, 0, 353, 17, 4, 367]},
+    {"id": "glide-2", "mat": "frame", "shape": "circle", "edge": 0.5, "covers": ["опора"], "box": [3, 0, 1, 17, 4, 15]},
+    {"id": "glide-3", "mat": "frame", "shape": "circle", "edge": 0.5, "covers": ["опора"], "box": [1483, 0, 353, 1497, 4, 367]},
+    {"id": "glide-4", "mat": "frame", "shape": "circle", "edge": 0.5, "covers": ["опора"], "box": [1483, 0, 1, 1497, 4, 15]},
+    {"id": "partition-l", "mat": "frame", "box": [482, 108, 44.0, 498, 366, 382]},
+    {"id": "plinth-mid-l", "mat": "frame", "box": [482, 4, 76, 498, 92, 322.0]},
+    {"id": "glide-5", "mat": "frame", "shape": "circle", "edge": 0.5, "covers": ["опора"], "box": [483, 0, 293, 497, 4, 307]},
+    {"id": "niche-top", "mat": "frame", "box": [498, 366, 44.0, 1482, 382, 382]},
+    {"id": "stiffener-740", "mat": "frame", "box": [740, 382, 60, 756, 494, 322.0]},
+    {"id": "stiffener-1224", "mat": "frame", "box": [1224, 382, 60, 1240, 494, 322.0]},
+    {"id": "back-l", "kind": "back", "mat": "frame", "box": [10, 92, 41.0, 500, 497, 44.0]},
+    {"id": "back-m", "kind": "back", "mat": "frame", "box": [506, 92, 41.0, 1490, 497, 44.0]},
+    {"id": "door-l", "kind": "front", "grain": "y", "box": [20, 110, 382, 496, 380, 398.0]}
+  ],
+  "moves": [
+    {"type": "door", "name": "door_l", "parts": ["door-l"], "hinge": "left", "angle": 105}
+  ]
+}

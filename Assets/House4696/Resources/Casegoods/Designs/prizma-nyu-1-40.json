@@ -1,0 +1,35 @@
+{
+  "id": "prizma-nyu-1-40",
+  "size": [1000, 439, 1600],
+  "parts": [
+    {"id": "leg-l", "box": [0, 4, 0, 16, 784, 439]},
+    {"id": "leg-r", "box": [984, 4, 0, 1000, 784, 439]},
+    {"id": "top", "box": [0, 784, 0, 1000, 800, 439]},
+    {"id": "modesty", "box": [16, 430, 0, 984, 784, 16]},
+    {"id": "d1-front", "kind": "front", "box": [18, 626, 423, 982, 782, 439]},
+    {"id": "dl-1", "mat": "white", "box": [29, 640, 40, 45, 760, 423]},
+    {"id": "dr-1", "mat": "white", "box": [955, 640, 40, 971, 760, 423]},
+    {"id": "db-1", "mat": "white", "box": [45, 659, 40, 955, 760, 56]},
+    {"id": "dbt-1", "kind": "back", "mat": "white", "box": [39.5, 650, 40, 960.5, 653, 428]},
+    {"id": "s-side-l", "grain": "y", "box": [16, 800, 0, 32, 1584, 200]},
+    {"id": "s-side-r", "grain": "y", "box": [968, 800, 0, 984, 1584, 200]},
+    {"id": "s-top", "box": [16, 1584, 0, 984, 1600, 200]},
+    {"id": "s-up-l", "grain": "y", "box": [242, 800, 0, 258, 1584, 200]},
+    {"id": "s-up-r", "grain": "y", "box": [742, 800, 0, 758, 1584, 200]},
+    {"id": "s-back-l", "mat": "front", "box": [32, 800, 0, 242, 1584, 16]},
+    {"id": "s-back-r", "mat": "front", "box": [758, 800, 0, 968, 1584, 16]},
+    {"id": "s-back-m", "box": [258, 800, 0, 742, 1584, 16]},
+    {"id": "mirror", "kind": "mirror", "box": [262, 905, 16, 738, 1580, 20]},
+    {"id": "s-shelf-l1", "mat": "front", "box": [32, 1073, 16, 242, 1089, 198]},
+    {"id": "s-shelf-r1", "mat": "front", "box": [758, 1073, 16, 968, 1089, 198]},
+    {"id": "s-shelf-l2", "mat": "front", "box": [32, 1331, 16, 242, 1347, 198]},
+    {"id": "s-shelf-r2", "mat": "front", "box": [758, 1331, 16, 968, 1347, 198]},
+    {"id": "k1-1", "kind": "panel", "shape": "circle", "mat": "door_enamel_whitey#8c8c8c", "edge": 0.5, "box": [0, 0, 32, 16, 4, 48], "covers": ["k1"]},
+    {"id": "k1-2", "kind": "panel", "shape": "circle", "mat": "door_enamel_whitey#8c8c8c", "edge": 0.5, "box": [0, 0, 392, 16, 4, 408], "covers": ["k1"]},
+    {"id": "k1-3", "kind": "panel", "shape": "circle", "mat": "door_enamel_whitey#8c8c8c", "edge": 0.5, "box": [984, 0, 32, 1000, 4, 48], "covers": ["k1"]},
+    {"id": "k1-4", "kind": "panel", "shape": "circle", "mat": "door_enamel_whitey#8c8c8c", "edge": 0.5, "box": [984, 0, 392, 1000, 4, 408], "covers": ["k1"]}
+  ],
+  "moves": [
+    {"type": "drawer", "name": "drawer_1", "parts": ["d1-front", "dl-1", "dr-1", "db-1", "dbt-1"], "travel": 287.2}
+  ]
+}

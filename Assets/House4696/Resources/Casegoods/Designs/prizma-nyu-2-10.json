@@ -1,0 +1,25 @@
+{
+  "id": "prizma-nyu-2-10",
+  "size": [1000, 500, 750],
+  "parts": [
+    {"n": "3", "box": [0, 734, 0, 1000, 750, 500]},
+    {"n": "1", "box": [1, 4, 23, 17, 734, 477]},
+    {"n": "2", "box": [983, 4, 23, 999, 734, 477]},
+    {"n": "4", "box": [17, 452, 23, 983, 734, 39]},
+    {"n": "5", "box": [17, 614, 39, 983, 630, 475]},
+    {"n": "6", "box": [476, 630, 39, 492, 734, 458]},
+    {"n": "20", "id": "20-1", "kind": "front", "box": [494, 632, 459, 981, 732, 475]},
+    {"n": "21", "id": "21-1", "mat": "white", "box": [513.5, 634, 109, 529.5, 730, 459]},
+    {"n": "22", "id": "22-1", "mat": "white", "box": [945.5, 634, 109, 961.5, 730, 459]},
+    {"n": "23", "id": "23-1", "mat": "white", "box": [529.5, 653, 109, 945.5, 730, 125]},
+    {"n": "24", "id": "24-1", "kind": "back", "mat": "white", "box": [524.0, 644, 109, 951.0, 647, 464]},
+    {"id": "c2-d1-1", "kind": "handle", "model": "bar", "at": [737.5, 682], "dir": "right", "d": 32, "band": 32, "t": 8, "standoff": 18, "post": 10, "section": "square", "z": 475, "covers": ["c2"]},
+    {"id": "k1-1", "kind": "panel", "shape": "circle", "mat": "door_enamel_whitey#8c8c8c", "edge": 0.5, "box": [1, 0, 52, 17, 4, 68], "covers": ["k1"]},
+    {"id": "k1-2", "kind": "panel", "shape": "circle", "mat": "door_enamel_whitey#8c8c8c", "edge": 0.5, "box": [1, 0, 432, 17, 4, 448], "covers": ["k1"]},
+    {"id": "k1-3", "kind": "panel", "shape": "circle", "mat": "door_enamel_whitey#8c8c8c", "edge": 0.5, "box": [983, 0, 52, 999, 4, 68], "covers": ["k1"]},
+    {"id": "k1-4", "kind": "panel", "shape": "circle", "mat": "door_enamel_whitey#8c8c8c", "edge": 0.5, "box": [983, 0, 432, 999, 4, 448], "covers": ["k1"]}
+  ],
+  "moves": [
+    {"type": "drawer", "name": "drawer_1", "parts": ["20-1", "21-1", "22-1", "23-1", "24-1", "c2-d1-1"], "travel": 262.5}
+  ]
+}

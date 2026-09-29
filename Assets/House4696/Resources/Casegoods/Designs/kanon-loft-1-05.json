@@ -1,0 +1,15 @@
+{
+  "id": "kanon-loft-1-05",
+  "size": [1050, 150, 858],
+  "parts": [
+    {"id": "shelf", "mat": "frame", "box": [0, 0, 0, 1050, 16, 150]},
+    {"id": "frame-l", "mat": "frame", "box": [0, 16, 0, 16, 858, 40]},
+    {"id": "frame-r", "mat": "frame", "box": [1034, 16, 0, 1050, 858, 40]},
+    {"id": "frame-t", "mat": "frame", "box": [16, 842, 0, 1034, 858, 40]},
+    {"id": "board", "grain": "x", "box": [16, 16, 0, 1034, 842, 16]},
+    {"id": "mirror", "kind": "mirror", "covers": ["зеркало"], "box": [76, 76, 16, 974, 782, 20]}
+  ],
+  "moves": [
+
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "id": "ardo-0-03",
+  "size": [1581, 420, 486],
+  "parts": [
+    {"id": "top", "box": [0, 470, 0, 1581, 486, 420]},
+    {"id": "bottom", "box": [0, 100, 0, 1581, 116, 420]},
+    {"id": "side-l", "box": [0, 116, 0, 16, 470, 420]},
+    {"id": "side-r", "box": [1565, 116, 0, 1581, 470, 420]},
+    {"id": "back", "kind": "back", "mat": "white", "box": [9, 109, 6, 1572, 477, 9.5]},
+    {"id": "partition", "box": [555.5, 116, 10, 571.5, 470, 402]},
+    {"id": "niche-bottom", "box": [571.5, 307, 10, 1565, 323, 420]},
+    {"id": "niche-partition", "box": [1027, 323, 10, 1043, 470, 402]},
+    {"id": "dl-white", "kind": "front", "box": [18, 118, 404, 410, 468, 420]},
+    {"id": "dl-oak-1", "kind": "front", "mat": "body", "grain": "y", "box": [410, 118, 404, 457.3, 468, 420]},
+    {"id": "dl-line-1", "kind": "front", "mat": "black", "box": [457.3, 118, 404, 462.3, 468, 418]},
+    {"id": "dl-oak-2", "kind": "front", "mat": "body", "grain": "y", "box": [462.3, 118, 404, 509.7, 468, 420]},
+    {"id": "dl-line-2", "kind": "front", "mat": "black", "box": [509.7, 118, 404, 514.7, 468, 418]},
+    {"id": "dl-oak-3", "kind": "front", "mat": "body", "grain": "y", "box": [514.7, 118, 404, 562.0, 468, 420]},
+    {"id": "k-dl", "kind": "handle", "model": "knob", "at": [489, 405], "d": 30, "t": 12, "standoff": 20, "z": 420, "covers": ["k"]},
+    {"id": "drawer-front", "kind": "front", "box": [565.0, 118, 404, 1563, 305, 420]},
+    {"id": "drawer-side-l", "mat": "white", "box": [584.5, 135, 30, 600.5, 275, 404]},
+    {"id": "drawer-side-r", "mat": "white", "box": [1536, 135, 30, 1552, 275, 404]},
+    {"id": "drawer-back", "mat": "white", "box": [600.5, 135, 30, 1536, 275, 46]},
+    {"id": "drawer-bottom", "kind": "back", "mat": "white", "box": [594.5, 143, 36, 1542, 146.5, 402]},
+    {"id": "k-drawer", "kind": "handle", "model": "knob", "at": [1064, 235], "d": 30, "t": 12, "standoff": 20, "z": 420, "covers": ["k"]},
+    {"id": "leg-1", "mat": "metal", "edge": 1, "covers": ["g"], "box": [35.0, 0, 30.0, 75.0, 100, 70.0]},
+    {"id": "leg-2", "mat": "metal", "edge": 1, "covers": ["g"], "box": [35.0, 0, 350.0, 75.0, 100, 390.0]},
+    {"id": "leg-3", "mat": "metal", "edge": 1, "covers": ["g"], "box": [1506.0, 0, 30.0, 1546.0, 100, 70.0]},
+    {"id": "leg-4", "mat": "metal", "edge": 1, "covers": ["g"], "box": [1506.0, 0, 350.0, 1546.0, 100, 390.0]},
+    {"id": "leg-5", "mat": "metal", "edge": 1, "covers": ["g"], "box": [543.5, 0, 190.0, 583.5, 100, 230.0]}
+  ],
+  "moves": [
+    {"type": "door", "name": "door", "parts": ["dl-white", "dl-oak-1", "dl-line-1", "dl-oak-2", "dl-line-2", "dl-oak-3", "k-dl"], "hinge": "left", "angle": 100},
+    {"type": "drawer", "name": "drawer", "parts": ["drawer-front", "drawer-side-l", "drawer-side-r", "drawer-back", "drawer-bottom", "k-drawer"], "travel": 299}
+  ]
+}

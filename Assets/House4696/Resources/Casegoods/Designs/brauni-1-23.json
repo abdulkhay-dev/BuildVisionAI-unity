@@ -1,0 +1,22 @@
+{
+  "id": "brauni-1-23",
+  "size": [402, 350, 500],
+  "parts": [
+    {"id": "top", "box": [0, 484, 0, 402, 500, 350]},
+    {"id": "side-l", "box": [0, 0, 0, 16, 484, 350]},
+    {"id": "side-r", "box": [386, 0, 0, 402, 484, 350]},
+    {"id": "plinth", "box": [16, 0, 334, 386, 60, 350]},
+    {"id": "bottom", "box": [16, 60, 0, 386, 76, 334]},
+    {"id": "niche-bottom", "box": [16, 302, 10, 386, 318, 350]},
+    {"id": "back", "kind": "back", "box": [9, 69, 6, 393, 491, 9.5]},
+    {"id": "drawer-front", "kind": "front", "grain": "x", "box": [18, 62, 334, 384, 300, 350]},
+    {"id": "h-drawer", "kind": "handle", "model": "bar", "at": [201.0, 190], "dir": "right", "d": 224, "band": 12, "t": 12, "standoff": 22, "z": 350, "covers": ["h"]},
+    {"id": "drawer-side-l", "mat": "body", "box": [29, 90, 20, 45, 260, 334]},
+    {"id": "drawer-side-r", "mat": "body", "box": [357, 90, 20, 373, 260, 334]},
+    {"id": "drawer-back", "mat": "body", "box": [45, 90, 20, 357, 260, 36]},
+    {"id": "drawer-bottom", "kind": "back", "box": [39, 98, 26, 363, 101.5, 332]}
+  ],
+  "moves": [
+    {"type": "drawer", "name": "drawer", "parts": ["drawer-front", "h-drawer", "drawer-side-l", "drawer-side-r", "drawer-back", "drawer-bottom"], "travel": 251}
+  ]
+}

@@ -34,7 +34,7 @@ namespace House4696.CasegoodsEditor
         {
             if (_queue != null) return "[CasePreview] busy: " + _batchDone + "/" + _batchTotal;
             UnityEditor.AssetDatabase.Refresh();
-            CaseCatalog.Reload();
+            ItemCatalog.ReloadCasegoods();
             var ids = models?.ToList() ?? CaseCatalog.File.Models.Select(m => m.Id).ToList();
             _queue = new Queue<(string, string, string, string, bool)>();
             foreach (var id in ids) _queue.Enqueue((id, finish, Path.Combine(dir, id + "-" + view + (open ? "-open" : "") + ".png"), view, open));
@@ -67,7 +67,7 @@ namespace House4696.CasegoodsEditor
             if (refresh)
             {
                 UnityEditor.AssetDatabase.Refresh();
-                CaseCatalog.Reload();
+                ItemCatalog.ReloadCasegoods();
             }
             var cm = CaseCatalog.Model(model);
             if (cm == null) return "[CasePreview] no model " + model;

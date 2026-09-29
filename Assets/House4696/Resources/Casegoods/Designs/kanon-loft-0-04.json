@@ -1,0 +1,20 @@
+{
+  "id": "kanon-loft-0-04",
+  "size": [1400, 250, 300],
+  "parts": [
+    {"id": "top", "grain": "x", "box": [0, 284, 0, 1400, 300, 250]},
+    {"id": "bottom", "mat": "frame", "box": [0, 0, 0, 1400, 16, 250]},
+    {"id": "side-l", "box": [0, 16, 0, 16, 284, 174]},
+    {"id": "side-r", "box": [1384, 16, 0, 1400, 284, 174]},
+    {"id": "post-l", "mat": "frame", "box": [0, 16, 174, 16, 284, 250]},
+    {"id": "post-r", "mat": "frame", "box": [1384, 16, 174, 1400, 284, 250]},
+    {"id": "bar-top", "mat": "frame", "box": [16, 268, 174, 1384, 284, 250]},
+    {"id": "floor", "grain": "x", "box": [16, 16, 19, 1384, 32, 234]},
+    {"id": "partition", "box": [896, 32, 19, 912, 268, 234]},
+    {"id": "back", "kind": "back", "mat": "frame", "box": [8, 8, 16, 1392, 292, 19]},
+    {"id": "door", "kind": "front", "grain": "y", "box": [914, 34, 234, 1382, 266, 250]}
+  ],
+  "moves": [
+    {"type": "door", "name": "door", "parts": ["door"], "hinge": "right", "angle": 105}
+  ]
+}

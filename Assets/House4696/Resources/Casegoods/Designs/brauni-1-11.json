@@ -1,0 +1,40 @@
+{
+  "id": "brauni-1-11",
+  "size": [2000, 610, 2332],
+  "parts": [
+    {"id": "top", "box": [0, 2316, 0, 2000, 2332, 610]},
+    {"id": "side-l", "box": [0, 0, 0, 16, 2316, 610]},
+    {"id": "side-r", "box": [1984, 0, 0, 2000, 2316, 610]},
+    {"id": "bottom", "box": [16, 90, 0, 1984, 106, 610]},
+    {"id": "plinth", "box": [16, 0, 574, 1984, 90, 590]},
+    {"id": "plinth-back", "box": [16, 0, 30, 1984, 90, 46]},
+    {"id": "back", "kind": "back", "box": [9, 99, 6, 1991, 2323, 9.5]},
+    {"id": "partition", "box": [992.0, 106, 10, 1008.0, 2316, 530]},
+    {"id": "shelf-l1", "box": [16.5, 1782, 10, 991.5, 1798, 530]},
+    {"id": "shelf-l2", "box": [16.5, 2050, 10, 991.5, 2066, 530]},
+    {"id": "shelf-r1", "box": [1008.5, 1110, 10, 1983.5, 1126, 530]},
+    {"id": "shelf-r2", "box": [1008.5, 1410, 10, 1983.5, 1426, 530]},
+    {"id": "shelf-r3", "box": [1008.5, 1710, 10, 1983.5, 1726, 530]},
+    {"id": "shelf-r4", "box": [1008.5, 2010, 10, 1983.5, 2026, 530]},
+    {"id": "rail-l", "kind": "tube", "mat": "chrome", "box": [20, 1715, 258, 988.0, 1740, 283]},
+    {"id": "rail-r", "kind": "tube", "mat": "chrome", "box": [1012.0, 1045, 258, 1980, 1070, 283]},
+    {"id": "track-top", "mat": "chrome", "edge": 0.5, "box": [16, 2296, 540, 1984, 2316, 604]},
+    {"id": "track-bottom", "mat": "chrome", "edge": 0.5, "box": [16, 106, 540, 1984, 112, 604]},
+    {"id": "dl-prof-l", "mat": "chrome", "edge": 1, "box": [16, 114, 548, 36, 2294, 572]},
+    {"id": "dl-prof-r", "mat": "chrome", "edge": 1, "box": [996.0, 114, 548, 1016.0, 2294, 572]},
+    {"id": "dl-stile", "kind": "front", "grain": "y", "box": [36, 114, 552, 356, 2294, 568]},
+    {"id": "dl-black-low", "kind": "front", "mat": "accent", "grain": "y", "box": [356, 114, 552, 996.0, 1050, 568]},
+    {"id": "dl-band", "kind": "front", "grain": "x", "box": [356, 1050, 552, 996.0, 1361, 568]},
+    {"id": "dl-black-high", "kind": "front", "mat": "accent", "grain": "y", "box": [356, 1361, 552, 996.0, 2294, 568]},
+    {"id": "dr-prof-l", "mat": "chrome", "edge": 1, "box": [984.0, 114, 574, 1004.0, 2294, 598]},
+    {"id": "dr-prof-r", "mat": "chrome", "edge": 1, "box": [1964, 114, 574, 1984, 2294, 598]},
+    {"id": "dr-stile", "kind": "front", "grain": "y", "box": [1644, 114, 578, 1964, 2294, 594]},
+    {"id": "dr-black-low", "kind": "front", "mat": "accent", "grain": "y", "box": [1004.0, 114, 578, 1644, 1050, 594]},
+    {"id": "dr-band", "kind": "front", "grain": "x", "box": [1004.0, 1050, 578, 1644, 1361, 594]},
+    {"id": "dr-black-high", "kind": "front", "mat": "accent", "grain": "y", "box": [1004.0, 1361, 578, 1644, 2294, 594]}
+  ],
+  "moves": [
+    {"type": "slide", "name": "door_left", "parts": ["dl-prof-l", "dl-prof-r", "dl-stile", "dl-black-low", "dl-band", "dl-black-high"], "by": [940, 0, 0]},
+    {"type": "slide", "name": "door_right", "parts": ["dr-prof-l", "dr-prof-r", "dr-stile", "dr-black-low", "dr-band", "dr-black-high"], "by": [-940, 0, 0]}
+  ]
+}

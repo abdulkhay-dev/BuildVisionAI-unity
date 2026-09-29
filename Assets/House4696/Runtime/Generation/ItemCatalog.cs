@@ -88,13 +88,39 @@ namespace House4696.Generation
         public static ItemModel Get(string id) { EnsureExternal(); return id != null && Models.TryGetValue(id, out var m) ? m : null; }
 
         static bool _external;
+        static readonly HashSet<string> _caseIds = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+
+        /// <summary>
+        /// Re-reads the case furniture catalogue (Resources/Casegoods) into the item catalogue: designs and models added or
+        /// changed since the first use (the editor previews call it after importing new designs).
+        /// </summary>
+        public static void ReloadCasegoods()
+        {
+            House4696.Casegoods.CaseCatalog.Reload();
+            foreach (var id in _caseIds) Models.Remove(id);
+            _caseIds.Clear();
+            if (_external) AddCasegoods();
+        }
 
         /// <summary>Library models (scans, Blender models) join the catalogue under their ids once the content is loaded.</summary>
         static void EnsureExternal()
         {
             if (_external) return;
             _external = true;
-            // case furniture of the manufacturers' catalogues (Resources/Casegoods): parametric, built from their designs
+            AddCasegoods();
+            var ext = ExternalCatalog.Load();
+            if (ext == null) return;
+            foreach (var e in ext.Models)
+            {
+                if (e.Prefab == null || Models.ContainsKey(e.Id)) continue;
+                var entry = e;
+                Models[e.Id] = new ItemModel { Id = e.Id, Name = e.Name, Category = e.Category, Params = e.ParamsText(), Build = b => b.External = entry };
+            }
+        }
+
+        /// <summary>Case furniture of the manufacturers' catalogues (Resources/Casegoods): parametric, built from their designs.</summary>
+        static void AddCasegoods()
+        {
             foreach (var cm in House4696.Casegoods.CaseCatalog.File.Models)
             {
                 if (string.IsNullOrEmpty(cm.Id) || Models.ContainsKey(cm.Id)) continue;
@@ -106,14 +132,7 @@ namespace House4696.Generation
                     Id = cm.Id, Name = $"{cm.Name} {cm.Code}".Trim(), Category = cm.Category ?? "storage", Params = ps,
                     Build = b => House4696.Casegoods.CaseBuilder.Build(b, entry),
                 };
-            }
-            var ext = ExternalCatalog.Load();
-            if (ext == null) return;
-            foreach (var e in ext.Models)
-            {
-                if (e.Prefab == null || Models.ContainsKey(e.Id)) continue;
-                var entry = e;
-                Models[e.Id] = new ItemModel { Id = e.Id, Name = e.Name, Category = e.Category, Params = e.ParamsText(), Build = b => b.External = entry };
+                _caseIds.Add(cm.Id);
             }
         }
 

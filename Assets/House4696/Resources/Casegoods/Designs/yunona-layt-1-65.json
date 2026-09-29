@@ -1,0 +1,30 @@
+{
+  "id": "yunona-layt-1-65",
+  "size": [450, 595, 2292],
+  "parts": [
+    {"id": "top", "box": [0, 2276, 0, 450, 2292, 579]},
+    {"id": "bottom", "box": [0, 20, 0, 450, 36, 579]},
+    {"id": "side-l", "box": [0, 36, 0, 16, 2276, 579]},
+    {"id": "side-r", "box": [434, 36, 0, 450, 2276, 579]},
+    {"id": "eb-top", "kind": "moulding", "mat": "edge", "profile": "yunona-layt-edge16", "plane": "front", "z": 579, "side": -1, "path": [[0, 2292], [450, 2292]], "box": [0, 2276, 579, 450, 2292, 579.6]},
+    {"id": "eb-bottom", "kind": "moulding", "mat": "edge", "profile": "yunona-layt-edge16", "plane": "front", "z": 579, "side": -1, "path": [[0, 36], [450, 36]], "box": [0, 20, 579, 450, 36, 579.6]},
+    {"id": "eb-side-l", "kind": "moulding", "mat": "edge", "profile": "yunona-layt-edge16", "plane": "front", "z": 579, "side": -1, "path": [[0, 36], [0, 2276]], "box": [0, 36, 579, 16, 2276, 579.6]},
+    {"id": "eb-side-r", "kind": "moulding", "mat": "edge", "profile": "yunona-layt-edge16", "plane": "front", "z": 579, "side": -1, "path": [[434, 36], [434, 2276]], "box": [434, 36, 579, 450, 2276, 579.6]},
+    {"id": "glide-1", "kind": "panel", "mat": "black", "edge": 2, "box": [16.0, 0, 13.0, 104.0, 20, 67.0], "covers": ["007"]},
+    {"id": "glide-2", "kind": "panel", "mat": "black", "edge": 2, "box": [16.0, 0, 512.0, 104.0, 20, 566.0], "covers": ["007"]},
+    {"id": "glide-3", "kind": "panel", "mat": "black", "edge": 2, "box": [346.0, 0, 13.0, 434.0, 20, 67.0], "covers": ["007"]},
+    {"id": "glide-4", "kind": "panel", "mat": "black", "edge": 2, "box": [346.0, 0, 512.0, 434.0, 20, 566.0], "covers": ["007"]},
+    {"id": "shelf-low", "mat": "white", "box": [16.5, 381, 10, 433.5, 397, 530]},
+    {"id": "shelf-top", "mat": "white", "box": [16.5, 1901, 10, 433.5, 1917, 530]},
+    {"id": "back-top", "kind": "back", "box": [11, 1910, 6, 439, 2282, 9.2]},
+    {"id": "back-mid", "kind": "back", "box": [11, 390, 6, 439, 1908, 9.2]},
+    {"id": "back-low", "kind": "back", "box": [11, 31, 6, 439, 387, 9.2]},
+    {"id": "shelf-1", "mat": "white", "box": [16.5, 887.67, 10, 433.5, 903.67, 530]},
+    {"id": "shelf-2", "mat": "white", "box": [16.5, 1394.33, 10, 433.5, 1410.33, 530]},
+    {"id": "door", "kind": "front", "box": [2, 24, 579, 448, 2290, 595]},
+    {"id": "h-door", "kind": "handle", "model": "bar", "at": [62, 1140], "dir": "up", "d": 450, "band": 10, "t": 8, "standoff": 22, "post": 9, "z": 595, "covers": ["h"]}
+  ],
+  "moves": [
+    {"type": "door", "name": "door", "parts": ["door", "h-door"], "hinge": "right", "angle": 100}
+  ]
+}

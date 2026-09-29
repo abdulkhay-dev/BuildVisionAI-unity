@@ -1,0 +1,27 @@
+{
+  "id": "prizma-nyu-1-05",
+  "size": [486, 394, 482],
+  "parts": [
+    {"id": "top", "box": [0, 466, 3, 486, 482, 394]},
+    {"id": "side-l", "box": [0, 4, 3, 16, 466, 393], "shape": "path", "outline": "M 23 4 H 393 V 466 H 3 V 64 A 20 20 0 0 0 23 44 Z"},
+    {"id": "side-r", "box": [470, 4, 3, 486, 466, 393], "shape": "path", "outline": "M 23 4 H 393 V 466 H 3 V 64 A 20 20 0 0 0 23 44 Z"},
+    {"id": "shelf", "mat": "body", "box": [17, 258, 3, 469, 274, 393]},
+    {"id": "bottom", "mat": "white", "box": [17, 54, 3, 469, 70, 375]},
+    {"id": "plinth-1", "box": [17, 4, 373, 469, 54, 389]},
+    {"id": "plinth-2", "box": [17, 4, 3, 469, 54, 19]},
+    {"id": "back", "kind": "back", "mat": "white", "box": [3, 54, 0, 483, 480, 3]},
+    {"id": "d1-front", "kind": "front", "box": [20, 56, 377, 466, 256, 393]},
+    {"id": "dl-1", "mat": "white", "box": [30, 80, 27, 46, 230, 377]},
+    {"id": "dr-1", "mat": "white", "box": [440, 80, 27, 456, 230, 377]},
+    {"id": "db-1", "mat": "white", "box": [46, 99, 27, 440, 230, 43]},
+    {"id": "dbt-1", "kind": "back", "mat": "white", "box": [40.5, 90, 27, 445.5, 93, 382]},
+    {"id": "c2-d1-1", "kind": "handle", "model": "bar", "at": [243.0, 156], "dir": "right", "d": 32, "band": 32, "t": 8, "standoff": 18, "post": 10, "section": "square", "z": 393, "covers": ["c2"]},
+    {"id": "k1-1", "kind": "panel", "shape": "circle", "mat": "door_enamel_whitey#8c8c8c", "edge": 0.5, "box": [0, 0, 52, 16, 4, 68], "covers": ["k1"]},
+    {"id": "k1-2", "kind": "panel", "shape": "circle", "mat": "door_enamel_whitey#8c8c8c", "edge": 0.5, "box": [0, 0, 352, 16, 4, 368], "covers": ["k1"]},
+    {"id": "k1-3", "kind": "panel", "shape": "circle", "mat": "door_enamel_whitey#8c8c8c", "edge": 0.5, "box": [470, 0, 52, 486, 4, 68], "covers": ["k1"]},
+    {"id": "k1-4", "kind": "panel", "shape": "circle", "mat": "door_enamel_whitey#8c8c8c", "edge": 0.5, "box": [470, 0, 352, 486, 4, 368], "covers": ["k1"]}
+  ],
+  "moves": [
+    {"type": "drawer", "name": "drawer_1", "parts": ["d1-front", "dl-1", "dr-1", "db-1", "dbt-1", "c2-d1-1"], "travel": 262.5}
+  ]
+}

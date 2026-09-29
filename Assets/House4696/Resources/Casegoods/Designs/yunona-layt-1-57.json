@@ -1,0 +1,31 @@
+{
+  "id": "yunona-layt-1-57",
+  "size": [252, 579, 2292],
+  "parts": [
+    {"n": "3", "box": [0, 2276, 0, 252, 2292, 579]},
+    {"n": "4", "box": [0, 20, 0, 252, 36, 579]},
+    {"n": "1", "box": [0, 36, 0, 16, 2276, 579]},
+    {"n": "2", "box": [236, 36, 0, 252, 2276, 579]},
+    {"n": "5", "id": "5-1", "box": [16.5, 471.2, 25, 235.5, 487.2, 565]},
+    {"n": "5", "id": "5-2", "box": [16.5, 922.4, 25, 235.5, 938.4, 565]},
+    {"n": "5", "id": "5-3", "box": [16.5, 1373.6, 25, 235.5, 1389.6, 565]},
+    {"n": "5", "id": "5-4", "box": [16.5, 1824.8, 25, 235.5, 1840.8, 565]},
+    {"n": "7", "kind": "back", "box": [11, 31, 6, 241, 931, 9.2]},
+    {"n": "6", "kind": "back", "box": [11, 933, 6, 241, 2281, 9.2]},
+    {"id": "eb-3", "kind": "moulding", "mat": "edge", "profile": "yunona-layt-edge16", "plane": "front", "z": 579, "side": -1, "path": [[0, 2292], [252, 2292]], "box": [0, 2276, 579, 252, 2292, 579.6]},
+    {"id": "eb-4", "kind": "moulding", "mat": "edge", "profile": "yunona-layt-edge16", "plane": "front", "z": 579, "side": -1, "path": [[0, 36], [252, 36]], "box": [0, 20, 579, 252, 36, 579.6]},
+    {"id": "eb-1", "kind": "moulding", "mat": "edge", "profile": "yunona-layt-edge16", "plane": "front", "z": 579, "side": -1, "path": [[0, 36], [0, 2276]], "box": [0, 36, 579, 16, 2276, 579.6]},
+    {"id": "eb-2", "kind": "moulding", "mat": "edge", "profile": "yunona-layt-edge16", "plane": "front", "z": 579, "side": -1, "path": [[236, 36], [236, 2276]], "box": [236, 36, 579, 252, 2276, 579.6]},
+    {"id": "eb-5-1", "kind": "moulding", "mat": "edge", "profile": "yunona-layt-edge16", "plane": "front", "z": 565, "side": -1, "path": [[16.5, 487.2], [235.5, 487.2]], "box": [16.5, 471.2, 565, 235.5, 487.2, 565.6]},
+    {"id": "eb-5-2", "kind": "moulding", "mat": "edge", "profile": "yunona-layt-edge16", "plane": "front", "z": 565, "side": -1, "path": [[16.5, 938.4], [235.5, 938.4]], "box": [16.5, 922.4, 565, 235.5, 938.4, 565.6]},
+    {"id": "eb-5-3", "kind": "moulding", "mat": "edge", "profile": "yunona-layt-edge16", "plane": "front", "z": 565, "side": -1, "path": [[16.5, 1389.6], [235.5, 1389.6]], "box": [16.5, 1373.6, 565, 235.5, 1389.6, 565.6]},
+    {"id": "eb-5-4", "kind": "moulding", "mat": "edge", "profile": "yunona-layt-edge16", "plane": "front", "z": 565, "side": -1, "path": [[16.5, 1840.8], [235.5, 1840.8]], "box": [16.5, 1824.8, 565, 235.5, 1840.8, 565.6]},
+    {"id": "glide-1", "kind": "panel", "mat": "black", "edge": 2, "box": [16.0, 0, 13.0, 104.0, 20, 67.0], "covers": ["006"]},
+    {"id": "glide-2", "kind": "panel", "mat": "black", "edge": 2, "box": [16.0, 0, 512.0, 104.0, 20, 566.0], "covers": ["006"]},
+    {"id": "glide-3", "kind": "panel", "mat": "black", "edge": 2, "box": [148.0, 0, 13.0, 236.0, 20, 67.0], "covers": ["006"]},
+    {"id": "glide-4", "kind": "panel", "mat": "black", "edge": 2, "box": [148.0, 0, 512.0, 236.0, 20, 566.0], "covers": ["006"]}
+  ],
+  "moves": [
+
+  ]
+}
