@@ -60,12 +60,12 @@ namespace House4696.Casegoods
         /// An axis-aligned board [x0, y0, z0, x1, y1, z1] mm: its two big faces and their edges rounded by <paramref name="r"/>
         /// mm (the corners across the thickness stay square, like a cut and edge-banded panel).
         /// </summary>
-        public void Board(MeshBuilder mb, float[] box, float r, Material m)
+        public void Board(MeshBuilder mb, float[] box, float r, Material m, Material edgeM = null)
         {
             if (m == null || box == null || box.Length < 6) return;
             var (pl, a0, b0, a1, b1, w0, w1) = Thin(box);
             if (a1 - a0 < 1e-3f || b1 - b0 < 1e-3f || w1 - w0 < 1e-3f) return;
-            Slab(mb, pl, new PathsD { Rect(a0, b0, a1, b1) }, w0, w1, r, m);
+            Slab(mb, pl, new PathsD { Rect(a0, b0, a1, b1) }, w0, w1, r, m, edgeM: edgeM);
         }
 
         /// <summary>The plane across a box's thinnest axis and the box's extent in it.</summary>
@@ -87,7 +87,7 @@ namespace House4696.Casegoods
         /// only when <paramref name="back"/>.
         /// </summary>
         public void Slab(MeshBuilder mb, CasePlane pl, PathsD region, float w0, float w1, float r, Material m, bool back = true,
-                         PathsD faceCut = null)
+                         PathsD faceCut = null, Material edgeM = null)
         {
             if (m == null || region == null || region.Count == 0 || w1 - w0 < 1e-3f) return;
             // outer rings counter-clockwise, holes clockwise: the edge normals follow the rings' left side
@@ -121,7 +121,7 @@ namespace House4696.Casegoods
                 // walk the profile from the back face to the front one: (u, v) → (-v, u) then points out of the material
                 var rev = new List<Vector2>(prof);
                 rev.Reverse();
-                Sweep(mb, pl, path, true, rev, 0f, m, planarUv: true);
+                Sweep(mb, pl, path, true, rev, 0f, edgeM ?? m, planarUv: true);
             }
         }
 

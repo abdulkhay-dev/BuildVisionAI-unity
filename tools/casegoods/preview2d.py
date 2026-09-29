@@ -87,6 +87,15 @@ def box_of(p):
     b = p.get("box")
     if b:
         return turned([min(b[0], b[3]), min(b[1], b[4]), min(b[2], b[5]), max(b[0], b[3]), max(b[1], b[4]), max(b[2], b[5])], p.get("rot"))
+    if p.get("kind") == "handle" and p.get("at") and p.get("model") == "bar":
+        # a bar: d long along dir, band across, standoff + t out of the face
+        x, y, z = p["at"][0], p["at"][1], p.get("z", 0)
+        hl, hb = p.get("d", 80) / 2, p.get("band", 10) / 2
+        vertical = p.get("dir", "right") in ("up", "down")
+        dz = p.get("standoff", 8) + p.get("t", 6)
+        if p.get("on") == "back":
+            return [x - (hb if vertical else hl), y - (hl if vertical else hb), z - dz, x + (hb if vertical else hl), y + (hl if vertical else hb), z]
+        return [x - (hb if vertical else hl), y - (hl if vertical else hb), z, x + (hb if vertical else hl), y + (hl if vertical else hb), z + dz]
     if p.get("kind") == "handle" and p.get("at"):
         r = p.get("d", 80) / 2
         x, y, z = p["at"][0], p["at"][1], p.get("z", 0)

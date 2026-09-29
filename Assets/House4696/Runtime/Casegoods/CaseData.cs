@@ -95,6 +95,10 @@ namespace House4696.Casegoods
         /// <see cref="On"/> "back" = on a back face (a table's back drawer: <see cref="Z"/> is that face, the handle stands out towards −z).</summary>
         public float Post;
         public string On;
+        /// <summary>Bar handles: centre-to-centre of the posts, mm (default 0.8 × d).</summary>
+        public float Cc;
+        /// <summary>The edges of a board in another material role (an oak edge band on a black front).</summary>
+        public string EdgeMat;
     }
 
     /// <summary>Turn of a part: deg &gt; 0 about x turns y towards z (a headboard's top forward), about y turns z towards x, about z turns x towards y.</summary>
@@ -135,6 +139,8 @@ namespace House4696.Casegoods
         public string Side;
         /// <summary>fluted: only this area [a0, b0, a1, b1] of the face (the ribs stand on the flat face).</summary>
         public float[] Area;
+        /// <summary>grooves / fluted: the material role of the milled surface (the chipboard's lighter core, a painted line).</summary>
+        public string Mat;
     }
 
     public sealed class CaseMove

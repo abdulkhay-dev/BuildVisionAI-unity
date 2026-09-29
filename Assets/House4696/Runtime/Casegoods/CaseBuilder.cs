@@ -217,7 +217,7 @@ namespace House4696.Casegoods
         {
             if (p.Box == null || p.Box.Length < 6) throw new Exception("нет box");
             var (pl, a0, b0, a1, b1, w0, w1) = CaseGeo.Thin(p.Box);
-            _g.Slab(mb, pl, Region(p, a0, b0, a1, b1), w0, w1, edge, m);
+            _g.Slab(mb, pl, Region(p, a0, b0, a1, b1), w0, w1, edge, m, edgeM: p.EdgeMat != null ? Mat(p.EdgeMat) : null);
         }
 
         /// <summary>The outline of a part in the plane across its thinnest axis.</summary>
@@ -298,7 +298,7 @@ namespace House4696.Casegoods
                         return reed ? depth * c : depth * (1f - c);
                     }
                     float inset = part ? 0f : edge;   // the rounded edge of the base stays visible round the ribs
-                    _g.Corrugated(mb, fp, s0 + inset, s1 - inset, t0 + inset, t1 - inset, wb, H, n * 14, m);
+                    _g.Corrugated(mb, fp, s0 + inset, s1 - inset, t0 + inset, t1 - inset, wb, H, n * 14, f.Mat != null ? Mat(f.Mat) : m);
                     break;
                 }
                 case "frame":
@@ -336,9 +336,10 @@ namespace House4696.Casegoods
                             prof.Add(new Vector2(w * 0.5f * Mathf.Cos(t), depth * Mathf.Sin(t)));
                         }
                     else { prof.Add(new Vector2(-w * 0.5f, 0f)); prof.Add(new Vector2(0f, -depth)); prof.Add(new Vector2(w * 0.5f, 0f)); }
+                    var gm = f.Mat != null ? Mat(f.Mat) : m;
                     foreach (var l in lines)
                         _g.Sweep(mb, pl, new List<Vector2> { new Vector2((float)l[0].x, (float)l[0].y), new Vector2((float)l[1].x, (float)l[1].y) },
-                            false, prof, w1, m, caps: -1);
+                            false, prof, w1, gm, caps: -1);
                     break;
                 }
                 case "diamond":
@@ -522,9 +523,10 @@ namespace House4696.Casegoods
                 var bar = new PathD { new PointD(a.x - perp.x, a.y - perp.y), new PointD(b.x - perp.x, b.y - perp.y), new PointD(b.x + perp.x, b.y + perp.y), new PointD(a.x + perp.x, a.y + perp.y) };
                 if (Clipper.Area(bar) < 0) bar.Reverse();
                 _g.Slab(mb, pl, new PathsD { bar }, z + off, z + off + t, Mathf.Min(band, t) * 0.4f, m);
-                foreach (float s in new[] { -0.4f, 0.4f })
+                float half = p.Cc > 0 ? p.Cc * 0.5f : hl * 0.8f;
+                foreach (float s in new[] { -1f, 1f })
                 {
-                    var c = new Vector2(x, y) + dir * (hl * 2f * s);
+                    var c = new Vector2(x, y) + dir * (half * s);
                     _g.Slab(mb, pl, new PathsD { Post(c.x, c.y) }, z, z + off + 0.5f, 0.3f, m, back: false);
                 }
             }

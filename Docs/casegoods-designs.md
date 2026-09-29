@@ -42,6 +42,7 @@ Every part has a `kind` (default `panel`), a `box` `[x0, y0, z0, x1, y1, z1]` (m
 | `mat` | material role (below); default by kind |
 | `edge` | rounding of the edges, mm (panel 1, front 1.5, back 0.3) |
 | `grain` | `x` / `y` / `z`: the direction a wood decor runs on this part (default: its longest side) |
+| `edgeMat` | the edges of a board in another role — an oak edge band on a black front, a contrasting ЛДСП edge |
 | `rot` | a turned part: `{"axis": "x", "deg": -8, "about": [x, y, z]}` — deg > 0 about x turns y towards z (a headboard's top forward; −8 leans it back), about y turns z towards x, about z turns x towards y; `about` defaults to the box's centre. The box is the part before the turn |
 | `shape` | `rect` (default; `radius` rounds its corners) · `circle` / `ring` (an ellipse in the box, cut through its thinnest axis; `inner` = the ring's hole diameter) · `path` with `outline`: an SVG path (`M L H V C Q A Z`, absolute mm) in the plane across the box's thinnest axis — front plane (x, y), top plane (x, z) or side plane (z, y); clipped to the box |
 
@@ -75,7 +76,7 @@ Kinds:
   * `frame` — a milled frame `border` mm wide round a panel sunk `depth` mm, its milled edge rounded `r`; `profile` (a
     catalogue profile) runs round the panel (a classic bead).
   * `grooves` — milled lines `lines: [[a0, b0, a1, b1], …]` (absolute mm in the face plane), `w` wide, `depth` deep, `flute`
-    `v` or `u` — pull grooves, fake joints, patterns.
+    `v` or `u` — pull grooves, fake joints, patterns; `mat` = the milled surface's role (the chipboard's lighter core).
   * `diamond` — pyramids `cell: [w, h]`, `depth` high, inside `margin` (3D relief fronts).
   * `"side": "-"` puts the face on the board's other side (−x of a left side panel, the back of a free-standing piece).
   * fluted `"area": [a0, b0, a1, b1]` — ribs on that part of the face only, standing on the flat face (applied reeds).
@@ -101,7 +102,8 @@ Kinds:
 `model`: `edge` — an L profile over a front's top edge (`at` = [middle, the top edge y], `d` length, `band` the leg on the
 face, `t` metal thickness, `standoff` the lip's depth = front thickness + t) · `ring-half` — a flat half ring (Flora): `at` = the middle of its cut line, `dir` = where its arc bulges (`up`, `down`,
 `left`, `right`); two halves on two fronts make a ring across their joint · `knob` · `bar` (`dir` = its direction, `d` =
-length, `band` = thickness; `post` = post size, `section: "square"` = square posts). Sizes: `d` outer diameter / length,
+length, `band` = thickness; `cc` = centre-to-centre of the posts (default 0.8 d); `post` = post size, `section: "square"`
+= square posts). Sizes: `d` outer diameter / length,
 `band`, `t` thickness, `standoff` from the face; `z` = the front's face; `"on": "back"` = on a back face (z = that face,
 the handle stands out towards −z: a table's back drawer).
 
