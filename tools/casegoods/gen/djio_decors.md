@@ -1,1 +1,0 @@
-- «Кедр Орегон 537 SWN» — Джио (top 25 mm) — p. 49 (photo only, no swatch) — honey-brown cedar/oak planks with cathedrals and knots, synchronised pores — grain along x (the top's length)

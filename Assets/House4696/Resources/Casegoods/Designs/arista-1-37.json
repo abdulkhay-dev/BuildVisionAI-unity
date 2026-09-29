@@ -13,7 +13,7 @@
     {"id": "d1-side-r", "mat": "white", "box": [455, 358, 20, 471, 521, 398]},
     {"id": "d1-back", "mat": "white", "box": [45, 358, 20, 455, 521, 36]},
     {"id": "d1-bottom", "kind": "back", "mat": "white", "box": [39, 366, 26, 461, 369, 396]},
-    {"id": "h-d1", "kind": "handle", "model": "bar", "at": [250, 496], "dir": "right", "d": 176, "band": 10, "t": 10, "standoff": 22, "z": 417, "covers": ["c3"]},
+    {"id": "h-d1", "kind": "handle", "model": "bar", "at": [250, 470], "dir": "right", "d": 176, "band": 10, "t": 10, "standoff": 22, "z": 417, "covers": ["c3"]},
     {"id": "d2-front", "kind": "front", "box": [2, 112, 398, 498, 335, 417]},
     {"id": "d2-side-l", "mat": "white", "box": [29, 136, 20, 45, 299, 398]},
     {"id": "d2-side-r", "mat": "white", "box": [455, 136, 20, 471, 299, 398]},
