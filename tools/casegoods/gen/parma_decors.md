@@ -1,5 +1,0 @@
-# Парма — textured decors (for decors.md)
-
-- «Сосна Рандерс» — Парма (body and front of `parma-randers-kantri`: sides, pilasters, partitions, fronts, bed boards) — p. 56 («Вариант цветового исполнения», `catpage.py 56 --swatch 0.715,0.86,0.738,0.905`) — white-painted pine with the brushed grain showing through (light grey lines and pores), a few soft knots, matt; the photos read it warm white — grain along the long side (vertical on doors / sides, along x on drawer fronts); provisional #d9d9d9.
-- «Дуб Кантри золотой» — Парма (role `top`: the tops, the bottoms and the horizontals showing between the fronts, the table tops, the wall shelf) — p. 56 (`--swatch 0.75,0.86,0.773,0.905`) — already in decors.md (Рокси, Денвер): warm golden-honey rustic oak, cathedrals, small dark knots — grain along x; provisional #a88059.
-- Headboard velvet (not a board decor) — Парма beds 1.00 / 1.01 / 1.02 (role `fabric`: the quilted soft panel) — site photo of 1.02 and p. 54 — champagne crushed velvet, a 12 × 3 quilted grid; provisional `velvet#cdbfa8`.

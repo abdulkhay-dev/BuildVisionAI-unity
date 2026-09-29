@@ -1,4 +1,0 @@
-## «Гранде» (grande)
-
-- «Дуб Юкон 358 SWN» — Гранде (the whole piece in finish grande-yukon: posts, aprons, carcass, fronts, tops, bed ends) — p. 93 («Варианты цветового исполнения», crop 0.69,0.86,0.74,0.9, flat ±11) and the photos p. 87–90 — grey weathered oak, rough-sawn planks with saw marks across the grain, open cracks and dark knots, low contrast cathedrals — along the long side of each part (y on posts, doors and sides, x on aprons, rails, tops and drawer fronts; the designs set `grain` per part); provisional `door_enamel_whitey#8c8685`.
-- «Дуб Стирлинг 374 SWN» — Гранде (the whole piece in finish grande-stirling) — p. 93 (crop 0.764,0.86,0.815,0.9, flat ±11) and the close-ups p. 91–92 — warm honey-brown oak, strong cathedrals and straight lines, scattered dark knots and fine checks — along the long side of each part (as above); provisional `door_enamel_whitey#8b6b4b`.

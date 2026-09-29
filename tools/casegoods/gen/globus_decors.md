@@ -1,4 +1,0 @@
-# Decors of «Глобус» (globus) — wave 5b
-
-- «Сосна Карелия» — Глобус (body of globus-sosna-kareliya: carcass, interior and the door fillings) — p. 64 (swatch «Глобус», crop 0.79,0.865,0.84,0.905, flat ±1.3) — very light grey-white pine: fine straight fibres with faint darker streaks, occasional small knots, matt structured — vertical on sides, doors and uprights, x on tops, shelves and drawer fronts; provisional #e7e7e1.
-- «Дуб Каньон» — Глобус (body of globus-dub-kanon) — p. 64 (swatch «Глобус», crop 0.87,0.865,0.92,0.905, ±10.1) — mid brown rustic oak: long straight planks with darker streaks, small knots and short cracks, faint cathedrals, matt — vertical on sides and doors, x on tops, shelves and drawer fronts (the 3.18 photos: grey-brown oak with strong vertical planks on the doors); provisional #8a6b4e.

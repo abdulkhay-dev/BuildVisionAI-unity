@@ -1,4 +1,0 @@
-# Decors of «Формат» (format) — wave 5b
-
-- «Сосна Карелия» — Формат (body of format-sosna-kareliya: every board) — p. 64 (swatch, crop 0.185,0.865,0.24,0.905, flat ±1.3) — very light grey-white pine: fine straight fibres with faint darker streaks, occasional small knots, matt structured — vertical on sides, doors and uprights, x on tops, shelves and drawer fronts; provisional #e6e7e1 (Визит's p. 136 swatch prints #c6c4c5 — the same decor, a darker print).
-- «Дуб Каньон» — Формат (body of format-dub-kanon) — p. 64 (swatch, crop 0.265,0.865,0.31,0.905, ±10.1) — mid brown rustic oak: long straight planks with darker streaks, small knots and short cracks, faint cathedrals, matt — vertical on sides and doors, x on tops, shelves and drawer fronts; provisional #8a6b4e (Верес p. 135 prints #7f6951 — same decor).

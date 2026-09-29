@@ -1,3 +1,0 @@
-# Decors of «Симпл» (simpl) — wave 5b
-
-- «Дуб Кантри золотой» (389 SWN in wave 1) — Симпл (body of simpl-kantri-zhemchug: carcasses, tall boards, shelves, the 3.11 drawer fronts, the legs) — no swatch on p. 133; the colour is the Денвер swatch p. 33 (crop 0.670,0.855,0.695,0.89) as wave 1 had it (Рокси p. 14 gives the darker #846c48; the p. 133 photos read #ac9372…#bda789, nearer Денвер) — warm golden-honey rustic oak: long straight fibres, open cathedrals, dark knots and short black cracks (very visible on the 3.10 / 3.11 photos), matt pores — vertical on the tall boards, sides and door-high parts, x on tops, the seat, shelves and the drawer fronts; provisional #b39266. Already listed in decors.md (wave 1): the same texture serves.

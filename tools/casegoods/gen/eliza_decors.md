@@ -1,5 +1,0 @@
-# «Элиза» — textured decors (same line format as tools/casegoods/decors.md)
-
-- «Белая Ваниль» — Элиза (body of eliza-vanil: carcass, fronts, crests, beds) — p. 108 (swatch crop 0.80,0.87,0.845,0.905 → #e8e6e4; the interior photo reads warmer, ≈ #efe6d2) — creamy white with a faint fine wood grain (painted-ash look), matt — vertical on doors and sides, x on tops, crests, drawer fronts; provisional #e8e6e4.
-- Золотой орнамент «розы» (gilded ornament decal) — Элиза (role `ornament`: the ovals in the door medallions, the crests of the wardrobes and the mirror, the chest's second drawer, the bed's crest and foot board) — p. 108 close views (the wardrobe crest 0.72,0.1,0.95,0.2; the chest 0.08,0.55,0.35,0.62) — a symmetric spray of stylised gold roses and leaves on the white ground, ~180–320 × 50–60 mm — now a flat gilded oval plate; properly a `print` decal (transparent ground) on the fronts.
-- Каретная стяжка, экокожа светлая (headboard) — Элиза (role `fabric`: the buttoned headboard panel of beds 1.15 / 1.16) — p. 108 — cream-beige glossy eco-leather, diamond tufting — now library leather_light tinted #e7dcc4 (tufts 12 × 4).

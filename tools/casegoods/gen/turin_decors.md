@@ -1,4 +1,0 @@
-# Турин — textured decors (for decors.md)
-
-- «Сосна Карелия» — Турин (body and front of `turin-sosna-karelia`: every board, front, cornice, bed) — p. 62 (Турин «Варианты цветового исполнения», `catpage.py 62 --swatch 0.675,0.865,0.73,0.905`; p. 63 the same) — white-washed / ivory painted pine: fine straight grain lines in light grey, faint pores, very few small knots, matt — grain along the long side (vertical on doors, sides, pilasters; along x on tops, drawer fronts, plinths); provisional #e6e7e1.
-- «Дуб Каньон» — Турин (body and front of `turin-dub-kanyon`) — p. 62 (`--swatch 0.755,0.865,0.81,0.905`, #8a6b4e; p. 63 #8b6c50), the close-ups p. 61 (door, drawer) — golden-brown rustic oak: cathedrals and long straight fibres, darker streaks, small knots with cracks, plank joints — grain along the long side; provisional #8a6b4e.
