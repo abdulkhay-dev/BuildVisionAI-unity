@@ -1,0 +1,21 @@
+{
+  "id": "arista-2-42",
+  "size": [1200, 560, 754],
+  "parts": [
+    {"id": "top", "mat": "oak", "box": [0, 738, 0, 1200, 754, 560]},
+    {"id": "side-l", "box": [27, 0, 0, 43, 738, 557]},
+    {"id": "modesty", "mat": "oak", "box": [43, 450, 40, 777, 738, 56]},
+    {"id": "p-side-l", "box": [777, 0, 3, 793, 738, 538]},
+    {"id": "p-side-r", "box": [1159, 0, 3, 1175, 738, 538]},
+    {"id": "p-base", "box": [793, 0, 3, 1159, 16, 538]},
+    {"id": "p-shelf", "mat": "white", "box": [793.5, 270, 8, 1158.5, 286, 536]},
+    {"id": "p-niche", "box": [793, 551, 3, 1159, 567, 538]},
+    {"id": "p-back", "kind": "back", "mat": "white", "box": [778, 1, 0, 1174, 737, 3]},
+    {"id": "door-w", "kind": "front", "box": [779, 3, 538, 1013, 547, 557]},
+    {"id": "door-oak", "kind": "front", "mat": "accent", "grain": "y", "box": [1013, 3, 538, 1173, 547, 557]},
+    {"id": "h-door", "kind": "handle", "model": "bar", "at": [851, 390], "dir": "up", "d": 176, "band": 10, "t": 10, "standoff": 22, "z": 557, "covers": ["c3"]}
+  ],
+  "moves": [
+    {"type": "door", "name": "door", "parts": ["door-w", "door-oak", "h-door"], "hinge": "right", "angle": 100, "axis": [1173, 557]}
+  ]
+}

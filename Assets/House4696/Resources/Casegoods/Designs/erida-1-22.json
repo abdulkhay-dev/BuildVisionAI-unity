@@ -1,0 +1,34 @@
+{
+  "id": "erida-1-22",
+  "size": [508, 450, 623],
+  "parts": [
+    {"id": "side-l", "box": [0, 180, 0, 16, 607, 434]},
+    {"id": "side-r", "box": [492, 180, 0, 508, 607, 434]},
+    {"id": "top", "box": [0, 607, 0, 508, 623, 450]},
+    {"id": "bottom", "box": [16, 180, 0, 492, 196, 434]},
+    {"id": "back", "kind": "back", "box": [11, 191, 6, 497, 612, 9.5]},
+    {"id": "frame-l", "mat": "front", "box": [0, 180, 434, 45, 607, 450]},
+    {"id": "frame-r", "mat": "front", "box": [463, 180, 434, 508, 607, 450]},
+    {"id": "frame-b", "mat": "front", "box": [45, 180, 434, 463, 192, 450]},
+    {"id": "drawer-1", "kind": "front", "box": [48, 195.0, 434, 460, 398.0, 450]},
+    {"id": "drawer-1-side-l", "box": [29, 215.0, 40, 45, 335.0, 434]},
+    {"id": "drawer-1-side-r", "box": [463, 215.0, 40, 479, 335.0, 434]},
+    {"id": "drawer-1-back", "box": [45, 215.0, 40, 463, 335.0, 56]},
+    {"id": "drawer-1-bottom", "kind": "back", "box": [40, 225.0, 44, 468, 228.5, 432]},
+    {"id": "drawer-1-knob1", "kind": "handle", "model": "knob", "at": [254.0, 296.5], "d": 34, "t": 10, "standoff": 16, "z": 450},
+    {"id": "drawer-2", "kind": "front", "box": [48, 401.0, 434, 460, 604.0, 450]},
+    {"id": "drawer-2-side-l", "box": [29, 421.0, 40, 45, 541.0, 434]},
+    {"id": "drawer-2-side-r", "box": [463, 421.0, 40, 479, 541.0, 434]},
+    {"id": "drawer-2-back", "box": [45, 421.0, 40, 463, 541.0, 56]},
+    {"id": "drawer-2-bottom", "kind": "back", "box": [40, 431.0, 44, 468, 434.5, 432]},
+    {"id": "drawer-2-knob1", "kind": "handle", "model": "knob", "at": [254.0, 502.5], "d": 34, "t": 10, "standoff": 16, "z": 450},
+    {"id": "leg-1", "kind": "rod", "section": "square", "mat": "body", "from": [22.5, 180, 22.5], "to": [15.0, 0, 15.0], "d": 45, "d2": 30, "box": [0, 0, 0, 45, 180, 45]},
+    {"id": "leg-2", "kind": "rod", "section": "square", "mat": "body", "from": [485.5, 180, 22.5], "to": [493.0, 0, 15.0], "d": 45, "d2": 30, "box": [463, 0, 0, 508, 180, 45]},
+    {"id": "leg-3", "kind": "rod", "section": "square", "mat": "body", "from": [22.5, 180, 427.5], "to": [15.0, 0, 435.0], "d": 45, "d2": 30, "box": [0, 0, 405, 45, 180, 450]},
+    {"id": "leg-4", "kind": "rod", "section": "square", "mat": "body", "from": [485.5, 180, 427.5], "to": [493.0, 0, 435.0], "d": 45, "d2": 30, "box": [463, 0, 405, 508, 180, 450]}
+  ],
+  "moves": [
+    {"type": "drawer", "name": "drawer-1", "parts": ["drawer-1", "drawer-1-side-l", "drawer-1-side-r", "drawer-1-back", "drawer-1-bottom", "drawer-1-knob1"], "travel": 295},
+    {"type": "drawer", "name": "drawer-2", "parts": ["drawer-2", "drawer-2-side-l", "drawer-2-side-r", "drawer-2-back", "drawer-2-bottom", "drawer-2-knob1"], "travel": 295}
+  ]
+}

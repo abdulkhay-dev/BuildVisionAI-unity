@@ -1,0 +1,36 @@
+{
+  "id": "arista-1-37",
+  "size": [500, 417, 580],
+  "parts": [
+    {"id": "top", "mat": "body", "box": [0, 564, 3, 500, 580, 414]},
+    {"id": "base", "box": [0, 110, 3, 500, 126, 398]},
+    {"id": "side-l", "box": [0, 126, 3, 16, 564, 398]},
+    {"id": "side-r", "box": [484, 126, 3, 500, 564, 398]},
+    {"id": "back", "kind": "back", "mat": "white", "box": [1, 111, 0, 499, 579, 3]},
+    {"id": "d1-front-1", "kind": "front", "box": [2, 338, 398, 498, 454, 417]},
+    {"id": "d1-front-2", "kind": "front", "box": [2, 454, 398, 498, 561, 417], "mat": "accent"},
+    {"id": "d1-side-l", "mat": "white", "box": [29, 358, 20, 45, 521, 398]},
+    {"id": "d1-side-r", "mat": "white", "box": [455, 358, 20, 471, 521, 398]},
+    {"id": "d1-back", "mat": "white", "box": [45, 358, 20, 455, 521, 36]},
+    {"id": "d1-bottom", "kind": "back", "mat": "white", "box": [39, 366, 26, 461, 369, 396]},
+    {"id": "h-d1", "kind": "handle", "model": "bar", "at": [250, 470], "dir": "right", "d": 176, "band": 10, "t": 10, "standoff": 22, "z": 417, "covers": ["c3"]},
+    {"id": "d2-front", "kind": "front", "box": [2, 112, 398, 498, 335, 417]},
+    {"id": "d2-side-l", "mat": "white", "box": [29, 136, 20, 45, 299, 398]},
+    {"id": "d2-side-r", "mat": "white", "box": [455, 136, 20, 471, 299, 398]},
+    {"id": "d2-back", "mat": "white", "box": [45, 136, 20, 455, 299, 36]},
+    {"id": "d2-bottom", "kind": "back", "mat": "white", "box": [39, 144, 26, 461, 147, 396]},
+    {"id": "h-d2", "kind": "handle", "model": "bar", "at": [250, 270], "dir": "right", "d": 176, "band": 10, "t": 10, "standoff": 22, "z": 417, "covers": ["c3"]},
+    {"id": "leg-1", "kind": "rod", "mat": "metal", "section": "square", "d": 40, "d2": 30, "from": [80, 110, 60], "to": [72, 3, 55.2], "covers": ["g"]},
+    {"id": "leg-1-glide", "kind": "panel", "mat": "black", "edge": 0.5, "box": [57.0, 0, 40.2, 87.0, 3, 70.2]},
+    {"id": "leg-2", "kind": "rod", "mat": "metal", "section": "square", "d": 40, "d2": 30, "from": [80, 110, 357], "to": [72, 3, 361.8], "covers": ["g"]},
+    {"id": "leg-2-glide", "kind": "panel", "mat": "black", "edge": 0.5, "box": [57.0, 0, 346.8, 87.0, 3, 376.8]},
+    {"id": "leg-3", "kind": "rod", "mat": "metal", "section": "square", "d": 40, "d2": 30, "from": [420, 110, 60], "to": [428, 3, 55.2], "covers": ["g"]},
+    {"id": "leg-3-glide", "kind": "panel", "mat": "black", "edge": 0.5, "box": [413.0, 0, 40.2, 443.0, 3, 70.2]},
+    {"id": "leg-4", "kind": "rod", "mat": "metal", "section": "square", "d": 40, "d2": 30, "from": [420, 110, 357], "to": [428, 3, 361.8], "covers": ["g"]},
+    {"id": "leg-4-glide", "kind": "panel", "mat": "black", "edge": 0.5, "box": [413.0, 0, 346.8, 443.0, 3, 376.8]}
+  ],
+  "moves": [
+    {"type": "drawer", "name": "drawer_1", "parts": ["d1-front-1", "d1-front-2", "d1-side-l", "d1-side-r", "d1-back", "d1-bottom", "h-d1"], "travel": 302},
+    {"type": "drawer", "name": "drawer_2", "parts": ["d2-front", "d2-side-l", "d2-side-r", "d2-back", "d2-bottom", "h-d2"], "travel": 302}
+  ]
+}

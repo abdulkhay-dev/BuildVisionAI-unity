@@ -1,0 +1,42 @@
+{
+  "id": "djio-0-22",
+  "size": [1114, 450, 1200],
+  "parts": [
+    {"n": "1", "mat": "top", "box": [0, 1175, 0, 1114, 1200, 450]},
+    {"n": "2", "box": [20, 40, 3, 1094, 65, 429]},
+    {"n": "3", "box": [23, 65, 3, 39, 1175, 408]},
+    {"n": "4", "box": [1075, 65, 3, 1091, 1175, 408]},
+    {"n": "10", "kind": "front", "box": [23, 65, 408, 93, 1175, 429], "face": {"type": "grooves", "w": 5, "depth": 3, "flute": "u", "lines": [[48, 65, 48, 1175], [68, 65, 68, 1175]]}},
+    {"n": "11", "kind": "front", "box": [1021, 65, 408, 1091, 1175, 429], "face": {"type": "grooves", "w": 5, "depth": 3, "flute": "u", "lines": [[1046, 65, 1046, 1175], [1066, 65, 1066, 1175]]}},
+    {"n": "5", "box": [549, 65, 3, 565, 1175, 408]},
+    {"n": "12", "id": "12-left", "box": [39, 566, 3, 549, 582, 408]},
+    {"n": "7", "id": "7-left", "box": [39, 1159, 325, 548, 1175, 405]},
+    {"n": "6", "id": "6-left-1", "box": [40, 308, 5, 548, 324, 407]},
+    {"n": "6", "id": "6-left-2", "box": [40, 870, 5, 548, 886, 407]},
+    {"n": "12", "id": "12-right", "box": [565, 566, 3, 1075, 582, 408]},
+    {"n": "7", "id": "7-right", "box": [565, 1159, 325, 1074, 1175, 405]},
+    {"n": "6", "id": "6-right-1", "box": [566, 308, 5, 1074, 324, 407]},
+    {"n": "6", "id": "6-right-2", "box": [566, 870, 5, 1074, 886, 407]},
+    {"n": "13", "kind": "back", "box": [27, 42, 0, 557, 1173, 3], "id": "13-left"},
+    {"n": "13", "kind": "back", "box": [558, 42, 0, 1088, 1173, 3], "id": "13-right"},
+    {"n": "9", "kind": "front", "box": [94, 67, 410, 556, 573, 429], "id": "9-left", "face": {"type": "frame", "border": 72, "depth": 6, "r": 3}},
+    {"id": "H-door_bottom_left", "kind": "handle", "model": "knob", "at": [526, 493], "d": 28, "t": 12, "standoff": 16, "z": 429, "covers": ["H"]},
+    {"n": "9", "kind": "front", "box": [558, 67, 410, 1020, 573, 429], "id": "9-right", "face": {"type": "frame", "border": 72, "depth": 6, "r": 3}},
+    {"id": "H-door_bottom_right", "kind": "handle", "model": "knob", "at": [588, 493], "d": 28, "t": 12, "standoff": 16, "z": 429, "covers": ["H"]},
+    {"n": "8", "kind": "front", "box": [94, 576, 410, 556, 1174, 429], "id": "8-left", "glass": {"frame": 62, "rebate": 10, "t": 4, "tint": "clear"}},
+    {"id": "H-door_top_left", "kind": "handle", "model": "knob", "at": [526, 656], "d": 28, "t": 12, "standoff": 16, "z": 429, "covers": ["H"]},
+    {"n": "8", "kind": "front", "box": [558, 576, 410, 1020, 1174, 429], "id": "8-right", "glass": {"frame": 62, "rebate": 10, "t": 4, "tint": "clear"}},
+    {"id": "H-door_top_right", "kind": "handle", "model": "knob", "at": [588, 656], "d": 28, "t": 12, "standoff": 16, "z": 429, "covers": ["H"]},
+    {"id": "N-1", "box": [33, 0, 10, 93, 40, 70], "covers": ["N"]},
+    {"id": "N-2", "box": [33, 0, 359, 93, 40, 419], "covers": ["N"]},
+    {"id": "N-3", "box": [1021, 0, 10, 1081, 40, 70], "covers": ["N"]},
+    {"id": "N-4", "box": [1021, 0, 359, 1081, 40, 419], "covers": ["N"]},
+    {"id": "N-5", "box": [527.0, 0, 359, 587.0, 40, 419], "covers": ["N"]}
+  ],
+  "moves": [
+    {"type": "door", "name": "door_bottom_left", "parts": ["9-left", "H-door_bottom_left"], "hinge": "left", "angle": 105},
+    {"type": "door", "name": "door_bottom_right", "parts": ["9-right", "H-door_bottom_right"], "hinge": "right", "angle": 105},
+    {"type": "door", "name": "door_top_left", "parts": ["8-left", "H-door_top_left"], "hinge": "left", "angle": 105},
+    {"type": "door", "name": "door_top_right", "parts": ["8-right", "H-door_top_right"], "hinge": "right", "angle": 105}
+  ]
+}

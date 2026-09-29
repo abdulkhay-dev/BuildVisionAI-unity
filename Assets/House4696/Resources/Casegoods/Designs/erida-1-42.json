@@ -1,0 +1,12 @@
+{
+  "id": "erida-1-42",
+  "size": [620, 22, 620],
+  "parts": [
+    {"id": "frame", "shape": "ring", "inner": 470, "box": [0, 0, 6, 620, 620, 22], "edge": 3},
+    {"id": "mirror", "kind": "mirror", "shape": "circle", "box": [60, 60, 2, 560, 560, 6]},
+    {"id": "bumpers", "kind": "panel", "mat": "black", "box": [300, 40, 0, 320, 60, 2]}
+  ],
+  "moves": [
+
+  ]
+}

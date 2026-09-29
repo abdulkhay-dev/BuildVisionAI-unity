@@ -1,0 +1,40 @@
+{
+  "id": "marlen-1-25",
+  "size": [1000, 500, 756],
+  "parts": [
+    {"id": "side-l", "box": [0, 12, 0, 16, 740, 500]},
+    {"id": "side-r", "box": [984, 12, 0, 1000, 740, 500]},
+    {"id": "top", "box": [0, 740, 0, 1000, 756, 500]},
+    {"id": "bottom", "box": [16, 12, 0, 984, 28, 500]},
+    {"id": "back", "kind": "back", "box": [11, 23, 6, 989, 745, 9.5]},
+    {"id": "drawer-1", "kind": "front", "box": [18, 30.0, 484, 982, 264.7, 500]},
+    {"id": "drawer-1-side-l", "box": [29, 50.0, 40, 45, 200.0, 484]},
+    {"id": "drawer-1-side-r", "box": [955, 50.0, 40, 971, 200.0, 484]},
+    {"id": "drawer-1-back", "box": [45, 50.0, 40, 955, 200.0, 56]},
+    {"id": "drawer-1-bottom", "kind": "back", "box": [40, 60.0, 44, 960, 63.5, 482]},
+    {"id": "drawer-1-handle", "kind": "handle", "model": "bar", "at": [500.0, 214.7], "dir": "right", "d": 320, "band": 12, "t": 10, "standoff": 22, "z": 500},
+    {"id": "drawer-2", "kind": "front", "box": [18, 266.7, 484, 982, 501.3, 500]},
+    {"id": "drawer-2-side-l", "box": [29, 286.7, 40, 45, 436.7, 484]},
+    {"id": "drawer-2-side-r", "box": [955, 286.7, 40, 971, 436.7, 484]},
+    {"id": "drawer-2-back", "box": [45, 286.7, 40, 955, 436.7, 56]},
+    {"id": "drawer-2-bottom", "kind": "back", "box": [40, 296.7, 44, 960, 300.2, 482]},
+    {"id": "drawer-2-handle", "kind": "handle", "model": "bar", "at": [500.0, 451.3], "dir": "right", "d": 320, "band": 12, "t": 10, "standoff": 22, "z": 500},
+    {"id": "drawer-3", "kind": "front", "box": [18, 503.3, 484, 982, 738.0, 500]},
+    {"id": "drawer-3-side-l", "box": [29, 523.3, 40, 45, 673.3, 484]},
+    {"id": "drawer-3-side-r", "box": [955, 523.3, 40, 971, 673.3, 484]},
+    {"id": "drawer-3-back", "box": [45, 523.3, 40, 955, 673.3, 56]},
+    {"id": "drawer-3-bottom", "kind": "back", "box": [40, 533.3, 44, 960, 536.8, 482]},
+    {"id": "drawer-3-handle", "kind": "handle", "model": "bar", "at": [500.0, 688.0], "dir": "right", "d": 320, "band": 12, "t": 10, "standoff": 22, "z": 500},
+    {"id": "g-1", "kind": "tube", "mat": "black", "box": [28.0, 0, 28.0, 52.0, 12, 52.0], "covers": ["g"]},
+    {"id": "g-2", "kind": "tube", "mat": "black", "box": [28.0, 0, 448.0, 52.0, 12, 472.0], "covers": ["g"]},
+    {"id": "g-3", "kind": "tube", "mat": "black", "box": [488.0, 0, 28.0, 512.0, 12, 52.0], "covers": ["g"]},
+    {"id": "g-4", "kind": "tube", "mat": "black", "box": [488.0, 0, 448.0, 512.0, 12, 472.0], "covers": ["g"]},
+    {"id": "g-5", "kind": "tube", "mat": "black", "box": [948.0, 0, 28.0, 972.0, 12, 52.0], "covers": ["g"]},
+    {"id": "g-6", "kind": "tube", "mat": "black", "box": [948.0, 0, 448.0, 972.0, 12, 472.0], "covers": ["g"]}
+  ],
+  "moves": [
+    {"type": "drawer", "name": "drawer-1", "parts": ["drawer-1", "drawer-1-side-l", "drawer-1-side-r", "drawer-1-back", "drawer-1-bottom", "drawer-1-handle"], "travel": 333},
+    {"type": "drawer", "name": "drawer-2", "parts": ["drawer-2", "drawer-2-side-l", "drawer-2-side-r", "drawer-2-back", "drawer-2-bottom", "drawer-2-handle"], "travel": 333},
+    {"type": "drawer", "name": "drawer-3", "parts": ["drawer-3", "drawer-3-side-l", "drawer-3-side-r", "drawer-3-back", "drawer-3-bottom", "drawer-3-handle"], "travel": 333}
+  ]
+}

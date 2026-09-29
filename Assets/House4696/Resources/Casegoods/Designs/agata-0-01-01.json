@@ -1,0 +1,37 @@
+{
+  "id": "agata-0-01-01",
+  "size": [534, 502, 2050],
+  "parts": [
+    {"id": "side-l", "box": [0, 100, 0, 16, 2034, 484]},
+    {"id": "side-r", "box": [518, 100, 0, 534, 2034, 484]},
+    {"id": "top", "box": [0, 2034, 0, 534, 2050, 502]},
+    {"id": "bottom", "box": [16, 100, 0, 518, 116, 484]},
+    {"id": "shelf-drawer", "box": [16, 305, 16, 518, 321, 484]},
+    {"id": "shelf-fixed", "box": [16, 636, 16, 518, 652, 484]},
+    {"id": "shelf-top", "box": [16, 1761, 16, 518, 1777, 484]},
+    {"id": "front-top", "kind": "front", "box": [12, 1777, 484, 522, 2031, 502]},
+    {"id": "back", "kind": "back", "box": [10, 110, 6, 524, 2040, 9.5]},
+    {"id": "glass-1", "kind": "glass", "box": [18, 987, 20, 516, 993, 454]},
+    {"id": "led-1", "kind": "light", "box": [18, 993, 40, 26, 1001, 60]},
+    {"id": "glass-2", "kind": "glass", "box": [18, 1380, 20, 516, 1386, 454]},
+    {"id": "led-2", "kind": "light", "box": [18, 1386, 40, 26, 1394, 60]},
+    {"id": "led-top", "kind": "light", "shape": "circle", "box": [247.0, 1757, 222.0, 287.0, 1761, 262.0]},
+    {"id": "door-solid", "kind": "front", "box": [12, 321, 484, 522, 652, 502]},
+    {"id": "door-glass", "kind": "front", "box": [12, 652, 484, 522, 1774, 502], "glass": {"frame": 14, "rebate": 6, "t": 4, "tint": "clear"}},
+    {"id": "k-door", "kind": "handle", "model": "bar", "at": [38, 978], "dir": "up", "d": 210, "band": 12, "t": 6, "standoff": 10, "z": 502},
+    {"id": "front-1", "kind": "front", "box": [12, 113, 484, 522, 318, 502]},
+    {"id": "box-l-1", "box": [29, 133, 44, 45, 283, 484]},
+    {"id": "box-r-1", "box": [489, 133, 44, 505, 283, 484]},
+    {"id": "box-b-1", "box": [45, 133, 44, 489, 283, 60]},
+    {"id": "box-bottom-1", "kind": "back", "box": [40, 143, 48, 494, 146.5, 482]},
+    {"id": "k-1", "kind": "handle", "model": "bar", "at": [267.0, 307], "dir": "right", "d": 360, "band": 12, "t": 6, "standoff": 10, "z": 502},
+    {"id": "leg-lf", "kind": "panel", "mat": "metal", "box": [0, 0, 454, 134, 100, 474], "shape": "path", "outline": "M 0 0 L 0 100 L 134 100 C 75 96 45 55.00000000000001 45 0 Z", "edge": 1.5},
+    {"id": "leg-rf", "kind": "panel", "mat": "metal", "box": [400, 0, 454, 534, 100, 474], "shape": "path", "outline": "M 534 0 L 534 100 L 400 100 C 459 96 489 55.00000000000001 489 0 Z", "edge": 1.5},
+    {"id": "leg-lb", "kind": "panel", "mat": "metal", "box": [0, 0, 10, 134, 100, 30], "shape": "path", "outline": "M 0 0 L 0 100 L 134 100 C 75 96 45 55.00000000000001 45 0 Z", "edge": 1.5},
+    {"id": "leg-rb", "kind": "panel", "mat": "metal", "box": [400, 0, 10, 534, 100, 30], "shape": "path", "outline": "M 534 0 L 534 100 L 400 100 C 459 96 489 55.00000000000001 489 0 Z", "edge": 1.5}
+  ],
+  "moves": [
+    {"type": "door", "name": "door", "parts": ["door-solid", "door-glass", "k-door"], "hinge": "right", "angle": 105},
+    {"type": "drawer", "name": "drawer_1", "parts": ["front-1", "box-l-1", "box-r-1", "box-b-1", "box-bottom-1", "k-1"], "travel": 330}
+  ]
+}

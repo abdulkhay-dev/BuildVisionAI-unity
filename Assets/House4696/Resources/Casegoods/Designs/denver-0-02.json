@@ -1,0 +1,33 @@
+{
+  "id": "denver-0-02",
+  "size": [1396, 432, 598],
+  "parts": [
+    {"n": "6", "box": [0, 130, 0, 1396, 146, 432]},
+    {"n": "1", "box": [2, 146, 2, 18, 598, 430]},
+    {"n": "2", "box": [1378, 146, 2, 1394, 598, 430]},
+    {"n": "5", "box": [18, 582, 25, 1378, 598, 413]},
+    {"n": "7", "box": [18, 482, 9, 1378, 582, 25]},
+    {"n": "3", "box": [463, 146, 25, 479, 567, 409]},
+    {"n": "4", "box": [917, 146, 25, 933, 567, 409]},
+    {"n": "8", "box": [480.5, 344, 25, 915.5, 360, 395]},
+    {"n": "11", "id": "11-1", "kind": "back", "box": [15, 147, 5.5, 473, 579, 9]},
+    {"n": "12", "kind": "back", "box": [473, 147, 5.5, 923, 579, 9]},
+    {"n": "11", "id": "11-2", "kind": "back", "box": [923, 147, 5.5, 1381, 579, 9]},
+    {"n": "9", "id": "9-1", "kind": "front", "grain": "x", "box": [19, 147, 414, 469, 597, 430]},
+    {"n": "9", "id": "9-2", "kind": "front", "grain": "x", "box": [927, 147, 414, 1377, 597, 430]},
+    {"n": "10", "id": "leg-1", "kind": "rod", "mat": "legs", "section": "square", "from": [62, 130, 377], "to": [30, 2, 387], "d": 66, "d2": 30},
+    {"id": "r-leg-1", "kind": "panel", "mat": "door_enamel_whitey#8a8378", "shape": "circle", "edge": 0.5, "box": [16, 0, 373, 44, 2, 401], "covers": ["r"]},
+    {"n": "10", "id": "leg-2", "kind": "rod", "mat": "legs", "section": "square", "from": [62, 130, 55], "to": [30, 2, 45], "d": 66, "d2": 30},
+    {"id": "r-leg-2", "kind": "panel", "mat": "door_enamel_whitey#8a8378", "shape": "circle", "edge": 0.5, "box": [16, 0, 31, 44, 2, 59], "covers": ["r"]},
+    {"n": "10", "id": "leg-3", "kind": "rod", "mat": "legs", "section": "square", "from": [1334, 130, 377], "to": [1366, 2, 387], "d": 66, "d2": 30},
+    {"id": "r-leg-3", "kind": "panel", "mat": "door_enamel_whitey#8a8378", "shape": "circle", "edge": 0.5, "box": [1352, 0, 373, 1380, 2, 401], "covers": ["r"]},
+    {"n": "10", "id": "leg-4", "kind": "rod", "mat": "legs", "section": "square", "from": [1334, 130, 55], "to": [1366, 2, 45], "d": 66, "d2": 30},
+    {"id": "r-leg-4", "kind": "panel", "mat": "door_enamel_whitey#8a8378", "shape": "circle", "edge": 0.5, "box": [1352, 0, 31, 1380, 2, 59], "covers": ["r"]},
+    {"n": "10", "id": "leg-m", "kind": "rod", "mat": "legs", "section": "square", "from": [698.0, 130, 216.0], "to": [698.0, 2, 216.0], "d": 55, "d2": 34},
+    {"id": "r-leg-m", "kind": "panel", "mat": "door_enamel_whitey#8a8378", "shape": "circle", "edge": 0.5, "box": [684.0, 0, 202.0, 712.0, 2, 230.0], "covers": ["r"]}
+  ],
+  "moves": [
+    {"type": "door", "name": "door_left", "parts": ["9-1"], "hinge": "left", "angle": 105},
+    {"type": "door", "name": "door_right", "parts": ["9-2"], "hinge": "right", "angle": 105}
+  ]
+}

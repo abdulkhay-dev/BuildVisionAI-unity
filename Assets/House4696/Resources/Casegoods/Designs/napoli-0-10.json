@@ -1,0 +1,38 @@
+{
+  "id": "napoli-0-10",
+  "size": [978, 450, 2055],
+  "parts": [
+    {"id": "bottom", "box": [0, 170, 0, 978, 186, 432]},
+    {"id": "side-l", "box": [0, 186, 0, 16, 2033, 432]},
+    {"id": "side-r", "box": [962, 186, 0, 978, 2033, 432]},
+    {"id": "top", "box": [0, 2033, 0, 978, 2055, 450], "edge": 2},
+    {"id": "back", "kind": "back", "box": [10, 180, 6, 968, 2039, 9.5]},
+    {"id": "shelf-fixed", "box": [16, 654.5, 10, 962, 670.5, 432]},
+    {"id": "shelf-low", "box": [17, 414, 20, 961, 430, 412]},
+    {"id": "glass-1", "kind": "glass", "box": [18, 1018, 20, 960, 1024, 402]},
+    {"id": "glass-2", "kind": "glass", "box": [18, 1355, 20, 960, 1361, 402]},
+    {"id": "glass-3", "kind": "glass", "box": [18, 1694, 20, 960, 1700, 402]},
+    {"id": "f-up-l", "kind": "front", "box": [1.5, 664.0, 432, 487.5, 2030, 448], "glass": {"frame": 26, "rebate": 6, "t": 4, "tint": "bronze"}},
+    {"id": "h-door_up_l", "kind": "handle", "model": "bar", "at": [467.5, 1363.0], "dir": "up", "d": 160, "band": 9, "t": 9, "standoff": 22, "z": 448},
+    {"id": "f-low-l", "kind": "front", "box": [1.5, 170, 432, 487.5, 661.0, 448], "face": {"type": "frame", "border": 24, "depth": 2, "r": 1.5}},
+    {"id": "h-door_low_l", "kind": "handle", "model": "bar", "at": [467.5, 413.0], "dir": "up", "d": 160, "band": 9, "t": 9, "standoff": 22, "z": 448},
+    {"id": "f-up-r", "kind": "front", "box": [490.5, 664.0, 432, 976.5, 2030, 448], "glass": {"frame": 26, "rebate": 6, "t": 4, "tint": "bronze"}},
+    {"id": "h-door_up_r", "kind": "handle", "model": "bar", "at": [510.5, 1363.0], "dir": "up", "d": 160, "band": 9, "t": 9, "standoff": 22, "z": 448},
+    {"id": "f-low-r", "kind": "front", "box": [490.5, 170, 432, 976.5, 661.0, 448], "face": {"type": "frame", "border": 24, "depth": 2, "r": 1.5}},
+    {"id": "h-door_low_r", "kind": "handle", "model": "bar", "at": [510.5, 413.0], "dir": "up", "d": 160, "band": 9, "t": 9, "standoff": 22, "z": 448},
+    {"id": "leg-1", "kind": "rod", "mat": "body", "section": "square", "from": [37, 170, 37], "to": [27, 3, 27], "d": 50, "d2": 36},
+    {"id": "pad-1", "kind": "panel", "mat": "black", "shape": "circle", "box": [12, 0, 12, 42, 3, 42]},
+    {"id": "leg-2", "kind": "rod", "mat": "body", "section": "square", "from": [37, 170, 395], "to": [27, 3, 405], "d": 50, "d2": 36},
+    {"id": "pad-2", "kind": "panel", "mat": "black", "shape": "circle", "box": [12, 0, 390, 42, 3, 420]},
+    {"id": "leg-3", "kind": "rod", "mat": "body", "section": "square", "from": [941, 170, 37], "to": [951, 3, 27], "d": 50, "d2": 36},
+    {"id": "pad-3", "kind": "panel", "mat": "black", "shape": "circle", "box": [936, 0, 12, 966, 3, 42]},
+    {"id": "leg-4", "kind": "rod", "mat": "body", "section": "square", "from": [941, 170, 395], "to": [951, 3, 405], "d": 50, "d2": 36},
+    {"id": "pad-4", "kind": "panel", "mat": "black", "shape": "circle", "box": [936, 0, 390, 966, 3, 420]}
+  ],
+  "moves": [
+    {"type": "door", "name": "door_up_l", "parts": ["f-up-l", "h-door_up_l"], "hinge": "left", "angle": 100},
+    {"type": "door", "name": "door_low_l", "parts": ["f-low-l", "h-door_low_l"], "hinge": "left", "angle": 100},
+    {"type": "door", "name": "door_up_r", "parts": ["f-up-r", "h-door_up_r"], "hinge": "right", "angle": 100},
+    {"type": "door", "name": "door_low_r", "parts": ["f-low-r", "h-door_low_r"], "hinge": "right", "angle": 100}
+  ]
+}

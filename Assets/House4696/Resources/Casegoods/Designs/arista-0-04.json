@@ -1,0 +1,43 @@
+{
+  "id": "arista-0-04",
+  "size": [1038, 419, 1580],
+  "parts": [
+    {"id": "top", "mat": "body", "box": [0, 1564, 3, 1038, 1580, 416]},
+    {"id": "base", "box": [0, 75, 3, 1038, 91, 400]},
+    {"id": "side-l", "box": [0, 91, 3, 16, 1564, 400]},
+    {"id": "side-r", "box": [1022, 91, 3, 1038, 1564, 400]},
+    {"id": "back", "kind": "back", "mat": "white", "box": [1, 76, 0, 1037, 1579, 3]},
+    {"id": "part", "mat": "white", "box": [605, 91, 3, 621, 1564, 400]},
+    {"id": "sh-l1", "mat": "white", "box": [16.5, 520, 8, 604.5, 536, 398]},
+    {"id": "sh-l2", "mat": "white", "box": [16, 974, 3, 605, 990, 399]},
+    {"id": "sh-l3", "mat": "white", "box": [16.5, 1351, 8, 604.5, 1367, 398]},
+    {"id": "sh-r1", "mat": "white", "box": [621.5, 300, 8, 1021.5, 316, 398]},
+    {"id": "sh-r2", "mat": "white", "box": [621, 566, 3, 1022, 582, 399]},
+    {"id": "gl-r1", "kind": "glass", "box": [623, 857, 20, 1020, 863, 380]},
+    {"id": "gl-r2", "kind": "glass", "box": [623, 1117, 20, 1020, 1123, 380]},
+    {"id": "dl-w1", "kind": "front", "box": [2, 77, 400, 89, 1562, 419]},
+    {"id": "dl-oak-1", "kind": "front", "mat": "accent", "box": [89, 77, 400, 453, 990, 419]},
+    {"id": "dl-glass", "kind": "glass", "box": [89, 990, 408, 453, 1367, 412]},
+    {"id": "dl-oak-2", "kind": "front", "mat": "accent", "box": [89, 1367, 400, 453, 1562, 419]},
+    {"id": "dl-w2", "kind": "front", "box": [453, 77, 400, 611.5, 1562, 419]},
+    {"id": "h-dl", "kind": "handle", "model": "bar", "at": [551, 981], "dir": "up", "d": 176, "band": 10, "t": 10, "standoff": 22, "z": 419, "covers": ["c3"]},
+    {"id": "dr-w1", "kind": "front", "box": [614.5, 77, 400, 701, 1562, 419]},
+    {"id": "dr-oak-1", "kind": "front", "mat": "accent", "box": [701, 77, 400, 950, 582, 419]},
+    {"id": "dr-glass", "kind": "glass", "box": [701, 582, 408, 950, 1367, 412]},
+    {"id": "dr-oak-2", "kind": "front", "mat": "accent", "box": [701, 1367, 400, 950, 1562, 419]},
+    {"id": "dr-w2", "kind": "front", "box": [950, 77, 400, 1036, 1562, 419]},
+    {"id": "h-dr", "kind": "handle", "model": "bar", "at": [675, 981], "dir": "up", "d": 176, "band": 10, "t": 10, "standoff": 22, "z": 419, "covers": ["c3"]},
+    {"id": "leg-1", "kind": "rod", "mat": "metal", "section": "square", "d": 40, "d2": 30, "from": [70, 75, 60], "to": [65, 3, 57.0], "covers": ["g"]},
+    {"id": "leg-1-glide", "kind": "panel", "mat": "black", "edge": 0.5, "box": [50.0, 0, 42.0, 80.0, 3, 72.0]},
+    {"id": "leg-2", "kind": "rod", "mat": "metal", "section": "square", "d": 40, "d2": 30, "from": [70, 75, 360], "to": [65, 3, 363.0], "covers": ["g"]},
+    {"id": "leg-2-glide", "kind": "panel", "mat": "black", "edge": 0.5, "box": [50.0, 0, 348.0, 80.0, 3, 378.0]},
+    {"id": "leg-3", "kind": "rod", "mat": "metal", "section": "square", "d": 40, "d2": 30, "from": [968, 75, 60], "to": [973, 3, 57.0], "covers": ["g"]},
+    {"id": "leg-3-glide", "kind": "panel", "mat": "black", "edge": 0.5, "box": [958.0, 0, 42.0, 988.0, 3, 72.0]},
+    {"id": "leg-4", "kind": "rod", "mat": "metal", "section": "square", "d": 40, "d2": 30, "from": [968, 75, 360], "to": [973, 3, 363.0], "covers": ["g"]},
+    {"id": "leg-4-glide", "kind": "panel", "mat": "black", "edge": 0.5, "box": [958.0, 0, 348.0, 988.0, 3, 378.0]}
+  ],
+  "moves": [
+    {"type": "door", "name": "door_left", "parts": ["dl-w1", "dl-oak-1", "dl-glass", "dl-oak-2", "dl-w2", "h-dl"], "hinge": "left", "angle": 100, "axis": [2, 419]},
+    {"type": "door", "name": "door_right", "parts": ["dr-w1", "dr-oak-1", "dr-glass", "dr-oak-2", "dr-w2", "h-dr"], "hinge": "right", "angle": 100, "axis": [1036, 419]}
+  ]
+}
