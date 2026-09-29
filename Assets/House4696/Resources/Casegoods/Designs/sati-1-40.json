@@ -1,0 +1,20 @@
+{
+  "id": "sati-1-40",
+  "size": [1374, 22, 653],
+  "parts": [
+    {"id": "backing", "box": [0, 0, 0, 1374, 653, 6], "edge": 1},
+    {"id": "mirror", "kind": "mirror", "box": [55, 55, 6, 1319, 598, 10], "edge": 0.5},
+    {"id": "frame", "kind": "moulding", "profile": "sati-mframe", "closed": true, "z": 6, "path": [[0, 0], [1374, 0], [1374, 653], [0, 653]]},
+    {"id": "pa-1", "kind": "rod", "mat": "patina", "from": [51, 51, 21.5], "to": [1323, 51, 21.5], "d": 1.6},
+    {"id": "pa-2", "kind": "rod", "mat": "patina", "from": [1323, 51, 21.5], "to": [1323, 602, 21.5], "d": 1.6},
+    {"id": "pa-3", "kind": "rod", "mat": "patina", "from": [1323, 602, 21.5], "to": [51, 602, 21.5], "d": 1.6},
+    {"id": "pa-4", "kind": "rod", "mat": "patina", "from": [51, 602, 21.5], "to": [51, 51, 21.5], "d": 1.6},
+    {"id": "pb-1", "kind": "rod", "mat": "patina", "from": [66, 66, 18], "to": [1308, 66, 18], "d": 1.6},
+    {"id": "pb-2", "kind": "rod", "mat": "patina", "from": [1308, 66, 18], "to": [1308, 587, 18], "d": 1.6},
+    {"id": "pb-3", "kind": "rod", "mat": "patina", "from": [1308, 587, 18], "to": [66, 587, 18], "d": 1.6},
+    {"id": "pb-4", "kind": "rod", "mat": "patina", "from": [66, 587, 18], "to": [66, 66, 18], "d": 1.6}
+  ],
+  "moves": [
+
+  ]
+}

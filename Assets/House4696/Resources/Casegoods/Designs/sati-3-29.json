@@ -1,0 +1,36 @@
+{
+  "id": "sati-3-29",
+  "size": [670, 462, 478],
+  "parts": [
+    {"id": "side-l", "box": [12, 100, 0, 28, 456, 431]},
+    {"id": "side-r", "box": [642, 100, 0, 658, 456, 431]},
+    {"id": "bottom", "box": [28, 100, 0, 642, 116, 431]},
+    {"id": "top", "box": [0, 456, 0, 670, 478, 462], "edge": 3},
+    {"id": "shelf", "box": [29, 274, 20, 641, 290, 411]},
+    {"id": "back", "kind": "back", "box": [20, 108, 6, 650, 455.5, 9.5]},
+    {"id": "f-flap", "kind": "front", "box": [14, 101, 431, 656, 453, 450], "face": {"type": "frame", "border": 55, "depth": 4, "r": 1.5, "profile": "sati-bead"}},
+    {"id": "f-flap-pa-1", "kind": "rod", "mat": "patina", "from": [70, 157, 449.5], "to": [600, 157, 449.5], "d": 1.6},
+    {"id": "f-flap-pa-2", "kind": "rod", "mat": "patina", "from": [600, 157, 449.5], "to": [600, 397, 449.5], "d": 1.6},
+    {"id": "f-flap-pa-3", "kind": "rod", "mat": "patina", "from": [600, 397, 449.5], "to": [70, 397, 449.5], "d": 1.6},
+    {"id": "f-flap-pa-4", "kind": "rod", "mat": "patina", "from": [70, 397, 449.5], "to": [70, 157, 449.5], "d": 1.6},
+    {"id": "f-flap-pb-1", "kind": "rod", "mat": "patina", "from": [85, 172, 446.5], "to": [585, 172, 446.5], "d": 1.6},
+    {"id": "f-flap-pb-2", "kind": "rod", "mat": "patina", "from": [585, 172, 446.5], "to": [585, 382, 446.5], "d": 1.6},
+    {"id": "f-flap-pb-3", "kind": "rod", "mat": "patina", "from": [585, 382, 446.5], "to": [85, 382, 446.5], "d": 1.6},
+    {"id": "f-flap-pb-4", "kind": "rod", "mat": "patina", "from": [85, 382, 446.5], "to": [85, 172, 446.5], "d": 1.6},
+    {"id": "h-flap-post1", "kind": "rod", "mat": "metal", "from": [271, 421, 450], "to": [271, 421, 474], "d": 12, "d2": 9},
+    {"id": "h-flap-post2", "kind": "rod", "mat": "metal", "from": [399, 421, 450], "to": [399, 421, 474], "d": 12, "d2": 9},
+    {"id": "h-flap-arc1", "kind": "rod", "mat": "metal", "from": [271, 421, 474], "to": [292.5, 424, 474], "d": 9},
+    {"id": "h-flap-arc2", "kind": "rod", "mat": "metal", "from": [292.5, 424, 474], "to": [313.5, 425.5, 474], "d": 9},
+    {"id": "h-flap-arc3", "kind": "rod", "mat": "metal", "from": [313.5, 425.5, 474], "to": [335, 426, 474], "d": 9},
+    {"id": "h-flap-arc4", "kind": "rod", "mat": "metal", "from": [335, 426, 474], "to": [356.5, 425.5, 474], "d": 9},
+    {"id": "h-flap-arc5", "kind": "rod", "mat": "metal", "from": [356.5, 425.5, 474], "to": [377.5, 424, 474], "d": 9},
+    {"id": "h-flap-arc6", "kind": "rod", "mat": "metal", "from": [377.5, 424, 474], "to": [399, 421, 474], "d": 9},
+    {"id": "leg-1", "kind": "rod", "section": "square", "mat": "body", "from": [52, 100, 45], "to": [42, 0, 39], "d": 50, "d2": 34, "box": [25, 0, 20, 77, 100, 70]},
+    {"id": "leg-2", "kind": "rod", "section": "square", "mat": "body", "from": [52, 100, 391], "to": [42, 0, 397], "d": 50, "d2": 34, "box": [25, 0, 366, 77, 100, 416]},
+    {"id": "leg-3", "kind": "rod", "section": "square", "mat": "body", "from": [618, 100, 45], "to": [628, 0, 39], "d": 50, "d2": 34, "box": [593, 0, 20, 645, 100, 70]},
+    {"id": "leg-4", "kind": "rod", "section": "square", "mat": "body", "from": [618, 100, 391], "to": [628, 0, 397], "d": 50, "d2": 34, "box": [593, 0, 366, 645, 100, 416]}
+  ],
+  "moves": [
+    {"type": "flap", "name": "flap", "parts": ["f-flap", "f-flap-pa-1", "f-flap-pa-2", "f-flap-pa-3", "f-flap-pa-4", "f-flap-pb-1", "f-flap-pb-2", "f-flap-pb-3", "f-flap-pb-4", "h-flap-post1", "h-flap-post2", "h-flap-arc1", "h-flap-arc2", "h-flap-arc3", "h-flap-arc4", "h-flap-arc5", "h-flap-arc6"], "hinge": "bottom", "angle": 40}
+  ]
+}

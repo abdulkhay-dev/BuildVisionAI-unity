@@ -1,0 +1,27 @@
+{
+  "id": "sorbonna-1-22",
+  "size": [500, 401, 498],
+  "parts": [
+    {"id": "side-l", "box": [7, 0, 0, 23, 466, 375]},
+    {"id": "side-r", "box": [477, 0, 0, 493, 466, 375]},
+    {"id": "bottom", "box": [23, 73, 0, 477, 89, 375]},
+    {"id": "plinth", "box": [23, 6, 339, 477, 73, 355]},
+    {"id": "top", "box": [0, 466, 0, 500, 498, 401], "edge": 3},
+    {"id": "rail-top", "box": [7, 429, 375, 493, 466, 394]},
+    {"id": "stile-1", "box": [7, 0, 375, 67, 429, 394]},
+    {"id": "stile-2", "box": [433, 0, 375, 493, 429, 394]},
+    {"id": "rail-bottom", "box": [67, 52, 375, 433, 89, 394]},
+    {"id": "shelf-niche", "box": [23, 284, 10, 477, 300, 375]},
+    {"id": "rail-mid", "box": [67, 264, 375, 433, 300, 394]},
+    {"id": "f-drawer", "kind": "front", "box": [69.5, 91.5, 375, 430.5, 261.5, 394], "face": {"type": "grooves", "w": 2.5, "depth": 1.2, "flute": "v", "lines": [[91.5, 113.5, 408.5, 113.5], [408.5, 113.5, 408.5, 239.5], [408.5, 239.5, 91.5, 239.5], [91.5, 239.5, 91.5, 113.5]]}},
+    {"id": "drawer-sl", "box": [36, 105, 75, 52, 240, 375]},
+    {"id": "drawer-sr", "box": [448, 105, 75, 464, 240, 375]},
+    {"id": "drawer-bk", "box": [52, 105, 75, 448, 240, 91]},
+    {"id": "drawer-bt", "kind": "back", "box": [44, 115, 83, 456, 118.5, 373]},
+    {"id": "h-drawer-1", "kind": "handle", "model": "bar", "at": [250, 176.5], "dir": "right", "d": 80, "band": 8, "t": 8, "standoff": 22, "post": 9, "z": 394, "section": "square"},
+    {"id": "back", "kind": "back", "box": [15, 81, 6, 485, 474, 9.5]}
+  ],
+  "moves": [
+    {"type": "drawer", "name": "drawer", "parts": ["f-drawer", "drawer-sl", "drawer-sr", "drawer-bk", "drawer-bt", "h-drawer-1"], "travel": 240}
+  ]
+}

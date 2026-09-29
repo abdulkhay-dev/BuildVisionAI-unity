@@ -1,0 +1,18 @@
+{
+  "id": "sorbonna-1-40",
+  "size": [510, 590, 1600],
+  "parts": [
+    {"id": "rack-l", "box": [0, 0, 0, 16, 1560, 205]},
+    {"id": "rack-r", "box": [494, 0, 0, 510, 1560, 205]},
+    {"id": "rack-top", "box": [16, 1544, 0, 494, 1560, 205]},
+    {"id": "rack-bottom", "box": [16, 20, 0, 494, 36, 205]},
+    {"id": "rack-shelf-1", "box": [16, 300, 0, 494, 316, 205]},
+    {"id": "rack-shelf-2", "box": [16, 1150, 0, 494, 1166, 205]},
+    {"id": "rack-back", "box": [16, 36, 0, 494, 60, 16]},
+    {"id": "rack-rail", "kind": "tube", "mat": "chrome", "box": [16, 1080, 100, 494, 1100, 120]},
+    {"id": "frame", "kind": "front", "box": [0, 0, 565, 510, 1634, 590], "rot": {"axis": "x", "deg": -12.6, "about": [255.0, 0, 565]}, "edge": 2, "glass": {"frame": 45, "rebate": 4, "t": 4, "tint": "mirror"}}
+  ],
+  "moves": [
+
+  ]
+}

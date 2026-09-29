@@ -1,0 +1,3 @@
+# «Шанталь» — textured decors (same line format as tools/casegoods/decors.md)
+
+- «Дуб Сахара» — Шанталь (role `top` of shantal-pepel-sahara: the 17 tops and the 25-mm cornice frames of the living-room pieces, the 42-mm tops of the bedroom pieces, the bed's headboard cap 1.1) — no swatch in the catalogue (p. 43/44 interiors: `catpage.py 43 --swatch 0.52,0.648,0.6,0.658` → #644d3c under room light; the site's studio photo of the bedside П6.952.1.04 top → #80765f) — light grey-brown (greige) rustic oak: straight planks, soft cathedrals, fine grey pores, a few small knots, matt — grain along x on every top and cornice strip (along the strip on the side strips); provisional #7a6a55.

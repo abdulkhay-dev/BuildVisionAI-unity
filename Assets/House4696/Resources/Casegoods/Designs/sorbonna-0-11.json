@@ -1,0 +1,40 @@
+{
+  "id": "sorbonna-0-11",
+  "size": [647, 475, 2085],
+  "parts": [
+    {"id": "side-l", "box": [20, 0, 0, 36, 2030, 436]},
+    {"id": "side-r", "box": [611, 0, 0, 627, 2030, 436]},
+    {"id": "bottom", "box": [36, 78, 0, 611, 94, 436]},
+    {"id": "plinth", "box": [36, 6, 400, 611, 78, 416]},
+    {"id": "top", "box": [36, 2014, 0, 611, 2030, 436]},
+    {"id": "crown", "kind": "moulding", "profile": "sorbonna-crown", "plane": "top", "z": 2030, "side": 1, "path": [[647, 0], [647, 475], [0, 475], [0, 0]], "mat": "accent"},
+    {"id": "cap", "box": [55, 2075, 0, 592, 2085, 420], "mat": "accent"},
+    {"id": "rail-top", "box": [20, 1972, 436, 627, 2014, 455]},
+    {"id": "stile-1", "box": [20, 0, 436, 105, 1972, 455]},
+    {"id": "stile-2", "box": [542, 0, 436, 627, 1972, 455]},
+    {"id": "rail-bottom", "box": [105, 52, 436, 542, 94, 455]},
+    {"id": "shelf-up", "box": [36, 1064, 10, 611, 1080, 436]},
+    {"id": "rail-up", "box": [105, 1044, 436, 542, 1080, 455]},
+    {"id": "shelf-low", "box": [36, 874, 10, 611, 890, 436]},
+    {"id": "rail-low", "box": [105, 854, 436, 542, 890, 455]},
+    {"id": "shelf-1", "box": [37, 1364, 20, 610, 1380, 426]},
+    {"id": "shelf-2", "box": [37, 1674, 20, 610, 1690, 426]},
+    {"id": "shelf-3", "box": [37, 464, 20, 610, 480, 426]},
+    {"id": "back", "kind": "back", "box": [28, 86, 6, 619, 2022, 9.5]},
+    {"id": "f-door_up", "kind": "front", "box": [107.5, 1082.5, 436, 539.5, 1969.5, 455], "glass": {"frame": 70, "rebate": 5, "t": 4, "tint": "clear"}},
+    {"id": "h-door_up", "kind": "handle", "model": "bar", "at": [323.5, 1125], "dir": "right", "d": 80, "band": 8, "t": 8, "standoff": 22, "post": 9, "z": 455, "section": "square"},
+    {"id": "f-drawer", "kind": "front", "box": [107.5, 892.5, 436, 539.5, 1041.5, 455], "face": {"type": "grooves", "w": 2.5, "depth": 1.2, "flute": "v", "lines": [[129.5, 914.5, 517.5, 914.5], [517.5, 914.5, 517.5, 1019.5], [517.5, 1019.5, 129.5, 1019.5], [129.5, 1019.5, 129.5, 914.5]]}},
+    {"id": "drawer-sl", "box": [49, 906, 36, 65, 1020, 436]},
+    {"id": "drawer-sr", "box": [582, 906, 36, 598, 1020, 436]},
+    {"id": "drawer-bk", "box": [65, 906, 36, 582, 1020, 52]},
+    {"id": "drawer-bt", "kind": "back", "box": [57, 916, 44, 590, 919.5, 434]},
+    {"id": "h-drawer-1", "kind": "handle", "model": "bar", "at": [323.5, 967], "dir": "right", "d": 80, "band": 8, "t": 8, "standoff": 22, "post": 9, "z": 455, "section": "square"},
+    {"id": "f-door_low", "kind": "front", "box": [107.5, 96.5, 436, 539.5, 851.5, 455], "glass": {"frame": 70, "rebate": 5, "t": 4, "tint": "clear"}},
+    {"id": "h-door_low", "kind": "handle", "model": "bar", "at": [323.5, 809], "dir": "right", "d": 80, "band": 8, "t": 8, "standoff": 22, "post": 9, "z": 455, "section": "square"}
+  ],
+  "moves": [
+    {"type": "door", "name": "door_up", "parts": ["f-door_up", "h-door_up"], "hinge": "left", "angle": 105},
+    {"type": "drawer", "name": "drawer", "parts": ["f-drawer", "drawer-sl", "drawer-sr", "drawer-bk", "drawer-bt", "h-drawer-1"], "travel": 340},
+    {"type": "door", "name": "door_low", "parts": ["f-door_low", "h-door_low"], "hinge": "left", "angle": 105}
+  ]
+}

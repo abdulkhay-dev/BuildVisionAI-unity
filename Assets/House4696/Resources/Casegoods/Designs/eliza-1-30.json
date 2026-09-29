@@ -1,0 +1,36 @@
+{
+  "id": "eliza-1-30",
+  "size": [470, 440, 481],
+  "parts": [
+    {"id": "side-l", "box": [15, 0, 0, 31, 456, 407]},
+    {"id": "side-r", "box": [439, 0, 0, 455, 456, 407]},
+    {"id": "bottom", "box": [31, 55, 0, 439, 71, 407]},
+    {"id": "plinth", "box": [31, 0, 371, 439, 55, 387]},
+    {"id": "top", "box": [0, 456, 0, 470, 481, 440], "edge": 4},
+    {"id": "back", "kind": "back", "box": [23, 63, 6, 447, 455.5, 9.5]},
+    {"id": "f-drawer_2", "kind": "front", "box": [17, 56, 407, 453, 253, 425]},
+    {"id": "f-drawer_2-gb", "kind": "rod", "mat": "patina", "from": [45, 78.5, 426.5], "to": [425, 78.5, 426.5], "d": 7},
+    {"id": "f-drawer_2-gl", "kind": "rod", "mat": "patina", "from": [45, 78.5, 426.5], "to": [45, 230.5, 426.5], "d": 7},
+    {"id": "f-drawer_2-gr", "kind": "rod", "mat": "patina", "from": [425, 78.5, 426.5], "to": [425, 230.5, 426.5], "d": 7},
+    {"id": "f-drawer_2-gt", "kind": "rod", "mat": "patina", "from": [45, 230.5, 426.5], "to": [425, 230.5, 426.5], "d": 7},
+    {"id": "drawer_2-sl", "box": [44, 74, 57, 60, 226, 407]},
+    {"id": "drawer_2-sr", "box": [410, 74, 57, 426, 226, 407]},
+    {"id": "drawer_2-bk", "box": [60, 74, 57, 410, 226, 73]},
+    {"id": "drawer_2-bt", "kind": "back", "box": [52, 84, 65, 418, 87.5, 405]},
+    {"id": "h-drawer_2", "kind": "handle", "model": "knob", "at": [235, 154.5], "d": 32, "t": 18, "standoff": 22, "z": 425},
+    {"id": "f-drawer_1", "kind": "front", "box": [17, 256, 407, 453, 453, 425]},
+    {"id": "f-drawer_1-gb", "kind": "rod", "mat": "patina", "from": [45, 278.5, 426.5], "to": [425, 278.5, 426.5], "d": 7},
+    {"id": "f-drawer_1-gl", "kind": "rod", "mat": "patina", "from": [45, 278.5, 426.5], "to": [45, 430.5, 426.5], "d": 7},
+    {"id": "f-drawer_1-gr", "kind": "rod", "mat": "patina", "from": [425, 278.5, 426.5], "to": [425, 430.5, 426.5], "d": 7},
+    {"id": "f-drawer_1-gt", "kind": "rod", "mat": "patina", "from": [45, 430.5, 426.5], "to": [425, 430.5, 426.5], "d": 7},
+    {"id": "drawer_1-sl", "box": [44, 274, 57, 60, 426, 407]},
+    {"id": "drawer_1-sr", "box": [410, 274, 57, 426, 426, 407]},
+    {"id": "drawer_1-bk", "box": [60, 274, 57, 410, 426, 73]},
+    {"id": "drawer_1-bt", "kind": "back", "box": [52, 284, 65, 418, 287.5, 405]},
+    {"id": "h-drawer_1", "kind": "handle", "model": "knob", "at": [235, 354.5], "d": 32, "t": 18, "standoff": 22, "z": 425}
+  ],
+  "moves": [
+    {"type": "drawer", "name": "drawer_2", "parts": ["f-drawer_2", "f-drawer_2-gb", "f-drawer_2-gl", "f-drawer_2-gr", "f-drawer_2-gt", "drawer_2-sl", "drawer_2-sr", "drawer_2-bk", "drawer_2-bt", "h-drawer_2"], "travel": 290},
+    {"type": "drawer", "name": "drawer_1", "parts": ["f-drawer_1", "f-drawer_1-gb", "f-drawer_1-gl", "f-drawer_1-gr", "f-drawer_1-gt", "drawer_1-sl", "drawer_1-sr", "drawer_1-bk", "drawer_1-bt", "h-drawer_1"], "travel": 290}
+  ]
+}

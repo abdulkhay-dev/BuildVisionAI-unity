@@ -1,0 +1,28 @@
+{
+  "id": "sati-3-92",
+  "size": [746, 139, 1460],
+  "parts": [
+    {"id": "board", "box": [40, 0, 0, 706, 1398, 22], "edge": 2},
+    {"id": "hood-front", "box": [40, 1338, 83, 706, 1398, 99]},
+    {"id": "hood-l", "box": [40, 1338, 22, 56, 1398, 83]},
+    {"id": "hood-r", "box": [690, 1338, 22, 706, 1398, 83]},
+    {"id": "hood-bottom", "box": [56, 1338, 22, 690, 1354, 83]},
+    {"id": "cornice", "kind": "moulding", "profile": "sati-crown", "plane": "top", "z": 1398, "side": 1, "path": [[746, 0], [746, 139], [0, 139], [0, 0]]},
+    {"id": "cap", "box": [0, 1442, 0, 746, 1460, 139], "edge": 4},
+    {"id": "hook-1-plate", "kind": "rod", "mat": "metal", "from": [165, 1200, 22], "to": [165, 1155, 22], "d": 14},
+    {"id": "hook-1-stem", "kind": "rod", "mat": "metal", "from": [165, 1180, 22], "to": [165, 1135, 55], "d": 8},
+    {"id": "hook-1-l", "kind": "rod", "mat": "metal", "from": [165, 1135, 55], "to": [147, 1165, 68], "d": 7},
+    {"id": "hook-1-r", "kind": "rod", "mat": "metal", "from": [165, 1135, 55], "to": [183, 1165, 68], "d": 7},
+    {"id": "hook-2-plate", "kind": "rod", "mat": "metal", "from": [581, 1200, 22], "to": [581, 1155, 22], "d": 14},
+    {"id": "hook-2-stem", "kind": "rod", "mat": "metal", "from": [581, 1180, 22], "to": [581, 1135, 55], "d": 8},
+    {"id": "hook-2-l", "kind": "rod", "mat": "metal", "from": [581, 1135, 55], "to": [563, 1165, 68], "d": 7},
+    {"id": "hook-2-r", "kind": "rod", "mat": "metal", "from": [581, 1135, 55], "to": [599, 1165, 68], "d": 7},
+    {"id": "hook-3-plate", "kind": "rod", "mat": "metal", "from": [373, 1020, 22], "to": [373, 975, 22], "d": 14},
+    {"id": "hook-3-stem", "kind": "rod", "mat": "metal", "from": [373, 1000, 22], "to": [373, 955, 55], "d": 8},
+    {"id": "hook-3-l", "kind": "rod", "mat": "metal", "from": [373, 955, 55], "to": [355, 985, 68], "d": 7},
+    {"id": "hook-3-r", "kind": "rod", "mat": "metal", "from": [373, 955, 55], "to": [391, 985, 68], "d": 7}
+  ],
+  "moves": [
+
+  ]
+}
