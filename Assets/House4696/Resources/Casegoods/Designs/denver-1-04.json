@@ -14,14 +14,14 @@
     {"n": "7.2", "id": "7.2-1", "box": [407, 167, 64, 423, 267, 414]},
     {"n": "7.3", "id": "7.3-1", "box": [47, 181, 64, 407, 267, 80]},
     {"n": "7.4", "id": "7.4-1", "kind": "back", "box": [42, 177, 64, 412, 180.5, 419]},
-    {"n": "8", "id": "leg-1", "kind": "rod", "mat": "legs", "section": "square", "from": [45, 130, 377], "to": [15, 2, 387], "d": 64, "d2": 30},
-    {"id": "h4-leg-1", "kind": "panel", "mat": "door_enamel_whitey#8a8378", "shape": "circle", "edge": 0.5, "box": [1, 0, 373, 29, 2, 401], "covers": ["h4"]},
-    {"n": "8", "id": "leg-2", "kind": "rod", "mat": "legs", "section": "square", "from": [45, 130, 55], "to": [15, 2, 45], "d": 64, "d2": 30},
-    {"id": "h4-leg-2", "kind": "panel", "mat": "door_enamel_whitey#8a8378", "shape": "circle", "edge": 0.5, "box": [1, 0, 31, 29, 2, 59], "covers": ["h4"]},
-    {"n": "8", "id": "leg-3", "kind": "rod", "mat": "legs", "section": "square", "from": [409, 130, 377], "to": [439, 2, 387], "d": 64, "d2": 30},
-    {"id": "h4-leg-3", "kind": "panel", "mat": "door_enamel_whitey#8a8378", "shape": "circle", "edge": 0.5, "box": [425, 0, 373, 453, 2, 401], "covers": ["h4"]},
-    {"n": "8", "id": "leg-4", "kind": "rod", "mat": "legs", "section": "square", "from": [409, 130, 55], "to": [439, 2, 45], "d": 64, "d2": 30},
-    {"id": "h4-leg-4", "kind": "panel", "mat": "door_enamel_whitey#8a8378", "shape": "circle", "edge": 0.5, "box": [425, 0, 31, 453, 2, 59], "covers": ["h4"]}
+    {"n": "8", "id": "leg-1", "kind": "rod", "mat": "legs", "section": "square", "from": [50, 130, 377], "to": [22, 2, 387], "d": 66, "d2": 30},
+    {"id": "h4-leg-1", "kind": "panel", "mat": "door_enamel_whitey#8a8378", "shape": "circle", "edge": 0.5, "box": [8, 0, 373, 36, 2, 401], "covers": ["h4"]},
+    {"n": "8", "id": "leg-2", "kind": "rod", "mat": "legs", "section": "square", "from": [50, 130, 55], "to": [22, 2, 45], "d": 66, "d2": 30},
+    {"id": "h4-leg-2", "kind": "panel", "mat": "door_enamel_whitey#8a8378", "shape": "circle", "edge": 0.5, "box": [8, 0, 31, 36, 2, 59], "covers": ["h4"]},
+    {"n": "8", "id": "leg-3", "kind": "rod", "mat": "legs", "section": "square", "from": [404, 130, 377], "to": [432, 2, 387], "d": 66, "d2": 30},
+    {"id": "h4-leg-3", "kind": "panel", "mat": "door_enamel_whitey#8a8378", "shape": "circle", "edge": 0.5, "box": [418, 0, 373, 446, 2, 401], "covers": ["h4"]},
+    {"n": "8", "id": "leg-4", "kind": "rod", "mat": "legs", "section": "square", "from": [404, 130, 55], "to": [432, 2, 45], "d": 66, "d2": 30},
+    {"id": "h4-leg-4", "kind": "panel", "mat": "door_enamel_whitey#8a8378", "shape": "circle", "edge": 0.5, "box": [418, 0, 31, 446, 2, 59], "covers": ["h4"]}
   ],
   "moves": [
     {"type": "drawer", "name": "drawer_1", "parts": ["7-1", "7.1-1", "7.2-1", "7.3-1", "7.4-1"], "travel": 300}

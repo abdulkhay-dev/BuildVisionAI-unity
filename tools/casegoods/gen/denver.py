@@ -62,7 +62,7 @@ def leg(n, pid, x, z, sx, sz, d=58, d2=30, pad="r", h=LEG_H):
     return [p, felt]
 
 
-def legs(n, w, middle=False, d=58, pad="r", inset=53, zin=55, splay=35, zsplay=10):
+def legs(n, w, middle=False, d=66, pad="r", inset=62, zin=55, splay=32, zsplay=10):
     out = []
     k = 0
     for x, sx in ((inset, -splay), (w - inset, splay)):
@@ -70,7 +70,7 @@ def legs(n, w, middle=False, d=58, pad="r", inset=53, zin=55, splay=35, zsplay=1
             k += 1
             out += leg(n, f"leg-{k}", x, z, sx, sz, d=d, pad=pad)
     if middle:
-        out += leg(n, "leg-m", w / 2, D / 2, 0, 0, d=d, d2=36, pad=pad)
+        out += leg(n, "leg-m", w / 2, D - zin, 0, 0, d=55, d2=34, pad=pad)
     return out
 
 
@@ -130,7 +130,7 @@ def m0_01():
         front("10", [347, 147, FZ0, 797, 942, FZ1], pid="10-1"),
         front("10", [347, 1288, FZ0, 797, 2083, FZ1], pid="10-2"),
     ]
-    p += legs("11", W, d=64)
+    p += legs("11", W)
     moves = [{"type": "door", "name": "door_bottom", "parts": ["10-1"], "hinge": "right", "angle": 105},
              {"type": "door", "name": "door_top", "parts": ["10-2"], "hinge": "right", "angle": 105}]
     return dump("denver-0-01", [W, D, H], p, moves)
@@ -155,7 +155,7 @@ def m0_02():
     p += [
         P("3", [463, 146, RZ1, 479, 567, RZ1 + 384]),
         P("4", [917, 146, RZ1, 933, 567, RZ1 + 384]),
-        P("8", [480.5, 356, RZ1, 915.5, 372, RZ1 + 370]),
+        P("8", [480.5, 344, RZ1, 915.5, 360, RZ1 + 370]),
         back("11", [15, 147, BZ0, 473, 579, BZ1], pid="11-1"),
         back("12", [473, 147, BZ0, 923, 579, BZ1]),
         back("11", [923, 147, BZ0, 1381, 579, BZ1], pid="11-2"),
@@ -313,7 +313,7 @@ def m1_04():
     ]
     parts, mv = drawer("1", 31, 423, 167, 100, 20, 434, 147, 295, "7", ("7.1", "7.2", "7.3", "7.4"), back_h=86)
     p += parts
-    p += legs("8", W, d=64, inset=45, pad="h4", splay=30)
+    p += legs("8", W, inset=50, pad="h4", splay=28)
     return dump("denver-1-04", [W, D, H], p, [mv])
 
 
