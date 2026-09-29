@@ -1,0 +1,36 @@
+{
+  "id": "erida-1-51",
+  "size": [1142, 451, 800],
+  "parts": [
+    {"id": "side-l", "box": [0, 0, 0, 25, 784, 451]},
+    {"id": "side-r", "box": [1117, 0, 0, 1142, 784, 451]},
+    {"id": "top-l", "box": [0, 784, 0, 340, 800, 451]},
+    {"id": "top-r", "box": [802, 784, 0, 1142, 800, 451]},
+    {"id": "top-back", "box": [340, 784, 0, 802, 800, 60]},
+    {"id": "lid", "kind": "front", "mat": "body", "box": [340, 784, 60, 802, 800, 451]},
+    {"id": "mirror", "kind": "mirror", "box": [352, 776, 70, 790, 781, 430]},
+    {"id": "part-l", "box": [329, 600, 25.5, 345, 784, 435]},
+    {"id": "part-r", "box": [797, 600, 25.5, 813, 784, 435]},
+    {"id": "tray-bottom", "box": [345, 683, 60, 797, 699, 435]},
+    {"id": "tray-back", "box": [345, 699, 44, 797, 784, 60]},
+    {"id": "apron", "kind": "front", "box": [338.5, 683, 435, 803.5, 781, 451]},
+    {"id": "modesty", "box": [25, 330, 9.5, 1117, 699, 25.5]},
+    {"id": "drawer-l", "kind": "front", "box": [27, 603, 435, 335.5, 781, 451]},
+    {"id": "drawer-l-side-l", "box": [38, 623, 40, 54, 743, 435]},
+    {"id": "drawer-l-side-r", "box": [300, 623, 40, 316, 743, 435]},
+    {"id": "drawer-l-back", "box": [54, 623, 40, 300, 743, 56]},
+    {"id": "drawer-l-bottom", "kind": "back", "box": [49, 633, 44, 305, 636.5, 433]},
+    {"id": "drawer-l-knob1", "kind": "handle", "model": "knob", "at": [181.25, 692.0], "d": 34, "t": 10, "standoff": 16, "z": 451},
+    {"id": "drawer-r", "kind": "front", "box": [806.5, 603, 435, 1115, 781, 451]},
+    {"id": "drawer-r-side-l", "box": [826, 623, 40, 842, 743, 435]},
+    {"id": "drawer-r-side-r", "box": [1088, 623, 40, 1104, 743, 435]},
+    {"id": "drawer-r-back", "box": [842, 623, 40, 1088, 743, 56]},
+    {"id": "drawer-r-bottom", "kind": "back", "box": [837, 633, 44, 1093, 636.5, 433]},
+    {"id": "drawer-r-knob1", "kind": "handle", "model": "knob", "at": [960.75, 692.0], "d": 34, "t": 10, "standoff": 16, "z": 451}
+  ],
+  "moves": [
+    {"type": "drawer", "name": "drawer-l", "parts": ["drawer-l", "drawer-l-side-l", "drawer-l-side-r", "drawer-l-back", "drawer-l-bottom", "drawer-l-knob1"], "travel": 296},
+    {"type": "drawer", "name": "drawer-r", "parts": ["drawer-r", "drawer-r-side-l", "drawer-r-side-r", "drawer-r-back", "drawer-r-bottom", "drawer-r-knob1"], "travel": 296},
+    {"type": "flap", "name": "lid", "parts": ["lid", "mirror"], "hinge": "top", "axis": [800, 60], "angle": 95}
+  ]
+}

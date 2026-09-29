@@ -1,0 +1,11 @@
+{
+  "id": "napoli-1-41",
+  "size": [1000, 20, 650],
+  "parts": [
+    {"id": "board", "box": [20, 20, 0, 980, 630, 16], "radius": 100},
+    {"id": "mirror", "kind": "mirror", "box": [0, 0, 16, 1000, 650, 20], "radius": 120}
+  ],
+  "moves": [
+
+  ]
+}

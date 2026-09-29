@@ -1,0 +1,42 @@
+{
+  "id": "erida-1-12",
+  "size": [1050, 587, 2260],
+  "parts": [
+    {"id": "side-l", "box": [0, 180, 0, 16, 2244, 571]},
+    {"id": "side-r", "box": [1034, 180, 0, 1050, 2244, 571]},
+    {"id": "top", "box": [0, 2244, 0, 1050, 2260, 587]},
+    {"id": "bottom", "box": [16, 180, 0, 1034, 196, 571]},
+    {"id": "back", "kind": "back", "box": [11, 191, 6, 1039, 2249, 9.5]},
+    {"id": "frame-l", "mat": "front", "box": [0, 180, 571, 45, 2244, 587]},
+    {"id": "frame-r", "mat": "front", "box": [1005, 180, 571, 1050, 2244, 587]},
+    {"id": "frame-b", "mat": "front", "box": [45, 180, 571, 1005, 200, 587]},
+    {"id": "frame-t", "mat": "front", "box": [45, 2216, 571, 1005, 2244, 587]},
+    {"id": "over-drawer", "box": [16, 427, 9.5, 1034, 443, 567]},
+    {"id": "part", "box": [452.0, 443, 9.5, 468.0, 1880, 571]},
+    {"id": "hat", "box": [16, 1880, 9.5, 1034, 1896, 567]},
+    {"id": "shelf-1", "box": [17, 830, 20, 451.0, 846, 567]},
+    {"id": "shelf-2", "box": [17, 1180, 20, 451.0, 1196, 567]},
+    {"id": "shelf-3", "box": [17, 1530, 20, 451.0, 1546, 567]},
+    {"id": "rail", "kind": "tube", "mat": "chrome", "box": [472.0, 1800, 280.25, 1030, 1820, 300.25]},
+    {"id": "door-l", "kind": "front", "box": [48.0, 436, 571, 523.5, 2213, 587]},
+    {"id": "door-l-knob", "kind": "handle", "model": "knob", "at": [483.5, 1310], "d": 34, "t": 10, "standoff": 16, "z": 587},
+    {"id": "door-r", "kind": "front", "box": [526.5, 436, 571, 1002.0, 2213, 587]},
+    {"id": "door-r-knob", "kind": "handle", "model": "knob", "at": [566.5, 1310], "d": 34, "t": 10, "standoff": 16, "z": 587},
+    {"id": "drawer", "kind": "front", "box": [48, 203, 571, 1002, 433, 587]},
+    {"id": "drawer-side-l", "box": [29, 223, 121, 45, 373, 571]},
+    {"id": "drawer-side-r", "box": [1005, 223, 121, 1021, 373, 571]},
+    {"id": "drawer-back", "box": [45, 223, 121, 1005, 373, 137]},
+    {"id": "drawer-bottom", "kind": "back", "box": [40, 233, 125, 1010, 236.5, 569]},
+    {"id": "drawer-knob1", "kind": "handle", "model": "knob", "at": [286.5, 318.0], "d": 34, "t": 10, "standoff": 16, "z": 587},
+    {"id": "drawer-knob2", "kind": "handle", "model": "knob", "at": [763.5, 318.0], "d": 34, "t": 10, "standoff": 16, "z": 587},
+    {"id": "leg-1", "kind": "rod", "section": "square", "mat": "body", "from": [22.5, 180, 22.5], "to": [15.0, 0, 15.0], "d": 45, "d2": 30, "box": [0, 0, 0, 45, 180, 45]},
+    {"id": "leg-2", "kind": "rod", "section": "square", "mat": "body", "from": [1027.5, 180, 22.5], "to": [1035.0, 0, 15.0], "d": 45, "d2": 30, "box": [1005, 0, 0, 1050, 180, 45]},
+    {"id": "leg-3", "kind": "rod", "section": "square", "mat": "body", "from": [22.5, 180, 564.5], "to": [15.0, 0, 572.0], "d": 45, "d2": 30, "box": [0, 0, 542, 45, 180, 587]},
+    {"id": "leg-4", "kind": "rod", "section": "square", "mat": "body", "from": [1027.5, 180, 564.5], "to": [1035.0, 0, 572.0], "d": 45, "d2": 30, "box": [1005, 0, 542, 1050, 180, 587]}
+  ],
+  "moves": [
+    {"type": "door", "name": "door-l", "parts": ["door-l", "door-l-knob"], "hinge": "left", "angle": 100},
+    {"type": "door", "name": "door-r", "parts": ["door-r", "door-r-knob"], "hinge": "right", "angle": 100},
+    {"type": "drawer", "name": "drawer", "parts": ["drawer", "drawer-side-l", "drawer-side-r", "drawer-back", "drawer-bottom", "drawer-knob1", "drawer-knob2"], "travel": 337}
+  ]
+}

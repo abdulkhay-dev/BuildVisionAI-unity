@@ -1,0 +1,26 @@
+{
+  "finishes": [
+    {"id": "denver-kantri-white", "name": "Дуб Кантри золотой 389 SWN / Белый 600 SM", "body": "door_enamel_whitey#f9fbfd", "front": "door_enamel_whitey#b39266", "roles": {"legs": "door_enamel_whitey#c1966a"}, "swatch": "#b39266"},
+    {"id": "denver-kanzas-cappuccino", "name": "Дуб Канзас 377 SWN / Капучино 806 PE", "body": "door_enamel_whitey#cdcbd2", "front": "door_enamel_whitey#7e6753", "roles": {"legs": "door_enamel_whitey#7e6753"}, "swatch": "#7e6753"}
+  ],
+  "profiles": {},
+  "collections": [
+    {"id": "denver", "name": "Денвер", "brand": "Пинскдрев", "finishes": ["denver-kantri-white", "denver-kanzas-cappuccino"], "metal": "chrome", "note": "Каталог «Корпусная мебель ч. II» 2025, с. 31–33 (с. 58–63 по нумерации каталога). Корпус ЛДСП 16: дно во всю ширину на опорах, боковины на дне (отступ 2 мм), вкладная крышка с царгой 100 мм; фасады ЛДСП 16 вкладные заподлицо, без ручек (push-to-open); задние стенки ХДФ в пазах; деревянные конические опоры, разведённые в стороны; кровати с металлокаркасом."}
+  ],
+  "models": [
+    {"id": "denver-0-01", "code": "П6.639.0.01", "name": "Шкаф «Денвер»", "collection": "denver", "category": "living", "size": [816, 432, 2100], "is": "P6-639-0-01.pdf", "page": 33},
+    {"id": "denver-0-02", "code": "П6.639.0.02", "name": "Тумба «Денвер»", "collection": "denver", "category": "living", "size": [1396, 432, 598], "is": "P6-639-0-02.pdf", "page": 33, "note": "ТВ"},
+    {"id": "denver-0-03", "code": "П6.639.0.03", "name": "Тумба «Денвер»", "collection": "denver", "category": "living", "size": [816, 432, 1350], "is": "P6-639-0-03.pdf", "page": 33},
+    {"id": "denver-0-10", "code": "П6.639.0.10", "name": "Тумба «Денвер»", "collection": "denver", "category": "living", "size": [1396, 432, 1152], "page": 33, "note": "по каталогу, без инструкции"},
+    {"id": "denver-0-13", "code": "П6.639.0.13", "name": "Полка «Денвер»", "collection": "denver", "category": "living", "size": [1396, 250, 336], "is": "P6-639-0-13.pdf", "page": 33, "mount": "wall", "note": "навесная, откидная дверца"},
+    {"id": "denver-1-01", "code": "П6.639.1.01", "name": "Шкаф для одежды 3Д «Денвер»", "collection": "denver", "category": "bedroom", "size": [1839, 618, 2300], "page": 33, "note": "по каталогу, без инструкции; система складных дверей «WingLine L»"},
+    {"id": "denver-1-02", "code": "П6.639.1.02", "name": "Комод «Денвер»", "collection": "denver", "category": "bedroom", "size": [1396, 432, 956], "is": "Komod-Denver-P6-639-1-02-Str-1-10.pdf", "page": 33},
+    {"id": "denver-1-03", "code": "П6.639.1.03", "name": "Зеркало «Денвер»", "collection": "denver", "category": "decor", "size": [1096, 168, 763], "is": "Zerkalo-Denver-P6-639-1-03.pdf", "page": 33, "mount": "wall", "note": "каталог L1126, по спецификации 796 + 300 = 1096"},
+    {"id": "denver-1-04", "code": "П6.639.1.04", "name": "Тумба прикроватная «Денвер»", "collection": "denver", "category": "bedroom", "size": [454, 432, 450], "is": "Tumba-prikrovatnaya-Denver-P6-639-1-04-Str-1-7.pdf", "page": 33},
+    {"id": "denver-1-05", "code": "П6.639.1.05", "name": "Кровать 2-16 «Денвер»", "collection": "denver", "category": "bedroom", "size": [1732, 2060, 869], "is": "Krovat-2-16-Denver-P6-639-1-05-Str-1-7.pdf", "page": 33, "note": "спальное место 2000×1600, металлокаркас"},
+    {"id": "denver-1-15", "code": "П6.639.1.15", "name": "Кровать 1-09 «Денвер»", "collection": "denver", "category": "bedroom", "size": [1032, 2060, 869], "page": 33, "note": "спальное место 2000×900, металлокаркас; по каталогу, как 2-16"},
+    {"id": "denver-1-16", "code": "П6.639.1.16", "name": "Кровать 1-12 «Денвер»", "collection": "denver", "category": "bedroom", "size": [1332, 2060, 869], "page": 33, "note": "спальное место 2000×1200, металлокаркас; по каталогу, как 2-16"},
+    {"id": "denver-1-17", "code": "П6.639.1.17", "name": "Кровать 2-14 «Денвер»", "collection": "denver", "category": "bedroom", "size": [1532, 2060, 869], "page": 33, "note": "спальное место 2000×1400, металлокаркас; по каталогу, как 2-16"},
+    {"id": "denver-1-18", "code": "П6.639.1.18", "name": "Кровать 2-18 «Денвер»", "collection": "denver", "category": "bedroom", "size": [1932, 2060, 869], "page": 33, "note": "спальное место 2000×1800, металлокаркас; по каталогу, как 2-16"}
+  ]
+}

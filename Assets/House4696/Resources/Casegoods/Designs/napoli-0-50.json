@@ -1,0 +1,38 @@
+{
+  "id": "napoli-0-50",
+  "size": [702, 702, 525],
+  "parts": [
+    {"id": "bottom", "box": [16, 180, 32, 686, 196, 670]},
+    {"id": "side-l", "box": [16, 196, 32, 32, 503, 670]},
+    {"id": "side-r", "box": [670, 196, 32, 686, 503, 670]},
+    {"id": "top", "box": [0, 503, 0, 702, 525, 702], "edge": 2},
+    {"id": "shelf", "box": [32, 345, 32, 670, 361, 670]},
+    {"id": "divider", "box": [32, 196, 343, 670, 345, 359]},
+    {"id": "f-drawer-front", "kind": "front", "box": [17.5, 180, 670, 684.5, 342, 686], "face": {"type": "frame", "border": 24, "depth": 2, "r": 1.5}},
+    {"id": "drawer_front-side-l", "box": [45, 200, 369, 61, 315, 670]},
+    {"id": "drawer_front-side-r", "box": [641, 200, 369, 657, 315, 670]},
+    {"id": "drawer_front-back", "box": [61, 200, 369, 641, 315, 385]},
+    {"id": "drawer_front-bottom", "kind": "back", "box": [56, 210, 373, 646, 213.5, 668]},
+    {"id": "h-drawer-front", "kind": "handle", "model": "bar", "at": [351.0, 261.0], "dir": "right", "d": 160, "band": 9, "t": 9, "standoff": 22, "z": 686},
+    {"id": "f-drawer-back", "kind": "front", "box": [17.5, 180, 16, 684.5, 342, 32]},
+    {"id": "drawer_back-side-l", "box": [45, 200, 32, 61, 315, 333]},
+    {"id": "drawer_back-side-r", "box": [641, 200, 32, 657, 315, 333]},
+    {"id": "drawer_back-back", "box": [61, 200, 317, 641, 315, 333]},
+    {"id": "drawer_back-bottom", "kind": "back", "box": [56, 210, 34, 646, 213.5, 329]},
+    {"id": "h-drawer-back-bar", "kind": "rod", "mat": "metal", "from": [271.0, 261.0, -10.5], "to": [431.0, 261.0, -10.5], "d": 9},
+    {"id": "h-drawer-back-p1", "kind": "rod", "mat": "metal", "section": "square", "from": [287.0, 261.0, 16], "to": [287.0, 261.0, -15.0], "d": 12},
+    {"id": "h-drawer-back-p2", "kind": "rod", "mat": "metal", "section": "square", "from": [415.0, 261.0, 16], "to": [415.0, 261.0, -15.0], "d": 12},
+    {"id": "leg-1", "kind": "rod", "mat": "body", "section": "square", "from": [45, 180, 61], "to": [35, 3, 51], "d": 50, "d2": 36},
+    {"id": "pad-1", "kind": "panel", "mat": "black", "shape": "circle", "box": [20, 0, 36, 50, 3, 66]},
+    {"id": "leg-2", "kind": "rod", "mat": "body", "section": "square", "from": [45, 180, 641], "to": [35, 3, 651], "d": 50, "d2": 36},
+    {"id": "pad-2", "kind": "panel", "mat": "black", "shape": "circle", "box": [20, 0, 636, 50, 3, 666]},
+    {"id": "leg-3", "kind": "rod", "mat": "body", "section": "square", "from": [657, 180, 61], "to": [667, 3, 51], "d": 50, "d2": 36},
+    {"id": "pad-3", "kind": "panel", "mat": "black", "shape": "circle", "box": [652, 0, 36, 682, 3, 66]},
+    {"id": "leg-4", "kind": "rod", "mat": "body", "section": "square", "from": [657, 180, 641], "to": [667, 3, 651], "d": 50, "d2": 36},
+    {"id": "pad-4", "kind": "panel", "mat": "black", "shape": "circle", "box": [652, 0, 636, 682, 3, 666]}
+  ],
+  "moves": [
+    {"type": "drawer", "name": "drawer_front", "parts": ["f-drawer-front", "drawer_front-side-l", "drawer_front-side-r", "drawer_front-back", "drawer_front-bottom", "h-drawer-front"], "travel": 250},
+    {"type": "slide", "name": "drawer_back", "parts": ["f-drawer-back", "drawer_back-side-l", "drawer_back-side-r", "drawer_back-back", "drawer_back-bottom", "h-drawer-back-bar", "h-drawer-back-p1", "h-drawer-back-p2"], "by": [0, 0, -250]}
+  ]
+}

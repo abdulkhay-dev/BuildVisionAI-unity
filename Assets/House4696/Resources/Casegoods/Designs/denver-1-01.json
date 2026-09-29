@@ -1,0 +1,33 @@
+{
+  "id": "denver-1-01",
+  "size": [1839, 618, 2300],
+  "parts": [
+    {"id": "side-l", "box": [0, 0, 0, 16, 2300, 600]},
+    {"id": "side-r", "box": [1823, 0, 0, 1839, 2300, 600]},
+    {"id": "top", "box": [16, 2284, 0, 1823, 2300, 600]},
+    {"id": "bottom", "box": [16, 60, 0, 1823, 76, 600]},
+    {"id": "plinth-f", "box": [16, 0, 540, 1823, 60, 556]},
+    {"id": "plinth-b", "box": [16, 0, 0, 1823, 60, 16]},
+    {"id": "partition", "box": [622, 76, 9.5, 638, 2284, 600]},
+    {"id": "back-l", "kind": "back", "box": [10, 70, 6, 630, 2290, 9.5]},
+    {"id": "back-r", "kind": "back", "box": [630, 70, 6, 1829, 2290, 9.5]},
+    {"id": "shelf-l1", "box": [16, 419, 9.5, 622, 435, 580]},
+    {"id": "shelf-l2", "box": [16, 781, 9.5, 622, 797, 580]},
+    {"id": "shelf-l3", "box": [16, 1162, 9.5, 622, 1178, 580]},
+    {"id": "shelf-l4", "box": [16, 1524, 9.5, 622, 1540, 580]},
+    {"id": "shelf-l5", "box": [16, 1905, 9.5, 622, 1921, 580]},
+    {"id": "shelf-top", "box": [638, 1946, 9.5, 1823, 1962, 580]},
+    {"id": "box-div", "box": [1213, 1646, 9.5, 1229, 1946, 580]},
+    {"id": "shelf-box", "box": [638, 1630, 9.5, 1823, 1646, 580]},
+    {"id": "rail-d", "kind": "tube", "mat": "chrome", "box": [642, 1540, 290, 1819, 1560, 310], "covers": ["d"]},
+    {"id": "wingline", "kind": "panel", "mat": "chrome", "edge": 0.5, "box": [642, 2264, 560, 1819, 2284, 590], "covers": ["WingLine L"]},
+    {"id": "leaf-l", "kind": "front", "grain": "y", "box": [0, 12, 602, 611, 2298, 618]},
+    {"id": "leaf-m", "kind": "front", "grain": "y", "box": [614, 12, 602, 1225, 2298, 618]},
+    {"id": "leaf-r", "kind": "front", "grain": "y", "box": [1228, 12, 602, 1839, 2298, 618]}
+  ],
+  "moves": [
+    {"type": "door", "name": "door_left", "parts": ["leaf-l"], "hinge": "left", "angle": 100},
+    {"type": "door", "name": "fold_outer", "parts": ["leaf-r"], "hinge": "right", "angle": 90},
+    {"type": "door", "name": "fold_inner", "parts": ["leaf-m"], "hinge": "left", "axis": [1210.5, 1214.5], "angle": 90}
+  ]
+}

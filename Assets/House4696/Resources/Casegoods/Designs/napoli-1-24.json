@@ -1,0 +1,35 @@
+{
+  "id": "napoli-1-24",
+  "size": [480, 454, 527],
+  "parts": [
+    {"id": "bottom", "box": [0, 179, 0, 480, 195, 436]},
+    {"id": "side-l", "box": [0, 195, 0, 16, 505, 436]},
+    {"id": "side-r", "box": [464, 195, 0, 480, 505, 436]},
+    {"id": "top", "box": [0, 505, 0, 480, 527, 454], "edge": 2},
+    {"id": "back", "kind": "back", "box": [10, 189, 6, 470, 511, 9.5]},
+    {"id": "f-drawer_1", "kind": "front", "box": [1.5, 179.0, 436, 478.5, 339.0, 452], "face": {"type": "frame", "border": 24, "depth": 2, "r": 1.5}},
+    {"id": "drawer_1-side-l", "box": [29, 199.0, 36, 45, 314.0, 436]},
+    {"id": "drawer_1-side-r", "box": [435, 199.0, 36, 451, 314.0, 436]},
+    {"id": "drawer_1-back", "box": [45, 199.0, 36, 435, 314.0, 52]},
+    {"id": "drawer_1-bottom", "kind": "back", "box": [40, 209.0, 40, 440, 212.5, 434]},
+    {"id": "h-drawer_1", "kind": "handle", "model": "bar", "at": [240.0, 259.0], "dir": "right", "d": 160, "band": 9, "t": 9, "standoff": 22, "z": 452},
+    {"id": "f-drawer_2", "kind": "front", "box": [1.5, 342.0, 436, 478.5, 502.0, 452], "face": {"type": "frame", "border": 24, "depth": 2, "r": 1.5}},
+    {"id": "drawer_2-side-l", "box": [29, 362.0, 36, 45, 477.0, 436]},
+    {"id": "drawer_2-side-r", "box": [435, 362.0, 36, 451, 477.0, 436]},
+    {"id": "drawer_2-back", "box": [45, 362.0, 36, 435, 477.0, 52]},
+    {"id": "drawer_2-bottom", "kind": "back", "box": [40, 372.0, 40, 440, 375.5, 434]},
+    {"id": "h-drawer_2", "kind": "handle", "model": "bar", "at": [240.0, 422.0], "dir": "right", "d": 160, "band": 9, "t": 9, "standoff": 22, "z": 452},
+    {"id": "leg-1", "kind": "rod", "mat": "body", "section": "square", "from": [37, 179, 37], "to": [27, 3, 27], "d": 50, "d2": 36},
+    {"id": "pad-1", "kind": "panel", "mat": "black", "shape": "circle", "box": [12, 0, 12, 42, 3, 42]},
+    {"id": "leg-2", "kind": "rod", "mat": "body", "section": "square", "from": [37, 179, 399], "to": [27, 3, 409], "d": 50, "d2": 36},
+    {"id": "pad-2", "kind": "panel", "mat": "black", "shape": "circle", "box": [12, 0, 394, 42, 3, 424]},
+    {"id": "leg-3", "kind": "rod", "mat": "body", "section": "square", "from": [443, 179, 37], "to": [453, 3, 27], "d": 50, "d2": 36},
+    {"id": "pad-3", "kind": "panel", "mat": "black", "shape": "circle", "box": [438, 0, 12, 468, 3, 42]},
+    {"id": "leg-4", "kind": "rod", "mat": "body", "section": "square", "from": [443, 179, 399], "to": [453, 3, 409], "d": 50, "d2": 36},
+    {"id": "pad-4", "kind": "panel", "mat": "black", "shape": "circle", "box": [438, 0, 394, 468, 3, 424]}
+  ],
+  "moves": [
+    {"type": "drawer", "name": "drawer_1", "parts": ["f-drawer_1", "drawer_1-side-l", "drawer_1-side-r", "drawer_1-back", "drawer_1-bottom", "h-drawer_1"], "travel": 350},
+    {"type": "drawer", "name": "drawer_2", "parts": ["f-drawer_2", "drawer_2-side-l", "drawer_2-side-r", "drawer_2-back", "drawer_2-bottom", "h-drawer_2"], "travel": 350}
+  ]
+}
