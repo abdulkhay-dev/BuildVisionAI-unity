@@ -1,0 +1,22 @@
+{
+  "id": "nord-loft-0-06",
+  "size": [510, 510, 520],
+  "parts": [
+    {"id": "top", "mat": "top", "grain": "x", "edge": 1, "box": [0, 495, 0, 510, 520, 510]},
+    {"id": "post-1", "mat": "metal", "edge": 1, "box": [6, 15, 6, 21, 480, 21]},
+    {"id": "post-2", "mat": "metal", "edge": 1, "box": [489, 15, 6, 504, 480, 21]},
+    {"id": "post-3", "mat": "metal", "edge": 1, "box": [6, 15, 489, 21, 480, 504]},
+    {"id": "post-4", "mat": "metal", "edge": 1, "box": [489, 15, 489, 504, 480, 504]},
+    {"id": "rail-top-back", "mat": "metal", "edge": 1, "box": [6, 480, 6, 504, 495, 21]},
+    {"id": "rail-top-front", "mat": "metal", "edge": 1, "box": [6, 480, 489, 504, 495, 504]},
+    {"id": "rail-top-l", "mat": "metal", "edge": 1, "box": [6, 480, 21, 21, 495, 489]},
+    {"id": "rail-top-r", "mat": "metal", "edge": 1, "box": [489, 480, 21, 504, 495, 489]},
+    {"id": "rail-floor-back", "mat": "metal", "edge": 1, "box": [6, 0, 6, 504, 15, 21]},
+    {"id": "rail-floor-front", "mat": "metal", "edge": 1, "box": [6, 0, 489, 504, 15, 504]},
+    {"id": "rail-floor-l", "mat": "metal", "edge": 1, "box": [6, 0, 21, 21, 15, 489]},
+    {"id": "rail-floor-r", "mat": "metal", "edge": 1, "box": [489, 0, 21, 504, 15, 489]}
+  ],
+  "moves": [
+
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "id": "forte-loft-0-06",
+  "size": [1370, 240, 210],
+  "parts": [
+    {"id": "board", "grain": "x", "box": [0, 0, 0, 1370, 16, 240]},
+    {"id": "back-board", "grain": "x", "box": [62, 16, 0, 1308, 206, 16]},
+    {"id": "bracket-l-front", "mat": "metal", "edge": 0.5, "box": [90, 16, 16, 120, 210, 20]},
+    {"id": "bracket-l-top", "mat": "metal", "edge": 0.5, "box": [90, 206, 0, 120, 210, 16]},
+    {"id": "bracket-r-front", "mat": "metal", "edge": 0.5, "box": [1250, 16, 16, 1280, 210, 20]},
+    {"id": "bracket-r-top", "mat": "metal", "edge": 0.5, "box": [1250, 206, 0, 1280, 210, 16]}
+  ],
+  "moves": [
+
+  ]
+}

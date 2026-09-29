@@ -358,8 +358,9 @@ namespace House4696.Casegoods
         void Print(CasePart p)
         {
             var (pl, a0, b0, a1, b1, w0, w1) = CaseGeo.Thin(p.Box);
+            // a print whose texture is not made yet leaves the plain front (the decor texture wave makes the prints)
             var m = _b.C.Mats.Get(p.Print, null);
-            if (m == null) throw new Exception($"нет материала печати '{p.Print}'");
+            if (m == null) return;
             float e = p.Edge ?? 1.5f;
             var face = Clipper.InflatePaths(Region(p, a0, b0, a1, b1), -e, JoinType.Round, EndType.Polygon, 2.0, 3);
             float w = Mathf.Max(a1 - a0, 1f), h = Mathf.Max(b1 - b0, 1f);

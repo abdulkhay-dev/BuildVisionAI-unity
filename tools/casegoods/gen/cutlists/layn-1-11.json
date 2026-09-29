@@ -1,0 +1,114 @@
+{
+ "code": "П6.619.1.11",
+ "source": "table of the page (the PDF parser lost most rows) with the drawers' rows summed over the drawers; the metal base is «в комплект также входит» (no row); no sizes — positions measured on the front and side views",
+ "rows": [
+  {
+   "n": "1",
+   "name": "Стенка вертикальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "2",
+   "name": "Стенка вертикальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "3",
+   "name": "Стенка горизонтальная",
+   "size": null,
+   "count": 2
+  },
+  {
+   "n": "5",
+   "name": "Стенка вертикальная",
+   "size": null,
+   "count": 2
+  },
+  {
+   "n": "6",
+   "name": "Крышка",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "7",
+   "name": "Дно",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "8.1",
+   "name": "Стенка передняя",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "8.2",
+   "name": "Стенка боковая",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "8.3",
+   "name": "Стенка боковая",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "8.4",
+   "name": "Стенка задняя",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "8.5",
+   "name": "Дно (ящиков 8–11)",
+   "size": null,
+   "count": 4
+  },
+  {
+   "n": "9.1",
+   "name": "Стенка передняя",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "9.2",
+   "name": "Стенка боковая (ящиков 9–11)",
+   "size": null,
+   "count": 3
+  },
+  {
+   "n": "9.3",
+   "name": "Стенка боковая (ящиков 9–11)",
+   "size": null,
+   "count": 3
+  },
+  {
+   "n": "9.4",
+   "name": "Стенка задняя (ящиков 9–11)",
+   "size": null,
+   "count": 3
+  },
+  {
+   "n": "10.1",
+   "name": "Стенка передняя",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "11.1",
+   "name": "Стенка передняя",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "12",
+   "name": "Стенка задняя",
+   "size": null,
+   "count": 2
+  }
+ ]
+}

@@ -1,0 +1,90 @@
+{
+ "code": "П6.619.1.28",
+ "source": "reference rows (complete); no sizes — positions measured on the front view (the hat shelf 8, the rib 9 and the rail are hidden behind the doors: placed by the exploded view)",
+ "rows": [
+  {
+   "n": "1",
+   "name": "Стенка вертикальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "2",
+   "name": "Стенка вертикальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "3",
+   "name": "Стенка горизонтальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "4",
+   "name": "Стенка горизонтальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "5",
+   "name": "Стенка вертикальная",
+   "size": null,
+   "count": 2
+  },
+  {
+   "n": "6",
+   "name": "Стенка горизонтальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "7",
+   "name": "Стенка горизонтальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "8",
+   "name": "Стенка горизонтальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "9",
+   "name": "Брусок жесткости",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "10",
+   "name": "Стенка передняя",
+   "size": null,
+   "count": 2
+  },
+  {
+   "n": "11",
+   "name": "Стенка боковая",
+   "size": null,
+   "count": 2
+  },
+  {
+   "n": "12",
+   "name": "Дверь",
+   "size": null,
+   "count": 2
+  },
+  {
+   "n": "13",
+   "name": "Стенка задняя",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "14",
+   "name": "Стенка задняя",
+   "size": null,
+   "count": 2
+  }
+ ]
+}

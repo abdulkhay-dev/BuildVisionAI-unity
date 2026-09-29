@@ -1,0 +1,72 @@
+{
+ "code": "П6.619.2.11",
+ "source": "reference rows (complete); no sizes — positions measured on the front view; the backs' joints (two equal 9 and the long 10) put on the first and the last shelf",
+ "rows": [
+  {
+   "n": "1",
+   "name": "Стенка вертикальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "1.1",
+   "name": "Стенка вертикальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "2",
+   "name": "Стенка горизонтальная",
+   "size": null,
+   "count": 2
+  },
+  {
+   "n": "3",
+   "name": "Стенка вертикальная",
+   "size": null,
+   "count": 2
+  },
+  {
+   "n": "4",
+   "name": "Стенка горизонтальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "5",
+   "name": "Стенка горизонтальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "6",
+   "name": "Стенка горизонтальная",
+   "size": null,
+   "count": 4
+  },
+  {
+   "n": "7",
+   "name": "Стенка передняя",
+   "size": null,
+   "count": 2
+  },
+  {
+   "n": "8",
+   "name": "Стенка боковая",
+   "size": null,
+   "count": 2
+  },
+  {
+   "n": "9",
+   "name": "Стенка задняя",
+   "size": null,
+   "count": 2
+  },
+  {
+   "n": "10",
+   "name": "Стенка задняя",
+   "size": null,
+   "count": 1
+  }
+ ]
+}

@@ -1,0 +1,5 @@
+# Decors of «Верес» (veres) — wave 5
+
+- «Дуб каньон» — Верес (body of veres-bordo-kanon: the 25 mm frame, drawer fronts, the flap of 3.07, hall-stand boards and shelves, mirror board) — p. 135 (swatch «Каркас», crop 0.735,0.86,0.79,0.9) — mid grey-brown rustic oak: long straight planks with darker streaks, small knots and short cracks, faint cathedrals, matt — grain along the long side (vertical on sides and hall-stand boards, x on tops, drawer fronts, shelves); provisional #7f6951.
+- «Дуб бордо лайт» — Верес (front of veres-bordo-kanon: doors and the white flaps) — p. 135 (swatch «Фасад», crop 0.655,0.86,0.705,0.9) — near-white bleached oak with fine grey pore lines and soft cathedrals, a few tiny knots — vertical on doors, x on flaps; provisional #dbd8d7 (Агата's «Дуб Бордо лайт 380 SWN» swatch p. 27 prints #e7e7e1 — same decor).
+- Seat cushion fabric (unnamed, dark chocolate velour / suede-look) — Верес 3.09 (role `fabric`) — p. 135 interior and site photos — plain short-pile fabric, no pattern; provisional velvet#4a3a33.

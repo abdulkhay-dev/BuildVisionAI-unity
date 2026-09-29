@@ -1,0 +1,27 @@
+{
+  "id": "veres-3-01",
+  "size": [991, 597, 2020],
+  "parts": [
+    {"id": "bottom", "box": [0, 18, 0, 991, 43, 597]},
+    {"id": "top", "box": [0, 1995, 0, 991, 2020, 597]},
+    {"id": "side-l", "box": [0, 43, 0, 25, 1995, 597]},
+    {"id": "side-r", "box": [966, 43, 0, 991, 1995, 597]},
+    {"id": "back", "kind": "back", "box": [15, 33, 6, 976, 2005, 9.5]},
+    {"id": "hat-shelf", "box": [26, 1774, 20, 965, 1790, 561]},
+    {"id": "rail", "kind": "tube", "mat": "chrome", "box": [25, 1720, 270, 966, 1745, 295]},
+    {"id": "back-rail", "box": [25, 1150, 9.5, 966, 1250, 25.5]},
+    {"id": "shelf", "box": [26, 439, 20, 965, 455, 561]},
+    {"id": "f-door_left", "kind": "front", "box": [27.0, 45.0, 581, 494.0, 1993.0, 597]},
+    {"id": "h-door_left", "kind": "handle", "model": "bar", "at": [464.0, 1010.0], "dir": "up", "d": 170, "band": 12, "t": 8, "standoff": 24, "post": 10, "section": "square", "z": 597},
+    {"id": "f-door_right", "kind": "front", "box": [497.0, 45.0, 581, 964.0, 1993.0, 597]},
+    {"id": "h-door_right", "kind": "handle", "model": "bar", "at": [527.0, 1010.0], "dir": "up", "d": 170, "band": 12, "t": 8, "standoff": 24, "post": 10, "section": "square", "z": 597},
+    {"id": "foot-1a", "kind": "panel", "mat": "door_enamel_whitey#a3a5a6", "edge": 3, "box": [20, 0, 20, 60, 18, 50]},
+    {"id": "foot-1b", "kind": "panel", "mat": "door_enamel_whitey#a3a5a6", "edge": 3, "box": [20, 0, 547, 60, 18, 577]},
+    {"id": "foot-2a", "kind": "panel", "mat": "door_enamel_whitey#a3a5a6", "edge": 3, "box": [931, 0, 20, 971, 18, 50]},
+    {"id": "foot-2b", "kind": "panel", "mat": "door_enamel_whitey#a3a5a6", "edge": 3, "box": [931, 0, 547, 971, 18, 577]}
+  ],
+  "moves": [
+    {"type": "door", "name": "door_left", "parts": ["f-door_left", "h-door_left"], "hinge": "left", "angle": 100},
+    {"type": "door", "name": "door_right", "parts": ["f-door_right", "h-door_right"], "hinge": "right", "angle": 100}
+  ]
+}

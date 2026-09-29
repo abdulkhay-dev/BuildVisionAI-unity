@@ -1,0 +1,16 @@
+{
+  "id": "blekvud-loft-3-32",
+  "size": [500, 256, 1780],
+  "parts": [
+    {"id": "board-lo", "grain": "y", "box": [0, 0, 0, 500, 720, 25]},
+    {"id": "board-band", "mat": "front", "grain": "x", "box": [0, 720, 0, 500, 1000, 25]},
+    {"id": "board-up", "grain": "y", "box": [0, 1000, 0, 500, 1780, 25]},
+    {"id": "shelf", "grain": "x", "box": [0, 1610, 25, 500, 1635, 256]},
+    {"id": "bracket-1", "mat": "metal", "edge": 1, "box": [48, 1555, 150, 72, 1610, 160]},
+    {"id": "bracket-2", "mat": "metal", "edge": 1, "box": [428, 1555, 150, 452, 1610, 160]},
+    {"id": "hanger-bar", "mat": "metal", "edge": 2, "box": [20, 1540, 145, 480, 1555, 165]}
+  ],
+  "moves": [
+
+  ]
+}

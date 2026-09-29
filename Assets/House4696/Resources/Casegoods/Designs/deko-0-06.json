@@ -1,0 +1,38 @@
+{
+  "id": "deko-0-06",
+  "size": [941, 400, 1820],
+  "parts": [
+    {"id": "bottom", "box": [0, 14, 0, 941, 30, 400]},
+    {"id": "side-l", "box": [0, 30, 0, 16, 1804, 400]},
+    {"id": "side-r", "box": [925, 30, 0, 941, 1804, 400]},
+    {"id": "top", "box": [0, 1804, 0, 941, 1820, 400]},
+    {"id": "back", "box": [10, 24, 6, 931, 1810, 9.5], "kind": "back"},
+    {"id": "glide-1f", "box": [15, 0, 330, 105, 14, 370], "mat": "black"},
+    {"id": "glide-1b", "box": [15, 0, 30, 105, 14, 70], "mat": "black"},
+    {"id": "glide-2f", "box": [836, 0, 330, 926, 14, 370], "mat": "black"},
+    {"id": "glide-2b", "box": [836, 0, 30, 926, 14, 70], "mat": "black"},
+    {"id": "partition", "box": [505.0, 30, 10, 521.0, 1804, 362]},
+    {"id": "fixed-l", "box": [16, 863.5, 10, 505, 879.5, 378]},
+    {"id": "fixed-r", "box": [521, 863.5, 10, 925, 879.5, 362]},
+    {"id": "shelf-l1", "box": [17, 498, 20, 504, 514, 364]},
+    {"id": "glass-l1", "box": [17, 1189, 20, 504, 1195, 360], "kind": "glass"},
+    {"id": "glass-l2", "box": [17, 1493, 20, 504, 1499, 360], "kind": "glass"},
+    {"id": "shelf-r1", "box": [522, 502, 20, 924, 518, 344]},
+    {"id": "shelf-r2", "box": [522, 1207, 20, 924, 1223, 344]},
+    {"id": "shelf-r3", "box": [522, 1497, 20, 924, 1513, 344]},
+    {"id": "door-oak", "box": [18, 32, 384, 511.5, 879.5, 400], "kind": "front", "grain": "y"},
+    {"id": "k-oak", "kind": "handle", "model": "edge", "d": 152, "band": 14, "t": 2, "standoff": 18, "dir": "down", "at": [264.8, 879.5], "z": 400},
+    {"id": "door-glass", "box": [18, 882.5, 380, 511.5, 1802, 400], "kind": "front", "mat": "metal", "glass": {"frame": 22, "rebate": 5, "t": 4, "tint": "bronze"}},
+    {"id": "k-glass", "kind": "handle", "model": "bar", "dir": "up", "d": 160, "band": 12, "t": 8, "standoff": 16, "at": [500.5, 1342.5], "z": 400},
+    {"id": "door-r", "box": [514.5, 32, 364, 923, 1802, 380], "kind": "front", "mat": "accent", "grain": "y"},
+    {"id": "door-r-slat1", "box": [519.5, 32, 380, 549.5, 1802, 400], "mat": "slat", "grain": "y"},
+    {"id": "door-r-slat2", "box": [576.5, 32, 380, 606.5, 1802, 400], "mat": "slat", "grain": "y"},
+    {"id": "door-r-slat3", "box": [633.5, 32, 380, 663.5, 1802, 400], "mat": "slat", "grain": "y"},
+    {"id": "door-r-slat4", "box": [690.5, 32, 380, 720.5, 1802, 400], "mat": "slat", "grain": "y"}
+  ],
+  "moves": [
+    {"type": "door", "name": "door_oak", "parts": ["door-oak", "k-oak"], "hinge": "left", "angle": 105},
+    {"type": "door", "name": "door_glass", "parts": ["door-glass", "k-glass"], "hinge": "left", "angle": 105},
+    {"type": "door", "name": "door_right", "parts": ["door-r", "door-r-slat1", "door-r-slat2", "door-r-slat3", "door-r-slat4"], "hinge": "right", "angle": 105}
+  ]
+}

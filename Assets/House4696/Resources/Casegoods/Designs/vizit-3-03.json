@@ -1,0 +1,24 @@
+{
+  "id": "vizit-3-03",
+  "size": [700, 400, 1000],
+  "parts": [
+    {"id": "side-l", "box": [0, 0, 0, 16, 984, 384]},
+    {"id": "side-r", "box": [684, 0, 0, 700, 984, 384]},
+    {"id": "bottom", "box": [16, 40, 0, 684, 56, 384]},
+    {"id": "plinth", "box": [16, 0, 348, 684, 40, 364]},
+    {"id": "plinth-back", "box": [16, 0, 30, 684, 40, 46]},
+    {"id": "top", "box": [0, 984, 0, 700, 1000, 400]},
+    {"id": "back", "kind": "back", "box": [10, 50, 6, 690, 990, 9.5]},
+    {"id": "shelf-1", "box": [17, 274, 20, 683, 290, 379]},
+    {"id": "shelf-2", "box": [17, 514, 20, 683, 530, 379]},
+    {"id": "shelf-3", "box": [17, 754, 20, 683, 770, 379]},
+    {"id": "f-door_left", "kind": "front", "box": [2.0, 44.0, 384, 348.5, 981.0, 400]},
+    {"id": "h-door_left", "kind": "handle", "model": "bar", "mat": "metal", "at": [318.5, 840.0], "dir": "up", "d": 190, "band": 10, "t": 8, "standoff": 26, "post": 10, "section": "square", "z": 400},
+    {"id": "f-door_right", "kind": "front", "box": [351.5, 44.0, 384, 698.0, 981.0, 400]},
+    {"id": "h-door_right", "kind": "handle", "model": "bar", "mat": "metal", "at": [381.5, 840.0], "dir": "up", "d": 190, "band": 10, "t": 8, "standoff": 26, "post": 10, "section": "square", "z": 400}
+  ],
+  "moves": [
+    {"type": "door", "name": "door_left", "parts": ["f-door_left", "h-door_left"], "hinge": "left", "angle": 100},
+    {"type": "door", "name": "door_right", "parts": ["f-door_right", "h-door_right"], "hinge": "right", "angle": 100}
+  ]
+}

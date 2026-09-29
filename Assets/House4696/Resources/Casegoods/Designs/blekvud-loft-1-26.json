@@ -1,0 +1,15 @@
+{
+  "id": "blekvud-loft-1-26",
+  "size": [1068, 85, 801],
+  "parts": [
+    {"id": "frame-top", "grain": "x", "box": [0, 776, 0, 1068, 801, 85]},
+    {"id": "frame-bottom", "grain": "x", "box": [0, 0, 0, 1068, 25, 85]},
+    {"id": "frame-l", "grain": "y", "box": [0, 25, 0, 25, 776, 85]},
+    {"id": "frame-r", "grain": "y", "box": [1043, 25, 0, 1068, 776, 85]},
+    {"id": "panel", "mat": "front", "grain": "x", "box": [25, 25, 0, 1043, 776, 16]},
+    {"id": "mirror", "kind": "mirror", "box": [65, 65, 16, 1003, 736, 20]}
+  ],
+  "moves": [
+
+  ]
+}

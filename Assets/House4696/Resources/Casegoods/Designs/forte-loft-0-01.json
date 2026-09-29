@@ -1,0 +1,37 @@
+{
+  "id": "forte-loft-0-01",
+  "size": [1704, 420, 540],
+  "parts": [
+    {"id": "top", "box": [0, 524, 0, 1704, 540, 420]},
+    {"id": "bottom", "box": [0, 128, 0, 1704, 144, 420]},
+    {"id": "side-l", "box": [0, 144, 0, 16, 524, 400]},
+    {"id": "side-r", "box": [1688, 144, 0, 1704, 524, 400]},
+    {"id": "partition-l", "mat": "accent", "box": [526, 144, 20, 542, 524, 400]},
+    {"id": "partition-r", "mat": "accent", "box": [1162, 144, 20, 1178, 524, 400]},
+    {"id": "back-l", "kind": "back", "box": [11.5, 140, 16.8, 534, 528, 20.0]},
+    {"id": "back-r", "kind": "back", "box": [1170, 140, 16.8, 1692.5, 528, 20.0]},
+    {"id": "back-niche", "kind": "back", "shape": "path", "outline": "M 534 140 L 1170 140 L 1170 528 L 534 528 Z M 882.0 300.0 L 881.0 307.8 L 878.0 315.0 L 873.2 321.2 L 867.0 326.0 L 859.8 329.0 L 852.0 330.0 L 844.2 329.0 L 837.0 326.0 L 830.8 321.2 L 826.0 315.0 L 823.0 307.8 L 822.0 300.0 L 823.0 292.2 L 826.0 285.0 L 830.8 278.8 L 837.0 274.0 L 844.2 271.0 L 852.0 270.0 L 859.8 271.0 L 867.0 274.0 L 873.2 278.8 L 878.0 285.0 L 881.0 292.2 Z M 882.0 413.0 L 881.0 420.8 L 878.0 428.0 L 873.2 434.2 L 867.0 439.0 L 859.8 442.0 L 852.0 443.0 L 844.2 442.0 L 837.0 439.0 L 830.8 434.2 L 826.0 428.0 L 823.0 420.8 L 822.0 413.0 L 823.0 405.2 L 826.0 398.0 L 830.8 391.8 L 837.0 387.0 L 844.2 384.0 L 852.0 383.0 L 859.8 384.0 L 867.0 387.0 L 873.2 391.8 L 878.0 398.0 L 881.0 405.2 Z", "box": [534, 140, 16.8, 1170, 528, 20.0]},
+    {"id": "door-l", "kind": "front", "grain": "y", "box": [2.5, 146, 401, 522.5, 522, 417]},
+    {"kind": "handle", "model": "bar", "dir": "right", "d": 336, "band": 10, "t": 10, "standoff": 25, "post": 10, "covers": ["011"], "id": "h-door_left", "at": [262.5, 456], "z": 417},
+    {"id": "door-r", "kind": "front", "grain": "y", "box": [1181.5, 146, 401, 1701.5, 522, 417]},
+    {"kind": "handle", "model": "bar", "dir": "right", "d": 336, "band": 10, "t": 10, "standoff": 25, "post": 10, "covers": ["011"], "id": "h-door_right", "at": [1441.5, 456], "z": 417},
+    {"id": "leg-l-pad1", "mat": "metal", "edge": 1, "box": [6, 125, 10, 76, 128, 80], "covers": ["opora-sled"]},
+    {"id": "leg-l-pad2", "mat": "metal", "edge": 1, "box": [6, 125, 340, 76, 128, 410]},
+    {"id": "leg-l-post1", "mat": "metal", "edge": 1, "box": [26, 0, 30, 56, 125, 60]},
+    {"id": "leg-l-post2", "mat": "metal", "edge": 1, "box": [26, 0, 360, 56, 125, 390]},
+    {"id": "leg-l-bar", "mat": "metal", "edge": 1, "box": [26, 10, 60, 56, 35, 360]},
+    {"id": "leg-r-pad1", "mat": "metal", "edge": 1, "box": [1628, 125, 10, 1698, 128, 80], "covers": ["opora-sled"]},
+    {"id": "leg-r-pad2", "mat": "metal", "edge": 1, "box": [1628, 125, 340, 1698, 128, 410]},
+    {"id": "leg-r-post1", "mat": "metal", "edge": 1, "box": [1648, 0, 30, 1678, 125, 60]},
+    {"id": "leg-r-post2", "mat": "metal", "edge": 1, "box": [1648, 0, 360, 1678, 125, 390]},
+    {"id": "leg-r-bar", "mat": "metal", "edge": 1, "box": [1648, 10, 60, 1678, 35, 360]},
+    {"id": "leg-m1-pad", "mat": "metal", "edge": 1, "box": [545.0, 125, 175.0, 615.0, 128, 245.0], "covers": ["opora"]},
+    {"id": "leg-m1-post", "mat": "metal", "edge": 1, "box": [565, 0, 195, 595, 125, 225]},
+    {"id": "leg-m2-pad", "mat": "metal", "edge": 1, "box": [1089.0, 125, 175.0, 1159.0, 128, 245.0], "covers": ["opora"]},
+    {"id": "leg-m2-post", "mat": "metal", "edge": 1, "box": [1109, 0, 195, 1139, 125, 225]}
+  ],
+  "moves": [
+    {"type": "door", "name": "door_left", "parts": ["door-l", "h-door_left"], "hinge": "left", "angle": 105},
+    {"type": "door", "name": "door_right", "parts": ["door-r", "h-door_right"], "hinge": "right", "angle": 105}
+  ]
+}

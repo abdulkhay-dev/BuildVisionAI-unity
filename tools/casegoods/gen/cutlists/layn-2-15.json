@@ -1,0 +1,150 @@
+{
+ "code": "П6.619.2.15",
+ "source": "table of the page with the drawers' rows summed (drawer 15 twice, 16 and 17 share 15.2–15.5); group rows left out; no sizes — positions measured on the front and side views",
+ "rows": [
+  {
+   "n": "1",
+   "name": "Стенка вертикальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "2",
+   "name": "Стенка вертикальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "3",
+   "name": "Стенка вертикальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "4",
+   "name": "Стенка вертикальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "5",
+   "name": "Стенка горизонтальная",
+   "size": null,
+   "count": 4
+  },
+  {
+   "n": "6",
+   "name": "Стенка горизонтальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "7",
+   "name": "Полка",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "8",
+   "name": "Стенка вертикальная",
+   "size": null,
+   "count": 2
+  },
+  {
+   "n": "9",
+   "name": "Стенка вертикальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "10",
+   "name": "Стенка вертикальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "11",
+   "name": "Стенка горизонтальная",
+   "size": null,
+   "count": 2
+  },
+  {
+   "n": "12",
+   "name": "Царга",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "13",
+   "name": "Крышка",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "14",
+   "name": "Стенка задняя",
+   "size": null,
+   "count": 2
+  },
+  {
+   "n": "15.1",
+   "name": "Стенка передняя (ящиков 15, ×2)",
+   "size": null,
+   "count": 2
+  },
+  {
+   "n": "15.2",
+   "name": "Стенка боковая (ящиков 15, 16, 17)",
+   "size": null,
+   "count": 4
+  },
+  {
+   "n": "15.3",
+   "name": "Стенка боковая (ящиков 15, 16, 17)",
+   "size": null,
+   "count": 4
+  },
+  {
+   "n": "15.4",
+   "name": "Стенка задняя (ящиков 15, 16, 17)",
+   "size": null,
+   "count": 4
+  },
+  {
+   "n": "15.5",
+   "name": "Дно (ящиков 15, 16, 17)",
+   "size": null,
+   "count": 4
+  },
+  {
+   "n": "16.1",
+   "name": "Стенка передняя",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "17.1",
+   "name": "Стенка передняя",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "19",
+   "name": "Дверь",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "20",
+   "name": "Стенка передняя",
+   "size": null,
+   "count": 4
+  },
+  {
+   "n": "21",
+   "name": "Стенка боковая",
+   "size": null,
+   "count": 4
+  }
+ ]
+}

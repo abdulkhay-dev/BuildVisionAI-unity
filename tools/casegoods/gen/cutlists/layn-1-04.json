@@ -1,0 +1,90 @@
+{
+ "code": "П6.619.1.04",
+ "source": "table of the page (the PDF parser lost the drawers' rows) with the drawers' rows summed; no sizes — positions measured on the front view",
+ "rows": [
+  {
+   "n": "1",
+   "name": "Стенка вертикальная",
+   "size": null,
+   "count": 2
+  },
+  {
+   "n": "2",
+   "name": "Стенка горизонтальная",
+   "size": null,
+   "count": 2
+  },
+  {
+   "n": "3",
+   "name": "Стенка вертикальная",
+   "size": null,
+   "count": 2
+  },
+  {
+   "n": "4",
+   "name": "Крышка",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "5",
+   "name": "Дно",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "6.1",
+   "name": "Стенка передняя",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "6.2",
+   "name": "Стенка боковая (ящиков 6, 7)",
+   "size": null,
+   "count": 2
+  },
+  {
+   "n": "6.3",
+   "name": "Стенка боковая (ящиков 6, 7)",
+   "size": null,
+   "count": 2
+  },
+  {
+   "n": "6.4",
+   "name": "Стенка задняя (ящиков 6, 7)",
+   "size": null,
+   "count": 2
+  },
+  {
+   "n": "6.5",
+   "name": "Дно (ящиков 6, 7)",
+   "size": null,
+   "count": 2
+  },
+  {
+   "n": "7.1",
+   "name": "Стенка передняя",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "8",
+   "name": "Стенка передняя",
+   "size": null,
+   "count": 2
+  },
+  {
+   "n": "9",
+   "name": "Стенка боковая",
+   "size": null,
+   "count": 2
+  },
+  {
+   "n": "10",
+   "name": "Стенка задняя",
+   "size": null,
+   "count": 1
+  }
+ ]
+}

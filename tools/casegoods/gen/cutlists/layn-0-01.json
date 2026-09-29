@@ -1,0 +1,102 @@
+{
+ "code": "П6.619.0.01",
+ "source": "table of IS P6-619-0-01 (two marking columns 0.01 / 0.01-01, read from the page: the PDF parser lost it); no sizes in the table — positions measured on the front view",
+ "rows": [
+  {
+   "n": "1",
+   "name": "Стенка вертикальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "2",
+   "name": "Стенка вертикальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "3",
+   "name": "Стенка горизонтальная",
+   "size": null,
+   "count": 2
+  },
+  {
+   "n": "4",
+   "name": "Стенка вертикальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "5",
+   "name": "Стенка вертикальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "6",
+   "name": "Стенка горизонтальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "7",
+   "name": "Стенка горизонтальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "8",
+   "name": "Стенка горизонтальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "9",
+   "name": "Полка (стекло)",
+   "size": null,
+   "count": 3
+  },
+  {
+   "n": "10",
+   "name": "Полка",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "11",
+   "name": "Стенка передняя",
+   "size": null,
+   "count": 2
+  },
+  {
+   "n": "12",
+   "name": "Стенка боковая",
+   "size": null,
+   "count": 2
+  },
+  {
+   "n": "13",
+   "name": "Дверь",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "14",
+   "name": "Накладка (стекло)",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "15",
+   "name": "Стенка задняя",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "16",
+   "name": "Стенка задняя",
+   "size": null,
+   "count": 1
+  }
+ ]
+}

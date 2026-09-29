@@ -1,0 +1,31 @@
+{
+  "id": "veres-3-17",
+  "size": [794, 311, 2020],
+  "parts": [
+    {"id": "board", "box": [32, 0, 0, 762, 2020, 25], "grain": "y"},
+    {"id": "shelf", "box": [0, 1766, 25, 794, 1791, 311]},
+    {"id": "hook-1", "kind": "panel", "mat": "chrome", "edge": 3, "box": [161, 1560, 25, 179, 1605, 29]},
+    {"id": "hook-1-low", "kind": "rod", "mat": "chrome", "from": [170, 1575, 29], "to": [170, 1535, 85], "d": 8},
+    {"id": "hook-1-tip", "kind": "rod", "mat": "chrome", "from": [170, 1535, 85], "to": [170, 1555, 97], "d": 8},
+    {"id": "hook-1-up", "kind": "rod", "mat": "chrome", "from": [170, 1595, 29], "to": [170, 1620, 59], "d": 7},
+    {"id": "hook-2", "kind": "panel", "mat": "chrome", "edge": 3, "box": [388, 1560, 25, 406, 1605, 29]},
+    {"id": "hook-2-low", "kind": "rod", "mat": "chrome", "from": [397, 1575, 29], "to": [397, 1535, 85], "d": 8},
+    {"id": "hook-2-tip", "kind": "rod", "mat": "chrome", "from": [397, 1535, 85], "to": [397, 1555, 97], "d": 8},
+    {"id": "hook-2-up", "kind": "rod", "mat": "chrome", "from": [397, 1595, 29], "to": [397, 1620, 59], "d": 7},
+    {"id": "hook-3", "kind": "panel", "mat": "chrome", "edge": 3, "box": [615, 1560, 25, 633, 1605, 29]},
+    {"id": "hook-3-low", "kind": "rod", "mat": "chrome", "from": [624, 1575, 29], "to": [624, 1535, 85], "d": 8},
+    {"id": "hook-3-tip", "kind": "rod", "mat": "chrome", "from": [624, 1535, 85], "to": [624, 1555, 97], "d": 8},
+    {"id": "hook-3-up", "kind": "rod", "mat": "chrome", "from": [624, 1595, 29], "to": [624, 1620, 59], "d": 7},
+    {"id": "hook-4", "kind": "panel", "mat": "chrome", "edge": 3, "box": [275, 875, 25, 293, 920, 29]},
+    {"id": "hook-4-low", "kind": "rod", "mat": "chrome", "from": [284, 890, 29], "to": [284, 850, 85], "d": 8},
+    {"id": "hook-4-tip", "kind": "rod", "mat": "chrome", "from": [284, 850, 85], "to": [284, 870, 97], "d": 8},
+    {"id": "hook-4-up", "kind": "rod", "mat": "chrome", "from": [284, 910, 29], "to": [284, 935, 59], "d": 7},
+    {"id": "hook-5", "kind": "panel", "mat": "chrome", "edge": 3, "box": [501, 875, 25, 519, 920, 29]},
+    {"id": "hook-5-low", "kind": "rod", "mat": "chrome", "from": [510, 890, 29], "to": [510, 850, 85], "d": 8},
+    {"id": "hook-5-tip", "kind": "rod", "mat": "chrome", "from": [510, 850, 85], "to": [510, 870, 97], "d": 8},
+    {"id": "hook-5-up", "kind": "rod", "mat": "chrome", "from": [510, 910, 29], "to": [510, 935, 59], "d": 7}
+  ],
+  "moves": [
+
+  ]
+}

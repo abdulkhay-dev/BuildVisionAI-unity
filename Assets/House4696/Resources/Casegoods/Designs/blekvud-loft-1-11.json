@@ -1,0 +1,37 @@
+{
+  "id": "blekvud-loft-1-11",
+  "size": [2018, 670, 2161],
+  "parts": [
+    {"id": "side-l", "grain": "y", "box": [0, 0, 0, 25, 2161, 670]},
+    {"id": "side-r", "grain": "y", "box": [1993, 0, 0, 2018, 2161, 670]},
+    {"id": "top", "grain": "x", "box": [25, 2136, 0, 1993, 2161, 670]},
+    {"id": "bottom", "mat": "inner", "box": [25, 70, 0, 1993, 95, 600]},
+    {"id": "plinth", "grain": "x", "box": [25, 0, 570, 1993, 70, 595]},
+    {"id": "partition", "mat": "inner", "grain": "y", "box": [996.5, 95, 7.5, 1021.5, 2136, 600]},
+    {"id": "back-l", "kind": "back", "box": [20, 91, 4, 1001.5, 2140, 7.2]},
+    {"id": "back-r", "kind": "back", "box": [1016.5, 91, 4, 1998, 2140, 7.2]},
+    {"id": "hat-shelf-1", "mat": "inner", "box": [26, 1830, 30, 995.5, 1846, 580]},
+    {"id": "rail-1", "kind": "tube", "mat": "chrome", "box": [26, 1762.5, 287.5, 995.5, 1787.5, 312.5]},
+    {"id": "hat-shelf-2", "mat": "inner", "box": [1022.5, 1830, 30, 1992, 1846, 580]},
+    {"id": "rail-2", "kind": "tube", "mat": "chrome", "box": [1022.5, 1762.5, 287.5, 1992, 1787.5, 312.5]},
+    {"id": "shelf-l", "mat": "inner", "box": [26, 520, 30, 995.5, 536, 580]},
+    {"id": "door-l-alu-l", "mat": "chrome#c4c5c2", "edge": 1, "box": [25, 100, 636, 43, 2126, 658]},
+    {"id": "door-l-alu-r", "mat": "chrome#c4c5c2", "edge": 1, "box": [1011.0, 100, 636, 1029.0, 2126, 658]},
+    {"id": "door-l-alu-b", "mat": "chrome#c4c5c2", "edge": 1, "box": [43, 100, 636, 1011.0, 112, 658]},
+    {"id": "door-l-alu-t", "mat": "chrome#c4c5c2", "edge": 1, "box": [43, 2114, 636, 1011.0, 2126, 658]},
+    {"id": "door-l-lo", "kind": "front", "grain": "x", "mat": "body", "box": [43, 112, 639, 1011.0, 598, 655]},
+    {"id": "door-l-band", "kind": "front", "grain": "x", "mat": "front", "box": [43, 598, 639, 1011.0, 1088, 655]},
+    {"id": "door-l-up", "kind": "front", "grain": "x", "mat": "body", "box": [43, 1088, 639, 1011.0, 2114, 655]},
+    {"id": "door-r-alu-l", "mat": "chrome#c4c5c2", "edge": 1, "box": [989.0, 100, 610, 1007.0, 2126, 632]},
+    {"id": "door-r-alu-r", "mat": "chrome#c4c5c2", "edge": 1, "box": [1975, 100, 610, 1993, 2126, 632]},
+    {"id": "door-r-alu-b", "mat": "chrome#c4c5c2", "edge": 1, "box": [1007.0, 100, 610, 1975, 112, 632]},
+    {"id": "door-r-alu-t", "mat": "chrome#c4c5c2", "edge": 1, "box": [1007.0, 2114, 610, 1975, 2126, 632]},
+    {"id": "door-r-lo", "kind": "front", "grain": "x", "mat": "body", "box": [1007.0, 112, 613, 1975, 598, 629]},
+    {"id": "door-r-band", "kind": "front", "grain": "x", "mat": "front", "box": [1007.0, 598, 613, 1975, 1088, 629]},
+    {"id": "door-r-up", "kind": "front", "grain": "x", "mat": "body", "box": [1007.0, 1088, 613, 1975, 2114, 629]}
+  ],
+  "moves": [
+    {"type": "slide", "name": "door_left", "parts": ["door-l-alu-l", "door-l-alu-r", "door-l-alu-b", "door-l-alu-t", "door-l-lo", "door-l-band", "door-l-up"], "by": [964.0, 0, 0]},
+    {"type": "slide", "name": "door_right", "parts": ["door-r-alu-l", "door-r-alu-r", "door-r-alu-b", "door-r-alu-t", "door-r-lo", "door-r-band", "door-r-up"], "by": [-964.0, 0, 0]}
+  ]
+}

@@ -1,0 +1,39 @@
+{
+ "code": "П3.0556.3.34",
+ "is": "IS-P570-04-zerkalo-navesnoe-1.pdf",
+ "source": "page image reference/blekvud-loft/pages/blekvud-loft-3-34-p1.png (the instruction has no text layer): table «Поз., Наименование, Маркировка, Материал, Кол-во, Длина × Ширина»; the thickness is the material's (ЛДСП 25 / 16); ДВП, the mirror and the cushion are compared by two sizes",
+ "rows": [
+  {
+   "n": "1",
+   "code": "70.04.01",
+   "name": "Стенка вертикальная (ЛДСП 16мм ДУБ ВОТАН)",
+   "size": [
+    900,
+    750,
+    16
+   ],
+   "count": 1
+  },
+  {
+   "n": "2",
+   "code": "-----",
+   "name": "Зеркало (уже приклеено)",
+   "size": [
+    701,
+    791
+   ],
+   "count": 1
+  },
+  {
+   "n": "3",
+   "code": "70.04.03",
+   "name": "Полка (ЛДСП 16мм ЧЕРНЫЙ 660 WML)",
+   "size": [
+    860,
+    144,
+    16
+   ],
+   "count": 1
+  }
+ ]
+}

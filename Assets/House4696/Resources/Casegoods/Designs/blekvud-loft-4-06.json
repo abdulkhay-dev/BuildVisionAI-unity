@@ -1,0 +1,18 @@
+{
+  "id": "blekvud-loft-4-06",
+  "size": [1402, 802, 750],
+  "parts": [
+    {"id": "top", "grain": "x", "edge": 2, "box": [0, 725, 0, 1402, 750, 802]},
+    {"id": "leg-1", "mat": "metal", "edge": 2, "box": [15, 0, 15, 55, 725, 75]},
+    {"id": "leg-2", "mat": "metal", "edge": 2, "box": [1347, 0, 15, 1387, 725, 75]},
+    {"id": "leg-3", "mat": "metal", "edge": 2, "box": [15, 0, 727, 55, 725, 787]},
+    {"id": "leg-4", "mat": "metal", "edge": 2, "box": [1347, 0, 727, 1387, 725, 787]},
+    {"id": "apron-back", "mat": "metal", "edge": 1.5, "box": [55, 675, 15, 1347, 725, 35]},
+    {"id": "apron-front", "mat": "metal", "edge": 1.5, "box": [55, 675, 767, 1347, 725, 787]},
+    {"id": "apron-l", "mat": "metal", "edge": 1.5, "box": [15, 675, 75, 35, 725, 727]},
+    {"id": "apron-r", "mat": "metal", "edge": 1.5, "box": [1367, 675, 75, 1387, 725, 727]}
+  ],
+  "moves": [
+
+  ]
+}

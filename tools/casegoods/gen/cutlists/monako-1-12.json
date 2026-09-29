@@ -1,0 +1,58 @@
+{
+ "code": "П6.528.1.12",
+ "source": "table of P6-528-1-12.pdf (names and counts; the table has no sizes — sizes, where given, are read off the dimension-true vector drawing, ±1 mm)",
+ "rows": [
+  {
+   "n": "1",
+   "name": "Стенка вертикальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "2",
+   "name": "Стенка вертикальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "3",
+   "name": "Стенка горизонтальная",
+   "size": [
+    634,
+    421,
+    25
+   ],
+   "count": 1
+  },
+  {
+   "n": "4",
+   "name": "Стенка горизонтальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "5",
+   "name": "Стенка горизонтальная",
+   "size": null,
+   "count": 5
+  },
+  {
+   "n": "6",
+   "name": "Стенка передняя",
+   "size": null,
+   "count": 2
+  },
+  {
+   "n": "7",
+   "name": "Стенка задняя",
+   "size": null,
+   "count": 2
+  },
+  {
+   "n": "8",
+   "name": "Стенка задняя",
+   "size": null,
+   "count": 4
+  }
+ ]
+}

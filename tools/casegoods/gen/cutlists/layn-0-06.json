@@ -1,0 +1,42 @@
+{
+ "code": "П6.619.0.06",
+ "source": "reference rows (complete); no sizes — positions measured on the front and top views",
+ "rows": [
+  {
+   "n": "1",
+   "name": "Стенка вертикальная",
+   "size": null,
+   "count": 2
+  },
+  {
+   "n": "2",
+   "name": "Стенка горизонтальная",
+   "size": null,
+   "count": 2
+  },
+  {
+   "n": "3",
+   "name": "Стенка вертикальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "4",
+   "name": "Крышка",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "5",
+   "name": "Дно",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "6",
+   "name": "Перегородка",
+   "size": null,
+   "count": 1
+  }
+ ]
+}

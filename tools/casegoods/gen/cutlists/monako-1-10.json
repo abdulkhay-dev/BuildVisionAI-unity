@@ -1,0 +1,151 @@
+{
+ "code": "П6.528.1.10",
+ "source": "table of P6-528-1-10.pdf (names and counts; the table has no sizes — sizes, where given, are read off the dimension-true vector drawing, ±1 mm); assemblies 7 / 8 / 9 («Ящик выдвижной в т.ч.») left out",
+ "rows": [
+  {
+   "n": "1",
+   "name": "Стенка вертикальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "2",
+   "name": "Стенка вертикальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "3",
+   "name": "Крышка",
+   "size": [
+    1054,
+    422,
+    25
+   ],
+   "count": 1
+  },
+  {
+   "n": "4",
+   "name": "Стенка горизонтальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "5",
+   "name": "Стенка передняя",
+   "size": null,
+   "count": 2
+  },
+  {
+   "n": "6",
+   "name": "Стенка передняя",
+   "size": null,
+   "count": 2
+  },
+  {
+   "n": "7.1",
+   "name": "Стенка передняя",
+   "size": [
+    997,
+    285
+   ],
+   "count": 1
+  },
+  {
+   "n": "7.2",
+   "name": "Стенка боковая",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "7.3",
+   "name": "Стенка боковая",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "7.4",
+   "name": "Стенка задняя",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "7.5",
+   "name": "Дно",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "8.1",
+   "name": "Стенка передняя",
+   "size": [
+    997,
+    284
+   ],
+   "count": 1
+  },
+  {
+   "n": "8.2",
+   "name": "Стенка боковая",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "8.3",
+   "name": "Стенка боковая",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "8.4",
+   "name": "Стенка задняя",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "8.5",
+   "name": "Дно",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "9.1",
+   "name": "Стенка передняя",
+   "size": [
+    997,
+    416
+   ],
+   "count": 1
+  },
+  {
+   "n": "9.2",
+   "name": "Стенка боковая",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "9.3",
+   "name": "Стенка боковая",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "9.4",
+   "name": "Стенка задняя",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "9.5",
+   "name": "Дно",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "10",
+   "name": "Стенка задняя",
+   "size": null,
+   "count": 2
+  }
+ ]
+}

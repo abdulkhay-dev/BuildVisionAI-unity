@@ -1,0 +1,27 @@
+{
+  "id": "holten-loft-3-40",
+  "size": [963, 296, 1298],
+  "parts": [
+    {"n": "1", "grain": "y", "box": [0, 0, 0, 963, 1298, 22]},
+    {"n": "2", "grain": "z", "box": [3, 1095, 22, 25, 1159, 274]},
+    {"n": "3", "grain": "z", "box": [938, 1095, 22, 960, 1159, 274]},
+    {"n": "4", "grain": "x", "box": [0, 1095, 274, 963, 1159, 296]},
+    {"n": "5", "grain": "x", "box": [25, 1137, 22, 938, 1159, 274]},
+    {"n": "6", "kind": "soft", "box": [0, 0, 22, 963, 250, 62]},
+    {"id": "hanger-1-a", "kind": "rod", "mat": "metal", "section": "square", "from": [190, 1095, 60], "to": [190, 1020, 60], "d": 10},
+    {"id": "hanger-1-b", "kind": "rod", "mat": "metal", "section": "square", "from": [190, 1020, 60], "to": [190, 1020, 230], "d": 10},
+    {"id": "hanger-1-c", "kind": "rod", "mat": "metal", "section": "square", "from": [190, 1020, 230], "to": [190, 1045, 240], "d": 10},
+    {"id": "hanger-2-a", "kind": "rod", "mat": "metal", "section": "square", "from": [771, 1095, 60], "to": [771, 1020, 60], "d": 10},
+    {"id": "hanger-2-b", "kind": "rod", "mat": "metal", "section": "square", "from": [771, 1020, 60], "to": [771, 1020, 230], "d": 10},
+    {"id": "hanger-2-c", "kind": "rod", "mat": "metal", "section": "square", "from": [771, 1020, 230], "to": [771, 1045, 240], "d": 10},
+    {"id": "hook-1-a", "kind": "rod", "mat": "metal", "from": [196, 880, 22], "to": [196, 880, 72], "d": 9},
+    {"id": "hook-1-b", "kind": "rod", "mat": "metal", "from": [196, 880, 72], "to": [196, 905, 80], "d": 9},
+    {"id": "hook-2-a", "kind": "rod", "mat": "metal", "from": [482, 880, 22], "to": [482, 880, 72], "d": 9},
+    {"id": "hook-2-b", "kind": "rod", "mat": "metal", "from": [482, 880, 72], "to": [482, 905, 80], "d": 9},
+    {"id": "hook-3-a", "kind": "rod", "mat": "metal", "from": [767, 880, 22], "to": [767, 880, 72], "d": 9},
+    {"id": "hook-3-b", "kind": "rod", "mat": "metal", "from": [767, 880, 72], "to": [767, 905, 80], "d": 9}
+  ],
+  "moves": [
+
+  ]
+}

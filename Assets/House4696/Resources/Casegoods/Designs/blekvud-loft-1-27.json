@@ -1,0 +1,32 @@
+{
+  "id": "blekvud-loft-1-27",
+  "size": [954, 600, 2110],
+  "parts": [
+    {"id": "bottom", "grain": "x", "box": [0, 15, 0, 954, 40, 600]},
+    {"id": "side-l", "grain": "y", "box": [2, 40, 1, 27, 2085, 599]},
+    {"id": "side-r", "grain": "y", "box": [927, 40, 1, 952, 2085, 599]},
+    {"id": "top", "grain": "x", "box": [0, 2085, 0, 954, 2110, 600]},
+    {"id": "glide-1", "kind": "tube", "mat": "black", "covers": ["glide"], "box": [25, 0, 25, 55, 15, 55]},
+    {"id": "glide-2", "kind": "tube", "mat": "black", "covers": ["glide"], "box": [25, 0, 545, 55, 15, 575]},
+    {"id": "glide-3", "kind": "tube", "mat": "black", "covers": ["glide"], "box": [462.0, 0, 25, 492.0, 15, 55]},
+    {"id": "glide-4", "kind": "tube", "mat": "black", "covers": ["glide"], "box": [462.0, 0, 545, 492.0, 15, 575]},
+    {"id": "glide-5", "kind": "tube", "mat": "black", "covers": ["glide"], "box": [899, 0, 25, 929, 15, 55]},
+    {"id": "glide-6", "kind": "tube", "mat": "black", "covers": ["glide"], "box": [899, 0, 545, 929, 15, 575]},
+    {"id": "back-1", "kind": "back", "box": [22, 36, 4, 932, 2089, 7.2]},
+    {"id": "hat-shelf-1", "mat": "inner", "box": [28, 1760, 30, 926, 1776, 550]},
+    {"id": "rail-1", "kind": "tube", "mat": "chrome", "box": [28, 1692.5, 287.5, 926, 1717.5, 312.5]},
+    {"id": "shelf-1", "mat": "inner", "box": [28, 600, 30, 926, 616, 550]},
+    {"id": "door-1-lo", "kind": "front", "grain": "x", "mat": "body", "box": [29.5, 42, 583, 475.5, 552, 599]},
+    {"id": "door-1-band", "kind": "front", "grain": "x", "mat": "front", "box": [29.5, 552, 583, 475.5, 1060, 599]},
+    {"id": "door-1-up", "kind": "front", "grain": "x", "mat": "body", "box": [29.5, 1060, 583, 475.5, 2083, 599]},
+    {"id": "h-1", "kind": "handle", "model": "bar", "at": [372.5, 1020], "dir": "right", "d": 150, "band": 10, "t": 7, "standoff": 24, "post": 9, "section": "square", "z": 599},
+    {"id": "door-2-lo", "kind": "front", "grain": "x", "mat": "body", "box": [478.5, 42, 583, 924.5, 552, 599]},
+    {"id": "door-2-band", "kind": "front", "grain": "x", "mat": "front", "box": [478.5, 552, 583, 924.5, 1060, 599]},
+    {"id": "door-2-up", "kind": "front", "grain": "x", "mat": "body", "box": [478.5, 1060, 583, 924.5, 2083, 599]},
+    {"id": "h-2", "kind": "handle", "model": "bar", "at": [581.5, 1020], "dir": "right", "d": 150, "band": 10, "t": 7, "standoff": 24, "post": 9, "section": "square", "z": 599}
+  ],
+  "moves": [
+    {"type": "door", "name": "door_1", "parts": ["door-1-lo", "door-1-band", "door-1-up", "h-1"], "hinge": "left", "angle": 105},
+    {"type": "door", "name": "door_2", "parts": ["door-2-lo", "door-2-band", "door-2-up", "h-2"], "hinge": "right", "angle": 105}
+  ]
+}

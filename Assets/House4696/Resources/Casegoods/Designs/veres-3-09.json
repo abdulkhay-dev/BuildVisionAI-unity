@@ -1,0 +1,25 @@
+{
+  "id": "veres-3-09",
+  "size": [794, 401, 450],
+  "parts": [
+    {"id": "bottom", "box": [0, 18, 0, 794, 43, 401]},
+    {"id": "top", "box": [0, 351, 0, 794, 376, 401]},
+    {"id": "side-l", "box": [0, 43, 0, 25, 351, 401]},
+    {"id": "side-r", "box": [769, 43, 0, 794, 351, 401]},
+    {"id": "back", "kind": "back", "box": [15, 33, 6, 779, 361, 9.5]},
+    {"id": "shelf", "box": [26, 199, 20, 768, 215, 365]},
+    {"id": "f-door_left", "kind": "front", "box": [27.0, 45.0, 385, 395.5, 349.0, 401]},
+    {"id": "h-door_left", "kind": "handle", "model": "bar", "at": [365.5, 230.0], "dir": "up", "d": 170, "band": 12, "t": 8, "standoff": 24, "post": 10, "section": "square", "z": 401},
+    {"id": "f-door_right", "kind": "front", "box": [398.5, 45.0, 385, 767.0, 349.0, 401]},
+    {"id": "h-door_right", "kind": "handle", "model": "bar", "at": [428.5, 230.0], "dir": "up", "d": 170, "band": 12, "t": 8, "standoff": 24, "post": 10, "section": "square", "z": 401},
+    {"id": "cushion", "kind": "soft", "mat": "fabric", "box": [0, 376, 0, 794, 450, 401]},
+    {"id": "foot-1a", "kind": "panel", "mat": "door_enamel_whitey#a3a5a6", "edge": 3, "box": [20, 0, 20, 60, 18, 50]},
+    {"id": "foot-1b", "kind": "panel", "mat": "door_enamel_whitey#a3a5a6", "edge": 3, "box": [20, 0, 351, 60, 18, 381]},
+    {"id": "foot-2a", "kind": "panel", "mat": "door_enamel_whitey#a3a5a6", "edge": 3, "box": [734, 0, 20, 774, 18, 50]},
+    {"id": "foot-2b", "kind": "panel", "mat": "door_enamel_whitey#a3a5a6", "edge": 3, "box": [734, 0, 351, 774, 18, 381]}
+  ],
+  "moves": [
+    {"type": "door", "name": "door_left", "parts": ["f-door_left", "h-door_left"], "hinge": "left", "angle": 100},
+    {"type": "door", "name": "door_right", "parts": ["f-door_right", "h-door_right"], "hinge": "right", "angle": 100}
+  ]
+}

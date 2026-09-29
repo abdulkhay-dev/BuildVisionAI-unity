@@ -1,0 +1,23 @@
+{
+  "id": "veres-3-18",
+  "size": [794, 311, 1370],
+  "parts": [
+    {"id": "board", "box": [32, 0, 0, 762, 1370, 25], "grain": "y"},
+    {"id": "shelf", "box": [0, 1149, 25, 794, 1174, 311]},
+    {"id": "hook-1", "kind": "panel", "mat": "chrome", "edge": 3, "box": [123, 950, 25, 141, 995, 29]},
+    {"id": "hook-1-low", "kind": "rod", "mat": "chrome", "from": [132, 965, 29], "to": [132, 925, 85], "d": 8},
+    {"id": "hook-1-tip", "kind": "rod", "mat": "chrome", "from": [132, 925, 85], "to": [132, 945, 97], "d": 8},
+    {"id": "hook-1-up", "kind": "rod", "mat": "chrome", "from": [132, 985, 29], "to": [132, 1010, 59], "d": 7},
+    {"id": "hook-2", "kind": "panel", "mat": "chrome", "edge": 3, "box": [388, 950, 25, 406, 995, 29]},
+    {"id": "hook-2-low", "kind": "rod", "mat": "chrome", "from": [397, 965, 29], "to": [397, 925, 85], "d": 8},
+    {"id": "hook-2-tip", "kind": "rod", "mat": "chrome", "from": [397, 925, 85], "to": [397, 945, 97], "d": 8},
+    {"id": "hook-2-up", "kind": "rod", "mat": "chrome", "from": [397, 985, 29], "to": [397, 1010, 59], "d": 7},
+    {"id": "hook-3", "kind": "panel", "mat": "chrome", "edge": 3, "box": [653, 950, 25, 671, 995, 29]},
+    {"id": "hook-3-low", "kind": "rod", "mat": "chrome", "from": [662, 965, 29], "to": [662, 925, 85], "d": 8},
+    {"id": "hook-3-tip", "kind": "rod", "mat": "chrome", "from": [662, 925, 85], "to": [662, 945, 97], "d": 8},
+    {"id": "hook-3-up", "kind": "rod", "mat": "chrome", "from": [662, 985, 29], "to": [662, 1010, 59], "d": 7}
+  ],
+  "moves": [
+
+  ]
+}

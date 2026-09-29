@@ -1,0 +1,18 @@
+{
+ "code": "П6.619.0.09",
+ "source": "reference rows (complete); no sizes — positions measured on the front and side views",
+ "rows": [
+  {
+   "n": "1",
+   "name": "Стенка передняя",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "2",
+   "name": "Стенка горизонтальная",
+   "size": null,
+   "count": 1
+  }
+ ]
+}

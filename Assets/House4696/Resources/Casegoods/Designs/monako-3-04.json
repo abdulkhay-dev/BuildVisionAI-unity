@@ -1,0 +1,19 @@
+{
+  "id": "monako-3-04",
+  "size": [900, 266, 1650],
+  "parts": [
+    {"n": "panel", "box": [0, 0, 0, 900, 1650, 25], "grain": "y"},
+    {"n": "shelf", "box": [0, 1395, 25, 900, 1420, 266], "grain": "x"},
+    {"n": "bracket", "box": [80, 1335, 25, 96, 1395, 150], "id": "bracket-l"},
+    {"n": "bracket", "box": [804, 1335, 25, 820, 1395, 150], "id": "bracket-r"},
+    {"id": "hook-1", "kind": "handle", "model": "knob", "mat": "chrome", "at": [180, 1140], "d": 28, "standoff": 55, "z": 25, "covers": ["крючок"]},
+    {"id": "hook-2", "kind": "handle", "model": "knob", "mat": "chrome", "at": [360, 1140], "d": 28, "standoff": 55, "z": 25, "covers": ["крючок"]},
+    {"id": "hook-3", "kind": "handle", "model": "knob", "mat": "chrome", "at": [540, 1140], "d": 28, "standoff": 55, "z": 25, "covers": ["крючок"]},
+    {"id": "hook-4", "kind": "handle", "model": "knob", "mat": "chrome", "at": [720, 1140], "d": 28, "standoff": 55, "z": 25, "covers": ["крючок"]},
+    {"id": "hook-5", "kind": "handle", "model": "knob", "mat": "chrome", "at": [360, 800], "d": 28, "standoff": 55, "z": 25, "covers": ["крючок"]},
+    {"id": "hook-6", "kind": "handle", "model": "knob", "mat": "chrome", "at": [540, 800], "d": 28, "standoff": 55, "z": 25, "covers": ["крючок"]}
+  ],
+  "moves": [
+
+  ]
+}

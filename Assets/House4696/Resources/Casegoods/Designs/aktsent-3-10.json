@@ -1,0 +1,14 @@
+{
+  "id": "aktsent-3-10",
+  "size": [200, 29, 470],
+  "parts": [
+    {"id": "frame", "kind": "moulding", "profile": "aktsent-frame", "closed": true, "plane": "front", "z": 0, "mat": "body", "path": [[0, 0], [200, 0], [200, 470], [0, 470]]},
+    {"id": "board", "kind": "panel", "mat": "front", "box": [27, 27, 2, 173, 443, 12]},
+    {"id": "hook-1", "mat": "black", "edge": 1, "box": [120, 327, 12, 130, 377, 29], "shape": "path", "outline": "M 12 327 L 29 327 L 29 339 L 20 339 L 20 371 Q 20 377 16 377 L 12 377 Z"},
+    {"id": "hook-2", "mat": "black", "edge": 1, "box": [70, 213, 12, 80, 263, 29], "shape": "path", "outline": "M 12 213 L 29 213 L 29 225 L 20 225 L 20 257 Q 20 263 16 263 L 12 263 Z"},
+    {"id": "hook-3", "mat": "black", "edge": 1, "box": [120, 100, 12, 130, 150, 29], "shape": "path", "outline": "M 12 100 L 29 100 L 29 112 L 20 112 L 20 144 Q 20 150 16 150 L 12 150 Z"}
+  ],
+  "moves": [
+
+  ]
+}

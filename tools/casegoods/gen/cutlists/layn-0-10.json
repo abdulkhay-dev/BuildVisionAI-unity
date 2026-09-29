@@ -1,0 +1,126 @@
+{
+ "code": "П6.619.0.10",
+ "source": "reference rows with the sub-numbers restored from the page (15.1 / 15.2, 16.1 / 16.2 — the table prints the second «накладка» as 15.2 too); no sizes in the table — positions measured on the front view",
+ "rows": [
+  {
+   "n": "1",
+   "name": "Стенка вертикальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "2",
+   "name": "Стенка вертикальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "3",
+   "name": "Стенка горизонтальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "4",
+   "name": "Стенка горизонтальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "5",
+   "name": "Перегородка",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "6",
+   "name": "Стенка горизонтальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "7",
+   "name": "Стенка вертикальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "8",
+   "name": "Стенка вертикальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "9",
+   "name": "Стенка горизонтальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "10",
+   "name": "Стенка горизонтальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "11",
+   "name": "Полка (стекло)",
+   "size": null,
+   "count": 3
+  },
+  {
+   "n": "12",
+   "name": "Полка",
+   "size": null,
+   "count": 2
+  },
+  {
+   "n": "13",
+   "name": "Стенка передняя",
+   "size": null,
+   "count": 2
+  },
+  {
+   "n": "14",
+   "name": "Стенка боковая",
+   "size": null,
+   "count": 2
+  },
+  {
+   "n": "15.1",
+   "name": "Дверь",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "15.2",
+   "name": "Накладка (стекло)",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "16.1",
+   "name": "Дверь",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "16.2",
+   "name": "Накладка (стекло; в таблице 15.2)",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "17",
+   "name": "Стенка задняя",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "18",
+   "name": "Стенка задняя",
+   "size": null,
+   "count": 2
+  }
+ ]
+}

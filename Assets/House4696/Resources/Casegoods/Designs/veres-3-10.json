@@ -1,0 +1,29 @@
+{
+  "id": "veres-3-10",
+  "size": [496, 401, 867],
+  "parts": [
+    {"id": "bottom", "box": [0, 18, 0, 496, 43, 401]},
+    {"id": "top", "box": [0, 842, 0, 496, 867, 401]},
+    {"id": "side-l", "box": [0, 43, 0, 25, 842, 401]},
+    {"id": "side-r", "box": [471, 43, 0, 496, 842, 401]},
+    {"id": "back", "kind": "back", "box": [15, 33, 6, 481, 852, 9.5]},
+    {"id": "shelf", "box": [26, 339, 20, 470, 355, 365]},
+    {"id": "rail", "box": [25, 623, 10, 471, 639, 385]},
+    {"id": "f-drawer", "kind": "front", "box": [27.0, 641.0, 385, 469.0, 840.0, 401], "mat": "body"},
+    {"id": "h-drawer", "kind": "handle", "model": "bar", "at": [248.0, 814.0], "dir": "right", "d": 170, "band": 12, "t": 8, "standoff": 24, "post": 10, "section": "square", "z": 401},
+    {"id": "drawer-side-l", "box": [38, 653, 45, 54, 803, 385]},
+    {"id": "drawer-side-r", "box": [442, 653, 45, 458, 803, 385]},
+    {"id": "drawer-back", "box": [54, 653, 45, 442, 803, 61]},
+    {"id": "drawer-bottom", "kind": "back", "box": [49, 663, 49, 447, 666.5, 383]},
+    {"id": "f-door", "kind": "front", "box": [27.0, 45.0, 385, 469.0, 638.0, 401]},
+    {"id": "h-door", "kind": "handle", "model": "bar", "at": [57.0, 545.0], "dir": "up", "d": 170, "band": 12, "t": 8, "standoff": 24, "post": 10, "section": "square", "z": 401},
+    {"id": "foot-1a", "kind": "panel", "mat": "door_enamel_whitey#a3a5a6", "edge": 3, "box": [20, 0, 20, 60, 18, 50]},
+    {"id": "foot-1b", "kind": "panel", "mat": "door_enamel_whitey#a3a5a6", "edge": 3, "box": [20, 0, 351, 60, 18, 381]},
+    {"id": "foot-2a", "kind": "panel", "mat": "door_enamel_whitey#a3a5a6", "edge": 3, "box": [436, 0, 20, 476, 18, 50]},
+    {"id": "foot-2b", "kind": "panel", "mat": "door_enamel_whitey#a3a5a6", "edge": 3, "box": [436, 0, 351, 476, 18, 381]}
+  ],
+  "moves": [
+    {"type": "drawer", "name": "drawer", "parts": ["f-drawer", "h-drawer", "drawer-side-l", "drawer-side-r", "drawer-back", "drawer-bottom"], "travel": 300},
+    {"type": "door", "name": "door", "parts": ["f-door", "h-door"], "hinge": "right", "angle": 100}
+  ]
+}

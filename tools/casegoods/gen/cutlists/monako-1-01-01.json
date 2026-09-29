@@ -1,0 +1,215 @@
+{
+ "code": "П6.528.1.01-01",
+ "source": "table of P6-528-1-01-01.pdf (names and counts; the table has no sizes — sizes, where given, are read off the dimension-true vector drawing, ±1 mm); assemblies 18–21 left out",
+ "rows": [
+  {
+   "n": "1",
+   "name": "Стенка вертикальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "2",
+   "name": "Стенка вертикальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "3",
+   "name": "Перегородка",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "4",
+   "name": "Перегородка",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "5",
+   "name": "Перегородка",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "6",
+   "name": "Стенка горизонтальная",
+   "size": [
+    1885,
+    605,
+    25
+   ],
+   "count": 1
+  },
+  {
+   "n": "7",
+   "name": "Стенка горизонтальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "8",
+   "name": "Стенка горизонтальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "9",
+   "name": "Стенка горизонтальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "10",
+   "name": "Стенка горизонтальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "11",
+   "name": "Стенка горизонтальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "12",
+   "name": "Стенка горизонтальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "13",
+   "name": "Полка",
+   "size": null,
+   "count": 2
+  },
+  {
+   "n": "14",
+   "name": "Полка",
+   "size": null,
+   "count": 2
+  },
+  {
+   "n": "15",
+   "name": "Брусок",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "16",
+   "name": "Стенка передняя",
+   "size": null,
+   "count": 2
+  },
+  {
+   "n": "17",
+   "name": "Стенка передняя",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "18.1",
+   "name": "Дверь",
+   "size": [
+    1334,
+    455
+   ],
+   "count": 1
+  },
+  {
+   "n": "18.2",
+   "name": "Дверь",
+   "size": [
+    715,
+    455
+   ],
+   "count": 1
+  },
+  {
+   "n": "18.3",
+   "name": "Накладка",
+   "size": null,
+   "count": 4,
+   "note": "the table lists 18.3 twice (under doors 18 and 21) but all four doors are split in two and joined by it: built on each door"
+  },
+  {
+   "n": "19.1",
+   "name": "Дверь",
+   "size": [
+    1334,
+    455
+   ],
+   "count": 1
+  },
+  {
+   "n": "19.2",
+   "name": "Дверь",
+   "size": [
+    715,
+    455
+   ],
+   "count": 1
+  },
+  {
+   "n": "20.1",
+   "name": "Дверь",
+   "size": [
+    1334,
+    455
+   ],
+   "count": 1
+  },
+  {
+   "n": "20.2",
+   "name": "Дверь",
+   "size": [
+    674,
+    455
+   ],
+   "count": 1
+  },
+  {
+   "n": "21.1",
+   "name": "Дверь",
+   "size": [
+    1334,
+    455
+   ],
+   "count": 1
+  },
+  {
+   "n": "21.2",
+   "name": "Дверь",
+   "size": [
+    674,
+    455
+   ],
+   "count": 1
+  },
+  {
+   "n": "22",
+   "name": "Стенка задняя",
+   "size": null,
+   "count": 2
+  },
+  {
+   "n": "23",
+   "name": "Стенка задняя",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "24",
+   "name": "Стенка задняя",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "25",
+   "name": "Стенка задняя",
+   "size": null,
+   "count": 1
+  }
+ ]
+}

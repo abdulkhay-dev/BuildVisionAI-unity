@@ -1,0 +1,25 @@
+{
+  "id": "layn-0-06",
+  "size": [1000, 600, 422],
+  "parts": [
+    {"n": "5", "mat": "body", "grain": "x", "box": [120, 60.3, 0, 1000, 75.9, 600]},
+    {"n": "4", "mat": "body", "grain": "x", "box": [120, 406.4, 0, 1000, 422, 600]},
+    {"n": "3", "mat": "body", "box": [983, 75.9, 0, 999, 406.4, 600]},
+    {"n": "2", "id": "2-bottom", "mat": "inner", "grain": "x", "box": [0, 75.9, 19.7, 660, 92.1, 580.3]},
+    {"n": "2", "id": "2-top", "mat": "inner", "grain": "x", "box": [0, 390.2, 19.7, 660, 406.4, 580.3]},
+    {"n": "1", "id": "1-l", "mat": "inner", "box": [643, 92.1, 19.7, 659, 390.2, 580.3]},
+    {"n": "1", "id": "1-r", "mat": "inner", "box": [1, 92.1, 19.7, 17, 390.2, 580.3]},
+    {"n": "6", "mat": "inner", "grain": "x", "box": [17, 92.1, 292, 643, 390.2, 308]},
+    {"id": "wheel-1", "kind": "panel", "mat": "black", "shape": "circle", "edge": 3, "box": [880.6, 0, 35.0, 900.6, 50, 85.0]},
+    {"id": "wheel-1-fork", "kind": "panel", "mat": "black", "edge": 1, "box": [870.6, 50, 40.0, 910.6, 60.3, 80.0]},
+    {"id": "wheel-2", "kind": "panel", "mat": "black", "shape": "circle", "edge": 3, "box": [880.6, 0, 515.0, 900.6, 50, 565.0]},
+    {"id": "wheel-2-fork", "kind": "panel", "mat": "black", "edge": 1, "box": [870.6, 50, 520.0, 910.6, 60.3, 560.0]},
+    {"id": "wheel-3", "kind": "panel", "mat": "black", "shape": "circle", "edge": 3, "box": [219.3, 0, 35.0, 239.3, 50, 85.0]},
+    {"id": "wheel-3-fork", "kind": "panel", "mat": "black", "edge": 1, "box": [209.3, 50, 40.0, 249.3, 60.3, 80.0]},
+    {"id": "wheel-4", "kind": "panel", "mat": "black", "shape": "circle", "edge": 3, "box": [219.3, 0, 515.0, 239.3, 50, 565.0]},
+    {"id": "wheel-4-fork", "kind": "panel", "mat": "black", "edge": 1, "box": [209.3, 50, 520.0, 249.3, 60.3, 560.0]}
+  ],
+  "moves": [
+
+  ]
+}

@@ -1,0 +1,72 @@
+{
+ "code": "П6.619.1.12",
+ "source": "table of the page (the PDF parser lost rows 5 and 6.x); the metal base is «в комплект также входит» (no row); no sizes — positions measured on the front and side views",
+ "rows": [
+  {
+   "n": "1",
+   "name": "Стенка вертикальная",
+   "size": null,
+   "count": 2
+  },
+  {
+   "n": "2",
+   "name": "Стенка горизонтальная",
+   "size": null,
+   "count": 2
+  },
+  {
+   "n": "3",
+   "name": "Стенка вертикальная",
+   "size": null,
+   "count": 2
+  },
+  {
+   "n": "4",
+   "name": "Крышка",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "5",
+   "name": "Дно",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "6.1",
+   "name": "Стенка передняя",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "6.2",
+   "name": "Стенка боковая",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "6.3",
+   "name": "Стенка боковая",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "6.4",
+   "name": "Стенка задняя",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "6.5",
+   "name": "Дно",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "7",
+   "name": "Стенка задняя",
+   "size": null,
+   "count": 1
+  }
+ ]
+}

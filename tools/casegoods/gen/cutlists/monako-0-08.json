@@ -1,0 +1,28 @@
+{
+ "code": "П6.528.0.08",
+ "source": "P6-528-0-08-Polka-1.pdf: names from the table, sizes from the dimension-true drawing (front and side views)",
+ "rows": [
+  {
+   "n": "1",
+   "code": "П6.528.0.08.01",
+   "name": "Стенка вертикальная",
+   "size": [
+    1420,
+    340,
+    25
+   ],
+   "count": 1
+  },
+  {
+   "n": "2",
+   "code": "П6.528.0.08.02",
+   "name": "Стенка горизонтальная",
+   "size": [
+    1420,
+    215,
+    25
+   ],
+   "count": 1
+  }
+ ]
+}

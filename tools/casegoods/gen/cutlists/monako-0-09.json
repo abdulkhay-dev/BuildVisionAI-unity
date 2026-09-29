@@ -1,0 +1,64 @@
+{
+ "code": "П6.528.0.09",
+ "source": "table of P6-528-0-09-ispr.pdf (names and counts; the table has no sizes — sizes, where given, are read off the dimension-true vector drawing, ±1 mm); row 7 (Опора, 2) added from the page (lost in the text)",
+ "rows": [
+  {
+   "n": "1",
+   "name": "Полукрышка",
+   "size": [
+    750,
+    900,
+    25
+   ],
+   "count": 2
+  },
+  {
+   "n": "2",
+   "name": "Царга",
+   "size": null,
+   "count": 2
+  },
+  {
+   "n": "3",
+   "name": "Царга",
+   "size": null,
+   "count": 2
+  },
+  {
+   "n": "4",
+   "name": "Опора",
+   "size": null,
+   "count": 2
+  },
+  {
+   "n": "5",
+   "name": "Опора",
+   "size": null,
+   "count": 2
+  },
+  {
+   "n": "6",
+   "name": "Опора",
+   "size": null,
+   "count": 2
+  },
+  {
+   "n": "7",
+   "name": "Опора",
+   "size": null,
+   "count": 2
+  },
+  {
+   "n": "8",
+   "name": "Вкладыш",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "9",
+   "name": "Элемент опорный",
+   "size": null,
+   "count": 2
+  }
+ ]
+}

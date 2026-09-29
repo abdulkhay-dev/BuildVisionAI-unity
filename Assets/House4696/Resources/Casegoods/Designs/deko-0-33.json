@@ -1,0 +1,37 @@
+{
+  "id": "deko-0-33",
+  "size": [1542, 400, 450],
+  "parts": [
+    {"id": "bottom", "box": [0, 14, 0, 1542, 30, 400]},
+    {"id": "side-l", "box": [0, 30, 0, 16, 434, 400]},
+    {"id": "side-r", "box": [1526, 30, 0, 1542, 434, 400]},
+    {"id": "top", "box": [0, 434, 0, 1542, 450, 400]},
+    {"id": "back", "box": [10, 24, 6, 1532, 440, 9.5], "kind": "back"},
+    {"id": "glide-1f", "box": [15, 0, 330, 105, 14, 370], "mat": "black"},
+    {"id": "glide-1b", "box": [15, 0, 30, 105, 14, 70], "mat": "black"},
+    {"id": "glide-2f", "box": [726.0, 0, 330, 816.0, 14, 370], "mat": "black"},
+    {"id": "glide-2b", "box": [726.0, 0, 30, 816.0, 14, 70], "mat": "black"},
+    {"id": "glide-3f", "box": [1437, 0, 330, 1527, 14, 370], "mat": "black"},
+    {"id": "glide-3b", "box": [1437, 0, 30, 1527, 14, 70], "mat": "black"},
+    {"id": "partition", "box": [998.0, 30, 10, 1014.0, 434, 382]},
+    {"id": "niche-floor", "box": [16, 284, 10, 998, 300, 382]},
+    {"id": "shelf-r", "box": [1015, 232, 20, 1525, 248, 344]},
+    {"id": "drawer", "box": [18, 32, 384, 1012, 300, 400], "kind": "front", "grain": "x"},
+    {"id": "dr1-l", "box": [29, 42, 32, 45, 242, 384]},
+    {"id": "dr1-r", "box": [969, 42, 32, 985, 242, 384]},
+    {"id": "dr1-back", "box": [45, 42, 32, 969, 242, 48]},
+    {"id": "dr1-front", "box": [45, 42, 368, 969, 242, 384]},
+    {"id": "dr1-bottom", "box": [39, 52, 42, 975, 55.5, 374], "kind": "back"},
+    {"id": "k-1", "kind": "handle", "model": "edge", "d": 152, "band": 14, "t": 2, "standoff": 18, "dir": "down", "at": [266.5, 300], "z": 400},
+    {"id": "k-2", "kind": "handle", "model": "edge", "d": 152, "band": 14, "t": 2, "standoff": 18, "dir": "down", "at": [763.5, 300], "z": 400},
+    {"id": "door", "box": [1016, 32, 364, 1524, 432, 380], "kind": "front", "mat": "accent", "grain": "y"},
+    {"id": "door-slat1", "box": [1024, 32, 380, 1054, 432, 400], "mat": "slat", "grain": "y"},
+    {"id": "door-slat2", "box": [1082.5, 32, 380, 1112.5, 432, 400], "mat": "slat", "grain": "y"},
+    {"id": "door-slat3", "box": [1141, 32, 380, 1171, 432, 400], "mat": "slat", "grain": "y"},
+    {"id": "door-slat4", "box": [1199.5, 32, 380, 1229.5, 432, 400], "mat": "slat", "grain": "y"}
+  ],
+  "moves": [
+    {"type": "drawer", "name": "drawer", "parts": ["drawer", "dr1-l", "dr1-r", "dr1-back", "dr1-front", "dr1-bottom", "k-1", "k-2"], "travel": 300},
+    {"type": "door", "name": "door", "parts": ["door", "door-slat1", "door-slat2", "door-slat3", "door-slat4"], "hinge": "right", "angle": 105}
+  ]
+}

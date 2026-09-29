@@ -1,0 +1,32 @@
+{
+  "id": "monako-3-02",
+  "size": [970, 421, 980],
+  "parts": [
+    {"n": "side-l", "box": [0.0, 5.0, 0, 25.0, 955.0, 420.0]},
+    {"n": "side-r", "box": [945.0, 5.0, 0, 970.0, 955.0, 420.0]},
+    {"n": "top", "box": [0, 955.0, 0, 970, 980, 421], "grain": "x"},
+    {"n": "plinth", "box": [25.0, 5.0, 357.0, 945.0, 61, 373.0], "id": "plinth-f"},
+    {"n": "plinth", "box": [25.0, 5.0, 3, 945.0, 61, 19], "id": "plinth-b"},
+    {"n": "bottom", "box": [25.0, 61, 3, 945.0, 77, 373.0]},
+    {"n": "rail", "box": [25.0, 698, 357.0, 945.0, 768, 373.0]},
+    {"n": "shelf-fixed", "box": [25.0, 768, 3, 945.0, 784, 373.0]},
+    {"n": "shelf", "box": [26.0, 400, 3, 944.0, 416, 355.0]},
+    {"n": "back", "box": [8, 63, 0.0, 962, 973, 3.0], "kind": "back"},
+    {"n": "drawer-front", "box": [27, 772, 373.5, 943, 953, 393.0], "kind": "front"},
+    {"n": "door-l", "box": [27.0, 63, 373.5, 484.0, 768, 393.0], "kind": "front", "shape": "path", "outline": "M 27 63 L 484 63 L 484 768 L 446.1 728.6 L 407.1 730.5 L 368.2 733.5 L 329.3 737.9 L 290.4 743.5 L 251.4 750.3 L 212.5 758.5 L 173.6 768 L 27 768 Z", "face": {"type": "grooves", "w": 8, "depth": 3, "flute": "v", "lines": [[27.0, 418, 484.0, 418]]}},
+    {"n": "door-r", "box": [486.0, 63, 373.5, 943.0, 768, 393.0], "kind": "front", "shape": "path", "outline": "M 486 63 L 943 63 L 943 768 L 796.4 768 L 757.5 758.5 L 718.6 750.3 L 679.7 743.5 L 640.7 737.9 L 601.8 733.5 L 562.9 730.5 L 523.9 728.6 L 486 768 Z", "face": {"type": "grooves", "w": 8, "depth": 3, "flute": "v", "lines": [[486.0, 418, 943.0, 418]]}},
+    {"n": "box-l", "box": [38, 800, 23.5, 54, 930, 373.5], "id": "box-l-d"},
+    {"n": "box-r", "box": [916, 800, 23.5, 932, 930, 373.5], "id": "box-r-d"},
+    {"n": "box-b", "box": [54, 814, 23.5, 916, 930, 39.5], "id": "box-b-d"},
+    {"n": "box-bottom", "box": [49, 810, 23.5, 921, 813.0, 378.5], "id": "box-bottom-d", "kind": "back"},
+    {"id": "g-1", "kind": "tube", "mat": "black", "box": [2.5, 0, 15, 22.5, 5.0, 35], "covers": ["g"]},
+    {"id": "g-2", "kind": "tube", "mat": "black", "box": [2.5, 0, 385, 22.5, 5.0, 405], "covers": ["g"]},
+    {"id": "g-3", "kind": "tube", "mat": "black", "box": [947.5, 0, 15, 967.5, 5.0, 35], "covers": ["g"]},
+    {"id": "g-4", "kind": "tube", "mat": "black", "box": [947.5, 0, 385, 967.5, 5.0, 405], "covers": ["g"]}
+  ],
+  "moves": [
+    {"type": "drawer", "name": "drawer", "parts": ["drawer-front", "box-l-d", "box-r-d", "box-b-d", "box-bottom-d"], "travel": 300},
+    {"type": "door", "name": "door_left", "parts": ["door-l"], "hinge": "left", "angle": 100},
+    {"type": "door", "name": "door_right", "parts": ["door-r"], "hinge": "right", "angle": 100}
+  ]
+}

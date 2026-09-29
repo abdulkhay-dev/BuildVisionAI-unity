@@ -1,0 +1,24 @@
+{
+ "code": "П3.0583.0.08",
+ "source": "page image pages/forte-loft-0-08-p1.png (no text layer; «поз., наименование, маркировка, материал, кол-во, длина, ширина»), read at 200 dpi from IS-P3-583-0-08-Forte-SHkaf-2d-1.pdf. Row 15 (щит двери) is printed 398 × 100: a misprint of 1371 × 100 — the exploded view on the same page labels 13 and 15 on the left vitrine door and 12 and 14 on the right one, the front view draws each vitrine door as two 100 mm stiles 1371 high with the glass 304 between them, and no 398 mm stile exists (the lower doors 16 / 17 are single panels 398 × 400). Corrected to 1371.",
+ "rows": [
+  {"n": "1", "name": "Крышка (ЛДСП Дуб Канзас)", "size": [845, 350], "count": 1},
+  {"n": "2", "name": "Дно (ЛДСП Дуб Канзас)", "size": [845, 350], "count": 1},
+  {"n": "3", "name": "Стенка вертикальная (ЛДСП Дуб Канзас)", "size": [1775, 330], "count": 1},
+  {"n": "4", "name": "Стенка вертикальная (ЛДСП Дуб Канзас)", "size": [1775, 330], "count": 1},
+  {"n": "5", "name": "Стенка задняя (ДВП черная)", "size": [1378, 411], "count": 2},
+  {"n": "6", "name": "Перегородка (ЛДСП Дуб Канзас)", "size": [1775, 294], "count": 1},
+  {"n": "7", "name": "Стенка горизонтальная (ЛДСП Дуб Канзас)", "size": [396, 294], "count": 1},
+  {"n": "8", "name": "Стенка горизонтальная (ЛДСП Дуб Канзас)", "size": [396, 294], "count": 1},
+  {"n": "9", "name": "Полка стеклянная (стекло прозрачное 6 мм)", "size": [396, 288], "count": 4},
+  {"n": "10", "name": "Брусок (ЛДСП черный)", "size": [1773, 60], "count": 1},
+  {"n": "11", "name": "Стекло (стекло прозрачное 6 мм)", "size": [1371, 304], "count": 2},
+  {"n": "12", "name": "Щит двери (ЛДСП Дуб Канзас)", "size": [1371, 100], "count": 1},
+  {"n": "13", "name": "Щит двери (ЛДСП Дуб Канзас)", "size": [1371, 100], "count": 1},
+  {"n": "14", "name": "Щит двери (ЛДСП Дуб Канзас)", "size": [1371, 100], "count": 1},
+  {"n": "15", "name": "Щит двери (ЛДСП Дуб Канзас) — printed 398 × 100, corrected (see source)", "size": [1371, 100], "count": 1},
+  {"n": "16", "name": "Дверь (ЛДСП Дуб Канзас)", "size": [398, 400], "count": 1},
+  {"n": "17", "name": "Дверь (ЛДСП Дуб Канзас)", "size": [398, 400], "count": 1},
+  {"n": "18", "name": "Стенка задняя (ДВП черная)", "size": [405, 411], "count": 2}
+ ]
+}

@@ -1,0 +1,11 @@
+{
+  "id": "layn-1-03",
+  "size": [1000, 20, 700],
+  "parts": [
+    {"id": "board", "mat": "body", "grain": "x", "box": [0, 0, 0, 1000, 700, 16]},
+    {"id": "mirror", "kind": "mirror", "box": [25, 25, 16, 975, 675, 20]}
+  ],
+  "moves": [
+
+  ]
+}

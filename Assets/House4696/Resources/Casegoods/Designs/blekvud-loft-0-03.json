@@ -1,0 +1,38 @@
+{
+  "id": "blekvud-loft-0-03",
+  "size": [1600, 455, 575],
+  "parts": [
+    {"id": "bottom", "grain": "x", "box": [0, 120, 0, 1600, 145, 455]},
+    {"id": "side-l", "grain": "y", "box": [2, 145, 1, 27, 550, 454]},
+    {"id": "side-r", "grain": "y", "box": [1573, 145, 1, 1598, 550, 454]},
+    {"id": "top", "grain": "x", "box": [0, 550, 0, 1600, 575, 455]},
+    {"id": "leg-1", "mat": "metal", "edge": 1.5, "box": [0, 0, 0, 25, 120, 25]},
+    {"id": "leg-1-ax", "mat": "metal", "edge": 1.5, "box": [25, 95, 0, 110, 120, 25]},
+    {"id": "leg-1-az", "mat": "metal", "edge": 1.5, "box": [0, 95, 25, 25, 120, 110]},
+    {"id": "leg-2", "mat": "metal", "edge": 1.5, "box": [0, 0, 430, 25, 120, 455]},
+    {"id": "leg-2-ax", "mat": "metal", "edge": 1.5, "box": [25, 95, 430, 110, 120, 455]},
+    {"id": "leg-2-az", "mat": "metal", "edge": 1.5, "box": [0, 95, 345, 25, 120, 430]},
+    {"id": "leg-3", "mat": "metal", "edge": 1.5, "box": [1575, 0, 0, 1600, 120, 25]},
+    {"id": "leg-3-ax", "mat": "metal", "edge": 1.5, "box": [1490, 95, 0, 1575, 120, 25]},
+    {"id": "leg-3-az", "mat": "metal", "edge": 1.5, "box": [1575, 95, 25, 1600, 120, 110]},
+    {"id": "leg-4", "mat": "metal", "edge": 1.5, "box": [1575, 0, 430, 1600, 120, 455]},
+    {"id": "leg-4-ax", "mat": "metal", "edge": 1.5, "box": [1490, 95, 430, 1575, 120, 455]},
+    {"id": "leg-4-az", "mat": "metal", "edge": 1.5, "box": [1575, 95, 345, 1600, 120, 430]},
+    {"id": "partition", "grain": "y", "box": [985, 145, 7.5, 1001, 550, 438]},
+    {"id": "back", "kind": "back", "box": [22, 141, 4, 1578, 554, 7.2]},
+    {"id": "shelf-niche", "box": [27, 434, 7.5, 985, 450, 454]},
+    {"id": "shelf-r", "box": [1002, 330, 30, 1572, 346, 420]},
+    {"id": "front-1", "kind": "front", "grain": "x", "box": [29, 147, 438, 983, 431, 454]},
+    {"id": "side-l-1", "box": [39.7, 165, 38, 55.7, 385, 438]},
+    {"id": "side-r-1", "box": [956.3, 165, 38, 972.3, 385, 438]},
+    {"id": "back-1", "box": [55.7, 185, 38, 956.3, 385, 54]},
+    {"id": "bottom-1", "kind": "back", "box": [49.7, 181.8, 38, 962.3, 185, 443]},
+    {"id": "h-drawer", "kind": "handle", "model": "bar", "at": [506.0, 391], "dir": "right", "d": 150, "band": 10, "t": 7, "standoff": 24, "post": 9, "section": "square", "z": 454},
+    {"id": "door", "kind": "front", "grain": "x", "box": [987, 147, 438, 1571, 548, 454]},
+    {"id": "h-door", "kind": "handle", "model": "bar", "at": [1279.0, 508], "dir": "right", "d": 150, "band": 10, "t": 7, "standoff": 24, "post": 9, "section": "square", "z": 454}
+  ],
+  "moves": [
+    {"type": "drawer", "name": "drawer_1", "parts": ["front-1", "side-l-1", "side-r-1", "back-1", "bottom-1", "h-drawer"], "travel": 350},
+    {"type": "door", "name": "door", "parts": ["door", "h-door"], "hinge": "right", "angle": 105}
+  ]
+}

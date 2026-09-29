@@ -1,0 +1,41 @@
+{
+  "id": "blekvud-loft-0-04",
+  "size": [700, 400, 1900],
+  "parts": [
+    {"id": "bottom", "grain": "x", "box": [0, 120, 0, 700, 145, 400]},
+    {"id": "side-l", "grain": "y", "box": [2, 145, 1, 27, 1875, 399]},
+    {"id": "side-r", "grain": "y", "box": [673, 145, 1, 698, 1875, 399]},
+    {"id": "top", "grain": "x", "box": [0, 1875, 0, 700, 1900, 400]},
+    {"id": "leg-1", "mat": "metal", "edge": 1.5, "box": [0, 0, 0, 25, 120, 25]},
+    {"id": "leg-1-ax", "mat": "metal", "edge": 1.5, "box": [25, 95, 0, 110, 120, 25]},
+    {"id": "leg-1-az", "mat": "metal", "edge": 1.5, "box": [0, 95, 25, 25, 120, 110]},
+    {"id": "leg-2", "mat": "metal", "edge": 1.5, "box": [0, 0, 375, 25, 120, 400]},
+    {"id": "leg-2-ax", "mat": "metal", "edge": 1.5, "box": [25, 95, 375, 110, 120, 400]},
+    {"id": "leg-2-az", "mat": "metal", "edge": 1.5, "box": [0, 95, 290, 25, 120, 375]},
+    {"id": "leg-3", "mat": "metal", "edge": 1.5, "box": [675, 0, 0, 700, 120, 25]},
+    {"id": "leg-3-ax", "mat": "metal", "edge": 1.5, "box": [590, 95, 0, 675, 120, 25]},
+    {"id": "leg-3-az", "mat": "metal", "edge": 1.5, "box": [675, 95, 25, 700, 120, 110]},
+    {"id": "leg-4", "mat": "metal", "edge": 1.5, "box": [675, 0, 375, 700, 120, 400]},
+    {"id": "leg-4-ax", "mat": "metal", "edge": 1.5, "box": [590, 95, 375, 675, 120, 400]},
+    {"id": "leg-4-az", "mat": "metal", "edge": 1.5, "box": [675, 95, 290, 700, 120, 375]},
+    {"id": "shelf-fix-lo", "box": [27, 686, 7.5, 673, 702, 382]},
+    {"id": "shelf-fix-up", "box": [27, 1343, 7.5, 673, 1359, 382]},
+    {"id": "back-lo", "kind": "back", "box": [22, 141, 4, 678, 694, 7.2]},
+    {"id": "back-mid", "kind": "back", "mat": "body", "box": [22, 694, 4, 678, 1351, 7.2]},
+    {"id": "back-up", "kind": "back", "box": [22, 1351, 4, 678, 1879, 7.2]},
+    {"id": "glass-shelf", "kind": "glass", "box": [28, 1020, 30, 672, 1026, 370]},
+    {"id": "shelf-lo", "box": [28, 400, 30, 672, 416, 369]},
+    {"id": "shelf-up", "box": [28, 1600, 30, 672, 1616, 369]},
+    {"id": "led", "kind": "light", "shape": "circle", "box": [320.0, 1339, 170, 380.0, 1343, 230]},
+    {"id": "door-lo", "kind": "front", "grain": "x", "box": [29.5, 147, 383, 670.5, 701, 399]},
+    {"id": "h-lo", "kind": "handle", "model": "bar", "at": [350.0, 661], "dir": "right", "d": 150, "band": 10, "t": 7, "standoff": 24, "post": 9, "section": "square", "z": 399},
+    {"id": "door-glass", "kind": "front", "grain": "x", "glass": {"frame": 2, "rebate": 0, "t": 4, "tint": "bronze"}, "box": [29.5, 704, 394, 670.5, 1340, 399]},
+    {"id": "door-up", "kind": "front", "grain": "x", "box": [29.5, 1343, 383, 670.5, 1873, 399]},
+    {"id": "h-up", "kind": "handle", "model": "bar", "at": [350.0, 1383], "dir": "right", "d": 150, "band": 10, "t": 7, "standoff": 24, "post": 9, "section": "square", "z": 399}
+  ],
+  "moves": [
+    {"type": "door", "name": "door_lo", "parts": ["door-lo", "h-lo"], "hinge": "left", "angle": 105},
+    {"type": "door", "name": "door_glass", "parts": ["door-glass"], "hinge": "left", "angle": 105},
+    {"type": "door", "name": "door_up", "parts": ["door-up", "h-up"], "hinge": "left", "angle": 105}
+  ]
+}

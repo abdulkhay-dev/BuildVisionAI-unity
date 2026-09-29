@@ -1,0 +1,26 @@
+{
+  "id": "vizit-3-01",
+  "size": [1000, 470, 500],
+  "parts": [
+    {"id": "bottom", "box": [0, 12, 0, 1000, 28, 454]},
+    {"id": "side-l", "box": [0, 28, 0, 16, 484, 454]},
+    {"id": "side-r", "box": [984, 28, 0, 1000, 484, 454]},
+    {"id": "top", "box": [0, 484, 0, 1000, 500, 470]},
+    {"id": "back", "kind": "back", "box": [10, 22, 6, 990, 490, 9.5]},
+    {"id": "glide-1a", "mat": "door_enamel_whitey#9fa1a2", "edge": 3, "box": [15, 0, 15, 55, 12, 45]},
+    {"id": "glide-1b", "mat": "door_enamel_whitey#9fa1a2", "edge": 3, "box": [15, 0, 409, 55, 12, 439]},
+    {"id": "glide-2a", "mat": "door_enamel_whitey#9fa1a2", "edge": 3, "box": [945, 0, 15, 985, 12, 45]},
+    {"id": "glide-2b", "mat": "door_enamel_whitey#9fa1a2", "edge": 3, "box": [945, 0, 409, 985, 12, 439]},
+    {"id": "glide-3a", "mat": "door_enamel_whitey#9fa1a2", "edge": 3, "box": [480.0, 0, 15, 520.0, 12, 45]},
+    {"id": "glide-3b", "mat": "door_enamel_whitey#9fa1a2", "edge": 3, "box": [480.0, 0, 409, 520.0, 12, 439]},
+    {"id": "shelf", "box": [17, 246, 20, 983, 262, 449]},
+    {"id": "f-door_left", "kind": "front", "box": [2.0, 30.0, 454, 498.5, 481.0, 470]},
+    {"id": "h-door_left", "kind": "handle", "model": "bar", "mat": "metal", "at": [250.0, 439.0], "dir": "right", "d": 190, "band": 10, "t": 8, "standoff": 26, "post": 10, "section": "square", "z": 470},
+    {"id": "f-door_right", "kind": "front", "box": [501.5, 30.0, 454, 998.0, 481.0, 470]},
+    {"id": "h-door_right", "kind": "handle", "model": "bar", "mat": "metal", "at": [750.0, 439.0], "dir": "right", "d": 190, "band": 10, "t": 8, "standoff": 26, "post": 10, "section": "square", "z": 470}
+  ],
+  "moves": [
+    {"type": "door", "name": "door_left", "parts": ["f-door_left", "h-door_left"], "hinge": "left", "angle": 100},
+    {"type": "door", "name": "door_right", "parts": ["f-door_right", "h-door_right"], "hinge": "right", "angle": 100}
+  ]
+}

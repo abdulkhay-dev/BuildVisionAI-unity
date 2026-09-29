@@ -1,0 +1,38 @@
+{
+  "id": "vizit-3-08",
+  "size": [536, 480, 1120],
+  "parts": [
+    {"id": "bottom", "box": [0, 12, 0, 536, 28, 480]},
+    {"id": "side-l", "box": [0, 28, 0, 16, 1104, 480]},
+    {"id": "side-r", "box": [520, 28, 0, 536, 1104, 480]},
+    {"id": "top", "box": [0, 1104, 0, 536, 1120, 480]},
+    {"id": "back", "kind": "back", "box": [10, 22, 6, 526, 1110, 9.5]},
+    {"id": "glide-1a", "mat": "door_enamel_whitey#9fa1a2", "edge": 3, "box": [15, 0, 15, 55, 12, 45]},
+    {"id": "glide-1b", "mat": "door_enamel_whitey#9fa1a2", "edge": 3, "box": [15, 0, 435, 55, 12, 465]},
+    {"id": "glide-2a", "mat": "door_enamel_whitey#9fa1a2", "edge": 3, "box": [481, 0, 15, 521, 12, 45]},
+    {"id": "glide-2b", "mat": "door_enamel_whitey#9fa1a2", "edge": 3, "box": [481, 0, 435, 521, 12, 465]},
+    {"id": "f-drawer_1", "kind": "front", "box": [18.0, 772.0, 464, 518.0, 1102.0, 480]},
+    {"id": "h-drawer_1", "kind": "handle", "model": "bar", "mat": "metal", "at": [268.0, 1003.0], "dir": "right", "d": 190, "band": 10, "t": 8, "standoff": 26, "post": 10, "section": "square", "z": 480},
+    {"id": "drawer_1-side-l", "box": [29, 784, 44, 45, 964, 464]},
+    {"id": "drawer_1-side-r", "box": [491, 784, 44, 507, 964, 464]},
+    {"id": "drawer_1-back", "box": [45, 784, 44, 491, 964, 60]},
+    {"id": "drawer_1-bottom", "kind": "back", "box": [40, 794, 48, 496, 797.5, 462]},
+    {"id": "f-drawer_2", "kind": "front", "box": [18.0, 450.0, 464, 518.0, 769.0, 480]},
+    {"id": "h-drawer_2", "kind": "handle", "model": "bar", "mat": "metal", "at": [268.0, 673.5], "dir": "right", "d": 190, "band": 10, "t": 8, "standoff": 26, "post": 10, "section": "square", "z": 480},
+    {"id": "drawer_2-side-l", "box": [29, 462, 44, 45, 642, 464]},
+    {"id": "drawer_2-side-r", "box": [491, 462, 44, 507, 642, 464]},
+    {"id": "drawer_2-back", "box": [45, 462, 44, 491, 642, 60]},
+    {"id": "drawer_2-bottom", "kind": "back", "box": [40, 472, 48, 496, 475.5, 462]},
+    {"id": "f-drawer_3", "kind": "front", "box": [18.0, 30.0, 464, 518.0, 447.0, 480]},
+    {"id": "h-drawer_3", "kind": "handle", "model": "bar", "mat": "metal", "at": [268.0, 322.0], "dir": "right", "d": 190, "band": 10, "t": 8, "standoff": 26, "post": 10, "section": "square", "z": 480},
+    {"id": "drawer_3-side-l", "box": [29, 42, 44, 45, 222, 464]},
+    {"id": "drawer_3-side-r", "box": [491, 42, 44, 507, 222, 464]},
+    {"id": "drawer_3-back", "box": [45, 42, 44, 491, 222, 60]},
+    {"id": "drawer_3-bottom", "kind": "back", "box": [40, 52, 48, 496, 55.5, 462]}
+  ],
+  "moves": [
+    {"type": "drawer", "name": "drawer_1", "parts": ["f-drawer_1", "h-drawer_1", "drawer_1-side-l", "drawer_1-side-r", "drawer_1-back", "drawer_1-bottom"], "travel": 370},
+    {"type": "drawer", "name": "drawer_2", "parts": ["f-drawer_2", "h-drawer_2", "drawer_2-side-l", "drawer_2-side-r", "drawer_2-back", "drawer_2-bottom"], "travel": 370},
+    {"type": "drawer", "name": "drawer_3", "parts": ["f-drawer_3", "h-drawer_3", "drawer_3-side-l", "drawer_3-side-r", "drawer_3-back", "drawer_3-bottom"], "travel": 370}
+  ]
+}

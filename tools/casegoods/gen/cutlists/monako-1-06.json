@@ -1,0 +1,79 @@
+{
+ "code": "П6.528.1.06",
+ "source": "table of P6-528-1-06.pdf (names and counts; the table has no sizes — sizes, where given, are read off the dimension-true vector drawing, ±1 mm); assembly 6 left out",
+ "rows": [
+  {
+   "n": "1",
+   "name": "Стенка вертикальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "2",
+   "name": "Стенка вертикальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "3",
+   "name": "Крышка",
+   "size": [
+    1054,
+    422,
+    25
+   ],
+   "count": 1
+  },
+  {
+   "n": "4",
+   "name": "Стенка горизонтальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "5",
+   "name": "Царга",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "6.1",
+   "name": "Стенка передняя",
+   "size": [
+    996,
+    127
+   ],
+   "count": 1
+  },
+  {
+   "n": "6.2",
+   "name": "Стенка боковая",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "6.3",
+   "name": "Стенка боковая",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "6.4",
+   "name": "Стенка задняя",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "6.5",
+   "name": "Дно",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "6.6",
+   "name": "Перегородка",
+   "size": null,
+   "count": 1
+  }
+ ]
+}

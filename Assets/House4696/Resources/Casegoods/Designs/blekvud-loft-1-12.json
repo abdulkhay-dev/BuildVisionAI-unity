@@ -1,0 +1,32 @@
+{
+  "id": "blekvud-loft-1-12",
+  "size": [935, 557, 727],
+  "parts": [
+    {"id": "top", "mat": "inner", "box": [0, 711, 0, 935, 727, 557]},
+    {"id": "side-l", "mat": "inner", "box": [0, 0, 0, 16, 711, 557]},
+    {"id": "side-r", "mat": "inner", "box": [919, 0, 0, 935, 711, 557]},
+    {"id": "bottom", "mat": "inner", "box": [16, 30, 0, 919, 46, 541]},
+    {"id": "plinth", "mat": "inner", "box": [16, 0, 521, 919, 30, 537]},
+    {"id": "back", "kind": "back", "box": [11, 41, 4, 924, 716, 7.2]},
+    {"id": "front-1", "kind": "front", "grain": "x", "mat": "inner", "box": [18, 48.0, 541, 917, 266.3, 557]},
+    {"id": "side-l-1", "box": [28.7, 66.0, 91, 44.7, 234.3, 541], "mat": "inner"},
+    {"id": "side-r-1", "box": [890.3, 66.0, 91, 906.3, 234.3, 541], "mat": "inner"},
+    {"id": "back-1", "box": [44.7, 85.0, 91, 890.3, 234.3, 107], "mat": "inner"},
+    {"id": "bottom-1", "kind": "back", "box": [38.7, 81.8, 91, 896.3, 85.0, 546]},
+    {"id": "front-2", "kind": "front", "grain": "x", "mat": "inner", "box": [18, 269.3, 541, 917, 487.7, 557]},
+    {"id": "side-l-2", "box": [28.7, 287.3, 91, 44.7, 455.7, 541], "mat": "inner"},
+    {"id": "side-r-2", "box": [890.3, 287.3, 91, 906.3, 455.7, 541], "mat": "inner"},
+    {"id": "back-2", "box": [44.7, 306.3, 91, 890.3, 455.7, 107], "mat": "inner"},
+    {"id": "bottom-2", "kind": "back", "box": [38.7, 303.1, 91, 896.3, 306.3, 546]},
+    {"id": "front-3", "kind": "front", "grain": "x", "mat": "inner", "box": [18, 490.7, 541, 917, 709.0, 557]},
+    {"id": "side-l-3", "box": [28.7, 508.7, 91, 44.7, 677.0, 541], "mat": "inner"},
+    {"id": "side-r-3", "box": [890.3, 508.7, 91, 906.3, 677.0, 541], "mat": "inner"},
+    {"id": "back-3", "box": [44.7, 527.7, 91, 890.3, 677.0, 107], "mat": "inner"},
+    {"id": "bottom-3", "kind": "back", "box": [38.7, 524.5, 91, 896.3, 527.7, 546]}
+  ],
+  "moves": [
+    {"type": "drawer", "name": "drawer_1", "parts": ["front-1", "side-l-1", "side-r-1", "back-1", "bottom-1"], "travel": 400},
+    {"type": "drawer", "name": "drawer_2", "parts": ["front-2", "side-l-2", "side-r-2", "back-2", "bottom-2"], "travel": 400},
+    {"type": "drawer", "name": "drawer_3", "parts": ["front-3", "side-l-3", "side-r-3", "back-3", "bottom-3"], "travel": 400}
+  ]
+}

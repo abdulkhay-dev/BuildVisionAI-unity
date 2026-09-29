@@ -1,0 +1,37 @@
+{
+  "id": "monako-0-04",
+  "size": [1000, 750, 446],
+  "parts": [
+    {"n": "top", "box": [0, 421, 0, 1000, 446, 750], "grain": "x"},
+    {"n": "leg-a", "box": [2, 5.0, 2, 122, 421, 27], "id": "leg-a-lb"},
+    {"n": "leg-b", "box": [2, 5.0, 27, 27, 421, 122], "id": "leg-b-lb"},
+    {"id": "ins-a-lb", "kind": "panel", "mat": "gloss#f3f4f4", "edge": 0.5, "box": [22, 372, 0, 102, 386, 2]},
+    {"id": "ins-b-lb", "kind": "panel", "mat": "gloss#f3f4f4", "edge": 0.5, "box": [0, 372, 32, 2, 386, 117]},
+    {"n": "leg-a", "box": [2, 5.0, 723, 122, 421, 748], "id": "leg-a-lf"},
+    {"n": "leg-b", "box": [2, 5.0, 628, 27, 421, 723], "id": "leg-b-lf"},
+    {"id": "ins-a-lf", "kind": "panel", "mat": "gloss#f3f4f4", "edge": 0.5, "box": [22, 372, 748, 102, 386, 750]},
+    {"id": "ins-b-lf", "kind": "panel", "mat": "gloss#f3f4f4", "edge": 0.5, "box": [0, 372, 633, 2, 386, 718]},
+    {"n": "leg-a", "box": [878, 5.0, 2, 998, 421, 27], "id": "leg-a-rb"},
+    {"n": "leg-b", "box": [973, 5.0, 27, 998, 421, 122], "id": "leg-b-rb"},
+    {"id": "ins-a-rb", "kind": "panel", "mat": "gloss#f3f4f4", "edge": 0.5, "box": [898, 372, 0, 978, 386, 2]},
+    {"id": "ins-b-rb", "kind": "panel", "mat": "gloss#f3f4f4", "edge": 0.5, "box": [998, 372, 32, 1000, 386, 117]},
+    {"n": "leg-a", "box": [878, 5.0, 723, 998, 421, 748], "id": "leg-a-rf"},
+    {"n": "leg-b", "box": [973, 5.0, 628, 998, 421, 723], "id": "leg-b-rf"},
+    {"id": "ins-a-rf", "kind": "panel", "mat": "gloss#f3f4f4", "edge": 0.5, "box": [898, 372, 748, 978, 386, 750]},
+    {"id": "ins-b-rf", "kind": "panel", "mat": "gloss#f3f4f4", "edge": 0.5, "box": [998, 372, 633, 1000, 386, 718]},
+    {"n": "apron", "box": [122, 321, 11, 878, 421, 27], "id": "apron-b"},
+    {"n": "apron", "box": [122, 321, 723, 878, 421, 739], "id": "apron-f"},
+    {"n": "apron", "box": [11, 321, 122, 27, 421, 628], "id": "apron-l"},
+    {"n": "apron", "box": [973, 321, 122, 989, 421, 628], "id": "apron-r"},
+    {"n": "cleat", "box": [27, 84, 122, 43, 110, 628], "id": "cleat-l"},
+    {"n": "cleat", "box": [957, 84, 122, 973, 110, 628], "id": "cleat-r"},
+    {"n": "shelf", "box": [43, 110, 122, 957, 126, 628], "grain": "x"},
+    {"id": "g-1", "kind": "tube", "mat": "black", "box": [50, 0, 2.5, 70, 5.0, 22.5], "covers": ["g"]},
+    {"id": "g-2", "kind": "tube", "mat": "black", "box": [50, 0, 727.5, 70, 5.0, 747.5], "covers": ["g"]},
+    {"id": "g-3", "kind": "tube", "mat": "black", "box": [930, 0, 2.5, 950, 5.0, 22.5], "covers": ["g"]},
+    {"id": "g-4", "kind": "tube", "mat": "black", "box": [930, 0, 727.5, 950, 5.0, 747.5], "covers": ["g"]}
+  ],
+  "moves": [
+
+  ]
+}

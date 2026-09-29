@@ -1,0 +1,119 @@
+{
+ "code": "П6.528.1.08",
+ "source": "table of P6-528-1-08.pdf (names and counts; the table has no sizes — sizes, where given, are read off the dimension-true vector drawing, ±1 mm); the assemblies 10 / 11 («Дверь в т.ч.») are left out, their parts are listed",
+ "rows": [
+  {
+   "n": "1",
+   "name": "Стенка вертикальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "2",
+   "name": "Стенка вертикальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "3",
+   "name": "Перегородка",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "4",
+   "name": "Стенка горизонтальная",
+   "size": [
+    970,
+    605,
+    25
+   ],
+   "count": 1
+  },
+  {
+   "n": "5",
+   "name": "Стенка горизонтальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "6",
+   "name": "Стенка горизонтальная",
+   "size": null,
+   "count": 2
+  },
+  {
+   "n": "7",
+   "name": "Стенка горизонтальная",
+   "size": null,
+   "count": 2
+  },
+  {
+   "n": "8",
+   "name": "Полка",
+   "size": null,
+   "count": 3
+  },
+  {
+   "n": "9",
+   "name": "Стенка передняя",
+   "size": null,
+   "count": 2
+  },
+  {
+   "n": "10.1",
+   "name": "Дверь",
+   "size": [
+    1334,
+    455
+   ],
+   "count": 1
+  },
+  {
+   "n": "10.2",
+   "name": "Дверь",
+   "size": [
+    715,
+    455
+   ],
+   "count": 1
+  },
+  {
+   "n": "10.3",
+   "name": "Накладка",
+   "size": null,
+   "count": 2,
+   "note": "the table lists 10.3 under door 10 and again under door 11 (the same part 6.528.1.08.103)"
+  },
+  {
+   "n": "11.1",
+   "name": "Дверь",
+   "size": [
+    1334,
+    455
+   ],
+   "count": 1
+  },
+  {
+   "n": "11.2",
+   "name": "Дверь",
+   "size": [
+    715,
+    455
+   ],
+   "count": 1
+  },
+  {
+   "n": "12",
+   "name": "Стенка задняя",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "13",
+   "name": "Стенка задняя",
+   "size": null,
+   "count": 2
+  }
+ ]
+}

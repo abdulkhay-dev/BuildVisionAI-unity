@@ -1,0 +1,37 @@
+{
+  "id": "deko-1-30-01",
+  "size": [481, 460, 466],
+  "parts": [
+    {"id": "bottom", "box": [0, 150, 0, 481, 166, 460]},
+    {"id": "side-l", "box": [0, 166, 0, 16, 450, 460]},
+    {"id": "side-r", "box": [465, 166, 0, 481, 450, 460]},
+    {"id": "top", "box": [0, 450, 0, 481, 466, 460]},
+    {"id": "back", "box": [10, 160, 6, 471, 456, 9.5], "kind": "back"},
+    {"id": "leg-lf-arm", "kind": "rod", "section": "square", "mat": "metal", "d": 12, "from": [16, 144, 415], "to": [170, 144, 415]},
+    {"id": "leg-lf", "kind": "rod", "mat": "metal", "d": 26, "d2": 18, "from": [30, 138, 415], "to": [22, 20, 415]},
+    {"id": "leg-lf-glide", "box": [13, 0, 406, 31, 20, 424], "kind": "tube", "mat": "metal"},
+    {"id": "leg-lb-arm", "kind": "rod", "section": "square", "mat": "metal", "d": 12, "from": [16, 144, 45], "to": [170, 144, 45]},
+    {"id": "leg-lb", "kind": "rod", "mat": "metal", "d": 26, "d2": 18, "from": [30, 138, 45], "to": [22, 20, 45]},
+    {"id": "leg-lb-glide", "box": [13, 0, 36, 31, 20, 54], "kind": "tube", "mat": "metal"},
+    {"id": "leg-rf-arm", "kind": "rod", "section": "square", "mat": "metal", "d": 12, "from": [465, 144, 415], "to": [311, 144, 415]},
+    {"id": "leg-rf", "kind": "rod", "mat": "metal", "d": 26, "d2": 18, "from": [451, 138, 415], "to": [459, 20, 415]},
+    {"id": "leg-rf-glide", "box": [450, 0, 406, 468, 20, 424], "kind": "tube", "mat": "metal"},
+    {"id": "leg-rb-arm", "kind": "rod", "section": "square", "mat": "metal", "d": 12, "from": [465, 144, 45], "to": [311, 144, 45]},
+    {"id": "leg-rb", "kind": "rod", "mat": "metal", "d": 26, "d2": 18, "from": [451, 138, 45], "to": [459, 20, 45]},
+    {"id": "leg-rb-glide", "box": [450, 0, 36, 468, 20, 54], "kind": "tube", "mat": "metal"},
+    {"id": "drawer", "box": [18, 168, 424, 463, 448, 440], "kind": "front", "mat": "accent", "grain": "x"},
+    {"id": "drawer-slat1", "box": [41, 168, 440, 71, 448, 460], "mat": "slat", "grain": "y"},
+    {"id": "drawer-slat2", "box": [102, 168, 440, 132, 448, 460], "mat": "slat", "grain": "y"},
+    {"id": "drawer-slat3", "box": [163, 168, 440, 193, 448, 460], "mat": "slat", "grain": "y"},
+    {"id": "drawer-oak", "box": [195, 168, 440, 463, 448, 456], "kind": "front", "grain": "x"},
+    {"id": "dr1-l", "box": [29, 182, 64, 45, 382, 424]},
+    {"id": "dr1-r", "box": [436, 182, 64, 452, 382, 424]},
+    {"id": "dr1-back", "box": [45, 182, 64, 436, 382, 80]},
+    {"id": "dr1-front", "box": [45, 182, 408, 436, 382, 424]},
+    {"id": "dr1-bottom", "box": [39, 192, 74, 442, 195.5, 414], "kind": "back"},
+    {"id": "k-1", "kind": "handle", "model": "edge", "d": 152, "band": 14, "t": 2, "standoff": 18, "dir": "down", "at": [271, 448], "z": 456}
+  ],
+  "moves": [
+    {"type": "drawer", "name": "drawer", "parts": ["drawer", "drawer-slat1", "drawer-slat2", "drawer-slat3", "drawer-oak", "dr1-l", "dr1-r", "dr1-back", "dr1-front", "dr1-bottom", "k-1"], "travel": 300}
+  ]
+}

@@ -25,11 +25,15 @@ def line(entry):
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--remove", action="store_true")
+    ap.add_argument("--only", help="comma-separated slugs: merge just these fragments (the others may still be in work)")
     a = ap.parse_args()
     with open(CATALOG) as fh:
         text = fh.read()
     cat = json.loads(text)
     frags = sorted(glob.glob(os.path.join(HERE, "*_catalog.json")))
+    if a.only:
+        want = {x.strip() for x in a.only.split(",")}
+        frags = [f for f in frags if os.path.basename(f)[:-len("_catalog.json")] in want]
     add = {"finishes": [], "collections": [], "models": []}
     profiles = {}
     errors = []

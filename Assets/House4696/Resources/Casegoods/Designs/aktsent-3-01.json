@@ -1,0 +1,42 @@
+{
+  "id": "aktsent-3-01",
+  "size": [544, 200, 966],
+  "parts": [
+    {"id": "bottom", "box": [0, 50, 0, 544, 66, 200]},
+    {"id": "side-l", "box": [0, 66, 0, 16, 950, 200]},
+    {"id": "top", "box": [0, 950, 0, 544, 966, 200]},
+    {"id": "side-r", "box": [528, 66, 0, 544, 950, 200]},
+    {"id": "stile-l", "box": [16, 66, 124, 32, 950, 200]},
+    {"id": "stile-r", "box": [512, 66, 124, 528, 950, 200]},
+    {"id": "back", "kind": "back", "box": [10, 60, 6, 534, 956, 9.5]},
+    {"id": "flap-1", "kind": "front", "box": [35.0, 68.0, 184, 509.0, 419.5, 200]},
+    {"id": "tray-floor-1", "mat": "door_enamel_whitey#8a9ba7", "edge": 0.5, "box": [48.5, 80.0, 182.5, 495.5, 407.5, 184]},
+    {"id": "tray-wall-1", "mat": "door_enamel_whitey#8a9ba7", "edge": 0.5, "box": [48.5, 80.0, 74, 495.5, 81.5, 182.5]},
+    {"id": "tray-lip-1", "mat": "door_enamel_whitey#8a9ba7", "edge": 0.5, "box": [48.5, 406.0, 168, 495.5, 407.5, 182.5]},
+    {"id": "tray-l-1", "mat": "door_enamel_whitey#8a9ba7", "edge": 0.5, "box": [47, 80.0, 74, 48.5, 407.5, 184], "shape": "path", "outline": "M 184 80.0 L 74 80.0 L 168 407.5 L 184 407.5 Z"},
+    {"id": "tray-r-1", "mat": "door_enamel_whitey#8a9ba7", "edge": 0.5, "box": [495.5, 80.0, 74, 497, 407.5, 184], "shape": "path", "outline": "M 184 80.0 L 74 80.0 L 168 407.5 L 184 407.5 Z"},
+    {"id": "flap-2", "kind": "front", "box": [35.0, 421.5, 184, 509.0, 773.0, 200]},
+    {"id": "h-flap-2", "kind": "handle", "model": "bar", "mat": "metal", "at": [272.0, 723.0], "dir": "right", "d": 208, "band": 22, "t": 8, "standoff": 22, "post": 12, "section": "square", "z": 200},
+    {"id": "tray-floor-2", "mat": "door_enamel_whitey#8a9ba7", "edge": 0.5, "box": [48.5, 433.5, 182.5, 495.5, 761.0, 184]},
+    {"id": "tray-wall-2", "mat": "door_enamel_whitey#8a9ba7", "edge": 0.5, "box": [48.5, 433.5, 74, 495.5, 435.0, 182.5]},
+    {"id": "tray-lip-2", "mat": "door_enamel_whitey#8a9ba7", "edge": 0.5, "box": [48.5, 759.5, 168, 495.5, 761.0, 182.5]},
+    {"id": "tray-l-2", "mat": "door_enamel_whitey#8a9ba7", "edge": 0.5, "box": [47, 433.5, 74, 48.5, 761.0, 184], "shape": "path", "outline": "M 184 433.5 L 74 433.5 L 168 761.0 L 184 761.0 Z"},
+    {"id": "tray-r-2", "mat": "door_enamel_whitey#8a9ba7", "edge": 0.5, "box": [495.5, 433.5, 74, 497, 761.0, 184], "shape": "path", "outline": "M 184 433.5 L 74 433.5 L 168 761.0 L 184 761.0 Z"},
+    {"id": "shelf-drawer", "mat": "front", "box": [32, 766.0, 10, 512, 782.0, 183]},
+    {"id": "front-1", "kind": "front", "box": [35.0, 775.0, 184, 509.0, 948.0, 200]},
+    {"id": "dr-l-1", "mat": "front", "box": [45, 793.0, 30, 61, 903.0, 184]},
+    {"id": "dr-r-1", "mat": "front", "box": [483, 793.0, 30, 499, 903.0, 184]},
+    {"id": "dr-b-1", "mat": "front", "box": [61, 793.0, 30, 483, 903.0, 46]},
+    {"id": "dr-bottom-1", "kind": "back", "box": [55, 801.0, 34, 489, 804.5, 182]},
+    {"id": "h-1", "kind": "handle", "model": "bar", "mat": "metal", "at": [272.0, 898.0], "dir": "right", "d": 208, "band": 22, "t": 8, "standoff": 22, "post": 12, "section": "square", "z": 200},
+    {"id": "foot-1a", "mat": "metal", "edge": 2, "box": [35, 0, 22, 91, 50, 78]},
+    {"id": "foot-1b", "mat": "metal", "edge": 2, "box": [35, 0, 122, 91, 50, 178]},
+    {"id": "foot-2a", "mat": "metal", "edge": 2, "box": [453, 0, 22, 509, 50, 78]},
+    {"id": "foot-2b", "mat": "metal", "edge": 2, "box": [453, 0, 122, 509, 50, 178]}
+  ],
+  "moves": [
+    {"type": "flap", "name": "flap_1", "parts": ["flap-1", "tray-floor-1", "tray-wall-1", "tray-lip-1", "tray-l-1", "tray-r-1"], "hinge": "bottom", "angle": 80},
+    {"type": "flap", "name": "flap_2", "parts": ["flap-2", "h-flap-2", "tray-floor-2", "tray-wall-2", "tray-lip-2", "tray-l-2", "tray-r-2"], "hinge": "bottom", "angle": 80},
+    {"type": "drawer", "name": "drawer_1", "parts": ["front-1", "dr-l-1", "dr-r-1", "dr-b-1", "dr-bottom-1", "h-1"], "travel": 123}
+  ]
+}

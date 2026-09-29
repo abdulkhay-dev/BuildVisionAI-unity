@@ -1,0 +1,16 @@
+{
+  "id": "deko-0-51",
+  "size": [1542, 266, 250],
+  "parts": [
+    {"id": "back-board", "box": [50.5, 0, 0, 1491.5, 250, 16], "grain": "x"},
+    {"id": "shelf", "box": [0, 22, 16, 1542, 44, 266], "grain": "x"},
+    {"id": "black-board", "box": [1016, 44, 16, 1491.5, 250, 32], "mat": "accent"},
+    {"id": "black-board-slat1", "box": [1021, 44, 32, 1051, 250, 52], "mat": "slat", "grain": "y"},
+    {"id": "black-board-slat2", "box": [1076, 44, 32, 1106, 250, 52], "mat": "slat", "grain": "y"},
+    {"id": "black-board-slat3", "box": [1131, 44, 32, 1161, 250, 52], "mat": "slat", "grain": "y"},
+    {"id": "black-board-slat4", "box": [1186, 44, 32, 1216, 250, 52], "mat": "slat", "grain": "y"}
+  ],
+  "moves": [
+
+  ]
+}

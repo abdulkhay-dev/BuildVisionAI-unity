@@ -1,0 +1,120 @@
+{
+ "code": "П6.619.2.16-01",
+ "source": "table of the page (same rows as 2.16) with the drawers' rows summed; group rows left out; no sizes — the front view is the mirror image of 2.16",
+ "rows": [
+  {
+   "n": "1",
+   "name": "Стенка вертикальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "2",
+   "name": "Стенка вертикальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "3",
+   "name": "Стенка горизонтальная",
+   "size": null,
+   "count": 2
+  },
+  {
+   "n": "4",
+   "name": "Стенка вертикальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "5",
+   "name": "Стенка вертикальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "6",
+   "name": "Стенка вертикальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "7",
+   "name": "Стенка горизонтальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "8",
+   "name": "Крышка",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "9",
+   "name": "Царга",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "10",
+   "name": "Стенка задняя",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "11.1",
+   "name": "Стенка передняя",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "11.2",
+   "name": "Стенка боковая (ящиков 11–13)",
+   "size": null,
+   "count": 3
+  },
+  {
+   "n": "11.3",
+   "name": "Стенка боковая (ящиков 11–13)",
+   "size": null,
+   "count": 3
+  },
+  {
+   "n": "11.4",
+   "name": "Стенка задняя (ящиков 11–13)",
+   "size": null,
+   "count": 3
+  },
+  {
+   "n": "11.5",
+   "name": "Дно (ящиков 11–13)",
+   "size": null,
+   "count": 3
+  },
+  {
+   "n": "12.1",
+   "name": "Стенка передняя",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "13.1",
+   "name": "Стенка передняя",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "14",
+   "name": "Стенка передняя",
+   "size": null,
+   "count": 2
+  },
+  {
+   "n": "15",
+   "name": "Стенка боковая",
+   "size": null,
+   "count": 2
+  }
+ ]
+}

@@ -1,0 +1,10 @@
+{
+  "id": "blekvud-loft-1-13",
+  "size": [935, 520, 16],
+  "parts": [
+    {"id": "shelf", "mat": "inner", "grain": "x", "box": [0, 0, 0, 935, 16, 520]}
+  ],
+  "moves": [
+
+  ]
+}

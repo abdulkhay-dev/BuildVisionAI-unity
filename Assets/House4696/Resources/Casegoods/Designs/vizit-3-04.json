@@ -1,0 +1,33 @@
+{
+  "id": "vizit-3-04",
+  "size": [1000, 300, 1200],
+  "parts": [
+    {"id": "bottom", "box": [0, 12, 0, 1000, 28, 284]},
+    {"id": "side-l", "box": [0, 28, 0, 16, 1184, 284]},
+    {"id": "side-r", "box": [984, 28, 0, 1000, 1184, 284]},
+    {"id": "top", "box": [0, 1184, 0, 1000, 1200, 300]},
+    {"id": "back-1", "kind": "back", "box": [10, 22, 6, 598.5, 1190, 9.5]},
+    {"id": "back-2", "kind": "back", "box": [598.5, 22, 6, 990, 1190, 9.5]},
+    {"id": "glide-1a", "mat": "door_enamel_whitey#9fa1a2", "edge": 3, "box": [15, 0, 15, 55, 12, 45]},
+    {"id": "glide-1b", "mat": "door_enamel_whitey#9fa1a2", "edge": 3, "box": [15, 0, 239, 55, 12, 269]},
+    {"id": "glide-2a", "mat": "door_enamel_whitey#9fa1a2", "edge": 3, "box": [945, 0, 15, 985, 12, 45]},
+    {"id": "glide-2b", "mat": "door_enamel_whitey#9fa1a2", "edge": 3, "box": [945, 0, 239, 985, 12, 269]},
+    {"id": "glide-3a", "mat": "door_enamel_whitey#9fa1a2", "edge": 3, "box": [480.0, 0, 15, 520.0, 12, 45]},
+    {"id": "glide-3b", "mat": "door_enamel_whitey#9fa1a2", "edge": 3, "box": [480.0, 0, 239, 520.0, 12, 269]},
+    {"id": "partition", "box": [590.5, 28, 10, 606.5, 1184, 284]},
+    {"id": "shelf-l1", "box": [17, 284, 20, 589.5, 300, 279]},
+    {"id": "shelf-r1", "box": [607.5, 284, 20, 983, 300, 279]},
+    {"id": "shelf-l2", "box": [17, 544, 20, 589.5, 560, 279]},
+    {"id": "shelf-r2", "box": [607.5, 544, 20, 983, 560, 279]},
+    {"id": "shelf-l3", "box": [17, 804, 20, 589.5, 820, 279]},
+    {"id": "shelf-r3", "box": [607.5, 804, 20, 983, 820, 279]},
+    {"id": "f-door_left", "kind": "front", "box": [2.0, 30.0, 284, 597.0, 1181.0, 300]},
+    {"id": "h-door_left", "kind": "handle", "model": "bar", "mat": "metal", "at": [477.0, 1139.0], "dir": "right", "d": 190, "band": 10, "t": 8, "standoff": 26, "post": 10, "section": "square", "z": 300},
+    {"id": "f-door_right", "kind": "front", "box": [600.0, 30.0, 284, 998.0, 1181.0, 300]},
+    {"id": "h-door_right", "kind": "handle", "model": "bar", "mat": "metal", "at": [720.0, 1139.0], "dir": "right", "d": 190, "band": 10, "t": 8, "standoff": 26, "post": 10, "section": "square", "z": 300}
+  ],
+  "moves": [
+    {"type": "door", "name": "door_left", "parts": ["f-door_left", "h-door_left"], "hinge": "left", "angle": 100},
+    {"type": "door", "name": "door_right", "parts": ["f-door_right", "h-door_right"], "hinge": "right", "angle": 100}
+  ]
+}

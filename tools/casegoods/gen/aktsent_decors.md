@@ -1,0 +1,4 @@
+# Decors of «Акцент» (aktsent) — wave 5b
+
+- «Дуб Мадура» — Акцент (body of aktsent-zhemchug-madura: carcass, tops, bottoms, the column panels of 3.05, the 3.09 shelf, the 3.10 frame; also the edge band of the pearl boards of 3.09, which the format cannot colour) — p. 132 (swatch «Каркас», crop 0.815,0.855,0.87,0.905); photos on pinskdrev.by — light greyish-beige oak: long straight fibres, fine grey pore streaks, soft low-contrast cathedrals, a few small pin knots, matt synchronised pores — vertical on sides and panels, x on tops, bottoms, shelves and the 3.09 shelf; provisional #beb1a1.
+- Seat velour of the 3.02 cushion (unnamed in the catalogue) — Акцент (role `fabric`, the soft pad of 3.02) — photos of 3.02 (top face #afa089) — short-pile suede-like velour, sand beige, faint pile marks, no pattern — no direction; provisional velvet#b0a28c.

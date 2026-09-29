@@ -1,0 +1,54 @@
+{
+ "code": "П6.528.1.05",
+ "source": "table of P6-528-1-05.pdf (the PDF the site links to П6.528.1.04 — it is the bed 2-16); sizes off the front and side views",
+ "rows": [
+  {
+   "n": "1",
+   "name": "Спинка",
+   "size": [
+    1710,
+    935,
+    25
+   ],
+   "count": 1
+  },
+  {
+   "n": "2",
+   "name": "Спинка",
+   "size": [
+    1710,
+    335,
+    25
+   ],
+   "count": 1
+  },
+  {
+   "n": "3",
+   "name": "Царга",
+   "size": [
+    2010,
+    200,
+    25
+   ],
+   "count": 2
+  },
+  {
+   "n": "4",
+   "name": "Накладка",
+   "size": [
+    1610,
+    150
+   ],
+   "count": 1
+  },
+  {
+   "n": "5",
+   "name": "Накладка",
+   "size": [
+    1610,
+    310
+   ],
+   "count": 1
+  }
+ ]
+}

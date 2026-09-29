@@ -1,0 +1,37 @@
+{
+  "id": "veres-3-07",
+  "size": [812, 382, 1258],
+  "parts": [
+    {"id": "bottom", "box": [0, 18, 0, 812, 43, 382]},
+    {"id": "top", "box": [0, 1233, 0, 812, 1258, 382]},
+    {"id": "side-l", "box": [0, 43, 0, 25, 1233, 382]},
+    {"id": "side-r", "box": [787, 43, 0, 812, 1233, 382]},
+    {"id": "back-1", "kind": "back", "box": [15, 33, 6, 406.0, 1243, 9.5]},
+    {"id": "back-2", "kind": "back", "box": [406.0, 33, 6, 797, 1243, 9.5]},
+    {"id": "niche-shelf", "box": [25, 1032, 10, 787, 1048, 382]},
+    {"id": "rail", "box": [25, 636, 25.5, 787, 652, 366]},
+    {"id": "back-rail", "box": [366.0, 43, 9.5, 446.0, 1032, 25.5]},
+    {"id": "shelf", "box": [26, 334, 26, 786, 350, 346]},
+    {"id": "f-flap", "kind": "front", "box": [27.0, 655.0, 366, 785.0, 1029.0, 382], "mat": "body"},
+    {"id": "h-flap", "kind": "handle", "model": "bar", "at": [406.0, 999.0], "dir": "right", "d": 170, "band": 12, "t": 8, "standoff": 24, "post": 10, "section": "square", "z": 382},
+    {"id": "flap-end-l", "mat": "door_enamel_whitey#4a3328", "box": [31, 675, 176, 35, 989, 366]},
+    {"id": "flap-end-r", "mat": "door_enamel_whitey#4a3328", "box": [777, 675, 176, 781, 989, 366]},
+    {"id": "flap-ledge-1", "box": [35, 685, 176, 777, 701, 306]},
+    {"id": "flap-ledge-2", "box": [35, 849.5, 176, 777, 865.5, 306]},
+    {"id": "flap-lip-1", "mat": "door_enamel_whitey#4a3328", "box": [35, 701, 176, 777, 731, 180]},
+    {"id": "flap-lip-2", "mat": "door_enamel_whitey#4a3328", "box": [35, 865.5, 176, 777, 895.5, 180]},
+    {"id": "f-door_left", "kind": "front", "box": [27.0, 45.0, 366, 404.5, 633.0, 382]},
+    {"id": "h-door_left", "kind": "handle", "model": "bar", "at": [374.5, 520.0], "dir": "up", "d": 170, "band": 12, "t": 8, "standoff": 24, "post": 10, "section": "square", "z": 382},
+    {"id": "f-door_right", "kind": "front", "box": [407.5, 45.0, 366, 785.0, 633.0, 382]},
+    {"id": "h-door_right", "kind": "handle", "model": "bar", "at": [437.5, 520.0], "dir": "up", "d": 170, "band": 12, "t": 8, "standoff": 24, "post": 10, "section": "square", "z": 382},
+    {"id": "foot-1a", "kind": "panel", "mat": "door_enamel_whitey#a3a5a6", "edge": 3, "box": [20, 0, 20, 60, 18, 50]},
+    {"id": "foot-1b", "kind": "panel", "mat": "door_enamel_whitey#a3a5a6", "edge": 3, "box": [20, 0, 332, 60, 18, 362]},
+    {"id": "foot-2a", "kind": "panel", "mat": "door_enamel_whitey#a3a5a6", "edge": 3, "box": [752, 0, 20, 792, 18, 50]},
+    {"id": "foot-2b", "kind": "panel", "mat": "door_enamel_whitey#a3a5a6", "edge": 3, "box": [752, 0, 332, 792, 18, 362]}
+  ],
+  "moves": [
+    {"type": "flap", "name": "flap", "parts": ["f-flap", "h-flap", "flap-end-l", "flap-end-r", "flap-ledge-1", "flap-ledge-2", "flap-lip-1", "flap-lip-2"], "hinge": "bottom", "angle": 40},
+    {"type": "door", "name": "door_left", "parts": ["f-door_left", "h-door_left"], "hinge": "left", "angle": 100},
+    {"type": "door", "name": "door_right", "parts": ["f-door_right", "h-door_right"], "hinge": "right", "angle": 100}
+  ]
+}

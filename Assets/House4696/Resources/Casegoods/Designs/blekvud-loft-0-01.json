@@ -1,0 +1,18 @@
+{
+  "id": "blekvud-loft-0-01",
+  "size": [1600, 285, 375],
+  "parts": [
+    {"id": "bottom", "grain": "x", "box": [0, 0, 0, 1600, 25, 285]},
+    {"id": "side-l", "grain": "y", "box": [2, 25, 1, 27, 350, 284]},
+    {"id": "side-r", "grain": "y", "box": [1573, 25, 1, 1598, 350, 284]},
+    {"id": "top", "grain": "x", "box": [0, 350, 0, 1600, 375, 285]},
+    {"id": "partition", "grain": "y", "box": [985, 25, 7.5, 1001, 350, 284]},
+    {"id": "back-flap", "kind": "back", "box": [22, 21, 4, 990, 354, 7.2]},
+    {"id": "back-niche", "kind": "back", "mat": "body", "box": [996, 21, 4, 1578, 354, 7.2]},
+    {"id": "flap", "kind": "front", "grain": "x", "box": [29, 27, 268, 983, 348, 284]},
+    {"id": "h-flap", "kind": "handle", "model": "bar", "at": [506.0, 57], "dir": "right", "d": 150, "band": 10, "t": 7, "standoff": 24, "post": 9, "section": "square", "z": 284}
+  ],
+  "moves": [
+    {"type": "flap", "name": "flap", "parts": ["flap", "h-flap"], "hinge": "top", "angle": 95}
+  ]
+}

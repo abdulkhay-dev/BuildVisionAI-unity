@@ -1,0 +1,40 @@
+{
+ "code": "П3.0579.3.50",
+ "is": "IS-Holten-zerkalo-50-1.pdf",
+ "source": "page image reference/holten-loft/pages/holten-loft-3-50-p1.png (no text layer): table «Поз., Наименование, Маркировка, Материал, Кол-во, Длина × Ширина»; the thickness from the material. 3.60 row 11 (seat, «40 мм») is compared by two sizes: built 50 thick to reach the catalogue's H502",
+ "rows": [
+  {
+   "n": "1",
+   "code": "79.50.01",
+   "name": "Стенка вертикальная (ЛДСП 16мм АНТРАЦИТ)",
+   "size": [
+    672,
+    963,
+    16
+   ],
+   "count": 1
+  },
+  {
+   "n": "2",
+   "code": "79.50.02",
+   "name": "Стенка вертикальная (ЛДСП 22мм ДУБ СТИРЛИНГ)",
+   "size": [
+    64,
+    963,
+    22
+   ],
+   "count": 1
+  },
+  {
+   "n": "3",
+   "code": "79.50.03",
+   "name": "Стенка вертикальная (ЛДСП 22мм ДУБ СТИРЛИНГ)",
+   "size": [
+    64,
+    963,
+    22
+   ],
+   "count": 1
+  }
+ ]
+}

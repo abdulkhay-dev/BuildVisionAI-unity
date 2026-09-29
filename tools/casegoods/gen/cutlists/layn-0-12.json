@@ -1,0 +1,162 @@
+{
+ "code": "П6.619.0.12",
+ "source": "reference rows with the drawer's sub-numbers 17.1–17.5 restored and row 22 (the metal base) added from the page; the group row «17 Ящик выдвижной, в т. ч.» is left out (its parts are listed); no sizes in the table — positions measured on the front and side views",
+ "rows": [
+  {
+   "n": "1",
+   "name": "Стенка вертикальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "2",
+   "name": "Стенка вертикальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "3",
+   "name": "Перегородка",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "4",
+   "name": "Перегородка",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "5",
+   "name": "Перегородка",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "6",
+   "name": "Стенка горизонтальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "7",
+   "name": "Стенка горизонтальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "8",
+   "name": "Стенка вертикальная",
+   "size": null,
+   "count": 2
+  },
+  {
+   "n": "9",
+   "name": "Стенка горизонтальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "10",
+   "name": "Стенка горизонтальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "11",
+   "name": "Стенка горизонтальная",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "12",
+   "name": "Полка",
+   "size": null,
+   "count": 3
+  },
+  {
+   "n": "13",
+   "name": "Полка",
+   "size": null,
+   "count": 2
+  },
+  {
+   "n": "14",
+   "name": "Дверь",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "15",
+   "name": "Дверь",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "16",
+   "name": "Дверь",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "17.1",
+   "name": "Стенка передняя ящика",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "17.2",
+   "name": "Стенка боковая ящика",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "17.3",
+   "name": "Стенка боковая ящика",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "17.4",
+   "name": "Стенка задняя ящика",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "17.5",
+   "name": "Дно ящика",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "18",
+   "name": "Стенка задняя",
+   "size": null,
+   "count": 2
+  },
+  {
+   "n": "19",
+   "name": "Стенка задняя",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "20",
+   "name": "Стенка задняя",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "21",
+   "name": "Стенка задняя",
+   "size": null,
+   "count": 1
+  },
+  {
+   "n": "22",
+   "name": "Металлическое опорное основание",
+   "size": null,
+   "count": 1
+  }
+ ]
+}
