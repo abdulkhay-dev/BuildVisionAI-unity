@@ -1,0 +1,32 @@
+{
+  "id": "british-bum-2-18",
+  "size": [1340, 340, 1124],
+  "parts": [
+    {"id": "side-l", "box": [0, 0, 3, 16, 1108, 340]},
+    {"id": "col-side-l", "box": [958, 0, 3, 974, 1108, 340]},
+    {"id": "col-side-r", "box": [1324, 0, 3, 1340, 1108, 340]},
+    {"id": "top", "box": [0, 1108, 3, 1340, 1124, 340]},
+    {"id": "block-bottom", "box": [16, 750, 3, 958, 766, 340]},
+    {"id": "block-back", "kind": "back", "mat": "body", "box": [16, 750, 0, 958, 1108, 3]},
+    {"id": "stretcher", "box": [16, 0, 3, 958, 100, 19]},
+    {"id": "divider-1", "box": [319.5, 766, 3, 335.5, 1108, 340]},
+    {"id": "divider-2", "box": [638.5, 766, 3, 654.5, 1108, 340]},
+    {"id": "col-bottom", "box": [974, 0, 3, 1324, 16, 340]},
+    {"id": "col-shelf-low", "box": [974, 124, 3, 1324, 140, 340]},
+    {"id": "col-shelf-high", "box": [974, 424, 3, 1324, 440, 340]},
+    {"id": "col-shelf-door", "box": [975, 770, 23, 1323, 786, 304]},
+    {"id": "col-back", "kind": "back", "mat": "body", "box": [958, 0, 0, 1340, 1108, 3]},
+    {"id": "f-drawer", "kind": "front", "box": [976.0, 18.0, 324, 1322.0, 121.0, 340]},
+    {"id": "h-drawer", "kind": "handle", "model": "bar", "mat": "metal", "at": [1149.0, 69.5], "dir": "right", "d": 184, "band": 13, "t": 9, "standoff": 24, "post": 10, "z": 340},
+    {"id": "drawer-side-l", "box": [987, 28, 44, 1003, 108, 324]},
+    {"id": "drawer-side-r", "box": [1295, 28, 44, 1311, 108, 324]},
+    {"id": "drawer-back", "box": [1003, 28, 44, 1295, 108, 60]},
+    {"id": "drawer-bottom", "kind": "back", "box": [998, 38, 48, 1300, 41.5, 322]},
+    {"id": "f-door", "kind": "front", "box": [976.0, 442.0, 324, 1322.0, 1105.0, 340], "print": "british_bum_umbrella_door"},
+    {"id": "h-door", "kind": "handle", "model": "bar", "mat": "metal", "at": [1149.0, 496.0], "dir": "right", "d": 184, "band": 13, "t": 9, "standoff": 24, "post": 10, "z": 340}
+  ],
+  "moves": [
+    {"type": "drawer", "name": "drawer", "parts": ["f-drawer", "h-drawer", "drawer-side-l", "drawer-side-r", "drawer-back", "drawer-bottom"], "travel": 220},
+    {"type": "door", "name": "door", "parts": ["f-door", "h-door"], "hinge": "right", "angle": 100}
+  ]
+}

@@ -1,0 +1,88 @@
+{
+ "code": "П7.036.0.52",
+ "source": "page image pages/turin-0-52-p1.png (Стол журнальный «Турин»; table «№, наименование, A×B, кол.»; two sizes with decimals, no thickness); single page",
+ "rows": [
+  {
+   "n": "1",
+   "name": "Столешница",
+   "size": [
+    778.34,
+    692.82
+   ],
+   "count": 1
+  },
+  {
+   "n": "2",
+   "name": "Стенка вертикальная",
+   "size": [
+    450,
+    274
+   ],
+   "count": 3
+  },
+  {
+   "n": "3",
+   "name": "Полка",
+   "size": [
+    542,
+    469.38
+   ],
+   "count": 1
+  }
+ ],
+ "hardware": [
+  {
+   "n": "4",
+   "name": "Стяжка одинарная \"Direkta\" 7x50",
+   "count": 6,
+   "size": "7x50",
+   "note": "для соединения деталей"
+  },
+  {
+   "n": "5",
+   "name": "Стяжка эксцентриковая \"Rastex\"",
+   "count": 6
+  },
+  {
+   "n": "6",
+   "name": "Дюбель стяжки эксцентриковой \"Rastex\"",
+   "count": 6
+  },
+  {
+   "n": "7",
+   "name": "Заглушка пластмассовая Hettich для \"Rastex\"",
+   "count": 6
+  },
+  {
+   "n": "8",
+   "name": "Шкант 8x35",
+   "count": 3,
+   "size": "8x35",
+   "note": "для фиксирования деталей"
+  },
+  {
+   "n": "9",
+   "name": "Заглушка пластмассовая для \"Direkta\"",
+   "count": 6
+  },
+  {
+   "n": "10",
+   "name": "Шурупы 3x12",
+   "count": 12,
+   "size": "3x12",
+   "note": "для наконечников"
+  },
+  {
+   "n": "11",
+   "name": "Наконечники",
+   "count": 6,
+   "note": "для установки изделия на пол"
+  },
+  {
+   "n": "12",
+   "name": "Ключ шестигранный",
+   "count": 1
+  }
+ ],
+ "drawing": "Triangular (hexagonal-outline) coffee table. Top 1: 692.82 = 800·√3/2, i.e. an equilateral triangle of side 800 with the three corners cut off (width across 778.34) — outline in the drawing is a hexagon with 3 long and 3 short edges, rounded/bevelled edge. Shelf 3: 469.38 = 542·√3/2, an equilateral triangle of side 542 (corners appear clipped where it meets the walls). Three vertical walls 2 (450 high x 274 wide, 3) stand under the top, arranged around the triangle (in the exploded view two are seen edge-on at left/right and one face-on at the back), fixed to the top with eccentrics (dowel in top 1, eccentric in walls 2) and 1 dowel each; shelf 3 joined to the walls with Direkta 7x50 (2 per wall) at about 1/4 height (drawing). 6 glides (наконечники, 2 per wall bottom edge). No front view and no dimension lines. Height ≈ 450 + top thickness. UNSURE: exact wall placement/orientation (radial vs along edges) — not dimensioned."
+}

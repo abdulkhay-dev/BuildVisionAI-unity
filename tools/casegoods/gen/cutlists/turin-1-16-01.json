@@ -1,0 +1,394 @@
+{
+ "code": "П7.036.1.16-01",
+ "source": "page image pages/turin-1-16-01-p1.png (Шкаф для одежды 3д «Турин»; table «№, наименование, A×B, кол., примечание»; two sizes, no thickness); assembly text + back scheme on p2",
+ "rows": [
+  {
+   "n": "1",
+   "name": "Крышка",
+   "size": [
+    1514,
+    600
+   ],
+   "count": 1
+  },
+  {
+   "n": "2",
+   "name": "Стенка гориз-ая нижняя",
+   "size": [
+    1514,
+    600
+   ],
+   "count": 1
+  },
+  {
+   "n": "3",
+   "name": "Стенка боковая левая",
+   "size": [
+    2040,
+    580
+   ],
+   "count": 1
+  },
+  {
+   "n": "4",
+   "name": "Стенка боковая правая",
+   "size": [
+    2040,
+    580
+   ],
+   "count": 1
+  },
+  {
+   "n": "5",
+   "name": "Перегородка левая",
+   "size": [
+    2040,
+    580
+   ],
+   "count": 1
+  },
+  {
+   "n": "6",
+   "name": "Перегородка правая",
+   "size": [
+    2040,
+    580
+   ],
+   "count": 1
+  },
+  {
+   "n": "7",
+   "name": "Полка левая/правая",
+   "size": [
+    578,
+    482
+   ],
+   "count": 4
+  },
+  {
+   "n": "8",
+   "name": "Полка сьемная",
+   "size": [
+    570,
+    452
+   ],
+   "count": 4
+  },
+  {
+   "n": "9",
+   "name": "Полка центральная",
+   "size": [
+    578,
+    454
+   ],
+   "count": 2
+  },
+  {
+   "n": "10",
+   "name": "Царга",
+   "size": [
+    482,
+    200
+   ],
+   "count": 2
+  },
+  {
+   "n": "11",
+   "name": "Дверь левая",
+   "size": [
+    2036,
+    487
+   ],
+   "count": 1
+  },
+  {
+   "n": "12",
+   "name": "Дверь правая",
+   "size": [
+    2036,
+    487
+   ],
+   "count": 1
+  },
+  {
+   "n": "13",
+   "name": "Дверь центральная",
+   "size": [
+    2036,
+    468
+   ],
+   "count": 1,
+   "note": "Зеркало"
+  },
+  {
+   "n": "14",
+   "name": "Цоколь передний",
+   "size": [
+    1504,
+    70
+   ],
+   "count": 1
+  },
+  {
+   "n": "15",
+   "name": "Цоколь левый",
+   "size": [
+    522,
+    70
+   ],
+   "count": 1
+  },
+  {
+   "n": "16",
+   "name": "Цоколь правый",
+   "size": [
+    522,
+    70
+   ],
+   "count": 1
+  },
+  {
+   "n": "17",
+   "name": "Цоколь задний",
+   "size": [
+    1504,
+    70
+   ],
+   "count": 1
+  },
+  {
+   "n": "18",
+   "name": "Карниз передний",
+   "size": [
+    1596,
+    86
+   ],
+   "count": 1
+  },
+  {
+   "n": "19/19-01",
+   "name": "Карниз боковой",
+   "size": [
+    641,
+    86
+   ],
+   "count": 2,
+   "note": "19 — 1 шт, 19-01 — 1 шт (левый/правый; on drawing 19а/19б)"
+  },
+  {
+   "n": "20",
+   "name": "Стенка задняя",
+   "size": [
+    1478,
+    249
+   ],
+   "count": 1,
+   "note": "ДВП"
+  },
+  {
+   "n": "21",
+   "name": "Стенка задняя",
+   "size": [
+    1835,
+    504
+   ],
+   "count": 2,
+   "note": "ДВП"
+  },
+  {
+   "n": "22",
+   "name": "Стенка задняя",
+   "size": [
+    1835,
+    466
+   ],
+   "count": 1,
+   "note": "ДВП"
+  },
+  {
+   "n": "23",
+   "name": "Пилястра левая",
+   "size": [
+    2040,
+    22
+   ],
+   "count": 1
+  },
+  {
+   "n": "24",
+   "name": "Пилястра правая",
+   "size": [
+    2040,
+    22
+   ],
+   "count": 1
+  },
+  {
+   "n": "37",
+   "name": "Штанга L=474 мм",
+   "size": [
+    474
+   ],
+   "count": 2,
+   "note": "hardware table; rail, length only"
+  }
+ ],
+ "hardware": [
+  {
+   "n": "25",
+   "name": "Стяжка одинарная \"Direkta\" 7x50",
+   "count": 4,
+   "size": "7x50",
+   "note": "для соединения деталей"
+  },
+  {
+   "n": "26",
+   "name": "Заглушка стяжки одинарной \"Direkta\"",
+   "count": 16
+  },
+  {
+   "n": "27",
+   "name": "Стяжка эксцентриковая \"Rastex\"",
+   "count": 48,
+   "note": "для соединения деталей"
+  },
+  {
+   "n": "28",
+   "name": "Дюбель стяжки эксцентриковой \"Rastex\"",
+   "count": 32,
+   "note": "для соединения деталей"
+  },
+  {
+   "n": "29",
+   "name": "Заглушка стяжки эксцентриковой \"Rastex\"",
+   "count": 48
+  },
+  {
+   "n": "30",
+   "name": "Стяжка одинарная \"Direkta\" 7x70",
+   "count": 12,
+   "size": "7x70"
+  },
+  {
+   "n": "31",
+   "name": "Шкант 8x35",
+   "count": 36,
+   "size": "8x35",
+   "note": "для фиксирования деталей"
+  },
+  {
+   "n": "32",
+   "name": "Шурупы 3,5x16",
+   "count": 68,
+   "size": "3,5x16",
+   "note": "для петель"
+  },
+  {
+   "n": "32",
+   "name": "Шурупы 3,5x16",
+   "count": 16,
+   "size": "3,5x16",
+   "note": "для соединительного уголка"
+  },
+  {
+   "n": "33",
+   "name": "Шуруп 4x25",
+   "count": 10,
+   "size": "4x25",
+   "note": "карниз к крышке"
+  },
+  {
+   "n": "34",
+   "name": "Шайба круглая",
+   "count": 90,
+   "note": "для задней стенки"
+  },
+  {
+   "n": "35",
+   "name": "Шайба прямоугольная",
+   "count": 30,
+   "note": "для крепления задней стенки"
+  },
+  {
+   "n": "36",
+   "name": "Подпятник регулируемый с втулкой",
+   "count": 6,
+   "note": "для установки изделия на пол"
+  },
+  {
+   "n": "38",
+   "name": "Ключ шестигранный",
+   "count": 1
+  },
+  {
+   "n": "39",
+   "name": "Винт 4x25",
+   "count": 3,
+   "size": "4x25",
+   "note": "для крепления ручек"
+  },
+  {
+   "n": "40",
+   "name": "Универсальный соединительный уголок",
+   "count": 8
+  },
+  {
+   "n": "41",
+   "name": "Петля К-9,5 (полунакл)",
+   "count": 5,
+   "note": "центральная дверь 13"
+  },
+  {
+   "n": "42",
+   "name": "Планка монтажная D=3 мм",
+   "count": 5,
+   "note": "для навески дверей"
+  },
+  {
+   "n": "43",
+   "name": "Ручка",
+   "count": 3
+  },
+  {
+   "n": "44",
+   "name": "Полкодержатель",
+   "count": 16,
+   "note": "для установки полок"
+  },
+  {
+   "n": "45",
+   "name": "Шурупы 3x20",
+   "count": 120,
+   "size": "3x20"
+  },
+  {
+   "n": "46",
+   "name": "Петля К-16 (вкладная)",
+   "count": 10,
+   "note": "двери 11, 12"
+  },
+  {
+   "n": "47",
+   "name": "Шкант 8x60",
+   "count": 8,
+   "size": "8x60"
+  },
+  {
+   "n": "48",
+   "name": "Планка монтажная D=5 мм",
+   "count": 10
+  },
+  {
+   "n": "49",
+   "name": "Двойной дюбель стяжки эксц \"Rastex\"",
+   "count": 8,
+   "note": "в детали 5, 6"
+  },
+  {
+   "n": "50",
+   "name": "Штангодержатель",
+   "count": 4
+  }
+ ],
+ "drawing": "3-door wardrobe, full-height sides/partitions 2040, 3 sections: side sections 482 wide (shelf 7 / царга 10 = 482), centre 454 (shelf 9) -> carcass 4x16+2x482+454 = 1482; top 1 and bottom 2 are 1514x600 (overhang ~16 mm per side; 600 deep vs 580 sides). Sides 3,4 + partitions 5,6 stand on bottom 2 (Direkta 7x50/7x70); top 1 on sides/partitions (Direkta); fixed parts 7,10,9 joined between sides/partitions with eccentrics (sequence 3,7,10,5,9,6,7,10,4). Side sections (hanging): fixed shelf 7 (578 deep x 482) at top (hat shelf) and another 7 low above the bottom (2 per section), царга 10 (482x200) at upper-mid height, rail 37 (474 long) on 2 holders each. Centre section: fixed shelves 9 (578x454) at top and bottom level, 4 removable shelves 8 (570x452) between. Doors: 11/12 (2036 high x 487 wide) on inset K-16 hinges, 5 each (10); centre mirror door 13 (2036 x 468) on half-overlay K-9.5, 5. Handles 3. Cornice 18 front 1596x86 + 19/19-01 sides 641x86 screwed onto top 1 (4x25). Plinth box 14/17 (1504x70) + 15/16 (522x70) with 6 levelling feet, 8 corner brackets. Pilasters 23/24 (2040x22) on side front edges. Backs ДВП (scheme p2): 20 (1478 wide x 249 high) across the top, below it 21|22|21 (1835 high; 504+466+504 = 1474 wide); 249+1835 = 2084 ≈ 2040+2x16+12. No orthographic front view: small perspective thumbnail at pages/turin-1-16-01-p1.png 704,648,810,790 and the exploded view. Height estimate (16 mm boards): 70+16+2040+16 = 2142 + cornice. UNSURE: exact vertical positions of shelves 7 / царга 10 (not dimensioned)."
+}

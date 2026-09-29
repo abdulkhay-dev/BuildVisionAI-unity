@@ -1,0 +1,387 @@
+{
+ "code": "П7.036.0.26",
+ "source": "page image pages/turin-0-26-p1.png (Тумба «Турин»; table «№, наименование, A×B, кол., примечание»; two sizes, no thickness); assembly text + back scheme (рис. Е) on p2",
+ "rows": [
+  {
+   "n": "1",
+   "name": "Крышка",
+   "size": [
+    1500,
+    450
+   ],
+   "count": 1
+  },
+  {
+   "n": "2",
+   "name": "Стенка боковая левая",
+   "size": [
+    1080,
+    426
+   ],
+   "count": 1
+  },
+  {
+   "n": "3",
+   "name": "Стенка боковая правая",
+   "size": [
+    1080,
+    426
+   ],
+   "count": 1
+  },
+  {
+   "n": "4",
+   "name": "Стенка горизонтальная нижняя",
+   "size": [
+    1500,
+    446
+   ],
+   "count": 1
+  },
+  {
+   "n": "5",
+   "name": "Перегородка левая",
+   "size": [
+    1080,
+    426
+   ],
+   "count": 1
+  },
+  {
+   "n": "6",
+   "name": "Перегородка правая",
+   "size": [
+    1080,
+    426
+   ],
+   "count": 1
+  },
+  {
+   "n": "7",
+   "name": "Стенка горизонтальная",
+   "size": [
+    462,
+    425
+   ],
+   "count": 1
+  },
+  {
+   "n": "8",
+   "name": "Полка сьемная",
+   "size": [
+    460,
+    416
+   ],
+   "count": 1
+  },
+  {
+   "n": "9",
+   "name": "Полка сьемная (стекло)",
+   "size": [
+    469,
+    416
+   ],
+   "count": 4,
+   "note": "Стекло"
+  },
+  {
+   "n": "10",
+   "name": "Брусок боковой",
+   "size": [
+    471,
+    70
+   ],
+   "count": 2
+  },
+  {
+   "n": "11",
+   "name": "Брусок центральный",
+   "size": [
+    462,
+    70
+   ],
+   "count": 1
+  },
+  {
+   "n": "12",
+   "name": "Стенка передняя ящика",
+   "size": [
+    476,
+    251
+   ],
+   "count": 1
+  },
+  {
+   "n": "13",
+   "name": "Стенка боковая ящика лев",
+   "size": [
+    400,
+    200
+   ],
+   "count": 1
+  },
+  {
+   "n": "14",
+   "name": "Стенка боковая ящика прав",
+   "size": [
+    400,
+    200
+   ],
+   "count": 1
+  },
+  {
+   "n": "15",
+   "name": "Стенка задняя ящика",
+   "size": [
+    404,
+    200
+   ],
+   "count": 1
+  },
+  {
+   "n": "16",
+   "name": "Дно ящика",
+   "size": [
+    434,
+    405
+   ],
+   "count": 1
+  },
+  {
+   "n": "17",
+   "name": "Дверь боковая",
+   "size": [
+    1074,
+    476
+   ],
+   "count": 2
+  },
+  {
+   "n": "18",
+   "name": "Дверь центральная",
+   "size": [
+    820,
+    476
+   ],
+   "count": 1
+  },
+  {
+   "n": "19",
+   "name": "Пилястра",
+   "size": [
+    1080,
+    22
+   ],
+   "count": 2
+  },
+  {
+   "n": "20",
+   "name": "Цоколь передний",
+   "size": [
+    1490,
+    70
+   ],
+   "count": 1
+  },
+  {
+   "n": "21",
+   "name": "Цоколь задний",
+   "size": [
+    1490,
+    70
+   ],
+   "count": 1
+  },
+  {
+   "n": "22",
+   "name": "Цоколь боковой",
+   "size": [
+    368,
+    70
+   ],
+   "count": 2
+  },
+  {
+   "n": "23",
+   "name": "Стенка задняя",
+   "size": [
+    1103,
+    493
+   ],
+   "count": 2
+  },
+  {
+   "n": "24",
+   "name": "Стенка задня",
+   "size": [
+    1103,
+    476
+   ],
+   "count": 1
+  }
+ ],
+ "hardware": [
+  {
+   "n": "25",
+   "name": "Стяжка одинарная \"Direkta\" 7x50",
+   "count": 8,
+   "size": "7x50",
+   "note": "для соединения деталей"
+  },
+  {
+   "n": "26",
+   "name": "Стяжка эксцентриковая \"Rastex\"",
+   "count": 22
+  },
+  {
+   "n": "27",
+   "name": "Дюбель стяжки эксцентриковой \"Rastex\"",
+   "count": 22
+  },
+  {
+   "n": "28",
+   "name": "Заглушка пластмассовая для \"Rastex\"",
+   "count": 18
+  },
+  {
+   "n": "29",
+   "name": "Шкант 8x35",
+   "count": 38,
+   "size": "8x35",
+   "note": "для фиксирования деталей"
+  },
+  {
+   "n": "30",
+   "name": "Ручка",
+   "count": 4,
+   "note": "для дверей"
+  },
+  {
+   "n": "31",
+   "name": "Винт 4x16",
+   "count": 1,
+   "size": "4x16",
+   "note": "для крепления ручек"
+  },
+  {
+   "n": "32",
+   "name": "Трансформатор светодиодного освещения",
+   "count": 1
+  },
+  {
+   "n": "33",
+   "name": "Шкант 8x60",
+   "count": 2,
+   "size": "8x60",
+   "note": "в деталь 11 с двух сторон"
+  },
+  {
+   "n": "34",
+   "name": "Направляющая шариковая 400 мм h35 полного выдвиж. без доводчика",
+   "count": 1,
+   "size": "400"
+  },
+  {
+   "n": "35",
+   "name": "Ключ шестигранный",
+   "count": 1
+  },
+  {
+   "n": "36",
+   "name": "Заглушка пластмассовая для \"Direkta\"",
+   "count": 8
+  },
+  {
+   "n": "37",
+   "name": "Шурупы 3,5x16",
+   "count": 80,
+   "size": "3,5x16",
+   "note": "для соединительного уголка, направляющих, петель"
+  },
+  {
+   "n": "38",
+   "name": "Полкодержатель для стеклянных полок Secura",
+   "count": 16,
+   "note": "для установки полок"
+  },
+  {
+   "n": "39",
+   "name": "Шурупы 3x20",
+   "count": 78,
+   "size": "3x20",
+   "note": "для задних стенок"
+  },
+  {
+   "n": "40",
+   "name": "Шайба круглая",
+   "count": 58,
+   "note": "для крепления задней стенки"
+  },
+  {
+   "n": "41",
+   "name": "Шайба прямоугольная",
+   "count": 20,
+   "note": "для крепления задней стенки"
+  },
+  {
+   "n": "42",
+   "name": "Стяжка одинарная \"Direkta\" 7x70",
+   "count": 8,
+   "size": "7x70",
+   "note": "для соединения деталей"
+  },
+  {
+   "n": "43",
+   "name": "Подпятник регулируемый с втулкой",
+   "count": 5,
+   "note": "для установки изделия на пол"
+  },
+  {
+   "n": "44",
+   "name": "Соединительный уголок",
+   "count": 6,
+   "note": "для крепления цоколей"
+  },
+  {
+   "n": "45",
+   "name": "Полкодержатель",
+   "count": 4,
+   "note": "для установки полок"
+  },
+  {
+   "n": "46",
+   "name": "Винт 4x25",
+   "count": 3,
+   "size": "4x25",
+   "note": "для крепления ручек"
+  },
+  {
+   "n": "47",
+   "name": "Петля К-9,5 (полунакладная)",
+   "count": 2,
+   "note": "центральная дверь 18"
+  },
+  {
+   "n": "48",
+   "name": "Планка монтажная D=3мм",
+   "count": 2
+  },
+  {
+   "n": "49",
+   "name": "Петля К-16 (вкладная)",
+   "count": 6,
+   "note": "боковые двери 17"
+  },
+  {
+   "n": "50",
+   "name": "Планка монтажная D=5мм",
+   "count": 6
+  },
+  {
+   "n": "51",
+   "name": "Клипса светодиодная",
+   "count": 4
+  }
+ ],
+ "drawing": "3-section high тумба / display chest: two glazed side doors, centre = drawer over a solid door. No orthographic front view and no dimension lines (only a small perspective thumbnail at the top of p1, approx. pages/turin-0-26-p1.png 422,3,527,132, and the exploded view). Sides 2,3 and partitions 5,6 (1080x426) stand on bottom 4 (1500x446) — p2: parts 2,10,5,7,11,6,10,3 fixed to bottom 4 with Direkta 7x70; top 1 (1500x450) on sides/partitions with eccentrics. Inner widths from bars: 471 / 462 / 471 -> carcass 4x16+471+462+471 = 1468, top/bottom 1500 overhang ~16 mm per side. Bars 10 (471x70, side sections) and 11 (462x70, centre) sit on the bottom behind the doors (plinth rail). Centre: horizontal 7 (462x425) separates the drawer (front 12 = 476 wide x 251 high; sides 400x200, back 404x200, bottom 434x405 with no ДВП note) from the compartment below with 1 removable shelf 8 (460x416); centre door 18 = 820 high x 476 wide; 251+820 = 1071 vs 1074 side doors. Side sections: glazed doors 17 (1074 high x 476 wide, 2) and 2 glass shelves 9 (469x416) each on Secura supports; LED 4 clips + transformer. Plinth box 20/21 (1490x70) + 22 (368x70, 2), 5 levelling feet. Pilasters 19 (1080x22) on outer side front edges. Backs ДВП (note column empty but text says ДВП): 23 1103x493 (2) + 24 1103x476, scheme 23|24|23 (493+476+493 = 1462 vs 1468). Hinges: side doors inset K-16, 3 each (6); centre door half-overlay K-9.5 (2). Handles 4 (2 side doors + centre door + drawer). One drawer, 1 pair 400 mm guides. Height estimate (16 mm boards): 70+16+1080+16 = 1182."
+}

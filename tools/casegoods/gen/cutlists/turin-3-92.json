@@ -1,0 +1,89 @@
+{
+ "code": "П7.036.3.92",
+ "source": "page image pages/turin-3-92-p1.png (table «№, наименование, размер, кол., примечание»; two sizes, no thickness except note T=25мм) + «Фурнитура» table (поз., наименование, кол.)",
+ "rows": [
+  {
+   "n": "1",
+   "name": "Стенка вертикальная",
+   "size": [
+    1418,
+    660
+   ],
+   "count": 1
+  },
+  {
+   "n": "2",
+   "name": "Стенка горизонтальная",
+   "size": [
+    658,
+    80
+   ],
+   "count": 1,
+   "note": "T=25мм"
+  },
+  {
+   "n": "3",
+   "name": "Карниз передний",
+   "size": [
+    746,
+    86
+   ],
+   "count": 1
+  },
+  {
+   "n": "4",
+   "name": "Карниз левый",
+   "size": [
+    139,
+    86
+   ],
+   "count": 1
+  },
+  {
+   "n": "5",
+   "name": "Карниз правый",
+   "size": [
+    139,
+    86
+   ],
+   "count": 1
+  }
+ ],
+ "hardware": [
+  {
+   "n": "6",
+   "name": "Крючок K-209",
+   "count": 3
+  },
+  {
+   "n": "7",
+   "name": "Шурупы 3,5x16",
+   "count": 14,
+   "size": "3,5x16"
+  },
+  {
+   "n": "8",
+   "name": "Подвеска",
+   "count": 2
+  },
+  {
+   "n": "9",
+   "name": "Шуруп 4x25",
+   "count": 7,
+   "size": "4x25"
+  },
+  {
+   "n": "10",
+   "name": "Шкант 8x35",
+   "count": 2,
+   "size": "8x35"
+  },
+  {
+   "n": "11",
+   "name": "Стяжка одинарная «Direkta» 7x50",
+   "count": 3,
+   "size": "7x50"
+  }
+ ],
+ "drawing": "Wall coat hanger: one tall panel 1 (1418 high × 660 wide) hung on the wall by 2 hangers 8 screwed on its back face; horizontal board 2 (658×80, 25 mm) sits on the top edge of the panel as a small hat shelf projecting forward (dowels 10 into its underside/end + 3 Direkta 7x50 through it into the panel); cornice 3 (746×86 front) + 4/5 (139×86 returns) screwed round the front and ends of board 2 with 4x25 screws 9 (mitred corners). 3 hooks K-209 (6) in a row on the front face just below the board (evenly spaced across the width). No dimension lines, no orthographic front view."
+}

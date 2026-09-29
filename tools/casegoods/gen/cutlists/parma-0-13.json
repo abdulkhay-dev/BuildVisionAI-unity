@@ -1,0 +1,244 @@
+{
+ "code": "П7.050.0.13",
+ "source": "page image pages/parma-0-13-p3.png (table «№, наименование, a×b мм, n»; two sizes, no thickness) + lettered hardware pictures A…V with counts; assembly steps 1–8 on p3/p4 (pages 5–6 of the 6-page instruction are not in the set)",
+ "rows": [
+  {
+   "n": "1",
+   "name": "Крышка",
+   "size": [
+    924,
+    420
+   ],
+   "count": 1
+  },
+  {
+   "n": "2",
+   "name": "Стенка боковая левая",
+   "size": [
+    390,
+    1984
+   ],
+   "count": 1
+  },
+  {
+   "n": "3",
+   "name": "Стенка боковая правая",
+   "size": [
+    390,
+    1984
+   ],
+   "count": 1
+  },
+  {
+   "n": "4",
+   "name": "Пилястра",
+   "size": [
+    44,
+    1984
+   ],
+   "count": 2
+  },
+  {
+   "n": "5",
+   "name": "Стенка горизонтальная нижняя",
+   "size": [
+    872,
+    390
+   ],
+   "count": 1
+  },
+  {
+   "n": "6",
+   "name": "Перегородка",
+   "size": [
+    390,
+    1482
+   ],
+   "count": 1
+  },
+  {
+   "n": "7",
+   "name": "Перегородка горизонтальная",
+   "size": [
+    872,
+    390
+   ],
+   "count": 1
+  },
+  {
+   "n": "8",
+   "name": "Перегородка малая",
+   "size": [
+    390,
+    390
+   ],
+   "count": 1
+  },
+  {
+   "n": "9",
+   "name": "Полка съемная (стекло)",
+   "size": [
+    426,
+    360
+   ],
+   "count": 6,
+   "note": "Стекло"
+  },
+  {
+   "n": "10",
+   "name": "Царга",
+   "size": [
+    428,
+    200
+   ],
+   "count": 2
+  },
+  {
+   "n": "11",
+   "name": "Дверь верхняя",
+   "size": [
+    424,
+    1478
+   ],
+   "count": 2
+  },
+  {
+   "n": "12",
+   "name": "Дверь нижняя",
+   "size": [
+    424,
+    386
+   ],
+   "count": 2
+  },
+  {
+   "n": "13",
+   "name": "Стенка задняя (ДВП)",
+   "size": [
+    449,
+    957
+   ],
+   "count": 4,
+   "note": "ДВП"
+  }
+ ],
+ "hardware": [
+  {
+   "n": "A",
+   "name": "Стяжка одинарная «Direkta» (конфирмат) 7x50",
+   "count": 12,
+   "size": "7x50"
+  },
+  {
+   "n": "B",
+   "name": "Заглушка стяжки A (8 + 4 шт. двух видов)",
+   "count": 12
+  },
+  {
+   "n": "C",
+   "name": "Дюбель эксцентриковой стяжки",
+   "count": 8
+  },
+  {
+   "n": "D",
+   "name": "Эксцентрик (стяжка эксцентриковая)",
+   "count": 24
+  },
+  {
+   "n": "E",
+   "name": "Заглушка эксцентрика",
+   "count": 24
+  },
+  {
+   "n": "F",
+   "name": "Шкант 8x35",
+   "count": 16,
+   "size": "8x35"
+  },
+  {
+   "n": "G",
+   "name": "Ключ шестигранный",
+   "count": 1
+  },
+  {
+   "n": "H",
+   "name": "Ручка-кнопка + винт",
+   "count": 4
+  },
+  {
+   "n": "I",
+   "name": "Подпятник регулируемый с втулкой",
+   "count": 4
+  },
+  {
+   "n": "J",
+   "name": "Петля K-16",
+   "count": 12
+  },
+  {
+   "n": "K",
+   "name": "Планка монтажная D=5",
+   "count": 12,
+   "size": "D=5"
+  },
+  {
+   "n": "L",
+   "name": "Дюбель эксцентриковой стяжки короткий (для пилястр)",
+   "count": 8
+  },
+  {
+   "n": "M",
+   "name": "Полкодержатель для стеклянной полки (с зажимом)",
+   "count": 24
+  },
+  {
+   "n": "N",
+   "name": "Стеклодержатель (прозрачный, для стекла двери)",
+   "count": 24
+  },
+  {
+   "n": "O",
+   "name": "Шуруп 3,5x16",
+   "count": 50,
+   "size": "3,5x16"
+  },
+  {
+   "n": "P",
+   "name": "Шуруп 3x20",
+   "count": 100,
+   "size": "3x20"
+  },
+  {
+   "n": "Q",
+   "name": "Шайба круглая",
+   "count": 52
+  },
+  {
+   "n": "R",
+   "name": "Шайба прямоугольная (для задней стенки)",
+   "count": 26
+  },
+  {
+   "n": "S",
+   "name": "Пластиковый уголок с откидным язычком (вероятно крепление к стене)",
+   "count": 2
+  },
+  {
+   "n": "T",
+   "name": "Полкодержатель-штырь",
+   "count": 6
+  },
+  {
+   "n": "U",
+   "name": "Шкант 8x60",
+   "count": 2,
+   "size": "8x60"
+  },
+  {
+   "n": "V",
+   "name": "Дюбель двойной (стяжка двусторонняя)",
+   "count": 4
+  }
+ ],
+ "drawing": "2-door display cabinet (витрина), overall 924×420×2000 (dimension lines on the small iso thumbnail on p3: 924 wide, 420 deep, 2000 high). Sides 2/3 (390×1984) reach the floor on adjustable feet I (2 per side, step 1); top 1 (924×420) lies ON the sides (1984+16=2000) with overhang; pilasters 4 (44×1984) fixed on the front edges of the sides with short dowels L (4 per pilaster, step 7). Bottom 5 (872×390) between the sides, raised above the floor — the sides run down past it (front view shows a recess below the bottom edge). Horizontal partition 7 (872×390) between the sides at the top of the lower doors (~390 above bottom 5); small vertical partition 8 (390×390) centred between 5 and 7; tall vertical partition 6 (390×1482) centred between 7 and the top — two equal bays, 428 wide each (872−16)/2. Upper bays: 3 glass shelves 9 (426×360) per bay on holders M (24 = 6×4); царги 10 (428×200) one per upper bay at about mid-height of the upper part (probably rear rails; step 8) — UNSURE front/back. Doors: 2 upper glazed doors 11 (424×1478, frame with glass laid in from the back overlapping the opening by ~15 mm, held by 12 glass clips N + screws P per door, step 5; glass size not listed) with 4 hinges K-16 each; 2 lower panel doors 12 (424×386) with 2 hinges each (12 hinges total). Doors overlay the sides/partitions. Handles H: 4 knobs — upper doors at the meeting edges at about 1/2–2/3 height, lower doors near the top at the meeting edges. Back ДВП 13 (449×957) ×4 in a 2×2 grid. No orthographic front view (p1 is an isometric picture)."
+}

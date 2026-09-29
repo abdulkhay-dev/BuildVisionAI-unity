@@ -1,0 +1,30 @@
+{
+ "code": "П7.050.1.41",
+ "source": "page image pages/parma-1-41-p3.png (table «№, a×b мм, наименование, n»; two sizes, no thickness) + lettered hardware pictures A, B; steps 1–3 on p3. Title on p1 reads «Зеркало П050.401»; the instruction has 3 pages",
+ "rows": [
+  {
+   "n": "1",
+   "name": "Рамка с зеркалом",
+   "size": [
+    900,
+    660
+   ],
+   "count": 1,
+   "note": "зеркало в рамке"
+  }
+ ],
+ "hardware": [
+  {
+   "n": "A",
+   "name": "Подвеска-пластина металлическая с отверстиями",
+   "count": 2
+  },
+  {
+   "n": "B",
+   "name": "Шуруп 3,5x16",
+   "count": 8,
+   "size": "3,5x16"
+  }
+ ],
+ "drawing": "Wall mirror, landscape, 900 wide × 660 high (dimension lines on the iso view on p3). Single delivered piece: a wide bevelled (sloped, raised-panel style) frame with the mirror set in it; frame border ≈ 1/10 of the width on each side as drawn (not dimensioned — UNSURE, estimated from the picture). Step 1: 2 metal hanger plates A screwed to the back of the frame near the top at each side, 4 screws B 3,5x16 each, the slotted end projecting above the top edge. Step 2: hung on 2 wall screws 820 mm apart (wall fixings not included). No orthographic front view."
+}

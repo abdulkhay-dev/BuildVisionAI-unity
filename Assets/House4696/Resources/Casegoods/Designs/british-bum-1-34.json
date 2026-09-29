@@ -1,0 +1,29 @@
+{
+  "id": "british-bum-1-34",
+  "size": [2042, 839, 800],
+  "parts": [
+    {"id": "end-l", "box": [0, 0, 0, 16, 650, 839], "shape": "path", "outline": "M 0 0 L 839 0 L 839 450 C 839 560 749 650 639 650 L 0 650 Z"},
+    {"id": "end-r", "box": [2026, 0, 0, 2042, 650, 839], "shape": "path", "outline": "M 0 0 L 839 0 L 839 450 C 839 560 749 650 639 650 L 0 650 Z"},
+    {"id": "back-board", "box": [16, 60, 0, 2026, 650, 16]},
+    {"id": "rail", "box": [16, 312, 823, 2026, 442, 839]},
+    {"id": "base", "box": [16, 426, 16, 2026, 442, 823]},
+    {"id": "support", "box": [1013.0, 0, 16, 1029.0, 426, 821]},
+    {"id": "mattress", "kind": "mattress", "box": [21, 442, 23, 2021, 562, 823]},
+    {"id": "f-drawer_1", "kind": "front", "box": [18.0, 20.0, 823, 1011.0, 300.0, 839], "print": "british_bum_bus_stamp_drawer"},
+    {"id": "drawer_1-side-l", "box": [29, 30, 123, 45, 250, 823]},
+    {"id": "drawer_1-side-r", "box": [984.0, 30, 123, 1000.0, 250, 823]},
+    {"id": "drawer_1-back", "box": [45, 30, 123, 984.0, 250, 139]},
+    {"id": "drawer_1-bottom", "kind": "back", "box": [40, 40, 127, 989.0, 43.5, 821]},
+    {"id": "f-drawer_2", "kind": "front", "box": [1031.0, 20.0, 823, 2024.0, 300.0, 839], "print": "british_bum_eye_england_drawer"},
+    {"id": "drawer_2-side-l", "box": [1042.0, 30, 123, 1058.0, 250, 823]},
+    {"id": "drawer_2-side-r", "box": [1997, 30, 123, 2013, 250, 823]},
+    {"id": "drawer_2-back", "box": [1058.0, 30, 123, 1997, 250, 139]},
+    {"id": "drawer_2-bottom", "kind": "back", "box": [1053.0, 40, 127, 2002, 43.5, 821]},
+    {"id": "cushion-board", "box": [36, 650, 0, 2006, 790, 16]},
+    {"id": "cushion", "kind": "soft", "mat": "fabric", "tufts": [17, 3], "box": [36, 470, 16, 2006, 800, 76]}
+  ],
+  "moves": [
+    {"type": "drawer", "name": "drawer_1", "parts": ["f-drawer_1", "drawer_1-side-l", "drawer_1-side-r", "drawer_1-back", "drawer_1-bottom"], "travel": 550},
+    {"type": "drawer", "name": "drawer_2", "parts": ["f-drawer_2", "drawer_2-side-l", "drawer_2-side-r", "drawer_2-back", "drawer_2-bottom"], "travel": 550}
+  ]
+}

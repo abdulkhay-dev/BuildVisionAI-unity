@@ -1,0 +1,367 @@
+{
+ "code": "П7.036.1.30",
+ "source": "page image pages/turin-1-30-p1.png (table «№, наименование, A×B, кол., примечание»; two sizes, no thickness, T=25 мм on 25-mm parts; hardware table «Поз., Наименование, Кол-во, Примечание»); p2 = back scheme рис. Г + assembly text; cover = copy of p1",
+ "rows": [
+  {
+   "n": "1",
+   "name": "Крышка",
+   "size": [
+    950,
+    450
+   ],
+   "count": 1,
+   "note": "T=25 мм"
+  },
+  {
+   "n": "2",
+   "name": "Стенка горизонт. нижняя",
+   "size": [
+    950,
+    446
+   ],
+   "count": 1,
+   "note": "T=25 мм"
+  },
+  {
+   "n": "3",
+   "name": "Стенка боковая левая",
+   "size": [
+    898,
+    426
+   ],
+   "count": 1
+  },
+  {
+   "n": "4",
+   "name": "Стенка боковая правая",
+   "size": [
+    898,
+    426
+   ],
+   "count": 1
+  },
+  {
+   "n": "5",
+   "name": "Царга",
+   "size": [
+    886,
+    180
+   ],
+   "count": 1
+  },
+  {
+   "n": "6",
+   "name": "Брусок",
+   "size": [
+    435,
+    70
+   ],
+   "count": 2
+  },
+  {
+   "n": "7",
+   "name": "Стенка передняя верхнего ящика правая",
+   "size": [
+    439,
+    220
+   ],
+   "count": 1
+  },
+  {
+   "n": "8",
+   "name": "Стенка боковая левая ящика верхнего",
+   "size": [
+    400,
+    173
+   ],
+   "count": 2
+  },
+  {
+   "n": "9",
+   "name": "Стенка боковая правая ящика верхнего",
+   "size": [
+    400,
+    173
+   ],
+   "count": 2
+  },
+  {
+   "n": "10",
+   "name": "Стенка задняя ящика верхнего",
+   "size": [
+    377,
+    173
+   ],
+   "count": 2
+  },
+  {
+   "n": "11",
+   "name": "Дно ящика верхнего",
+   "size": [
+    405,
+    402
+   ],
+   "count": 2,
+   "note": "ДВП"
+  },
+  {
+   "n": "12",
+   "name": "Стенка передняя верхнего ящика левая",
+   "size": [
+    439,
+    220
+   ],
+   "count": 1
+  },
+  {
+   "n": "13",
+   "name": "Стенка передняя ящика",
+   "size": [
+    882,
+    220
+   ],
+   "count": 3
+  },
+  {
+   "n": "14",
+   "name": "Стенка боковая левая ящика",
+   "size": [
+    400,
+    173
+   ],
+   "count": 3
+  },
+  {
+   "n": "15",
+   "name": "Стенка боковая правая ящика",
+   "size": [
+    400,
+    173
+   ],
+   "count": 3
+  },
+  {
+   "n": "16",
+   "name": "Стенка задняя ящика",
+   "size": [
+    828,
+    173
+   ],
+   "count": 3
+  },
+  {
+   "n": "17",
+   "name": "Брусок продольный",
+   "size": [
+    400,
+    100
+   ],
+   "count": 3
+  },
+  {
+   "n": "18",
+   "name": "Дно ящика",
+   "size": [
+    856,
+    404
+   ],
+   "count": 3,
+   "note": "ДВП"
+  },
+  {
+   "n": "19",
+   "name": "Пилястра",
+   "size": [
+    898,
+    22
+   ],
+   "count": 2
+  },
+  {
+   "n": "20",
+   "name": "Цоколь передний",
+   "size": [
+    940,
+    70
+   ],
+   "count": 1
+  },
+  {
+   "n": "21",
+   "name": "Цоколь боковой",
+   "size": [
+    368,
+    70
+   ],
+   "count": 2,
+   "note": "T=25 мм"
+  },
+  {
+   "n": "22",
+   "name": "Цоколь задний",
+   "size": [
+    940,
+    70
+   ],
+   "count": 1
+  },
+  {
+   "n": "23",
+   "name": "Стенка горизонтальная",
+   "size": [
+    886,
+    424
+   ],
+   "count": 1
+  },
+  {
+   "n": "24",
+   "name": "Стенка вертикальная",
+   "size": [
+    424,
+    220
+   ],
+   "count": 1
+  },
+  {
+   "n": "25",
+   "name": "Стенка задняя",
+   "size": [
+    914,
+    554
+   ],
+   "count": 1,
+   "note": "ДВП"
+  },
+  {
+   "n": "26",
+   "name": "Стенка задняя",
+   "size": [
+    914,
+    363
+   ],
+   "count": 1,
+   "note": "ДВП"
+  }
+ ],
+ "hardware": [
+  {
+   "n": "27",
+   "name": "Шкант 8x35",
+   "count": 38,
+   "size": "8x35",
+   "note": "для фиксирования деталей"
+  },
+  {
+   "n": "28",
+   "name": "Стяжка эксцентриковая \"Rastex\"",
+   "count": 37,
+   "note": "для соединения деталей"
+  },
+  {
+   "n": "29",
+   "name": "Дюбель стяжки эксцентриковой \"Rastex\"",
+   "count": 37,
+   "note": "для соединения деталей"
+  },
+  {
+   "n": "30",
+   "name": "Винт 4x16",
+   "count": 5,
+   "size": "4x16",
+   "note": "для крепления ручек"
+  },
+  {
+   "n": "31",
+   "name": "Заглушка пластмассовая для \"Rastex\"",
+   "count": 37
+  },
+  {
+   "n": "32",
+   "name": "Ключ шестигранный",
+   "count": 1
+  },
+  {
+   "n": "33",
+   "name": "Подпятник регулируемый с втулкой",
+   "count": 4,
+   "note": "для установки изделия на пол"
+  },
+  {
+   "n": "34",
+   "name": "Ручка",
+   "count": 5
+  },
+  {
+   "n": "35",
+   "name": "Соединительный уголок",
+   "count": 4,
+   "note": "для крепления цоколей"
+  },
+  {
+   "n": "36",
+   "name": "Шурупы 3,5x16",
+   "count": 8,
+   "size": "3,5x16",
+   "note": "для соединительного уголка"
+  },
+  {
+   "n": "36",
+   "name": "Шурупы 3,5x16",
+   "count": 60,
+   "size": "3,5x16",
+   "note": "для направляющих (second line of pos. 36)"
+  },
+  {
+   "n": "37",
+   "name": "Направляющая шариковая H35 400 мм полн.выдв. без доводчика",
+   "count": 5,
+   "size": "направляющие 400 (H35)"
+  },
+  {
+   "n": "38",
+   "name": "Шкант 8x60",
+   "count": 1,
+   "size": "8x60"
+  },
+  {
+   "n": "39",
+   "name": "Стяжка одинарная \"Direkta\" 7x50",
+   "count": 25,
+   "size": "7x50",
+   "note": "для соединения деталей"
+  },
+  {
+   "n": "40",
+   "name": "Стяжка одинарная \"Direkta\" 7x70",
+   "count": 4,
+   "size": "7x70",
+   "note": "для соединения деталей"
+  },
+  {
+   "n": "41",
+   "name": "Шайба круглая",
+   "count": 76,
+   "note": "для крепления задней стенки"
+  },
+  {
+   "n": "42",
+   "name": "Шурупы 3x20",
+   "count": 88,
+   "size": "3x20",
+   "note": "для задней стенки"
+  },
+  {
+   "n": "43",
+   "name": "Шайба прямоугольная",
+   "count": 12,
+   "note": "для крепления задней стенки"
+  },
+  {
+   "n": "44",
+   "name": "Заглушка пластмассовая для \"Direkta\"",
+   "count": 25
+  }
+ ],
+ "drawing": "No dimension lines; no orthographic front view — isometric thumbnail at pages/turin-1-30-p1.png 392,3,477,102 (chest: 2 small drawers side by side on top, 3 full-width drawers below, handles of the top pair near the middle). Step 1.4: parts 3,6,23,5,24,6,4 fixed on bottom 2 (T=25, Direkta), top 1 (T=25) laid ON the sides (Rastex); body on plinth box 20/21/22 (front/back 940 span side plinths 368 T=25; 4 brackets; 4 feet); pilasters 19 (898×22) on sides 3,4 with Rastex. Inner width 886 = 950−64 (царга 5, horizontal 23). Upper tier: horizontal wall 23 (886×424) under the top tier, vertical wall 24 (424 deep × 220 high) standing on it in the middle, two брусок 6 (435×70) one per upper compartment (at the top; (886−16)/2 = 435); two upper drawers with fronts 7 (right) and 12 (left) 439×220 — 2×439 = 878 + 16 wall = 894 > 886, so the upper fronts overlap the vertical wall (UNSURE exact gaps); upper boxes: sides 400×173, back 377×173 (box 409 ≈ bottom 405×402). Lower tier: 3 drawers, fronts 882×220 (882+4 = 886), sides 400×173, back 828×173 (box 860 ≈ bottom 856×404), longitudinal bar 17 (400×100) under each lower drawer bottom. Heights: 4×220 = 880 of 898 inner (18 mm for gaps; fronts cover wall 23). 5 runner pairs, 5 handles (1 per drawer). Царга 5 (886×180) at the rear (placement not clear in the exploded view — UNSURE, likely behind the top tier / back joint). Back (рис. Г): 25 (914 wide × 554 high) on top, 26 (914 × 363) below → 917 total."
+}

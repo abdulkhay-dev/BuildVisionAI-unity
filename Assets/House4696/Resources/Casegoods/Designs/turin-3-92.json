@@ -1,0 +1,15 @@
+{
+  "id": "turin-3-92",
+  "size": [746, 139, 1460],
+  "parts": [
+    {"n": "1", "box": [43, 0, 0, 703, 1418, 16], "edge": 3, "grain": "y", "face": {"type": "grooves", "lines": [[88, 45, 658, 45], [658, 45, 658, 1373], [658, 1373, 88, 1373], [88, 1373, 88, 45]], "w": 5, "depth": 2, "flute": "u"}},
+    {"n": "2", "box": [44, 1418, 0, 702, 1443, 80], "edge": 3, "grain": "x"},
+    {"id": "cornice", "kind": "moulding", "profile": "turin-crown-40", "plane": "top", "z": 1444, "side": -1, "mat": "front", "covers": ["3", "4", "5"], "path": [[0, 0], [0, 139], [746, 139], [746, 0]]},
+    {"id": "hook-1", "kind": "handle", "model": "knob", "at": [193, 1280], "d": 22, "t": 8, "standoff": 55, "z": 16},
+    {"id": "hook-2", "kind": "handle", "model": "knob", "at": [373, 1280], "d": 22, "t": 8, "standoff": 55, "z": 16},
+    {"id": "hook-3", "kind": "handle", "model": "knob", "at": [553, 1280], "d": 22, "t": 8, "standoff": 55, "z": 16}
+  ],
+  "moves": [
+
+  ]
+}

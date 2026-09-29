@@ -1,0 +1,444 @@
+{
+ "code": "П7.036.0.10",
+ "source": "page image pages/turin-0-10-p1.png (Шкаф 2д «Турин»; table «№, наименование, A×B, кол., примечание»; two sizes, no thickness); assembly text + back scheme on p2",
+ "rows": [
+  {
+   "n": "1",
+   "name": "Крышка",
+   "size": [
+    920,
+    446
+   ],
+   "count": 1
+  },
+  {
+   "n": "2",
+   "name": "Стенка горизонт. нижняя",
+   "size": [
+    920,
+    446
+   ],
+   "count": 1
+  },
+  {
+   "n": "3",
+   "name": "Стенка боковая левая",
+   "size": [
+    681,
+    426
+   ],
+   "count": 1
+  },
+  {
+   "n": "4",
+   "name": "Стенка боковая правая",
+   "size": [
+    681,
+    426
+   ],
+   "count": 1
+  },
+  {
+   "n": "5",
+   "name": "Перегородка",
+   "size": [
+    681,
+    426
+   ],
+   "count": 1
+  },
+  {
+   "n": "6",
+   "name": "Полка сьемная правая/левая",
+   "size": [
+    418,
+    416
+   ],
+   "count": 2
+  },
+  {
+   "n": "7",
+   "name": "Стенка передняя ящика левая",
+   "size": [
+    199,
+    425
+   ],
+   "count": 1
+  },
+  {
+   "n": "8",
+   "name": "Стенка передняя ящика правая",
+   "size": [
+    199,
+    425
+   ],
+   "count": 1
+  },
+  {
+   "n": "9",
+   "name": "Стенка боковая ящика левая",
+   "size": [
+    400,
+    150
+   ],
+   "count": 2
+  },
+  {
+   "n": "10",
+   "name": "Стенка боковая ящика правая",
+   "size": [
+    400,
+    150
+   ],
+   "count": 2
+  },
+  {
+   "n": "11",
+   "name": "Стенка задняя ящика",
+   "size": [
+    362,
+    150
+   ],
+   "count": 2
+  },
+  {
+   "n": "12",
+   "name": "Цоколь передний",
+   "size": [
+    908,
+    70
+   ],
+   "count": 1
+  },
+  {
+   "n": "13",
+   "name": "Цоколь боковой",
+   "size": [
+    368,
+    70
+   ],
+   "count": 2
+  },
+  {
+   "n": "14",
+   "name": "Цоколь задний",
+   "size": [
+    908,
+    70
+   ],
+   "count": 1
+  },
+  {
+   "n": "15",
+   "name": "Брусок",
+   "size": [
+    420,
+    70
+   ],
+   "count": 2
+  },
+  {
+   "n": "16",
+   "name": "Дверь",
+   "size": [
+    476,
+    425
+   ],
+   "count": 2
+  },
+  {
+   "n": "17",
+   "name": "Пилястра",
+   "size": [
+    681,
+    22
+   ],
+   "count": 2
+  },
+  {
+   "n": "18",
+   "name": "Дно ящика",
+   "size": [
+    405,
+    392
+   ],
+   "count": 2,
+   "note": "ДВП"
+  },
+  {
+   "n": "19",
+   "name": "Стенка задняя",
+   "size": [
+    441,
+    714
+   ],
+   "count": 2,
+   "note": "ДВП"
+  },
+  {
+   "n": "20",
+   "name": "Стенка боковая левая верхняя",
+   "size": [
+    1338,
+    426
+   ],
+   "count": 1
+  },
+  {
+   "n": "21",
+   "name": "Стенка боковая правая верхняя",
+   "size": [
+    1338,
+    426
+   ],
+   "count": 1
+  },
+  {
+   "n": "22",
+   "name": "Перегородка верхняя",
+   "size": [
+    1338,
+    426
+   ],
+   "count": 1
+  },
+  {
+   "n": "23",
+   "name": "Пилястра верхняя",
+   "size": [
+    1338,
+    22
+   ],
+   "count": 2
+  },
+  {
+   "n": "24",
+   "name": "Полка сьемная",
+   "size": [
+    418,
+    416
+   ],
+   "count": 4,
+   "note": "Стекло"
+  },
+  {
+   "n": "25а",
+   "name": "Карниз передний",
+   "size": [
+    1002,
+    86
+   ],
+   "count": 1
+  },
+  {
+   "n": "25б",
+   "name": "Карниз боковой",
+   "size": [
+    491,
+    86
+   ],
+   "count": 2
+  },
+  {
+   "n": "26",
+   "name": "Стенка горизонт. верхняя",
+   "size": [
+    920,
+    446
+   ],
+   "count": 1
+  },
+  {
+   "n": "27",
+   "name": "Дверь со стеклом",
+   "size": [
+    425,
+    1334
+   ],
+   "count": 2
+  },
+  {
+   "n": "28",
+   "name": "Стенка задняя",
+   "size": [
+    441,
+    1373
+   ],
+   "count": 2,
+   "note": "ДВП"
+  }
+ ],
+ "hardware": [
+  {
+   "n": "29",
+   "name": "Шкант 8x35",
+   "count": 42,
+   "size": "8x35",
+   "note": "для фиксирования деталей"
+  },
+  {
+   "n": "30",
+   "name": "Стяжка эксцентриковая \"Rastex\"",
+   "count": 40
+  },
+  {
+   "n": "31",
+   "name": "Дюбель стяжки эксцентриковой \"Rastex\"",
+   "count": 40
+  },
+  {
+   "n": "32",
+   "name": "Винт 4x25",
+   "count": 4,
+   "size": "4x25",
+   "note": "для крепления ручек"
+  },
+  {
+   "n": "33",
+   "name": "Заглушка пластмассовая для \"Rastex\"",
+   "count": 36
+  },
+  {
+   "n": "34",
+   "name": "Шкант 8x60",
+   "count": 1,
+   "size": "8x60"
+  },
+  {
+   "n": "35",
+   "name": "Петля К-16",
+   "count": 10,
+   "note": "для навески дверей"
+  },
+  {
+   "n": "36",
+   "name": "Планка монтажная D=5 мм",
+   "count": 10,
+   "note": "для навески дверей"
+  },
+  {
+   "n": "37",
+   "name": "Ключ шестигранный",
+   "count": 1
+  },
+  {
+   "n": "38",
+   "name": "Шурупы 3,5x16",
+   "count": 40,
+   "size": "3,5x16",
+   "note": "для петель"
+  },
+  {
+   "n": "38",
+   "name": "Шурупы 3,5x16",
+   "count": 24,
+   "size": "3,5x16",
+   "note": "для направляющих"
+  },
+  {
+   "n": "38",
+   "name": "Шурупы 3,5x16",
+   "count": 8,
+   "size": "3,5x16",
+   "note": "для соединительных уголков"
+  },
+  {
+   "n": "39",
+   "name": "Шурупы 3x20",
+   "count": 95,
+   "size": "3x20",
+   "note": "для задней стенки"
+  },
+  {
+   "n": "40",
+   "name": "Подпятник регулируемый с втулкой",
+   "count": 4
+  },
+  {
+   "n": "41",
+   "name": "Шайба круглая",
+   "count": 80,
+   "note": "для крепления задней стенки"
+  },
+  {
+   "n": "42",
+   "name": "Шайба прямоугольная",
+   "count": 15,
+   "note": "для крепления задней стенки"
+  },
+  {
+   "n": "43",
+   "name": "Ручка",
+   "count": 6,
+   "note": "для дверей"
+  },
+  {
+   "n": "44",
+   "name": "Соединительный уголок",
+   "count": 4,
+   "note": "для крепления цоколей"
+  },
+  {
+   "n": "45",
+   "name": "Направляющая шариковая 400 мм h35 полного выдвижения без доводчика",
+   "count": 2,
+   "size": "400"
+  },
+  {
+   "n": "46",
+   "name": "Винт 4x16",
+   "count": 2,
+   "size": "4x16",
+   "note": "для крепления ручек"
+  },
+  {
+   "n": "47",
+   "name": "Полкодержатель",
+   "count": 8,
+   "note": "для установки полок"
+  },
+  {
+   "n": "48",
+   "name": "Стяжка одинарная \"Direkta\" 7x50",
+   "count": 8,
+   "size": "7x50",
+   "note": "для соединения деталей"
+  },
+  {
+   "n": "49",
+   "name": "Стяжка одинарная \"Direkta\" 7x70",
+   "count": 6,
+   "size": "7x70",
+   "note": "для соединения деталей"
+  },
+  {
+   "n": "50",
+   "name": "Заглушка пластмассовая для \"Direkta\"",
+   "count": 8
+  },
+  {
+   "n": "51",
+   "name": "Полкодержатель для стеклянных полок",
+   "count": 16,
+   "note": "для установки полок"
+  },
+  {
+   "n": "52",
+   "name": "Шуруп 4x25",
+   "count": 7,
+   "size": "4x25",
+   "note": "для карниза"
+  },
+  {
+   "n": "53",
+   "name": "Трансформатор для освещения",
+   "count": 1
+  },
+  {
+   "n": "54",
+   "name": "Пластиковая светодиодная клипса LED",
+   "count": 4
+  }
+ ],
+ "drawing": "Two-door cabinet = lower cupboard (tумба) + upper glass showcase, 2 sections split by a partition. No dimension lines on any drawing. Lower: sides 3,4 and partition 5 (681 high) stand on bottom 2 (920x446, Direkta 7x70), bars 15 (420x70, 2) set between them with dowels; top 1 (920x446) is screwed onto sides+partition (eccentrics). Top/bottom 920 overhang the carcass: 3x16+2x420 = 888 carcass, so ~16 mm each side (assuming 16 mm board). Plinth box 12/14 (908x70) + 13 (368x70, 2) with 4 levelling feet under the bottom, joined by 4 corner brackets. Lower facade per section: drawer front 7/8 (199 high x 425 wide) on top, door 16 (476 high x 425 wide) below (199+476=675 vs 681 side). Drawers: sides 400x150, back 362x150, bottom ДВП 405x392, 400 mm ball guides (2). One removable ЛДСП shelf 6 (418x416) per lower section. Upper showcase: sides 20,21 and partition 22 (1338x426) stand on top 1; top 26 (920x446) on them; cornice 25а front 1002x86 + 25б sides 491x86 (2) screwed on top 26. Glass doors 27 (425 wide x 1334 high, 2); 4 glass shelves 24 (418x416, 2 per section) on 16 glass-shelf supports; LED: 4 clips + transformer. Pilasters 17 (681x22) and 23 (1338x22) glued on the front edges of the sides. Backs ДВП: lower 19 441x714 x2 side by side (441x2=882 vs 888 carcass; 714 = 681+2x16+1), upper 28 441x1373 x2 (1373 = 1338+2x16+3). Hinges K-16 inset 10 = 3 per glass door + 2 per lower door; handles 6 (2 drawers + 2 doors + 2 glass doors). Overall height estimate (16 mm boards): 70+16+681+16+1338+16 = 2137 + cornice. front view: pages/turin-0-10-p1.png 398,495,487,690"
+}

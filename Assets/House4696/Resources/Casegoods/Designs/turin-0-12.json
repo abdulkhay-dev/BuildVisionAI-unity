@@ -1,0 +1,37 @@
+{
+  "id": "turin-0-12",
+  "size": [710, 494, 2200],
+  "parts": [
+    {"n": "4", "box": [40, 70, 3, 670, 95, 453], "edge": 5, "grain": "x"},
+    {"n": "2", "box": [55, 95, 3, 71, 2135, 429], "grain": "y"},
+    {"n": "3", "box": [639, 95, 3, 655, 2135, 429], "grain": "y"},
+    {"n": "1", "box": [40, 2135, 3, 670, 2160, 453], "edge": 5, "grain": "x"},
+    {"n": "15", "box": [49, 95, 429, 71, 2135, 449], "mat": "front", "edge": 2, "grain": "y"},
+    {"n": "16", "box": [639, 95, 429, 661, 2135, 449], "mat": "front", "edge": 2, "grain": "y"},
+    {"n": "5", "box": [71, 790, 3, 639, 806, 429]},
+    {"n": "6", "box": [73, 325, 9, 637, 341, 425], "id": "6-1"},
+    {"n": "6", "box": [73, 565, 9, 637, 581, 425], "id": "6-2"},
+    {"n": "7", "kind": "glass", "box": [72, 1250, 9, 638, 1255, 425], "id": "7-1"},
+    {"id": "led-7-1", "kind": "light", "box": [335.0, 1243, 409, 375.0, 1250, 421]},
+    {"n": "7", "kind": "glass", "box": [72, 1690, 9, 638, 1695, 425], "id": "7-2"},
+    {"id": "led-7-2", "kind": "light", "box": [335.0, 1683, 409, 375.0, 1690, 421]},
+    {"n": "8", "box": [45.0, 0, 413, 665.0, 70, 429], "grain": "x", "shape": "path", "outline": "M 45 70 L 665 70 L 665 0 L 612.3 0 C 605.976 0 612.3 9 596.49 18.6 C 488.3 30 221.7 30 113.51 18.6 C 97.7 9 104.024 0 97.7 0 L 45 0 Z"},
+    {"n": "9", "box": [45.0, 0, 45, 61.0, 70, 413]},
+    {"n": "10", "box": [649.0, 0, 45, 665.0, 70, 413]},
+    {"n": "11", "box": [45.0, 0, 29, 665.0, 70, 45], "grain": "x"},
+    {"n": "12", "box": [0, 2184, 3, 710, 2200, 494], "edge": 5, "grain": "x", "mat": "front"},
+    {"id": "cornice-cove", "kind": "moulding", "profile": "turin-cove-24", "plane": "top", "z": 2160, "side": -1, "mat": "front", "path": [[8, 3], [8, 485], [702, 485], [702, 3]]},
+    {"n": "14", "kind": "front", "box": [73, 97, 429, 637, 797, 449], "edge": 2, "grain": "y", "face": {"type": "frame", "border": 22, "depth": 6, "r": 1, "profile": "turin-ogee"}},
+    {"id": "k-door_bottom-plate", "kind": "handle", "model": "bar", "at": [607, 470], "dir": "up", "d": 110, "band": 16, "t": 2, "standoff": 0.5, "post": 3, "z": 449},
+    {"id": "k-door_bottom-knob", "kind": "handle", "model": "knob", "at": [607, 470], "d": 24, "t": 11, "standoff": 13, "z": 449},
+    {"n": "13", "kind": "front", "box": [73, 799, 429, 637, 2133, 449], "edge": 2, "grain": "y", "glass": {"frame": 75, "rebate": 10, "t": 4, "tint": "clear"}},
+    {"id": "k-door_top-plate", "kind": "handle", "model": "bar", "at": [607, 1470], "dir": "up", "d": 110, "band": 16, "t": 2, "standoff": 0.5, "post": 3, "z": 449},
+    {"id": "k-door_top-knob", "kind": "handle", "model": "knob", "at": [607, 1470], "d": 24, "t": 11, "standoff": 13, "z": 449},
+    {"n": "18", "box": [57.0, 73, 0, 653.0, 798, 3], "kind": "back", "id": "18"},
+    {"n": "17", "box": [57.0, 798, 0, 653.0, 2157, 3], "kind": "back", "id": "17"}
+  ],
+  "moves": [
+    {"type": "door", "name": "door_bottom", "parts": ["14", "k-door_bottom-plate", "k-door_bottom-knob"], "hinge": "left", "angle": 105},
+    {"type": "door", "name": "door_top", "parts": ["13", "k-door_top-plate", "k-door_top-knob"], "hinge": "left", "angle": 105}
+  ]
+}

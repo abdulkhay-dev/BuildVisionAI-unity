@@ -1,0 +1,20 @@
+{
+  "id": "parma-1-26",
+  "size": [480, 460, 502],
+  "parts": [
+    {"n": "top", "box": [0, 486, 0, 480, 502, 450], "mat": "top", "edge": 2, "grain": "x"},
+    {"n": "side-l", "box": [10, 0, 0, 26, 486, 416], "grain": "y"},
+    {"n": "side-r", "box": [454, 0, 0, 470, 486, 416], "grain": "y"},
+    {"n": "pil", "box": [10, 0, 416, 26, 486, 460], "grain": "y", "id": "pil-l"},
+    {"n": "pil", "box": [454, 0, 416, 470, 486, 460], "grain": "y", "id": "pil-r"},
+    {"n": "bottom", "box": [26, 84, 0, 454, 100, 416], "mat": "top", "grain": "x"},
+    {"n": "rail", "box": [26, 406, 10, 454, 486, 26], "grain": "x"},
+    {"n": "shelf", "box": [27, 290, 22, 453, 306, 412]},
+    {"n": "door", "kind": "front", "box": [28, 100, 442, 452, 486, 460], "edge": 1.5, "grain": "y", "face": {"type": "frame", "border": 50, "depth": 3, "r": 1, "profile": "parma-bevel"}},
+    {"id": "k-door", "kind": "handle", "model": "knob", "at": [60, 426], "d": 30, "t": 14, "standoff": 12, "z": 460},
+    {"n": "back", "box": [16, 92, 6, 464, 491, 9.2], "kind": "back"}
+  ],
+  "moves": [
+    {"type": "door", "name": "door", "parts": ["door", "k-door"], "hinge": "right", "angle": 105}
+  ]
+}

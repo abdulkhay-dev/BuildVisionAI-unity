@@ -1,0 +1,306 @@
+{
+ "code": "П7.036.0.12",
+ "source": "page image pages/turin-0-12-p1.png (Шкаф «Турин» (витрина); table «№, наименование, A×B, кол., примечание»; two sizes, no thickness); same table repeated on p3 (Шкаф с витриной П036.12), assembly text on p2",
+ "rows": [
+  {
+   "n": "1",
+   "name": "Стенка горизонтальная верхняя",
+   "size": [
+    630,
+    450
+   ],
+   "count": 1
+  },
+  {
+   "n": "2",
+   "name": "Стенка боковая левая",
+   "size": [
+    2040,
+    426
+   ],
+   "count": 1
+  },
+  {
+   "n": "3",
+   "name": "Стенка боковая правая",
+   "size": [
+    2040,
+    426
+   ],
+   "count": 1
+  },
+  {
+   "n": "4",
+   "name": "Стенка горизонтальная нижняя",
+   "size": [
+    630,
+    450
+   ],
+   "count": 1
+  },
+  {
+   "n": "5",
+   "name": "Полка",
+   "size": [
+    568,
+    426
+   ],
+   "count": 1
+  },
+  {
+   "n": "6",
+   "name": "Полка сьемная",
+   "size": [
+    564,
+    416
+   ],
+   "count": 2
+  },
+  {
+   "n": "7",
+   "name": "Полка сьемная",
+   "size": [
+    566,
+    416
+   ],
+   "count": 2,
+   "note": "Стекло"
+  },
+  {
+   "n": "8",
+   "name": "Цоколь передний",
+   "size": [
+    620,
+    70
+   ],
+   "count": 1
+  },
+  {
+   "n": "9",
+   "name": "Цоколь левый",
+   "size": [
+    368,
+    70
+   ],
+   "count": 1
+  },
+  {
+   "n": "10",
+   "name": "Цоколь правый",
+   "size": [
+    368,
+    70
+   ],
+   "count": 1
+  },
+  {
+   "n": "11",
+   "name": "Цоколь задний",
+   "size": [
+    620,
+    70
+   ],
+   "count": 1
+  },
+  {
+   "n": "12",
+   "name": "Карниз",
+   "size": [
+    710,
+    491
+   ],
+   "count": 1
+  },
+  {
+   "n": "13",
+   "name": "Дверь верхняя",
+   "size": [
+    1334,
+    564
+   ],
+   "count": 1
+  },
+  {
+   "n": "14",
+   "name": "Дверь нижняя",
+   "size": [
+    700,
+    564
+   ],
+   "count": 1
+  },
+  {
+   "n": "15",
+   "name": "Пилястра левая",
+   "size": [
+    2040,
+    22
+   ],
+   "count": 1
+  },
+  {
+   "n": "16",
+   "name": "Пилястра правая",
+   "size": [
+    2040,
+    22
+   ],
+   "count": 1
+  },
+  {
+   "n": "17",
+   "name": "Стенка задняя",
+   "size": [
+    1359,
+    596
+   ],
+   "count": 1,
+   "note": "ДВП"
+  },
+  {
+   "n": "18",
+   "name": "Стенка задняя",
+   "size": [
+    725,
+    596
+   ],
+   "count": 1,
+   "note": "ДВП"
+  }
+ ],
+ "hardware": [
+  {
+   "n": "19",
+   "name": "Шкант 8x35",
+   "count": 24,
+   "size": "8x35",
+   "note": "для фиксирования деталей"
+  },
+  {
+   "n": "20",
+   "name": "Стяжка одинарная \"Direkta\" 7x70",
+   "count": 4,
+   "size": "7x70"
+  },
+  {
+   "n": "21",
+   "name": "Стяжка эксцентриковая \"Rastex\"",
+   "count": 22
+  },
+  {
+   "n": "22",
+   "name": "Дюбель стяжки эксцентриковой \"Rastex\"",
+   "count": 22
+  },
+  {
+   "n": "23",
+   "name": "Полкодержатель для стеклянных полок",
+   "count": 8,
+   "note": "для установки полок"
+  },
+  {
+   "n": "24",
+   "name": "Полкодержатель",
+   "count": 10,
+   "note": "для установки полок; also used as door stop in top 1 / bottom 4"
+  },
+  {
+   "n": "25",
+   "name": "Заглушка пластмассовая для \"Rastex\"",
+   "count": 22
+  },
+  {
+   "n": "26",
+   "name": "Петля вкладная",
+   "count": 5,
+   "note": "для навески дверей"
+  },
+  {
+   "n": "27",
+   "name": "Планка монтажная",
+   "count": 5,
+   "note": "для навески дверей"
+  },
+  {
+   "n": "28",
+   "name": "Ключ шестигранный",
+   "count": 1
+  },
+  {
+   "n": "29",
+   "name": "Шурупы 3,5x16",
+   "count": 20,
+   "size": "3,5x16",
+   "note": "для петель"
+  },
+  {
+   "n": "29",
+   "name": "Шурупы 3,5x16",
+   "count": 8,
+   "size": "3,5x16",
+   "note": "для соединительного уголка"
+  },
+  {
+   "n": "30",
+   "name": "Шурупы 3x20",
+   "count": 50,
+   "size": "3x20",
+   "note": "для задней стенки"
+  },
+  {
+   "n": "31",
+   "name": "Подпятник регулируемый с втулкой",
+   "count": 4,
+   "note": "для установки изделия на пол"
+  },
+  {
+   "n": "32",
+   "name": "Шайба круглая",
+   "count": 45,
+   "note": "для крепления задней стенки"
+  },
+  {
+   "n": "33",
+   "name": "Шайба прямоугольная",
+   "count": 5,
+   "note": "для крепления задней стенки"
+  },
+  {
+   "n": "34",
+   "name": "Ручка",
+   "count": 2,
+   "note": "для дверей"
+  },
+  {
+   "n": "35",
+   "name": "Соединительный уголок",
+   "count": 4,
+   "note": "для крепления цоколей"
+  },
+  {
+   "n": "36",
+   "name": "Шурупы 4x25",
+   "count": 7,
+   "size": "4x25",
+   "note": "для крепления карниза"
+  },
+  {
+   "n": "37",
+   "name": "Пластиковая светодиодная клипса LED",
+   "count": 2
+  },
+  {
+   "n": "38",
+   "name": "Трансформатор для освещения",
+   "count": 1
+  },
+  {
+   "n": "39",
+   "name": "Винт 4x25",
+   "count": 2,
+   "size": "4x25",
+   "note": "для крепления ручек"
+  }
+ ],
+ "drawing": "Single-door showcase cabinet (glass-panel upper door over solid lower door), full-height sides 2040. No dimension lines. Sides 2,3 (2040x426) stand on bottom 4 (630x450, Direkta 7x70); top 1 (630x450) fixed on the sides (eccentrics). Carcass width = fixed shelf 568 + 2x16 = 600 (backs 596), so top and bottom 630 overhang the sides by ~15 mm each side and are 450 deep vs 426 sides. Fixed shelf 5 (568x426) at the door split, ~700 above the bottom (lower door 700); upper compartment: 2 glass shelves 7 (566x416) + LED 2 clips; lower compartment: 2 removable ЛДСП shelves 6 (564x416). Doors 13 upper 1334 high x 564 wide (glazed frame per elevation), 14 lower 700 x 564; 1334+700 = 2034 vs 2040 side. Hinges inset 5 = 3 upper + 2 lower; handles 2; door side (L/R) chosen at assembly. Cornice 12 is one part 710x491 screwed onto top 1 (4x25). Plinth box 8/11 (620x70) + 9/10 (368x70) under the bottom with 4 levelling feet. Pilasters 15/16 (2040x22) on the side front edges. Backs ДВП: 17 1359x596 upper + 18 725x596 lower (1359+725 = 2084 ≈ 2040+2x16+12 overlap), scheme p2: 17 above 18. Overall height estimate (16 mm boards): 70+16+2040+16 = 2142 + cornice. front view: pages/turin-0-12-p1.png 486,291,541,475 (also larger: pages/turin-0-12-p3.png 701,7,805,351)"
+}

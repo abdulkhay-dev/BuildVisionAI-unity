@@ -1,0 +1,29 @@
+{
+  "id": "british-bum-1-04",
+  "size": [470, 434, 2205],
+  "parts": [
+    {"id": "side-l", "box": [0, 0, 3, 16, 2189, 434], "shape": "path", "outline": "M 3 50 L 3 2189 L 434 2189 L 434 0 L 58 0 Q 45 44 3 50 Z"},
+    {"id": "side-r", "box": [454, 0, 3, 470, 2189, 434], "shape": "path", "outline": "M 3 50 L 3 2189 L 434 2189 L 434 0 L 58 0 Q 45 44 3 50 Z"},
+    {"id": "top", "box": [0, 2189, 3, 470, 2205, 434]},
+    {"id": "bottom", "box": [16, 72, 3, 454, 88, 434]},
+    {"id": "plinth", "box": [16, 0, 418, 454, 72, 434]},
+    {"id": "back", "kind": "back", "box": [0, 72, 0, 470, 2205, 3]},
+    {"id": "shelf-joint", "box": [16, 294, 3, 454, 310, 418]},
+    {"id": "shelf-1", "box": [17, 667, 23, 453, 683, 398]},
+    {"id": "shelf-2", "box": [17, 1044, 23, 453, 1060, 398]},
+    {"id": "shelf-3", "box": [17, 1422, 23, 453, 1438, 398]},
+    {"id": "shelf-4", "box": [17, 1795, 23, 453, 1811, 398]},
+    {"id": "f-drawer", "kind": "front", "box": [18.0, 90.0, 418, 452.0, 300.0, 434]},
+    {"id": "h-drawer", "kind": "handle", "model": "bar", "mat": "metal", "at": [235.0, 195.0], "dir": "right", "d": 184, "band": 13, "t": 9, "standoff": 24, "post": 10, "z": 434},
+    {"id": "drawer-side-l", "box": [29, 100, 38, 45, 270, 418]},
+    {"id": "drawer-side-r", "box": [425, 100, 38, 441, 270, 418]},
+    {"id": "drawer-back", "box": [45, 100, 38, 425, 270, 54]},
+    {"id": "drawer-bottom", "kind": "back", "box": [40, 110, 42, 430, 113.5, 416]},
+    {"id": "f-door", "kind": "front", "box": [18.0, 304.0, 418, 452.0, 2184.0, 434], "print": "british_bum_gherkin_door"},
+    {"id": "h-door", "kind": "handle", "model": "bar", "mat": "metal", "at": [55.0, 1147.0], "dir": "up", "d": 184, "band": 13, "t": 9, "standoff": 24, "post": 10, "z": 434}
+  ],
+  "moves": [
+    {"type": "drawer", "name": "drawer", "parts": ["f-drawer", "h-drawer", "drawer-side-l", "drawer-side-r", "drawer-back", "drawer-bottom"], "travel": 320},
+    {"type": "door", "name": "door", "parts": ["f-door", "h-door"], "hinge": "right", "angle": 100}
+  ]
+}

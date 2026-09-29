@@ -1,0 +1,31 @@
+{
+  "id": "british-bum-1-25-01",
+  "size": [1346, 580, 2205],
+  "parts": [
+    {"id": "side-l", "box": [0, 0, 3, 16, 2189, 580], "shape": "path", "outline": "M 3 50 L 3 2189 L 580 2189 L 580 0 L 58 0 Q 45 44 3 50 Z"},
+    {"id": "side-r", "box": [1330, 0, 3, 1346, 2189, 580], "shape": "path", "outline": "M 3 50 L 3 2189 L 580 2189 L 580 0 L 58 0 Q 45 44 3 50 Z"},
+    {"id": "top", "box": [0, 2189, 3, 1346, 2205, 580]},
+    {"id": "bottom", "box": [16, 72, 3, 1330, 88, 580]},
+    {"id": "plinth", "box": [16, 0, 564, 1330, 72, 580]},
+    {"id": "back", "kind": "back", "box": [0, 72, 0, 1346, 2205, 3]},
+    {"id": "partition", "box": [884.0, 88, 3, 900.0, 2189, 564]},
+    {"id": "hat-l", "box": [16, 1790, 3, 884.0, 1806, 564]},
+    {"id": "rail", "kind": "tube", "mat": "metal", "box": [16, 1722.5, 269.5, 884.0, 1747.5, 294.5]},
+    {"id": "hat-r", "box": [900.0, 1790, 3, 1330, 1806, 564]},
+    {"id": "shelf-r1", "box": [901.0, 420, 23, 1329, 436, 544]},
+    {"id": "shelf-r2", "box": [901.0, 800, 23, 1329, 816, 544]},
+    {"id": "shelf-r3", "box": [901.0, 1180, 23, 1329, 1196, 544]},
+    {"id": "f-door_1", "kind": "front", "box": [18.0, 90.0, 564, 452.5, 2186.0, 580], "print": "british_bum_flag_england_door"},
+    {"id": "h-door_1", "kind": "handle", "model": "bar", "mat": "metal", "at": [430.5, 1125.0], "dir": "up", "d": 184, "band": 13, "t": 9, "standoff": 24, "post": 10, "z": 580},
+    {"id": "f-door_2", "kind": "front", "box": [455.5, 90.0, 564, 890.5, 2186.0, 580]},
+    {"id": "h-door_2", "kind": "handle", "model": "bar", "mat": "metal", "at": [477.5, 1125.0], "dir": "up", "d": 184, "band": 13, "t": 9, "standoff": 24, "post": 10, "z": 580},
+    {"id": "mirror", "kind": "mirror", "box": [503, 502, 577, 843, 2110, 581]},
+    {"id": "f-door_3", "kind": "front", "box": [893.5, 90.0, 564, 1328.0, 2186.0, 580], "print": "british_bum_lantern_london_door"},
+    {"id": "h-door_3", "kind": "handle", "model": "bar", "mat": "metal", "at": [915.5, 1125.0], "dir": "up", "d": 184, "band": 13, "t": 9, "standoff": 24, "post": 10, "z": 580}
+  ],
+  "moves": [
+    {"type": "door", "name": "door_1", "parts": ["f-door_1", "h-door_1"], "hinge": "left", "angle": 100},
+    {"type": "door", "name": "door_2", "parts": ["f-door_2", "h-door_2", "mirror"], "hinge": "right", "angle": 100},
+    {"type": "door", "name": "door_3", "parts": ["f-door_3", "h-door_3"], "hinge": "right", "angle": 100}
+  ]
+}

@@ -1,0 +1,327 @@
+{
+ "code": "П7.036.1.18",
+ "source": "page image pages/turin-1-18-p1.png (table «№, наименование, A×B, кол., примечание»; two sizes, no thickness; hardware table «Поз., Наименование, Кол-во, Примечание»); p2 = assembly text; cover = copy of p1",
+ "rows": [
+  {
+   "n": "1",
+   "name": "Стенка горизонт-я верх",
+   "size": [
+    1044,
+    600
+   ],
+   "count": 1
+  },
+  {
+   "n": "2",
+   "name": "Стенка гориз-ая нижняя",
+   "size": [
+    1044,
+    600
+   ],
+   "count": 1
+  },
+  {
+   "n": "3",
+   "name": "Стенка боковая правая",
+   "size": [
+    2040,
+    580
+   ],
+   "count": 1
+  },
+  {
+   "n": "4",
+   "name": "Стенка боковая левая",
+   "size": [
+    2040,
+    580
+   ],
+   "count": 1
+  },
+  {
+   "n": "5",
+   "name": "Перегородка",
+   "size": [
+    1774,
+    578
+   ],
+   "count": 1
+  },
+  {
+   "n": "6",
+   "name": "Полка правая",
+   "size": [
+    386,
+    507
+   ],
+   "count": 4
+  },
+  {
+   "n": "7",
+   "name": "Перегородка горизонт.",
+   "size": [
+    980,
+    579
+   ],
+   "count": 1
+  },
+  {
+   "n": "8",
+   "name": "Полка левая",
+   "size": [
+    578,
+    577
+   ],
+   "count": 1
+  },
+  {
+   "n": "9",
+   "name": "Царга",
+   "size": [
+    578,
+    150
+   ],
+   "count": 1
+  },
+  {
+   "n": "10",
+   "name": "Дверь",
+   "size": [
+    2036,
+    487
+   ],
+   "count": 2
+  },
+  {
+   "n": "11",
+   "name": "Цоколь передний",
+   "size": [
+    1032,
+    70
+   ],
+   "count": 1
+  },
+  {
+   "n": "12",
+   "name": "Цоколь задний",
+   "size": [
+    1032,
+    70
+   ],
+   "count": 1
+  },
+  {
+   "n": "13",
+   "name": "Цоколь боковой",
+   "size": [
+    522,
+    70
+   ],
+   "count": 2
+  },
+  {
+   "n": "14",
+   "name": "Пилястра",
+   "size": [
+    2040,
+    22
+   ],
+   "count": 2
+  },
+  {
+   "n": "15",
+   "name": "Карниз левый",
+   "size": [
+    643
+   ],
+   "count": 1
+  },
+  {
+   "n": "16",
+   "name": "Карниз правый",
+   "size": [
+    643
+   ],
+   "count": 1
+  },
+  {
+   "n": "17",
+   "name": "Карниз передний",
+   "size": [
+    1130
+   ],
+   "count": 1
+  },
+  {
+   "n": "18",
+   "name": "Стенка задняя",
+   "size": [
+    1010,
+    280
+   ],
+   "count": 1,
+   "note": "ДВП"
+  },
+  {
+   "n": "19",
+   "name": "Стенка задняя",
+   "size": [
+    1806,
+    409
+   ],
+   "count": 1,
+   "note": "ДВП"
+  },
+  {
+   "n": "20",
+   "name": "Стенка задняя",
+   "size": [
+    599,
+    743
+   ],
+   "count": 1,
+   "note": "ДВП"
+  },
+  {
+   "n": "21",
+   "name": "Стенка задняя",
+   "size": [
+    599,
+    1059
+   ],
+   "count": 1,
+   "note": "ДВП"
+  },
+  {
+   "n": "34",
+   "name": "Штанга L=572 мм",
+   "size": [
+    572
+   ],
+   "count": 1,
+   "note": "clothes rail (listed in the hardware table)"
+  }
+ ],
+ "hardware": [
+  {
+   "n": "22",
+   "name": "Стяжка одинарная \"Direkta\" 7х50",
+   "count": 14,
+   "size": "7x50",
+   "note": "для соединения деталей"
+  },
+  {
+   "n": "23",
+   "name": "Заглушка стяжки одинарной \"Direkta\"",
+   "count": 14
+  },
+  {
+   "n": "24",
+   "name": "Стяжка эксцентриковая \"Rastex\"",
+   "count": 36,
+   "note": "для соединения деталей"
+  },
+  {
+   "n": "25",
+   "name": "Дюбель стяжки эксцентриковой \"Rastex\"",
+   "count": 36,
+   "note": "для соединения деталей"
+  },
+  {
+   "n": "26",
+   "name": "Заглушка стяжки эксцентриковой \"Rastex\"",
+   "count": 32
+  },
+  {
+   "n": "27",
+   "name": "Стяжка одинарная \"Direkta\" 7х70",
+   "count": 6,
+   "size": "7x70"
+  },
+  {
+   "n": "28",
+   "name": "Шкант 8х35",
+   "count": 50,
+   "size": "8x35",
+   "note": "для фиксирования деталей"
+  },
+  {
+   "n": "29",
+   "name": "Шурупы 3,5х16",
+   "count": 58,
+   "size": "3,5x16",
+   "note": "для соединительного уголка, петель"
+  },
+  {
+   "n": "30",
+   "name": "Шурупы 3х20",
+   "count": 108,
+   "size": "3x20"
+  },
+  {
+   "n": "31",
+   "name": "Шуруп 4х25",
+   "count": 10,
+   "size": "4x25",
+   "note": "для крепления карниза"
+  },
+  {
+   "n": "32",
+   "name": "Шайба круглая",
+   "count": 78,
+   "note": "для задней стенки"
+  },
+  {
+   "n": "33",
+   "name": "Шайба прямоугольная",
+   "count": 30,
+   "note": "для крепления задней стенки"
+  },
+  {
+   "n": "35",
+   "name": "Подпятники регулируемые с втулкой",
+   "count": 5
+  },
+  {
+   "n": "36",
+   "name": "Ключ шестигранный",
+   "count": 1
+  },
+  {
+   "n": "37",
+   "name": "Винт 4х25",
+   "count": 2,
+   "size": "4x25",
+   "note": "для крепления ручек"
+  },
+  {
+   "n": "38",
+   "name": "Универсальный соединительный уголок",
+   "count": 4
+  },
+  {
+   "n": "39",
+   "name": "Петля К-16",
+   "count": 10,
+   "note": "для навески дверей"
+  },
+  {
+   "n": "40",
+   "name": "Планка монтажная D=5 мм",
+   "count": 10,
+   "size": "D=5 мм",
+   "note": "для навески дверей"
+  },
+  {
+   "n": "41",
+   "name": "Ручка",
+   "count": 2
+  },
+  {
+   "n": "42",
+   "name": "Штангодержатель",
+   "count": 2
+  }
+ ],
+ "drawing": "No dimension lines on the pages; no orthographic front view — only a small isometric thumbnail at pages/turin-1-18-p1.png 686,589,806,821 (2-door wardrobe, profiled cornice, plinth, framed/panelled doors). Exploded view: top 1 lies ON the sides 3,4 (spans them), cornice 15/16/17 fixed around the edges of top 1 with screws 4x25 (front 1130 = 1044+2×43, sides 643 = 600+43 → cornice projects ~43 mm); sides stand on bottom 2 (step 1.8: body fixed to bottom 2 with Direkta), bottom 2 sits on the plinth box 11/12/13 (front/back 1032 span the 522 side plinths; box joined to the body with corner brackets 38; 5 adjustable feet). Pilasters 14 (2040×22) fixed on the front edges of the sides 3,4 (step 1.11). Two inset doors 10 (вкладные, hinge K-16), 10 hinges = 5 per door, 2 handles. Inside: vertical partition 5 (1774 high) splits a LEFT hanging section (width 578: shelf 8 578×577 at top, царга 9 578×150, rail 34 572 on holders 42 fixed to side 4 and partition 5) from a RIGHT shelf section (4 shelves 6, 386 wide × 507 deep); horizontal partition 7 (980×579) spans the full inner width over both sections, partition 5 stands under it (2040−1774−16 = 250 mm top compartment above 7). Width check: 578+16+386 = 980 = part 7; doors 2×487+3×2 = 980 → the inner opening is 980, i.e. 1044−2×32 (sides 16 + pilasters/overhang; the table does not resolve the exact 32 mm). Height: inner 2040, doors 2036 (2 mm gaps); overall ≈ 70 plinth + 16 + 2040 + 16 + cornice ≈ 2142+. Back (рис. Д): 18 (1010×280) across the top, below it LEFT column 20 (599×743) over 21 (599×1059), RIGHT column 19 (1806×409, height 1806); 280+743+1059 = 2082, 280+1806 = 2086, 599+409 = 1008 ≈ 1010. All digits read clearly; nothing UNSURE."
+}

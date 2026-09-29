@@ -1,0 +1,16 @@
+{
+  "id": "parma-0-71",
+  "size": [1080, 260, 97],
+  "parts": [
+    {"id": "board", "box": [0, 81, 0, 1080, 97, 260], "mat": "top", "edge": 2, "grain": "x"},
+    {"id": "bracket-1a", "box": [145, 0, 0, 175, 81, 4], "mat": "black"},
+    {"id": "bracket-1b", "box": [145, 77, 4, 175, 81, 215], "mat": "black"},
+    {"id": "bracket-1c", "kind": "rod", "mat": "black", "from": [160, 79, 60], "to": [160, 20, 4], "d": 6, "section": "square"},
+    {"id": "bracket-2a", "box": [905, 0, 0, 935, 81, 4], "mat": "black"},
+    {"id": "bracket-2b", "box": [905, 77, 4, 935, 81, 215], "mat": "black"},
+    {"id": "bracket-2c", "kind": "rod", "mat": "black", "from": [920, 79, 60], "to": [920, 20, 4], "d": 6, "section": "square"}
+  ],
+  "moves": [
+
+  ]
+}

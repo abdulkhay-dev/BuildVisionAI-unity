@@ -1,0 +1,389 @@
+{
+ "code": "П7.036.0.21",
+ "source": "page image pages/turin-0-21.png (table «№ дет, наименование детали, размер, кол.»; two sizes, no thickness) + hardware table «№ поз., наименование, кол., примечание»; verified against the text-layer cutlists/turin-0-21.json (all 26 part rows match)",
+ "rows": [
+  {
+   "n": "1",
+   "name": "Крышка",
+   "size": [
+    1500,
+    450
+   ],
+   "count": 1
+  },
+  {
+   "n": "2",
+   "name": "Стенка боковая левая",
+   "size": [
+    480,
+    426
+   ],
+   "count": 1
+  },
+  {
+   "n": "3",
+   "name": "Стенка боковая правая",
+   "size": [
+    480,
+    426
+   ],
+   "count": 1
+  },
+  {
+   "n": "4",
+   "name": "Стенка горизонтальная",
+   "size": [
+    1500,
+    450
+   ],
+   "count": 1
+  },
+  {
+   "n": "5",
+   "name": "Перегородка левая",
+   "size": [
+    480,
+    426
+   ],
+   "count": 1
+  },
+  {
+   "n": "6",
+   "name": "Перегородка правая",
+   "size": [
+    480,
+    426
+   ],
+   "count": 1
+  },
+  {
+   "n": "7",
+   "name": "Полка",
+   "size": [
+    566,
+    426
+   ],
+   "count": 1
+  },
+  {
+   "n": "8",
+   "name": "Полка съемная (стекло)",
+   "size": [
+    418,
+    416
+   ],
+   "count": 2,
+   "note": "Стекло"
+  },
+  {
+   "n": "9",
+   "name": "Стенка передняя ящика",
+   "size": [
+    580,
+    269
+   ],
+   "count": 1
+  },
+  {
+   "n": "10",
+   "name": "Стенка боковая ящика левая",
+   "size": [
+    400,
+    220
+   ],
+   "count": 1
+  },
+  {
+   "n": "11",
+   "name": "Стенка боковая ящика правая",
+   "size": [
+    400,
+    220
+   ],
+   "count": 1
+  },
+  {
+   "n": "12",
+   "name": "Стенка задняя ящика",
+   "size": [
+    508,
+    220
+   ],
+   "count": 1
+  },
+  {
+   "n": "13",
+   "name": "Цоколь передний",
+   "size": [
+    1490,
+    70
+   ],
+   "count": 1
+  },
+  {
+   "n": "14",
+   "name": "Цоколь левый",
+   "size": [
+    368,
+    70
+   ],
+   "count": 1
+  },
+  {
+   "n": "15",
+   "name": "Цоколь правый",
+   "size": [
+    368,
+    70
+   ],
+   "count": 1
+  },
+  {
+   "n": "16",
+   "name": "Цоколь задний",
+   "size": [
+    1490,
+    70
+   ],
+   "count": 1
+  },
+  {
+   "n": "17",
+   "name": "Брусок",
+   "size": [
+    420,
+    80
+   ],
+   "count": 2
+  },
+  {
+   "n": "18",
+   "name": "Брусок центральный",
+   "size": [
+    566,
+    80
+   ],
+   "count": 1
+  },
+  {
+   "n": "19",
+   "name": "Дверь левая",
+   "size": [
+    476,
+    425
+   ],
+   "count": 1
+  },
+  {
+   "n": "20",
+   "name": "Дверь правая",
+   "size": [
+    476,
+    425
+   ],
+   "count": 1
+  },
+  {
+   "n": "21",
+   "name": "Пилястра левая",
+   "size": [
+    480,
+    22
+   ],
+   "count": 1
+  },
+  {
+   "n": "22",
+   "name": "Пилястра правая",
+   "size": [
+    480,
+    22
+   ],
+   "count": 1
+  },
+  {
+   "n": "23",
+   "name": "Дно ящика (ДВП)",
+   "size": [
+    538,
+    405
+   ],
+   "count": 1,
+   "note": "ДВП"
+  },
+  {
+   "n": "24",
+   "name": "Стенка задняя (ДВП)",
+   "size": [
+    503,
+    441
+   ],
+   "count": 2,
+   "note": "ДВП"
+  },
+  {
+   "n": "25",
+   "name": "Стенка задняя (ДВП)",
+   "size": [
+    580,
+    207
+   ],
+   "count": 1,
+   "note": "ДВП"
+  },
+  {
+   "n": "26",
+   "name": "Стенка задняя (ДВП)",
+   "size": [
+    580,
+    294
+   ],
+   "count": 1,
+   "note": "ДВП"
+  }
+ ],
+ "hardware": [
+  {
+   "n": "27",
+   "name": "Шкант 8x35",
+   "count": 38,
+   "size": "8x35"
+  },
+  {
+   "n": "28",
+   "name": "Стяжка одинарная «Direkta» 7x50",
+   "count": 10,
+   "size": "7x50"
+  },
+  {
+   "n": "29",
+   "name": "Стяжка эксцентриковая «Rastex»",
+   "count": 20
+  },
+  {
+   "n": "30",
+   "name": "Дюбель стяжки эксцентриковой «Rastex»",
+   "count": 20
+  },
+  {
+   "n": "31",
+   "name": "Полкодержатель для стекла",
+   "count": 8
+  },
+  {
+   "n": "32",
+   "name": "Заглушка стяжки эксцентриковой «Rastex»",
+   "count": 16
+  },
+  {
+   "n": "33",
+   "name": "Петля",
+   "count": 4
+  },
+  {
+   "n": "34",
+   "name": "Планка монтажная",
+   "count": 4
+  },
+  {
+   "n": "35",
+   "name": "Ключ шестигранный",
+   "count": 1
+  },
+  {
+   "n": "36",
+   "name": "Шурупы 3,5x16 (для петель)",
+   "count": 16,
+   "size": "3,5x16"
+  },
+  {
+   "n": "37",
+   "name": "Шурупы 3,5x16 (для направляющих)",
+   "count": 12,
+   "size": "3,5x16"
+  },
+  {
+   "n": "38",
+   "name": "Шурупы 3,5x16 (для соединительного уголка)",
+   "count": 16,
+   "size": "3,5x16"
+  },
+  {
+   "n": "39",
+   "name": "Шурупы 3x20 (для задней стенки)",
+   "count": 56,
+   "size": "3x20"
+  },
+  {
+   "n": "40",
+   "name": "Винт 4x16 (для крепления ручек)",
+   "count": 1,
+   "size": "4x16"
+  },
+  {
+   "n": "41",
+   "name": "Шайба круглая (для крепления задней стенки)",
+   "count": 43
+  },
+  {
+   "n": "42",
+   "name": "Шайба прямоугольная (для крепления задней стенки)",
+   "count": 13
+  },
+  {
+   "n": "43",
+   "name": "Ручка (для дверей)",
+   "count": 3
+  },
+  {
+   "n": "44",
+   "name": "Шкант 8x60",
+   "count": 2,
+   "size": "8x60"
+  },
+  {
+   "n": "45",
+   "name": "Стяжка одинарная «Direkta» 7x70",
+   "count": 8,
+   "size": "7x70"
+  },
+  {
+   "n": "46",
+   "name": "Направляющая шариковая 400 мм h 35 полного выдвижения без доводчика",
+   "count": 1,
+   "size": "400"
+  },
+  {
+   "n": "47",
+   "name": "Подпятник регулируемый с втулкой",
+   "count": 5
+  },
+  {
+   "n": "48",
+   "name": "Соединительный уголок (соединение стенки гориз. с цоколем)",
+   "count": 8
+  },
+  {
+   "n": "49",
+   "name": "Заглушка к одинарной стяжке «Direkta»",
+   "count": 10
+  },
+  {
+   "n": "50",
+   "name": "Светодиодная клипса",
+   "count": 2
+  },
+  {
+   "n": "51",
+   "name": "Трансформатор для освещения",
+   "count": 1
+  },
+  {
+   "n": "52",
+   "name": "Винт 4x25 (для крепления ручек)",
+   "count": 2,
+   "size": "4x25"
+  }
+ ],
+ "drawing": "Low TV stand 1500 wide (text-layer JSON: overall 1500×454×600); no dimension lines on the page. Exploded view: top 1 (1500×450) lies on the sides 2/3 (480×426) and the bottom horizontal 4 (1500×450) runs under them — top and bottom both span the full width; sides and partitions 5/6 (480×426) stand between top and bottom 4. Plinth box 13/16 (1490×70) front/back + 14/15 (368×70) ends sits under the bottom 4, fixed with 8 corner brackets 48, on 5 adjustable feet 47. Bars 17 (420×80, one per end bay) and 18 (566×80, centre bay) run under the top (tie rails; labels point at the top edge of the bays — front or back not clear). Three bays: left and right bays (between side and partition) each closed by a framed door 19/20 (476×425, glazed/lattice panel in front view), 2 hinges 33 per door, one glass shelf 8 (418×416) per side bay on 4 pins 31. Centre bay 566 wide: open niche above (shelf 7 566×426 as its floor) and a drawer below (front 9 580×269, sides 10/11 400×220, back 12 508×220, ДВП bottom 23, one pair 400 full-extension runners 46). Pilasters 21/22 (480×22) stand on the front edges of the sides beside the doors. Handles 43: 3 (one per door, one on the drawer front; front view shows a small knob in the top centre of the drawer). Back ДВП layout (scheme «Схема расположения стенки задней»): 24 | 25 over 26 | 24 — the two 24s cover the side bays, 25 (580×207) the niche, 26 (580×294) the drawer bay. LED clips 50 + transformer 51 for lighting. front view: pages/turin-0-21.png 78,481,248,550"
+}

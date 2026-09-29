@@ -1,0 +1,269 @@
+{
+ "code": "П7.036.2.14",
+ "source": "page image pages/turin-2-14-p1.png (table «№, наименование, размер, кол., примечание»; two sizes, no thickness except notes T=25мм) + hardware table «Поз., наименование, кол-во, примечание»; assembly text and back scheme on p2",
+ "rows": [
+  {
+   "n": "1",
+   "name": "Стенка горизонтальная верхняя",
+   "size": [
+    630,
+    450
+   ],
+   "count": 1,
+   "note": "T=25мм"
+  },
+  {
+   "n": "2",
+   "name": "Стенка боковая левая",
+   "size": [
+    2040,
+    426
+   ],
+   "count": 1
+  },
+  {
+   "n": "3",
+   "name": "Стенка боковая правая",
+   "size": [
+    2040,
+    426
+   ],
+   "count": 1
+  },
+  {
+   "n": "4",
+   "name": "Стенка горизонтальная нижняя",
+   "size": [
+    630,
+    450
+   ],
+   "count": 1,
+   "note": "T=25мм"
+  },
+  {
+   "n": "5",
+   "name": "Перегородка",
+   "size": [
+    568,
+    425
+   ],
+   "count": 1
+  },
+  {
+   "n": "6",
+   "name": "Полка съемная",
+   "size": [
+    565,
+    410
+   ],
+   "count": 4
+  },
+  {
+   "n": "7",
+   "name": "Дверь",
+   "size": [
+    700,
+    564
+   ],
+   "count": 1
+  },
+  {
+   "n": "8",
+   "name": "Цоколь передний",
+   "size": [
+    620,
+    70
+   ],
+   "count": 1
+  },
+  {
+   "n": "9",
+   "name": "Цоколь задний",
+   "size": [
+    620,
+    70
+   ],
+   "count": 1
+  },
+  {
+   "n": "10",
+   "name": "Цоколь боковой",
+   "size": [
+    372,
+    70
+   ],
+   "count": 2,
+   "note": "T=25мм"
+  },
+  {
+   "n": "11",
+   "name": "Карниз передний",
+   "size": [
+    710,
+    80
+   ],
+   "count": 1
+  },
+  {
+   "n": "12",
+   "name": "Карниз левый",
+   "size": [
+    490,
+    80
+   ],
+   "count": 1
+  },
+  {
+   "n": "13",
+   "name": "Карниз правый",
+   "size": [
+    490,
+    80
+   ],
+   "count": 1
+  },
+  {
+   "n": "14",
+   "name": "Пилястра",
+   "size": [
+    2040,
+    22
+   ],
+   "count": 2
+  },
+  {
+   "n": "15",
+   "name": "Полка",
+   "size": [
+    568,
+    410
+   ],
+   "count": 1
+  },
+  {
+   "n": "16",
+   "name": "Стенка задняя",
+   "size": [
+    1368,
+    597
+   ],
+   "count": 1,
+   "note": "ДВП"
+  },
+  {
+   "n": "17",
+   "name": "Стенка задняя",
+   "size": [
+    718,
+    597
+   ],
+   "count": 1,
+   "note": "ДВП"
+  }
+ ],
+ "hardware": [
+  {
+   "n": "18",
+   "name": "Шкант 8x35",
+   "count": 28,
+   "size": "8x35"
+  },
+  {
+   "n": "19",
+   "name": "Стяжка одинарная «Direkta» 7x70",
+   "count": 4,
+   "size": "7x70"
+  },
+  {
+   "n": "20",
+   "name": "Стяжка эксцентриковая «Rastex»",
+   "count": 28
+  },
+  {
+   "n": "21",
+   "name": "Дюбель стяжки эксцентриковой «Rastex»",
+   "count": 28
+  },
+  {
+   "n": "22",
+   "name": "Шурупы 4x25 (для крепления карниза)",
+   "count": 9,
+   "size": "4x25"
+  },
+  {
+   "n": "23",
+   "name": "Полкодержатель",
+   "count": 16
+  },
+  {
+   "n": "24",
+   "name": "Заглушка пластмассовая для «Rastex»",
+   "count": 28
+  },
+  {
+   "n": "25",
+   "name": "Петля вкладная",
+   "count": 2
+  },
+  {
+   "n": "26",
+   "name": "Планка монтажная",
+   "count": 2
+  },
+  {
+   "n": "27",
+   "name": "Ключ шестигранный",
+   "count": 1
+  },
+  {
+   "n": "28",
+   "name": "Шурупы 3,5x16 (для петель)",
+   "count": 8,
+   "size": "3,5x16"
+  },
+  {
+   "n": "28",
+   "name": "Шурупы 3,5x16 (для уголка; second line of pos. 28, no number printed)",
+   "count": 8,
+   "size": "3,5x16"
+  },
+  {
+   "n": "29",
+   "name": "Шурупы 3x20 (для задней стенки)",
+   "count": 54,
+   "size": "3x20"
+  },
+  {
+   "n": "31",
+   "name": "Шайба круглая (для крепления задней стенки)",
+   "count": 49
+  },
+  {
+   "n": "32",
+   "name": "Шайба прямоугольная (для крепления задней стенки)",
+   "count": 5
+  },
+  {
+   "n": "33",
+   "name": "Ручка (для дверей)",
+   "count": 1
+  },
+  {
+   "n": "34",
+   "name": "Соединительный уголок (для крепления цоколей)",
+   "count": 4
+  },
+  {
+   "n": "35",
+   "name": "Подпятник регулируемый с втулкой",
+   "count": 4
+  },
+  {
+   "n": "36",
+   "name": "Винт 4x25 (для крепления ручек)",
+   "count": 1,
+   "size": "4x25"
+  }
+ ],
+ "drawing": "Narrow 1-door bookcase; no dimension lines. Carcass 568 between sides + 2×16 = 600 wide; top 1 and bottom 4 (630×450, 25 mm thick) overhang ~15 each side. Sides 2/3 (2040×426) stand on the bottom 4 (step 1.7: body set on the bottom with Direkta 19); top 1 sits on the sides (Rastex), with cornice 11 (710×80 front) + 12/13 (490×80 sides) screwed on the top with 4x25 screws 22 (step 1.9). Plinth box 8/9 (620×70 front/back) + 10 (372×70 ends, 25 mm) under the bottom, joined by Rastex, fixed with 4 brackets 34, 4 adjustable feet 35. Pilasters 14 (2040×22) on the front edges of both sides. Inside, top to bottom: open upper part with removable shelf 6, removable shelf 6, fixed shelf 15 (568×410, mid-height), removable shelf 6, then fixed partition 5 (568×425) — the horizontal board that closes the lower door compartment (~718 up); below it one more removable shelf 6 behind the door. 16 pins 23 = 4 removable shelves × 4. Door 7 (700×564) inset (вкладная) into the lower compartment, 2 inset hinges 25, 1 handle 33. Upper part open (no door, no glass). Back ДВП scheme (p2): 16 (1368×597) over the upper open part, 17 (718×597) over the door compartment. Note: hardware pos. 30 is absent in the table (numbering jumps 29 → 31). No orthographic front view (cover = page 1 thumbnail)."
+}

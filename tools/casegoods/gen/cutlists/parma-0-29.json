@@ -1,0 +1,261 @@
+{
+ "code": "П7.050.0.29",
+ "source": "page image pages/parma-0-29-p3.png (table «№, наименование, a×b мм, n»; two sizes, no thickness) + lettered hardware pictures A…R with counts; assembly steps 1–8 on p3/p4 (pages 5–6 of the 6-page instruction are not in the set)",
+ "rows": [
+  {
+   "n": "1",
+   "name": "Крышка",
+   "size": [
+    1468,
+    420
+   ],
+   "count": 1
+  },
+  {
+   "n": "2",
+   "name": "Стенка боковая левая",
+   "size": [
+    390,
+    486
+   ],
+   "count": 1
+  },
+  {
+   "n": "3",
+   "name": "Стенка боковая правая",
+   "size": [
+    390,
+    486
+   ],
+   "count": 1
+  },
+  {
+   "n": "4",
+   "name": "Пилястра",
+   "size": [
+    44,
+    486
+   ],
+   "count": 2
+  },
+  {
+   "n": "5",
+   "name": "Стенка горизонтальная нижняя",
+   "size": [
+    1416,
+    390
+   ],
+   "count": 1
+  },
+  {
+   "n": "6",
+   "name": "Перегородка левая",
+   "size": [
+    370,
+    390
+   ],
+   "count": 1
+  },
+  {
+   "n": "7",
+   "name": "Перегородка правая",
+   "size": [
+    370,
+    390
+   ],
+   "count": 1
+  },
+  {
+   "n": "8",
+   "name": "Полка",
+   "size": [
+    622,
+    370
+   ],
+   "count": 1
+  },
+  {
+   "n": "9",
+   "name": "Дверь",
+   "size": [
+    386,
+    386
+   ],
+   "count": 2
+  },
+  {
+   "n": "10",
+   "name": "Стенка передняя ящика",
+   "size": [
+    636,
+    200
+   ],
+   "count": 1
+  },
+  {
+   "n": "11",
+   "name": "Стенка боковая ящика левая",
+   "size": [
+    350,
+    160
+   ],
+   "count": 1
+  },
+  {
+   "n": "12",
+   "name": "Стенка боковая ящика правая",
+   "size": [
+    350,
+    160
+   ],
+   "count": 1
+  },
+  {
+   "n": "13",
+   "name": "Стенка задняя ящика",
+   "size": [
+    564,
+    160
+   ],
+   "count": 1
+  },
+  {
+   "n": "14",
+   "name": "Дно ящика (ДВП)",
+   "size": [
+    592,
+    355
+   ],
+   "count": 1,
+   "note": "ДВП"
+  },
+  {
+   "n": "15",
+   "name": "Брусок",
+   "size": [
+    381,
+    80
+   ],
+   "count": 2
+  },
+  {
+   "n": "16",
+   "name": "Стенка задняя (ДВП)",
+   "size": [
+    402,
+    402
+   ],
+   "count": 2,
+   "note": "ДВП"
+  },
+  {
+   "n": "17",
+   "name": "Стенка задняя (ДВП)",
+   "size": [
+    636,
+    216
+   ],
+   "count": 1,
+   "note": "ДВП"
+  }
+ ],
+ "hardware": [
+  {
+   "n": "A",
+   "name": "Стяжка одинарная «Direkta» (конфирмат) 7x50",
+   "count": 16,
+   "size": "7x50"
+  },
+  {
+   "n": "B",
+   "name": "Заглушка стяжки A (4 + 12 шт. двух видов)",
+   "count": 16
+  },
+  {
+   "n": "C",
+   "name": "Дюбель эксцентриковой стяжки",
+   "count": 12
+  },
+  {
+   "n": "D",
+   "name": "Эксцентрик (стяжка эксцентриковая)",
+   "count": 16
+  },
+  {
+   "n": "E",
+   "name": "Заглушка эксцентрика",
+   "count": 16
+  },
+  {
+   "n": "F",
+   "name": "Шкант 8x35",
+   "count": 24,
+   "size": "8x35"
+  },
+  {
+   "n": "G",
+   "name": "Подпятник регулируемый с втулкой",
+   "count": 4
+  },
+  {
+   "n": "H",
+   "name": "Ключ шестигранный",
+   "count": 1
+  },
+  {
+   "n": "I",
+   "name": "Ручка-кнопка + винт",
+   "count": 3
+  },
+  {
+   "n": "J",
+   "name": "Направляющие шариковые (комплект на ящик)",
+   "count": 1
+  },
+  {
+   "n": "K",
+   "name": "Петля K-16",
+   "count": 4
+  },
+  {
+   "n": "L",
+   "name": "Планка монтажная D=5",
+   "count": 4,
+   "size": "D=5"
+  },
+  {
+   "n": "M",
+   "name": "Дюбель эксцентриковой стяжки короткий (для пилястр)",
+   "count": 4
+  },
+  {
+   "n": "N",
+   "name": "Шуруп 3,5x16",
+   "count": 28,
+   "size": "3,5x16"
+  },
+  {
+   "n": "O",
+   "name": "Шуруп 3x20",
+   "count": 56,
+   "size": "3x20"
+  },
+  {
+   "n": "P",
+   "name": "Шайба круглая",
+   "count": 52
+  },
+  {
+   "n": "Q",
+   "name": "Шайба прямоугольная (для задней стенки)",
+   "count": 4
+  },
+  {
+   "n": "R",
+   "name": "Винт 4x12 (для ручки ящика)",
+   "count": 1,
+   "size": "4x12"
+  }
+ ],
+ "drawing": "Low TV stand, overall 1468×420×502 (dimension lines on the iso view on p3: 1468 wide, 420 deep, 502 high). Sides 2/3 (390 deep × 486 high) reach the floor on adjustable feet G (2 per side, step 7); top 1 (1468×420) lies ON the sides (486+16=502), overhanging ~10 at each end; pilasters 4 (44×486) on the front edges of the sides with short dowels M. Bottom 5 (1416×390) spans between the sides, raised ~100 above the floor (486−370−16), so the sides stand as legs with a recess under the bottom. Partitions 6/7 (370×390) stand on the bottom 5 under the top, making three bays: side bays 381 wide (1416−2·16−622)/2 and a centre bay 622 wide. Bars 15 (381×80) under the top in the side bays (at the back, step view). Side bays closed by overlay doors 9 (386×386), 2 hinges K-16 per door on plates L mounted on the sides (step 7), knob I at the inner top corner of each door. Centre bay: shelf 8 (622×370) at about mid-height between the partitions (open niche above, no back behind it); drawer below it — front 10 (636×200, overlay, knob I at centre, fixed with R 4x12), sides 11/12 (350×160), back 13 (564×160), ДВП bottom 14 (592×355) screwed under (step 4, ~150 spacing), 1 pair ball runners J. Back ДВП: 16 (402×402) over each side bay, 17 (636×216) over the drawer part of the centre bay. No orthographic front view (p1 and p3 are isometric)."
+}

@@ -1,0 +1,132 @@
+{
+ "code": "П7.036.4.54",
+ "source": "page image pages/turin-4-54-p1.png (table «№, наименование, размер, кол.»; two sizes, no thickness) + hardware table «Поз., наименование, кол-во, примечание»",
+ "rows": [
+  {
+   "n": "1",
+   "name": "Ножка 1",
+   "size": [
+    725,
+    100
+   ],
+   "count": 2
+  },
+  {
+   "n": "2",
+   "name": "Ножка 2",
+   "size": [
+    725,
+    100
+   ],
+   "count": 2
+  },
+  {
+   "n": "3",
+   "name": "Ножка 3",
+   "size": [
+    725,
+    100
+   ],
+   "count": 2
+  },
+  {
+   "n": "4",
+   "name": "Ножка 4",
+   "size": [
+    725,
+    100
+   ],
+   "count": 2
+  },
+  {
+   "n": "5",
+   "name": "Столешница",
+   "size": [
+    870,
+    820
+   ],
+   "count": 1
+  },
+  {
+   "n": "6",
+   "name": "Царга (тип 2)",
+   "size": [
+    720,
+    120
+   ],
+   "count": 2
+  },
+  {
+   "n": "7",
+   "name": "Царга (тип 1)",
+   "size": [
+    634,
+    120
+   ],
+   "count": 2
+  }
+ ],
+ "hardware": [
+  {
+   "n": "8",
+   "name": "Стяжка одинарная «Direkta» 7x50",
+   "count": 8,
+   "size": "7x50"
+  },
+  {
+   "n": "9",
+   "name": "Стяжка эксцентриковая «Rastex»",
+   "count": 20
+  },
+  {
+   "n": "10",
+   "name": "Дюбель стяжки эксцентриковой «Rastex»",
+   "count": 20
+  },
+  {
+   "n": "11",
+   "name": "Заглушка пластмассовая для «Rastex»",
+   "count": 8
+  },
+  {
+   "n": "12",
+   "name": "Шкант 8x35",
+   "count": 8,
+   "size": "8x35"
+  },
+  {
+   "n": "13",
+   "name": "Шуруп 4x25",
+   "count": 24,
+   "size": "4x25"
+  },
+  {
+   "n": "14",
+   "name": "Наконечники (для установки изделия на пол)",
+   "count": 8
+  },
+  {
+   "n": "15",
+   "name": "Шуруп 3x12 (для наконечников)",
+   "count": 16,
+   "size": "3x12"
+  },
+  {
+   "n": "16",
+   "name": "Соединительный уголок",
+   "count": 4
+  },
+  {
+   "n": "17",
+   "name": "Шуруп 3,5x16 (для соед. уголка)",
+   "count": 8,
+   "size": "3,5x16"
+  },
+  {
+   "n": "18",
+   "name": "Ключ шестигранный",
+   "count": 1
+  }
+ ],
+ "drawing": "Dining table 870×820 top; no dimension lines. Each of the 4 legs is an L-shaped corner leg of two boards 725×100 glued/doweled along the edge (dowels 12 in ends of 2,4; Rastex step 1.4): pairs 1+2 (2 legs) and 3+4 (2 legs), the L opening towards the inside corner. Top 5 (870×820) lies ON the legs (Rastex dowels in 5, eccentrics in the legs, step 1.5) with a small overhang on all sides; legs set in from the corners. Apron under the top: царги 6 (720×120, ×2, one pair of opposite sides) and 7 (634×120, ×2, the other pair) joined to each other at the corners with Direkta 8 (step 1.6) and screwed into the inner faces of the L legs with 4x25 screws 13 (step 1.7); 4 brackets 16 fix the apron to the top. Leg tips 14 (glides, 8 = one per leg board) screwed on the leg ends with 3x12 screws 15. Table height ≈ 725 + top thickness. No orthographic front view."
+}

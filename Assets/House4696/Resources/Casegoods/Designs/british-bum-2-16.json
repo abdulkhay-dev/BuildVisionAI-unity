@@ -1,0 +1,31 @@
+{
+  "id": "british-bum-2-16",
+  "size": [1100, 590, 749],
+  "parts": [
+    {"id": "leg-l", "box": [0, 0, 3, 16, 733, 590], "shape": "path", "outline": "M 3 50 L 3 733 L 590 733 L 590 0 L 58 0 Q 45 44 3 50 Z"},
+    {"id": "ped-side-l", "box": [696, 0, 3, 712, 733, 590], "shape": "path", "outline": "M 3 50 L 3 733 L 590 733 L 590 0 L 58 0 Q 45 44 3 50 Z"},
+    {"id": "ped-side-r", "box": [1084, 0, 3, 1100, 733, 590], "shape": "path", "outline": "M 3 50 L 3 733 L 590 733 L 590 0 L 58 0 Q 45 44 3 50 Z"},
+    {"id": "ped-bottom", "box": [712, 72, 3, 1084, 88, 590]},
+    {"id": "ped-plinth", "box": [712, 0, 574, 1084, 72, 590]},
+    {"id": "ped-shelf", "box": [712, 518, 3, 1084, 534, 590]},
+    {"id": "ped-back", "kind": "back", "box": [696, 72, 0, 1100, 733, 3]},
+    {"id": "f-drawer_2", "kind": "front", "box": [714.0, 90.0, 574, 1082.0, 301.0, 590], "print": "british_bum_bus_drawer_s"},
+    {"id": "h-drawer_2", "kind": "handle", "model": "bar", "mat": "metal", "at": [898.0, 195.5], "dir": "right", "d": 184, "band": 13, "t": 9, "standoff": 24, "post": 10, "z": 590},
+    {"id": "drawer_2-side-l", "box": [725, 100, 124, 741, 271, 574]},
+    {"id": "drawer_2-side-r", "box": [1055, 100, 124, 1071, 271, 574]},
+    {"id": "drawer_2-back", "box": [741, 100, 124, 1055, 271, 140]},
+    {"id": "drawer_2-bottom", "kind": "back", "box": [736, 110, 128, 1060, 113.5, 572]},
+    {"id": "f-drawer_1", "kind": "front", "box": [714.0, 304.0, 574, 1082.0, 515.0, 590], "print": "british_bum_england_drawer_s"},
+    {"id": "h-drawer_1", "kind": "handle", "model": "bar", "mat": "metal", "at": [898.0, 409.5], "dir": "right", "d": 184, "band": 13, "t": 9, "standoff": 24, "post": 10, "z": 590},
+    {"id": "drawer_1-side-l", "box": [725, 314, 124, 741, 485, 574]},
+    {"id": "drawer_1-side-r", "box": [1055, 314, 124, 1071, 485, 574]},
+    {"id": "drawer_1-back", "box": [741, 314, 124, 1055, 485, 140]},
+    {"id": "drawer_1-bottom", "kind": "back", "box": [736, 324, 128, 1060, 327.5, 572]},
+    {"id": "modesty", "box": [16, 490, 0, 696, 733, 16]},
+    {"id": "top", "box": [0, 733, 0, 1100, 749, 590]}
+  ],
+  "moves": [
+    {"type": "drawer", "name": "drawer_2", "parts": ["f-drawer_2", "h-drawer_2", "drawer_2-side-l", "drawer_2-side-r", "drawer_2-back", "drawer_2-bottom"], "travel": 390},
+    {"type": "drawer", "name": "drawer_1", "parts": ["f-drawer_1", "h-drawer_1", "drawer_1-side-l", "drawer_1-side-r", "drawer_1-back", "drawer_1-bottom"], "travel": 390}
+  ]
+}

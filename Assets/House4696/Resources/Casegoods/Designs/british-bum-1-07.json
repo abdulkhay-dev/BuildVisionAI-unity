@@ -1,0 +1,38 @@
+{
+  "id": "british-bum-1-07",
+  "size": [908, 434, 2205],
+  "parts": [
+    {"id": "side-l", "box": [0, 0, 3, 16, 2189, 434], "shape": "path", "outline": "M 3 50 L 3 2189 L 434 2189 L 434 0 L 58 0 Q 45 44 3 50 Z"},
+    {"id": "side-r", "box": [892, 0, 3, 908, 2189, 434], "shape": "path", "outline": "M 3 50 L 3 2189 L 434 2189 L 434 0 L 58 0 Q 45 44 3 50 Z"},
+    {"id": "top", "box": [0, 2189, 3, 908, 2205, 434]},
+    {"id": "bottom", "box": [16, 72, 3, 892, 88, 434]},
+    {"id": "plinth", "box": [16, 0, 418, 892, 72, 434]},
+    {"id": "back", "kind": "back", "box": [0, 72, 0, 908, 2205, 3]},
+    {"id": "shelf-joint", "box": [16, 506.5, 3, 892, 522.5, 418]},
+    {"id": "shelf-1", "box": [17, 900, 23, 891, 916, 398]},
+    {"id": "shelf-2", "box": [17, 1300, 23, 891, 1316, 398]},
+    {"id": "shelf-3", "box": [17, 1700, 23, 891, 1716, 398]},
+    {"id": "f-drawer_2", "kind": "front", "box": [18.0, 90.0, 418, 890.0, 301.0, 434]},
+    {"id": "h-drawer_2", "kind": "handle", "model": "bar", "mat": "metal", "at": [454.0, 195.5], "dir": "right", "d": 184, "band": 13, "t": 9, "standoff": 24, "post": 10, "z": 434},
+    {"id": "drawer_2-side-l", "box": [29, 100, 38, 45, 271, 418]},
+    {"id": "drawer_2-side-r", "box": [863, 100, 38, 879, 271, 418]},
+    {"id": "drawer_2-back", "box": [45, 100, 38, 863, 271, 54]},
+    {"id": "drawer_2-bottom", "kind": "back", "box": [40, 110, 42, 868, 113.5, 416]},
+    {"id": "f-drawer_1", "kind": "front", "box": [18.0, 304.0, 418, 890.0, 513.0, 434]},
+    {"id": "h-drawer_1", "kind": "handle", "model": "bar", "mat": "metal", "at": [454.0, 408.5], "dir": "right", "d": 184, "band": 13, "t": 9, "standoff": 24, "post": 10, "z": 434},
+    {"id": "drawer_1-side-l", "box": [29, 314, 38, 45, 483, 418]},
+    {"id": "drawer_1-side-r", "box": [863, 314, 38, 879, 483, 418]},
+    {"id": "drawer_1-back", "box": [45, 314, 38, 863, 483, 54]},
+    {"id": "drawer_1-bottom", "kind": "back", "box": [40, 324, 42, 868, 327.5, 416]},
+    {"id": "f-door_left", "kind": "front", "box": [18.0, 516.0, 418, 452.5, 2186.0, 434], "print": "british_bum_bigben_door_l"},
+    {"id": "h-door_left", "kind": "handle", "model": "bar", "mat": "metal", "at": [430.5, 1060.0], "dir": "up", "d": 184, "band": 13, "t": 9, "standoff": 24, "post": 10, "z": 434},
+    {"id": "f-door_right", "kind": "front", "box": [455.5, 516.0, 418, 890.0, 2186.0, 434], "print": "british_bum_bigben_door_r"},
+    {"id": "h-door_right", "kind": "handle", "model": "bar", "mat": "metal", "at": [477.5, 1060.0], "dir": "up", "d": 184, "band": 13, "t": 9, "standoff": 24, "post": 10, "z": 434}
+  ],
+  "moves": [
+    {"type": "drawer", "name": "drawer_2", "parts": ["f-drawer_2", "h-drawer_2", "drawer_2-side-l", "drawer_2-side-r", "drawer_2-back", "drawer_2-bottom"], "travel": 320},
+    {"type": "drawer", "name": "drawer_1", "parts": ["f-drawer_1", "h-drawer_1", "drawer_1-side-l", "drawer_1-side-r", "drawer_1-back", "drawer_1-bottom"], "travel": 320},
+    {"type": "door", "name": "door_left", "parts": ["f-door_left", "h-door_left"], "hinge": "left", "angle": 100},
+    {"type": "door", "name": "door_right", "parts": ["f-door_right", "h-door_right"], "hinge": "right", "angle": 100}
+  ]
+}

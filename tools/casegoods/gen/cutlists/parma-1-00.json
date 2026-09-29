@@ -1,0 +1,105 @@
+{
+ "code": "П7.050.1.00",
+ "source": "page image pages/parma-1-00-p3.png (table «№, a×b мм, наименование, n»; two sizes, no thickness) + lettered hardware pictures A…I with counts; assembly steps 1–4 on p3/p4 (page 5 of the 5-page instruction is not in the set). Title on p1 reads «Кровать двойная П050.1201М»",
+ "rows": [
+  {
+   "n": "1",
+   "name": "Спинка задняя",
+   "size": [
+    1778,
+    1070
+   ],
+   "count": 1
+  },
+  {
+   "n": "2",
+   "name": "Спинка передняя",
+   "size": [
+    1662,
+    322
+   ],
+   "count": 1
+  },
+  {
+   "n": "3",
+   "name": "Царга левая",
+   "size": [
+    2008,
+    220
+   ],
+   "count": 1
+  },
+  {
+   "n": "4",
+   "name": "Царга правая",
+   "size": [
+    2008,
+    220
+   ],
+   "count": 1
+  },
+  {
+   "n": "5",
+   "name": "Спинка задняя (мягкий элемент)",
+   "size": [
+    1678,
+    450
+   ],
+   "count": 1,
+   "note": "мягкий элемент"
+  }
+ ],
+ "hardware": [
+  {
+   "n": "A",
+   "name": "Основание ортопедическое (металлический каркас с ламелями и ножками)",
+   "count": 1,
+   "size": "1600x2000"
+  },
+  {
+   "n": "B",
+   "name": "Стяжка одинарная «Direkta» (конфирмат) 7x70",
+   "count": 4,
+   "size": "7x70"
+  },
+  {
+   "n": "C",
+   "name": "Заглушка стяжки",
+   "count": 4
+  },
+  {
+   "n": "D",
+   "name": "Ключ шестигранный",
+   "count": 1
+  },
+  {
+   "n": "E",
+   "name": "Уголок соединительный металлический",
+   "count": 4
+  },
+  {
+   "n": "F",
+   "name": "Шуруп 4x25",
+   "count": 28,
+   "size": "4x25"
+  },
+  {
+   "n": "G",
+   "name": "Подпятник-подкладка пластиковая (глиссер)",
+   "count": 7
+  },
+  {
+   "n": "H",
+   "name": "Шуруп 3x12",
+   "count": 14,
+   "size": "3x12"
+  },
+  {
+   "n": "I",
+   "name": "Шуруп 4x40",
+   "count": 8,
+   "size": "4x40"
+  }
+ ],
+ "drawing": "Double bed for a 1600×2000 base; dimension lines on the iso thumbnail (p3): 1778 wide (headboard), 1070 high (headboard), 2058 overall length. Headboard 1 (1778×1070) stands on the floor on 4 plastic glides G; footboard 2 (1662×322) on 3 glides G (2×H 3x12 each). Side rails 3/4 (2008×220) run between headboard and footboard, above the floor (no glides): rail ends butt against the inner face of the headboard, fixed by 2 Direkta 7x70 (B) each driven through the headboard from behind (caps C, step 3); the footboard 2 fits between the rail ends, joined with 4 metal corner brackets E (7 screws F 4x25 each, step 2). Upholstered panel 5 (1678×450, quilted 12 × 3 grid of squares) is screwed onto the bed side of the headboard from behind with 8 screws 4x40 (I), set 50 mm from the top edge and 50 mm from each side edge (step 4: 1778 − 2·50 = 1678). Mattress base A (1600×2000, metal frame with slats and its own legs) is a lettered kit item, not a numbered part; it sits inside the rails. No orthographic front view (p1/p3 iso)."
+}

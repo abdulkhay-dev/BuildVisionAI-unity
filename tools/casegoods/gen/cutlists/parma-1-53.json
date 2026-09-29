@@ -1,0 +1,199 @@
+{
+ "code": "П7.050.1.53",
+ "source": "page image pages/parma-1-53-p3.png (table «№, наименование, a×b мм, n»; two sizes, no thickness) + lettered hardware pictures A…O with counts; assembly steps 1–12 on p3/p4 (pages 5–6 of the 6-page instruction are not in the set). Title on p1 reads «Стол П050.503»",
+ "rows": [
+  {
+   "n": "1",
+   "name": "Крышка",
+   "size": [
+    900,
+    500
+   ],
+   "count": 1
+  },
+  {
+   "n": "2",
+   "name": "Стенка боковая левая",
+   "size": [
+    472,
+    784
+   ],
+   "count": 1
+  },
+  {
+   "n": "3",
+   "name": "Стенка боковая правая",
+   "size": [
+    472,
+    784
+   ],
+   "count": 1
+  },
+  {
+   "n": "4",
+   "name": "Пилястра",
+   "size": [
+    44,
+    784
+   ],
+   "count": 2
+  },
+  {
+   "n": "5",
+   "name": "Царга",
+   "size": [
+    848,
+    400
+   ],
+   "count": 1
+  },
+  {
+   "n": "6",
+   "name": "Полка",
+   "size": [
+    848,
+    454
+   ],
+   "count": 1
+  },
+  {
+   "n": "7",
+   "name": "Стенка передняя ящика",
+   "size": [
+    844,
+    200
+   ],
+   "count": 1
+  },
+  {
+   "n": "8",
+   "name": "Стенка боковая ящика левая",
+   "size": [
+    400,
+    160
+   ],
+   "count": 1
+  },
+  {
+   "n": "9",
+   "name": "Стенка боковая ящика правая",
+   "size": [
+    400,
+    160
+   ],
+   "count": 1
+  },
+  {
+   "n": "10",
+   "name": "Стенка горизонт. ящика",
+   "size": [
+    790,
+    160
+   ],
+   "count": 2
+  },
+  {
+   "n": "11",
+   "name": "Перегородка",
+   "size": [
+    183,
+    160
+   ],
+   "count": 3
+  },
+  {
+   "n": "12",
+   "name": "Дно ящика (ДВП)",
+   "size": [
+    818,
+    405
+   ],
+   "count": 1,
+   "note": "ДВП"
+  }
+ ],
+ "hardware": [
+  {
+   "n": "A",
+   "name": "Стяжка одинарная «Direkta» (конфирмат) 7x50",
+   "count": 27,
+   "size": "7x50"
+  },
+  {
+   "n": "B",
+   "name": "Заглушка стяжки A (20 + 7 шт. двух видов)",
+   "count": 27
+  },
+  {
+   "n": "C",
+   "name": "Дюбель эксцентриковой стяжки",
+   "count": 15
+  },
+  {
+   "n": "D",
+   "name": "Эксцентрик (стяжка эксцентриковая)",
+   "count": 21
+  },
+  {
+   "n": "E",
+   "name": "Заглушка эксцентрика",
+   "count": 21
+  },
+  {
+   "n": "F",
+   "name": "Шкант 8x35",
+   "count": 14,
+   "size": "8x35"
+  },
+  {
+   "n": "G",
+   "name": "Ключ шестигранный",
+   "count": 1
+  },
+  {
+   "n": "H",
+   "name": "Ручка-кнопка",
+   "count": 1
+  },
+  {
+   "n": "I",
+   "name": "Подпятник регулируемый с втулкой",
+   "count": 4
+  },
+  {
+   "n": "J",
+   "name": "Направляющие шариковые L=400 мм (комплект)",
+   "count": 1,
+   "size": "L=400"
+  },
+  {
+   "n": "K",
+   "name": "Дюбель эксцентриковой стяжки короткий (для пилястр)",
+   "count": 6
+  },
+  {
+   "n": "L",
+   "name": "Шуруп 3,5x16",
+   "count": 12,
+   "size": "3,5x16"
+  },
+  {
+   "n": "M",
+   "name": "Шуруп 3x20",
+   "count": 16,
+   "size": "3x20"
+  },
+  {
+   "n": "N",
+   "name": "Шайба круглая",
+   "count": 16
+  },
+  {
+   "n": "O",
+   "name": "Винт 4x12 (для ручки)",
+   "count": 1,
+   "size": "4x12"
+  }
+ ],
+ "drawing": "Writing desk with one drawer, overall 900×500×800 (dimension lines on the iso view on p3: 900 wide, 500 deep, 800 high). Two solid side panels 2/3 (472 deep × 784 high) stand on the floor on adjustable feet I (2 per side); top 1 (900×500) lies ON the sides (784+16=800), ~10 overhang each end; pilasters 4 (44×784) on the front edges of the sides (3 short dowels K each, step 10). Between the sides (848 clear): царга 5 (848×400) — vertical modesty/back panel at the rear, from under the top down ~400; shelf 6 (848×454) — horizontal board ~200+ below the top forming the drawer housing floor (open knee space below). Drawer between top and shelf 6 on one pair 400 ball runners J (on the sides, step 5): overlay front 7 (844×200, bevel-framed), sides 8/9 (400×160), two long walls 10 (790×160: back + an inner wall) with 3 small dividers 11 (183×160) between them forming 4 compartments in the rear half, ДВП bottom 12 (818×405). One knob H at the centre of the drawer front near the top (4x12 screw O). No orthographic front view."
+}

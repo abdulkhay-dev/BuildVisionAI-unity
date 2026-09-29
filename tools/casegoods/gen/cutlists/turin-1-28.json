@@ -1,0 +1,251 @@
+{
+ "code": "П7.036.1.28",
+ "source": "page image pages/turin-1-28-p1.png (table «№, наименование, A×B, кол.» — no note column; two sizes, no thickness; hardware table «Поз., Наименование, Кол-во»); p2 = assembly text; cover = copy of p1",
+ "rows": [
+  {
+   "n": "1",
+   "name": "Крышка",
+   "size": [
+    500,
+    450
+   ],
+   "count": 1
+  },
+  {
+   "n": "2",
+   "name": "Стенка боковая левая",
+   "size": [
+    380,
+    426
+   ],
+   "count": 1
+  },
+  {
+   "n": "3",
+   "name": "Стенка боковая правая",
+   "size": [
+    380,
+    426
+   ],
+   "count": 1
+  },
+  {
+   "n": "4",
+   "name": "Стенка горизонт. нижняя",
+   "size": [
+    500,
+    446
+   ],
+   "count": 1
+  },
+  {
+   "n": "5",
+   "name": "Полка несъемная",
+   "size": [
+    436,
+    426
+   ],
+   "count": 1
+  },
+  {
+   "n": "6",
+   "name": "Пилястра",
+   "size": [
+    380,
+    22
+   ],
+   "count": 2
+  },
+  {
+   "n": "7",
+   "name": "Цоколь передний",
+   "size": [
+    488,
+    70
+   ],
+   "count": 1
+  },
+  {
+   "n": "8",
+   "name": "Цоколь задний",
+   "size": [
+    488,
+    70
+   ],
+   "count": 1
+  },
+  {
+   "n": "9",
+   "name": "Цоколь боковой",
+   "size": [
+    368,
+    70
+   ],
+   "count": 2
+  },
+  {
+   "n": "10",
+   "name": "Стенка передняя ящика",
+   "size": [
+    267,
+    432
+   ],
+   "count": 1
+  },
+  {
+   "n": "11",
+   "name": "Стенка боковая ящика левая",
+   "size": [
+    400,
+    220
+   ],
+   "count": 1
+  },
+  {
+   "n": "12",
+   "name": "Стенка боковая ящика правая",
+   "size": [
+    400,
+    220
+   ],
+   "count": 1
+  },
+  {
+   "n": "13",
+   "name": "Стенка задняя ящика",
+   "size": [
+    378,
+    220
+   ],
+   "count": 1
+  },
+  {
+   "n": "14",
+   "name": "Дно ящика",
+   "size": [
+    406,
+    404
+   ],
+   "count": 1,
+   "note": "ДВП? (not printed)"
+  },
+  {
+   "n": "15",
+   "name": "Стенка задняя",
+   "size": [
+    464,
+    403
+   ],
+   "count": 1,
+   "note": "ДВП (not printed; step 1.10 «Прикрепите ДВП»)"
+  },
+  {
+   "n": "16",
+   "name": "Брусок",
+   "size": [
+    436,
+    70
+   ],
+   "count": 1
+  }
+ ],
+ "hardware": [
+  {
+   "n": "17",
+   "name": "Шкант 8x35",
+   "count": 28,
+   "size": "8x35",
+   "note": "для фиксирования деталей"
+  },
+  {
+   "n": "18",
+   "name": "Стяжка эксцентриковая \"Rastex\"",
+   "count": 18,
+   "note": "для соединения деталей"
+  },
+  {
+   "n": "19",
+   "name": "Дюбель стяжки эксцентриковой \"Rastex\"",
+   "count": 18,
+   "note": "для соединения деталей"
+  },
+  {
+   "n": "20",
+   "name": "Винт 4x16",
+   "count": 1,
+   "size": "4x16",
+   "note": "для крепления ручек"
+  },
+  {
+   "n": "21",
+   "name": "Заглушка пластмассовая для \"Rastex\"",
+   "count": 10
+  },
+  {
+   "n": "22",
+   "name": "Ключ шестигранный",
+   "count": 1
+  },
+  {
+   "n": "23",
+   "name": "Соединительный уголок",
+   "count": 4
+  },
+  {
+   "n": "24",
+   "name": "Ручка",
+   "count": 1
+  },
+  {
+   "n": "25",
+   "name": "Заглушка для стяжки Direkta",
+   "count": 4
+  },
+  {
+   "n": "26",
+   "name": "Шуруп 3,5x16",
+   "count": 20,
+   "size": "3,5x16",
+   "note": "для направляющих и соедин. уголка"
+  },
+  {
+   "n": "27",
+   "name": "Шуруп 3x20",
+   "count": 30,
+   "size": "3x20",
+   "note": "для задней стенки"
+  },
+  {
+   "n": "28",
+   "name": "Стяжка одинарная \"Direkta\" 7x70",
+   "count": 4,
+   "size": "7x70",
+   "note": "для соединения деталей"
+  },
+  {
+   "n": "29",
+   "name": "Шайба круглая",
+   "count": 30
+  },
+  {
+   "n": "30",
+   "name": "Подпятник регулируемый с втулкой",
+   "count": 4,
+   "note": "для установки изделия на пол"
+  },
+  {
+   "n": "31",
+   "name": "Направляющая шариковая 400 мм h35 полного выдвижения, без доводчика",
+   "count": 1,
+   "size": "направляющие 400 (h35)"
+  },
+  {
+   "n": "32",
+   "name": "Стяжка одинарная \"Direkta\" 7x50",
+   "count": 4,
+   "size": "7x50",
+   "note": "для соединения деталей"
+  }
+ ],
+ "drawing": "No dimension lines; no front view (the frame under the title on p1 is empty). Bedside table: sides 2,3 are 380 high × 426 deep. Step 1.5: sides 2,3, shelf 5 and брусок 16 fixed on bottom 4 (Direkta 7x70), top 1 laid ON the sides (Rastex). Body on plinth box 7/8/9 (front/back 488 span side plinths 368; 4 corner brackets 23; 4 feet). Pilasters 6 (380×22) on the sides. Exploded view: brusok 16 (436×70) at the top rear under the top; fixed shelf 5 (436×426) at ~70% of the height, open niche above it, ONE drawer below it: front 10 267 high × 432 wide (432+4 = 436 = inner width = 500−64), box sides 400×220, back 378×220 (box 378+32 = 410 ≈ bottom 406), bottom 406×404; 1 runner pair L=400; 1 handle. Height check: 380 − 267 − 2×2 − 16 shelf ≈ 93 mm niche. Back 15 single panel 464 wide × 403 high."
+}

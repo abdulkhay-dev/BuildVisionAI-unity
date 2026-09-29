@@ -1,0 +1,34 @@
+{
+  "id": "parma-0-32",
+  "size": [830, 460, 1296],
+  "parts": [
+    {"n": "top", "box": [0, 1280, 0, 830, 1296, 450], "mat": "top", "edge": 2, "grain": "x"},
+    {"n": "side-l", "box": [10, 0, 0, 26, 1280, 416], "grain": "y"},
+    {"n": "side-r", "box": [804, 0, 0, 820, 1280, 416], "grain": "y"},
+    {"n": "pil", "box": [10, 0, 416, 26, 1280, 460], "grain": "y", "id": "pil-l"},
+    {"n": "pil", "box": [804, 0, 416, 820, 1280, 460], "grain": "y", "id": "pil-r"},
+    {"n": "bottom", "box": [26, 80, 0, 804, 96, 416], "mat": "top", "grain": "x"},
+    {"n": "h-1", "box": [26, 1060, 0, 804, 1076, 416], "mat": "top", "grain": "x"},
+    {"n": "rail", "box": [26, 1200, 10, 804, 1280, 26], "grain": "x"},
+    {"n": "shelf-1", "box": [27, 440, 22, 803, 456, 412]},
+    {"n": "shelf-2", "box": [27, 760, 22, 803, 776, 412]},
+    {"n": "door-l", "kind": "front", "box": [28, 98, 442, 414, 1058, 460], "edge": 1.5, "grain": "y", "face": {"type": "frame", "border": 50, "depth": 3, "r": 1, "profile": "parma-bevel"}},
+    {"id": "k-door_left", "kind": "handle", "model": "knob", "at": [382, 1000], "d": 30, "t": 14, "standoff": 12, "z": 460},
+    {"n": "door-r", "kind": "front", "box": [416, 98, 442, 802, 1058, 460], "edge": 1.5, "grain": "y", "face": {"type": "frame", "border": 50, "depth": 3, "r": 1, "profile": "parma-bevel"}},
+    {"id": "k-door_right", "kind": "handle", "model": "knob", "at": [448, 1000], "d": 30, "t": 14, "standoff": 12, "z": 460},
+    {"n": "df", "kind": "front", "box": [28, 1078, 442, 802, 1278, 460], "edge": 1.5, "grain": "x", "id": "df-1", "face": {"type": "frame", "border": 36, "depth": 3, "r": 1, "profile": "parma-bevel"}},
+    {"n": "ds-l", "box": [39.0, 1100, 92, 55.0, 1260, 442], "id": "ds-l-1"},
+    {"n": "ds-r", "box": [775.0, 1100, 92, 791.0, 1260, 442], "id": "ds-r-1"},
+    {"n": "db", "box": [55.0, 1100, 92, 775.0, 1260, 108], "id": "db-1"},
+    {"n": "dd", "box": [41.0, 1097, 87, 789.0, 1100, 442], "kind": "back", "id": "dd-1"},
+    {"n": "dbar", "box": [370.0, 1081, 92, 460.0, 1097, 442], "id": "dbar-1"},
+    {"id": "k-1", "kind": "handle", "model": "knob", "at": [415.0, 1228], "d": 30, "t": 14, "standoff": 12, "z": 460},
+    {"n": "back-1", "box": [16, 75, 6, 814, 1068, 9.2], "kind": "back"},
+    {"n": "back-2", "box": [16, 1068, 6, 814, 1285, 9.2], "kind": "back"}
+  ],
+  "moves": [
+    {"type": "door", "name": "door_left", "parts": ["door-l", "k-door_left"], "hinge": "left", "angle": 105},
+    {"type": "door", "name": "door_right", "parts": ["door-r", "k-door_right"], "hinge": "right", "angle": 105},
+    {"type": "drawer", "name": "drawer_1", "parts": ["df-1", "ds-l-1", "ds-r-1", "db-1", "dd-1", "dbar-1", "k-1"], "travel": 297}
+  ]
+}

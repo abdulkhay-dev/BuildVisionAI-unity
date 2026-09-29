@@ -1,0 +1,10 @@
+{
+  "id": "parma-1-41",
+  "size": [900, 19, 660],
+  "parts": [
+    {"n": "1", "kind": "front", "box": [0, 0, 0, 900, 660, 19], "edge": 3, "grain": "x", "glass": {"frame": 80, "rebate": 10, "t": 4, "tint": "mirror"}}
+  ],
+  "moves": [
+
+  ]
+}

@@ -1,0 +1,275 @@
+{
+ "code": "П7.036.1.27",
+ "source": "page image pages/turin-1-27-p1.png (table «№, наименование, A×B, кол.» — no note column; two sizes, no thickness; hardware table «Поз., Наименование, Кол-во, Примечание»); p2 = drawer scheme рис. В + assembly text; cover = copy of p1",
+ "rows": [
+  {
+   "n": "1",
+   "name": "Крышка",
+   "size": [
+    694,
+    450
+   ],
+   "count": 1
+  },
+  {
+   "n": "2",
+   "name": "Стенка горизонтал нижн",
+   "size": [
+    694,
+    446
+   ],
+   "count": 1
+  },
+  {
+   "n": "3",
+   "name": "Стенка боковая левая",
+   "size": [
+    426,
+    898
+   ],
+   "count": 1
+  },
+  {
+   "n": "4",
+   "name": "Стенка боковая правая",
+   "size": [
+    426,
+    898
+   ],
+   "count": 1
+  },
+  {
+   "n": "5",
+   "name": "Царга",
+   "size": [
+    630,
+    180
+   ],
+   "count": 1
+  },
+  {
+   "n": "6",
+   "name": "Брусок",
+   "size": [
+    630,
+    70
+   ],
+   "count": 1
+  },
+  {
+   "n": "7",
+   "name": "Стенка задняя",
+   "size": [
+    658,
+    460
+   ],
+   "count": 2,
+   "note": "ДВП (not printed; step 1.11 «Прикрепите ДВП»)"
+  },
+  {
+   "n": "8",
+   "name": "Брусок продольный",
+   "size": [
+    400,
+    90
+   ],
+   "count": 4
+  },
+  {
+   "n": "9",
+   "name": "Стенка передняя ящика",
+   "size": [
+    222,
+    626
+   ],
+   "count": 4
+  },
+  {
+   "n": "10",
+   "name": "Стенка бок ящика левая",
+   "size": [
+    400,
+    173
+   ],
+   "count": 4
+  },
+  {
+   "n": "11",
+   "name": "Стенка бок ящика правая",
+   "size": [
+    400,
+    173
+   ],
+   "count": 4
+  },
+  {
+   "n": "12",
+   "name": "Стенка задняя ящика",
+   "size": [
+    572,
+    173
+   ],
+   "count": 4
+  },
+  {
+   "n": "13",
+   "name": "Дно ящика",
+   "size": [
+    600,
+    404
+   ],
+   "count": 4,
+   "note": "ДВП? (not printed)"
+  },
+  {
+   "n": "14",
+   "name": "Пилястра",
+   "size": [
+    898,
+    22
+   ],
+   "count": 2
+  },
+  {
+   "n": "15",
+   "name": "Цоколь передний",
+   "size": [
+    682,
+    70
+   ],
+   "count": 1
+  },
+  {
+   "n": "16",
+   "name": "Цоколь боковой",
+   "size": [
+    368,
+    70
+   ],
+   "count": 2
+  },
+  {
+   "n": "17",
+   "name": "Цоколь задний",
+   "size": [
+    682,
+    70
+   ],
+   "count": 1
+  }
+ ],
+ "hardware": [
+  {
+   "n": "18",
+   "name": "Стяжка одинарная \"Direkta\" 7x50",
+   "count": 20,
+   "size": "7x50",
+   "note": "для соединения деталей"
+  },
+  {
+   "n": "19",
+   "name": "Стяжка эксцентриковая \"Rastex\"",
+   "count": 30,
+   "note": "для соединения деталей"
+  },
+  {
+   "n": "20",
+   "name": "Дюбель стяжки эксцентриковой \"Rastex\"",
+   "count": 30,
+   "note": "для соединения деталей"
+  },
+  {
+   "n": "21",
+   "name": "Заглушка стяжки эксцентриковой \"Rastex\"",
+   "count": 18
+  },
+  {
+   "n": "22",
+   "name": "Шкант 8x35",
+   "count": 30,
+   "size": "8x35",
+   "note": "для фиксирования деталей"
+  },
+  {
+   "n": "23",
+   "name": "Ручка",
+   "count": 4
+  },
+  {
+   "n": "24",
+   "name": "Винт 4x16",
+   "count": 4,
+   "size": "4x16",
+   "note": "для крепления ручек"
+  },
+  {
+   "n": "25",
+   "name": "Шайба прямоугольная",
+   "count": 7,
+   "note": "для крепления задней стенки"
+  },
+  {
+   "n": "26",
+   "name": "Направляющая шариковая H35, L400 мм полного выдвижения без доводчика",
+   "count": 4,
+   "size": "направляющие 400 (H35)"
+  },
+  {
+   "n": "27",
+   "name": "Ключ шестигранный",
+   "count": 1
+  },
+  {
+   "n": "28",
+   "name": "Заглушка стяжки одинарной \"Direkta\"",
+   "count": 24,
+   "note": "для соединительного уголка (as printed)"
+  },
+  {
+   "n": "29",
+   "name": "Шуруп 3,5x16",
+   "count": 8,
+   "size": "3,5x16",
+   "note": "для направляющих и соед ДВП"
+  },
+  {
+   "n": "30",
+   "name": "Шуруп 3,5x16",
+   "count": 56,
+   "size": "3,5x16"
+  },
+  {
+   "n": "31",
+   "name": "Шуруп 3x20",
+   "count": 106,
+   "size": "3x20",
+   "note": "для задней стенки"
+  },
+  {
+   "n": "32",
+   "name": "Шайба круглая",
+   "count": 106,
+   "note": "для крепления задней стенки"
+  },
+  {
+   "n": "33",
+   "name": "Стяжка одинарная \"Direkta\" 7x70",
+   "count": 4,
+   "size": "7x70",
+   "note": "для соединения деталей"
+  },
+  {
+   "n": "34",
+   "name": "Подпятник регулируемый с втулкой",
+   "count": 4,
+   "note": "для установки изделия на пол"
+  },
+  {
+   "n": "35",
+   "name": "Универсальный соединительный уголок",
+   "count": 4,
+   "note": "для крепления цоколей"
+  }
+ ],
+ "drawing": "No dimension lines; no orthographic front view — small isometric thumbnail at pages/turin-1-27-p1.png ~392,4,478,104 (clipped by the page top; tall 4-drawer chest with bevel-panelled drawer fronts). Sizes here are printed depth×height for sides (426×898) and height×width for drawer fronts (222×626). Structure (step 1.4/1.5): sides 3,4, царга 5 and брусок 6 stand on bottom 2 (Direkta), top 1 is laid ON the sides (Rastex); body stands on plinth box 15/16/17 (front/back 682 span side plinths 368; brackets 35; 4 feet). Pilasters 14 (898×22) on the sides 3,4. 4 equal drawers stacked full height: fronts 4×222 + 5×2 = 898 = side height; front width 626+2×2 = 630 = inner width (царга/брусок 630 = 694−64). Drawer box (рис. В): sides 400×173, back 572×173 (box 572+32 = 604 ≈ bottom 600), bottom 600×404 under the box, longitudinal bar 8 (400×90) under each drawer bottom; 4 runner pairs L=400; 4 handles (1 per drawer). Exploded view: брусок 6 at the top rear; царга 5 appears at the rear at mid-height where the two back panels meet (UNSURE placement). Back (рис. Д): two panels 7 stacked (658 wide × 460 high each → 920 total)."
+}

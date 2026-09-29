@@ -1,0 +1,241 @@
+{
+ "code": "П7.050.1.31",
+ "source": "page image pages/parma-1-31-p3.png (table «№, наименование, a×b мм, n»; two sizes, no thickness) + lettered hardware pictures A…P with counts; assembly steps 1–10 on p3/p4 (page 5 of the 5-page instruction is not in the set)",
+ "rows": [
+  {
+   "n": "1",
+   "name": "Крышка",
+   "size": [
+    900,
+    450
+   ],
+   "count": 1
+  },
+  {
+   "n": "2",
+   "name": "Стенка боковая левая",
+   "size": [
+    416,
+    924
+   ],
+   "count": 1
+  },
+  {
+   "n": "3",
+   "name": "Стенка боковая правая",
+   "size": [
+    416,
+    924
+   ],
+   "count": 1
+  },
+  {
+   "n": "4",
+   "name": "Пилястра",
+   "size": [
+    44,
+    924
+   ],
+   "count": 2
+  },
+  {
+   "n": "5",
+   "name": "Стенка горизонтальная нижняя",
+   "size": [
+    848,
+    416
+   ],
+   "count": 1
+  },
+  {
+   "n": "6",
+   "name": "Полка",
+   "size": [
+    848,
+    416
+   ],
+   "count": 1
+  },
+  {
+   "n": "7",
+   "name": "Брусок",
+   "size": [
+    848,
+    80
+   ],
+   "count": 1
+  },
+  {
+   "n": "8",
+   "name": "Стенка передняя ящика",
+   "size": [
+    844,
+    200
+   ],
+   "count": 4
+  },
+  {
+   "n": "9",
+   "name": "Стенка боковая ящика левая",
+   "size": [
+    350,
+    160
+   ],
+   "count": 4
+  },
+  {
+   "n": "10",
+   "name": "Стенка боковая ящика правая",
+   "size": [
+    350,
+    160
+   ],
+   "count": 4
+  },
+  {
+   "n": "11",
+   "name": "Стенка задняя ящика",
+   "size": [
+    790,
+    160
+   ],
+   "count": 4
+  },
+  {
+   "n": "12",
+   "name": "Брусок продольный",
+   "size": [
+    350,
+    90
+   ],
+   "count": 4
+  },
+  {
+   "n": "13",
+   "name": "Дно ящика (ДВП)",
+   "size": [
+    818,
+    355
+   ],
+   "count": 4,
+   "note": "ДВП"
+  },
+  {
+   "n": "14",
+   "name": "Царга",
+   "size": [
+    848,
+    200
+   ],
+   "count": 1
+  },
+  {
+   "n": "15",
+   "name": "Стенка задняя (ДВП)",
+   "size": [
+    876,
+    209
+   ],
+   "count": 1,
+   "note": "ДВП"
+  },
+  {
+   "n": "16",
+   "name": "Стенка задняя (ДВП)",
+   "size": [
+    876,
+    313
+   ],
+   "count": 2,
+   "note": "ДВП"
+  }
+ ],
+ "hardware": [
+  {
+   "n": "A",
+   "name": "Стяжка одинарная «Direkta» (конфирмат) 7x50",
+   "count": 24,
+   "size": "7x50"
+  },
+  {
+   "n": "B",
+   "name": "Заглушка стяжки A (4 + 20 шт. двух видов)",
+   "count": 24
+  },
+  {
+   "n": "C",
+   "name": "Дюбель эксцентриковой стяжки",
+   "count": 32
+  },
+  {
+   "n": "D",
+   "name": "Эксцентрик (стяжка эксцентриковая)",
+   "count": 38
+  },
+  {
+   "n": "E",
+   "name": "Заглушка эксцентрика",
+   "count": 38
+  },
+  {
+   "n": "F",
+   "name": "Шкант 8x35",
+   "count": 14,
+   "size": "8x35"
+  },
+  {
+   "n": "G",
+   "name": "Ключ шестигранный",
+   "count": 1
+  },
+  {
+   "n": "H",
+   "name": "Ручка-кнопка",
+   "count": 4
+  },
+  {
+   "n": "I",
+   "name": "Подпятник регулируемый с втулкой",
+   "count": 4
+  },
+  {
+   "n": "J",
+   "name": "Направляющие шариковые (комплект на ящик)",
+   "count": 4
+  },
+  {
+   "n": "K",
+   "name": "Дюбель эксцентриковой стяжки короткий (для пилястр)",
+   "count": 6
+  },
+  {
+   "n": "L",
+   "name": "Шуруп 3,5x16",
+   "count": 48,
+   "size": "3,5x16"
+  },
+  {
+   "n": "M",
+   "name": "Шуруп 3x20",
+   "count": 98,
+   "size": "3x20"
+  },
+  {
+   "n": "N",
+   "name": "Шайба круглая",
+   "count": 82
+  },
+  {
+   "n": "O",
+   "name": "Шайба прямоугольная (для задней стенки)",
+   "count": 16
+  },
+  {
+   "n": "P",
+   "name": "Винт 4x12 (для ручек)",
+   "count": 4,
+   "size": "4x12"
+  }
+ ],
+ "drawing": "4-drawer chest, overall 900×450×940 (dimension lines on the iso view on p3: 900 wide, 450 deep, 940 high). Sides 2/3 (416 deep × 924 high) reach the floor on adjustable feet I (2 per side, step 9); top 1 (900×450) lies ON the sides (924+16=940), ~10 overhang each end; pilasters 4 (44×924) on the front edges of the sides (short dowels K). Bottom 5 (848×416) between the sides, raised above the floor (sides show as legs with a recess under the bottom, like the rest of Parma). Shelf 6 (848×416) fixed between the sides at mid-height, between drawers 2 and 3 (dust board); bar 7 (848×80) under the top at the back; царга 14 (848×200) a horizontal rear rail at mid-height behind the shelf. 4 equal drawers stacked from bottom 5 to the top: overlay fronts 8 (844×200, bevel-framed), sides 9/10 (350×160), back 11 (790×160), ДВП bottom 13 (818×355) screwed under (≈150 pitch, step 6) with a longitudinal bar 12 (350×90) under the middle of each bottom (step 5; its colour may differ from the visible surfaces); one pair ball runners J per drawer (4 per side on the side panels, step 10). 1 knob H per drawer at the centre near the top edge (4x12 screw P). Back ДВП, top to bottom: 15 (876×209), 16 (876×313), [царга 14 at the joint], 16 (876×313). No orthographic front view."
+}

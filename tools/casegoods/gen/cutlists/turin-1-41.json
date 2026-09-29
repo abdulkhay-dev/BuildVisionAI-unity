@@ -1,0 +1,39 @@
+{
+ "code": "П7.036.1.41",
+ "source": "page image pages/turin-1-41.png (table «Поз, Наименование, Размеры, Кол»; two sizes, no thickness; hardware table «№ поз., Наименование, Кол.»); cover = copy of the page",
+ "rows": [
+  {
+   "n": "1",
+   "name": "Стенка вертикальная",
+   "size": [
+    1200,
+    660
+   ],
+   "count": 1
+  },
+  {
+   "n": "2",
+   "name": "Зеркало",
+   "size": [
+    1036,
+    494
+   ],
+   "count": 1,
+   "note": "Зеркало"
+  }
+ ],
+ "hardware": [
+  {
+   "n": "3",
+   "name": "Подвеска 079",
+   "count": 2
+  },
+  {
+   "n": "4",
+   "name": "Шурупы 3,5x16",
+   "count": 8,
+   "size": "3,5x16"
+  }
+ ],
+ "drawing": "Wall mirror: board 1 (1200×660) with mirror 2 (1036×494) centred on its face, border (1200−1036)/2 = 82 and (660−494)/2 = 83 mm all round (the drawing shows a raised profiled frame around the glass). Picture shows it landscape (long side horizontal) in an oblique view, not orthographic: pages/turin-1-41.png 554,180,812,399. Two hangers 3 screwed to the back face of board 1 (step 1.1, 4 screws each). No dimension lines."
+}

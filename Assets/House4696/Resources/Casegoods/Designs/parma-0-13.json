@@ -1,0 +1,41 @@
+{
+  "id": "parma-0-13",
+  "size": [924, 434, 2000],
+  "parts": [
+    {"n": "1", "box": [0, 1984, 0, 924, 2000, 420], "mat": "top", "edge": 2, "grain": "x"},
+    {"n": "2", "box": [10, 0, 0, 26, 1984, 390], "grain": "y"},
+    {"n": "3", "box": [898, 0, 0, 914, 1984, 390], "grain": "y"},
+    {"n": "4", "box": [10, 0, 390, 26, 1984, 434], "grain": "y", "id": "4-l"},
+    {"n": "4", "box": [898, 0, 390, 914, 1984, 434], "grain": "y", "id": "4-r"},
+    {"n": "5", "box": [26, 80, 0, 898, 96, 390], "mat": "top", "grain": "x"},
+    {"n": "7", "box": [26, 486, 0, 898, 502, 390], "mat": "top", "grain": "x"},
+    {"n": "8", "box": [454.0, 96, 0, 470.0, 486, 390], "grain": "y"},
+    {"n": "6", "box": [454.0, 502, 0, 470.0, 1984, 390], "grain": "y"},
+    {"n": "9", "box": [27, 830, 15, 453.0, 835, 375], "kind": "glass", "id": "9-11"},
+    {"n": "9", "box": [27, 1200, 15, 453.0, 1205, 375], "kind": "glass", "id": "9-12"},
+    {"n": "9", "box": [27, 1570, 15, 453.0, 1575, 375], "kind": "glass", "id": "9-13"},
+    {"n": "10", "box": [26, 1784, 10, 454.0, 1984, 26], "grain": "x", "id": "10-1"},
+    {"n": "9", "box": [471.0, 830, 15, 897, 835, 375], "kind": "glass", "id": "9-21"},
+    {"n": "9", "box": [471.0, 1200, 15, 897, 1205, 375], "kind": "glass", "id": "9-22"},
+    {"n": "9", "box": [471.0, 1570, 15, 897, 1575, 375], "kind": "glass", "id": "9-23"},
+    {"n": "10", "box": [470.0, 1784, 10, 898, 1984, 26], "grain": "x", "id": "10-2"},
+    {"n": "12", "kind": "front", "box": [28, 98, 416, 452, 484, 434], "edge": 1.5, "grain": "y", "id": "12-1", "face": {"type": "frame", "border": 50, "depth": 3, "r": 1, "profile": "parma-bevel"}},
+    {"id": "k-door_bottom-1", "kind": "handle", "model": "knob", "at": [420, 291.0], "d": 30, "t": 14, "standoff": 12, "z": 434},
+    {"n": "11", "kind": "front", "box": [28, 504, 416, 452, 1982, 434], "edge": 1.5, "grain": "y", "id": "11-1", "glass": {"frame": 62, "rebate": 12, "t": 4, "tint": "clear"}},
+    {"id": "k-door_top-1", "kind": "handle", "model": "knob", "at": [420, 1240], "d": 30, "t": 14, "standoff": 12, "z": 434},
+    {"n": "12", "kind": "front", "box": [472, 98, 416, 896, 484, 434], "edge": 1.5, "grain": "y", "id": "12-2", "face": {"type": "frame", "border": 50, "depth": 3, "r": 1, "profile": "parma-bevel"}},
+    {"id": "k-door_bottom-2", "kind": "handle", "model": "knob", "at": [504, 291.0], "d": 30, "t": 14, "standoff": 12, "z": 434},
+    {"n": "11", "kind": "front", "box": [472, 504, 416, 896, 1982, 434], "edge": 1.5, "grain": "y", "id": "11-2", "glass": {"frame": 62, "rebate": 12, "t": 4, "tint": "clear"}},
+    {"id": "k-door_top-2", "kind": "handle", "model": "knob", "at": [504, 1240], "d": 30, "t": 14, "standoff": 12, "z": 434},
+    {"n": "13", "box": [15.5, 75, 6, 464.5, 1032, 9.2], "kind": "back", "id": "13-11"},
+    {"n": "13", "box": [15.5, 1032, 6, 464.5, 1989, 9.2], "kind": "back", "id": "13-12"},
+    {"n": "13", "box": [459.5, 75, 6, 908.5, 1032, 9.2], "kind": "back", "id": "13-21"},
+    {"n": "13", "box": [459.5, 1032, 6, 908.5, 1989, 9.2], "kind": "back", "id": "13-22"}
+  ],
+  "moves": [
+    {"type": "door", "name": "door_bottom-1", "parts": ["12-1", "k-door_bottom-1"], "hinge": "left", "angle": 105},
+    {"type": "door", "name": "door_top-1", "parts": ["11-1", "k-door_top-1"], "hinge": "left", "angle": 105},
+    {"type": "door", "name": "door_bottom-2", "parts": ["12-2", "k-door_bottom-2"], "hinge": "right", "angle": 105},
+    {"type": "door", "name": "door_top-2", "parts": ["11-2", "k-door_top-2"], "hinge": "right", "angle": 105}
+  ]
+}

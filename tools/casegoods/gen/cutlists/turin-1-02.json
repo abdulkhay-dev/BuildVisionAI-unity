@@ -1,0 +1,96 @@
+{
+ "code": "П7.036.1.02",
+ "source": "page image pages/turin-1-02-p1.png (Кровать 1-09 «Турин»; table «Поз., наименование, размеры, кол.» + «Фурнитура»; two sizes, no thickness); single page",
+ "rows": [
+  {
+   "n": "1",
+   "name": "Стенка задняя",
+   "size": [
+    962,
+    848
+   ],
+   "count": 1
+  },
+  {
+   "n": "2",
+   "name": "Спинка передняя",
+   "size": [
+    962,
+    300
+   ],
+   "count": 1
+  },
+  {
+   "n": "3",
+   "name": "Царга боковая",
+   "size": [
+    2008,
+    198
+   ],
+   "count": 2
+  },
+  {
+   "n": "4",
+   "name": "Декоративная рамка",
+   "size": [
+    957,
+    340
+   ],
+   "count": 1
+  }
+ ],
+ "hardware": [
+  {
+   "n": "5",
+   "name": "Стяжка одинарная Direkta 7x70",
+   "count": 4,
+   "size": "7x70"
+  },
+  {
+   "n": "6",
+   "name": "Заглушка стяжки одинарной Direkta",
+   "count": 4
+  },
+  {
+   "n": "7",
+   "name": "Ключ шестигранный",
+   "count": 1
+  },
+  {
+   "n": "8",
+   "name": "Стяжка угловая",
+   "count": 4
+  },
+  {
+   "n": "9",
+   "name": "Шурупы 4x25 (для угловых стяжек)",
+   "count": 28,
+   "size": "4x25"
+  },
+  {
+   "n": "10",
+   "name": "Наконечники",
+   "count": 5
+  },
+  {
+   "n": "11",
+   "name": "Шурупы 3x12 (для наконечников)",
+   "count": 10,
+   "size": "3x12"
+  },
+  {
+   "n": "12",
+   "name": "Шуруп 4x40 (для крепления рамки)",
+   "count": 12,
+   "size": "4x40"
+  },
+  {
+   "n": "13",
+   "name": "Металлокаркас 2000x900 (сборно-разборный)",
+   "count": 1,
+   "size": "2000x900",
+   "note": "metal slatted base on legs (рис. 4); physical part but listed under Фурнитура"
+  }
+ ],
+ "drawing": "Single bed 900x2000 (metal slatted base 13, 2000x900, on its own legs, dropped inside the frame). Headboard 1 (962 wide x 848 high), footboard 2 (962 x 300), side rails 3 (2008 long x 198 high, 2) between head- and footboard with corner brackets 8 (4, screws 4x25) + Direkta 7x70 (4) — rails join the inner faces of head/foot boards (рис. 1). Decorative frame 4 (957x340) screwed (4x40, 12) onto the upper part of headboard 1, front face. 5 glides on the bottom edges of parts 1 and 2. Inner width 962 - 2x16 ≈ 930 wide for 900 base (approx.); overall length ≈ 2008 + 2 board thicknesses. No front view, no dimension lines (perspective only)."
+}

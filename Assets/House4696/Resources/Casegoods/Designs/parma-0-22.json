@@ -1,0 +1,43 @@
+{
+  "id": "parma-0-22",
+  "size": [830, 434, 1296],
+  "parts": [
+    {"n": "top", "box": [0, 1280, 0, 830, 1296, 420], "mat": "top", "edge": 2, "grain": "x"},
+    {"n": "side-l", "box": [10, 0, 0, 26, 1280, 390], "grain": "y"},
+    {"n": "side-r", "box": [804, 0, 0, 820, 1280, 390], "grain": "y"},
+    {"n": "pil", "box": [10, 0, 390, 26, 1280, 434], "grain": "y", "id": "pil-l"},
+    {"n": "pil", "box": [804, 0, 390, 820, 1280, 434], "grain": "y", "id": "pil-r"},
+    {"n": "bottom", "box": [26, 80, 0, 804, 96, 390], "mat": "top", "grain": "x"},
+    {"n": "h-1", "box": [26, 480.0, 0, 804, 496.0, 390], "mat": "top", "grain": "x"},
+    {"n": "h-2", "box": [26, 880.0, 0, 804, 896.0, 390], "mat": "top", "grain": "x"},
+    {"n": "part-1", "box": [407.0, 96.0, 0, 423.0, 480.0, 390], "grain": "y"},
+    {"n": "part-2", "box": [407.0, 496.0, 0, 423.0, 880.0, 390], "grain": "y"},
+    {"n": "part-3", "box": [407.0, 896.0, 0, 423.0, 1280.0, 390], "grain": "y"},
+    {"n": "door-1l", "kind": "front", "box": [28, 97.0, 416, 414, 479.0, 434], "edge": 1.5, "grain": "y", "face": {"type": "frame", "border": 50, "depth": 3, "r": 1, "profile": "parma-bevel"}},
+    {"id": "k-door_1l", "kind": "handle", "model": "knob", "at": [382, 420.0], "d": 30, "t": 14, "standoff": 12, "z": 434},
+    {"n": "door-1r", "kind": "front", "box": [416, 97.0, 416, 802, 479.0, 434], "edge": 1.5, "grain": "y", "face": {"type": "frame", "border": 50, "depth": 3, "r": 1, "profile": "parma-bevel"}},
+    {"id": "k-door_1r", "kind": "handle", "model": "knob", "at": [448, 420.0], "d": 30, "t": 14, "standoff": 12, "z": 434},
+    {"n": "door-2l", "kind": "front", "box": [28, 497.0, 416, 414, 879.0, 434], "edge": 1.5, "grain": "y", "face": {"type": "frame", "border": 50, "depth": 3, "r": 1, "profile": "parma-bevel"}},
+    {"id": "k-door_2l", "kind": "handle", "model": "knob", "at": [382, 820.0], "d": 30, "t": 14, "standoff": 12, "z": 434},
+    {"n": "door-2r", "kind": "front", "box": [416, 497.0, 416, 802, 879.0, 434], "edge": 1.5, "grain": "y", "face": {"type": "frame", "border": 50, "depth": 3, "r": 1, "profile": "parma-bevel"}},
+    {"id": "k-door_2r", "kind": "handle", "model": "knob", "at": [448, 820.0], "d": 30, "t": 14, "standoff": 12, "z": 434},
+    {"n": "door-3l", "kind": "front", "box": [28, 897.0, 416, 414, 1279.0, 434], "edge": 1.5, "grain": "y", "face": {"type": "frame", "border": 50, "depth": 3, "r": 1, "profile": "parma-bevel"}},
+    {"id": "k-door_3l", "kind": "handle", "model": "knob", "at": [382, 1220.0], "d": 30, "t": 14, "standoff": 12, "z": 434},
+    {"n": "door-3r", "kind": "front", "box": [416, 897.0, 416, 802, 1279.0, 434], "edge": 1.5, "grain": "y", "face": {"type": "frame", "border": 50, "depth": 3, "r": 1, "profile": "parma-bevel"}},
+    {"id": "k-door_3r", "kind": "handle", "model": "knob", "at": [448, 1220.0], "d": 30, "t": 14, "standoff": 12, "z": 434},
+    {"n": "back-1l", "box": [15.5, 88.0, 6, 417.5, 488.0, 9.2], "kind": "back"},
+    {"n": "back-1r", "box": [412.5, 88.0, 6, 814.5, 488.0, 9.2], "kind": "back"},
+    {"n": "back-2l", "box": [15.5, 488.0, 6, 417.5, 888.0, 9.2], "kind": "back"},
+    {"n": "back-2r", "box": [412.5, 488.0, 6, 814.5, 888.0, 9.2], "kind": "back"},
+    {"n": "back-3l", "box": [15.5, 888.0, 6, 417.5, 1288.0, 9.2], "kind": "back"},
+    {"n": "back-3r", "box": [412.5, 888.0, 6, 814.5, 1288.0, 9.2], "kind": "back"}
+  ],
+  "moves": [
+    {"type": "door", "name": "door_1l", "parts": ["door-1l", "k-door_1l"], "hinge": "left", "angle": 105},
+    {"type": "door", "name": "door_1r", "parts": ["door-1r", "k-door_1r"], "hinge": "right", "angle": 105},
+    {"type": "door", "name": "door_2l", "parts": ["door-2l", "k-door_2l"], "hinge": "left", "angle": 105},
+    {"type": "door", "name": "door_2r", "parts": ["door-2r", "k-door_2r"], "hinge": "right", "angle": 105},
+    {"type": "door", "name": "door_3l", "parts": ["door-3l", "k-door_3l"], "hinge": "left", "angle": 105},
+    {"type": "door", "name": "door_3r", "parts": ["door-3r", "k-door_3r"], "hinge": "right", "angle": 105}
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "id": "turin-1-18",
+  "size": [1130, 643, 2200],
+  "parts": [
+    {"n": "2", "box": [43, 70, 3, 1087, 95, 603], "edge": 5, "grain": "x"},
+    {"n": "4", "box": [59, 95, 3, 75, 2135, 583], "grain": "y"},
+    {"n": "3", "box": [1055, 95, 3, 1071, 2135, 583], "grain": "y"},
+    {"n": "5", "box": [653, 95, 3, 669, 1869, 581], "grain": "y"},
+    {"n": "7", "box": [75, 1869, 4, 1055, 1885, 583]},
+    {"n": "14", "box": [53, 95, 583, 75, 2135, 603], "mat": "front", "edge": 2, "grain": "y", "id": "14-l"},
+    {"n": "14", "box": [1055, 95, 583, 1077, 2135, 603], "mat": "front", "edge": 2, "grain": "y", "id": "14-r"},
+    {"n": "1", "box": [43, 2135, 3, 1087, 2160, 603], "edge": 5, "grain": "x"},
+    {"n": "8", "box": [75, 380, 6, 653, 396, 583]},
+    {"n": "9", "box": [75, 1719, 3, 653, 1869, 19], "grain": "x"},
+    {"id": "34", "kind": "tube", "mat": "chrome", "box": [78, 1796.5, 287.5, 650, 1821.5, 312.5], "covers": ["34"]},
+    {"n": "6", "box": [669, 440, 71, 1055, 456, 578], "id": "6-1"},
+    {"n": "6", "box": [669, 800, 71, 1055, 816, 578], "id": "6-2"},
+    {"n": "6", "box": [669, 1160, 71, 1055, 1176, 578], "id": "6-3"},
+    {"n": "6", "box": [669, 1520, 71, 1055, 1536, 578], "id": "6-4"},
+    {"n": "10", "kind": "front", "box": [77, 97, 583, 564, 2133, 603], "edge": 2, "grain": "y", "id": "10-1", "face": {"type": "frame", "border": 22, "depth": 6, "r": 1, "profile": "turin-ogee"}},
+    {"id": "k-door_left-plate", "kind": "handle", "model": "bar", "at": [534, 1100], "dir": "up", "d": 110, "band": 16, "t": 2, "standoff": 0.5, "post": 3, "z": 603},
+    {"id": "k-door_left-knob", "kind": "handle", "model": "knob", "at": [534, 1100], "d": 24, "t": 11, "standoff": 13, "z": 603},
+    {"n": "10", "kind": "front", "box": [566, 97, 583, 1053, 2133, 603], "edge": 2, "grain": "y", "id": "10-2", "face": {"type": "frame", "border": 22, "depth": 6, "r": 1, "profile": "turin-ogee"}},
+    {"id": "k-door_right-plate", "kind": "handle", "model": "bar", "at": [596, 1100], "dir": "up", "d": 110, "band": 16, "t": 2, "standoff": 0.5, "post": 3, "z": 603},
+    {"id": "k-door_right-knob", "kind": "handle", "model": "knob", "at": [596, 1100], "d": 24, "t": 11, "standoff": 13, "z": 603},
+    {"n": "21", "box": [61.0, 75, 0, 660.0, 1134, 3], "kind": "back"},
+    {"n": "20", "box": [61.0, 1134, 0, 660.0, 1877, 3], "kind": "back"},
+    {"n": "19", "box": [660.0, 75, 0, 1069.0, 1881, 3], "kind": "back"},
+    {"n": "18", "box": [60.0, 1877, 0, 1070.0, 2157, 3], "kind": "back"},
+    {"n": "11", "box": [49.0, 0, 567, 1081.0, 70, 583], "grain": "x", "shape": "path", "outline": "M 49 70 L 1081 70 L 1081 0 L 993.28 0 C 986.08 0 993.28 9 975.28 18.6 C 786.88 30 343.12 30 154.72 18.6 C 136.72 9 143.92 0 136.72 0 L 49 0 Z"},
+    {"n": "13", "box": [49.0, 0, 45, 65.0, 70, 567], "id": "13-l"},
+    {"n": "13", "box": [1065.0, 0, 45, 1081.0, 70, 567], "id": "13-r"},
+    {"n": "12", "box": [49.0, 0, 29, 1081.0, 70, 45], "grain": "x"},
+    {"id": "cornice", "kind": "moulding", "profile": "turin-crown-40", "plane": "top", "z": 2184, "side": -1, "mat": "front", "covers": ["15", "16", "17"], "path": [[0, 0], [0, 643], [1130, 643], [1130, 0]]}
+  ],
+  "moves": [
+    {"type": "door", "name": "door_left", "parts": ["10-1", "k-door_left-plate", "k-door_left-knob"], "hinge": "left", "angle": 105},
+    {"type": "door", "name": "door_right", "parts": ["10-2", "k-door_right-plate", "k-door_right-knob"], "hinge": "right", "angle": 105}
+  ]
+}

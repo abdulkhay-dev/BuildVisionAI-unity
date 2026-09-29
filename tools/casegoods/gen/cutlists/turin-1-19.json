@@ -1,0 +1,399 @@
+{
+ "code": "П7.036.1.19",
+ "source": "page image pages/turin-1-19-p1.png (table «№, наименование, A×B, кол., примечание»; two sizes, no thickness, T=25мм noted for 25-mm parts; hardware table «Поз., Наименование, Кол-во, Примечание»); p2 = assembly text; cover = copy of p1",
+ "rows": [
+  {
+   "n": "1",
+   "name": "Крышка",
+   "size": [
+    920,
+    450
+   ],
+   "count": 1,
+   "note": "T=25мм"
+  },
+  {
+   "n": "2",
+   "name": "Стенка боковая левая",
+   "size": [
+    2040,
+    426
+   ],
+   "count": 1
+  },
+  {
+   "n": "3",
+   "name": "Стенка боковая правая",
+   "size": [
+    2040,
+    426
+   ],
+   "count": 1
+  },
+  {
+   "n": "4",
+   "name": "Стенка горизонтальная нижняя",
+   "size": [
+    920,
+    450
+   ],
+   "count": 1,
+   "note": "T=25мм"
+  },
+  {
+   "n": "5",
+   "name": "Перегородка вертикальная",
+   "size": [
+    1807,
+    426
+   ],
+   "count": 1
+  },
+  {
+   "n": "6",
+   "name": "Перегородка горизонтальная",
+   "size": [
+    856,
+    426
+   ],
+   "count": 1
+  },
+  {
+   "n": "7",
+   "name": "Полка несъемная левая",
+   "size": [
+    580,
+    424
+   ],
+   "count": 1
+  },
+  {
+   "n": "8",
+   "name": "Полка несъемная правая",
+   "size": [
+    424,
+    260
+   ],
+   "count": 5
+  },
+  {
+   "n": "9",
+   "name": "Царга",
+   "size": [
+    580,
+    200
+   ],
+   "count": 1
+  },
+  {
+   "n": "10",
+   "name": "Дверь",
+   "size": [
+    1812,
+    425
+   ],
+   "count": 2
+  },
+  {
+   "n": "11",
+   "name": "Цоколь передний",
+   "size": [
+    910,
+    70
+   ],
+   "count": 1
+  },
+  {
+   "n": "12",
+   "name": "Цоколь задний",
+   "size": [
+    910,
+    70
+   ],
+   "count": 1
+  },
+  {
+   "n": "13",
+   "name": "Цоколь боковой",
+   "size": [
+    372,
+    70
+   ],
+   "count": 2,
+   "note": "T=25мм"
+  },
+  {
+   "n": "14",
+   "name": "Пилястра",
+   "size": [
+    2040,
+    22
+   ],
+   "count": 2
+  },
+  {
+   "n": "15",
+   "name": "Карниз передний",
+   "size": [
+    1006,
+    86
+   ],
+   "count": 1
+  },
+  {
+   "n": "16",
+   "name": "Карниз левый",
+   "size": [
+    493,
+    86
+   ],
+   "count": 1
+  },
+  {
+   "n": "17",
+   "name": "Карниз правый",
+   "size": [
+    493,
+    86
+   ],
+   "count": 1
+  },
+  {
+   "n": "18",
+   "name": "Стенка задняя",
+   "size": [
+    601,
+    280
+   ],
+   "count": 1,
+   "note": "ДВП"
+  },
+  {
+   "n": "19",
+   "name": "Стенка задняя",
+   "size": [
+    776,
+    601
+   ],
+   "count": 2,
+   "note": "ДВП"
+  },
+  {
+   "n": "20",
+   "name": "Стенка задняя",
+   "size": [
+    884,
+    247
+   ],
+   "count": 1,
+   "note": "ДВП"
+  },
+  {
+   "n": "21",
+   "name": "Стенка задняя",
+   "size": [
+    1837,
+    281
+   ],
+   "count": 1,
+   "note": "ДВП"
+  },
+  {
+   "n": "22",
+   "name": "Стенка передняя ящика",
+   "size": [
+    852,
+    222
+   ],
+   "count": 1
+  },
+  {
+   "n": "23",
+   "name": "Стенка боковая ящика лев",
+   "size": [
+    400,
+    173
+   ],
+   "count": 1
+  },
+  {
+   "n": "24",
+   "name": "Стенка боковая ящика прав",
+   "size": [
+    400,
+    173
+   ],
+   "count": 1
+  },
+  {
+   "n": "25",
+   "name": "Стенка задняя ящика",
+   "size": [
+    798,
+    173
+   ],
+   "count": 1
+  },
+  {
+   "n": "26",
+   "name": "Брусок",
+   "size": [
+    400,
+    90
+   ],
+   "count": 1
+  },
+  {
+   "n": "27",
+   "name": "Дно ящика",
+   "size": [
+    826,
+    404
+   ],
+   "count": 1,
+   "note": "ДВП"
+  },
+  {
+   "n": "41",
+   "name": "Штанга выдвижная L=350 мм",
+   "size": [
+    350
+   ],
+   "count": 1,
+   "note": "pull-out hanger rail (listed in the hardware table)"
+  }
+ ],
+ "hardware": [
+  {
+   "n": "28",
+   "name": "Стяжка одинарная \"Direkta\" 7х50",
+   "count": 27,
+   "size": "7x50",
+   "note": "для соединения деталей"
+  },
+  {
+   "n": "29",
+   "name": "Заглушка стяжки одинарной \"Direkta\"",
+   "count": 29
+  },
+  {
+   "n": "30",
+   "name": "Стяжка эксцентриковая \"Rastex\"",
+   "count": 37,
+   "note": "для соединения деталей"
+  },
+  {
+   "n": "31",
+   "name": "Дюбель стяжки эксцентриковой \"Rastex\"",
+   "count": 37,
+   "note": "для соединения деталей"
+  },
+  {
+   "n": "32",
+   "name": "Заглушка стяжки эксцентриковой \"Rastex\"",
+   "count": 33
+  },
+  {
+   "n": "33",
+   "name": "Стяжка одинарная \"Direkta\" 7х70",
+   "count": 6,
+   "size": "7x70",
+   "note": "для соединения деталей"
+  },
+  {
+   "n": "34",
+   "name": "Шкант 8х35",
+   "count": 42,
+   "size": "8x35",
+   "note": "для фиксирования деталей"
+  },
+  {
+   "n": "35",
+   "name": "Шурупы 3,5х16",
+   "count": 56,
+   "size": "3,5x16",
+   "note": "для петель, уголка, штангодержателей"
+  },
+  {
+   "n": "36",
+   "name": "Направляющие шариковые Н35мм L=400мм",
+   "count": 1,
+   "size": "направляющие 400 (H35)"
+  },
+  {
+   "n": "37",
+   "name": "Шуруп 4х25",
+   "count": 7,
+   "size": "4x25"
+  },
+  {
+   "n": "38",
+   "name": "Шайба круглая",
+   "count": 54,
+   "note": "для задней стенки"
+  },
+  {
+   "n": "39",
+   "name": "Шайба прямоугольная",
+   "count": 36,
+   "note": "для крепления задней стенки"
+  },
+  {
+   "n": "40",
+   "name": "Подпятник регулируемый с втулкой",
+   "count": 5,
+   "note": "для установки изделия на пол"
+  },
+  {
+   "n": "42",
+   "name": "Ключ шестигранный",
+   "count": 1
+  },
+  {
+   "n": "43",
+   "name": "Винт 4х25",
+   "count": 2,
+   "size": "4x25",
+   "note": "для крепления ручек"
+  },
+  {
+   "n": "44",
+   "name": "Универсальный соединительный уголок",
+   "count": 4,
+   "note": "для крепления цоколей"
+  },
+  {
+   "n": "45",
+   "name": "Петля К-16",
+   "count": 8,
+   "note": "для навески дверей"
+  },
+  {
+   "n": "46",
+   "name": "Планка монтажная D=5 мм",
+   "count": 8,
+   "size": "D=5 мм",
+   "note": "для навески дверей"
+  },
+  {
+   "n": "47",
+   "name": "Ручка",
+   "count": 3
+  },
+  {
+   "n": "48",
+   "name": "Винт 4х16",
+   "count": 1,
+   "size": "4x16",
+   "note": "для крепления ручки ящика"
+  },
+  {
+   "n": "49",
+   "name": "Шурупы 3х20",
+   "count": 90,
+   "size": "3x20",
+   "note": "для задней стенки"
+  }
+ ],
+ "drawing": "No dimension lines; no orthographic front view — isometric thumbnail at pages/turin-1-19-p1.png 428,298,536,543 (2 panelled doors over one full-width drawer, cornice, plinth). Exploded view: top 1 (T=25) sits on the sides 2,3 with the cornice 15/16/17 around it (1006 = 920+2×43, 493 = 450+43; step 1.9 cornice to top with screws 4x25, step 1.11 top+cornice fixed to the body); sides stand on bottom 4 (T=25), which sits on the plinth box 11/12/13 (front/back 910 span side plinths 372, T=25; corner brackets 44, 5 feet). Pilasters 14 on the front of the sides. Inside: horizontal partition 6 (856) near the bottom, above the drawer; vertical partition 5 (1807) stands on 6 and splits LEFT hanging section 580 wide (fixed shelf 7 580×424 at top, царга 9 580×200, pull-out rail 41 L=350) and RIGHT shelf section 260 wide (5 fixed shelves 8, 424 deep × 260 wide): 580+16+260 = 856 = part 6. Doors 2×425+3×2 = 856 (inset, K-16 hinges 8 = 4 per door). One drawer at the bottom under both doors: front 22 852×222 (852+4 = 856), box sides 23/24 400×173, back 25 798×173 (box width 798+32 = 830), bottom 27 826×404 ДВП, bar 26 400×90 under the drawer bottom (длинный брусок as in рис. Б of the other chests); runners L=400 1 set; 3 handles (2 doors + drawer). Heights: inner 2040 = 1812 door + 222 drawer + 6 gaps; 2040−1807−16 = 217 drawer space. Top/sides: inner width 856 = 920−64. Back (схема): LEFT column 18 (601 wide ×280) over two 19 (601 wide × 776) → 280+776+776 = 1832; RIGHT column 21 (281 wide × 1837); 20 (884 wide × 247) across the bottom; total height 1832+247 ≈ 2084, width 601+281 = 882 ≈ 884. UNSURE: 41 «Штанга выдвижная» is a pull-out hanger mechanism, placed in rows only because it carries a length."
+}
