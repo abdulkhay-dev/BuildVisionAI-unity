@@ -70,7 +70,7 @@ def legs(n, w, middle=False, d=66, pad="r", inset=62, zin=55, splay=32, zsplay=1
             k += 1
             out += leg(n, f"leg-{k}", x, z, sx, sz, d=d, pad=pad)
     if middle:
-        out += leg(n, "leg-m", w / 2, D - zin, 0, 0, d=55, d2=34, pad=pad)
+        out += leg(n, "leg-m", w / 2, D / 2, 0, 0, d=55, d2=34, pad=pad)
     return out
 
 
