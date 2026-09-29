@@ -578,11 +578,18 @@ namespace House4696.Casegoods
         {
             if (_mats.TryGetValue(role, out var m)) return m;
             var M = _b.M;
-            var body = _b.C.Mats.Get(_fin?.Body ?? "door_enamel_whitey#e8e6e0", M.GlossWhite);
+            var body = Lookup(_fin?.Body ?? "door_enamel_whitey#e8e6e0", M.GlossWhite);
             if (_fin?.Roles != null && _fin.Roles.TryGetValue(role, out var named) && !string.IsNullOrEmpty(named))
             {
-                m = named.StartsWith("gloss") || named.StartsWith("gold") || named.StartsWith("chrome") || named.StartsWith("black")
+                m = named.EndsWith("@gloss") ? Glossy(_b.C.Mats.Get(named.Substring(0, named.Length - 6), body))
+                    : named.StartsWith("gloss") || named.StartsWith("gold") || named.StartsWith("chrome") || named.StartsWith("black")
                     ? Special(named) : _b.C.Mats.Get(named, body);
+                _mats[role] = m;
+                return m;
+            }
+            if (role.EndsWith("@gloss"))
+            {
+                m = Glossy(Mat(role.Substring(0, role.Length - 6)));
                 _mats[role] = m;
                 return m;
             }
@@ -590,8 +597,8 @@ namespace House4696.Casegoods
             {
                 case "body": m = body; break;
                 case "fabric": m = M.Linen; break;
-                case "front": m = _fin?.Front != null ? _b.C.Mats.Get(_fin.Front, body) : body; break;
-                case "back": m = _fin?.Back != null ? _b.C.Mats.Get(_fin.Back, body) : body; break;
+                case "front": m = _fin?.Front != null ? Lookup(_fin.Front, body) : body; break;
+                case "back": m = _fin?.Back != null ? Lookup(_fin.Back, body) : body; break;
                 case "metal": m = Metal(_col?.Metal ?? "chrome"); break;
                 case "glass": m = M.Glass; break;
                 case "mirror": m = M.Mirror; break;
@@ -605,6 +612,26 @@ namespace House4696.Casegoods
             }
             _mats[role] = m;
             return m;
+        }
+
+        /// <summary>A finish's material name: a library material, "name#rrggbb", or either with "@gloss" (under high-gloss lacquer).</summary>
+        Material Lookup(string name, Material fallback) =>
+            name.EndsWith("@gloss") ? Glossy(_b.C.Mats.Get(name.Substring(0, name.Length - 6), fallback)) : _b.C.Mats.Get(name, fallback);
+
+        static readonly Dictionary<Material, Material> GlossCopies = new Dictionary<Material, Material>();
+
+        /// <summary>A decor under high-gloss lacquer: the same material, smooth and reflective (one copy per material, kept for the session).</summary>
+        static Material Glossy(Material m)
+        {
+            if (m == null) return null;
+            if (GlossCopies.TryGetValue(m, out var g) && g != null) return g;
+            g = new Material(m) { name = m.name + "_gloss", hideFlags = HideFlags.DontSave };
+            if (g.HasProperty("_Smoothness")) g.SetFloat("_Smoothness", 0.93f);
+            if (g.HasProperty("_Glossiness")) g.SetFloat("_Glossiness", 0.93f);
+            if (g.HasProperty("_SpecularHighlights")) g.SetFloat("_SpecularHighlights", 1f);
+            if (g.HasProperty("_EnvironmentReflections")) g.SetFloat("_EnvironmentReflections", 1f);
+            GlossCopies[m] = g;
+            return g;
         }
 
         /// <summary>Metals and high gloss: "gold#d9c189", "chrome", "black", "gloss#f2f2ef" (lacquered high-gloss fronts).</summary>
