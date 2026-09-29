@@ -36,6 +36,10 @@ namespace House4696.Generation
     {
         /// <summary>Solid furniture (gets colliders) and soft decor (no colliders).</summary>
         public readonly MeshBuilder F = new MeshBuilder(), D = new MeshBuilder();
+        /// <summary>Glass of the body (vitrine shelves): no shadows, no collider.</summary>
+        public readonly MeshBuilder G = new MeshBuilder();
+        /// <summary>Parts that move (furniture doors, drawers): each on its own pivot with a <see cref="House4696.Runtime.Door"/>.</summary>
+        public readonly List<ItemMover> Movers = new List<ItemMover>();
         public readonly List<(MeshBuilder mb, Vector3 pos)> Plants = new List<(MeshBuilder, Vector3)>();
         public ItemParams P;
         public HouseContext C;
@@ -44,6 +48,24 @@ namespace House4696.Generation
         public InteriorMaterials M => C.M;
         public FurnitureKit K => C.Kit;
         public VegetationFactory Veg => C.Veg;
+    }
+
+    /// <summary>
+    /// A moving part of an item, built in the item's local space like the rest: the builder puts it on a pivot at
+    /// <see cref="Pivot"/> that turns about Y by <see cref="Angle"/> (a door) or slides by <see cref="Slide"/> (a drawer).
+    /// </summary>
+    public sealed class ItemMover
+    {
+        public string Name;
+        public readonly MeshBuilder Solid = new MeshBuilder(), Glass = new MeshBuilder();
+        public Vector3 Pivot;
+        /// <summary>Orientation of the pivot: its local Y is the hinge line (identity = vertical; a flap turns it onto X).</summary>
+        public Quaternion Frame = Quaternion.identity;
+        public House4696.Runtime.DoorMotion Motion = House4696.Runtime.DoorMotion.Swing;
+        public float Angle = 95f;
+        public Vector3 Slide;
+        /// <summary>Built open (a preview of the interior).</summary>
+        public bool Open;
     }
 
     public sealed class ItemModel
@@ -61,6 +83,8 @@ namespace House4696.Generation
     {
         static readonly Dictionary<string, ItemModel> Models = new Dictionary<string, ItemModel>(StringComparer.OrdinalIgnoreCase);
         public static IEnumerable<ItemModel> All { get { EnsureExternal(); return Models.Values; } }
+        /// <summary>Models offered to people and the AI: all but "_…" test pieces (they build, for previews, but are not listed).</summary>
+        public static IEnumerable<ItemModel> Listed { get { foreach (var m in All) if (!m.Id.StartsWith("_")) yield return m; } }
         public static ItemModel Get(string id) { EnsureExternal(); return id != null && Models.TryGetValue(id, out var m) ? m : null; }
 
         static bool _external;
@@ -70,6 +94,19 @@ namespace House4696.Generation
         {
             if (_external) return;
             _external = true;
+            // case furniture of the manufacturers' catalogues (Resources/Casegoods): parametric, built from their designs
+            foreach (var cm in House4696.Casegoods.CaseCatalog.File.Models)
+            {
+                if (string.IsNullOrEmpty(cm.Id) || Models.ContainsKey(cm.Id)) continue;
+                var entry = cm;
+                var fins = House4696.Casegoods.CaseCatalog.FinishesOf(cm);
+                string ps = $"finish={cm.Finish ?? (fins.Count > 0 ? fins[0] : "")}" + (fins.Count > 1 ? $" ({string.Join(" | ", fins)})" : "") + " open=false";
+                Models[cm.Id] = new ItemModel
+                {
+                    Id = cm.Id, Name = $"{cm.Name} {cm.Code}".Trim(), Category = cm.Category ?? "storage", Params = ps,
+                    Build = b => House4696.Casegoods.CaseBuilder.Build(b, entry),
+                };
+            }
             var ext = ExternalCatalog.Load();
             if (ext == null) return;
             foreach (var e in ext.Models)

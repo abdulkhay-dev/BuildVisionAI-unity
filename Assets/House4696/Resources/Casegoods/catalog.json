@@ -1,0 +1,35 @@
+{
+  "finishes": [
+    { "id": "flora-samshit", "name": "Зелёный самшит 682 PO", "body": "door_enamel_whitey#709183", "swatch": "#6d877c" },
+    { "id": "flora-pepel", "name": "Пепел 621 PE", "body": "door_enamel_whitey#dcddd6", "swatch": "#d9dad1" },
+    { "id": "_test", "name": "проверка формата", "body": "walnut_veneer", "front": "door_enamel_whitey#dcd6ca",
+      "roles": { "accent": "black", "top": "walnut_veneer", "gloss": "gloss#eeece6", "fabric": "boucle" } }
+  ],
+  "profiles": {
+    "flora-41": {
+      "name": "Молдинг «Флора» 41×16: широкая полка, уступ, валик, скат к проёму",
+      "pts": [[0, 0], [0, 15], [0.5, 15.8], [1.5, 16], [21, 16], [22.2, 15.5], [23.2, 14.2], [23.8, 12], [29.4, 12], [30, 12.7], [31.8, 13.3], [33.6, 12.7], [34.2, 11.6], [40, 5.5], [41, 4.8], [41, 0]]
+    }
+  },
+  "collections": [
+    {
+      "id": "flora", "name": "Флора", "brand": "Пинскдрев", "finishes": ["flora-samshit", "flora-pepel"], "metal": "gold#cdbf98",
+      "note": "Каталог «Корпусная мебель ч. II» 2025, с. 6–13. Корпус ЛДСП 16, фасады МДФ крашеные, рамочный молдинг 41×16, ручки-полукольца, опоры RONDA."
+    }
+  ],
+  "models": [
+    { "id": "_features-a", "code": "—", "name": "Проверка: фасады", "collection": "flora", "category": "storage", "size": [1800, 450, 860], "finish": "_test" },
+    { "id": "_features-b", "code": "—", "name": "Проверка: формы и движения", "collection": "flora", "category": "storage", "size": [1200, 500, 2100], "finish": "_test" },
+    { "id": "flora-0-01", "code": "П6.980.0.01", "name": "Шкаф «Флора» с витриной", "collection": "flora", "category": "storage", "size": [611, 418, 2012], "is": "IS-P6-980-0-01-SHkaf.pdf", "page": 13, "note": "с подсветкой, универсальный" },
+    { "id": "flora-0-02", "code": "П6.980.0.02", "name": "Тумба «Флора»", "collection": "flora", "category": "storage", "size": [1525, 418, 569], "is": "IS-P6-980-0-02-1.pdf", "page": 13 },
+    { "id": "flora-0-03", "code": "П6.980.0.03", "name": "Шкаф 2Д «Флора» с витриной", "collection": "flora", "category": "storage", "size": [1114, 418, 1593], "is": "IS-P6-980-0-03-1.pdf", "page": 13, "note": "с подсветкой" },
+    { "id": "flora-0-05", "code": "П6.980.0.05", "name": "Тумба «Флора» ТВ", "collection": "flora", "category": "storage", "size": [1725, 418, 569], "is": "IS-P6-980-0-05-nov.pdf", "page": 13 },
+    { "id": "flora-1-01", "code": "П6.980.1.01", "name": "Шкаф для одежды 2Д «Флора» с ящиком", "collection": "flora", "category": "bedroom", "size": [900, 600, 2304], "is": "IS-P6-980-1-01-1.pdf", "page": 13 },
+    { "id": "flora-1-02", "code": "П6.980.1.02", "name": "Комод «Флора»", "collection": "flora", "category": "bedroom", "size": [925, 418, 904], "is": "IS-P6-980-1-02-Komod.pdf", "page": 13 },
+    { "id": "flora-1-03", "code": "П6.980.1.03", "name": "Зеркало «Флора»", "collection": "flora", "category": "decor", "mount": "wall", "size": [700, 21, 700], "is": "IS-P6-980-1-03-Zerkalo.pdf", "page": 13 },
+    { "id": "flora-1-04", "code": "П6.980.1.04", "name": "Тумба прикроватная «Флора»", "collection": "flora", "category": "bedroom", "size": [611, 418, 569], "is": "IS-P6-980-1-04-Tumba-prikrovatnaya.pdf", "page": 13 },
+    { "id": "flora-1-05", "code": "П6.980.1.05", "name": "Кровать 2-16 «Флора»", "collection": "flora", "category": "bedroom", "size": [1764, 2076, 970], "is": "IS-P6-980-1-05-Krovat-2-16.pdf", "page": 13, "note": "спальное место 2000×1600, металлокаркас" },
+    { "id": "flora-1-06", "code": "П6.980.1.06", "name": "Шкаф для одежды 2Д «Флора»", "collection": "flora", "category": "bedroom", "size": [900, 600, 2304], "is": "IS-P6-980-1-06-SHkaf-dlya-odejdyi-2d-1.pdf", "page": 13 },
+    { "id": "flora-1-07", "code": "П6.980.1.07", "name": "Шкаф для одежды «Флора»", "collection": "flora", "category": "bedroom", "size": [492, 600, 2304], "is": "IS-P6-980-1-07-shkaf-dlya-odejdyi-1.pdf", "note": "только на сайте (нет в каталоге ч. II)" }
+  ]
+}

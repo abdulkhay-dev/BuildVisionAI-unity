@@ -1,0 +1,34 @@
+{
+  "id": "_features-a",
+  "size": [1800, 450, 860],
+  "parts": [
+    { "n": "1", "box": [0, 150, 0, 18, 842, 430] },
+    { "n": "2", "box": [1782, 150, 0, 1800, 842, 430] },
+    { "n": "3", "mat": "top", "box": [0, 842, 0, 1800, 860, 450], "shape": "rect", "radius": 20 },
+    { "n": "4", "box": [18, 150, 0, 1782, 168, 430] },
+    { "kind": "back", "box": [18, 168, 0, 1782, 842, 4] },
+    { "n": "5", "box": [441, 168, 4, 459, 842, 410] },
+    { "n": "6", "box": [1341, 168, 4, 1359, 842, 410] },
+
+    { "id": "fluted", "kind": "front", "box": [20, 170, 412, 438, 840, 430], "face": { "type": "fluted", "pitch": 22, "depth": 4, "gap": 2 } },
+    { "id": "h1", "kind": "handle", "model": "bar", "at": [415, 505], "dir": "up", "d": 160, "band": 12, "t": 10, "standoff": 22, "z": 430 },
+
+    { "id": "frame", "kind": "front", "box": [462, 505, 412, 1338, 840, 430], "face": { "type": "frame", "border": 70, "depth": 5, "r": 3 } },
+    { "id": "diamond", "kind": "front", "box": [462, 170, 412, 1338, 502, 430], "face": { "type": "diamond", "cell": [109, 110], "depth": 10 } },
+    { "id": "h2", "kind": "handle", "model": "knob", "at": [900, 672], "d": 30, "t": 14, "standoff": 12, "z": 430 },
+
+    { "id": "grooves", "kind": "front", "box": [1362, 170, 412, 1780, 840, 430],
+      "face": { "type": "grooves", "w": 6, "depth": 3, "flute": "v", "lines": [[1362, 400, 1780, 400], [1362, 610, 1780, 610], [1571, 170, 1571, 840]] } },
+
+    { "id": "leg-1", "kind": "rod", "mat": "top", "from": [60, 150, 60], "to": [30, 0, 30], "d": 45, "d2": 28 },
+    { "id": "leg-2", "kind": "rod", "mat": "top", "from": [1740, 150, 60], "to": [1770, 0, 30], "d": 45, "d2": 28 },
+    { "id": "leg-3", "kind": "rod", "mat": "top", "from": [60, 150, 390], "to": [30, 0, 420], "d": 45, "d2": 28 },
+    { "id": "leg-4", "kind": "rod", "mat": "top", "from": [1740, 150, 390], "to": [1770, 0, 420], "d": 45, "d2": 28 }
+  ],
+  "moves": [
+    { "type": "door", "name": "left", "parts": ["fluted", "h1"], "hinge": "left" },
+    { "type": "flap", "name": "flap", "parts": ["frame", "h2"], "hinge": "bottom", "angle": 90 },
+    { "type": "drawer", "name": "drawer", "parts": ["diamond"], "travel": 350 },
+    { "type": "door", "name": "right", "parts": ["grooves"], "hinge": "right" }
+  ]
+}

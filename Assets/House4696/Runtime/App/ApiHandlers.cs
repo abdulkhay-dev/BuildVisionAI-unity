@@ -210,7 +210,7 @@ namespace House4696.App
             var sizes = HouseBuilder.MeasureCatalog(_s.Mats);
             var arr = new JArray();
             var cats = new SortedSet<string>();
-            foreach (var m in ItemCatalog.All.OrderBy(m => m.Category).ThenBy(m => m.Id))
+            foreach (var m in ItemCatalog.Listed.OrderBy(m => m.Category).ThenBy(m => m.Id))
             {
                 cats.Add(m.Category);
                 if (!string.IsNullOrEmpty(category) && m.Category != category) continue;

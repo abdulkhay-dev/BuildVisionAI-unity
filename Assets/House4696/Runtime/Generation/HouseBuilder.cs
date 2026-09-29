@@ -91,7 +91,7 @@ namespace House4696.Generation
             doc.Site.Landscape = LandscapePreset.None;
             doc.Levels.Add(new LevelDef { Id = "ground" });
             int i = 0;
-            foreach (var m in ItemCatalog.All)
+            foreach (var m in ItemCatalog.Listed)
             {
                 doc.Items.Add(new ItemDef { Id = m.Id, Model = m.Id, Level = "ground", Position = new Vector3(i % 12 * 15f, 0, i / 12 * 15f) });
                 i++;
@@ -159,12 +159,46 @@ namespace House4696.Generation
             // light fittings glow themselves: their globes and shades casting shadows of the lamps' own lights put
             // dark discs on the ceiling (a chandelier's globes shadow each other's bulbs)
             w.Emit("Decor_" + id, go.transform, b.D, castShadows: model.Category != "lighting");
+            w.Emit("Decor_" + id + "_Glass", go.transform, b.G, castShadows: false);
+            foreach (var mv in b.Movers) EmitMover(w, go.transform, id, mv);
             for (int i = 0; i < b.Plants.Count; i++)
             {
                 var p = w.Emit("Plant_" + id + (i > 0 ? "_" + i : ""), go.transform, b.Plants[i].mb);
                 if (p != null) p.transform.localPosition = b.Plants[i].pos;
             }
             return go;
+        }
+
+        /// <summary>
+        /// A moving part of an item on its own pivot: "Furniture_…" so it collides (a click opens it) and counts in the
+        /// item's extent; the glass of a glazed door too, so a click on the glass opens the door.
+        /// </summary>
+        static void EmitMover(SceneWriter w, Transform parent, string id, ItemMover mv)
+        {
+            if (mv.Solid.IsEmpty && mv.Glass.IsEmpty) return;
+            var pivot = new GameObject("Furniture_" + id + "_" + mv.Name);
+            pivot.transform.SetParent(parent, false);
+            pivot.transform.localPosition = mv.Pivot;
+            pivot.transform.localRotation = mv.Frame;
+            var back = Quaternion.Inverse(mv.Frame);
+            foreach (var (mb, part, shadows) in new[] { (mv.Solid, "", true), (mv.Glass, "_Glass", false) })
+            {
+                var o = w.Emit("Furniture_" + id + "_" + mv.Name + part, pivot.transform, mb, castShadows: shadows);
+                if (o == null) continue;
+                // the meshes are in the item's space: undo the pivot's turn and offset
+                o.transform.localRotation = back;
+                o.transform.localPosition = back * -mv.Pivot;
+                w.MarkDynamic(o);
+            }
+            w.MarkDynamic(pivot);
+            var door = pivot.AddComponent<House4696.Runtime.Door>();
+            door.Motion = mv.Motion;
+            door.OpenAngle = mv.Angle;
+            door.SlideBy = mv.Slide;
+            if (mv.Open) door.SetOpen(true, instant: true);
+            var body = pivot.AddComponent<Rigidbody>();
+            body.isKinematic = true;
+            body.useGravity = false;
         }
 
         /// <summary>

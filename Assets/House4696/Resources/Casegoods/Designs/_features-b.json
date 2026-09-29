@@ -1,0 +1,27 @@
+{
+  "id": "_features-b",
+  "size": [1200, 500, 2100],
+  "parts": [
+    { "n": "1", "box": [40, 60, 0, 58, 1990, 460] },
+    { "n": "2", "box": [1142, 60, 0, 1160, 1990, 460] },
+    { "n": "3", "box": [40, 1990, 0, 1160, 2008, 460] },
+    { "n": "4", "box": [40, 60, 0, 1160, 78, 460] },
+    { "kind": "back", "box": [58, 78, 0, 1142, 1990, 4] },
+    { "id": "arch", "box": [40, 2008, 440, 1160, 2100, 460], "shape": "path",
+      "outline": "M 40 2008 L 1160 2008 L 1160 2040 C 1000 2100 200 2100 40 2040 Z" },
+    { "kind": "moulding", "profile": "flora-41", "plane": "top", "z": 1990, "side": 1,
+      "path": [[40, 0], [40, 460], [1160, 460], [1160, 0]] },
+    { "id": "plinth", "mat": "accent", "box": [60, 0, 20, 1140, 60, 440] },
+
+    { "id": "glazed", "kind": "front", "box": [60, 1000, 460, 598, 1985, 478],
+      "glass": { "frame": 60, "rebate": 8, "t": 4, "tint": "bronze", "barsX": [329], "barsY": [1330, 1660], "barW": 16 } },
+    { "id": "mirror", "kind": "front", "box": [602, 1000, 478, 1140, 1985, 496], "mat": "mirror", "edge": 0.5 },
+    { "id": "gloss", "kind": "front", "box": [60, 540, 460, 1140, 995, 478], "mat": "gloss" },
+    { "id": "soft", "kind": "soft", "box": [60, 80, 440, 1140, 530, 500], "tufts": [6, 3] }
+  ],
+  "moves": [
+    { "type": "door", "name": "glazed", "parts": ["glazed"], "hinge": "left" },
+    { "type": "slide", "name": "coupe", "parts": ["mirror"], "by": [-520, 0, 0] },
+    { "type": "flap", "name": "lift", "parts": ["gloss"], "hinge": "top", "angle": 80 }
+  ]
+}

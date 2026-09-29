@@ -418,7 +418,7 @@ namespace House4696.Doors
             return t.LoadImage(File.ReadAllBytes(path)) ? t : null;
         }
 
-        static void AddLight(GameObject parent, Vector3 euler, float intensity, Color color, bool shadows)
+        internal static void AddLight(GameObject parent, Vector3 euler, float intensity, Color color, bool shadows)
         {
             var go = new GameObject("DoorPreviewLight") { hideFlags = HideFlags.HideAndDontSave };
             go.transform.SetParent(parent.transform, false);
@@ -431,7 +431,7 @@ namespace House4696.Doors
             l.shadowStrength = 0.5f;
         }
 
-        static Texture2D Downsample(Texture2D src, int k)
+        internal static Texture2D Downsample(Texture2D src, int k)
         {
             int w = src.width / k, h = src.height / k;
             var dst = new Texture2D(w, h, TextureFormat.RGBA32, false);
@@ -456,7 +456,7 @@ namespace House4696.Doors
         }
 
         /// <summary>A tiny cubemap: light above, mid grey at the horizon, darker below.</summary>
-        static Cubemap GreySky()
+        internal static Cubemap GreySky()
         {
             const int n = 16;
             var cube = new Cubemap(n, TextureFormat.RGBA32, false) { hideFlags = HideFlags.HideAndDontSave };

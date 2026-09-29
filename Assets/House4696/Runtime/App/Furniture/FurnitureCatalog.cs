@@ -100,7 +100,7 @@ namespace House4696.App
                 cats[id] = c;
                 Categories.Add(c);
             }
-            foreach (var m in ItemCatalog.All)
+            foreach (var m in ItemCatalog.Listed)
             {
                 if (!cats.TryGetValue(m.Category ?? "", out var cat))
                 {

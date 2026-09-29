@@ -45,3 +45,8 @@ __pycache__/
 
 # Window catalogue images beyond the ones in tools/windows/reference
 /tools/windows/.cache/
+
+# Case furniture: the manufacturer's assembly instructions (4–5 MB each; tools/casegoods/fetch_is.py downloads them),
+# their cut lists and table pages are kept in tools/casegoods/reference/<collection>/
+/tools/casegoods/.cache/
+/tools/casegoods/reference/*/is/
