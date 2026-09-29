@@ -1,0 +1,97 @@
+{
+ "code": "П6.606.4.12",
+ "source": "the instruction's table (numbers, names, sizes, counts)",
+ "rows": [
+  {
+   "n": "1",
+   "name": null,
+   "size": [
+    750,
+    900,
+    25
+   ],
+   "count": 2
+  },
+  {
+   "n": "2",
+   "name": null,
+   "size": [
+    1443,
+    120,
+    16
+   ],
+   "count": 2
+  },
+  {
+   "n": "3",
+   "name": null,
+   "size": [
+    812,
+    120,
+    25
+   ],
+   "count": 2
+  },
+  {
+   "n": "4",
+   "name": null,
+   "size": [
+    730,
+    125,
+    25
+   ],
+   "count": 2
+  },
+  {
+   "n": "5",
+   "name": null,
+   "size": [
+    730,
+    125,
+    25
+   ],
+   "count": 2
+  },
+  {
+   "n": "6",
+   "name": null,
+   "size": [
+    730,
+    100,
+    25
+   ],
+   "count": 2
+  },
+  {
+   "n": "7",
+   "name": null,
+   "size": [
+    730,
+    100,
+    25
+   ],
+   "count": 2
+  },
+  {
+   "n": "8",
+   "name": null,
+   "size": [
+    500,
+    900,
+    25
+   ],
+   "count": 1
+  },
+  {
+   "n": "9",
+   "name": null,
+   "size": [
+    813,
+    120,
+    16
+   ],
+   "count": 2
+  }
+ ],
+ "note": "table of p. 4 as printed (the reference JSON agrees); 9 is built 812 (between the long bars 2, ±1 mm)"
+}

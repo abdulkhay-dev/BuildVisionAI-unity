@@ -1,0 +1,27 @@
+{
+ "code": "П6.606.1.10",
+ "source": "the instruction's table (numbers, names, sizes, counts)",
+ "rows": [
+  {
+   "n": "1",
+   "name": "Щит",
+   "size": [
+    700,
+    1000,
+    16
+   ],
+   "count": 1
+  },
+  {
+   "n": "2",
+   "name": "Зеркало",
+   "size": [
+    660,
+    960,
+    4
+   ],
+   "count": 1
+  }
+ ],
+ "note": "table of p. 4 as printed (the reference JSON agrees)"
+}

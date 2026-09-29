@@ -1,0 +1,87 @@
+{
+ "code": "П6.606.1.09",
+ "source": "the instruction's table (numbers, names, sizes, counts)",
+ "rows": [
+  {
+   "n": "1",
+   "name": "Спинка",
+   "size": [
+    1120,
+    950,
+    25
+   ],
+   "count": 1
+  },
+  {
+   "n": "2",
+   "name": "Спинка",
+   "size": [
+    964,
+    340,
+    25
+   ],
+   "count": 1
+  },
+  {
+   "n": "3",
+   "name": "Царга",
+   "size": [
+    2010,
+    200,
+    25
+   ],
+   "count": 2
+  },
+  {
+   "n": "4",
+   "name": "Накладка",
+   "size": [
+    1120,
+    80,
+    25
+   ],
+   "count": 1
+  },
+  {
+   "n": "5",
+   "name": "Накладка",
+   "size": [
+    870,
+    80,
+    25
+   ],
+   "count": 2
+  },
+  {
+   "n": "6",
+   "name": "Накладка",
+   "size": [
+    964,
+    80,
+    25
+   ],
+   "count": 1
+  },
+  {
+   "n": "7",
+   "name": "Накладка",
+   "size": [
+    260,
+    80,
+    25
+   ],
+   "count": 2
+  },
+  {
+   "n": "8",
+   "name": "Накладка",
+   "size": [
+    804,
+    80,
+    25
+   ],
+   "count": 1
+  }
+ ],
+ "note": "table of p. 4 (sizes in the text layer), transcribed; the reference JSON had no rows"
+}

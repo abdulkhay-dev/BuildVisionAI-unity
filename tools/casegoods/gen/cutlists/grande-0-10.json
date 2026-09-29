@@ -1,0 +1,27 @@
+{
+ "code": "П6.606.0.10",
+ "source": "the instruction's table (numbers, names, counts; the table prints no sizes): the sizes are read off the vector drawing (front / side / top views, scale from the overall size, ±1.5 mm) and the collection's construction — see notes/grande.md",
+ "rows": [
+  {
+   "n": "1",
+   "name": "Стенка вертикальная",
+   "size": [
+    2000.0,
+    270.0,
+    16.0
+   ],
+   "count": 1
+  },
+  {
+   "n": "2",
+   "name": "Стенка горизонтальная",
+   "size": [
+    2000.0,
+    250.0,
+    16.0
+   ],
+   "count": 1
+  }
+ ],
+ "note": "the table has no text layer: transcribed from the picture of p. 1; sizes from the front / side views (their x and y scales differ: 8.9 and 6.0 mm/pt)"
+}
