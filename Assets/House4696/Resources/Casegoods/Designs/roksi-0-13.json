@@ -1,0 +1,26 @@
+{
+  "id": "roksi-0-13",
+  "size": [1100, 800, 735],
+  "parts": [
+    {"id": "top", "box": [0, 710, 0, 1100, 735, 800], "radius": 3, "grain": "x"},
+    {"id": "leg-1", "kind": "panel", "mat": "metal", "edge": 0.5, "box": [10, 706, 20, 130, 710, 80]},
+    {"id": "leg-1-r1", "kind": "rod", "mat": "metal", "from": [20, 706, 50], "to": [70, 10, 50], "d": 10},
+    {"id": "leg-1-r2", "kind": "rod", "mat": "metal", "from": [120, 706, 50], "to": [70, 10, 50], "d": 10},
+    {"id": "leg-1-f", "kind": "tube", "mat": "metal", "box": [64, 0, 44, 76, 16, 56]},
+    {"id": "leg-2", "kind": "panel", "mat": "metal", "edge": 0.5, "box": [10, 706, 720, 130, 710, 780]},
+    {"id": "leg-2-r1", "kind": "rod", "mat": "metal", "from": [20, 706, 750], "to": [70, 10, 750], "d": 10},
+    {"id": "leg-2-r2", "kind": "rod", "mat": "metal", "from": [120, 706, 750], "to": [70, 10, 750], "d": 10},
+    {"id": "leg-2-f", "kind": "tube", "mat": "metal", "box": [64, 0, 744, 76, 16, 756]},
+    {"id": "leg-3", "kind": "panel", "mat": "metal", "edge": 0.5, "box": [970, 706, 20, 1090, 710, 80]},
+    {"id": "leg-3-r1", "kind": "rod", "mat": "metal", "from": [980, 706, 50], "to": [1030, 10, 50], "d": 10},
+    {"id": "leg-3-r2", "kind": "rod", "mat": "metal", "from": [1080, 706, 50], "to": [1030, 10, 50], "d": 10},
+    {"id": "leg-3-f", "kind": "tube", "mat": "metal", "box": [1024, 0, 44, 1036, 16, 56]},
+    {"id": "leg-4", "kind": "panel", "mat": "metal", "edge": 0.5, "box": [970, 706, 720, 1090, 710, 780]},
+    {"id": "leg-4-r1", "kind": "rod", "mat": "metal", "from": [980, 706, 750], "to": [1030, 10, 750], "d": 10},
+    {"id": "leg-4-r2", "kind": "rod", "mat": "metal", "from": [1080, 706, 750], "to": [1030, 10, 750], "d": 10},
+    {"id": "leg-4-f", "kind": "tube", "mat": "metal", "box": [1024, 0, 744, 1036, 16, 756]}
+  ],
+  "moves": [
+
+  ]
+}

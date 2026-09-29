@@ -1,0 +1,11 @@
+{
+  "id": "roksi-1-03",
+  "size": [700, 21, 700],
+  "parts": [
+    {"n": "1", "shape": "circle", "mat": "front", "edge": 2, "box": [0, 0, 0, 700, 700, 16]},
+    {"n": "2", "kind": "mirror", "shape": "circle", "box": [60, 60, 17, 640, 640, 21]}
+  ],
+  "moves": [
+
+  ]
+}
