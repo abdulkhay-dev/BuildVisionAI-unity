@@ -73,6 +73,8 @@ namespace House4696.Generation
                 Walk = WalkViews(doc), Orbit = OrbitViews(doc), CreatedMaterials = new List<Material>(c.Mats.Created),
                 Context = c, Items = c.ItemBoxes,
             };
+            try { HousePhysicsChecks.Run(c, root); }
+            catch (System.Exception e) { Debug.LogException(e); c.Warn("walk-through checks failed: " + e.Message); }
             try { result.Checks = HouseChecks.Run(c, c.ItemBoxes); }
             catch (System.Exception e) { Debug.LogException(e); c.Warn("geometry checks failed: " + e.Message); }
             return result;

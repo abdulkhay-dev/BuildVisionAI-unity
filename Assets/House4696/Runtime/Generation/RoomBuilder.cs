@@ -26,16 +26,24 @@ namespace House4696.Generation
             // one mesh set per level: plan renders hide whole renderers above the cut, so a mesh must not span floors
             var sets = new Dictionary<string, (MeshBuilder slab, MeshBuilder finish, MeshBuilder ceilings, MeshBuilder fixtures)>();
             var order = new List<string>();
+            (MeshBuilder slab, MeshBuilder finish, MeshBuilder ceilings, MeshBuilder fixtures) Set(LevelDef L)
+            {
+                string key = L.Id ?? "level";
+                if (!sets.TryGetValue(key, out var s))
+                {
+                    sets[key] = s = (new MeshBuilder(), new MeshBuilder(), new MeshBuilder(), new MeshBuilder());
+                    order.Add(key);
+                }
+                return s;
+            }
+            // the floor between and around the rooms: under partitions, doorways, passages, areas with no room
+            var fill = new FloorFill(_c);
+            foreach (var L in _c.Doc.Levels) fill.Build(L, Set(L).slab);
             foreach (var r in _c.Doc.Rooms)
             {
                 if (r.Outline == null || r.Outline.Count < 3) { _c.Warn($"room '{r.Id}' needs at least 3 outline points"); continue; }
                 var L = _c.Level(r.Level);
-                string key = L.Id ?? "level";
-                if (!sets.TryGetValue(key, out var set))
-                {
-                    sets[key] = set = (new MeshBuilder(), new MeshBuilder(), new MeshBuilder(), new MeshBuilder());
-                    order.Add(key);
-                }
+                var set = Set(L);
                 var slab = set.slab; var finish = set.finish; var ceilings = set.ceilings; var fixtures = set.fixtures;
                 float floorY = L.Elevation, h = r.Height ?? L.Height, ceilY = floorY + h;
                 bool lowest = _c.IsLowest(L);
@@ -103,14 +111,15 @@ namespace House4696.Generation
 
         /// <summary>
         /// Box-projected probe fitted to the room: floors, marble and mirrors reflect the room, not the garden.
-        /// The box reaches just past the wall faces but stops short of the glazing plane of exterior walls
+        /// The box reaches past the wall faces to the middle of a thick wall (so the floor in a doorway between two rooms
+        /// is inside a box and does not reflect the sky) but stops short of the glazing plane of exterior walls
         /// (panes sit 0.12–0.23 m inside the outer face), so windows keep reflecting the garden.
         /// </summary>
         void Probe(RoomDef r, float floorY, float ceilY)
         {
-            const float margin = 0.1f, glassClear = 0.25f;
+            const float margin = 0.1f, reach = 0.25f, glassClear = 0.25f;
             var b0 = Polygon.Bounds(r.Outline);
-            float x0 = b0.xMin - margin, x1 = b0.xMax + margin, z0 = b0.yMin - margin, z1 = b0.yMax + margin;
+            float x0 = b0.xMin - reach, x1 = b0.xMax + reach, z0 = b0.yMin - reach, z1 = b0.yMax + reach;
             foreach (var f in _c.Walls)
             {
                 if (!f.Exterior || f.Y1 < floorY || f.Y0 > ceilY) continue;
@@ -119,14 +128,15 @@ namespace House4696.Generation
                 if (Mathf.Abs(f.N.x) > 0.99f)
                 {
                     if (Mathf.Min(pa.z, pb.z) > z1 || Mathf.Max(pa.z, pb.z) < z0) continue;
-                    if (f.N.x > 0 && c > b0.center.x) x1 = Mathf.Min(x1, c - glassClear);
-                    if (f.N.x < 0 && -c < b0.center.x) x0 = Mathf.Max(x0, -c + glassClear);
+                    // a wall the room reaches past (an L-shaped room around a projecting entrance) does not bound it
+                    if (f.N.x > 0 && c > b0.center.x && b0.xMax < c + 0.05f) x1 = Mathf.Min(x1, c - glassClear);
+                    if (f.N.x < 0 && -c < b0.center.x && b0.xMin > -c - 0.05f) x0 = Mathf.Max(x0, -c + glassClear);
                 }
                 else if (Mathf.Abs(f.N.z) > 0.99f)
                 {
                     if (Mathf.Min(pa.x, pb.x) > x1 || Mathf.Max(pa.x, pb.x) < x0) continue;
-                    if (f.N.z > 0 && c > b0.center.y) z1 = Mathf.Min(z1, c - glassClear);
-                    if (f.N.z < 0 && -c < b0.center.y) z0 = Mathf.Max(z0, -c + glassClear);
+                    if (f.N.z > 0 && c > b0.center.y && b0.yMax < c + 0.05f) z1 = Mathf.Min(z1, c - glassClear);
+                    if (f.N.z < 0 && -c < b0.center.y && b0.yMin > -c - 0.05f) z0 = Mathf.Max(z0, -c + glassClear);
                 }
             }
             var b = Rect.MinMaxRect(x0, z0, Mathf.Max(x1, x0 + 0.5f), Mathf.Max(z1, z0 + 0.5f));

@@ -288,8 +288,7 @@ namespace House4696.Generation
             foreach (var g in c.StairGeometries)
             {
                 string path = $"stairs/{g.Def.Id}";
-                if (g.LowHeadroomTreads > 0)
-                    W(path, $"над {g.LowHeadroomTreads} ступенями первого марша меньше {StairGeometry.Headroom:0} м до перекрытия — сдвинь лестницу, увеличь firstFlight или высоту этажа");
+                // headroom over the flights is measured on the built house (HousePhysicsChecks)
                 var mid = (g.ArrivalA + g.ArrivalB) * 0.5f;
                 var off = mid + g.ArrivalDir * 0.4f;
                 float yTo = g.To.Elevation;
@@ -314,6 +313,7 @@ namespace House4696.Generation
                 }
                 nextStair:;
             }
+            list.AddRange(c.PhysicalIssues);
             return list;
         }
 

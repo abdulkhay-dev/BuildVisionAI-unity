@@ -255,7 +255,8 @@ namespace House4696.Generation
             LevelDef top = null;
             foreach (var l in _c.Doc.Levels)
             {
-                if (!_c.IsLowest(l)) Add(l.Elevation - l.Slab, l.Elevation);
+                // the lowest floor stands on its plinth: from the wall's foot up to the floor
+                Add(_c.IsLowest(l) ? f.Y0 : l.Elevation - l.Slab, l.Elevation);
                 top = l;
             }
             if (top != null) Add(top.Elevation + top.Height, f.Y1);
@@ -481,8 +482,35 @@ namespace House4696.Generation
                 else if (o.Def.Type == OpeningType.Window || o.Def.Type == OpeningType.Glazing)
                     WBox(glass, o.S0, o.S1, o.Y0, o.Y1, -f.T * 0.5f - 0.005f, -f.T * 0.5f + 0.005f, _c.M.Glass);
             }
+            SlabBridge(f, mb, right, left);
             _c.W.Emit("Partition_" + f.Def.Id, _c.Interior, mb);
             _c.W.Emit("Partition_Glass_" + f.Def.Id, _c.Interior, glass, castShadows: false);
+        }
+
+        /// <summary>
+        /// A partition ends at its ceiling; above it the slab of the next level closes the gap — except where that slab
+        /// is cut open (a stairwell, a second light). There the wall runs on up to the next floor, so a lift shaft or a
+        /// stair-hall wall standing storey on storey stays one wall instead of a stack with open 0.3 m bands between.
+        /// </summary>
+        void SlabBridge(WallFrame f, MeshBuilder mb, Material right, Material left)
+        {
+            var up = _c.Above(f.Level);
+            if (up == null || f.Def.Top.HasValue || f.Y1 >= up.Elevation - 0.02f || f.Y1 < up.Elevation - up.Slab - 0.05f) return;
+            var cuts = _c.FloorCuts(up);
+            if (cuts.Count == 0) return;
+            const float step = 0.05f;
+            float? runStart = null;
+            for (float s = f.S0; s <= f.S1 + step * 0.5f; s += step)
+            {
+                float sc = Mathf.Min(s + step * 0.5f, f.S1);
+                bool open = s < f.S1 - 0.001f && (cuts.Exists(h => Polygon.Contains(h, f.Plan(sc, -f.T * 0.5f))) ||
+                                                   cuts.Exists(h => Polygon.Contains(h, f.Plan(sc, -0.01f))) ||
+                                                   cuts.Exists(h => Polygon.Contains(h, f.Plan(sc, -f.T + 0.01f))));
+                if (open && runStart == null) runStart = s;
+                if (open || runStart == null) continue;
+                WBox(mb, runStart.Value, Mathf.Min(s, f.S1), f.Y1, up.Elevation, -f.T, 0f, right, left, left, left, null, left);
+                runStart = null;
+            }
         }
 
         /// <summary>
@@ -530,6 +558,9 @@ namespace House4696.Generation
             // transoms from the floor of the wall's level (an upper wall starts under its slab)
             float floorY = Mathf.Max(y0, f.Level.Elevation);
             float bar = floorY + 0.95f, head = floorY + 2.4f;
+            // an exterior screen stands on the floor: below it is the opaque plinth/slab band (spandrel), and doors open
+            // at floor level, not at the ground under the plinth
+            float yb = f.Exterior ? floorY : y0;
             float c = -f.T * 0.5f;
             var frame = new MeshBuilder { Transform = f.ToWorld };
             var glass = new MeshBuilder { Transform = f.ToWorld };
@@ -547,10 +578,10 @@ namespace House4696.Generation
             void Fixed(float za, float zb)
             {
                 if (zb - za < 0.05f) return;
-                Prof(frame, za, zb, y0, y0 + w);
+                Prof(frame, za, zb, yb, yb + w);
                 Prof(frame, za, zb, bar - w * 0.5f, bar + w * 0.5f);
                 Prof(frame, za, zb, head - w * 0.5f, head + w * 0.5f);
-                Pane(glass, za, zb, y0 + w, y1 - w);
+                Pane(glass, za, zb, yb + w, y1 - w);
             }
             var sill = new MeshBuilder { Transform = f.ToWorld };
             foreach (var d in doors)
@@ -564,7 +595,7 @@ namespace House4696.Generation
 
                 // glazed door leaf
                 var leaf = new MeshBuilder { Transform = f.ToWorld };
-                float la = dz0 + 0.004f, lb = dz1 - 0.004f, lt = head - w * 0.5f - 0.004f, lbm = y0 + 0.01f;
+                float la = dz0 + 0.004f, lb = dz1 - 0.004f, lt = head - w * 0.5f - 0.004f, lbm = yb + 0.01f;
                 Prof(leaf, la, la + w, lbm, lt); Prof(leaf, lb - w, lb, lbm, lt);
                 Prof(leaf, la, lb, lt - w, lt); Prof(leaf, la, lb, lbm, lbm + w * 1.6f);
                 Prof(leaf, la, lb, bar - w * 0.5f, bar + w * 0.5f);
@@ -572,7 +603,7 @@ namespace House4696.Generation
                 bool atStart = d.Def.Hinge == Hinge.Start;
                 float hz = atStart ? lb - 0.09f : la + 0.09f;
                 foreach (float side in new[] { -1f, 1f })
-                    leaf.Rod(WallFrame.L(hz, y0 + 0.75f, c + side * 0.03f), WallFrame.L(hz, y0 + 1.35f, c + side * 0.03f), 0.01f, bm);
+                    leaf.Rod(WallFrame.L(hz, yb + 0.75f, c + side * 0.03f), WallFrame.L(hz, yb + 1.35f, c + side * 0.03f), 0.01f, bm);
                 DoorPivot("Door_" + (d.Def.Id ?? f.Def.Id), f, d, leaf, f.P(atStart ? la : lb, lbm, c), -f.N, 100f);
                 s = dz1 + w;
             }
@@ -580,7 +611,7 @@ namespace House4696.Generation
             // an exterior glass wall passing a floor slab or the roof build-up gets an opaque spandrel there: otherwise
             // the slab edge (and the void above the top ceiling) shows through the glass as a floating white band
             if (f.Exterior)
-                foreach (var (ya, yb) in Spandrels(f)) Prof(frame, z0, z1, ya, yb);
+                foreach (var (sa, sb) in Spandrels(f)) Prof(frame, z0, z1, sa, sb);
             _c.W.Emit("Steel_Partition_" + f.Def.Id, _c.Interior, frame);
             _c.W.Emit("Threshold_" + f.Def.Id, _c.Interior, sill);
             _c.W.Emit("Steel_Glass_" + f.Def.Id, _c.Interior, glass, castShadows: false);

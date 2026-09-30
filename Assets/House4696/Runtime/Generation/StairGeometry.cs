@@ -23,8 +23,6 @@ namespace House4696.Generation
         public Vector2 ArrivalA, ArrivalB;
         /// <summary>Walking direction off the last tread onto the upper floor (unit, plan).</summary>
         public Vector2 ArrivalDir;
-        /// <summary>Treads of the first flight under the upper floor with less than <see cref="Headroom"/> (U stairs keep the standard rectangular well).</summary>
-        public int LowHeadroomTreads;
 
         /// <summary>Null when the upper level is missing or not above the lower one.</summary>
         public static StairGeometry Compute(StairDef s, LevelDef from, LevelDef to)
@@ -69,7 +67,6 @@ namespace House4696.Generation
                     // the standard U well: the whole rectangle from the arrival line to the far side of the landing
                     float wz = Mathf.Max(0f, zt);
                     g.Well.Add(g.Rect(lx0, lx1, wz, zl + depth));
-                    if (i0 < k && zs < wz - 0.05f) g.LowHeadroomTreads = Mathf.CeilToInt((wz - zs) / go);
                     g.SetArrival(new Vector2(x2 - hw, zt), new Vector2(x2 + hw, zt), new Vector2(0, -1));
                     break;
                 }
@@ -152,6 +149,18 @@ namespace House4696.Generation
         {
             foreach (var r in Footprint) if (Polygon.Contains(r, p)) return true;
             return false;
+        }
+
+        /// <summary>Plan distance from a point to the flights and landings (0 on them).</summary>
+        public float DistanceToFootprint(Vector2 p)
+        {
+            float best = float.MaxValue;
+            foreach (var r in Footprint)
+            {
+                if (Polygon.Contains(r, p)) return 0f;
+                for (int i = 0; i < r.Length; i++) best = Mathf.Min(best, DistanceToSegment(p, r[i], r[(i + 1) % r.Length]));
+            }
+            return best;
         }
 
         public bool InWell(Vector2 p)

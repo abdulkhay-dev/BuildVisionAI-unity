@@ -49,7 +49,8 @@ namespace House4696.Generation
                         Vector2 a = h[i], b = h[(i + 1) % h.Length];
                         // outward of the hole = onto the floor; the guard stands on the floor just outside the hole
                         Scan(a, b, y, "stair_" + (g.Def.Id ?? "stair"), runs, towardsFloor: true, (p, onFloor) =>
-                            !g.InWell(onFloor) && !g.OnArrival(p, 0.08f) && rooms.Exists(r => Polygon.Contains(r.Outline, onFloor)) && !cov.Covered(p, b - a));
+                            !g.InWell(onFloor) && !g.OnArrival(p, 0.08f) && !NearDeparture(c, g.To, p) &&
+                            rooms.Exists(r => Polygon.Contains(r.Outline, onFloor)) && !cov.Covered(p, b - a));
                     }
             }
             // floor edges over a double-height room
@@ -71,7 +72,7 @@ namespace House4696.Generation
                         // outward of a room outline = into the void; the guard stands just inside the room
                         Scan(a, b, y, "void_" + room.Id, runs, towardsFloor: false, (p, inVoid) =>
                             Polygon.Contains(low.Outline, inVoid) && !upper.Exists(r => Polygon.Contains(r.Outline, inVoid)) &&
-                            !InAnyWell(c, up, inVoid) && !OnAnyArrival(c, up, p) && !cov.Covered(p, b - a));
+                            !InAnyWell(c, up, inVoid) && !OnAnyArrival(c, up, p) && !NearDeparture(c, up, p) && !cov.Covered(p, b - a));
                     }
                 }
             }
@@ -113,6 +114,16 @@ namespace House4696.Generation
         static bool InAnyWell(HouseContext c, LevelDef level, Vector2 p)
         {
             foreach (var g in c.StairGeometries) if (g.To == level && g.InWell(p)) return true;
+            return false;
+        }
+
+        /// <summary>
+        /// Is the point at a stair that leaves this level (on its flights or within 0.15 m of them)? Stacked stairs start
+        /// right at the edge of the well below: a guard there would bar the way up.
+        /// </summary>
+        static bool NearDeparture(HouseContext c, LevelDef level, Vector2 p)
+        {
+            foreach (var g in c.StairGeometries) if (g.From == level && g.DistanceToFootprint(p) < 0.15f) return true;
             return false;
         }
 

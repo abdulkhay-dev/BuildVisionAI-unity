@@ -13,6 +13,7 @@ namespace House4696.Generation
     public sealed class StairBuilder
     {
         const float Tread = 0.06f;
+        const float Waist = 0.2f;   // concrete under the treads of a solid flight that has nothing below it
         readonly HouseContext _c;
         public StairBuilder(HouseContext c) { _c = c; }
 
@@ -37,10 +38,28 @@ namespace House4696.Generation
             var treadMats = solid ? BoxMats.All(_c.M.Plaster).With(yp: _c.M.OakLight) : oak;
             float slabBottom = H - to.Slab;               // underside of the upper floor
 
+            // a solid stair is a mass down to its floor — except over a stairwell (stairs stacked storey on storey):
+            // there it keeps a waist under the treads, or it would fill the headroom of the flight below
+            var below = new List<Vector2[]>();
+            foreach (var sg in _c.StairGeometries) if (sg.To == from && sg.Def != s) below.AddRange(sg.Well);
+            bool OverVoid(float x, float z)
+            {
+                var w = m.MultiplyPoint(new Vector3(x, 0, z));
+                var p = new Vector2(w.x, w.z);
+                return below.Exists(h => Polygon.Contains(h, p));
+            }
+            // over a void the step only reaches down to the soffit plate under the flight (see Soffit)
             void TreadZ(float x0, float x1, float z0, float z1, float top)
             {
-                float y0 = solid ? 0f : top - Tread;
+                float y0 = !solid ? top - Tread : OverVoid((x0 + x1) * 0.5f, (z0 + z1) * 0.5f) ? top - rise - 0.02f : 0f;
                 mb.Box(new Vector3(x0, y0, z0), new Vector3(x1, top, z1), treadMats);
+            }
+            // smooth concrete waist under a solid flight over a void: its top runs through the inner corners of the steps
+            void Soffit(float x0, float x1, float za, float ya, float zb, float yb)
+            {
+                if (!solid || !OverVoid((x0 + x1) * 0.5f, (za + zb) * 0.5f) || Mathf.Abs(zb - za) < 0.1f) return;
+                float slope = (yb - ya) / (zb - za), t = Waist * Mathf.Sqrt(1f + slope * slope);
+                PlateX(mb, x0, x1, new List<Vector2> { new Vector2(za, ya), new Vector2(zb, yb), new Vector2(zb, yb - t), new Vector2(za, ya - t) }, _c.M.Plaster);
             }
             void TreadX(float x0, float x1, float z0, float z1, float top) => TreadZ(x0, x1, z0, z1, top);
 
@@ -58,6 +77,7 @@ namespace House4696.Generation
                 TreadZ(-hw, hw, z0, z0 + g + 0.02f, top);
                 if (!solid && walled1 && i % 2 == 1) StepLight(lights, side > 0 ? -hw + 0.004f : hw - 0.004f, top + 0.22f, z0 + g * 0.5f, side < 0);
             }
+            Soffit(-hw, hw, 0f, 0f, zEnd1, zEnd1 * rise / g);
             Vector3 r0 = new Vector3(wallX - Mathf.Sign(wallX) * 0.07f, 0.9f + rise, 0f);
             var flight1 = FlightZ(0f, zEnd1, 0f, rise, s.Type == StairType.Straight ? H : landY1, sl: rise / g);
             if (walled1) Handrail(rails, r0, new Vector3(r0.x, (s.Type == StairType.Straight ? H : landY1) + 0.9f, zEnd1), wallX);
@@ -85,6 +105,7 @@ namespace House4696.Generation
                         if (!solid && j % 2 == 1) StepLight(lights, outer - side * 0.004f, top + 0.22f, z1 - g * 0.5f, side > 0);
                     }
                     float zt = zl - (rest - 1) * g;              // where flight 2 arrives on the upper floor
+                    Soffit(x2 - hw, x2 + hw, zt, landY + (zl - zt) * rise / g, zl, landY);
                     float xm = side * (hw + s.Gap * 0.5f);         // plane between the flights
                     if (!solid)
                     {

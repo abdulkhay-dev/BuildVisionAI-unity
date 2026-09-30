@@ -20,6 +20,8 @@ namespace House4696.Generation
         public readonly List<string> Warnings = new List<string>();
         /// <summary>Catalogue items as built (filled by the builder).</summary>
         public readonly List<ItemBox> ItemBoxes = new List<ItemBox>();
+        /// <summary>Findings of <see cref="HousePhysicsChecks"/> on the last full build (the checks repeat them).</summary>
+        public readonly List<Issue> PhysicalIssues = new List<Issue>();
 
         readonly Dictionary<string, LevelDef> _levels = new Dictionary<string, LevelDef>();
         readonly Dictionary<string, WallFrame> _walls = new Dictionary<string, WallFrame>();
@@ -66,6 +68,25 @@ namespace House4696.Generation
         {
             var list = new List<Vector2[]>();
             foreach (var p in Pools) if (p.Cuts(y)) list.Add(p.Cut);
+            return list;
+        }
+
+        /// <summary>
+        /// Where a level's floor must stay open (convex or simple plan polygons): stairwells arriving on it, rooms below
+        /// rising through it (second light), pools sunk into it.
+        /// </summary>
+        public List<Vector2[]> FloorCuts(LevelDef L)
+        {
+            var list = new List<Vector2[]>();
+            foreach (var g in StairGeometries) if (g.To == L) list.AddRange(g.Well);
+            foreach (var r in Doc.Rooms)
+            {
+                if (r.Outline == null || r.Outline.Count < 3) continue;
+                var R = Level(r.Level);
+                if (R.Elevation >= L.Elevation - 0.01f) continue;
+                if (R.Elevation + (r.Height ?? R.Height) > L.Elevation - L.Slab + 0.05f) list.Add(Polygon.CounterClockwise(r.Outline).ToArray());
+            }
+            list.AddRange(PoolCuts(L.Elevation));
             return list;
         }
 
@@ -145,6 +166,8 @@ namespace House4696.Generation
         void SnapPartitionEnds()
         {
             var all = new List<WallFrame>(_walls.Values);
+            // twice: a wall extended in the first pass may be what another end runs into
+            for (int pass = 0; pass < 2; pass++)
             foreach (var f in all)
             {
                 if (f.Exterior) continue;
@@ -157,6 +180,48 @@ namespace House4696.Generation
                     float? t = WallFrame.Cast(others, p, dir, SlitMax, out _);
                     if (t != null && t.Value >= 0.03f) f.Extend(atB, t.Value);
                 }
+            }
+            JoinCorners(all);
+        }
+
+        /// <summary>
+        /// Two walls meeting at an angle whose ends both stop short of the corner (each measured to a column, an axis or a
+        /// face of the other) leave a diagonal slit that the straight-ahead snap above does not see. Free ends closer than
+        /// <see cref="SlitMax"/> run on to the crossing of the centre lines, each into the far face of the other wall.
+        /// Exterior walls are not moved: a partition runs into them.
+        /// </summary>
+        void JoinCorners(List<WallFrame> all)
+        {
+            bool Free(WallFrame f, bool atB, List<WallFrame> others)
+            {
+                var p = f.Plan(atB ? f.S1 : f.S0, -f.T * 0.5f);
+                return !others.Exists(g => g.DistanceTo(p) < 0.03f);
+            }
+            var ends = new List<(WallFrame f, bool atB)>();
+            foreach (var f in all)
+            {
+                var others = all.FindAll(g => g != f && g.SameStorey(f));
+                foreach (bool atB in new[] { false, true }) if (Free(f, atB, others)) ends.Add((f, atB));
+            }
+            for (int i = 0; i < ends.Count; i++)
+            for (int j = i + 1; j < ends.Count; j++)
+            {
+                var (f, fb) = ends[i];
+                var (g, gb) = ends[j];
+                if (f == g || !f.SameStorey(g) || (f.Exterior && g.Exterior)) continue;
+                if (Mathf.Abs(Vector3.Dot(f.A, g.A)) > 0.87f) continue;               // (nearly) parallel: not a corner
+                Vector2 pf = f.Plan(fb ? f.S1 : f.S0, -f.T * 0.5f), pg = g.Plan(gb ? g.S1 : g.S0, -g.T * 0.5f);
+                if ((pf - pg).magnitude > SlitMax) continue;
+                // crossing of the centre lines, as distances ahead of each end
+                Vector2 df = new Vector2(f.A.x, f.A.z) * (fb ? 1f : -1f), dg = new Vector2(g.A.x, g.A.z) * (gb ? 1f : -1f);
+                float den = df.x * dg.y - df.y * dg.x;
+                if (Mathf.Abs(den) < 1e-4f) continue;
+                Vector2 w = pg - pf;
+                float tf = (w.x * dg.y - w.y * dg.x) / den, tg = (w.x * df.y - w.y * df.x) / den;
+                if (tf < -0.05f || tg < -0.05f || tf > SlitMax || tg > SlitMax) continue;
+                // 1 cm short of the far face: an end flush with it would share its plane
+                if (!f.Exterior) { float by = tf + g.T * 0.5f - 0.01f; if (by > 0.005f) f.Extend(fb, by); }
+                if (!g.Exterior) { float by = tg + f.T * 0.5f - 0.01f; if (by > 0.005f) g.Extend(gb, by); }
             }
         }
 
