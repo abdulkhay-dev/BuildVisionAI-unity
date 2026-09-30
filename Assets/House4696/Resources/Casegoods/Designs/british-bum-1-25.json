@@ -15,11 +15,11 @@
     {"id": "shelf-r1", "box": [901.0, 420, 23, 1329, 436, 544]},
     {"id": "shelf-r2", "box": [901.0, 800, 23, 1329, 816, 544]},
     {"id": "shelf-r3", "box": [901.0, 1180, 23, 1329, 1196, 544]},
-    {"id": "f-door_1", "kind": "front", "box": [18.0, 90.0, 564, 452.5, 2181.0, 580], "print": "british_bum_flag_england_door"},
+    {"id": "f-door_1", "kind": "front", "box": [18.0, 90.0, 564, 452.5, 2181.0, 580], "print": "cgprint_british_bum_flag_england_door"},
     {"id": "h-door_1", "kind": "handle", "model": "bar", "mat": "metal", "at": [430.5, 1125.0], "dir": "up", "d": 184, "band": 13, "t": 9, "standoff": 24, "post": 10, "z": 580},
     {"id": "f-door_2", "kind": "front", "box": [455.5, 90.0, 564, 890.5, 2181.0, 580]},
     {"id": "h-door_2", "kind": "handle", "model": "bar", "mat": "metal", "at": [477.5, 1125.0], "dir": "up", "d": 184, "band": 13, "t": 9, "standoff": 24, "post": 10, "z": 580},
-    {"id": "f-door_3", "kind": "front", "box": [893.5, 90.0, 564, 1328.0, 2181.0, 580], "print": "british_bum_lantern_london_door"},
+    {"id": "f-door_3", "kind": "front", "box": [893.5, 90.0, 564, 1328.0, 2181.0, 580], "print": "cgprint_british_bum_lantern_london_door"},
     {"id": "h-door_3", "kind": "handle", "model": "bar", "mat": "metal", "at": [915.5, 1125.0], "dir": "up", "d": 184, "band": 13, "t": 9, "standoff": 24, "post": 10, "z": 580}
   ],
   "moves": [

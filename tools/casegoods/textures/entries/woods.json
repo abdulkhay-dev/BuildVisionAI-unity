@@ -1,0 +1,182 @@
+[
+ {
+  "id": "cg_sosna_kareliya",
+  "name": "Сосна Карелия 528 SWA",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/woods.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cg_sosna_kareliya",
+  "textures": {
+   "albedo": "cg_sosna_kareliya_albedo.jpg",
+   "normal": "cg_sosna_kareliya_normal.jpg",
+   "mask": "cg_sosna_kareliya_mask.png"
+  }
+ },
+ {
+  "id": "cg_sosna_randers",
+  "name": "Сосна Рандерс 540 SWN",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/woods.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cg_sosna_randers",
+  "textures": {
+   "albedo": "cg_sosna_randers_albedo.jpg",
+   "normal": "cg_sosna_randers_normal.jpg",
+   "mask": "cg_sosna_randers_mask.png"
+  }
+ },
+ {
+  "id": "cg_sosna_jackson",
+  "name": "Сосна Джексон",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/woods.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cg_sosna_jackson",
+  "textures": {
+   "albedo": "cg_sosna_jackson_albedo.jpg",
+   "normal": "cg_sosna_jackson_normal.jpg",
+   "mask": "cg_sosna_jackson_mask.png"
+  }
+ },
+ {
+  "id": "cg_gikori_kingston",
+  "name": "Гикори Кингстон 579 SWN",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/woods.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cg_gikori_kingston",
+  "textures": {
+   "albedo": "cg_gikori_kingston_albedo.jpg",
+   "normal": "cg_gikori_kingston_normal.jpg",
+   "mask": "cg_gikori_kingston_mask.png"
+  }
+ },
+ {
+  "id": "cg_kedr_oregon",
+  "name": "Кедр Орегон 537 SWN",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/woods.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cg_kedr_oregon",
+  "textures": {
+   "albedo": "cg_kedr_oregon_albedo.jpg",
+   "normal": "cg_kedr_oregon_normal.jpg",
+   "mask": "cg_kedr_oregon_mask.png"
+  }
+ },
+ {
+  "id": "cg_bereza",
+  "name": "Береза 261 SM",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/woods.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cg_bereza",
+  "textures": {
+   "albedo": "cg_bereza_albedo.jpg",
+   "normal": "cg_bereza_normal.jpg",
+   "mask": "cg_bereza_mask.png"
+  }
+ },
+ {
+  "id": "cg_venge",
+  "name": "Венге",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/woods.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cg_venge",
+  "textures": {
+   "albedo": "cg_venge_albedo.jpg",
+   "normal": "cg_venge_normal.jpg",
+   "mask": "cg_venge_mask.png"
+  }
+ },
+ {
+  "id": "cg_dvp_venge",
+  "name": "ДВП ламинированная ВЕНГЕ",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/woods.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cg_dvp_venge",
+  "textures": {
+   "albedo": "cg_dvp_venge_albedo.jpg",
+   "normal": "cg_dvp_venge_normal.jpg",
+   "mask": "cg_dvp_venge_mask.png"
+  }
+ },
+ {
+  "id": "cg_cherny_drevesny",
+  "name": "Черный (Брауни)",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/woods.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cg_cherny_drevesny",
+  "textures": {
+   "albedo": "cg_cherny_drevesny_albedo.jpg",
+   "normal": "cg_cherny_drevesny_normal.jpg",
+   "mask": "cg_cherny_drevesny_mask.png"
+  }
+ },
+ {
+  "id": "cg_massiv",
+  "name": "Массив (бук / береза, под тонировку)",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/woods.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cg_massiv",
+  "textures": {
+   "albedo": "cg_massiv_albedo.jpg",
+   "normal": "cg_massiv_normal.jpg",
+   "mask": "cg_massiv_mask.png"
+  }
+ }
+]

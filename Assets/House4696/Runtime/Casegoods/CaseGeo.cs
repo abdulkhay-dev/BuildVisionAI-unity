@@ -201,6 +201,14 @@ namespace House4696.Casegoods
                 int other = end ? j + 1 : j - 1;
                 return Vector2.Dot(pn[j], pn[other]) > 0.8f ? (pn[j] + pn[other]).normalized : pn[j];
             }
+            // texture v runs along the profile's own length (a tall profile — a corner wardrobe's door drawn as a 16 × 1996
+            // moulding — must not smear its face into streaks); the grain follows the longer of path and profile
+            var arc = new float[k];
+            for (int j = 1; j < k; j++) arc[j] = arc[j - 1] + (profile[j] - profile[j - 1]).magnitude;
+            float pathLen = 0f;
+            for (int s = 0; s < (closed ? n : n - 1); s++) pathLen += (path[(s + 1) % n] - path[s]).magnitude;
+            bool swap = arc[k - 1] > pathLen;
+            Vector2 Uv(float a, float b) => swap ? new Vector2(b / 1000f, a / 1000f) : new Vector2(a / 1000f, b / 1000f);
             float along = 0f;
             int segs = closed ? n : n - 1;
             for (int s = 0; s < segs; s++)
@@ -225,9 +233,8 @@ namespace House4696.Casegoods
                     }
                     else
                     {
-                        float v0 = profile[j].x / 1000f, v1 = profile[j + 1].x / 1000f;
-                        u00 = new Vector2(along / 1000f, v0); u10 = new Vector2((along + seglen) / 1000f, v0);
-                        u11 = new Vector2((along + seglen) / 1000f, v1); u01 = new Vector2(along / 1000f, v1);
+                        u00 = Uv(along, arc[j]); u10 = Uv(along + seglen, arc[j]);
+                        u11 = Uv(along + seglen, arc[j + 1]); u01 = Uv(along, arc[j + 1]);
                     }
                     DoorGeo.Quad(mb, p00, p10, p11, p01, na, na, nb, nb, u00, u10, u11, u01, m);
                 }

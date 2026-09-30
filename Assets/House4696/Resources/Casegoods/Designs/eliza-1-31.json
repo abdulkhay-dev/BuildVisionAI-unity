@@ -48,7 +48,7 @@
     {"id": "drawer_2-bt", "kind": "back", "box": [52, 483.5, 95, 978, 487, 435]},
     {"id": "h-drawer_2-1", "kind": "handle", "model": "bar", "at": [216, 541.5], "dir": "right", "d": 110, "band": 8, "t": 8, "standoff": 20, "post": 10, "z": 455},
     {"id": "h-drawer_2-2", "kind": "handle", "model": "bar", "at": [814, 541.5], "dir": "right", "d": 110, "band": 8, "t": 8, "standoff": 20, "post": 10, "z": 455},
-    {"id": "f-drawer_2-orn", "kind": "front", "box": [415, 552, 454.5, 615, 602, 456], "mat": "ornament", "shape": "circle", "edge": 0.5},
+    {"id": "f-drawer_2-orn", "kind": "front", "box": [415, 552, 454.5, 615, 602, 456], "mat": "ornament", "print": "cgprint_eliza_rozy", "shape": "circle", "edge": 0.5},
     {"id": "f-drawer_1", "kind": "front", "box": [17, 655, 437, 1013, 773, 455]},
     {"id": "f-drawer_1-gb", "kind": "rod", "mat": "patina", "from": [45, 677.5, 456.5], "to": [985, 677.5, 456.5], "d": 7},
     {"id": "f-drawer_1-gl", "kind": "rod", "mat": "patina", "from": [45, 677.5, 456.5], "to": [45, 750.5, 456.5], "d": 7},

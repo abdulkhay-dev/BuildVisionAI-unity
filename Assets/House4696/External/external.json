@@ -5493,6 +5493,1414 @@
     "albedo": "doorglass_eksklyuziv_do_hud_3_albedo.png",
     "mask": "doorglass_eksklyuziv_do_hud_3_mask.png"
    }
+  },
+  {
+   "id": "cg_dub_kanon",
+   "name": "Дуб Каньон",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/dark_oaks_a.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cg_dub_kanon",
+   "textures": {
+    "albedo": "cg_dub_kanon_albedo.jpg",
+    "normal": "cg_dub_kanon_normal.jpg",
+    "mask": "cg_dub_kanon_mask.png"
+   }
+  },
+  {
+   "id": "cg_dub_kanzas",
+   "name": "Дуб Канзас 377 SWN",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/dark_oaks_a.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cg_dub_kanzas",
+   "textures": {
+    "albedo": "cg_dub_kanzas_albedo.jpg",
+    "normal": "cg_dub_kanzas_normal.jpg",
+    "mask": "cg_dub_kanzas_mask.png"
+   }
+  },
+  {
+   "id": "cg_dub_noks",
+   "name": "Дуб Нокс 392 SWN",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/dark_oaks_a.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cg_dub_noks",
+   "textures": {
+    "albedo": "cg_dub_noks_albedo.jpg",
+    "normal": "cg_dub_noks_normal.jpg",
+    "mask": "cg_dub_noks_mask.png"
+   }
+  },
+  {
+   "id": "cg_dub_votan",
+   "name": "Дуб Вотан 376 WML",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/dark_oaks_a.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cg_dub_votan",
+   "textures": {
+    "albedo": "cg_dub_votan_albedo.jpg",
+    "normal": "cg_dub_votan_normal.jpg",
+    "mask": "cg_dub_votan_mask.png"
+   }
+  },
+  {
+   "id": "cg_dub_satter",
+   "name": "Дуб Саттер 369 SWA",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/dark_oaks_a.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cg_dub_satter",
+   "textures": {
+    "albedo": "cg_dub_satter_albedo.jpg",
+    "normal": "cg_dub_satter_normal.jpg",
+    "mask": "cg_dub_satter_mask.png"
+   }
+  },
+  {
+   "id": "cg_dub_yukon",
+   "name": "Дуб Юкон 358 SWN",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/dark_oaks_a.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cg_dub_yukon",
+   "textures": {
+    "albedo": "cg_dub_yukon_albedo.jpg",
+    "normal": "cg_dub_yukon_normal.jpg",
+    "mask": "cg_dub_yukon_mask.png"
+   }
+  },
+  {
+   "id": "cg_dub_stirling",
+   "name": "Дуб Стирлинг 374 SWN",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/dark_oaks_b.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cg_dub_stirling",
+   "textures": {
+    "albedo": "cg_dub_stirling_albedo.jpg",
+    "normal": "cg_dub_stirling_normal.jpg",
+    "mask": "cg_dub_stirling_mask.png"
+   }
+  },
+  {
+   "id": "cg_dub_tryufelny",
+   "name": "Дуб Трюфельный",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/dark_oaks_b.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cg_dub_tryufelny",
+   "textures": {
+    "albedo": "cg_dub_tryufelny_albedo.jpg",
+    "normal": "cg_dub_tryufelny_normal.jpg",
+    "mask": "cg_dub_tryufelny_mask.png"
+   }
+  },
+  {
+   "id": "cg_dub_artizan_tryufel",
+   "name": "Дуб Артизан Трюфель",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/dark_oaks_b.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cg_dub_artizan_tryufel",
+   "textures": {
+    "albedo": "cg_dub_artizan_tryufel_albedo.jpg",
+    "normal": "cg_dub_artizan_tryufel_normal.jpg",
+    "mask": "cg_dub_artizan_tryufel_mask.png"
+   }
+  },
+  {
+   "id": "cg_dub_monastyrsky",
+   "name": "Дуб Монастырский 375",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/dark_oaks_b.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cg_dub_monastyrsky",
+   "textures": {
+    "albedo": "cg_dub_monastyrsky_albedo.jpg",
+    "normal": "cg_dub_monastyrsky_normal.jpg",
+    "mask": "cg_dub_monastyrsky_mask.png"
+   }
+  },
+  {
+   "id": "cg_dub_navarra",
+   "name": "Дуб Наварра",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/dark_oaks_b.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cg_dub_navarra",
+   "textures": {
+    "albedo": "cg_dub_navarra_albedo.jpg",
+    "normal": "cg_dub_navarra_normal.jpg",
+    "mask": "cg_dub_navarra_mask.png"
+   }
+  },
+  {
+   "id": "cg_dub_monterey",
+   "name": "Дуб Монтерей",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/dark_oaks_b.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cg_dub_monterey",
+   "textures": {
+    "albedo": "cg_dub_monterey_albedo.jpg",
+    "normal": "cg_dub_monterey_normal.jpg",
+    "mask": "cg_dub_monterey_mask.png"
+   }
+  },
+  {
+   "id": "cg_sosna_kareliya",
+   "name": "Сосна Карелия 528 SWA",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/woods.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cg_sosna_kareliya",
+   "textures": {
+    "albedo": "cg_sosna_kareliya_albedo.jpg",
+    "normal": "cg_sosna_kareliya_normal.jpg",
+    "mask": "cg_sosna_kareliya_mask.png"
+   }
+  },
+  {
+   "id": "cg_sosna_randers",
+   "name": "Сосна Рандерс 540 SWN",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/woods.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cg_sosna_randers",
+   "textures": {
+    "albedo": "cg_sosna_randers_albedo.jpg",
+    "normal": "cg_sosna_randers_normal.jpg",
+    "mask": "cg_sosna_randers_mask.png"
+   }
+  },
+  {
+   "id": "cg_sosna_jackson",
+   "name": "Сосна Джексон",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/woods.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cg_sosna_jackson",
+   "textures": {
+    "albedo": "cg_sosna_jackson_albedo.jpg",
+    "normal": "cg_sosna_jackson_normal.jpg",
+    "mask": "cg_sosna_jackson_mask.png"
+   }
+  },
+  {
+   "id": "cg_gikori_kingston",
+   "name": "Гикори Кингстон 579 SWN",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/woods.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cg_gikori_kingston",
+   "textures": {
+    "albedo": "cg_gikori_kingston_albedo.jpg",
+    "normal": "cg_gikori_kingston_normal.jpg",
+    "mask": "cg_gikori_kingston_mask.png"
+   }
+  },
+  {
+   "id": "cg_kedr_oregon",
+   "name": "Кедр Орегон 537 SWN",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/woods.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cg_kedr_oregon",
+   "textures": {
+    "albedo": "cg_kedr_oregon_albedo.jpg",
+    "normal": "cg_kedr_oregon_normal.jpg",
+    "mask": "cg_kedr_oregon_mask.png"
+   }
+  },
+  {
+   "id": "cg_bereza",
+   "name": "Береза 261 SM",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/woods.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cg_bereza",
+   "textures": {
+    "albedo": "cg_bereza_albedo.jpg",
+    "normal": "cg_bereza_normal.jpg",
+    "mask": "cg_bereza_mask.png"
+   }
+  },
+  {
+   "id": "cg_venge",
+   "name": "Венге",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/woods.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cg_venge",
+   "textures": {
+    "albedo": "cg_venge_albedo.jpg",
+    "normal": "cg_venge_normal.jpg",
+    "mask": "cg_venge_mask.png"
+   }
+  },
+  {
+   "id": "cg_dvp_venge",
+   "name": "ДВП ламинированная ВЕНГЕ",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/woods.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cg_dvp_venge",
+   "textures": {
+    "albedo": "cg_dvp_venge_albedo.jpg",
+    "normal": "cg_dvp_venge_normal.jpg",
+    "mask": "cg_dvp_venge_mask.png"
+   }
+  },
+  {
+   "id": "cg_cherny_drevesny",
+   "name": "Черный (Брауни)",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/woods.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cg_cherny_drevesny",
+   "textures": {
+    "albedo": "cg_cherny_drevesny_albedo.jpg",
+    "normal": "cg_cherny_drevesny_normal.jpg",
+    "mask": "cg_cherny_drevesny_mask.png"
+   }
+  },
+  {
+   "id": "cg_massiv",
+   "name": "Массив (бук / береза, под тонировку)",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/woods.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cg_massiv",
+   "textures": {
+    "albedo": "cg_massiv_albedo.jpg",
+    "normal": "cg_massiv_normal.jpg",
+    "mask": "cg_massiv_mask.png"
+   }
+  },
+  {
+   "id": "cgfab_velur_myaty",
+   "name": "Велюр мятый",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/fabrics.py",
+   "neutral": true,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cgfab_velur_myaty",
+   "textures": {
+    "albedo": "cgfab_velur_myaty_albedo.jpg",
+    "normal": "cgfab_velur_myaty_normal.jpg",
+    "mask": "cgfab_velur_myaty_mask.png"
+   }
+  },
+  {
+   "id": "cgfab_velur",
+   "name": "Велюр",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/fabrics.py",
+   "neutral": true,
+   "metersPerTile": [
+    1.0,
+    0.5
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cgfab_velur",
+   "textures": {
+    "albedo": "cgfab_velur_albedo.jpg",
+    "normal": "cgfab_velur_normal.jpg",
+    "mask": "cgfab_velur_mask.png"
+   }
+  },
+  {
+   "id": "cgfab_rogozhka",
+   "name": "Рогожка",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/fabrics.py",
+   "neutral": true,
+   "metersPerTile": [
+    0.25,
+    0.125
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cgfab_rogozhka",
+   "textures": {
+    "albedo": "cgfab_rogozhka_albedo.jpg",
+    "normal": "cgfab_rogozhka_normal.jpg",
+    "mask": "cgfab_rogozhka_mask.png"
+   }
+  },
+  {
+   "id": "cgfab_ekokozha",
+   "name": "Экокожа",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/fabrics.py",
+   "neutral": true,
+   "metersPerTile": [
+    0.25,
+    0.125
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cgfab_ekokozha",
+   "textures": {
+    "albedo": "cgfab_ekokozha_albedo.jpg",
+    "normal": "cgfab_ekokozha_normal.jpg",
+    "mask": "cgfab_ekokozha_mask.png"
+   }
+  },
+  {
+   "id": "cg_dub_bordo_layt",
+   "name": "Дуб Бордо лайт 380 SWN",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/light_oaks.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cg_dub_bordo_layt",
+   "textures": {
+    "albedo": "cg_dub_bordo_layt_albedo.jpg",
+    "normal": "cg_dub_bordo_layt_normal.jpg",
+    "mask": "cg_dub_bordo_layt_mask.png"
+   }
+  },
+  {
+   "id": "cg_dub_sonoma",
+   "name": "Дуб Сонома 325",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/light_oaks.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cg_dub_sonoma",
+   "textures": {
+    "albedo": "cg_dub_sonoma_albedo.jpg",
+    "normal": "cg_dub_sonoma_normal.jpg",
+    "mask": "cg_dub_sonoma_mask.png"
+   }
+  },
+  {
+   "id": "cg_dub_kantri_zolotoy",
+   "name": "Дуб Кантри золотой 389 SWN",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/light_oaks.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cg_dub_kantri_zolotoy",
+   "textures": {
+    "albedo": "cg_dub_kantri_zolotoy_albedo.jpg",
+    "normal": "cg_dub_kantri_zolotoy_normal.jpg",
+    "mask": "cg_dub_kantri_zolotoy_mask.png"
+   }
+  },
+  {
+   "id": "cg_dub_ontario",
+   "name": "Дуб Онтарио 385ТМ",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/light_oaks.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cg_dub_ontario",
+   "textures": {
+    "albedo": "cg_dub_ontario_albedo.jpg",
+    "normal": "cg_dub_ontario_normal.jpg",
+    "mask": "cg_dub_ontario_mask.png"
+   }
+  },
+  {
+   "id": "cg_dub_madura",
+   "name": "Дуб Мадура",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/light_oaks.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cg_dub_madura",
+   "textures": {
+    "albedo": "cg_dub_madura_albedo.jpg",
+    "normal": "cg_dub_madura_normal.jpg",
+    "mask": "cg_dub_madura_mask.png"
+   }
+  },
+  {
+   "id": "cg_dub_artizan",
+   "name": "Дуб Артизан",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/light_oaks.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cg_dub_artizan",
+   "textures": {
+    "albedo": "cg_dub_artizan_albedo.jpg",
+    "normal": "cg_dub_artizan_normal.jpg",
+    "mask": "cg_dub_artizan_mask.png"
+   }
+  },
+  {
+   "id": "cg_dub_lancelot",
+   "name": "Дуб Ланцелот",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/light_oaks.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cg_dub_lancelot",
+   "textures": {
+    "albedo": "cg_dub_lancelot_albedo.jpg",
+    "normal": "cg_dub_lancelot_normal.jpg",
+    "mask": "cg_dub_lancelot_mask.png"
+   }
+  },
+  {
+   "id": "cg_dub_naturalny",
+   "name": "Дуб натуральный (массив)",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/light_oaks.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cg_dub_naturalny",
+   "textures": {
+    "albedo": "cg_dub_naturalny_albedo.jpg",
+    "normal": "cg_dub_naturalny_normal.jpg",
+    "mask": "cg_dub_naturalny_mask.png"
+   }
+  },
+  {
+   "id": "cg_dub_sahara",
+   "name": "Дуб Сахара",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/light_oaks.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cg_dub_sahara",
+   "textures": {
+    "albedo": "cg_dub_sahara_albedo.jpg",
+    "normal": "cg_dub_sahara_normal.jpg",
+    "mask": "cg_dub_sahara_mask.png"
+   }
+  },
+  {
+   "id": "cg_dub_ontario_svetly",
+   "name": "Дуб Онтарио (Кен)",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/light_oaks.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cg_dub_ontario_svetly",
+   "textures": {
+    "albedo": "cg_dub_ontario_svetly_albedo.jpg",
+    "normal": "cg_dub_ontario_svetly_normal.jpg",
+    "mask": "cg_dub_ontario_svetly_mask.png"
+   }
+  },
+  {
+   "id": "cg_beton_layt",
+   "name": "Бетон Лайт 818ТМ",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/stones.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cg_beton_layt",
+   "textures": {
+    "albedo": "cg_beton_layt_albedo.jpg",
+    "normal": "cg_beton_layt_normal.jpg",
+    "mask": "cg_beton_layt_mask.png"
+   }
+  },
+  {
+   "id": "cg_mramor_nero_markina",
+   "name": "Мрамор Неро Маркина 850ТМ",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/stones.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cg_mramor_nero_markina",
+   "textures": {
+    "albedo": "cg_mramor_nero_markina_albedo.jpg",
+    "normal": "cg_mramor_nero_markina_normal.jpg",
+    "mask": "cg_mramor_nero_markina_mask.png"
+   }
+  },
+  {
+   "id": "cg_kamen_sery",
+   "name": "Камень серый",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/stones.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cg_kamen_sery",
+   "textures": {
+    "albedo": "cg_kamen_sery_albedo.jpg",
+    "normal": "cg_kamen_sery_normal.jpg",
+    "mask": "cg_kamen_sery_mask.png"
+   }
+  },
+  {
+   "id": "cg_sharli_keramika",
+   "name": "Шарли керамика",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/stones.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cg_sharli_keramika",
+   "textures": {
+    "albedo": "cg_sharli_keramika_albedo.jpg",
+    "normal": "cg_sharli_keramika_normal.jpg",
+    "mask": "cg_sharli_keramika_mask.png"
+   }
+  },
+  {
+   "id": "cg_metall_bruklin",
+   "name": "Металл Бруклин 808",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/stones.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cg_metall_bruklin",
+   "textures": {
+    "albedo": "cg_metall_bruklin_albedo.jpg",
+    "normal": "cg_metall_bruklin_normal.jpg",
+    "mask": "cg_metall_bruklin_mask.png"
+   }
+  },
+  {
+   "id": "cg_oniks",
+   "name": "Оникс 817 TM",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/stones.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cg_oniks",
+   "textures": {
+    "albedo": "cg_oniks_albedo.jpg",
+    "normal": "cg_oniks_normal.jpg",
+    "mask": "cg_oniks_mask.png"
+   }
+  },
+  {
+   "id": "cg_cherny_660",
+   "name": "Черный 660 WML",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/stones.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cg_cherny_660",
+   "textures": {
+    "albedo": "cg_cherny_660_albedo.jpg",
+    "normal": "cg_cherny_660_normal.jpg",
+    "mask": "cg_cherny_660_mask.png"
+   }
+  },
+  {
+   "id": "cg_prizma_870",
+   "name": "Призма 870",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/stones.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cg_prizma_870",
+   "textures": {
+    "albedo": "cg_prizma_870_albedo.jpg",
+    "normal": "cg_prizma_870_normal.jpg",
+    "mask": "cg_prizma_870_mask.png"
+   }
+  },
+  {
+   "id": "cg_belaya_vanil",
+   "name": "Белая Ваниль",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/stones.py",
+   "neutral": false,
+   "metersPerTile": [
+    2.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cg_belaya_vanil",
+   "textures": {
+    "albedo": "cg_belaya_vanil_albedo.jpg",
+    "normal": "cg_belaya_vanil_normal.jpg",
+    "mask": "cg_belaya_vanil_mask.png"
+   }
+  },
+  {
+   "id": "cg_hdf_grafit",
+   "name": "ХДФ графит текстурный",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/stones.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    0.5
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cg_hdf_grafit",
+   "textures": {
+    "albedo": "cg_hdf_grafit_albedo.jpg",
+    "normal": "cg_hdf_grafit_normal.jpg",
+    "mask": "cg_hdf_grafit_mask.png"
+   }
+  },
+  {
+   "id": "cgprint_british_bum_balloons_drawer_2",
+   "name": "Бритиш Бум — фотопечать «воздушный шар»",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/prints.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cgprint_british_bum_balloons_drawer_2",
+   "textures": {
+    "albedo": "cgprint_british_bum_balloons_drawer_2_albedo.jpg",
+    "normal": "cgprint_british_bum_balloons_drawer_2_normal.jpg",
+    "mask": "cgprint_british_bum_balloons_drawer_2_mask.png"
+   }
+  },
+  {
+   "id": "cgprint_british_bum_balloons_drawer_3",
+   "name": "Бритиш Бум — фотопечать «воздушные шары»",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/prints.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cgprint_british_bum_balloons_drawer_3",
+   "textures": {
+    "albedo": "cgprint_british_bum_balloons_drawer_3_albedo.jpg",
+    "normal": "cgprint_british_bum_balloons_drawer_3_normal.jpg",
+    "mask": "cgprint_british_bum_balloons_drawer_3_mask.png"
+   }
+  },
+  {
+   "id": "cgprint_british_bum_bigben_column_door",
+   "name": "Бритиш Бум — фотопечать «Биг-Бен «Big Ben»»",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/prints.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cgprint_british_bum_bigben_column_door",
+   "textures": {
+    "albedo": "cgprint_british_bum_bigben_column_door_albedo.jpg",
+    "normal": "cgprint_british_bum_bigben_column_door_normal.jpg",
+    "mask": "cgprint_british_bum_bigben_column_door_mask.png"
+   }
+  },
+  {
+   "id": "cgprint_british_bum_bigben_door_l",
+   "name": "Бритиш Бум — фотопечать «воздушные шары и Вестминстер, левая»",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/prints.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cgprint_british_bum_bigben_door_l",
+   "textures": {
+    "albedo": "cgprint_british_bum_bigben_door_l_albedo.jpg",
+    "normal": "cgprint_british_bum_bigben_door_l_normal.jpg",
+    "mask": "cgprint_british_bum_bigben_door_l_mask.png"
+   }
+  },
+  {
+   "id": "cgprint_british_bum_bigben_door_r",
+   "name": "Бритиш Бум — фотопечать «Биг-Бен, правая»",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/prints.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cgprint_british_bum_bigben_door_r",
+   "textures": {
+    "albedo": "cgprint_british_bum_bigben_door_r_albedo.jpg",
+    "normal": "cgprint_british_bum_bigben_door_r_normal.jpg",
+    "mask": "cgprint_british_bum_bigben_door_r_mask.png"
+   }
+  },
+  {
+   "id": "cgprint_british_bum_bus_drawer_s",
+   "name": "Бритиш Бум — фотопечать «автобус»",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/prints.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cgprint_british_bum_bus_drawer_s",
+   "textures": {
+    "albedo": "cgprint_british_bum_bus_drawer_s_albedo.jpg",
+    "normal": "cgprint_british_bum_bus_drawer_s_normal.jpg",
+    "mask": "cgprint_british_bum_bus_drawer_s_mask.png"
+   }
+  },
+  {
+   "id": "cgprint_british_bum_bus_stamp_drawer",
+   "name": "Бритиш Бум — фотопечать «автобус и штемпель»",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/prints.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cgprint_british_bum_bus_stamp_drawer",
+   "textures": {
+    "albedo": "cgprint_british_bum_bus_stamp_drawer_albedo.jpg",
+    "normal": "cgprint_british_bum_bus_stamp_drawer_normal.jpg",
+    "mask": "cgprint_british_bum_bus_stamp_drawer_mask.png"
+   }
+  },
+  {
+   "id": "cgprint_british_bum_england_drawer_4",
+   "name": "Бритиш Бум — фотопечать ««England»»",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/prints.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cgprint_british_bum_england_drawer_4",
+   "textures": {
+    "albedo": "cgprint_british_bum_england_drawer_4_albedo.jpg",
+    "normal": "cgprint_british_bum_england_drawer_4_normal.jpg",
+    "mask": "cgprint_british_bum_england_drawer_4_mask.png"
+   }
+  },
+  {
+   "id": "cgprint_british_bum_england_drawer_s",
+   "name": "Бритиш Бум — фотопечать ««England», малый ящик»",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/prints.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cgprint_british_bum_england_drawer_s",
+   "textures": {
+    "albedo": "cgprint_british_bum_england_drawer_s_albedo.jpg",
+    "normal": "cgprint_british_bum_england_drawer_s_normal.jpg",
+    "mask": "cgprint_british_bum_england_drawer_s_mask.png"
+   }
+  },
+  {
+   "id": "cgprint_british_bum_eye_england_drawer",
+   "name": "Бритиш Бум — фотопечать «Лондонский глаз и «England»»",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/prints.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cgprint_british_bum_eye_england_drawer",
+   "textures": {
+    "albedo": "cgprint_british_bum_eye_england_drawer_albedo.jpg",
+    "normal": "cgprint_british_bum_eye_england_drawer_normal.jpg",
+    "mask": "cgprint_british_bum_eye_england_drawer_mask.png"
+   }
+  },
+  {
+   "id": "cgprint_british_bum_flag_england_door",
+   "name": "Бритиш Бум — фотопечать «флаг и «England»»",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/prints.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cgprint_british_bum_flag_england_door",
+   "textures": {
+    "albedo": "cgprint_british_bum_flag_england_door_albedo.jpg",
+    "normal": "cgprint_british_bum_flag_england_door_normal.jpg",
+    "mask": "cgprint_british_bum_flag_england_door_mask.png"
+   }
+  },
+  {
+   "id": "cgprint_british_bum_football_door",
+   "name": "Бритиш Бум — фотопечать ««England» и мяч»",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/prints.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cgprint_british_bum_football_door",
+   "textures": {
+    "albedo": "cgprint_british_bum_football_door_albedo.jpg",
+    "normal": "cgprint_british_bum_football_door_normal.jpg",
+    "mask": "cgprint_british_bum_football_door_mask.png"
+   }
+  },
+  {
+   "id": "cgprint_british_bum_gherkin_door",
+   "name": "Бритиш Бум — фотопечать «флаг и улица Лондона»",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/prints.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cgprint_british_bum_gherkin_door",
+   "textures": {
+    "albedo": "cgprint_british_bum_gherkin_door_albedo.jpg",
+    "normal": "cgprint_british_bum_gherkin_door_normal.jpg",
+    "mask": "cgprint_british_bum_gherkin_door_mask.png"
+   }
+  },
+  {
+   "id": "cgprint_british_bum_guard_door",
+   "name": "Бритиш Бум — фотопечать «королевский гвардеец»",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/prints.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cgprint_british_bum_guard_door",
+   "textures": {
+    "albedo": "cgprint_british_bum_guard_door_albedo.jpg",
+    "normal": "cgprint_british_bum_guard_door_normal.jpg",
+    "mask": "cgprint_british_bum_guard_door_mask.png"
+   }
+  },
+  {
+   "id": "cgprint_british_bum_lamp_door",
+   "name": "Бритиш Бум — фотопечать «зонт, фонарь и мяч»",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/prints.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cgprint_british_bum_lamp_door",
+   "textures": {
+    "albedo": "cgprint_british_bum_lamp_door_albedo.jpg",
+    "normal": "cgprint_british_bum_lamp_door_normal.jpg",
+    "mask": "cgprint_british_bum_lamp_door_mask.png"
+   }
+  },
+  {
+   "id": "cgprint_british_bum_lantern_london_door",
+   "name": "Бритиш Бум — фотопечать «фонарь и «London»»",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/prints.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cgprint_british_bum_lantern_london_door",
+   "textures": {
+    "albedo": "cgprint_british_bum_lantern_london_door_albedo.jpg",
+    "normal": "cgprint_british_bum_lantern_london_door_normal.jpg",
+    "mask": "cgprint_british_bum_lantern_london_door_mask.png"
+   }
+  },
+  {
+   "id": "cgprint_british_bum_london_rail",
+   "name": "Бритиш Бум — фотопечать ««London», царга кровати»",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/prints.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cgprint_british_bum_london_rail",
+   "textures": {
+    "albedo": "cgprint_british_bum_london_rail_albedo.jpg",
+    "normal": "cgprint_british_bum_london_rail_normal.jpg",
+    "mask": "cgprint_british_bum_london_rail_mask.png"
+   }
+  },
+  {
+   "id": "cgprint_british_bum_shield_door",
+   "name": "Бритиш Бум — фотопечать «щит и меч «England»»",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/prints.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cgprint_british_bum_shield_door",
+   "textures": {
+    "albedo": "cgprint_british_bum_shield_door_albedo.jpg",
+    "normal": "cgprint_british_bum_shield_door_normal.jpg",
+    "mask": "cgprint_british_bum_shield_door_mask.png"
+   }
+  },
+  {
+   "id": "cgprint_british_bum_skyline_drawer_2",
+   "name": "Бритиш Бум — фотопечать «панорама Лондона, верх»",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/prints.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cgprint_british_bum_skyline_drawer_2",
+   "textures": {
+    "albedo": "cgprint_british_bum_skyline_drawer_2_albedo.jpg",
+    "normal": "cgprint_british_bum_skyline_drawer_2_normal.jpg",
+    "mask": "cgprint_british_bum_skyline_drawer_2_mask.png"
+   }
+  },
+  {
+   "id": "cgprint_british_bum_skyline_drawer_3",
+   "name": "Бритиш Бум — фотопечать «панорама Лондона, низ»",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/prints.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cgprint_british_bum_skyline_drawer_3",
+   "textures": {
+    "albedo": "cgprint_british_bum_skyline_drawer_3_albedo.jpg",
+    "normal": "cgprint_british_bum_skyline_drawer_3_normal.jpg",
+    "mask": "cgprint_british_bum_skyline_drawer_3_mask.png"
+   }
+  },
+  {
+   "id": "cgprint_british_bum_stamp_drawer",
+   "name": "Бритиш Бум — фотопечать «почтовый штемпель»",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/prints.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cgprint_british_bum_stamp_drawer",
+   "textures": {
+    "albedo": "cgprint_british_bum_stamp_drawer_albedo.jpg",
+    "normal": "cgprint_british_bum_stamp_drawer_normal.jpg",
+    "mask": "cgprint_british_bum_stamp_drawer_mask.png"
+   }
+  },
+  {
+   "id": "cgprint_british_bum_stpauls_door_l",
+   "name": "Бритиш Бум — фотопечать «Собор Св. Павла, левая»",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/prints.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cgprint_british_bum_stpauls_door_l",
+   "textures": {
+    "albedo": "cgprint_british_bum_stpauls_door_l_albedo.jpg",
+    "normal": "cgprint_british_bum_stpauls_door_l_normal.jpg",
+    "mask": "cgprint_british_bum_stpauls_door_l_mask.png"
+   }
+  },
+  {
+   "id": "cgprint_british_bum_stpauls_door_r",
+   "name": "Бритиш Бум — фотопечать «Собор Св. Павла, правая»",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/prints.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cgprint_british_bum_stpauls_door_r",
+   "textures": {
+    "albedo": "cgprint_british_bum_stpauls_door_r_albedo.jpg",
+    "normal": "cgprint_british_bum_stpauls_door_r_normal.jpg",
+    "mask": "cgprint_british_bum_stpauls_door_r_mask.png"
+   }
+  },
+  {
+   "id": "cgprint_british_bum_towerbridge_door_l",
+   "name": "Бритиш Бум — фотопечать ««Wow» и Тауэрский мост, левая»",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/prints.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cgprint_british_bum_towerbridge_door_l",
+   "textures": {
+    "albedo": "cgprint_british_bum_towerbridge_door_l_albedo.jpg",
+    "normal": "cgprint_british_bum_towerbridge_door_l_normal.jpg",
+    "mask": "cgprint_british_bum_towerbridge_door_l_mask.png"
+   }
+  },
+  {
+   "id": "cgprint_british_bum_towerbridge_door_r",
+   "name": "Бритиш Бум — фотопечать «Тауэрский мост, правая»",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/prints.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cgprint_british_bum_towerbridge_door_r",
+   "textures": {
+    "albedo": "cgprint_british_bum_towerbridge_door_r_albedo.jpg",
+    "normal": "cgprint_british_bum_towerbridge_door_r_normal.jpg",
+    "mask": "cgprint_british_bum_towerbridge_door_r_mask.png"
+   }
+  },
+  {
+   "id": "cgprint_british_bum_umbrella_door",
+   "name": "Бритиш Бум — фотопечать «зонт»",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/prints.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cgprint_british_bum_umbrella_door",
+   "textures": {
+    "albedo": "cgprint_british_bum_umbrella_door_albedo.jpg",
+    "normal": "cgprint_british_bum_umbrella_door_normal.jpg",
+    "mask": "cgprint_british_bum_umbrella_door_mask.png"
+   }
+  },
+  {
+   "id": "cgprint_eliza_rozy",
+   "name": "Элиза — золотой орнамент «розы» (печать)",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/prints.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cgprint_eliza_rozy",
+   "textures": {
+    "albedo": "cgprint_eliza_rozy_albedo.jpg",
+    "normal": "cgprint_eliza_rozy_normal.jpg",
+    "mask": "cgprint_eliza_rozy_mask.png"
+   }
+  },
+  {
+   "id": "cg_martina_listya",
+   "name": "Мартина — резьба «листья» под серебряной патиной («Молоко с серебром»)",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/prints.py",
+   "neutral": false,
+   "metersPerTile": [
+    0.5,
+    0.25
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cg_martina_listya",
+   "textures": {
+    "albedo": "cg_martina_listya_albedo.jpg",
+    "normal": "cg_martina_listya_normal.jpg",
+    "mask": "cg_martina_listya_mask.png"
+   }
+  },
+  {
+   "id": "cgprint_ken_elochka_504x698",
+   "name": "Кен — УФ печать «ёлочка», фасад 504×698.5",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/prints.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cgprint_ken_elochka_504x698",
+   "textures": {
+    "albedo": "cgprint_ken_elochka_504x698_albedo.png",
+    "normal": "cgprint_ken_elochka_504x698_normal.jpg",
+    "mask": "cgprint_ken_elochka_504x698_mask.png"
+   },
+   "transparent": true
+  },
+  {
+   "id": "cgprint_ken_elochka_501x504_up_r",
+   "name": "Кен — УФ печать «ёлочка», фасад 501×504",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/prints.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cgprint_ken_elochka_501x504_up_r",
+   "textures": {
+    "albedo": "cgprint_ken_elochka_501x504_up_r_albedo.png",
+    "normal": "cgprint_ken_elochka_501x504_up_r_normal.jpg",
+    "mask": "cgprint_ken_elochka_501x504_up_r_mask.png"
+   },
+   "transparent": true
+  },
+  {
+   "id": "cgprint_ken_elochka_501x504_low_l",
+   "name": "Кен — УФ печать «ёлочка», фасад 501×504",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/prints.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cgprint_ken_elochka_501x504_low_l",
+   "textures": {
+    "albedo": "cgprint_ken_elochka_501x504_low_l_albedo.png",
+    "normal": "cgprint_ken_elochka_501x504_low_l_normal.jpg",
+    "mask": "cgprint_ken_elochka_501x504_low_l_mask.png"
+   },
+   "transparent": true
+  },
+  {
+   "id": "cgprint_ken_elochka_488x374",
+   "name": "Кен — УФ печать «ёлочка», фасад 488×374",
+   "category": "casegoods",
+   "source": "procedural:tools/casegoods/textures/prints.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 2048,
+   "folder": "Materials/cgprint_ken_elochka_488x374",
+   "textures": {
+    "albedo": "cgprint_ken_elochka_488x374_albedo.png",
+    "normal": "cgprint_ken_elochka_488x374_normal.jpg",
+    "mask": "cgprint_ken_elochka_488x374_mask.png"
+   },
+   "transparent": true
   }
  ],
  "models": [

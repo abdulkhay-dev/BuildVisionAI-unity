@@ -1,0 +1,110 @@
+[
+ {
+  "id": "cg_dub_stirling",
+  "name": "Дуб Стирлинг 374 SWN",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/dark_oaks_b.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cg_dub_stirling",
+  "textures": {
+   "albedo": "cg_dub_stirling_albedo.jpg",
+   "normal": "cg_dub_stirling_normal.jpg",
+   "mask": "cg_dub_stirling_mask.png"
+  }
+ },
+ {
+  "id": "cg_dub_tryufelny",
+  "name": "Дуб Трюфельный",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/dark_oaks_b.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cg_dub_tryufelny",
+  "textures": {
+   "albedo": "cg_dub_tryufelny_albedo.jpg",
+   "normal": "cg_dub_tryufelny_normal.jpg",
+   "mask": "cg_dub_tryufelny_mask.png"
+  }
+ },
+ {
+  "id": "cg_dub_artizan_tryufel",
+  "name": "Дуб Артизан Трюфель",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/dark_oaks_b.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cg_dub_artizan_tryufel",
+  "textures": {
+   "albedo": "cg_dub_artizan_tryufel_albedo.jpg",
+   "normal": "cg_dub_artizan_tryufel_normal.jpg",
+   "mask": "cg_dub_artizan_tryufel_mask.png"
+  }
+ },
+ {
+  "id": "cg_dub_monastyrsky",
+  "name": "Дуб Монастырский 375",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/dark_oaks_b.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cg_dub_monastyrsky",
+  "textures": {
+   "albedo": "cg_dub_monastyrsky_albedo.jpg",
+   "normal": "cg_dub_monastyrsky_normal.jpg",
+   "mask": "cg_dub_monastyrsky_mask.png"
+  }
+ },
+ {
+  "id": "cg_dub_navarra",
+  "name": "Дуб Наварра",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/dark_oaks_b.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cg_dub_navarra",
+  "textures": {
+   "albedo": "cg_dub_navarra_albedo.jpg",
+   "normal": "cg_dub_navarra_normal.jpg",
+   "mask": "cg_dub_navarra_mask.png"
+  }
+ },
+ {
+  "id": "cg_dub_monterey",
+  "name": "Дуб Монтерей",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/dark_oaks_b.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cg_dub_monterey",
+  "textures": {
+   "albedo": "cg_dub_monterey_albedo.jpg",
+   "normal": "cg_dub_monterey_normal.jpg",
+   "mask": "cg_dub_monterey_mask.png"
+  }
+ }
+]

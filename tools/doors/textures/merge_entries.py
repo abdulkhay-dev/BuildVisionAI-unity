@@ -1,4 +1,4 @@
-"""Merge door material entries into Assets/House4696/External/external.json (safely from several writers at once).
+"""Merge door and casegoods (cg_*, cgfab_*, cgprint_*) material entries into Assets/House4696/External/external.json (safely from several writers at once).
 
     python3 tools/doors/textures/merge_entries.py tools/doors/textures/entries/<family>.json [...]
 
@@ -27,8 +27,8 @@ def merge(files):
         added = replaced = 0
         for f in files:
             for e in json.loads(Path(f).read_text()):
-                if not e["id"].startswith(("door_", "doorglass_", "doorart_")):
-                    raise SystemExit(f"{f}: {e['id']} is not a door material (door_* / doorglass_* / doorart_*)")
+                if not e["id"].startswith(("door_", "doorglass_", "doorart_", "cg_", "cgfab_", "cgprint_")):
+                    raise SystemExit(f"{f}: {e['id']} is not a door / casegoods material (door_* / doorglass_* / doorart_* / cg_* / cgfab_* / cgprint_*)")
                 if e["id"] in index:
                     mats[index[e["id"]]] = e
                     replaced += 1

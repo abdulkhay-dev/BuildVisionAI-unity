@@ -25,7 +25,7 @@
     {"id": "drawer_1-side-r", "box": [425, 314, 38, 441, 485, 418]},
     {"id": "drawer_1-back", "box": [45, 314, 38, 425, 485, 54]},
     {"id": "drawer_1-bottom", "kind": "back", "box": [40, 324, 42, 430, 327.5, 416]},
-    {"id": "f-door", "kind": "front", "box": [18.0, 1503.0, 418, 452.0, 2186.0, 434], "print": "british_bum_shield_door"},
+    {"id": "f-door", "kind": "front", "box": [18.0, 1503.0, 418, 452.0, 2186.0, 434], "print": "cgprint_british_bum_shield_door"},
     {"id": "h-door", "kind": "handle", "model": "bar", "mat": "metal", "at": [235.0, 1558.0], "dir": "right", "d": 184, "band": 13, "t": 9, "standoff": 24, "post": 10, "z": 434}
   ],
   "moves": [

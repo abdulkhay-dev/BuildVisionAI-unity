@@ -1,0 +1,74 @@
+[
+ {
+  "id": "cgfab_velur_myaty",
+  "name": "Велюр мятый",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/fabrics.py",
+  "neutral": true,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cgfab_velur_myaty",
+  "textures": {
+   "albedo": "cgfab_velur_myaty_albedo.jpg",
+   "normal": "cgfab_velur_myaty_normal.jpg",
+   "mask": "cgfab_velur_myaty_mask.png"
+  }
+ },
+ {
+  "id": "cgfab_velur",
+  "name": "Велюр",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/fabrics.py",
+  "neutral": true,
+  "metersPerTile": [
+   1.0,
+   0.5
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cgfab_velur",
+  "textures": {
+   "albedo": "cgfab_velur_albedo.jpg",
+   "normal": "cgfab_velur_normal.jpg",
+   "mask": "cgfab_velur_mask.png"
+  }
+ },
+ {
+  "id": "cgfab_rogozhka",
+  "name": "Рогожка",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/fabrics.py",
+  "neutral": true,
+  "metersPerTile": [
+   0.25,
+   0.125
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cgfab_rogozhka",
+  "textures": {
+   "albedo": "cgfab_rogozhka_albedo.jpg",
+   "normal": "cgfab_rogozhka_normal.jpg",
+   "mask": "cgfab_rogozhka_mask.png"
+  }
+ },
+ {
+  "id": "cgfab_ekokozha",
+  "name": "Экокожа",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/fabrics.py",
+  "neutral": true,
+  "metersPerTile": [
+   0.25,
+   0.125
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cgfab_ekokozha",
+  "textures": {
+   "albedo": "cgfab_ekokozha_albedo.jpg",
+   "normal": "cgfab_ekokozha_normal.jpg",
+   "mask": "cgfab_ekokozha_mask.png"
+  }
+ }
+]

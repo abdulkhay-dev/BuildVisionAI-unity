@@ -1,0 +1,182 @@
+[
+ {
+  "id": "cg_beton_layt",
+  "name": "Бетон Лайт 818ТМ",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/stones.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cg_beton_layt",
+  "textures": {
+   "albedo": "cg_beton_layt_albedo.jpg",
+   "normal": "cg_beton_layt_normal.jpg",
+   "mask": "cg_beton_layt_mask.png"
+  }
+ },
+ {
+  "id": "cg_mramor_nero_markina",
+  "name": "Мрамор Неро Маркина 850ТМ",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/stones.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cg_mramor_nero_markina",
+  "textures": {
+   "albedo": "cg_mramor_nero_markina_albedo.jpg",
+   "normal": "cg_mramor_nero_markina_normal.jpg",
+   "mask": "cg_mramor_nero_markina_mask.png"
+  }
+ },
+ {
+  "id": "cg_kamen_sery",
+  "name": "Камень серый",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/stones.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cg_kamen_sery",
+  "textures": {
+   "albedo": "cg_kamen_sery_albedo.jpg",
+   "normal": "cg_kamen_sery_normal.jpg",
+   "mask": "cg_kamen_sery_mask.png"
+  }
+ },
+ {
+  "id": "cg_sharli_keramika",
+  "name": "Шарли керамика",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/stones.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cg_sharli_keramika",
+  "textures": {
+   "albedo": "cg_sharli_keramika_albedo.jpg",
+   "normal": "cg_sharli_keramika_normal.jpg",
+   "mask": "cg_sharli_keramika_mask.png"
+  }
+ },
+ {
+  "id": "cg_metall_bruklin",
+  "name": "Металл Бруклин 808",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/stones.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cg_metall_bruklin",
+  "textures": {
+   "albedo": "cg_metall_bruklin_albedo.jpg",
+   "normal": "cg_metall_bruklin_normal.jpg",
+   "mask": "cg_metall_bruklin_mask.png"
+  }
+ },
+ {
+  "id": "cg_oniks",
+  "name": "Оникс 817 TM",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/stones.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cg_oniks",
+  "textures": {
+   "albedo": "cg_oniks_albedo.jpg",
+   "normal": "cg_oniks_normal.jpg",
+   "mask": "cg_oniks_mask.png"
+  }
+ },
+ {
+  "id": "cg_cherny_660",
+  "name": "Черный 660 WML",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/stones.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cg_cherny_660",
+  "textures": {
+   "albedo": "cg_cherny_660_albedo.jpg",
+   "normal": "cg_cherny_660_normal.jpg",
+   "mask": "cg_cherny_660_mask.png"
+  }
+ },
+ {
+  "id": "cg_prizma_870",
+  "name": "Призма 870",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/stones.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cg_prizma_870",
+  "textures": {
+   "albedo": "cg_prizma_870_albedo.jpg",
+   "normal": "cg_prizma_870_normal.jpg",
+   "mask": "cg_prizma_870_mask.png"
+  }
+ },
+ {
+  "id": "cg_belaya_vanil",
+  "name": "Белая Ваниль",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/stones.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cg_belaya_vanil",
+  "textures": {
+   "albedo": "cg_belaya_vanil_albedo.jpg",
+   "normal": "cg_belaya_vanil_normal.jpg",
+   "mask": "cg_belaya_vanil_mask.png"
+  }
+ },
+ {
+  "id": "cg_hdf_grafit",
+  "name": "ХДФ графит текстурный",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/stones.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   0.5
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cg_hdf_grafit",
+  "textures": {
+   "albedo": "cg_hdf_grafit_albedo.jpg",
+   "normal": "cg_hdf_grafit_normal.jpg",
+   "mask": "cg_hdf_grafit_mask.png"
+  }
+ }
+]

@@ -1,0 +1,110 @@
+[
+ {
+  "id": "cg_dub_kanon",
+  "name": "Дуб Каньон",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/dark_oaks_a.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cg_dub_kanon",
+  "textures": {
+   "albedo": "cg_dub_kanon_albedo.jpg",
+   "normal": "cg_dub_kanon_normal.jpg",
+   "mask": "cg_dub_kanon_mask.png"
+  }
+ },
+ {
+  "id": "cg_dub_kanzas",
+  "name": "Дуб Канзас 377 SWN",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/dark_oaks_a.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cg_dub_kanzas",
+  "textures": {
+   "albedo": "cg_dub_kanzas_albedo.jpg",
+   "normal": "cg_dub_kanzas_normal.jpg",
+   "mask": "cg_dub_kanzas_mask.png"
+  }
+ },
+ {
+  "id": "cg_dub_noks",
+  "name": "Дуб Нокс 392 SWN",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/dark_oaks_a.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cg_dub_noks",
+  "textures": {
+   "albedo": "cg_dub_noks_albedo.jpg",
+   "normal": "cg_dub_noks_normal.jpg",
+   "mask": "cg_dub_noks_mask.png"
+  }
+ },
+ {
+  "id": "cg_dub_votan",
+  "name": "Дуб Вотан 376 WML",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/dark_oaks_a.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cg_dub_votan",
+  "textures": {
+   "albedo": "cg_dub_votan_albedo.jpg",
+   "normal": "cg_dub_votan_normal.jpg",
+   "mask": "cg_dub_votan_mask.png"
+  }
+ },
+ {
+  "id": "cg_dub_satter",
+  "name": "Дуб Саттер 369 SWA",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/dark_oaks_a.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cg_dub_satter",
+  "textures": {
+   "albedo": "cg_dub_satter_albedo.jpg",
+   "normal": "cg_dub_satter_normal.jpg",
+   "mask": "cg_dub_satter_mask.png"
+  }
+ },
+ {
+  "id": "cg_dub_yukon",
+  "name": "Дуб Юкон 358 SWN",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/dark_oaks_a.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cg_dub_yukon",
+  "textures": {
+   "albedo": "cg_dub_yukon_albedo.jpg",
+   "normal": "cg_dub_yukon_normal.jpg",
+   "mask": "cg_dub_yukon_mask.png"
+  }
+ }
+]

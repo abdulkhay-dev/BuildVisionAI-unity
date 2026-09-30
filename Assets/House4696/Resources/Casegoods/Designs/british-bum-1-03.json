@@ -14,7 +14,7 @@
     {"id": "drawer_2-side-r", "box": [863, 100, 38, 879, 271, 418]},
     {"id": "drawer_2-back", "box": [45, 100, 38, 863, 271, 54]},
     {"id": "drawer_2-bottom", "kind": "back", "box": [40, 110, 42, 868, 113.5, 416]},
-    {"id": "f-drawer_1", "kind": "front", "box": [18.0, 304.0, 418, 890.0, 515.0, 434], "print": "british_bum_stamp_drawer"},
+    {"id": "f-drawer_1", "kind": "front", "box": [18.0, 304.0, 418, 890.0, 515.0, 434], "print": "cgprint_british_bum_stamp_drawer"},
     {"id": "h-drawer_1", "kind": "handle", "model": "bar", "mat": "metal", "at": [454.0, 409.5], "dir": "right", "d": 184, "band": 13, "t": 9, "standoff": 24, "post": 10, "z": 434},
     {"id": "drawer_1-side-l", "box": [29, 314, 38, 45, 485, 418]},
     {"id": "drawer_1-side-r", "box": [863, 314, 38, 879, 485, 418]},
@@ -42,7 +42,7 @@
     {"id": "doors-div-r", "box": [686, 1505, 16, 702, 1806, 274]},
     {"id": "f-flap", "kind": "front", "box": [31.0, 875.0, 274, 877.0, 1186.0, 290]},
     {"id": "h-flap", "kind": "handle", "model": "bar", "mat": "metal", "at": [454.0, 1146.0], "dir": "right", "d": 184, "band": 13, "t": 9, "standoff": 24, "post": 10, "z": 290},
-    {"id": "f-door_left", "kind": "front", "box": [31.0, 1507.0, 274, 452.5, 1804.0, 290], "print": "british_bum_football_door"},
+    {"id": "f-door_left", "kind": "front", "box": [31.0, 1507.0, 274, 452.5, 1804.0, 290], "print": "cgprint_british_bum_football_door"},
     {"id": "h-door_left", "kind": "handle", "model": "bar", "mat": "metal", "at": [427.5, 1655.5], "dir": "up", "d": 184, "band": 13, "t": 9, "standoff": 24, "post": 10, "z": 290},
     {"id": "f-door_right", "kind": "front", "box": [455.5, 1507.0, 274, 877.0, 1804.0, 290]},
     {"id": "h-door_right", "kind": "handle", "model": "bar", "mat": "metal", "at": [480.5, 1655.5], "dir": "up", "d": 184, "band": 13, "t": 9, "standoff": 24, "post": 10, "z": 290}

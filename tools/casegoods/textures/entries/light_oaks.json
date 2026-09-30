@@ -1,0 +1,182 @@
+[
+ {
+  "id": "cg_dub_bordo_layt",
+  "name": "Дуб Бордо лайт 380 SWN",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/light_oaks.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cg_dub_bordo_layt",
+  "textures": {
+   "albedo": "cg_dub_bordo_layt_albedo.jpg",
+   "normal": "cg_dub_bordo_layt_normal.jpg",
+   "mask": "cg_dub_bordo_layt_mask.png"
+  }
+ },
+ {
+  "id": "cg_dub_sonoma",
+  "name": "Дуб Сонома 325",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/light_oaks.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cg_dub_sonoma",
+  "textures": {
+   "albedo": "cg_dub_sonoma_albedo.jpg",
+   "normal": "cg_dub_sonoma_normal.jpg",
+   "mask": "cg_dub_sonoma_mask.png"
+  }
+ },
+ {
+  "id": "cg_dub_kantri_zolotoy",
+  "name": "Дуб Кантри золотой 389 SWN",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/light_oaks.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cg_dub_kantri_zolotoy",
+  "textures": {
+   "albedo": "cg_dub_kantri_zolotoy_albedo.jpg",
+   "normal": "cg_dub_kantri_zolotoy_normal.jpg",
+   "mask": "cg_dub_kantri_zolotoy_mask.png"
+  }
+ },
+ {
+  "id": "cg_dub_ontario",
+  "name": "Дуб Онтарио 385ТМ",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/light_oaks.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cg_dub_ontario",
+  "textures": {
+   "albedo": "cg_dub_ontario_albedo.jpg",
+   "normal": "cg_dub_ontario_normal.jpg",
+   "mask": "cg_dub_ontario_mask.png"
+  }
+ },
+ {
+  "id": "cg_dub_ontario_svetly",
+  "name": "Дуб Онтарио (Кен)",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/light_oaks.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cg_dub_ontario_svetly",
+  "textures": {
+   "albedo": "cg_dub_ontario_svetly_albedo.jpg",
+   "normal": "cg_dub_ontario_svetly_normal.jpg",
+   "mask": "cg_dub_ontario_svetly_mask.png"
+  }
+ },
+ {
+  "id": "cg_dub_madura",
+  "name": "Дуб Мадура",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/light_oaks.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cg_dub_madura",
+  "textures": {
+   "albedo": "cg_dub_madura_albedo.jpg",
+   "normal": "cg_dub_madura_normal.jpg",
+   "mask": "cg_dub_madura_mask.png"
+  }
+ },
+ {
+  "id": "cg_dub_artizan",
+  "name": "Дуб Артизан",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/light_oaks.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cg_dub_artizan",
+  "textures": {
+   "albedo": "cg_dub_artizan_albedo.jpg",
+   "normal": "cg_dub_artizan_normal.jpg",
+   "mask": "cg_dub_artizan_mask.png"
+  }
+ },
+ {
+  "id": "cg_dub_lancelot",
+  "name": "Дуб Ланцелот",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/light_oaks.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cg_dub_lancelot",
+  "textures": {
+   "albedo": "cg_dub_lancelot_albedo.jpg",
+   "normal": "cg_dub_lancelot_normal.jpg",
+   "mask": "cg_dub_lancelot_mask.png"
+  }
+ },
+ {
+  "id": "cg_dub_naturalny",
+  "name": "Дуб натуральный (массив)",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/light_oaks.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cg_dub_naturalny",
+  "textures": {
+   "albedo": "cg_dub_naturalny_albedo.jpg",
+   "normal": "cg_dub_naturalny_normal.jpg",
+   "mask": "cg_dub_naturalny_mask.png"
+  }
+ },
+ {
+  "id": "cg_dub_sahara",
+  "name": "Дуб Сахара",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/light_oaks.py",
+  "neutral": false,
+  "metersPerTile": [
+   2.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cg_dub_sahara",
+  "textures": {
+   "albedo": "cg_dub_sahara_albedo.jpg",
+   "normal": "cg_dub_sahara_normal.jpg",
+   "mask": "cg_dub_sahara_mask.png"
+  }
+ }
+]

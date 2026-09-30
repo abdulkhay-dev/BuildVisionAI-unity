@@ -1,0 +1,582 @@
+[
+ {
+  "id": "cgprint_british_bum_balloons_drawer_2",
+  "name": "Бритиш Бум — фотопечать «воздушный шар»",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/prints.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cgprint_british_bum_balloons_drawer_2",
+  "textures": {
+   "albedo": "cgprint_british_bum_balloons_drawer_2_albedo.jpg",
+   "normal": "cgprint_british_bum_balloons_drawer_2_normal.jpg",
+   "mask": "cgprint_british_bum_balloons_drawer_2_mask.png"
+  }
+ },
+ {
+  "id": "cgprint_british_bum_balloons_drawer_3",
+  "name": "Бритиш Бум — фотопечать «воздушные шары»",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/prints.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cgprint_british_bum_balloons_drawer_3",
+  "textures": {
+   "albedo": "cgprint_british_bum_balloons_drawer_3_albedo.jpg",
+   "normal": "cgprint_british_bum_balloons_drawer_3_normal.jpg",
+   "mask": "cgprint_british_bum_balloons_drawer_3_mask.png"
+  }
+ },
+ {
+  "id": "cgprint_british_bum_bigben_column_door",
+  "name": "Бритиш Бум — фотопечать «Биг-Бен «Big Ben»»",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/prints.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cgprint_british_bum_bigben_column_door",
+  "textures": {
+   "albedo": "cgprint_british_bum_bigben_column_door_albedo.jpg",
+   "normal": "cgprint_british_bum_bigben_column_door_normal.jpg",
+   "mask": "cgprint_british_bum_bigben_column_door_mask.png"
+  }
+ },
+ {
+  "id": "cgprint_british_bum_bigben_door_l",
+  "name": "Бритиш Бум — фотопечать «воздушные шары и Вестминстер, левая»",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/prints.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cgprint_british_bum_bigben_door_l",
+  "textures": {
+   "albedo": "cgprint_british_bum_bigben_door_l_albedo.jpg",
+   "normal": "cgprint_british_bum_bigben_door_l_normal.jpg",
+   "mask": "cgprint_british_bum_bigben_door_l_mask.png"
+  }
+ },
+ {
+  "id": "cgprint_british_bum_bigben_door_r",
+  "name": "Бритиш Бум — фотопечать «Биг-Бен, правая»",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/prints.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cgprint_british_bum_bigben_door_r",
+  "textures": {
+   "albedo": "cgprint_british_bum_bigben_door_r_albedo.jpg",
+   "normal": "cgprint_british_bum_bigben_door_r_normal.jpg",
+   "mask": "cgprint_british_bum_bigben_door_r_mask.png"
+  }
+ },
+ {
+  "id": "cgprint_british_bum_bus_drawer_s",
+  "name": "Бритиш Бум — фотопечать «автобус»",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/prints.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cgprint_british_bum_bus_drawer_s",
+  "textures": {
+   "albedo": "cgprint_british_bum_bus_drawer_s_albedo.jpg",
+   "normal": "cgprint_british_bum_bus_drawer_s_normal.jpg",
+   "mask": "cgprint_british_bum_bus_drawer_s_mask.png"
+  }
+ },
+ {
+  "id": "cgprint_british_bum_bus_stamp_drawer",
+  "name": "Бритиш Бум — фотопечать «автобус и штемпель»",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/prints.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cgprint_british_bum_bus_stamp_drawer",
+  "textures": {
+   "albedo": "cgprint_british_bum_bus_stamp_drawer_albedo.jpg",
+   "normal": "cgprint_british_bum_bus_stamp_drawer_normal.jpg",
+   "mask": "cgprint_british_bum_bus_stamp_drawer_mask.png"
+  }
+ },
+ {
+  "id": "cgprint_british_bum_england_drawer_4",
+  "name": "Бритиш Бум — фотопечать ««England»»",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/prints.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cgprint_british_bum_england_drawer_4",
+  "textures": {
+   "albedo": "cgprint_british_bum_england_drawer_4_albedo.jpg",
+   "normal": "cgprint_british_bum_england_drawer_4_normal.jpg",
+   "mask": "cgprint_british_bum_england_drawer_4_mask.png"
+  }
+ },
+ {
+  "id": "cgprint_british_bum_england_drawer_s",
+  "name": "Бритиш Бум — фотопечать ««England», малый ящик»",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/prints.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cgprint_british_bum_england_drawer_s",
+  "textures": {
+   "albedo": "cgprint_british_bum_england_drawer_s_albedo.jpg",
+   "normal": "cgprint_british_bum_england_drawer_s_normal.jpg",
+   "mask": "cgprint_british_bum_england_drawer_s_mask.png"
+  }
+ },
+ {
+  "id": "cgprint_british_bum_eye_england_drawer",
+  "name": "Бритиш Бум — фотопечать «Лондонский глаз и «England»»",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/prints.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cgprint_british_bum_eye_england_drawer",
+  "textures": {
+   "albedo": "cgprint_british_bum_eye_england_drawer_albedo.jpg",
+   "normal": "cgprint_british_bum_eye_england_drawer_normal.jpg",
+   "mask": "cgprint_british_bum_eye_england_drawer_mask.png"
+  }
+ },
+ {
+  "id": "cgprint_british_bum_flag_england_door",
+  "name": "Бритиш Бум — фотопечать «флаг и «England»»",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/prints.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cgprint_british_bum_flag_england_door",
+  "textures": {
+   "albedo": "cgprint_british_bum_flag_england_door_albedo.jpg",
+   "normal": "cgprint_british_bum_flag_england_door_normal.jpg",
+   "mask": "cgprint_british_bum_flag_england_door_mask.png"
+  }
+ },
+ {
+  "id": "cgprint_british_bum_football_door",
+  "name": "Бритиш Бум — фотопечать ««England» и мяч»",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/prints.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cgprint_british_bum_football_door",
+  "textures": {
+   "albedo": "cgprint_british_bum_football_door_albedo.jpg",
+   "normal": "cgprint_british_bum_football_door_normal.jpg",
+   "mask": "cgprint_british_bum_football_door_mask.png"
+  }
+ },
+ {
+  "id": "cgprint_british_bum_gherkin_door",
+  "name": "Бритиш Бум — фотопечать «флаг и улица Лондона»",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/prints.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cgprint_british_bum_gherkin_door",
+  "textures": {
+   "albedo": "cgprint_british_bum_gherkin_door_albedo.jpg",
+   "normal": "cgprint_british_bum_gherkin_door_normal.jpg",
+   "mask": "cgprint_british_bum_gherkin_door_mask.png"
+  }
+ },
+ {
+  "id": "cgprint_british_bum_guard_door",
+  "name": "Бритиш Бум — фотопечать «королевский гвардеец»",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/prints.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cgprint_british_bum_guard_door",
+  "textures": {
+   "albedo": "cgprint_british_bum_guard_door_albedo.jpg",
+   "normal": "cgprint_british_bum_guard_door_normal.jpg",
+   "mask": "cgprint_british_bum_guard_door_mask.png"
+  }
+ },
+ {
+  "id": "cgprint_british_bum_lamp_door",
+  "name": "Бритиш Бум — фотопечать «зонт, фонарь и мяч»",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/prints.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cgprint_british_bum_lamp_door",
+  "textures": {
+   "albedo": "cgprint_british_bum_lamp_door_albedo.jpg",
+   "normal": "cgprint_british_bum_lamp_door_normal.jpg",
+   "mask": "cgprint_british_bum_lamp_door_mask.png"
+  }
+ },
+ {
+  "id": "cgprint_british_bum_lantern_london_door",
+  "name": "Бритиш Бум — фотопечать «фонарь и «London»»",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/prints.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cgprint_british_bum_lantern_london_door",
+  "textures": {
+   "albedo": "cgprint_british_bum_lantern_london_door_albedo.jpg",
+   "normal": "cgprint_british_bum_lantern_london_door_normal.jpg",
+   "mask": "cgprint_british_bum_lantern_london_door_mask.png"
+  }
+ },
+ {
+  "id": "cgprint_british_bum_london_rail",
+  "name": "Бритиш Бум — фотопечать ««London», царга кровати»",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/prints.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cgprint_british_bum_london_rail",
+  "textures": {
+   "albedo": "cgprint_british_bum_london_rail_albedo.jpg",
+   "normal": "cgprint_british_bum_london_rail_normal.jpg",
+   "mask": "cgprint_british_bum_london_rail_mask.png"
+  }
+ },
+ {
+  "id": "cgprint_british_bum_shield_door",
+  "name": "Бритиш Бум — фотопечать «щит и меч «England»»",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/prints.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cgprint_british_bum_shield_door",
+  "textures": {
+   "albedo": "cgprint_british_bum_shield_door_albedo.jpg",
+   "normal": "cgprint_british_bum_shield_door_normal.jpg",
+   "mask": "cgprint_british_bum_shield_door_mask.png"
+  }
+ },
+ {
+  "id": "cgprint_british_bum_skyline_drawer_2",
+  "name": "Бритиш Бум — фотопечать «панорама Лондона, верх»",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/prints.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cgprint_british_bum_skyline_drawer_2",
+  "textures": {
+   "albedo": "cgprint_british_bum_skyline_drawer_2_albedo.jpg",
+   "normal": "cgprint_british_bum_skyline_drawer_2_normal.jpg",
+   "mask": "cgprint_british_bum_skyline_drawer_2_mask.png"
+  }
+ },
+ {
+  "id": "cgprint_british_bum_skyline_drawer_3",
+  "name": "Бритиш Бум — фотопечать «панорама Лондона, низ»",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/prints.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cgprint_british_bum_skyline_drawer_3",
+  "textures": {
+   "albedo": "cgprint_british_bum_skyline_drawer_3_albedo.jpg",
+   "normal": "cgprint_british_bum_skyline_drawer_3_normal.jpg",
+   "mask": "cgprint_british_bum_skyline_drawer_3_mask.png"
+  }
+ },
+ {
+  "id": "cgprint_british_bum_stamp_drawer",
+  "name": "Бритиш Бум — фотопечать «почтовый штемпель»",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/prints.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cgprint_british_bum_stamp_drawer",
+  "textures": {
+   "albedo": "cgprint_british_bum_stamp_drawer_albedo.jpg",
+   "normal": "cgprint_british_bum_stamp_drawer_normal.jpg",
+   "mask": "cgprint_british_bum_stamp_drawer_mask.png"
+  }
+ },
+ {
+  "id": "cgprint_british_bum_stpauls_door_l",
+  "name": "Бритиш Бум — фотопечать «Собор Св. Павла, левая»",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/prints.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cgprint_british_bum_stpauls_door_l",
+  "textures": {
+   "albedo": "cgprint_british_bum_stpauls_door_l_albedo.jpg",
+   "normal": "cgprint_british_bum_stpauls_door_l_normal.jpg",
+   "mask": "cgprint_british_bum_stpauls_door_l_mask.png"
+  }
+ },
+ {
+  "id": "cgprint_british_bum_stpauls_door_r",
+  "name": "Бритиш Бум — фотопечать «Собор Св. Павла, правая»",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/prints.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cgprint_british_bum_stpauls_door_r",
+  "textures": {
+   "albedo": "cgprint_british_bum_stpauls_door_r_albedo.jpg",
+   "normal": "cgprint_british_bum_stpauls_door_r_normal.jpg",
+   "mask": "cgprint_british_bum_stpauls_door_r_mask.png"
+  }
+ },
+ {
+  "id": "cgprint_british_bum_towerbridge_door_l",
+  "name": "Бритиш Бум — фотопечать ««Wow» и Тауэрский мост, левая»",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/prints.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cgprint_british_bum_towerbridge_door_l",
+  "textures": {
+   "albedo": "cgprint_british_bum_towerbridge_door_l_albedo.jpg",
+   "normal": "cgprint_british_bum_towerbridge_door_l_normal.jpg",
+   "mask": "cgprint_british_bum_towerbridge_door_l_mask.png"
+  }
+ },
+ {
+  "id": "cgprint_british_bum_towerbridge_door_r",
+  "name": "Бритиш Бум — фотопечать «Тауэрский мост, правая»",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/prints.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cgprint_british_bum_towerbridge_door_r",
+  "textures": {
+   "albedo": "cgprint_british_bum_towerbridge_door_r_albedo.jpg",
+   "normal": "cgprint_british_bum_towerbridge_door_r_normal.jpg",
+   "mask": "cgprint_british_bum_towerbridge_door_r_mask.png"
+  }
+ },
+ {
+  "id": "cgprint_british_bum_umbrella_door",
+  "name": "Бритиш Бум — фотопечать «зонт»",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/prints.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cgprint_british_bum_umbrella_door",
+  "textures": {
+   "albedo": "cgprint_british_bum_umbrella_door_albedo.jpg",
+   "normal": "cgprint_british_bum_umbrella_door_normal.jpg",
+   "mask": "cgprint_british_bum_umbrella_door_mask.png"
+  }
+ },
+ {
+  "id": "cgprint_eliza_rozy",
+  "name": "Элиза — золотой орнамент «розы» (печать)",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/prints.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cgprint_eliza_rozy",
+  "textures": {
+   "albedo": "cgprint_eliza_rozy_albedo.jpg",
+   "normal": "cgprint_eliza_rozy_normal.jpg",
+   "mask": "cgprint_eliza_rozy_mask.png"
+  }
+ },
+ {
+  "id": "cg_martina_listya",
+  "name": "Мартина — резьба «листья» под серебряной патиной («Молоко с серебром»)",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/prints.py",
+  "neutral": false,
+  "metersPerTile": [
+   0.5,
+   0.25
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cg_martina_listya",
+  "textures": {
+   "albedo": "cg_martina_listya_albedo.jpg",
+   "normal": "cg_martina_listya_normal.jpg",
+   "mask": "cg_martina_listya_mask.png"
+  }
+ },
+ {
+  "id": "cgprint_ken_elochka_504x698",
+  "name": "Кен — УФ печать «ёлочка», фасад 504×698.5",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/prints.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cgprint_ken_elochka_504x698",
+  "textures": {
+   "albedo": "cgprint_ken_elochka_504x698_albedo.png",
+   "normal": "cgprint_ken_elochka_504x698_normal.jpg",
+   "mask": "cgprint_ken_elochka_504x698_mask.png"
+  },
+  "transparent": true
+ },
+ {
+  "id": "cgprint_ken_elochka_501x504_up_r",
+  "name": "Кен — УФ печать «ёлочка», фасад 501×504",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/prints.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cgprint_ken_elochka_501x504_up_r",
+  "textures": {
+   "albedo": "cgprint_ken_elochka_501x504_up_r_albedo.png",
+   "normal": "cgprint_ken_elochka_501x504_up_r_normal.jpg",
+   "mask": "cgprint_ken_elochka_501x504_up_r_mask.png"
+  },
+  "transparent": true
+ },
+ {
+  "id": "cgprint_ken_elochka_501x504_low_l",
+  "name": "Кен — УФ печать «ёлочка», фасад 501×504",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/prints.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cgprint_ken_elochka_501x504_low_l",
+  "textures": {
+   "albedo": "cgprint_ken_elochka_501x504_low_l_albedo.png",
+   "normal": "cgprint_ken_elochka_501x504_low_l_normal.jpg",
+   "mask": "cgprint_ken_elochka_501x504_low_l_mask.png"
+  },
+  "transparent": true
+ },
+ {
+  "id": "cgprint_ken_elochka_488x374",
+  "name": "Кен — УФ печать «ёлочка», фасад 488×374",
+  "category": "casegoods",
+  "source": "procedural:tools/casegoods/textures/prints.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 2048,
+  "folder": "Materials/cgprint_ken_elochka_488x374",
+  "textures": {
+   "albedo": "cgprint_ken_elochka_488x374_albedo.png",
+   "normal": "cgprint_ken_elochka_488x374_normal.jpg",
+   "mask": "cgprint_ken_elochka_488x374_mask.png"
+  },
+  "transparent": true
+ }
+]

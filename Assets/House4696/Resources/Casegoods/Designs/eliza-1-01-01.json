@@ -61,7 +61,7 @@
     {"id": "crest-g2-23", "kind": "rod", "mat": "patina", "from": [1871.5, 2182.5, 623], "to": [1943.5, 2173.5, 623], "d": 5},
     {"id": "crest-g2-24", "kind": "rod", "mat": "patina", "from": [1943.5, 2173.5, 623], "to": [2012.5, 2170, 623], "d": 5},
     {"id": "crest-g2-25", "kind": "rod", "mat": "patina", "from": [2012.5, 2170, 623], "to": [2211, 2170, 623], "d": 5},
-    {"id": "crest-orn", "kind": "front", "box": [988, 2277, 621.5, 1248, 2337, 623], "mat": "ornament", "shape": "circle", "edge": 0.5},
+    {"id": "crest-orn", "kind": "front", "box": [988, 2277, 621.5, 1248, 2337, 623], "mat": "ornament", "print": "cgprint_eliza_rozy", "shape": "circle", "edge": 0.5},
     {"id": "partition-1", "box": [891.5, 81, 10, 907.5, 2129, 600]},
     {"id": "partition-2", "box": [1328.5, 81, 10, 1344.5, 2129, 600]},
     {"id": "hat-1", "box": [42, 1860, 20, 890.5, 1876, 590]},
@@ -139,7 +139,7 @@
     {"id": "f-door_1-go-18", "kind": "rod", "mat": "patina", "from": [332, 971, 619.5], "to": [365.5, 984.5, 619.5], "d": 6},
     {"id": "f-door_1-go-19", "kind": "rod", "mat": "patina", "from": [365.5, 984.5, 619.5], "to": [386.5, 1002, 619.5], "d": 6},
     {"id": "f-door_1-go-20", "kind": "rod", "mat": "patina", "from": [386.5, 1002, 619.5], "to": [394, 1021, 619.5], "d": 6},
-    {"id": "f-door_1-orn", "kind": "front", "box": [119, 987, 617.5, 369, 1055, 619], "mat": "ornament", "shape": "circle", "edge": 0.5},
+    {"id": "f-door_1-orn", "kind": "front", "box": [119, 987, 617.5, 369, 1055, 619], "mat": "ornament", "print": "cgprint_eliza_rozy", "shape": "circle", "edge": 0.5},
     {"id": "h-door_1", "kind": "handle", "model": "knob", "at": [429, 1015], "d": 32, "t": 18, "standoff": 22, "z": 618},
     {"id": "f-door_2", "kind": "front", "box": [464, 66, 600, 898, 2142, 618]},
     {"id": "f-door_2-mirror", "kind": "mirror", "box": [509, 111, 618, 853, 2092, 622], "shape": "path", "outline": "M 509 111 L 853 111 L 853 2032 C 750 2112 612 2112 509 2032 Z", "edge": 0.5},
@@ -256,7 +256,7 @@
     {"id": "f-door_5-go-18", "kind": "rod", "mat": "patina", "from": [2080, 971, 619.5], "to": [2113.5, 984.5, 619.5], "d": 6},
     {"id": "f-door_5-go-19", "kind": "rod", "mat": "patina", "from": [2113.5, 984.5, 619.5], "to": [2134.5, 1002, 619.5], "d": 6},
     {"id": "f-door_5-go-20", "kind": "rod", "mat": "patina", "from": [2134.5, 1002, 619.5], "to": [2142, 1021, 619.5], "d": 6},
-    {"id": "f-door_5-orn", "kind": "front", "box": [1867, 987, 617.5, 2117, 1055, 619], "mat": "ornament", "shape": "circle", "edge": 0.5},
+    {"id": "f-door_5-orn", "kind": "front", "box": [1867, 987, 617.5, 2117, 1055, 619], "mat": "ornament", "print": "cgprint_eliza_rozy", "shape": "circle", "edge": 0.5},
     {"id": "h-door_5", "kind": "handle", "model": "knob", "at": [1807, 1015], "d": 32, "t": 18, "standoff": 22, "z": 618}
   ],
   "moves": [
