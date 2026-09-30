@@ -67,6 +67,11 @@ namespace House4696.App
             ("tables", "Столы"),
             ("storage", "Шкафы и комоды"),
             ("bedroom", "Спальня"),
+            // rooms of the case furniture catalogues (Resources/Casegoods: the manufacturers group modules by room)
+            ("living", "Гостиная"),
+            ("kids", "Детская"),
+            ("hall", "Прихожая"),
+            ("office", "Кабинет"),
             ("kitchen", "Кухня"),
             ("bath", "Ванная"),
             ("lighting", "Свет"),
