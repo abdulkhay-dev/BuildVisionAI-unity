@@ -27,7 +27,7 @@ def merge(files):
         added = replaced = 0
         for f in files:
             for e in json.loads(Path(f).read_text()):
-                if not e["id"].startswith(("door_", "doorglass_", "doorart_", "cg_", "cgfab_", "cgprint_")):
+                if not e["id"].startswith(("door_", "doorglass_", "doorart_", "cg_", "cgfab_", "cgprint_", "lift_", "liftfloor_", "liftdoor_", "liftwall_", "liftpanel_")):
                     raise SystemExit(f"{f}: {e['id']} is not a door / casegoods material (door_* / doorglass_* / doorart_* / cg_* / cgfab_* / cgprint_*)")
                 if e["id"] in index:
                     mats[index[e["id"]]] = e

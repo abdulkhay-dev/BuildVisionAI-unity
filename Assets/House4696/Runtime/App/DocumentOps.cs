@@ -31,6 +31,7 @@ namespace House4696.App
             { "room", new Kind { Array = "rooms", Key = "id", Type = typeof(RoomDef) } },
             { "roof", new Kind { Array = "roofs", Key = "id", Type = typeof(RoofDef) } },
             { "stair", new Kind { Array = "stairs", Key = "id", Type = typeof(StairDef) } },
+            { "lift", new Kind { Array = "lifts", Key = "id", Type = typeof(LiftDef) } },
             { "element", new Kind { Array = "elements", Key = "id", Type = typeof(ElementDef) } },
             { "item", new Kind { Array = "items", Key = "id", Type = typeof(ItemDef) } },
             { "light", new Kind { Array = "lights", Key = "id", Type = typeof(LightDef) } },
@@ -139,6 +140,79 @@ namespace House4696.App
         }
 
         /// <summary>Reports fields that the target type does not have (typos such as "heigth" or "thicknes").</summary>
+        /// <summary>Lists of the site edited element by element (by id), with their item types.</summary>
+        public static readonly Dictionary<string, Type> SiteLists = new Dictionary<string, Type>(StringComparer.OrdinalIgnoreCase)
+        {
+            { "areas", typeof(SiteAreaDef) }, { "paths", typeof(SitePathDef) }, { "objects", typeof(SiteObjectDef) },
+            { "hedges", typeof(SiteHedgeDef) }, { "beds", typeof(BedDef) }, { "streams", typeof(StreamDef) },
+        };
+
+        static string SiteList(string name)
+        {
+            if (name != null && !SiteLists.ContainsKey(name) && SiteLists.ContainsKey(name + "s")) name += "s";
+            if (name == null || !SiteLists.ContainsKey(name))
+                throw new ArgumentException($"список участка '{name}' неизвестен. Есть: {string.Join(", ", SiteLists.Keys)}");
+            return name.ToLowerInvariant();
+        }
+
+        /// <summary>
+        /// Edits the site: <paramref name="set"/> merges settings (landscape, plot, terrain, planting, fence, street, …),
+        /// <paramref name="upsert"/> adds or updates list elements by id ({"areas": [...], "objects": [...]}; fields merge
+        /// into an existing element), <paramref name="remove"/> deletes them by id ({"objects": ["t1"]}).
+        /// </summary>
+        public static HouseDocument Site(HouseDocument doc, JObject set, JObject upsert, JObject remove, List<string> notes)
+        {
+            var root = ToJ(doc);
+            if (!(root["site"] is JObject site)) { site = new JObject(); root["site"] = site; }
+            if (set != null && set.HasValues)
+            {
+                foreach (var p in set.Properties().ToList())
+                    if (SiteLists.ContainsKey(p.Name))
+                        throw new ArgumentException($"set.{p.Name}: списки участка правь через upsert/remove (по id), а не целиком");
+                CheckFields(set, typeof(SiteDef), "site", notes);
+                site.Merge(set, new JsonMergeSettings { MergeArrayHandling = MergeArrayHandling.Replace, MergeNullValueHandling = MergeNullValueHandling.Merge });
+                notes.Add("настройки участка: " + string.Join(", ", set.Properties().Select(p => p.Name)));
+            }
+            if (upsert != null)
+                foreach (var p in upsert.Properties())
+                {
+                    string name = SiteList(p.Name), single = name.TrimEnd('s');
+                    if (!(site[name] is JArray arr)) { arr = new JArray(); site[name] = arr; }
+                    var items = p.Value is JArray a ? a.Children<JObject>().ToList() : p.Value is JObject one ? new List<JObject> { one } : null;
+                    if (items == null || items.Count == 0) throw new ArgumentException($"upsert.{p.Name}: нужен объект или массив объектов");
+                    int auto = arr.Count;
+                    foreach (var item in items)
+                    {
+                        CheckFields(item, SiteLists[name], $"site.{name}", notes);
+                        string id = (string)item["id"];
+                        if (string.IsNullOrEmpty(id))
+                        {
+                            do id = $"{single}{++auto}"; while (arr.Children<JObject>().Any(e => (string)e["id"] == id));
+                            item["id"] = id;
+                        }
+                        var existing = arr.Children<JObject>().FirstOrDefault(e => (string)e["id"] == id);
+                        if (existing != null)
+                        {
+                            existing.Merge(item, new JsonMergeSettings { MergeArrayHandling = MergeArrayHandling.Replace, MergeNullValueHandling = MergeNullValueHandling.Merge });
+                            notes.Add($"обновлено {name} '{id}'");
+                        }
+                        else { arr.Add(item); notes.Add($"добавлено {name} '{id}'"); }
+                    }
+                }
+            if (remove != null)
+                foreach (var p in remove.Properties())
+                {
+                    string name = SiteList(p.Name);
+                    var ids = new HashSet<string>(p.Value is JArray a ? a.Select(t => (string)t) : new[] { (string)p.Value });
+                    var arr = site[name] as JArray;
+                    foreach (var id in ids)
+                        if (arr == null || !arr.Children<JObject>().Any(e => (string)e["id"] == id)) notes.Add($"{name} '{id}' не найден");
+                    int n = RemoveWhere(arr, e => ids.Contains((string)e["id"]));
+                    notes.Add($"удалено {name}: {n}");
+                }
+            return FromJ(root);
+        }
+
         static void CheckFields(JObject o, Type t, string kind, List<string> notes)
         {
             // JSON names: an explicit [JsonProperty] name, else the camel-cased field name

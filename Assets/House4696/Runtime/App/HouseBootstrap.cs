@@ -136,6 +136,7 @@ namespace House4696.App
         {
             UpdateRenderScale();
             Api?.Pump(_execute);
+            Session?.Tick();
             Lighting?.Tick();
             WatchBakeFailure();
             _pacing.Tick(Api, Lighting);

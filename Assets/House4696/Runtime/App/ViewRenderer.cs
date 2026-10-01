@@ -9,7 +9,7 @@ using Object = UnityEngine.Object;
 
 namespace House4696.App
 {
-    public enum RenderMode { Orbit, Walk, Plan, Current }
+    public enum RenderMode { Orbit, Walk, Plan, Current, Site }
 
     /// <summary>What to render: an orbit angle around the house, a standing point inside, a floor plan from above, or the viewer's current view (snapshots).</summary>
     public sealed class RenderRequest
@@ -168,6 +168,19 @@ namespace House4696.App
                         hideWait = 2;                        // the GPU resident drawer applies visibility changes a frame later
                         break;
                     }
+                    case RenderMode.Site:
+                    {
+                        // the site plan: the whole plot from straight above, plain lighting, nothing hidden
+                        data.SetRenderer(0);
+                        var plot = House4696.Landscape.Natural.SiteModel.PlotOf(_session.Doc.Site, result.Footprint);
+                        cam.orthographic = true;
+                        float aspect = (float)w / h;
+                        cam.orthographicSize = Mathf.Max(plot.height * 0.5f, plot.width * 0.5f / aspect) + 2f;
+                        cam.nearClipPlane = 1f; cam.farClipPlane = 600f;
+                        go.transform.SetPositionAndRotation(new Vector3(plot.center.x, 250f, plot.center.y), Quaternion.Euler(90f, 0f, 0f));
+                        frames = 4;
+                        break;
+                    }
                     case RenderMode.Current:
                         // CopyFrom took the viewer's pose and lens
                         data.SetRenderer(_giRenderer);
@@ -272,7 +285,7 @@ namespace House4696.App
             return samples >= 8 ? 8 : samples >= 4 ? 4 : samples >= 2 ? 2 : 1;
         }
 
-        /// <summary>Plan cut: 1.2 m above the level's floor (lowest level when none is given).</summary>
+        /// <summary>Plan cut: 1.2 m above the level's floor (the storey at grade when none is given, not a basement).</summary>
         float CutHeight(string levelId)
         {
             var doc = _session.Doc;
@@ -280,7 +293,12 @@ namespace House4696.App
             if (doc.Levels.Count > 0)
             {
                 var l = doc.Levels.Find(x => x.Id == levelId);
-                if (l == null) { l = doc.Levels[0]; foreach (var x in doc.Levels) if (x.Elevation < l.Elevation) l = x; }
+                if (l == null)
+                {
+                    foreach (var x in doc.Levels)
+                        if (!House4696.Generation.HouseContext.IsBelowGrade(x) && (l == null || x.Elevation < l.Elevation)) l = x;
+                    if (l == null) { l = doc.Levels[0]; foreach (var x in doc.Levels) if (x.Elevation > l.Elevation) l = x; }
+                }
                 elev = l.Elevation;
             }
             return elev + 1.2f;

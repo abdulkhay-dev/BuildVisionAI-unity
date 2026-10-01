@@ -1,0 +1,326 @@
+[
+ {
+  "id": "liftfloor_sl_4006p",
+  "name": "SL-4006P ПВХ: белый мрамор, коричневая рамка, ромб",
+  "category": "lift",
+  "source": "procedural:tools/lifts/textures/floors.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 1024,
+  "folder": "Materials/liftfloor_sl_4006p",
+  "textures": {
+   "albedo": "liftfloor_sl_4006p_albedo.jpg",
+   "normal": "liftfloor_sl_4006p_normal.jpg",
+   "mask": "liftfloor_sl_4006p_mask.png"
+  }
+ },
+ {
+  "id": "liftfloor_sl_4021p",
+  "name": "SL-4021P ПВХ: светло-жёлтый мрамор, три тёмные полосы",
+  "category": "lift",
+  "source": "procedural:tools/lifts/textures/floors.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 1024,
+  "folder": "Materials/liftfloor_sl_4021p",
+  "textures": {
+   "albedo": "liftfloor_sl_4021p_albedo.jpg",
+   "normal": "liftfloor_sl_4021p_normal.jpg",
+   "mask": "liftfloor_sl_4021p_mask.png"
+  }
+ },
+ {
+  "id": "liftfloor_sl_4025p",
+  "name": "SL-4025P ПВХ: бежевый мрамор, зелёная рамка",
+  "category": "lift",
+  "source": "procedural:tools/lifts/textures/floors.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 1024,
+  "folder": "Materials/liftfloor_sl_4025p",
+  "textures": {
+   "albedo": "liftfloor_sl_4025p_albedo.jpg",
+   "normal": "liftfloor_sl_4025p_normal.jpg",
+   "mask": "liftfloor_sl_4025p_mask.png"
+  }
+ },
+ {
+  "id": "liftfloor_sl_4027p",
+  "name": "SL-4027P ПВХ: розово-белый мрамор, зелёная рамка, ромб",
+  "category": "lift",
+  "source": "procedural:tools/lifts/textures/floors.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 1024,
+  "folder": "Materials/liftfloor_sl_4027p",
+  "textures": {
+   "albedo": "liftfloor_sl_4027p_albedo.jpg",
+   "normal": "liftfloor_sl_4027p_normal.jpg",
+   "mask": "liftfloor_sl_4027p_mask.png"
+  }
+ },
+ {
+  "id": "liftfloor_sl_4034p",
+  "name": "SL-4034P ПВХ: бежевый, плетёный квадрат-ромб",
+  "category": "lift",
+  "source": "procedural:tools/lifts/textures/floors.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 1024,
+  "folder": "Materials/liftfloor_sl_4034p",
+  "textures": {
+   "albedo": "liftfloor_sl_4034p_albedo.jpg",
+   "normal": "liftfloor_sl_4034p_normal.jpg",
+   "mask": "liftfloor_sl_4034p_mask.png"
+  }
+ },
+ {
+  "id": "liftfloor_sl_4173p",
+  "name": "SL-4173P ПВХ: белый мрамор в коричневой рамке",
+  "category": "lift",
+  "source": "procedural:tools/lifts/textures/floors.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 1024,
+  "folder": "Materials/liftfloor_sl_4173p",
+  "textures": {
+   "albedo": "liftfloor_sl_4173p_albedo.jpg",
+   "normal": "liftfloor_sl_4173p_normal.jpg",
+   "mask": "liftfloor_sl_4173p_mask.png"
+  }
+ },
+ {
+  "id": "liftfloor_sl_4106d",
+  "name": "SL-4106D мрамор: кремовый центр, чёрный гранит",
+  "category": "lift",
+  "source": "procedural:tools/lifts/textures/floors.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 1024,
+  "folder": "Materials/liftfloor_sl_4106d",
+  "textures": {
+   "albedo": "liftfloor_sl_4106d_albedo.jpg",
+   "normal": "liftfloor_sl_4106d_normal.jpg",
+   "mask": "liftfloor_sl_4106d_mask.png"
+  }
+ },
+ {
+  "id": "liftfloor_sl_4145d",
+  "name": "SL-4145D мрамор: серо-зелёный",
+  "category": "lift",
+  "source": "procedural:tools/lifts/textures/floors.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 1024,
+  "folder": "Materials/liftfloor_sl_4145d",
+  "textures": {
+   "albedo": "liftfloor_sl_4145d_albedo.jpg",
+   "normal": "liftfloor_sl_4145d_normal.jpg",
+   "mask": "liftfloor_sl_4145d_mask.png"
+  }
+ },
+ {
+  "id": "liftfloor_sl_4157d",
+  "name": "SL-4157D мрамор: крем, светло-коричневая рамка",
+  "category": "lift",
+  "source": "procedural:tools/lifts/textures/floors.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 1024,
+  "folder": "Materials/liftfloor_sl_4157d",
+  "textures": {
+   "albedo": "liftfloor_sl_4157d_albedo.jpg",
+   "normal": "liftfloor_sl_4157d_normal.jpg",
+   "mask": "liftfloor_sl_4157d_mask.png"
+  }
+ },
+ {
+  "id": "liftfloor_sl_4182d",
+  "name": "SL-4182D мрамор: эмперадор, ромб в квадрате",
+  "category": "lift",
+  "source": "procedural:tools/lifts/textures/floors.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 1024,
+  "folder": "Materials/liftfloor_sl_4182d",
+  "textures": {
+   "albedo": "liftfloor_sl_4182d_albedo.jpg",
+   "normal": "liftfloor_sl_4182d_normal.jpg",
+   "mask": "liftfloor_sl_4182d_mask.png"
+  }
+ },
+ {
+  "id": "liftfloor_sl_4028p",
+  "name": "SL-4028P ПВХ узор (по фото SL-1036)",
+  "category": "lift",
+  "source": "procedural:tools/lifts/textures/floors.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 1024,
+  "folder": "Materials/liftfloor_sl_4028p",
+  "textures": {
+   "albedo": "liftfloor_sl_4028p_albedo.jpg",
+   "normal": "liftfloor_sl_4028p_normal.jpg",
+   "mask": "liftfloor_sl_4028p_mask.png"
+  }
+ },
+ {
+  "id": "liftfloor_sl_4017p",
+  "name": "SL-4017P ПВХ: серая крошка (по фото SL-1072)",
+  "category": "lift",
+  "source": "procedural:tools/lifts/textures/floors.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 1024,
+  "folder": "Materials/liftfloor_sl_4017p",
+  "textures": {
+   "albedo": "liftfloor_sl_4017p_albedo.jpg",
+   "normal": "liftfloor_sl_4017p_normal.jpg",
+   "mask": "liftfloor_sl_4017p_mask.png"
+  }
+ },
+ {
+  "id": "liftfloor_sl_4012p",
+  "name": "SL-4012P ПВХ узор (по фото SL-1095)",
+  "category": "lift",
+  "source": "procedural:tools/lifts/textures/floors.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 1024,
+  "folder": "Materials/liftfloor_sl_4012p",
+  "textures": {
+   "albedo": "liftfloor_sl_4012p_albedo.jpg",
+   "normal": "liftfloor_sl_4012p_normal.jpg",
+   "mask": "liftfloor_sl_4012p_mask.png"
+  }
+ },
+ {
+  "id": "liftfloor_sl_4072d",
+  "name": "SL-4072D мрамор (по фото SL-1109)",
+  "category": "lift",
+  "source": "procedural:tools/lifts/textures/floors.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 1024,
+  "folder": "Materials/liftfloor_sl_4072d",
+  "textures": {
+   "albedo": "liftfloor_sl_4072d_albedo.jpg",
+   "normal": "liftfloor_sl_4072d_normal.jpg",
+   "mask": "liftfloor_sl_4072d_mask.png"
+  }
+ },
+ {
+  "id": "liftfloor_sl_4150d",
+  "name": "SL-4150D мрамор (по фото SL-1135)",
+  "category": "lift",
+  "source": "procedural:tools/lifts/textures/floors.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 1024,
+  "folder": "Materials/liftfloor_sl_4150d",
+  "textures": {
+   "albedo": "liftfloor_sl_4150d_albedo.jpg",
+   "normal": "liftfloor_sl_4150d_normal.jpg",
+   "mask": "liftfloor_sl_4150d_mask.png"
+  }
+ },
+ {
+  "id": "liftfloor_sl_4082d",
+  "name": "SL-4082D мрамор (по фото SL-1136)",
+  "category": "lift",
+  "source": "procedural:tools/lifts/textures/floors.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 1024,
+  "folder": "Materials/liftfloor_sl_4082d",
+  "textures": {
+   "albedo": "liftfloor_sl_4082d_albedo.jpg",
+   "normal": "liftfloor_sl_4082d_normal.jpg",
+   "mask": "liftfloor_sl_4082d_mask.png"
+  }
+ },
+ {
+  "id": "liftfloor_sl_4039d",
+  "name": "SL-4039D мрамор с медальоном (по фото SL-1137)",
+  "category": "lift",
+  "source": "procedural:tools/lifts/textures/floors.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 1024,
+  "folder": "Materials/liftfloor_sl_4039d",
+  "textures": {
+   "albedo": "liftfloor_sl_4039d_albedo.jpg",
+   "normal": "liftfloor_sl_4039d_normal.jpg",
+   "mask": "liftfloor_sl_4039d_mask.png"
+  }
+ },
+ {
+  "id": "liftfloor_sl_4036p",
+  "name": "SL-4036P ПВХ узор (условно, на фото SL-1130 не виден)",
+  "category": "lift",
+  "source": "procedural:tools/lifts/textures/floors.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 1024,
+  "folder": "Materials/liftfloor_sl_4036p",
+  "textures": {
+   "albedo": "liftfloor_sl_4036p_albedo.jpg",
+   "normal": "liftfloor_sl_4036p_normal.jpg",
+   "mask": "liftfloor_sl_4036p_mask.png"
+  }
+ }
+]

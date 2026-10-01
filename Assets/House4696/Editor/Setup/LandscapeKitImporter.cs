@@ -21,7 +21,8 @@ namespace House4696.Setup
     {
         const string Source = AssetPaths.Root + "/External/Landscape";
         const string Out = AssetPaths.Generated + "/Landscape";
-        const string KitPath = Out + "/LandscapeKit.asset";
+        /// <summary>Under Resources: the kit loads only when a site needs it (<see cref="LandscapeKit.Load"/>).</summary>
+        const string KitPath = Out + "/Resources/" + LandscapeKit.ResourceName + ".asset";
 
         /// <summary>
         /// LODGroup screen heights (fraction of the screen height where each LOD ends) by kind and LOD count. Plants:
@@ -91,12 +92,6 @@ namespace House4696.Setup
             kit.FallsMaterial = WaterMaterial("M_StreamFalls", null, new Color(0.86f, 0.9f, 0.9f, 0.78f), 0.6f, 1.0f, new Vector2(2f, 0.5f), 0.7f);
 
             EditorUtility.SetDirty(kit);
-            var content = AssetDatabase.LoadAssetAtPath<HouseContent>(AssetPaths.Root + "/Resources/" + HouseContent.ResourceName + ".asset");
-            if (content != null)
-            {
-                content.Landscape = kit;
-                EditorUtility.SetDirty(content);
-            }
             AssetDatabase.SaveAssets();
             LandscapeKit.Reset();
             return $"[Landscape] {kit.Groups.Count} groups, {variants} variants, {materials.Count} materials, {kit.Layers.Count} terrain layers → {KitPath}";

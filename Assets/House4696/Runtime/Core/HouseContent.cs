@@ -32,8 +32,6 @@ namespace House4696.Core
         public House4696.Lighting.ProbeBakeResources BakedGI;
         [Tooltip("External PBR materials and furniture models (Poly Haven scans, Blender models).")]
         public ExternalCatalog External;
-        [Tooltip("Landscape kit: rocks, plants, ground cover and terrain layers of the site generator.")]
-        public LandscapeKit Landscape;
 
         Dictionary<string, Material> _byName;
 

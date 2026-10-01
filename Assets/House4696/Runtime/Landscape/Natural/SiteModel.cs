@@ -55,6 +55,27 @@ namespace House4696.Landscape.Natural
             public Polyline2 Line;
         }
 
+        /// <summary>
+        /// A hard surface graded into the ground: a plane fitted to the ground under it (a drive follows the slope, a
+        /// patio by the house sits at its floor), or level at <see cref="SiteAreaDef.Y"/>.
+        /// </summary>
+        public sealed class HardArea
+        {
+            public SiteAreaDef Def;
+            public Vector2[] Outline;
+            public Rect Bounds;
+            public Vector2 Centre;
+            /// <summary>Surface height at the centre and its slope along x and z (m per m).</summary>
+            public float Level, SlopeX, SlopeZ;
+            public float HeightAt(float x, float z) => Level + SlopeX * (x - Centre.x) + SlopeZ * (z - Centre.y);
+        }
+
+        public sealed class Hedge
+        {
+            public SiteHedgeDef Def;
+            public Rect Bounds;
+        }
+
         public readonly SiteDef Def;
         public readonly TerrainDef Terrain;
         public readonly PlantingDef Planting;
@@ -66,6 +87,11 @@ namespace House4696.Landscape.Natural
         public readonly Rect Area;
         public readonly List<Stream> Streams = new List<Stream>();
         public readonly List<Path> Paths = new List<Path>();
+        public readonly List<HardArea> Areas = new List<HardArea>();
+        public readonly List<Hedge> Hedges = new List<Hedge>();
+        /// <summary>Styles that keep the open ground as lawn (flowers only in explicit beds and borders).</summary>
+        readonly bool _lawnGround, _border;
+        public bool LawnGround => _lawnGround;
 
         readonly Vector2 _slopeDir;
         readonly float _slopeLo, _slopeHi;
@@ -79,15 +105,23 @@ namespace House4696.Landscape.Natural
         readonly int[] _streamIdx;         // stream index * 1e6 + point index
         readonly float[] _pathDist;
 
-        public SiteModel(SiteDef def, Rect house, float margin = 16f)
+        /// <summary>The plot of a site: its <c>plot</c>, or the house footprint plus 18 m.</summary>
+        public static Rect PlotOf(SiteDef def, Rect house) =>
+            def.Plot != null && def.Plot.Length == 4
+                ? Rect.MinMaxRect(def.Plot[0], def.Plot[1], def.Plot[2], def.Plot[3])
+                : Rect.MinMaxRect(house.xMin - 18f, house.yMin - 18f, house.xMax + 18f, house.yMax + 18f);
+
+        /// <param name="extraPaths">Paths the generator adds itself (the approach to the entrance).</param>
+        public SiteModel(SiteDef def, Rect house, float margin = 16f, IEnumerable<SitePathDef> extraPaths = null)
         {
             Def = def;
             Terrain = def.Terrain ?? new TerrainDef();
             Planting = def.Planting ?? new PlantingDef();
+            string style = string.IsNullOrEmpty(Planting.Style) ? "perennial" : Planting.Style;
+            _lawnGround = style == "garden" || style == "lawn" || style == "none";
+            _border = style == "garden";
             House = house;
-            Plot = def.Plot != null && def.Plot.Length == 4
-                ? Rect.MinMaxRect(def.Plot[0], def.Plot[1], def.Plot[2], def.Plot[3])
-                : Rect.MinMaxRect(house.xMin - 18f, house.yMin - 18f, house.xMax + 18f, house.yMax + 18f);
+            Plot = PlotOf(def, house);
             // square (the terrain heightmap is square), centred on the plot
             float side = Mathf.Max(Plot.width, Plot.height) + 2f * margin;
             Area = new Rect(Plot.center.x - side / 2f, Plot.center.y - side / 2f, side, side);
@@ -118,14 +152,69 @@ namespace House4696.Landscape.Natural
                 Stamp(st.Line, StreamReach, _streamDist, _streamIdx, si * 1000000);
                 si++;
             }
-            foreach (var pd in def.Paths)
+            var allPaths = new List<SitePathDef>(def.Paths);
+            if (extraPaths != null) allPaths.AddRange(extraPaths);
+            foreach (var pd in allPaths)
             {
                 if (pd.Path == null || pd.Path.Count < 2) continue;
                 var p = new Path { Def = pd, Line = new Polyline2(pd.Path, 0.1f) };
                 Paths.Add(p);
                 StampPath(p);
             }
+            foreach (var ad in def.Areas)
+            {
+                if (ad.Outline == null || ad.Outline.Count < 3) continue;
+                var o = Generation.Polygon.CounterClockwise(ad.Outline).ToArray();
+                var b = Generation.Polygon.Bounds(o);
+                var area = new HardArea { Def = ad, Outline = o, Bounds = b, Centre = Generation.Polygon.Centroid(o) };
+                if (ad.Y.HasValue) area.Level = ad.Y.Value;
+                else FitPlane(area);
+                Areas.Add(area);
+            }
+            foreach (var hd in def.Hedges)
+            {
+                if (hd.Path == null || hd.Path.Count < 2) continue;
+                var b = Generation.Polygon.Bounds(hd.Path);
+                float g = hd.Width * 0.5f + 0.3f;
+                Hedges.Add(new Hedge { Def = hd, Bounds = Rect.MinMaxRect(b.xMin - g, b.yMin - g, b.xMax + g, b.yMax + g) });
+            }
             for (int i = 0; i < Streams.Count; i++) BuildPools(Streams[i], i);
+        }
+
+        /// <summary>Plan distance from a point to a polygon (0 inside).</summary>
+        public static float DistanceToPolygon(IList<Vector2> poly, Vector2 p)
+        {
+            if (Generation.Polygon.Contains(poly, p)) return 0f;
+            float best = float.MaxValue;
+            for (int i = 0; i < poly.Count; i++)
+                best = Mathf.Min(best, Generation.StairGeometry.DistanceToSegment(p, poly[i], poly[(i + 1) % poly.Count]));
+            return best;
+        }
+
+        /// <summary>The area at a point (null: none).</summary>
+        public HardArea AreaAt(float x, float z, float margin = 0f)
+        {
+            var p = new Vector2(x, z);
+            foreach (var a in Areas)
+            {
+                if (x < a.Bounds.xMin - margin || x > a.Bounds.xMax + margin || z < a.Bounds.yMin - margin || z > a.Bounds.yMax + margin) continue;
+                if (margin <= 0f ? Generation.Polygon.Contains(a.Outline, p) : DistanceToPolygon(a.Outline, p) <= margin) return a;
+            }
+            return null;
+        }
+
+        /// <summary>Is the point within <paramref name="margin"/> of a hedge's body?</summary>
+        public bool NearHedge(float x, float z, float margin)
+        {
+            var p = new Vector2(x, z);
+            foreach (var h in Hedges)
+            {
+                if (!h.Bounds.Contains(p)) continue;
+                var path = h.Def.Path;
+                for (int i = 0; i + 1 < path.Count; i++)
+                    if (Generation.StairGeometry.DistanceToSegment(p, path[i], path[i + 1]) < h.Def.Width * 0.5f + margin) return true;
+            }
+            return false;
         }
 
         static float[] Fill(float[] a, float v) { for (int i = 0; i < a.Length; i++) a[i] = v; return a; }
@@ -190,13 +279,62 @@ namespace House4696.Landscape.Natural
         }
 
         /// <summary>Natural ground with the house pad levelled at grade 0.</summary>
-        public float Ground(float x, float z)
+        float PadGround(float x, float z)
         {
             float h = Natural(x, z);
             float dx = Mathf.Max(House.xMin - 1.5f - x, 0f, x - House.xMax - 1.5f);
             float dz = Mathf.Max(House.yMin - 1.5f - z, 0f, z - House.yMax - 1.5f);
             float t = Smooth(0f, 5f, Mathf.Sqrt(dx * dx + dz * dz));
             return Mathf.Lerp(0f, h, t);
+        }
+
+        /// <summary>Least-squares plane through the ground under an area (sampled on a grid inside it).</summary>
+        void FitPlane(HardArea a)
+        {
+            var b = a.Bounds;
+            float step = Mathf.Max(0.5f, Mathf.Max(b.width, b.height) / 16f);
+            double n = 0, sx = 0, sz = 0, sh = 0, sxx = 0, szz = 0, sxz = 0, sxh = 0, szh = 0;
+            for (float x = b.xMin + step * 0.5f; x < b.xMax; x += step)
+            for (float z = b.yMin + step * 0.5f; z < b.yMax; z += step)
+            {
+                if (!Generation.Polygon.Contains(a.Outline, new Vector2(x, z))) continue;
+                double u = x - a.Centre.x, v = z - a.Centre.y, h = PadGround(x, z);
+                n++; sx += u; sz += v; sh += h; sxx += u * u; szz += v * v; sxz += u * v; sxh += u * h; szh += v * h;
+            }
+            if (n < 3) { a.Level = PadGround(a.Centre.x, a.Centre.y); return; }
+            // normal equations of h = c + p·u + q·v
+            double[,] m = { { n, sx, sz }, { sx, sxx, sxz }, { sz, sxz, szz } };
+            double[] r = { sh, sxh, szh };
+            double det = Det(m);
+            if (System.Math.Abs(det) < 1e-9) { a.Level = (float)(sh / n); return; }
+            double Solve(int col)
+            {
+                var k = (double[,])m.Clone();
+                for (int i = 0; i < 3; i++) k[i, col] = r[i];
+                return Det(k) / det;
+            }
+            a.Level = (float)Solve(0); a.SlopeX = (float)Solve(1); a.SlopeZ = (float)Solve(2);
+        }
+
+        static double Det(double[,] m) =>
+            m[0, 0] * (m[1, 1] * m[2, 2] - m[1, 2] * m[2, 1]) - m[0, 1] * (m[1, 0] * m[2, 2] - m[1, 2] * m[2, 0]) + m[0, 2] * (m[1, 0] * m[2, 1] - m[1, 1] * m[2, 0]);
+
+        /// <summary>Natural ground with the house pad levelled at grade 0 and the hard areas graded in.</summary>
+        public float Ground(float x, float z)
+        {
+            float h = PadGround(x, z);
+            const float blend = 3f;   // the ground eases into a paved area over this distance
+            HardArea nearest = null;
+            float nd = blend;
+            var p = new Vector2(x, z);
+            foreach (var a in Areas)
+            {
+                if (x < a.Bounds.xMin - blend || x > a.Bounds.xMax + blend || z < a.Bounds.yMin - blend || z > a.Bounds.yMax + blend) continue;
+                float d = DistanceToPolygon(a.Outline, p);
+                if (d <= 0f) return a.HeightAt(x, z);          // on the area: its surface (adjacent areas do not fight)
+                if (d < nd) { nd = d; nearest = a; }
+            }
+            return nearest == null ? h : Mathf.Lerp(nearest.HeightAt(x, z), h, Smooth(0.3f, blend, nd));
         }
 
         // ------------------------------------------------------------------ streams
@@ -339,13 +477,18 @@ namespace House4696.Landscape.Natural
             if (stream && d < hw + 0.15f) return Zone.Water;
             float pd = PathDistance(x, z);
             if (pd < 0f) return Zone.Path;
+            var area = AreaAt(x, z);
+            if (area != null) return area.Def.Type == "lawn" ? Zone.Lawn : Zone.Path;
+            if (NearHedge(x, z, 0.15f)) return Zone.Path;
             if (!InPlot(x, z, 0.3f)) return Zone.Outside;
             if (BedAt(x, z) >= 0) return stream && d < hw + 0.75f ? Zone.Rim : Zone.Bed;
             float lawn = Planting.Lawn * (0.7f + 0.6f * lawnNoise);
-            if (pd < lawn || InHouse(x, z, 2.2f)) return Zone.Lawn;
+            if (pd < lawn || InHouse(x, z, 2.2f) || AreaAt(x, z, 1.2f) != null) return Zone.Lawn;
             if (stream && d < hw + 0.75f) return Zone.Rim;
             if (stream && d < hw + 2.4f) return Zone.Bank;
-            if (Mathf.Min(Plot.xMax - x, Plot.yMax - z, Mathf.Min(x - Plot.xMin, z - Plot.yMin)) < 3f) return Zone.Back;
+            bool back = Mathf.Min(Plot.xMax - x, Plot.yMax - z, Mathf.Min(x - Plot.xMin, z - Plot.yMin)) < 3f;
+            if (_lawnGround) return back && _border ? Zone.Back : Zone.Lawn;
+            if (back) return Zone.Back;
             return Zone.Bed;
         }
 

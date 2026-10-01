@@ -1,0 +1,116 @@
+[
+ {
+  "id": "liftdoor_sl_7061",
+  "name": "SL-7061 дверь: зеркало, травление (розетка, полосы)",
+  "category": "lift",
+  "source": "procedural:tools/lifts/textures/doors.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 1024,
+  "folder": "Materials/liftdoor_sl_7061",
+  "textures": {
+   "albedo": "liftdoor_sl_7061_albedo.jpg",
+   "normal": "liftdoor_sl_7061_normal.jpg",
+   "mask": "liftdoor_sl_7061_mask.png"
+  },
+  "maskSize": 1024
+ },
+ {
+  "id": "liftdoor_sl_7105",
+  "name": "SL-7105 дверь: розовое золото, зеркало, травление",
+  "category": "lift",
+  "source": "procedural:tools/lifts/textures/doors.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 1024,
+  "folder": "Materials/liftdoor_sl_7105",
+  "textures": {
+   "albedo": "liftdoor_sl_7105_albedo.jpg",
+   "normal": "liftdoor_sl_7105_normal.jpg",
+   "mask": "liftdoor_sl_7105_mask.png"
+  },
+  "maskSize": 1024
+ },
+ {
+  "id": "liftdoor_sl_7001",
+  "name": "SL-7001 дверь: зеркало, травление (растительный орнамент)",
+  "category": "lift",
+  "source": "procedural:tools/lifts/textures/doors.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 1024,
+  "folder": "Materials/liftdoor_sl_7001",
+  "textures": {
+   "albedo": "liftdoor_sl_7001_albedo.jpg",
+   "normal": "liftdoor_sl_7001_normal.jpg",
+   "mask": "liftdoor_sl_7001_mask.png"
+  },
+  "maskSize": 1024
+ },
+ {
+  "id": "liftdoor_sl_7014",
+  "name": "SL-7014 дверь: зеркало, травление (полосы)",
+  "category": "lift",
+  "source": "procedural:tools/lifts/textures/doors.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 1024,
+  "folder": "Materials/liftdoor_sl_7014",
+  "textures": {
+   "albedo": "liftdoor_sl_7014_albedo.jpg",
+   "normal": "liftdoor_sl_7014_normal.jpg",
+   "mask": "liftdoor_sl_7014_mask.png"
+  },
+  "maskSize": 1024
+ },
+ {
+  "id": "liftdoor_sl_7037",
+  "name": "SL-7037 дверь: мультипроцесс титана (арка)",
+  "category": "lift",
+  "source": "procedural:tools/lifts/textures/doors.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 1024,
+  "folder": "Materials/liftdoor_sl_7037",
+  "textures": {
+   "albedo": "liftdoor_sl_7037_albedo.jpg",
+   "normal": "liftdoor_sl_7037_normal.jpg",
+   "mask": "liftdoor_sl_7037_mask.png"
+  },
+  "maskSize": 1024
+ },
+ {
+  "id": "liftdoor_sl_8055",
+  "name": "SL-8055 дверь: цветной металл, бук",
+  "category": "lift",
+  "source": "procedural:tools/lifts/textures/doors.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 1024,
+  "folder": "Materials/liftdoor_sl_8055",
+  "textures": {
+   "albedo": "liftdoor_sl_8055_albedo.jpg",
+   "normal": "liftdoor_sl_8055_normal.jpg",
+   "mask": "liftdoor_sl_8055_mask.png"
+  },
+  "maskSize": 1024
+ }
+]

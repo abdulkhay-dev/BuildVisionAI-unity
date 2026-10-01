@@ -1,0 +1,211 @@
+[
+ {
+  "id": "liftwall_sl_1134_back",
+  "name": "SL-1134 задняя стенка",
+  "category": "lift",
+  "source": "procedural:tools/lifts/textures/walls.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 1024,
+  "folder": "Materials/liftwall_sl_1134_back",
+  "textures": {
+   "albedo": "liftwall_sl_1134_back_albedo.jpg",
+   "normal": "liftwall_sl_1134_back_normal.jpg",
+   "mask": "liftwall_sl_1134_back_mask.png"
+  },
+  "maskSize": 1024
+ },
+ {
+  "id": "liftwall_sl_1134_side",
+  "name": "SL-1134 боковая стенка",
+  "category": "lift",
+  "source": "procedural:tools/lifts/textures/walls.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 1024,
+  "folder": "Materials/liftwall_sl_1134_side",
+  "textures": {
+   "albedo": "liftwall_sl_1134_side_albedo.jpg",
+   "normal": "liftwall_sl_1134_side_normal.jpg",
+   "mask": "liftwall_sl_1134_side_mask.png"
+  },
+  "maskSize": 1024
+ },
+ {
+  "id": "liftwall_sl_1095_back",
+  "name": "SL-1095 задняя стенка",
+  "category": "lift",
+  "source": "procedural:tools/lifts/textures/walls.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 1024,
+  "folder": "Materials/liftwall_sl_1095_back",
+  "textures": {
+   "albedo": "liftwall_sl_1095_back_albedo.jpg",
+   "normal": "liftwall_sl_1095_back_normal.jpg",
+   "mask": "liftwall_sl_1095_back_mask.png"
+  },
+  "maskSize": 1024
+ },
+ {
+  "id": "liftwall_sl_1095_side",
+  "name": "SL-1095 боковая стенка",
+  "category": "lift",
+  "source": "procedural:tools/lifts/textures/walls.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 1024,
+  "folder": "Materials/liftwall_sl_1095_side",
+  "textures": {
+   "albedo": "liftwall_sl_1095_side_albedo.jpg",
+   "normal": "liftwall_sl_1095_side_normal.jpg",
+   "mask": "liftwall_sl_1095_side_mask.png"
+  },
+  "maskSize": 1024
+ },
+ {
+  "id": "liftwall_sl_1109_back",
+  "name": "SL-1109 задняя стенка",
+  "category": "lift",
+  "source": "procedural:tools/lifts/textures/walls.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 1024,
+  "folder": "Materials/liftwall_sl_1109_back",
+  "textures": {
+   "albedo": "liftwall_sl_1109_back_albedo.jpg",
+   "normal": "liftwall_sl_1109_back_normal.jpg",
+   "mask": "liftwall_sl_1109_back_mask.png"
+  },
+  "maskSize": 1024
+ },
+ {
+  "id": "liftwall_sl_1109_side",
+  "name": "SL-1109 боковая стенка",
+  "category": "lift",
+  "source": "procedural:tools/lifts/textures/walls.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 1024,
+  "folder": "Materials/liftwall_sl_1109_side",
+  "textures": {
+   "albedo": "liftwall_sl_1109_side_albedo.jpg",
+   "normal": "liftwall_sl_1109_side_normal.jpg",
+   "mask": "liftwall_sl_1109_side_mask.png"
+  },
+  "maskSize": 1024
+ },
+ {
+  "id": "liftwall_sl_1135_back",
+  "name": "SL-1135 задняя стенка",
+  "category": "lift",
+  "source": "procedural:tools/lifts/textures/walls.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 1024,
+  "folder": "Materials/liftwall_sl_1135_back",
+  "textures": {
+   "albedo": "liftwall_sl_1135_back_albedo.jpg",
+   "normal": "liftwall_sl_1135_back_normal.jpg",
+   "mask": "liftwall_sl_1135_back_mask.png"
+  },
+  "maskSize": 1024
+ },
+ {
+  "id": "liftwall_sl_1135_side",
+  "name": "SL-1135 боковая стенка",
+  "category": "lift",
+  "source": "procedural:tools/lifts/textures/walls.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 1024,
+  "folder": "Materials/liftwall_sl_1135_side",
+  "textures": {
+   "albedo": "liftwall_sl_1135_side_albedo.jpg",
+   "normal": "liftwall_sl_1135_side_normal.jpg",
+   "mask": "liftwall_sl_1135_side_mask.png"
+  },
+  "maskSize": 1024
+ },
+ {
+  "id": "liftwall_sl_1136_back",
+  "name": "SL-1136 задняя стенка",
+  "category": "lift",
+  "source": "procedural:tools/lifts/textures/walls.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 1024,
+  "folder": "Materials/liftwall_sl_1136_back",
+  "textures": {
+   "albedo": "liftwall_sl_1136_back_albedo.jpg",
+   "normal": "liftwall_sl_1136_back_normal.jpg",
+   "mask": "liftwall_sl_1136_back_mask.png"
+  },
+  "maskSize": 1024
+ },
+ {
+  "id": "liftwall_sl_1137_back",
+  "name": "SL-1137 задняя стенка",
+  "category": "lift",
+  "source": "procedural:tools/lifts/textures/walls.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 1024,
+  "folder": "Materials/liftwall_sl_1137_back",
+  "textures": {
+   "albedo": "liftwall_sl_1137_back_albedo.jpg",
+   "normal": "liftwall_sl_1137_back_normal.jpg",
+   "mask": "liftwall_sl_1137_back_mask.png"
+  },
+  "maskSize": 1024
+ },
+ {
+  "id": "liftwall_sl_1137_side",
+  "name": "SL-1137 боковая стенка",
+  "category": "lift",
+  "source": "procedural:tools/lifts/textures/walls.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 1024,
+  "folder": "Materials/liftwall_sl_1137_side",
+  "textures": {
+   "albedo": "liftwall_sl_1137_side_albedo.jpg",
+   "normal": "liftwall_sl_1137_side_normal.jpg",
+   "mask": "liftwall_sl_1137_side_mask.png"
+  },
+  "maskSize": 1024
+ }
+]

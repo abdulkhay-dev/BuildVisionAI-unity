@@ -162,6 +162,25 @@ namespace House4696.Generation
                 if (hit != null)
                     W(p, $"над лестницей меньше 2 м до перекрытия: пол комнаты '{hit}' этажа '{toId}' накрывает марш — вырежи проём в её контуре");
             }
+            foreach (var l in d.Lifts)
+            {
+                string p = $"lifts/{l.Id}";
+                if (string.IsNullOrEmpty(l.Id)) E(p, "у лифта нет id");
+                if (l.From != null) Lvl(l.From, p);
+                if (l.To != null) Lvl(l.To, p);
+                if (l.Parked != null) Lvl(l.Parked, p);
+                if (l.Skip != null) foreach (var sk in l.Skip) Lvl(sk, p);
+                if (House4696.Lifts.LiftCatalog.Resolve(l, out var liftError) == null) { E(p, liftError); continue; }
+                if (l.Shaft != null && l.Shaft != "concrete" && l.Shaft != "glass" && l.Shaft != "none")
+                    E(p, $"shaft: \"concrete\", \"glass\" или \"none\", указано \"{l.Shaft}\"");
+                if (l.Side != null && l.Side != "left" && l.Side != "right") E(p, $"side: \"left\" или \"right\", указано \"{l.Side}\"");
+                if (l.Cabin != null && House4696.Lifts.LiftCatalog.Cabin(l.Cabin) == null)
+                    E(p, $"нет кабины '{l.Cabin}' — дизайны кабин см. house_lifts");
+                if (l.Door != null && l.Door != "stainless" && House4696.Lifts.LiftCatalog.LandingDoor(l.Door) == null)
+                    E(p, $"нет этажной двери '{l.Door}' — двери см. house_lifts");
+                if (l.From != null && l.To != null && levels.TryGetValue(l.From, out var lf) && levels.TryGetValue(l.To, out var lt) && lt.Elevation <= lf.Elevation)
+                    E(p, $"to '{l.To}' должен быть выше from '{l.From}'");
+            }
             foreach (var e in d.Elements)
             {
                 if (e.Type == ElementType.Railing && e.Path.Count < 2) E($"elements/{e.Id}", "ограждению нужен путь из 2+ точек");
@@ -181,11 +200,15 @@ namespace House4696.Generation
             foreach (var l in d.Lights)
                 if (l.Level != null) Lvl(l.Level, $"lights/{l.Id}");
             if (d.Site != null && d.Site.Landscape == LandscapePreset.Natural) Site(d, E, W);
+            else if (d.Site != null && d.Site.Areas.Count + d.Site.Paths.Count + d.Site.Objects.Count + d.Site.Hedges.Count + d.Site.Beds.Count + d.Site.Streams.Count > 0)
+                W("site/landscape", $"площадки, дорожки, объекты, изгороди, клумбы и ручьи строятся только на участке landscape: natural (сейчас {d.Site.Landscape.ToString().ToLowerInvariant()}) — house_site set {{\"landscape\": \"natural\"}}");
             return list;
         }
 
-        static readonly string[] Styles = { "perennial", "meadow", "shade", "rock", "none" };
-        static readonly string[] ObjectTypes = { "bridge", "stone_lantern", "garden_lamp", "boulder", "tree" };
+        static readonly string[] Styles = { "garden", "lawn", "perennial", "meadow", "shade", "rock", "none" };
+        static readonly string[] ObjectTypes = { "bridge", "stone_lantern", "garden_lamp", "bollard", "bench", "boulder", "shrub", "tree" };
+        static readonly string[] PathStyles = { "stepping", "paving", "gravel", "asphalt", "deck" };
+        static readonly string[] AreaTypes = { "paving", "asphalt", "parking", "gravel", "deck", "rubber", "lawn" };
         static readonly string[] TreeSpecies = { "oak", "birch", "spruce", "maple_red" };
         static readonly string[] Sides = { "north", "east", "south", "west" };
 
@@ -248,7 +271,23 @@ namespace House4696.Generation
                 string p = $"site/paths/{pa.Id}";
                 if (!string.IsNullOrEmpty(pa.Id) && !ids.Add(pa.Id)) E(p, "повторяющийся id");
                 if (pa.Path == null || pa.Path.Count < 2) E(p, "нужно минимум 2 точки path");
-                if (!string.IsNullOrEmpty(pa.Style) && pa.Style != "stepping") W(p, $"стиль '{pa.Style}' пока не поддерживается (stepping)");
+                if (!string.IsNullOrEmpty(pa.Style) && System.Array.IndexOf(PathStyles, pa.Style) < 0) E(p, $"стиль '{pa.Style}' неизвестен: {string.Join(", ", PathStyles)}");
+                if (pa.Width < 0.4f || pa.Width > 8f) W(p, $"ширина {pa.Width:0.#} м — дорожка 0.8–1.5, проезд 3–4");
+                if (pa.Path != null)
+                    for (int i = 0; i + 1 < pa.Path.Count; i++)
+                        if (Crosses(pa.Path[i], pa.Path[i + 1], hx0, hz0, hx1, hz1, house, 0.2f))
+                        { W(p, $"дорожка проходит сквозь дом (отрезок {i}: [{pa.Path[i].x:0.#}, {pa.Path[i].y:0.#}] → [{pa.Path[i + 1].x:0.#}, {pa.Path[i + 1].y:0.#}]) — обведи её вокруг"); break; }
+                // over a stream only on a bridge
+                if (pa.Path != null)
+                    foreach (var st in s.Streams)
+                    {
+                        if (st.Path == null) continue;
+                        var x = FirstCrossing(pa.Path, st.Path);
+                        if (x == null) continue;
+                        bool bridged = s.Objects.Exists(o => o.Type == "bridge" && o.To != null &&
+                            StairGeometry.DistanceToSegment(x.Value, o.At, o.To.Value) < 2.5f);
+                        if (!bridged) W(p, $"дорожка пересекает ручей '{st.Id}' у [{x.Value.x:0.#}, {x.Value.y:0.#}] без моста — добавь objects bridge с at/to на берегах");
+                    }
             }
             foreach (var b in s.Beds)
             {
@@ -257,13 +296,58 @@ namespace House4696.Generation
                 if (!string.IsNullOrEmpty(b.Style) && System.Array.IndexOf(Styles, b.Style) < 0) E(p, $"стиль '{b.Style}' неизвестен: {string.Join(", ", Styles)}");
             }
             ids.Clear();
+            foreach (var a in s.Areas)
+            {
+                string p = $"site/areas/{a.Id}";
+                if (!string.IsNullOrEmpty(a.Id) && !ids.Add(a.Id)) E(p, "повторяющийся id");
+                if (a.Outline == null || a.Outline.Count < 3) { E(p, "нужен outline минимум из 3 точек"); continue; }
+                if (!string.IsNullOrEmpty(a.Type) && System.Array.IndexOf(AreaTypes, a.Type) < 0) E(p, $"type '{a.Type}' неизвестен: {string.Join(", ", AreaTypes)}");
+                if (SelfIntersects(a.Outline)) E(p, "контур самопересекается");
+                var ab = Polygon.Bounds(a.Outline);
+                if (house && ab.xMin < hx1 - 0.3f && ab.xMax > hx0 + 0.3f && ab.yMin < hz1 - 0.3f && ab.yMax > hz0 + 0.3f)
+                {
+                    bool inside = false;
+                    foreach (var q in a.Outline) if (InHouse(q, -0.3f)) { inside = true; break; }
+                    if (inside || Polygon.Contains(a.Outline, new Vector2((hx0 + hx1) * 0.5f, (hz0 + hz1) * 0.5f)))
+                        W(p, "площадка заходит под дом — начинай её у наружной стены");
+                }
+                if (a.Type == "parking")
+                {
+                    float min = Mathf.Min(ab.width, ab.height);
+                    if (min < 5f) W(p, $"парковка шириной {min:0.#} м — место 2.5×5 м, для ряда с проездом нужно ≥ 11 м");
+                }
+            }
+            ids.Clear();
+            foreach (var h in s.Hedges)
+            {
+                string p = $"site/hedges/{h.Id}";
+                if (!string.IsNullOrEmpty(h.Id) && !ids.Add(h.Id)) E(p, "повторяющийся id");
+                if (h.Path == null || h.Path.Count < 2) { E(p, "нужно минимум 2 точки path"); continue; }
+                if (h.Height < 0.3f || h.Height > 3f) W(p, $"высота {h.Height:0.#} м — бордюр 0.4–0.6, изгородь 1–2");
+                for (int i = 0; i + 1 < h.Path.Count; i++)
+                    if (Crosses(h.Path[i], h.Path[i + 1], hx0, hz0, hx1, hz1, house, 0f)) { W(p, "изгородь проходит сквозь дом"); break; }
+            }
+            ids.Clear();
             foreach (var o in s.Objects)
             {
                 string p = $"site/objects/{o.Id}";
                 if (!string.IsNullOrEmpty(o.Id) && !ids.Add(o.Id)) E(p, "повторяющийся id");
                 if (System.Array.IndexOf(ObjectTypes, o.Type) < 0) { E(p, $"type '{o.Type}' неизвестен: {string.Join(", ", ObjectTypes)}"); continue; }
+                if (o.Path != null && o.Path.Count > 0)
+                {
+                    if (o.Path.Count < 2) E(p, "ряд: path — минимум 2 точки");
+                    if (o.Spacing < 0.5f) E(p, $"ряд: spacing {o.Spacing:0.##} м — слишком часто");
+                    if (o.Type == "bridge") E(p, "мост не ставится рядом (path) — только at/to");
+                }
+            }
+            foreach (var o in SiteObjectDef.Expand(s.Objects))
+            {
+                string p = $"site/objects/{o.Id}";
+                if (System.Array.IndexOf(ObjectTypes, o.Type) < 0) continue;
                 if (!reach.Contains(o.At)) W(p, "стоит далеко за участком");
                 if (o.Type != "bridge" && InHouse(o.At, 0.3f)) E(p, "стоит внутри дома");
+                if (o.Type == "tree" && InHouse(o.At, 2.5f * o.Scale) && !InHouse(o.At, 0.3f))
+                    W(p, $"дерево в [{o.At.x:0.#}, {o.At.y:0.#}] ближе 2.5 м к стене — крона упрётся в дом, отодвинь на 3–5 м");
                 if (o.Type == "bridge")
                 {
                     if (o.To == null) E(p, "мост: нужны at и to (берега по разные стороны ручья)");
@@ -272,8 +356,38 @@ namespace House4696.Generation
                 if (o.Type == "tree" && !string.IsNullOrEmpty(o.Species) && System.Array.IndexOf(TreeSpecies, o.Species) < 0)
                     E(p, $"порода '{o.Species}' неизвестна: {string.Join(", ", TreeSpecies)}");
             }
+            if (!string.IsNullOrEmpty(s.Street) && System.Array.IndexOf(Sides, s.Street) < 0) E("site/street", $"сторона '{s.Street}' неизвестна: {string.Join(", ", Sides)}");
+            if (s.Approach != null && s.Approach != "auto" && s.Approach != "none") E("site/approach", "approach: auto или none");
             foreach (var f in s.Fence)
                 if (System.Array.IndexOf(Sides, f) < 0) E("site/fence", $"сторона '{f}' неизвестна: {string.Join(", ", Sides)}");
+        }
+
+        /// <summary>Does the segment pass through the house rectangle (shrunk by <paramref name="inset"/>)?</summary>
+        static bool Crosses(Vector2 a, Vector2 b, float x0, float z0, float x1, float z1, bool house, float inset)
+        {
+            if (!house) return false;
+            for (int k = 1; k < 20; k++)
+            {
+                var q = Vector2.Lerp(a, b, k / 20f);
+                if (q.x > x0 + inset && q.x < x1 - inset && q.y > z0 + inset && q.y < z1 - inset) return true;
+            }
+            return false;
+        }
+
+        /// <summary>First point where two polylines cross (null: they do not).</summary>
+        static Vector2? FirstCrossing(IList<Vector2> p, IList<Vector2> q)
+        {
+            for (int i = 0; i + 1 < p.Count; i++)
+            for (int j = 0; j + 1 < q.Count; j++)
+            {
+                Vector2 a = p[i], b = p[i + 1], c = q[j], d = q[j + 1];
+                Vector2 r = b - a, s = d - c;
+                float den = r.x * s.y - r.y * s.x;
+                if (Mathf.Abs(den) < 1e-6f) continue;
+                float t = ((c.x - a.x) * s.y - (c.y - a.y) * s.x) / den, u = ((c.x - a.x) * r.y - (c.y - a.y) * r.x) / den;
+                if (t >= 0f && t <= 1f && u >= 0f && u <= 1f) return a + r * t;
+            }
+            return null;
         }
 
         static string NextLevel(List<LevelDef> sorted, string id)

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using House4696.Core;
 using House4696.Catalog;
@@ -34,6 +35,7 @@ namespace House4696.Generation
         public readonly MaterialLibrary Lib;
         public readonly InteriorMaterials Interior;
         readonly Dictionary<string, Material> _map = new Dictionary<string, Material>();
+        readonly Dictionary<string, ExternalCatalog.MaterialEntry> _library = new Dictionary<string, ExternalCatalog.MaterialEntry>();
         readonly HashSet<string> _missing = new HashSet<string>();
 
         public MaterialResolver(MaterialLibrary lib, InteriorMaterials interior)
@@ -42,14 +44,15 @@ namespace House4696.Generation
             Collect(lib);
             Collect(interior); // interior names override (e.g. "glass", "soil")
             // library materials (PBR scans) by their catalogue ids; built-in names keep priority
+            // (entries, not materials: a library material loads when a house first asks for it)
             var external = ExternalCatalog.Load();
             if (external != null)
                 foreach (var e in external.Materials)
                 {
-                    if (e.Material == null) continue;
+                    if (string.IsNullOrEmpty(e.MaterialPath)) continue;
                     string k = Key(e.Id);
                     if (_map.ContainsKey(k)) Debug.LogWarning($"[House] library material '{e.Id}' clashes with a built-in name and is hidden");
-                    else _map[k] = e.Material;
+                    else _library[k] = e;
                 }
         }
 
@@ -120,10 +123,15 @@ namespace House4696.Generation
         Material Lookup(string key)
         {
             if (_map.TryGetValue(key, out var m)) return m;
-            if (Aliases.TryGetValue(key, out var alias) && _map.TryGetValue(alias, out m)) return m;
+            if (_library.TryGetValue(key, out var e)) return _map[key] = e.Material;
+            if (Aliases.TryGetValue(key, out var alias))
+            {
+                if (_map.TryGetValue(alias, out m)) return m;
+                if (_library.TryGetValue(alias, out e)) return _map[alias] = e.Material;
+            }
             return null;
         }
 
-        public IEnumerable<string> Names => _map.Keys;
+        public IEnumerable<string> Names => _map.Keys.Concat(_library.Keys).Distinct();
     }
 }

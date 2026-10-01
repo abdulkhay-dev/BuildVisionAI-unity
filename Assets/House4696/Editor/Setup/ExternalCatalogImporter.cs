@@ -19,6 +19,8 @@ namespace House4696.Setup
         const string Source = AssetPaths.Root + "/External";
         const string Out = AssetPaths.Generated + "/External";
         const string CatalogPath = Out + "/ExternalCatalog.asset";
+        /// <summary>Materials and prefabs: under Resources, loaded by path on first use (see <see cref="ExternalCatalog"/>).</summary>
+        const string Lib = Out + "/Resources/ExternalLibrary";
         /// <summary>Blender models face -Y; after the FBX axis conversion that is Unity +Z, the catalogue wants -Z.</summary>
         const float FrontYaw = 180f;
 
@@ -30,8 +32,8 @@ namespace House4696.Setup
             string manifestPath = Source + "/external.json";
             if (!File.Exists(manifestPath)) return "[External] no " + manifestPath + " — run tools/assets first";
             var manifest = JObject.Parse(File.ReadAllText(manifestPath));
-            AssetPaths.Ensure(Out + "/Materials");
-            AssetPaths.Ensure(Out + "/Prefabs");
+            AssetPaths.Ensure(Lib + "/Materials");
+            AssetPaths.Ensure(Lib + "/Prefabs");
             AssetDatabase.Refresh();
 
             var catalog = AssetDatabase.LoadAssetAtPath<ExternalCatalog>(CatalogPath);
@@ -62,7 +64,7 @@ namespace House4696.Setup
                     factors: m["factors"] as JObject, opacity: see ? 1f : 0.25f, maskMax: MaskMax(m));
                 catalog.Materials.Add(new ExternalCatalog.MaterialEntry
                 {
-                    Id = (string)m["id"], Name = (string)m["name"], Category = (string)m["category"], Material = mat, Neutral = (bool?)m["neutral"] ?? false,
+                    Id = (string)m["id"], Name = (string)m["name"], Category = (string)m["category"], Material = mat, MaterialPath = ResourcePath(mat), Neutral = (bool?)m["neutral"] ?? false,
                 });
             }
 
@@ -70,7 +72,7 @@ namespace House4696.Setup
                 catalog.Models.Add(ImportModel(m, catalog));
 
             // materials of renamed slots / removed entries
-            foreach (var guid in AssetDatabase.FindAssets("t:Material", new[] { Out + "/Materials" }))
+            foreach (var guid in AssetDatabase.FindAssets("t:Material", new[] { Lib + "/Materials" }))
             {
                 string p = AssetDatabase.GUIDToAssetPath(guid);
                 if (!_written.Contains(p)) AssetDatabase.DeleteAsset(p);
@@ -138,7 +140,7 @@ namespace House4696.Setup
                 }
                 own[slot] = new ExternalCatalog.Slot
                 {
-                    Name = slot, Own = mat, Default = (string)s["default"], UvMeters = (bool?)s["uvMeters"] ?? false,
+                    Name = slot, Own = mat, OwnPath = ResourcePath(mat), Default = (string)s["default"], UvMeters = (bool?)s["uvMeters"] ?? false,
                 };
             }
 
@@ -160,10 +162,23 @@ namespace House4696.Setup
                 mats[i] = slot.Own != null ? slot.Own : DefaultMaterial(catalog, slot.Default) ?? Fallback();
             }
             renderer.sharedMaterials = mats;
-            string prefabPath = $"{Out}/Prefabs/{id}.prefab";
+            string prefabPath = $"{Lib}/Prefabs/{id}.prefab";
             entry.Prefab = PrefabUtility.SaveAsPrefabAsset(root, prefabPath);
+            entry.PrefabPath = ResourcePath(entry.Prefab);
             Object.DestroyImmediate(root);
             return entry;
+        }
+
+        /// <summary>Resources.Load path of an asset under <see cref="Lib"/> (no extension), or null.</summary>
+        static string ResourcePath(Object asset)
+        {
+            if (asset == null) return null;
+            string p = AssetDatabase.GetAssetPath(asset);
+            const string marker = "/Resources/";
+            int i = p.IndexOf(marker, System.StringComparison.Ordinal);
+            if (i < 0) throw new System.InvalidOperationException($"[External] {p} is not under a Resources folder");
+            p = p.Substring(i + marker.Length);
+            return p.Substring(0, p.Length - Path.GetExtension(p).Length);
         }
 
         /// <summary>
@@ -179,7 +194,7 @@ namespace House4696.Setup
         static Material LitMaterial(string name, string folder, JObject tex, int maxSize, Vector2 tiling, bool cutout, bool transparent,
             Color emission, JObject factors = null, float opacity = 0.25f, int maskMax = 512)
         {
-            string path = $"{Out}/Materials/M_{name}.mat";
+            string path = $"{Lib}/Materials/M_{name}.mat";
             _written.Add(path);
             var shader = Shader.Find("Universal Render Pipeline/Lit");
             var m = AssetDatabase.LoadAssetAtPath<Material>(path);

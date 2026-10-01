@@ -112,7 +112,7 @@ namespace House4696.App
             float y0, y1;
             if (w.Kind == WallKind.Exterior)
             {
-                y0 = w.Bottom ?? (lowest == l ? 0f : l.Elevation - l.Slab);
+                y0 = w.Bottom ?? (lowest == l ? Mathf.Min(0f, l.Elevation - l.Slab) : l.Elevation - l.Slab);
                 y1 = w.Top ?? (above != null ? above.Elevation - above.Slab : l.Elevation + l.Height + 0.3f);
             }
             else

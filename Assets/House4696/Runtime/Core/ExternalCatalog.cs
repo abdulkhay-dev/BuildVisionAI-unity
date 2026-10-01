@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace House4696.Core
 {
@@ -8,6 +9,9 @@ namespace House4696.Core
     /// Library of external assets (CC0 scans from Poly Haven and models made in Blender): PBR materials that house
     /// documents name by id ("oak_planks", "velvet#6b4f3a") and furniture models placed as catalogue items. Built by the
     /// editor from Assets/House4696/External/external.json (House 46-96 → External → Import Catalog).
+    /// <para>Materials and prefabs live under Resources/ExternalLibrary and are referenced by path, not by object: a direct
+    /// reference loads every texture of the library (~1.2 GB of GPU memory) with HouseContent at start, though a house
+    /// uses a few dozen. They load on first use; <see cref="Release"/> + Resources.UnloadUnusedAssets frees the rest.</para>
     /// </summary>
     public sealed class ExternalCatalog : ScriptableObject
     {
@@ -15,7 +19,11 @@ namespace House4696.Core
         public sealed class MaterialEntry
         {
             public string Id, Name, Category;
-            public Material Material;
+            [Tooltip("Resources path of the material (loaded on first use).")]
+            public string MaterialPath;
+            [NonSerialized] Material _material;
+            public Material Material { get => _material != null ? _material : _material = Load<Material>(MaterialPath); set => _material = value; }
+            internal void Release() => _material = null;
             [Tooltip("Grey albedo: meant to be tinted with #rrggbb.")]
             public bool Neutral;
         }
@@ -25,8 +33,11 @@ namespace House4696.Core
         {
             [Tooltip("Role of the sub-mesh: upholstery, legs, frame…; item parameters use it as the key.")]
             public string Name;
-            [Tooltip("Material of the scan (textures made for this model's UVs).")]
-            public Material Own;
+            [Tooltip("Resources path of the scan's own material (textures made for this model's UVs), loaded on first use; empty when the slot has none.")]
+            public string OwnPath;
+            [NonSerialized] Material _own;
+            public Material Own { get => _own != null ? _own : _own = Load<Material>(OwnPath); set => _own = value; }
+            internal void Release() => _own = null;
             [Tooltip("Library material used when the item does not say otherwise (\"linen_rough#c8c0b3\").")]
             public string Default;
             [Tooltip("UVs are in metres, so any library material keeps its real scale.")]
@@ -37,7 +48,11 @@ namespace House4696.Core
         public sealed class ModelEntry
         {
             public string Id, Name, Category, Source;
-            public GameObject Prefab;
+            [Tooltip("Resources path of the prefab (loaded on first use).")]
+            public string PrefabPath;
+            [NonSerialized] GameObject _prefab;
+            public GameObject Prefab { get => _prefab != null ? _prefab : _prefab = Load<GameObject>(PrefabPath); set => _prefab = value; }
+            internal void Release() { _prefab = null; foreach (var s in Slots) s.Release(); }
             public Vector3 Size;
             [Tooltip("Pivot at the ceiling point (pendants) instead of the floor.")]
             public bool Hanging;
@@ -82,6 +97,19 @@ namespace House4696.Core
             var content = Resources.Load<HouseContent>(HouseContent.ResourceName);
             _loaded = content != null ? content.External : null;
             return _loaded;
+        }
+
+        static T Load<T>(string path) where T : Object => string.IsNullOrEmpty(path) ? null : Resources.Load<T>(path);
+
+        /// <summary>
+        /// Drops the cached materials and prefabs, so Resources.UnloadUnusedAssets can free what the scene no longer uses
+        /// (the next use loads them again).
+        /// </summary>
+        public static void Release()
+        {
+            if (_loaded == null) return;
+            foreach (var m in _loaded.Materials) m.Release();
+            foreach (var m in _loaded.Models) m.Release();
         }
 
         /// <summary>Forget the cached catalogue (the editor re-imported it).</summary>

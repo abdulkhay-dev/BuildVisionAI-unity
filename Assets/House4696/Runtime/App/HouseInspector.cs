@@ -73,6 +73,17 @@ namespace House4696.App
                         ["arrival"] = new JObject { ["from"] = P(g.ArrivalA), ["to"] = P(g.ArrivalB), ["walkTowards"] = Compass(Mathf.Atan2(g.ArrivalDir.x, g.ArrivalDir.y) * Mathf.Rad2Deg) },
                     };
                 }));
+            if (Want("lifts"))
+                o["lifts"] = new JArray(c.Lifts.Where(g => Pick(g.Def.Id)).Select(g => new JObject
+                {
+                    ["id"] = g.Def.Id, ["model"] = g.Spec.Model.Id, ["load"] = g.Spec.Row.Load, ["speed"] = g.Spec.Speed,
+                    ["stops"] = new JArray(g.Stops.Select(l => l.Id)), ["parked"] = g.Parked.Id,
+                    ["shaftClear"] = new JArray(g.Clear.Select(P)), ["footprint"] = new JArray(g.Footprint.Select(P)),
+                    ["car"] = new JArray(R(g.CarW), R(g.CarD), R(g.Spec.CarHeight)), ["door"] = new JArray(R(g.Spec.DoorWidth), R(g.Spec.DoorHeight)),
+                    ["doorType"] = g.Spec.DoorType, ["pitBottom"] = R(g.PitBottom), ["shaftTop"] = R(g.Top),
+                    ["landing"] = P(g.Landing(0.75f)), ["doorsFace"] = Compass(g.Def.Rotation),
+                    ["machineRoom"] = g.Spec.MachineRoom.HasValue ? new JArray(R(g.Spec.MachineRoom.Value.x), R(g.Spec.MachineRoom.Value.y), R(g.Spec.MachineHeight)) : null,
+                }));
             if (Want("items"))
                 o["items"] = new JArray(r.Items.Where(it => Pick(it.Id)).Select(it => new JObject
                 {

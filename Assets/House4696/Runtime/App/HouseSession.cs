@@ -61,6 +61,7 @@ namespace House4696.App
             _undo.Clear();
             PlayerPrefs.SetString(LastProjectPref, id);
             Rebuild();
+            ReleaseLibrary();
             ProjectChanged?.Invoke();
         }
 
@@ -68,7 +69,28 @@ namespace House4696.App
         {
             Teardown();
             ProjectId = null; Doc = null; Result = null; _undo.Clear();
+            ReleaseLibrary();
             ProjectChanged?.Invoke();
+        }
+
+        // ------------------------------------------------------------------ library memory
+        int _releaseAfterFrame = -1;
+
+        /// <summary>
+        /// Frees the library materials and models (and their textures) the scene no longer uses — those of the previous
+        /// project, or of the catalogue measurement. Runs on the next frame: Object.Destroy of the old house only happens
+        /// at the end of this one, and until then it still references them.
+        /// </summary>
+        public void ReleaseLibrary() => _releaseAfterFrame = Time.frameCount;
+
+        /// <summary>Per-frame work of the session (called by the bootstrap).</summary>
+        public void Tick()
+        {
+            if (_releaseAfterFrame < 0 || Time.frameCount <= _releaseAfterFrame) return;
+            _releaseAfterFrame = -1;
+            ExternalCatalog.Release();
+            LandscapeKit.Reset();
+            Resources.UnloadUnusedAssets();
         }
 
         /// <summary>
@@ -82,6 +104,9 @@ namespace House4696.App
             {
                 doc = new HouseDocument();
                 doc.Levels.Add(new LevelDef { Id = "ground", Name = "1 этаж", Elevation = 0.3f, Height = 2.8f, Slab = 0.3f });
+                // a new house gets a real plot from the start: lawn, the path to its entrance, woods around
+                doc.Site.Landscape = LandscapePreset.Natural;
+                doc.Site.Planting = new PlantingDef { Style = "garden" };
             }
             else
             {
@@ -478,6 +503,7 @@ namespace House4696.App
             foreach (var light in house.GetComponentsInChildren<Light>(true))
             {
                 if (light.type == LightType.Directional || InRoom(light.transform.position, rooms, ExteriorLampTolerance, 0f)) continue;
+                if (light.name.StartsWith("Light_Lift_", StringComparison.Ordinal)) continue;   // a lift car's light keeps its own layer
                 if (light.TryGetComponent<UnityEngine.Rendering.Universal.UniversalAdditionalLightData>(out var data))
                     data.renderingLayers = HouseRenderingLayer | HouseExteriorRenderingLayer;
             }

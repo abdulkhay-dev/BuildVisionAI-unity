@@ -50,13 +50,18 @@ namespace House4696.Generation
             c.Lights = w.Group("Lights", c.Root);
             c.Probes = w.Group("ReflectionProbes", c.Root);
 
+            var basements = new BasementBuilder(c);
+            basements.Plan();
             var walls = new WallBuilder(c);
             foreach (var f in c.Walls) walls.Build(f);
+            basements.Build();
             new RoomBuilder(c).BuildAll();
             var roofs = new RoofBuilder(c);
             foreach (var r in doc.Roofs) roofs.Build(r);
             var stairs = new StairBuilder(c);
             foreach (var s in doc.Stairs) stairs.Build(s);
+            var lifts = new House4696.Lifts.LiftBuilder(c);
+            foreach (var g in c.Lifts) lifts.Build(g);
             new EdgeGuards(c).Build();
             var elements = new ElementBuilder(c);
             foreach (var e in doc.Elements) elements.Build(e);
@@ -81,6 +86,9 @@ namespace House4696.Generation
         }
 
         static Dictionary<string, Bounds> _measured;
+
+        /// <summary>True once <see cref="MeasureCatalog"/> has built (and loaded) every model.</summary>
+        public static bool CatalogMeasured => _measured != null;
 
         /// <summary>
         /// Real extent of every catalogue model with default parameters, in the model's frame (front faces -Z, origin =

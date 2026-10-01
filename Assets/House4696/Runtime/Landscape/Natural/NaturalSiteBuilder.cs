@@ -25,6 +25,9 @@ namespace House4696.Landscape.Natural
         readonly Generation.MaterialResolver _mats;
         SiteModel _m;
         PlantingPlan _plan;
+        /// <summary>Zone per splat cell (the detail layers use the same grid).</summary>
+        Zone[] _zones;
+        int _zoneRes;
         Transform _root;
         Rng _rng;
         readonly List<string> _warnings;
@@ -33,6 +36,10 @@ namespace House4696.Landscape.Natural
 
         /// <summary>Plan outlines (convex) of pools dug into the ground: holes in the terrain, nothing planted there.</summary>
         public List<Vector2[]> Holes = new List<Vector2[]>();
+        /// <summary>Footprints of built things standing on the ground (terraces, porches, steps): nothing grows there.</summary>
+        public List<Vector2[]> Solids = new List<Vector2[]>();
+        /// <summary>Paths the generator adds itself (the approach to the entrance).</summary>
+        public List<SitePathDef> ExtraPaths = new List<SitePathDef>();
 
         public NaturalSiteBuilder(SiteDef def, LandscapeKit kit, SceneWriter w, VegetationFactory veg, MaterialLibrary lib,
             Generation.MaterialResolver mats, List<string> warnings)
@@ -43,8 +50,9 @@ namespace House4696.Landscape.Natural
         public GameObject Build(Rect footprint)
         {
             var sw = System.Diagnostics.Stopwatch.StartNew();
-            _m = new SiteModel(_def, footprint);
+            _m = new SiteModel(_def, footprint, extraPaths: ExtraPaths);
             _m.Hard.AddRange(Holes);
+            _m.Hard.AddRange(Solids);
             _plan = new PlantingPlan(_m.Planting, _m.Terrain.Seed);
             _rng = new Rng(_m.Terrain.Seed + 31);
             var root = new GameObject(RootName);
@@ -167,6 +175,8 @@ namespace House4696.Landscape.Natural
         {
             var area = _m.Area;
             var maps = new float[res, res, 4];
+            _zones = new Zone[res * res];
+            _zoneRes = res;
             float cell = area.width / res;
             for (int j = 0; j < res; j++)
             for (int i = 0; i < res; i++)
@@ -174,14 +184,15 @@ namespace House4696.Landscape.Natural
                 float x = area.xMin + (i + 0.5f) * cell, z = area.yMin + (j + 0.5f) * cell;
                 float n = Mathf.PerlinNoise(x * 0.35f + 3.3f, z * 0.35f + 1.1f);
                 var zone = _m.ZoneAt(x, z, n);
+                _zones[j * res + i] = zone;
                 float grass;
                 switch (zone)
                 {
                     case Zone.Lawn: case Zone.Path: case Zone.House: case Zone.Outside: grass = 1f; break;
                     default: grass = 0f; break;
                 }
-                // soft lawn edge towards the beds
-                if (zone != Zone.Outside && _m.BedAt(x, z) < 0)
+                // soft lawn edge towards the beds (open lawn of the garden/lawn styles stays lawn)
+                if ((zone == Zone.Bed || zone == Zone.Back || zone == Zone.Lawn && !_m.LawnGround) && _m.BedAt(x, z) < 0)
                 {
                     float edge = _m.Planting.Lawn * (0.7f + 0.6f * n);
                     grass = 1f - SiteModel.Smooth(edge - 0.3f, edge + 0.3f, _m.PathDistance(x, z));
@@ -347,10 +358,17 @@ namespace House4696.Landscape.Natural
                 if (_rng.Value() < 0.8f) Stone(p, _rng.Range(3f, 7f));
                 else Rock("rock_moss", p, _m.Height(p.x, p.y) - 0.1f, _rng.Range(0.3f, 0.6f));
             }
-            // placed boulders
-            foreach (var o in _def.Objects)
+            // placed boulders and shrubs
+            foreach (var o in SiteObjectDef.Expand(_def.Objects))
+            {
                 if (o.Type == "boulder")
                     Rock(string.IsNullOrEmpty(o.Species) ? "rock_boulder" : o.Species, o.At, _m.Height(o.At.x, o.At.y) - 0.2f * o.Scale, 1.2f * o.Scale, false);
+                else if (o.Type == "shrub")
+                {
+                    var v = Pick("shrub");
+                    if (v != null) field.Add(v.Prefab, new Vector3(o.At.x, _m.Height(o.At.x, o.At.y) - 0.05f, o.At.y), o.Rotation * Mathf.Deg2Rad, 1.3f * o.Scale, true);
+                }
+            }
         }
 
         // ------------------------------------------------------------------ details (grass and ground cover)
@@ -407,9 +425,14 @@ namespace House4696.Landscape.Natural
             for (int j = 0; j < res; j++)
             for (int i = 0; i < res; i++)
             {
-                float x = area.xMin + (i + 0.5f) * cell, z = area.yMin + (j + 0.5f) * cell;
-                float n = Mathf.PerlinNoise(x * 0.35f + 3.3f, z * 0.35f + 1.1f);
-                switch (_m.ZoneAt(x, z, n))
+                Zone zone;
+                if (_zones != null && _zoneRes == res) zone = _zones[j * res + i];
+                else
+                {
+                    float x = area.xMin + (i + 0.5f) * cell, z = area.yMin + (j + 0.5f) * cell;
+                    zone = _m.ZoneAt(x, z, Mathf.PerlinNoise(x * 0.35f + 3.3f, z * 0.35f + 1.1f));
+                }
+                switch (zone)
                 {
                     // the ground layers carry the colour; details add the texture near the eye (≈40k instances in a plot)
                     case Zone.Lawn:

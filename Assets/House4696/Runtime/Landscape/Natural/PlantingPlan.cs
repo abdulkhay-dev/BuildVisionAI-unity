@@ -93,6 +93,10 @@ namespace House4696.Landscape.Natural
                 FilterAccents(accents, new[] { "salvia", "daisy", "lupin", "lavender" }), 0.4f);
             _zones[Zone.Back] = new Mix(new[] { ("shrub", 4f), ("fern", 1.5f), ("tuft", 1.5f) },
                 FilterAccents(accents, new[] { "lupin", "salvia" }), 0.3f);
+            // the garden style's one border along the fence: a full shrub border, ground covered, some flowers
+            if (style == "garden")
+                _zones[Zone.Back] = new Mix(new[] { ("shrub", 4f), ("groundcover", 3f), ("tuft", 1.5f), ("fern", 1f), ("hosta", 1f) },
+                    FilterAccents(accents, new[] { "lavender", "salvia", "lupin", "phlox" }), 0.45f);
         }
 
         static (string, float)[] FilterAccents((string, float)[] accents, string[] keep)

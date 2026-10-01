@@ -20,6 +20,9 @@ namespace House4696.Generation
         public readonly List<string> Warnings = new List<string>();
         /// <summary>Catalogue items as built (filled by the builder).</summary>
         public readonly List<ItemBox> ItemBoxes = new List<ItemBox>();
+        /// <summary>The natural site as built (null for the other presets): entrances, street, approach paths; heights and zones.</summary>
+        public SiteLayout Layout;
+        public House4696.Landscape.Natural.SiteModel SiteModel;
         /// <summary>Findings of <see cref="HousePhysicsChecks"/> on the last full build (the checks repeat them).</summary>
         public readonly List<Issue> PhysicalIssues = new List<Issue>();
 
@@ -55,6 +58,22 @@ namespace House4696.Generation
                 g.SnapWell(_walls.Values);
                 _stairs[s] = g;
             }
+            foreach (var l in doc.Lifts)
+            {
+                var spec = House4696.Lifts.LiftCatalog.Resolve(l, out _);
+                if (spec != null) Lifts.Add(new House4696.Lifts.LiftGeometry(l, spec, doc.Levels));
+            }
+        }
+
+        /// <summary>Lifts of the document that resolve against the catalogue (the validator reports the others).</summary>
+        public readonly List<House4696.Lifts.LiftGeometry> Lifts = new List<House4696.Lifts.LiftGeometry>();
+
+        /// <summary>Clear shafts of the lifts that run through a floor or ceiling plane at <paramref name="y"/>.</summary>
+        public List<Vector2[]> LiftCuts(float y)
+        {
+            var list = new List<Vector2[]>();
+            foreach (var g in Lifts) if (g.Crosses(y)) list.Add(g.Clear);
+            return list;
         }
 
         /// <summary>Pools of the document that resolve (invalid ones are reported by the builder/validator).</summary>
@@ -87,6 +106,7 @@ namespace House4696.Generation
                 if (R.Elevation + (r.Height ?? R.Height) > L.Elevation - L.Slab + 0.05f) list.Add(Polygon.CounterClockwise(r.Outline).ToArray());
             }
             list.AddRange(PoolCuts(L.Elevation));
+            list.AddRange(LiftCuts(L.Elevation));
             return list;
         }
 
@@ -261,6 +281,73 @@ namespace House4696.Generation
         }
 
         public bool IsLowest(LevelDef l) => Doc.Levels.Count == 0 || Doc.Levels[0] == l;
+
+        /// <summary>A storey whose floor is this far below grade is a basement (its walls are earth-retaining).</summary>
+        public const float BasementDepth = 0.3f;
+
+        public static bool IsBelowGrade(LevelDef l) => l != null && l.Elevation < -BasementDepth;
+
+        /// <summary>The storey at grade — where the entrance is: the lowest one not below ground (basements are under it).</summary>
+        public LevelDef GroundLevel
+        {
+            get
+            {
+                foreach (var l in Doc.Levels) if (!IsBelowGrade(l)) return l;
+                return Doc.Levels.Count > 0 ? Doc.Levels[Doc.Levels.Count - 1] : null;
+            }
+        }
+
+        /// <summary>
+        /// Plan outline (outer faces, counter-clockwise) of a storey's exterior walls when they close into a ring; else the
+        /// rectangle around them; null without exterior walls.
+        /// </summary>
+        public List<Vector2> Outline(LevelDef level)
+        {
+            var walls = new List<WallFrame>();
+            foreach (var f in _walls.Values) if (f.Exterior && f.Level == level) walls.Add(f);
+            if (walls.Count == 0) return null;
+            var ring = new List<Vector2>();
+            var used = new HashSet<WallFrame>();
+            WallFrame cur = walls[0], last = null;
+            while (cur != null && used.Add(cur))
+            {
+                ring.Add(new Vector2(cur.WorldA.x, cur.WorldA.z));
+                last = cur;
+                var end = cur.WorldB;
+                cur = walls.Find(g => !used.Contains(g) && (g.WorldA - end).sqrMagnitude < 0.0025f);
+            }
+            bool closed = used.Count == walls.Count && ring.Count >= 3 && (last.WorldB - walls[0].WorldA).sqrMagnitude < 0.0025f;
+            if (closed) return Polygon.CounterClockwise(ring);
+            float x0 = float.MaxValue, z0 = float.MaxValue, x1 = float.MinValue, z1 = float.MinValue;
+            foreach (var f in walls)
+                foreach (var p in new[] { f.WorldA, f.WorldB })
+                { x0 = Mathf.Min(x0, p.x); x1 = Mathf.Max(x1, p.x); z0 = Mathf.Min(z0, p.z); z1 = Mathf.Max(z1, p.z); }
+            return new List<Vector2> { new Vector2(x0, z0), new Vector2(x1, z0), new Vector2(x1, z1), new Vector2(x0, z1) };
+        }
+
+        /// <summary>Light wells and stair pits dug in front of below-grade openings (filled by <see cref="BasementBuilder"/>).</summary>
+        public readonly List<BasementBuilder.Pit> Pits = new List<BasementBuilder.Pit>();
+
+        /// <summary>
+        /// Where the ground surface must be cut away (convex plan polygons): pools, the footprints of basements (as
+        /// triangles) and the pits in front of their openings. The lawn, the gravel apron and the natural terrain use it.
+        /// </summary>
+        public List<Vector2[]> GroundCuts()
+        {
+            var list = PoolCuts(0f);
+            foreach (var l in Doc.Levels)
+            {
+                if (!IsBelowGrade(l)) continue;
+                var o = Outline(l);
+                if (o == null) continue;
+                // pulled 5 cm inside the outer faces: the walls hide the cut edge
+                var inner = RoofBuilder.Offset(o, -0.05f);
+                var tris = Polygon.Triangulate(inner);
+                for (int t = 0; t + 2 < tris.Count; t += 3) list.Add(new[] { inner[tris[t]], inner[tris[t + 1]], inner[tris[t + 2]] });
+            }
+            foreach (var p in Pits) list.Add(p.Cut);
+            return list;
+        }
 
         /// <summary>Height of the underside of the structure above a level's ceiling (next floor's slab bottom or roof).</summary>
         public float TopOfLevel(LevelDef l)

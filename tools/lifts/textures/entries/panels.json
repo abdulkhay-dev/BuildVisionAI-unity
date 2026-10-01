@@ -1,0 +1,344 @@
+[
+ {
+  "id": "liftpanel_dc1000a",
+  "name": "Панель DC 1000A (COP)",
+  "category": "lift",
+  "source": "catalogue crop, cleaned: tools/lifts/textures/panels.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 512,
+  "folder": "Materials/liftpanel_dc1000a",
+  "textures": {
+   "albedo": "liftpanel_dc1000a_albedo.jpg",
+   "normal": "liftpanel_dc1000a_normal.jpg",
+   "mask": "liftpanel_dc1000a_mask.png"
+  },
+  "maskSize": 512
+ },
+ {
+  "id": "liftpanel_dl300",
+  "name": "Панель DL 300 (LOP)",
+  "category": "lift",
+  "source": "catalogue crop, cleaned: tools/lifts/textures/panels.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 512,
+  "folder": "Materials/liftpanel_dl300",
+  "textures": {
+   "albedo": "liftpanel_dl300_albedo.jpg",
+   "normal": "liftpanel_dl300_normal.jpg",
+   "mask": "liftpanel_dl300_mask.png"
+  },
+  "maskSize": 512
+ },
+ {
+  "id": "liftpanel_dc1000c",
+  "name": "Панель DC 1000C (COP)",
+  "category": "lift",
+  "source": "catalogue crop, cleaned: tools/lifts/textures/panels.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 512,
+  "folder": "Materials/liftpanel_dc1000c",
+  "textures": {
+   "albedo": "liftpanel_dc1000c_albedo.jpg",
+   "normal": "liftpanel_dc1000c_normal.jpg",
+   "mask": "liftpanel_dc1000c_mask.png"
+  },
+  "maskSize": 512
+ },
+ {
+  "id": "liftpanel_dl320",
+  "name": "Панель DL 320 (LOP)",
+  "category": "lift",
+  "source": "catalogue crop, cleaned: tools/lifts/textures/panels.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 512,
+  "folder": "Materials/liftpanel_dl320",
+  "textures": {
+   "albedo": "liftpanel_dl320_albedo.jpg",
+   "normal": "liftpanel_dl320_normal.jpg",
+   "mask": "liftpanel_dl320_mask.png"
+  },
+  "maskSize": 512
+ },
+ {
+  "id": "liftpanel_dc2000a",
+  "name": "Панель DC 2000A (COP)",
+  "category": "lift",
+  "source": "catalogue crop, cleaned: tools/lifts/textures/panels.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 512,
+  "folder": "Materials/liftpanel_dc2000a",
+  "textures": {
+   "albedo": "liftpanel_dc2000a_albedo.jpg",
+   "normal": "liftpanel_dc2000a_normal.jpg",
+   "mask": "liftpanel_dc2000a_mask.png"
+  },
+  "maskSize": 512
+ },
+ {
+  "id": "liftpanel_dl400",
+  "name": "Панель DL 400 (LOP)",
+  "category": "lift",
+  "source": "catalogue crop, cleaned: tools/lifts/textures/panels.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 512,
+  "folder": "Materials/liftpanel_dl400",
+  "textures": {
+   "albedo": "liftpanel_dl400_albedo.jpg",
+   "normal": "liftpanel_dl400_normal.jpg",
+   "mask": "liftpanel_dl400_mask.png"
+  },
+  "maskSize": 512
+ },
+ {
+  "id": "liftpanel_dc2000b",
+  "name": "Панель DC2000B (COP)",
+  "category": "lift",
+  "source": "catalogue crop, cleaned: tools/lifts/textures/panels.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 512,
+  "folder": "Materials/liftpanel_dc2000b",
+  "textures": {
+   "albedo": "liftpanel_dc2000b_albedo.jpg",
+   "normal": "liftpanel_dc2000b_normal.jpg",
+   "mask": "liftpanel_dc2000b_mask.png"
+  },
+  "maskSize": 512
+ },
+ {
+  "id": "liftpanel_dl450",
+  "name": "Панель DL 450 (LOP)",
+  "category": "lift",
+  "source": "catalogue crop, cleaned: tools/lifts/textures/panels.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 512,
+  "folder": "Materials/liftpanel_dl450",
+  "textures": {
+   "albedo": "liftpanel_dl450_albedo.jpg",
+   "normal": "liftpanel_dl450_normal.jpg",
+   "mask": "liftpanel_dl450_mask.png"
+  },
+  "maskSize": 512
+ },
+ {
+  "id": "liftpanel_dc5000a",
+  "name": "Панель DC 5000A (COP)",
+  "category": "lift",
+  "source": "catalogue crop, cleaned: tools/lifts/textures/panels.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 512,
+  "folder": "Materials/liftpanel_dc5000a",
+  "textures": {
+   "albedo": "liftpanel_dc5000a_albedo.jpg",
+   "normal": "liftpanel_dc5000a_normal.jpg",
+   "mask": "liftpanel_dc5000a_mask.png"
+  },
+  "maskSize": 512
+ },
+ {
+  "id": "liftpanel_dl500a",
+  "name": "Панель DL 500A (LOP)",
+  "category": "lift",
+  "source": "catalogue crop, cleaned: tools/lifts/textures/panels.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 512,
+  "folder": "Materials/liftpanel_dl500a",
+  "textures": {
+   "albedo": "liftpanel_dl500a_albedo.jpg",
+   "normal": "liftpanel_dl500a_normal.jpg",
+   "mask": "liftpanel_dl500a_mask.png"
+  },
+  "maskSize": 512
+ },
+ {
+  "id": "liftpanel_dc9000a",
+  "name": "Панель DC 9000A (COP)",
+  "category": "lift",
+  "source": "catalogue crop, cleaned: tools/lifts/textures/panels.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 512,
+  "folder": "Materials/liftpanel_dc9000a",
+  "textures": {
+   "albedo": "liftpanel_dc9000a_albedo.jpg",
+   "normal": "liftpanel_dc9000a_normal.jpg",
+   "mask": "liftpanel_dc9000a_mask.png"
+  },
+  "maskSize": 512
+ },
+ {
+  "id": "liftpanel_dl300b",
+  "name": "Панель DL 300B (LOP)",
+  "category": "lift",
+  "source": "catalogue crop, cleaned: tools/lifts/textures/panels.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 512,
+  "folder": "Materials/liftpanel_dl300b",
+  "textures": {
+   "albedo": "liftpanel_dl300b_albedo.jpg",
+   "normal": "liftpanel_dl300b_normal.jpg",
+   "mask": "liftpanel_dl300b_mask.png"
+  },
+  "maskSize": 512
+ },
+ {
+  "id": "liftpanel_dc1200a",
+  "name": "Панель DC 1200A (COP)",
+  "category": "lift",
+  "source": "catalogue crop, cleaned: tools/lifts/textures/panels.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 512,
+  "folder": "Materials/liftpanel_dc1200a",
+  "textures": {
+   "albedo": "liftpanel_dc1200a_albedo.jpg",
+   "normal": "liftpanel_dc1200a_normal.jpg",
+   "mask": "liftpanel_dc1200a_mask.png"
+  },
+  "maskSize": 512
+ },
+ {
+  "id": "liftpanel_dc4200a",
+  "name": "Панель DC 4200A (COP)",
+  "category": "lift",
+  "source": "catalogue crop, cleaned: tools/lifts/textures/panels.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 512,
+  "folder": "Materials/liftpanel_dc4200a",
+  "textures": {
+   "albedo": "liftpanel_dc4200a_albedo.jpg",
+   "normal": "liftpanel_dc4200a_normal.jpg",
+   "mask": "liftpanel_dc4200a_mask.png"
+  },
+  "maskSize": 512
+ },
+ {
+  "id": "liftpanel_dc1200b",
+  "name": "Панель DC 1200B (COP)",
+  "category": "lift",
+  "source": "catalogue crop, cleaned: tools/lifts/textures/panels.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 512,
+  "folder": "Materials/liftpanel_dc1200b",
+  "textures": {
+   "albedo": "liftpanel_dc1200b_albedo.jpg",
+   "normal": "liftpanel_dc1200b_normal.jpg",
+   "mask": "liftpanel_dc1200b_mask.png"
+  },
+  "maskSize": 512
+ },
+ {
+  "id": "liftpanel_dl100a",
+  "name": "Панель DL100A (LOP)",
+  "category": "lift",
+  "source": "catalogue crop, cleaned: tools/lifts/textures/panels.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 512,
+  "folder": "Materials/liftpanel_dl100a",
+  "textures": {
+   "albedo": "liftpanel_dl100a_albedo.jpg",
+   "normal": "liftpanel_dl100a_normal.jpg",
+   "mask": "liftpanel_dl100a_mask.png"
+  },
+  "maskSize": 512
+ },
+ {
+  "id": "liftpanel_dl100a_double",
+  "name": "Панель DL100A (двойной) (LOP)",
+  "category": "lift",
+  "source": "catalogue crop, cleaned: tools/lifts/textures/panels.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 512,
+  "folder": "Materials/liftpanel_dl100a_double",
+  "textures": {
+   "albedo": "liftpanel_dl100a_double_albedo.jpg",
+   "normal": "liftpanel_dl100a_double_normal.jpg",
+   "mask": "liftpanel_dl100a_double_mask.png"
+  },
+  "maskSize": 512
+ },
+ {
+  "id": "liftpanel_dc1000a_freight",
+  "name": "Панель DC1000A (грузовой) (COP)",
+  "category": "lift",
+  "source": "catalogue crop, cleaned: tools/lifts/textures/panels.py",
+  "neutral": false,
+  "metersPerTile": [
+   1.0,
+   1.0
+  ],
+  "maxSize": 512,
+  "folder": "Materials/liftpanel_dc1000a_freight",
+  "textures": {
+   "albedo": "liftpanel_dc1000a_freight_albedo.jpg",
+   "normal": "liftpanel_dc1000a_freight_normal.jpg",
+   "mask": "liftpanel_dc1000a_freight_mask.png"
+  },
+  "maskSize": 512
+ }
+]

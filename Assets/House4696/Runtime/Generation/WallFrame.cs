@@ -50,7 +50,8 @@ namespace House4696.Generation
             var above = ctx.Above(Level);
             if (ext)
             {
-                Y0 = w.Bottom ?? (ctx.IsLowest(Level) ? 0f : Level.Elevation - Level.Slab);
+                // the lowest storey's walls reach the ground (a plinth) — or go down to its slab when it is a basement
+                Y0 = w.Bottom ?? (ctx.IsLowest(Level) ? Mathf.Min(0f, Level.Elevation - Level.Slab) : Level.Elevation - Level.Slab);
                 Y1 = w.Top ?? (above != null ? above.Elevation - above.Slab : Level.Elevation + Level.Height + 0.3f);
             }
             else

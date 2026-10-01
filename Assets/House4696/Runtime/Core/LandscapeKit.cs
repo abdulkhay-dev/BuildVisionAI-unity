@@ -62,20 +62,25 @@ namespace House4696.Core
         public Group Find(string id) => Groups.Find(g => string.Equals(g.Id, id, StringComparison.OrdinalIgnoreCase));
         public TerrainLayer TerrainLayer(string id) => Layers.Find(l => l.Id == id)?.TerrainLayer;
 
+        /// <summary>
+        /// Resources name of the kit. It is not referenced from <see cref="HouseContent"/>: its rocks, plants and terrain
+        /// layers (~160 MB of textures and meshes) load only when a natural site or a pool needs them.
+        /// </summary>
+        public const string ResourceName = "LandscapeKit";
+
         static LandscapeKit _loaded;
         static bool _tried;
 
-        /// <summary>The kit shipped with the app (via <see cref="HouseContent"/>), or null.</summary>
+        /// <summary>The kit shipped with the app, or null.</summary>
         public static LandscapeKit Load()
         {
             if (_tried) return _loaded;
             _tried = true;
-            var content = Resources.Load<HouseContent>(HouseContent.ResourceName);
-            _loaded = content != null ? content.Landscape : null;
+            _loaded = Resources.Load<LandscapeKit>(ResourceName);
             return _loaded;
         }
 
-        /// <summary>Forget the cached kit (the editor re-imported it).</summary>
+        /// <summary>Forget the cached kit (the editor re-imported it, or the app frees what the scene does not use).</summary>
         public static void Reset() { _tried = false; _loaded = null; }
     }
 }

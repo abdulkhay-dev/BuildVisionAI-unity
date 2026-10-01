@@ -10,13 +10,13 @@ export const INSTRUCTIONS = `House — проектирование частны
 Порядок работы:
 1) house_guide — прочитай формат проекта (один раз за сессию).
 2) house_create_project (или house_list_projects + house_open_project).
-3) Этажи (house_upsert kind=level) → наружные стены по контуру (house_exterior_walls) → перегородки и проёмы (house_upsert wall/opening; межкомнатные двери — модели из house_doors, размер полотна leaf) → комнаты (room) → крыша/лестница/элементы → мебель (item, см. house_catalog) → свет и точки показа.
+3) Этажи (house_upsert kind=level; подвал — этаж с отрицательной elevation и своими наружными стенами) → наружные стены по контуру (house_exterior_walls, у каждого этажа свои) → перегородки и проёмы (house_upsert wall/opening; межкомнатные двери — модели из house_doors, размер полотна leaf) → комнаты (room) → крыша/лестница/лифты (house_lifts, kind=lift)/элементы → мебель (item, см. house_catalog) → УЧАСТОК (house_site: рельеф, дорожка ко входу, площадки/парковка, деревья и аллеи, клумбы, изгородь, забор — дом без участка не закончен) → свет и точки показа.
 4) Каждый ответ на правку содержит issues: ошибки и предупреждения ПО ПОСТРОЕННОМУ дому (мебель в стене или в проходе, дверь в обрыв, проём выше стены или в углу, крыша сквозь комнату, лестница в стену, комната без крыши) — с готовым исправлением. Исправляй их сразу, до следующего шага.
 5) Не считай геометрию в уме: house_inspect даёт реальные числа (верх стен, проёмы в координатах, карниз и конёк крыши, габарит и проём лестницы, размеры предметов). house_catalog даёт реальные размеры моделей.
-6) Проверяй глазами: house_render (orbit — снаружи, plan — план этажа, walk — вид изнутри).
+6) Проверяй глазами: house_render (orbit — снаружи, plan — план этажа, walk — вид изнутри, site — генплан участка сверху).
 Координаты в метрах: X вправо (восток), Z на север, Y вверх; точки плана [x, z]. Правки частичные: house_upsert с тем же id меняет только переданные поля. Ошибся — house_undo.`;
 
-const KINDS = ["level", "wall", "opening", "room", "roof", "stair", "element", "item", "light", "view", "meta", "site"] as const;
+const KINDS = ["level", "wall", "opening", "room", "roof", "stair", "lift", "element", "item", "light", "view", "meta", "site"] as const;
 
 const point2 = z.tuple([z.number(), z.number()]);
 
@@ -75,7 +75,7 @@ export function registerTools(server: McpServer): void {
 
   server.registerTool("house_create_project", {
     title: "Создать проект",
-    description: "Создаёт проект и открывает его. template: 'empty' (один этаж 'ground', без стен) или имя примера из house_status.samples (например '46-96', 'barnhouse') как основа для правок.",
+    description: "Создаёт проект и открывает его. template: 'empty' (один этаж 'ground', без стен; участок natural — газон, дорожка к входной двери, лес вокруг) или имя примера из house_status.samples (например '46-96', 'barnhouse') как основа для правок.",
     inputSchema: {
       name: z.string().describe("Название дома"),
       description: z.string().optional().describe("Короткое описание"),
@@ -151,6 +151,25 @@ export function registerTools(server: McpServer): void {
     annotations: edit,
   }, async (a) => run("exterior_walls", a));
 
+  server.registerTool("house_site", {
+    title: "Участок (ландшафт)",
+    description: "Ландшафт вокруг дома (landscape natural): рельеф, газон и посадки, дорожки, площадки (мощение, асфальт, парковка с разметкой, детская площадка, настил), " +
+      "живые изгороди, деревья и аллеи, кусты, скамейки, фонари, ручьи с мостиками, забор с калитками. " +
+      "Без аргументов — показывает участок: границы plot, входные двери и куда смотрят, сторону улицы, дорожки ко входу (генератор прокладывает их сам), " +
+      "высоты земли, всё, что уже стоит, и словарь типов. " +
+      "set — настройки: landscape ('natural'), plot [xmin, zmin, xmax, zmax], terrain {slopeAzimuth, grade, relief}, planting {style: garden|lawn|perennial|meadow|shade|rock, flowers, density}, " +
+      "fence [стороны], street (сторона улицы), approach ('auto' | 'none'), sunAzimuth, sunElevation, trees ('auto' — лес вокруг | 'none'). " +
+      "upsert — добавить или изменить по id (меняются только переданные поля): {areas: [{id, type, outline, stall?, y?, material?}], paths: [{id, path, width, style}], " +
+      "objects: [{id, type, at | path+spacing, species, rotation, scale, to}], hedges: [{id, path, height, width}], beds: [{id, outline, style, flowers}], streams: [{id, path, width, depth}]}. " +
+      "remove — удалить по id: {objects: ['t1'], areas: ['p1']}. Подробно — раздел «Участок» в house_guide.",
+    inputSchema: {
+      set: z.record(z.string(), z.any()).optional().describe("Настройки участка (не списки)"),
+      upsert: z.record(z.string(), z.any()).optional().describe("{areas|paths|objects|hedges|beds|streams: [элементы с id]}"),
+      remove: z.record(z.string(), z.array(z.string())).optional().describe("{areas|paths|objects|hedges|beds|streams: [id]}"),
+    },
+    annotations: edit,
+  }, async (a) => run("site", a));
+
   server.registerTool("house_validate", {
     title: "Проверить проект",
     description: "Проблемы проекта (ошибки и предупреждения с путём к элементу) и предупреждения генератора.",
@@ -198,6 +217,20 @@ export function registerTools(server: McpServer): void {
     annotations: readOnly,
   }, async () => run("windows", {}));
 
+  server.registerTool("house_lifts", {
+    title: "Каталог лифтов",
+    description: "Лифты из каталога GLZ / NBSL: пассажирские K600 MR (машинное помещение, противовес сзади или сбоку) и K600L MRL (без машинного), " +
+      "панорамные K600G (полукруглая или ромбовидная стеклянная шахта), грузовые H700 MR/MRL 1–5 т и автомобильный подъёмник. " +
+      "Без фильтра — модели с грузоподъёмностями, дизайны кабин, этажные двери и панели; с id модели — её таблица (кабина, дверь, шахта, " +
+      "OH/PD по скорости). Лифт ставится house_upsert kind=lift: model, load, position (середина дверей на передней грани шахты), " +
+      "rotation (куда смотрят двери), from/to — этажи; шахта, приямок, оголовок, машинное помещение, двери и кабина строятся по таблице, " +
+      "перекрытия вырезаются сами.",
+    inputSchema: {
+      id: z.string().optional().describe("id модели (например k600l-mrl) — её таблица размеров"),
+    },
+    annotations: readOnly,
+  }, async (a) => run("lifts", a));
+
   server.registerTool("house_materials", {
     title: "Материалы",
     description: "Материалы для отделки и параметров мебели. library — реалистичные материалы-сканы с названием и категорией " +
@@ -227,9 +260,10 @@ export function registerTools(server: McpServer): void {
     description: "Рендер текущего дома в приложении — картинка, чтобы проверить результат. " +
       "mode=orbit: вид снаружи (yaw — откуда смотрим по компасу: 0 — с юга на север, 90 — с запада; pitch — наклон вниз; distance 0 = вписать дом). " +
       "mode=plan: план этажа сверху (level), потолки и верхние этажи скрыты. " +
-      "mode=walk: вид изнутри с высоты глаз (position [x, z] + level или [x, y, z]; yaw — куда смотрим: 0 = +Z/север, 90 = +X/восток).",
+      "mode=walk: вид изнутри с высоты глаз (position [x, z] + level или [x, y, z]; yaw — куда смотрим: 0 = +Z/север, 90 = +X/восток; снаружи дома без level — стоишь на земле участка). " +
+      "mode=site: генплан — весь участок сверху (дорожки, площадки, деревья, забор).",
     inputSchema: {
-      mode: z.enum(["orbit", "plan", "walk"]).default("orbit"),
+      mode: z.enum(["orbit", "plan", "walk", "site"]).default("orbit"),
       yaw: z.number().optional(),
       pitch: z.number().optional(),
       distance: z.number().optional(),

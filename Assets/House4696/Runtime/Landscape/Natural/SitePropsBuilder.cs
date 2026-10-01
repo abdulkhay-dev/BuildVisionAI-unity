@@ -7,8 +7,10 @@ using UnityEngine;
 namespace House4696.Landscape.Natural
 {
     /// <summary>
-    /// Built things of the natural site (port of tools/landscape/garden/props.py): stepping-stone paths, the arched
-    /// timber bridge, stone lanterns (tōrō), post lanterns, the board fence and single trees.
+    /// Built things of the natural site (port of tools/landscape/garden/props.py): stepping-stone and paved paths,
+    /// hard areas (patio, driveway, parking with stall lines, playground), clipped hedges, the arched timber bridge,
+    /// stone lanterns (tōrō), post lanterns and bollards, benches, the board fence (open where a path or an area
+    /// meets it — a gate) and single trees.
     /// </summary>
     public sealed class SitePropsBuilder
     {
@@ -36,13 +38,18 @@ namespace House4696.Landscape.Natural
             _glow = _lib.BollardLight;
             var g = _w.Group("Built", parent);
             SteppingStones(g);
-            foreach (var o in _m.Def.Objects)
+            PavedPaths(g);
+            Areas(g);
+            Hedges(g);
+            foreach (var o in SiteObjectDef.Expand(_m.Def.Objects))
             {
                 switch (o.Type)
                 {
                     case "bridge": Bridge(g, o); break;
                     case "stone_lantern": Lantern(g, o, stone: true); break;
                     case "garden_lamp": Lantern(g, o, stone: false); break;
+                    case "bollard": Bollard(g, o); break;
+                    case "bench": Bench(g, o); break;
                     case "tree": Tree(g, o); break;
                 }
             }
@@ -106,7 +113,7 @@ namespace House4696.Landscape.Natural
                     {
                         var c = p + n * off * width;
                         if (_m.StreamAt(c.x, c.y, out float d, out _, out float hw, out _, out _) && d < hw + 0.3f) continue;
-                        if (!_m.Area.Contains(c) || _m.InHard(c.x, c.y)) continue;   // no stones in a pool
+                        if (!_m.Area.Contains(c) || _m.InHard(c.x, c.y) || _m.AreaAt(c.x, c.y, 0.3f) != null) continue;   // no stones in a pool or on paving
                         Slab(mb, c, size);
                     }
                     s += size * _rng.Range(1.05f, 1.25f);
@@ -142,6 +149,231 @@ namespace House4696.Landscape.Natural
                 var n = Vector3.Cross(top[j] - top[k], bot[k] - top[k]).normalized;
                 mb.Quad(bot[k], bot[j], top[j], top[k], n, UV(bot[k], n), UV(bot[j], n), UV(top[j], n), UV(top[k], n), _slab);
             }
+        }
+
+        // ------------------------------------------------------------------ paved paths and areas
+
+        /// <summary>Surface material of a path style or area type.</summary>
+        Material Surface(string kind, string custom = null)
+        {
+            if (!string.IsNullOrEmpty(custom)) return _mats.Get(custom, _lib.Paver);
+            switch (kind)
+            {
+                case "asphalt": case "parking": return _mats.Get("asphalt_clean", _lib.Paver);
+                case "gravel": return _mats.Get("gravel_grey", _lib.Gravel);
+                case "deck": return _mats.Get("oak_planks", _lib.Wood);
+                case "rubber": return _mats.Get("concrete_smooth#b0513d", _lib.Paver);
+                default: return _mats.Get("paving_rectangular", _lib.Paver);
+            }
+        }
+
+        static bool Curbed(string kind) => kind == "paving" || kind == "asphalt" || kind == "parking";
+
+        /// <summary>Continuous paths (paving, gravel, asphalt, deck): a strip draped on the ground, broken where it crosses water.</summary>
+        void PavedPaths(Transform parent)
+        {
+            var mb = new MeshBuilder();
+            foreach (var path in _m.Paths)
+            {
+                string style = path.Def.Style;
+                if (string.IsNullOrEmpty(style) || style == "stepping") continue;
+                var top = Surface(style);
+                float hw = path.Def.Width * 0.5f, lift = style == "deck" ? 0.08f : 0.03f;
+                var line = path.Line;
+                int n = Mathf.Max(1, Mathf.CeilToInt(line.Length / 0.4f));
+                Vector3 pl = default, pr = default;
+                bool open = false;
+                for (int i = 0; i <= n; i++)
+                {
+                    var c = line.At(line.Length * i / n, out var t);
+                    var nrm = new Vector2(-t.y, t.x);
+                    // no strip in water (a bridge carries it) or on a paved area (the area is the path there)
+                    bool wet = _m.StreamAt(c.x, c.y, out float d, out _, out float shw, out _, out _) && d < shw + 0.4f ||
+                               _m.AreaAt(c.x, c.y) is SiteModel.HardArea ar && ar.Def.Type != "lawn";
+                    Vector2 a = c + nrm * hw, b = c - nrm * hw;
+                    var l = new Vector3(a.x, Surf(a) + lift, a.y);
+                    var r = new Vector3(b.x, Surf(b) + lift, b.y);
+                    if (open && !wet)
+                    {
+                        var up = Vector3.up;
+                        mb.Quad(pr, r, l, pl, up, UV(pr, up), UV(r, up), UV(l, up), UV(pl, up), top);
+                        var nl = new Vector3(nrm.x, 0, nrm.y);
+                        Vector3 down = Vector3.down * (lift + 0.1f);
+                        mb.Quad(l + down, pl + down, pl, l, nl, UV(l + down, nl), UV(pl + down, nl), UV(pl, nl), UV(l, nl), top);
+                        mb.Quad(pr + down, r + down, r, pr, -nl, UV(pr + down, -nl), UV(r + down, -nl), UV(r, -nl), UV(pr, -nl), top);
+                    }
+                    pl = l; pr = r; open = !wet;
+                }
+            }
+            if (!mb.IsEmpty) _w.Emit("SitePaths", parent, mb, castShadows: false, probeStatic: true);
+        }
+
+        /// <summary>Ground height under a paved surface: never below the water of a stream it runs beside.</summary>
+        float Surf(Vector2 p) => _m.Height(p.x, p.y);
+
+        void Areas(Transform parent)
+        {
+            var mb = new MeshBuilder();
+            var marks = new MeshBuilder();
+            var white = _mats.Get("render#f4f4f0", _lib.Paver);
+            foreach (var a in _m.Areas)
+            {
+                string kind = a.Def.Type ?? "paving";
+                if (kind == "lawn") continue;
+                float lift = kind == "deck" ? 0.12f : 0.03f;
+                var top = Surface(kind, a.Def.Material);
+                Slab(mb, a, lift, top);
+                if (Curbed(kind)) Curbs(mb, a, lift);
+                if (kind == "parking") Stalls(marks, a, lift + 0.003f, white);
+            }
+            if (!mb.IsEmpty) _w.Emit("SiteAreas", parent, mb, castShadows: false, probeStatic: true);
+            if (!marks.IsEmpty) _w.Emit("SiteMarkings", parent, marks, castShadows: false, probeStatic: true);
+        }
+
+        /// <summary>The area's surface (on its graded plane, <paramref name="lift"/> above it) with edges 0.25 m deep into the ground.</summary>
+        static void Slab(MeshBuilder mb, SiteModel.HardArea a, float lift, Material m)
+        {
+            var o = new List<Vector2>(a.Outline);
+            var tris = Generation.Polygon.Triangulate(o);
+            Vector3 P(Vector2 p, float dy) => new Vector3(p.x, a.HeightAt(p.x, p.y) + dy, p.y);
+            for (int t = 0; t < tris.Count; t += 3)
+            {
+                Vector3 pa = P(o[tris[t]], lift), pb = P(o[tris[t + 1]], lift), pc = P(o[tris[t + 2]], lift);
+                // counter-clockwise from above → clockwise front face: a, c, b
+                mb.Triangle(pa, pc, pb, Vector3.up, Vector3.up, Vector3.up, new Vector2(pa.x, pa.z), new Vector2(pc.x, pc.z), new Vector2(pb.x, pb.z), m);
+            }
+            for (int i = 0; i < o.Count; i++)
+            {
+                Vector2 u = o[i], v = o[(i + 1) % o.Count], d = v - u;
+                float len = d.magnitude;
+                if (len < 1e-4f) continue;
+                var n = new Vector3(d.y, 0, -d.x) / len;
+                Vector3 a0 = P(u, -0.25f), b0 = P(v, -0.25f), b1 = P(v, lift), a1 = P(u, lift);
+                mb.Quad(a0, b0, b1, a1, n, new Vector2(0, a0.y), new Vector2(len, b0.y), new Vector2(len, b1.y), new Vector2(0, a1.y), m);
+            }
+        }
+
+        /// <summary>Granite kerbs along the outline, 5 cm proud of the surface, in pieces that follow its slope.</summary>
+        void Curbs(MeshBuilder mb, SiteModel.HardArea a, float lift)
+        {
+            var o = a.Outline;
+            for (int i = 0; i < o.Length; i++)
+            {
+                Vector2 p = o[i], q = o[(i + 1) % o.Length], e = q - p;
+                float len = e.magnitude;
+                if (len < 0.2f) continue;
+                var t = e / len;
+                var inward = new Vector2(-t.y, t.x);            // counter-clockwise outline: the inside is on the left
+                float yaw = -Mathf.Atan2(t.y, t.x) * Mathf.Rad2Deg;
+                int pieces = Mathf.Max(1, Mathf.CeilToInt(len / 1f));
+                for (int k = 0; k < pieces; k++)
+                {
+                    var c = p + e * ((k + 0.5f) / pieces) + inward * 0.06f;
+                    float y = a.HeightAt(c.x, c.y) + lift;
+                    Box(mb, new Vector3(c.x, y - 0.1f, c.y), new Vector3(len / pieces + 0.005f, 0.3f, 0.12f), yaw, _stone);
+                }
+            }
+        }
+
+        /// <summary>A flat quad draped on the area's plane (corners in any order around it).</summary>
+        static void FlatQuad(MeshBuilder mb, SiteModel.HardArea a, Vector2[] c, float lift, Material m)
+        {
+            if (Generation.Polygon.SignedArea(c) < 0) System.Array.Reverse(c);
+            var v = new Vector3[4];
+            for (int i = 0; i < 4; i++) v[i] = new Vector3(c[i].x, a.HeightAt(c[i].x, c[i].y) + lift, c[i].y);
+            mb.Quad(v[0], v[1], v[2], v[3], Vector3.up, new Vector2(v[0].x, v[0].z), new Vector2(v[1].x, v[1].z), new Vector2(v[2].x, v[2].z), new Vector2(v[3].x, v[3].z), m);
+        }
+
+        /// <summary>Stall lines along the longest edge (and the opposite one when the lot is deep enough for two rows and an aisle).</summary>
+        void Stalls(MeshBuilder mb, SiteModel.HardArea a, float lift, Material paint)
+        {
+            float sw = a.Def.Stall != null && a.Def.Stall.Length > 0 ? Mathf.Max(2f, a.Def.Stall[0]) : 2.5f;
+            float sd = a.Def.Stall != null && a.Def.Stall.Length > 1 ? Mathf.Max(3.5f, a.Def.Stall[1]) : 5f;
+            var o = a.Outline;
+            int best = 0; float longest = 0f;
+            for (int i = 0; i < o.Length; i++)
+            {
+                float l = (o[(i + 1) % o.Length] - o[i]).magnitude;
+                if (l > longest) { longest = l; best = i; }
+            }
+            Vector2 p0 = o[best], t = (o[(best + 1) % o.Length] - p0) / longest, inward = new Vector2(-t.y, t.x);
+            float depth = 0f;
+            foreach (var q in o) depth = Mathf.Max(depth, Vector2.Dot(q - p0, inward));
+            var rows = new List<(Vector2 origin, Vector2 dir)> { (p0 + inward * 0.25f, inward) };
+            if (depth >= 2f * sd + 5.5f) rows.Add((p0 + inward * (depth - 0.25f), -inward));
+            foreach (var (origin, dir) in rows)
+                for (float u = 0.3f; u <= longest - 0.3f + 1e-3f; u += sw)
+                {
+                    Vector2 s0 = origin + t * u, s1 = s0 + dir * sd;
+                    if (!Generation.Polygon.Contains(o, s0 + dir * 0.1f) || !Generation.Polygon.Contains(o, s1)) continue;
+                    var side = t * 0.06f;
+                    FlatQuad(mb, a, new[] { s0 - side, s1 - side, s1 + side, s0 + side }, lift, paint);
+                }
+        }
+
+        // ------------------------------------------------------------------ hedges
+
+        void Hedges(Transform parent)
+        {
+            var g = _w.Group("Hedges", parent);
+            int seed = 101;
+            foreach (var h in _m.Hedges)
+            {
+                var path = h.Def.Path;
+                for (int i = 0; i + 1 < path.Count; i++)
+                {
+                    Vector2 a = path[i], b = path[i + 1], e = b - a;
+                    float len = e.magnitude;
+                    if (len < 0.3f) continue;
+                    // a little longer than the segment so corners close; the base follows the lower end on a slope
+                    float ya = _m.Height(a.x, a.y), yb = _m.Height(b.x, b.y), lo = Mathf.Min(ya, yb);
+                    var size = new Vector3(len + h.Def.Width * 0.6f, h.Def.Height + Mathf.Abs(ya - yb), h.Def.Width);
+                    var go = _w.Emit($"Hedge_{h.Def.Id}_{i}", g, _veg.Hedge(size, 0.12f, seed++), castShadows: true, probeStatic: true);
+                    if (go == null) continue;
+                    var c = (a + b) * 0.5f;
+                    go.transform.SetPositionAndRotation(new Vector3(c.x, lo - 0.05f, c.y), Quaternion.Euler(0f, -Mathf.Atan2(e.y, e.x) * Mathf.Rad2Deg, 0f));
+                }
+            }
+        }
+
+        // ------------------------------------------------------------------ benches and bollards
+
+        /// <summary>Park bench 1.6 m: wooden slats on two black steel frames; the seat faces <see cref="SiteObjectDef.Rotation"/>.</summary>
+        void Bench(Transform parent, SiteObjectDef o)
+        {
+            var pos = new Vector3(o.At.x, _m.Height(o.At.x, o.At.y), o.At.y);
+            var mb = new MeshBuilder { Transform = Matrix4x4.TRS(pos, Quaternion.Euler(0f, o.Rotation, 0f), Vector3.one * o.Scale) };
+            foreach (float x in new[] { -0.68f, 0.68f })
+            {
+                Box(mb, new Vector3(x, 0.22f, 0.18f), new Vector3(0.06f, 0.44f, 0.05f), 0f, _metal);    // front leg
+                Box(mb, new Vector3(x, 0.4f, -0.2f), new Vector3(0.06f, 0.8f, 0.05f), 0f, _metal, 0f);   // back leg + back support
+                Box(mb, new Vector3(x, 0.43f, 0f), new Vector3(0.06f, 0.04f, 0.46f), 0f, _metal);       // seat rail
+            }
+            for (int k = 0; k < 4; k++)
+                Box(mb, new Vector3(0f, 0.465f, 0.16f - k * 0.115f), new Vector3(1.6f, 0.035f, 0.09f), 0f, _wood);
+            for (int k = 0; k < 3; k++)
+                Box(mb, new Vector3(0f, 0.58f + k * 0.12f, -0.225f), new Vector3(1.6f, 0.09f, 0.03f), 0f, _wood);
+            _w.Emit("Bench_" + o.Id, parent, mb, castShadows: true, probeStatic: true);
+        }
+
+        /// <summary>Path bollard: a 0.8 m black post with a glowing band under its cap.</summary>
+        void Bollard(Transform parent, SiteObjectDef o)
+        {
+            var pos = new Vector3(o.At.x, _m.Height(o.At.x, o.At.y) - 0.02f, o.At.y);
+            var mb = new MeshBuilder { Transform = Matrix4x4.TRS(pos, Quaternion.Euler(0f, o.Rotation, 0f), Vector3.one * o.Scale) };
+            Frustum(mb, Vector3.zero, 0.07f, 0.07f, 0.62f, 12, _metal);
+            Frustum(mb, new Vector3(0, 0.62f, 0), 0.065f, 0.065f, 0.1f, 12, _glow);
+            Frustum(mb, new Vector3(0, 0.72f, 0), 0.08f, 0.08f, 0.06f, 12, _metal);
+            var go = _w.Emit("Bollard_" + o.Id, parent, mb, castShadows: true, probeStatic: true);
+            var lightGo = new GameObject(go.name + "_Light");
+            lightGo.transform.SetParent(go.transform, false);
+            lightGo.transform.position = pos + Vector3.up * 0.67f * o.Scale;
+            var l = lightGo.AddComponent<Light>();
+            l.type = LightType.Point;
+            l.color = new Color(1f, 0.78f, 0.55f);
+            l.intensity = 0.8f;
+            l.range = 2.5f;
+            l.shadows = LightShadows.None;
         }
 
         // ------------------------------------------------------------------ bridge
@@ -264,7 +496,7 @@ namespace House4696.Landscape.Natural
                 for (int i = 0; i < n; i++)
                 {
                     var q = a + t * (i + 0.5f) * length / n;
-                    if (_m.InHouse(q.x, q.y, 0.5f)) continue;
+                    if (_m.InHouse(q.x, q.y, 0.5f) || Gate(q)) continue;
                     float z = _m.Height(q.x, q.y);
                     if (_m.StreamAt(q.x, q.y, out float d, out _, out float hw, out float w, out _) && d < hw + 0.2f) z = Mathf.Max(z, w + 0.05f);
                     float h = 1.85f + _rng.Range(-0.01f, 0.01f);
@@ -273,12 +505,15 @@ namespace House4696.Landscape.Natural
                 for (float s = 0f; s <= length; s += 2.4f)
                 {
                     var q = a + t * s;
-                    if (_m.InHouse(q.x, q.y, 0.5f)) continue;
+                    if (_m.InHouse(q.x, q.y, 0.5f) || Gate(q)) continue;
                     Box(mb, new Vector3(q.x, _m.Height(q.x, q.y) + 0.9f, q.y), new Vector3(0.1f, 1.9f, 0.1f), yaw, _fence);
                 }
             }
             if (!mb.IsEmpty) _w.Emit("Fence", parent, mb, castShadows: true, probeStatic: true);
         }
+
+        /// <summary>The fence stays open where a path or a paved area reaches the plot edge (a gate, a drive entrance).</summary>
+        bool Gate(Vector2 q) => _m.PathDistance(q.x, q.y) < 0.35f || _m.AreaAt(q.x, q.y, 0.2f) is SiteModel.HardArea a && a.Def.Type != "lawn";
 
         // ------------------------------------------------------------------ single trees
 

@@ -1,0 +1,92 @@
+[
+ {
+  "id": "lift_brushed",
+  "name": "Лифт: нержавеющая сталь, шлифованная (hairline)",
+  "category": "lift",
+  "source": "procedural:tools/lifts/textures/metals.py",
+  "neutral": true,
+  "metersPerTile": [
+   0.5,
+   1.0
+  ],
+  "maxSize": 1024,
+  "folder": "Materials/lift_brushed",
+  "textures": {
+   "albedo": "lift_brushed_albedo.jpg",
+   "normal": "lift_brushed_normal.jpg",
+   "mask": "lift_brushed_mask.png"
+  }
+ },
+ {
+  "id": "lift_mirror",
+  "name": "Лифт: нержавеющая сталь, зеркало",
+  "category": "lift",
+  "source": "procedural:tools/lifts/textures/metals.py",
+  "neutral": true,
+  "metersPerTile": [
+   2.0,
+   2.0
+  ],
+  "maxSize": 1024,
+  "folder": "Materials/lift_mirror",
+  "textures": {
+   "albedo": "lift_mirror_albedo.jpg",
+   "normal": "lift_mirror_normal.jpg",
+   "mask": "lift_mirror_mask.png"
+  }
+ },
+ {
+  "id": "lift_painted",
+  "name": "Лифт: окрашенная сталь (порошковая)",
+  "category": "lift",
+  "source": "procedural:tools/lifts/textures/metals.py",
+  "neutral": true,
+  "metersPerTile": [
+   0.5,
+   0.5
+  ],
+  "maxSize": 1024,
+  "folder": "Materials/lift_painted",
+  "textures": {
+   "albedo": "lift_painted_albedo.jpg",
+   "normal": "lift_painted_normal.jpg",
+   "mask": "lift_painted_mask.png"
+  }
+ },
+ {
+  "id": "lift_woodmetal",
+  "name": "Лифт: цветной металл под бук (SL-8055)",
+  "category": "lift",
+  "source": "procedural:tools/lifts/textures/metals.py",
+  "neutral": false,
+  "metersPerTile": [
+   0.5,
+   1.0
+  ],
+  "maxSize": 1024,
+  "folder": "Materials/lift_woodmetal",
+  "textures": {
+   "albedo": "lift_woodmetal_albedo.jpg",
+   "normal": "lift_woodmetal_normal.jpg",
+   "mask": "lift_woodmetal_mask.png"
+  }
+ },
+ {
+  "id": "lift_checker",
+  "name": "Лифт: рифлёный лист «чечевица» (нержавейка)",
+  "category": "lift",
+  "source": "procedural:tools/lifts/textures/metals.py",
+  "neutral": false,
+  "metersPerTile": [
+   0.4,
+   0.4
+  ],
+  "maxSize": 1024,
+  "folder": "Materials/lift_checker",
+  "textures": {
+   "albedo": "lift_checker_albedo.jpg",
+   "normal": "lift_checker_normal.jpg",
+   "mask": "lift_checker_mask.png"
+  }
+ }
+]

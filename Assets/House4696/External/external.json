@@ -6901,6 +6901,1085 @@
     "mask": "cgprint_ken_elochka_488x374_mask.png"
    },
    "transparent": true
+  },
+  {
+   "id": "lift_brushed",
+   "name": "Лифт: нержавеющая сталь, шлифованная (hairline)",
+   "category": "lift",
+   "source": "procedural:tools/lifts/textures/metals.py",
+   "neutral": true,
+   "metersPerTile": [
+    0.5,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/lift_brushed",
+   "textures": {
+    "albedo": "lift_brushed_albedo.jpg",
+    "normal": "lift_brushed_normal.jpg",
+    "mask": "lift_brushed_mask.png"
+   }
+  },
+  {
+   "id": "lift_mirror",
+   "name": "Лифт: нержавеющая сталь, зеркало",
+   "category": "lift",
+   "source": "procedural:tools/lifts/textures/metals.py",
+   "neutral": true,
+   "metersPerTile": [
+    2.0,
+    2.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/lift_mirror",
+   "textures": {
+    "albedo": "lift_mirror_albedo.jpg",
+    "normal": "lift_mirror_normal.jpg",
+    "mask": "lift_mirror_mask.png"
+   }
+  },
+  {
+   "id": "lift_painted",
+   "name": "Лифт: окрашенная сталь (порошковая)",
+   "category": "lift",
+   "source": "procedural:tools/lifts/textures/metals.py",
+   "neutral": true,
+   "metersPerTile": [
+    0.5,
+    0.5
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/lift_painted",
+   "textures": {
+    "albedo": "lift_painted_albedo.jpg",
+    "normal": "lift_painted_normal.jpg",
+    "mask": "lift_painted_mask.png"
+   }
+  },
+  {
+   "id": "lift_woodmetal",
+   "name": "Лифт: цветной металл под бук (SL-8055)",
+   "category": "lift",
+   "source": "procedural:tools/lifts/textures/metals.py",
+   "neutral": false,
+   "metersPerTile": [
+    0.5,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/lift_woodmetal",
+   "textures": {
+    "albedo": "lift_woodmetal_albedo.jpg",
+    "normal": "lift_woodmetal_normal.jpg",
+    "mask": "lift_woodmetal_mask.png"
+   }
+  },
+  {
+   "id": "lift_checker",
+   "name": "Лифт: рифлёный лист «чечевица» (нержавейка)",
+   "category": "lift",
+   "source": "procedural:tools/lifts/textures/metals.py",
+   "neutral": false,
+   "metersPerTile": [
+    0.4,
+    0.4
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/lift_checker",
+   "textures": {
+    "albedo": "lift_checker_albedo.jpg",
+    "normal": "lift_checker_normal.jpg",
+    "mask": "lift_checker_mask.png"
+   }
+  },
+  {
+   "id": "liftfloor_sl_4006p",
+   "name": "SL-4006P ПВХ: белый мрамор, коричневая рамка, ромб",
+   "category": "lift",
+   "source": "procedural:tools/lifts/textures/floors.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/liftfloor_sl_4006p",
+   "textures": {
+    "albedo": "liftfloor_sl_4006p_albedo.jpg",
+    "normal": "liftfloor_sl_4006p_normal.jpg",
+    "mask": "liftfloor_sl_4006p_mask.png"
+   }
+  },
+  {
+   "id": "liftfloor_sl_4021p",
+   "name": "SL-4021P ПВХ: светло-жёлтый мрамор, три тёмные полосы",
+   "category": "lift",
+   "source": "procedural:tools/lifts/textures/floors.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/liftfloor_sl_4021p",
+   "textures": {
+    "albedo": "liftfloor_sl_4021p_albedo.jpg",
+    "normal": "liftfloor_sl_4021p_normal.jpg",
+    "mask": "liftfloor_sl_4021p_mask.png"
+   }
+  },
+  {
+   "id": "liftfloor_sl_4025p",
+   "name": "SL-4025P ПВХ: бежевый мрамор, зелёная рамка",
+   "category": "lift",
+   "source": "procedural:tools/lifts/textures/floors.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/liftfloor_sl_4025p",
+   "textures": {
+    "albedo": "liftfloor_sl_4025p_albedo.jpg",
+    "normal": "liftfloor_sl_4025p_normal.jpg",
+    "mask": "liftfloor_sl_4025p_mask.png"
+   }
+  },
+  {
+   "id": "liftfloor_sl_4027p",
+   "name": "SL-4027P ПВХ: розово-белый мрамор, зелёная рамка, ромб",
+   "category": "lift",
+   "source": "procedural:tools/lifts/textures/floors.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/liftfloor_sl_4027p",
+   "textures": {
+    "albedo": "liftfloor_sl_4027p_albedo.jpg",
+    "normal": "liftfloor_sl_4027p_normal.jpg",
+    "mask": "liftfloor_sl_4027p_mask.png"
+   }
+  },
+  {
+   "id": "liftfloor_sl_4034p",
+   "name": "SL-4034P ПВХ: бежевый, плетёный квадрат-ромб",
+   "category": "lift",
+   "source": "procedural:tools/lifts/textures/floors.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/liftfloor_sl_4034p",
+   "textures": {
+    "albedo": "liftfloor_sl_4034p_albedo.jpg",
+    "normal": "liftfloor_sl_4034p_normal.jpg",
+    "mask": "liftfloor_sl_4034p_mask.png"
+   }
+  },
+  {
+   "id": "liftfloor_sl_4173p",
+   "name": "SL-4173P ПВХ: белый мрамор в коричневой рамке",
+   "category": "lift",
+   "source": "procedural:tools/lifts/textures/floors.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/liftfloor_sl_4173p",
+   "textures": {
+    "albedo": "liftfloor_sl_4173p_albedo.jpg",
+    "normal": "liftfloor_sl_4173p_normal.jpg",
+    "mask": "liftfloor_sl_4173p_mask.png"
+   }
+  },
+  {
+   "id": "liftfloor_sl_4106d",
+   "name": "SL-4106D мрамор: кремовый центр, чёрный гранит",
+   "category": "lift",
+   "source": "procedural:tools/lifts/textures/floors.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/liftfloor_sl_4106d",
+   "textures": {
+    "albedo": "liftfloor_sl_4106d_albedo.jpg",
+    "normal": "liftfloor_sl_4106d_normal.jpg",
+    "mask": "liftfloor_sl_4106d_mask.png"
+   }
+  },
+  {
+   "id": "liftfloor_sl_4145d",
+   "name": "SL-4145D мрамор: серо-зелёный",
+   "category": "lift",
+   "source": "procedural:tools/lifts/textures/floors.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/liftfloor_sl_4145d",
+   "textures": {
+    "albedo": "liftfloor_sl_4145d_albedo.jpg",
+    "normal": "liftfloor_sl_4145d_normal.jpg",
+    "mask": "liftfloor_sl_4145d_mask.png"
+   }
+  },
+  {
+   "id": "liftfloor_sl_4157d",
+   "name": "SL-4157D мрамор: крем, светло-коричневая рамка",
+   "category": "lift",
+   "source": "procedural:tools/lifts/textures/floors.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/liftfloor_sl_4157d",
+   "textures": {
+    "albedo": "liftfloor_sl_4157d_albedo.jpg",
+    "normal": "liftfloor_sl_4157d_normal.jpg",
+    "mask": "liftfloor_sl_4157d_mask.png"
+   }
+  },
+  {
+   "id": "liftfloor_sl_4182d",
+   "name": "SL-4182D мрамор: эмперадор, ромб в квадрате",
+   "category": "lift",
+   "source": "procedural:tools/lifts/textures/floors.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/liftfloor_sl_4182d",
+   "textures": {
+    "albedo": "liftfloor_sl_4182d_albedo.jpg",
+    "normal": "liftfloor_sl_4182d_normal.jpg",
+    "mask": "liftfloor_sl_4182d_mask.png"
+   }
+  },
+  {
+   "id": "liftfloor_sl_4028p",
+   "name": "SL-4028P ПВХ узор (по фото SL-1036)",
+   "category": "lift",
+   "source": "procedural:tools/lifts/textures/floors.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/liftfloor_sl_4028p",
+   "textures": {
+    "albedo": "liftfloor_sl_4028p_albedo.jpg",
+    "normal": "liftfloor_sl_4028p_normal.jpg",
+    "mask": "liftfloor_sl_4028p_mask.png"
+   }
+  },
+  {
+   "id": "liftfloor_sl_4017p",
+   "name": "SL-4017P ПВХ: серая крошка (по фото SL-1072)",
+   "category": "lift",
+   "source": "procedural:tools/lifts/textures/floors.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/liftfloor_sl_4017p",
+   "textures": {
+    "albedo": "liftfloor_sl_4017p_albedo.jpg",
+    "normal": "liftfloor_sl_4017p_normal.jpg",
+    "mask": "liftfloor_sl_4017p_mask.png"
+   }
+  },
+  {
+   "id": "liftfloor_sl_4012p",
+   "name": "SL-4012P ПВХ узор (по фото SL-1095)",
+   "category": "lift",
+   "source": "procedural:tools/lifts/textures/floors.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/liftfloor_sl_4012p",
+   "textures": {
+    "albedo": "liftfloor_sl_4012p_albedo.jpg",
+    "normal": "liftfloor_sl_4012p_normal.jpg",
+    "mask": "liftfloor_sl_4012p_mask.png"
+   }
+  },
+  {
+   "id": "liftfloor_sl_4072d",
+   "name": "SL-4072D мрамор (по фото SL-1109)",
+   "category": "lift",
+   "source": "procedural:tools/lifts/textures/floors.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/liftfloor_sl_4072d",
+   "textures": {
+    "albedo": "liftfloor_sl_4072d_albedo.jpg",
+    "normal": "liftfloor_sl_4072d_normal.jpg",
+    "mask": "liftfloor_sl_4072d_mask.png"
+   }
+  },
+  {
+   "id": "liftfloor_sl_4150d",
+   "name": "SL-4150D мрамор (по фото SL-1135)",
+   "category": "lift",
+   "source": "procedural:tools/lifts/textures/floors.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/liftfloor_sl_4150d",
+   "textures": {
+    "albedo": "liftfloor_sl_4150d_albedo.jpg",
+    "normal": "liftfloor_sl_4150d_normal.jpg",
+    "mask": "liftfloor_sl_4150d_mask.png"
+   }
+  },
+  {
+   "id": "liftfloor_sl_4082d",
+   "name": "SL-4082D мрамор (по фото SL-1136)",
+   "category": "lift",
+   "source": "procedural:tools/lifts/textures/floors.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/liftfloor_sl_4082d",
+   "textures": {
+    "albedo": "liftfloor_sl_4082d_albedo.jpg",
+    "normal": "liftfloor_sl_4082d_normal.jpg",
+    "mask": "liftfloor_sl_4082d_mask.png"
+   }
+  },
+  {
+   "id": "liftfloor_sl_4039d",
+   "name": "SL-4039D мрамор с медальоном (по фото SL-1137)",
+   "category": "lift",
+   "source": "procedural:tools/lifts/textures/floors.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/liftfloor_sl_4039d",
+   "textures": {
+    "albedo": "liftfloor_sl_4039d_albedo.jpg",
+    "normal": "liftfloor_sl_4039d_normal.jpg",
+    "mask": "liftfloor_sl_4039d_mask.png"
+   }
+  },
+  {
+   "id": "liftfloor_sl_4036p",
+   "name": "SL-4036P ПВХ узор (условно, на фото SL-1130 не виден)",
+   "category": "lift",
+   "source": "procedural:tools/lifts/textures/floors.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/liftfloor_sl_4036p",
+   "textures": {
+    "albedo": "liftfloor_sl_4036p_albedo.jpg",
+    "normal": "liftfloor_sl_4036p_normal.jpg",
+    "mask": "liftfloor_sl_4036p_mask.png"
+   }
+  },
+  {
+   "id": "liftdoor_sl_7061",
+   "name": "SL-7061 дверь: зеркало, травление (розетка, полосы)",
+   "category": "lift",
+   "source": "procedural:tools/lifts/textures/doors.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/liftdoor_sl_7061",
+   "textures": {
+    "albedo": "liftdoor_sl_7061_albedo.jpg",
+    "normal": "liftdoor_sl_7061_normal.jpg",
+    "mask": "liftdoor_sl_7061_mask.png"
+   },
+   "maskSize": 1024
+  },
+  {
+   "id": "liftdoor_sl_7105",
+   "name": "SL-7105 дверь: розовое золото, зеркало, травление",
+   "category": "lift",
+   "source": "procedural:tools/lifts/textures/doors.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/liftdoor_sl_7105",
+   "textures": {
+    "albedo": "liftdoor_sl_7105_albedo.jpg",
+    "normal": "liftdoor_sl_7105_normal.jpg",
+    "mask": "liftdoor_sl_7105_mask.png"
+   },
+   "maskSize": 1024
+  },
+  {
+   "id": "liftdoor_sl_7001",
+   "name": "SL-7001 дверь: зеркало, травление (растительный орнамент)",
+   "category": "lift",
+   "source": "procedural:tools/lifts/textures/doors.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/liftdoor_sl_7001",
+   "textures": {
+    "albedo": "liftdoor_sl_7001_albedo.jpg",
+    "normal": "liftdoor_sl_7001_normal.jpg",
+    "mask": "liftdoor_sl_7001_mask.png"
+   },
+   "maskSize": 1024
+  },
+  {
+   "id": "liftdoor_sl_7014",
+   "name": "SL-7014 дверь: зеркало, травление (полосы)",
+   "category": "lift",
+   "source": "procedural:tools/lifts/textures/doors.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/liftdoor_sl_7014",
+   "textures": {
+    "albedo": "liftdoor_sl_7014_albedo.jpg",
+    "normal": "liftdoor_sl_7014_normal.jpg",
+    "mask": "liftdoor_sl_7014_mask.png"
+   },
+   "maskSize": 1024
+  },
+  {
+   "id": "liftdoor_sl_7037",
+   "name": "SL-7037 дверь: мультипроцесс титана (арка)",
+   "category": "lift",
+   "source": "procedural:tools/lifts/textures/doors.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/liftdoor_sl_7037",
+   "textures": {
+    "albedo": "liftdoor_sl_7037_albedo.jpg",
+    "normal": "liftdoor_sl_7037_normal.jpg",
+    "mask": "liftdoor_sl_7037_mask.png"
+   },
+   "maskSize": 1024
+  },
+  {
+   "id": "liftdoor_sl_8055",
+   "name": "SL-8055 дверь: цветной металл, бук",
+   "category": "lift",
+   "source": "procedural:tools/lifts/textures/doors.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/liftdoor_sl_8055",
+   "textures": {
+    "albedo": "liftdoor_sl_8055_albedo.jpg",
+    "normal": "liftdoor_sl_8055_normal.jpg",
+    "mask": "liftdoor_sl_8055_mask.png"
+   },
+   "maskSize": 1024
+  },
+  {
+   "id": "liftwall_sl_1134_back",
+   "name": "SL-1134 задняя стенка",
+   "category": "lift",
+   "source": "procedural:tools/lifts/textures/walls.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/liftwall_sl_1134_back",
+   "textures": {
+    "albedo": "liftwall_sl_1134_back_albedo.jpg",
+    "normal": "liftwall_sl_1134_back_normal.jpg",
+    "mask": "liftwall_sl_1134_back_mask.png"
+   },
+   "maskSize": 1024
+  },
+  {
+   "id": "liftwall_sl_1134_side",
+   "name": "SL-1134 боковая стенка",
+   "category": "lift",
+   "source": "procedural:tools/lifts/textures/walls.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/liftwall_sl_1134_side",
+   "textures": {
+    "albedo": "liftwall_sl_1134_side_albedo.jpg",
+    "normal": "liftwall_sl_1134_side_normal.jpg",
+    "mask": "liftwall_sl_1134_side_mask.png"
+   },
+   "maskSize": 1024
+  },
+  {
+   "id": "liftwall_sl_1095_back",
+   "name": "SL-1095 задняя стенка",
+   "category": "lift",
+   "source": "procedural:tools/lifts/textures/walls.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/liftwall_sl_1095_back",
+   "textures": {
+    "albedo": "liftwall_sl_1095_back_albedo.jpg",
+    "normal": "liftwall_sl_1095_back_normal.jpg",
+    "mask": "liftwall_sl_1095_back_mask.png"
+   },
+   "maskSize": 1024
+  },
+  {
+   "id": "liftwall_sl_1095_side",
+   "name": "SL-1095 боковая стенка",
+   "category": "lift",
+   "source": "procedural:tools/lifts/textures/walls.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/liftwall_sl_1095_side",
+   "textures": {
+    "albedo": "liftwall_sl_1095_side_albedo.jpg",
+    "normal": "liftwall_sl_1095_side_normal.jpg",
+    "mask": "liftwall_sl_1095_side_mask.png"
+   },
+   "maskSize": 1024
+  },
+  {
+   "id": "liftwall_sl_1109_back",
+   "name": "SL-1109 задняя стенка",
+   "category": "lift",
+   "source": "procedural:tools/lifts/textures/walls.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/liftwall_sl_1109_back",
+   "textures": {
+    "albedo": "liftwall_sl_1109_back_albedo.jpg",
+    "normal": "liftwall_sl_1109_back_normal.jpg",
+    "mask": "liftwall_sl_1109_back_mask.png"
+   },
+   "maskSize": 1024
+  },
+  {
+   "id": "liftwall_sl_1109_side",
+   "name": "SL-1109 боковая стенка",
+   "category": "lift",
+   "source": "procedural:tools/lifts/textures/walls.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/liftwall_sl_1109_side",
+   "textures": {
+    "albedo": "liftwall_sl_1109_side_albedo.jpg",
+    "normal": "liftwall_sl_1109_side_normal.jpg",
+    "mask": "liftwall_sl_1109_side_mask.png"
+   },
+   "maskSize": 1024
+  },
+  {
+   "id": "liftwall_sl_1135_back",
+   "name": "SL-1135 задняя стенка",
+   "category": "lift",
+   "source": "procedural:tools/lifts/textures/walls.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/liftwall_sl_1135_back",
+   "textures": {
+    "albedo": "liftwall_sl_1135_back_albedo.jpg",
+    "normal": "liftwall_sl_1135_back_normal.jpg",
+    "mask": "liftwall_sl_1135_back_mask.png"
+   },
+   "maskSize": 1024
+  },
+  {
+   "id": "liftwall_sl_1135_side",
+   "name": "SL-1135 боковая стенка",
+   "category": "lift",
+   "source": "procedural:tools/lifts/textures/walls.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/liftwall_sl_1135_side",
+   "textures": {
+    "albedo": "liftwall_sl_1135_side_albedo.jpg",
+    "normal": "liftwall_sl_1135_side_normal.jpg",
+    "mask": "liftwall_sl_1135_side_mask.png"
+   },
+   "maskSize": 1024
+  },
+  {
+   "id": "liftwall_sl_1136_back",
+   "name": "SL-1136 задняя стенка",
+   "category": "lift",
+   "source": "procedural:tools/lifts/textures/walls.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/liftwall_sl_1136_back",
+   "textures": {
+    "albedo": "liftwall_sl_1136_back_albedo.jpg",
+    "normal": "liftwall_sl_1136_back_normal.jpg",
+    "mask": "liftwall_sl_1136_back_mask.png"
+   },
+   "maskSize": 1024
+  },
+  {
+   "id": "liftwall_sl_1137_back",
+   "name": "SL-1137 задняя стенка",
+   "category": "lift",
+   "source": "procedural:tools/lifts/textures/walls.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/liftwall_sl_1137_back",
+   "textures": {
+    "albedo": "liftwall_sl_1137_back_albedo.jpg",
+    "normal": "liftwall_sl_1137_back_normal.jpg",
+    "mask": "liftwall_sl_1137_back_mask.png"
+   },
+   "maskSize": 1024
+  },
+  {
+   "id": "liftwall_sl_1137_side",
+   "name": "SL-1137 боковая стенка",
+   "category": "lift",
+   "source": "procedural:tools/lifts/textures/walls.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/liftwall_sl_1137_side",
+   "textures": {
+    "albedo": "liftwall_sl_1137_side_albedo.jpg",
+    "normal": "liftwall_sl_1137_side_normal.jpg",
+    "mask": "liftwall_sl_1137_side_mask.png"
+   },
+   "maskSize": 1024
+  },
+  {
+   "id": "liftpanel_dc1000a",
+   "name": "Панель DC 1000A (COP)",
+   "category": "lift",
+   "source": "catalogue crop, cleaned: tools/lifts/textures/panels.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 512,
+   "folder": "Materials/liftpanel_dc1000a",
+   "textures": {
+    "albedo": "liftpanel_dc1000a_albedo.jpg",
+    "normal": "liftpanel_dc1000a_normal.jpg",
+    "mask": "liftpanel_dc1000a_mask.png"
+   },
+   "maskSize": 512
+  },
+  {
+   "id": "liftpanel_dl300",
+   "name": "Панель DL 300 (LOP)",
+   "category": "lift",
+   "source": "catalogue crop, cleaned: tools/lifts/textures/panels.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 512,
+   "folder": "Materials/liftpanel_dl300",
+   "textures": {
+    "albedo": "liftpanel_dl300_albedo.jpg",
+    "normal": "liftpanel_dl300_normal.jpg",
+    "mask": "liftpanel_dl300_mask.png"
+   },
+   "maskSize": 512
+  },
+  {
+   "id": "liftpanel_dc1000c",
+   "name": "Панель DC 1000C (COP)",
+   "category": "lift",
+   "source": "catalogue crop, cleaned: tools/lifts/textures/panels.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 512,
+   "folder": "Materials/liftpanel_dc1000c",
+   "textures": {
+    "albedo": "liftpanel_dc1000c_albedo.jpg",
+    "normal": "liftpanel_dc1000c_normal.jpg",
+    "mask": "liftpanel_dc1000c_mask.png"
+   },
+   "maskSize": 512
+  },
+  {
+   "id": "liftpanel_dl320",
+   "name": "Панель DL 320 (LOP)",
+   "category": "lift",
+   "source": "catalogue crop, cleaned: tools/lifts/textures/panels.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 512,
+   "folder": "Materials/liftpanel_dl320",
+   "textures": {
+    "albedo": "liftpanel_dl320_albedo.jpg",
+    "normal": "liftpanel_dl320_normal.jpg",
+    "mask": "liftpanel_dl320_mask.png"
+   },
+   "maskSize": 512
+  },
+  {
+   "id": "liftpanel_dc2000a",
+   "name": "Панель DC 2000A (COP)",
+   "category": "lift",
+   "source": "catalogue crop, cleaned: tools/lifts/textures/panels.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 512,
+   "folder": "Materials/liftpanel_dc2000a",
+   "textures": {
+    "albedo": "liftpanel_dc2000a_albedo.jpg",
+    "normal": "liftpanel_dc2000a_normal.jpg",
+    "mask": "liftpanel_dc2000a_mask.png"
+   },
+   "maskSize": 512
+  },
+  {
+   "id": "liftpanel_dl400",
+   "name": "Панель DL 400 (LOP)",
+   "category": "lift",
+   "source": "catalogue crop, cleaned: tools/lifts/textures/panels.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 512,
+   "folder": "Materials/liftpanel_dl400",
+   "textures": {
+    "albedo": "liftpanel_dl400_albedo.jpg",
+    "normal": "liftpanel_dl400_normal.jpg",
+    "mask": "liftpanel_dl400_mask.png"
+   },
+   "maskSize": 512
+  },
+  {
+   "id": "liftpanel_dc2000b",
+   "name": "Панель DC2000B (COP)",
+   "category": "lift",
+   "source": "catalogue crop, cleaned: tools/lifts/textures/panels.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 512,
+   "folder": "Materials/liftpanel_dc2000b",
+   "textures": {
+    "albedo": "liftpanel_dc2000b_albedo.jpg",
+    "normal": "liftpanel_dc2000b_normal.jpg",
+    "mask": "liftpanel_dc2000b_mask.png"
+   },
+   "maskSize": 512
+  },
+  {
+   "id": "liftpanel_dl450",
+   "name": "Панель DL 450 (LOP)",
+   "category": "lift",
+   "source": "catalogue crop, cleaned: tools/lifts/textures/panels.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 512,
+   "folder": "Materials/liftpanel_dl450",
+   "textures": {
+    "albedo": "liftpanel_dl450_albedo.jpg",
+    "normal": "liftpanel_dl450_normal.jpg",
+    "mask": "liftpanel_dl450_mask.png"
+   },
+   "maskSize": 512
+  },
+  {
+   "id": "liftpanel_dc5000a",
+   "name": "Панель DC 5000A (COP)",
+   "category": "lift",
+   "source": "catalogue crop, cleaned: tools/lifts/textures/panels.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 512,
+   "folder": "Materials/liftpanel_dc5000a",
+   "textures": {
+    "albedo": "liftpanel_dc5000a_albedo.jpg",
+    "normal": "liftpanel_dc5000a_normal.jpg",
+    "mask": "liftpanel_dc5000a_mask.png"
+   },
+   "maskSize": 512
+  },
+  {
+   "id": "liftpanel_dl500a",
+   "name": "Панель DL 500A (LOP)",
+   "category": "lift",
+   "source": "catalogue crop, cleaned: tools/lifts/textures/panels.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 512,
+   "folder": "Materials/liftpanel_dl500a",
+   "textures": {
+    "albedo": "liftpanel_dl500a_albedo.jpg",
+    "normal": "liftpanel_dl500a_normal.jpg",
+    "mask": "liftpanel_dl500a_mask.png"
+   },
+   "maskSize": 512
+  },
+  {
+   "id": "liftpanel_dc9000a",
+   "name": "Панель DC 9000A (COP)",
+   "category": "lift",
+   "source": "catalogue crop, cleaned: tools/lifts/textures/panels.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 512,
+   "folder": "Materials/liftpanel_dc9000a",
+   "textures": {
+    "albedo": "liftpanel_dc9000a_albedo.jpg",
+    "normal": "liftpanel_dc9000a_normal.jpg",
+    "mask": "liftpanel_dc9000a_mask.png"
+   },
+   "maskSize": 512
+  },
+  {
+   "id": "liftpanel_dl300b",
+   "name": "Панель DL 300B (LOP)",
+   "category": "lift",
+   "source": "catalogue crop, cleaned: tools/lifts/textures/panels.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 512,
+   "folder": "Materials/liftpanel_dl300b",
+   "textures": {
+    "albedo": "liftpanel_dl300b_albedo.jpg",
+    "normal": "liftpanel_dl300b_normal.jpg",
+    "mask": "liftpanel_dl300b_mask.png"
+   },
+   "maskSize": 512
+  },
+  {
+   "id": "liftpanel_dc1200a",
+   "name": "Панель DC 1200A (COP)",
+   "category": "lift",
+   "source": "catalogue crop, cleaned: tools/lifts/textures/panels.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 512,
+   "folder": "Materials/liftpanel_dc1200a",
+   "textures": {
+    "albedo": "liftpanel_dc1200a_albedo.jpg",
+    "normal": "liftpanel_dc1200a_normal.jpg",
+    "mask": "liftpanel_dc1200a_mask.png"
+   },
+   "maskSize": 512
+  },
+  {
+   "id": "liftpanel_dc4200a",
+   "name": "Панель DC 4200A (COP)",
+   "category": "lift",
+   "source": "catalogue crop, cleaned: tools/lifts/textures/panels.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 512,
+   "folder": "Materials/liftpanel_dc4200a",
+   "textures": {
+    "albedo": "liftpanel_dc4200a_albedo.jpg",
+    "normal": "liftpanel_dc4200a_normal.jpg",
+    "mask": "liftpanel_dc4200a_mask.png"
+   },
+   "maskSize": 512
+  },
+  {
+   "id": "liftpanel_dc1200b",
+   "name": "Панель DC 1200B (COP)",
+   "category": "lift",
+   "source": "catalogue crop, cleaned: tools/lifts/textures/panels.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 512,
+   "folder": "Materials/liftpanel_dc1200b",
+   "textures": {
+    "albedo": "liftpanel_dc1200b_albedo.jpg",
+    "normal": "liftpanel_dc1200b_normal.jpg",
+    "mask": "liftpanel_dc1200b_mask.png"
+   },
+   "maskSize": 512
+  },
+  {
+   "id": "liftpanel_dl100a",
+   "name": "Панель DL100A (LOP)",
+   "category": "lift",
+   "source": "catalogue crop, cleaned: tools/lifts/textures/panels.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 512,
+   "folder": "Materials/liftpanel_dl100a",
+   "textures": {
+    "albedo": "liftpanel_dl100a_albedo.jpg",
+    "normal": "liftpanel_dl100a_normal.jpg",
+    "mask": "liftpanel_dl100a_mask.png"
+   },
+   "maskSize": 512
+  },
+  {
+   "id": "liftpanel_dl100a_double",
+   "name": "Панель DL100A (двойной) (LOP)",
+   "category": "lift",
+   "source": "catalogue crop, cleaned: tools/lifts/textures/panels.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 512,
+   "folder": "Materials/liftpanel_dl100a_double",
+   "textures": {
+    "albedo": "liftpanel_dl100a_double_albedo.jpg",
+    "normal": "liftpanel_dl100a_double_normal.jpg",
+    "mask": "liftpanel_dl100a_double_mask.png"
+   },
+   "maskSize": 512
+  },
+  {
+   "id": "liftpanel_dc1000a_freight",
+   "name": "Панель DC1000A (грузовой) (COP)",
+   "category": "lift",
+   "source": "catalogue crop, cleaned: tools/lifts/textures/panels.py",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 512,
+   "folder": "Materials/liftpanel_dc1000a_freight",
+   "textures": {
+    "albedo": "liftpanel_dc1000a_freight_albedo.jpg",
+    "normal": "liftpanel_dc1000a_freight_normal.jpg",
+    "mask": "liftpanel_dc1000a_freight_mask.png"
+   },
+   "maskSize": 512
   }
  ],
  "models": [

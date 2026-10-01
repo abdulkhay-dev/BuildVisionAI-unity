@@ -112,7 +112,7 @@ namespace House4696.Generation
             if (ext == null) return;
             foreach (var e in ext.Models)
             {
-                if (e.Prefab == null || Models.ContainsKey(e.Id)) continue;
+                if (string.IsNullOrEmpty(e.PrefabPath) || Models.ContainsKey(e.Id)) continue;
                 var entry = e;
                 Models[e.Id] = new ItemModel { Id = e.Id, Name = e.Name, Category = e.Category, Params = e.ParamsText(), Build = b => b.External = entry };
             }

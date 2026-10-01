@@ -224,7 +224,7 @@ namespace House4696.Generation
                 if (r.Outline == null || r.Outline.Count < 3) continue;
                 string path = $"roofs/{r.Id}";
                 float? walls0 = WallTopUnder(c, r);
-                if (r.Base.HasValue && walls0.HasValue && Mathf.Abs(r.Base.Value - walls0.Value) > 0.25f)
+                if (r.Base.HasValue && walls0.HasValue && Mathf.Abs(r.Base.Value - walls0.Value) > 0.25f && !OnParapetWalls(c, r))
                     W(path, $"base = {r.Base:0.##} м, а верх стен под крышей — {walls0:0.##} м: крыша {(r.Base > walls0 ? "висит над стенами" : "утоплена в стены")}. " +
                             $"Убери base (он посчитается по стенам) или задай {walls0:0.##}");
                 float b = c.RoofBase(r);
@@ -313,6 +313,58 @@ namespace House4696.Generation
                 }
                 nextStair:;
             }
+            // ---------------------------------------------------------------- stairs in front of doors
+            foreach (var g in c.StairGeometries)
+                foreach (var o in doc.Openings)
+                {
+                    var f = c.Wall(o.Wall);
+                    if (f == null || !IsPassage(o) || f.Level != g.From) continue;
+                    float s0 = f.SAt(o.At), s1 = s0 + o.Width;
+                    Vector2 Q(float s, float d) { var q = f.P(s, 0, d); return new Vector2(q.x, q.z); }
+                    var zones = new[]
+                    {
+                        Ccw(new[] { Q(s0 + 0.05f, -f.T - 0.02f), Q(s1 - 0.05f, -f.T - 0.02f), Q(s1 - 0.05f, -f.T - DoorClearance), Q(s0 + 0.05f, -f.T - DoorClearance) }),
+                        Ccw(new[] { Q(s0 + 0.05f, 0.02f), Q(s1 - 0.05f, 0.02f), Q(s1 - 0.05f, DoorClearance), Q(s0 + 0.05f, DoorClearance) }),
+                    };
+                    bool hit = false;
+                    // a quarter of the free zone taken: a flight starting beside a doorway is normal, one across it is not
+                    foreach (var z in zones)
+                    {
+                        float zoneArea = Mathf.Abs(Polygon.SignedArea(z)), taken = 0f;
+                        foreach (var r in g.Footprint) taken += OverlapArea(z, Ccw(r));
+                        if (taken > 0.25f * zoneArea) hit = true;
+                    }
+                    if (hit)
+                        W($"stairs/{g.Def.Id}", $"марш лестницы стоит перед дверью '{o.Id}' (стена '{f.Def.Id}') — проход закрыт: нужно {DoorClearance:0.#} м свободного места. " +
+                                                 "Сдвинь лестницу (start/direction) или дверь (at)");
+                }
+
+            // ---------------------------------------------------------------- basements
+            foreach (var L in doc.Levels)
+            {
+                if (!HouseContext.IsBelowGrade(L)) continue;
+                if (c.Outline(L) == null)
+                    W($"levels/{L.Id}", $"этаж '{L.Id}' ниже земли ({L.Elevation:0.##} м), но у него нет наружных стен — подвалу нужны свои наружные стены " +
+                                        "(house_exterior_walls с level и prefix), иначе земля не будет вынута");
+            }
+            foreach (var p in c.Pits)
+            {
+                float depth = -p.Floor;
+                if (p.Kind == BasementBuilder.PitKind.Window && depth > 1.6f)
+                    W($"openings/{p.Opening.Id}", $"окно '{p.Opening.Id}' на {depth:0.##} м ниже земли — приямок будет глубоким колодцем. " +
+                                                  "Окна подвала ставят под потолок: sill ≈ высота этажа − высота окна − 0.1");
+                if (p.Kind == BasementBuilder.PitKind.Stair && p.Risers > 18)
+                    W($"openings/{p.Opening.Id}", $"наружная дверь '{p.Opening.Id}' на {depth:0.##} м ниже земли: спуск к ней — {p.Risers} ступеней " +
+                                                  $"и {p.Depth:0.#} м длиной. Проверь, нужна ли она (обычно вход в подвал — изнутри)");
+            }
+
+            // ---------------------------------------------------------------- site: a way to the door
+            if (c.Layout != null && doc.Site.Approach == "none")
+                foreach (var e in c.Layout.Entrances)
+                    if (!SiteLayout.Served(doc.Site, e))
+                        W("site/paths", $"к входной двери '{e.OpeningId}' ({Fmt(e.Point)}, смотрит на {SiteLayout.SideOf(e.Out)}) не ведёт ни дорожка, ни площадка — " +
+                                        "проложи paths от двери к улице или верни approach: auto");
+            list.AddRange(House4696.Lifts.LiftChecks.Run(c, items));
             list.AddRange(c.PhysicalIssues);
             return list;
         }
@@ -396,6 +448,23 @@ namespace House4696.Generation
                 return cornerWindow ? 0f : depth;
             }
             return 0f;
+        }
+
+        /// <summary>
+        /// A flat roof set into the top level's walls, which rise past it as parapets: its base is at or above that
+        /// level's ceiling and below the wall tops. Intended, not a roof sunk into the walls.
+        /// </summary>
+        static bool OnParapetWalls(HouseContext c, RoofDef r)
+        {
+            if (r.Type != RoofType.Flat || !r.Base.HasValue) return false;
+            LevelDef top = null;
+            float wallTop = float.MinValue;
+            foreach (var f in c.WallsUnder(r))
+            {
+                if (top == null || f.Level.Elevation > top.Elevation) top = f.Level;
+                wallTop = Mathf.Max(wallTop, f.Y1);
+            }
+            return top != null && r.Base.Value >= top.Elevation + top.Height - 0.05f && r.Base.Value < wallTop;
         }
 
         static float? WallTopUnder(HouseContext c, RoofDef r)

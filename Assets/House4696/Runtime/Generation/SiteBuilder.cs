@@ -25,13 +25,19 @@ namespace House4696.Generation
                 case LandscapePreset.Catalog4696:
                     return new LandscapeGenerator(_c.Lib, _c.W, CameraSpec.Position, CameraSpec.Forward).Build();
                 case LandscapePreset.Natural:
-                    return new House4696.Landscape.Natural.NaturalSiteBuilder(_c.Doc.Site, LandscapeKit.Load(), _c.W, _c.Veg, _c.Lib, _c.Mats, _c.Warnings)
-                        { Holes = _c.PoolCuts(0f) }.Build(footprint);
+                {
+                    var layout = _c.Layout = new SiteLayout(_c, footprint);
+                    var natural = new House4696.Landscape.Natural.NaturalSiteBuilder(_c.Doc.Site, LandscapeKit.Load(), _c.W, _c.Veg, _c.Lib, _c.Mats, _c.Warnings)
+                        { Holes = _c.GroundCuts(), Solids = layout.Solids, ExtraPaths = layout.Approach };
+                    var go = natural.Build(footprint);
+                    _c.SiteModel = natural.Model;
+                    return go;
+                }
             }
             var root = new GameObject("Landscape");
             var ground = new MeshBuilder();
-            // pools dug into the ground cut it (and the gravel apron)
-            var pools = _c.PoolCuts(0f);
+            // pools, basements and their light wells cut the ground (and the gravel apron)
+            var pools = _c.GroundCuts();
             Polygon.Prism(ground, new[] { new Vector2(-900, -900), new Vector2(900, -900), new Vector2(900, 900), new Vector2(-900, 900) },
                 pools, -0.3f, 0f, _c.Lib.Lawn, null, null);
             _c.W.Emit("Lawn", root.transform, ground, castShadows: false, probeStatic: true);

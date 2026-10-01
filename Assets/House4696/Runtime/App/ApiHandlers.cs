@@ -41,6 +41,7 @@ namespace House4696.App
                 case "catalog": c.Done.SetResult(Catalog((string)a["category"], (string)a["id"])); return;
                 case "doors": c.Done.SetResult(Doors((string)a["series"], (string)a["id"])); return;
                 case "windows": c.Done.SetResult(Windows()); return;
+                case "lifts": c.Done.SetResult(Lifts((string)a["id"])); return;
                 case "materials": c.Done.SetResult(Materials((string)a["category"])); return;
                 case "inspect": RequireProject(); c.Done.SetResult(HouseInspector.Inspect(_s.Result, (string)a["section"], (string)a["id"])); return;
                 case "list_projects": c.Done.SetResult(JArray.FromObject(_s.Store.List(), Camel)); return;
@@ -55,6 +56,16 @@ namespace House4696.App
                         ?? throw new ArgumentException("ids: нужен массив id"), n)));
                     return;
                 case "exterior_walls": c.Done.SetResult(ExteriorWalls(a)); return;
+                case "site":
+                    RequireProject();
+                    if (a["set"] == null && a["upsert"] == null && a["remove"] == null) c.Done.SetResult(SiteInfo.Describe(_s.Doc, _s.Result));
+                    else
+                    {
+                        var r = Edit(n => DocumentOps.Site(_s.Doc, a["set"] as JObject, a["upsert"] as JObject, a["remove"] as JObject, n));
+                        r["site"] = SiteInfo.Brief(_s.Doc, _s.Result);
+                        c.Done.SetResult(r);
+                    }
+                    return;
                 case "validate": RequireProject(); c.Done.SetResult(Changed(new List<string>())); return;
                 case "summary": RequireProject(); c.Done.SetResult(DocumentOps.Summary(_s.Doc)); return;
                 case "undo":
@@ -63,6 +74,7 @@ namespace House4696.App
                     return;
                 case "render": RequireProject(); _host.StartCoroutine(Guarded(Render(a, c), c)); return;
                 case "tune": c.Done.SetResult(PerfProbe.Tune(a, _s)); return;
+                case "memory": c.Done.SetResult(MemoryProbe.Report(a["top"] != null ? (int)a["top"] : 40)); return;
                 case "measure":
                     _host.StartCoroutine(Guarded(PerfProbe.Measure(a["warmup"] != null ? (int)a["warmup"] : 120, a["frames"] != null ? (int)a["frames"] : 120,
                         r => c.Done.TrySetResult(r)), c));
@@ -207,7 +219,9 @@ namespace House4696.App
         // ------------------------------------------------------------------ catalogue & materials
         JObject Catalog(string category, string id)
         {
+            bool measuring = !HouseBuilder.CatalogMeasured;
             var sizes = HouseBuilder.MeasureCatalog(_s.Mats);
+            if (measuring) _s.ReleaseLibrary();   // measuring loaded every model: keep only what the house uses
             var arr = new JArray();
             var cats = new SortedSet<string>();
             foreach (var m in ItemCatalog.Listed.OrderBy(m => m.Category).ThenBy(m => m.Id))
@@ -235,6 +249,52 @@ namespace House4696.App
         /// follows its leaf. Filtered by series id or model id (the full list grows with the catalogue).
         /// </summary>
         /// <summary>The window catalogue: models (with their typical size and sill height) and frame finishes.</summary>
+        const string LiftsHowTo =
+            "Лифт из каталога GLZ / NBSL — upsert kind lift: { id, model, load (кг), speed (м/с), position [x, z] — середина дверей на " +
+            "передней грани шахты (со стороны холла), rotation — куда смотрят двери (0 — на север, 90 — на восток), from / to — нижняя и верхняя " +
+            "остановка (id этажей; по умолчанию все этажи), skip — этажи без дверей, cabin — дизайн кабины, door — этажная дверь, " +
+            "panel / call — посты в кабине и на этаже, shaft: concrete (шахта со своими стенами 0.2 м, по умолчанию) / glass (панорамный) / none " +
+            "(стены шахты рисуешь сам), side — сторона противовеса (left/right) у моделей с боковым противовесом, parked — этаж, где стоит кабина, open: true — двери открыты }. " +
+            "Шахта (AH × BH + стены), приямок (PD) под нижней остановкой, высота над верхней (OH), машинное помещение MR-лифтов на крыше, двери, " +
+            "кабина и её отделка строятся по таблице модели; перекрытия на пути шахты вырезаются сами. Ставь шахту ЗА стену холла: перед дверями " +
+            "нужно 1.5 м свободного холла. Носилочный лифт для больниц — кабина 1100×2100 (car [1100, 2100], 1000 кг). Размеры строк — с фильтром id модели.";
+
+        static JObject Lifts(string id)
+        {
+            var cat = House4696.Lifts.LiftCatalog.File;
+            JObject Row(House4696.Lifts.LiftRow r) => new JObject
+            {
+                ["load"] = r.Load, ["speeds"] = r.Speeds != null ? new JArray(r.Speeds) : null, ["door"] = r.Door, ["doorType"] = r.DoorType,
+                ["car"] = r.Car != null ? new JArray(r.Car) : null, ["shaft"] = r.ShaftSize != null ? new JArray(r.ShaftSize) : null,
+                ["machineRoom"] = r.MachineRoom != null ? new JArray(r.MachineRoom) : null,
+                ["overhead"] = r.Overhead != null ? JObject.FromObject(r.Overhead) : null, ["pit"] = r.Pit != null ? JObject.FromObject(r.Pit) : null,
+                ["shape"] = r.Shape,
+            };
+            var models = cat.Models.Where(m => id == null || string.Equals(m.Id, id, System.StringComparison.OrdinalIgnoreCase)).Select(m =>
+            {
+                var j = new JObject
+                {
+                    ["id"] = m.Id, ["name"] = m.Name, ["type"] = m.Type, ["drive"] = m.Drive, ["counterweight"] = m.Counterweight, ["shaftShape"] = m.Shaft,
+                    ["loads"] = new JArray(m.Rows.Select(r => r.Load).Distinct()),
+                };
+                if (id != null) { j["rows"] = new JArray(m.Rows.Select(Row)); j["note"] = m.Note; }
+                return j;
+            });
+            var o = new JObject
+            {
+                ["howTo"] = LiftsHowTo,
+                ["sizes"] = "мм: door — ширина проёма JJ, car — кабина AA × BB × CH, shaft — шахта в свету AH × BH, machineRoom — AM × BM, overhead OH и pit PD по скорости",
+                ["models"] = new JArray(models),
+            };
+            if (id == null)
+            {
+                o["cabins"] = new JArray(cat.Cabins.Select(c => new JObject { ["id"] = c.Id, ["type"] = c.Type, ["text"] = c.Text }));
+                o["landingDoors"] = new JArray(cat.LandingDoors.Select(d => new JObject { ["id"] = d.Id, ["name"] = d.Name }));
+                o["panels"] = new JArray(cat.Panels.Select(pn => new JObject { ["id"] = pn.Id, ["kind"] = pn.Kind, ["display"] = pn.Display }));
+            }
+            return o;
+        }
+
         static JObject Windows()
         {
             var cat = House4696.Windows.WindowCatalog.File;
@@ -387,7 +447,7 @@ namespace House4696.App
         {
             var q = new RenderRequest();
             string mode = (string)a["mode"] ?? "orbit";
-            q.Mode = mode == "plan" ? RenderMode.Plan : mode == "walk" ? RenderMode.Walk : RenderMode.Orbit;
+            q.Mode = mode == "plan" ? RenderMode.Plan : mode == "walk" ? RenderMode.Walk : mode == "site" ? RenderMode.Site : RenderMode.Orbit;
             if (a["yaw"] != null) q.Yaw = (float)a["yaw"];
             if (a["pitch"] != null) q.Pitch = (float)a["pitch"];
             if (a["distance"] != null) q.Distance = (float)a["distance"];
@@ -401,6 +461,10 @@ namespace House4696.App
             {
                 // walk position: [x, z] on the level floor or [x, y, z] absolute feet position
                 float y = p.Count >= 3 ? (float)p[1] : ElevationOf(q.Level);
+                // outdoors on a natural site without a level: stand on the ground there
+                var sm = _s.Result?.Context?.SiteModel;
+                if (p.Count == 2 && q.Level == null && sm != null && !_s.Result.Footprint.Contains(new Vector2((float)p[0], (float)p[1])))
+                    y = sm.Height((float)p[0], (float)p[1]);
                 q.Position = p.Count >= 3 ? new Vector3((float)p[0], y, (float)p[2]) : new Vector3((float)p[0], y, (float)p[1]);
             }
             if (q.Mode == RenderMode.Walk && a["position"] == null) { c.Done.SetException(new ArgumentException("walk: нужен position [x, z] (и level) или [x, y, z]")); yield break; }
@@ -413,7 +477,10 @@ namespace House4696.App
 
         float ElevationOf(string level)
         {
-            var l = _s.Doc.Levels.Find(x => x.Id == level) ?? _s.Doc.Levels.FirstOrDefault();
+            // no level: the storey at grade (a basement is not where one walks in)
+            var l = _s.Doc.Levels.Find(x => x.Id == level)
+                    ?? _s.Doc.Levels.Where(x => !HouseContext.IsBelowGrade(x)).OrderBy(x => x.Elevation).FirstOrDefault()
+                    ?? _s.Doc.Levels.FirstOrDefault();
             return l?.Elevation ?? 0f;
         }
     }

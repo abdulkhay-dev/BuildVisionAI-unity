@@ -58,6 +58,8 @@ namespace House4696.Generation
                 var floorHoles = Wells(g => g.To.Id == L.Id);
                 floorHoles.AddRange(_c.PoolCuts(floorY));   // an indoor pool sinks into the floor
                 var ceilHoles = Wells(g => g.From.Elevation < ceilY - 0.01f && g.To.Elevation > ceilY - 0.01f);
+                floorHoles.AddRange(_c.LiftCuts(floorY));   // lift shafts run through floors and ceilings
+                ceilHoles.AddRange(_c.LiftCuts(ceilY));
                 Polygon.Prism(slab, r.Outline, floorHoles, slabBottom, floorY, tiled ? null : floorMat, null, plaster);
                 if (tiled)
                 {
@@ -115,6 +117,17 @@ namespace House4696.Generation
         /// is inside a box and does not reflect the sky) but stops short of the glazing plane of exterior walls
         /// (panes sit 0.12–0.23 m inside the outer face), so windows keep reflecting the garden.
         /// </summary>
+        /// <summary>Rooms up to which every probe gets 256 px; a bigger building gets 128 px probes.</summary>
+        public const int FullResolutionRooms = 24;
+
+        /// <summary>
+        /// Probe size for a house with <paramref name="rooms"/> rooms. URP Forward+ packs every visible probe (up to 64)
+        /// into one atlas per renderer that only grows: a 256 px probe takes a 1024² octahedral block plus mips, so a
+        /// building with ~130 rooms filled two 16K atlases (1.5 GB) plus 0.5 GB of probe cubemaps. 128 px is a quarter
+        /// of that and still sharp enough for box-projected floors and furniture in a big building.
+        /// </summary>
+        public static int ProbeResolution(int rooms) => rooms <= FullResolutionRooms ? 256 : 128;
+
         void Probe(RoomDef r, float floorY, float ceilY)
         {
             const float margin = 0.1f, reach = 0.25f, glassClear = 0.25f;
@@ -154,7 +167,7 @@ namespace House4696.Generation
             p.center = center - go.transform.position;
             p.blendDistance = 0.08f;
             p.importance = 2;
-            p.resolution = 256;
+            p.resolution = ProbeResolution(_c.Doc.Rooms.Count);
             p.hdr = true;
             p.nearClipPlane = 0.05f;
             p.farClipPlane = 60f;

@@ -24,6 +24,7 @@ namespace House4696.Model
         public List<RoomDef> Rooms = new List<RoomDef>();
         public List<RoofDef> Roofs = new List<RoofDef>();
         public List<StairDef> Stairs = new List<StairDef>();
+        public List<LiftDef> Lifts = new List<LiftDef>();
         public List<ElementDef> Elements = new List<ElementDef>();
         public List<ItemDef> Items = new List<ItemDef>();
         public List<LightDef> Lights = new List<LightDef>();
@@ -61,8 +62,43 @@ namespace House4696.Model
         public List<SitePathDef> Paths = new List<SitePathDef>();
         public List<BedDef> Beds = new List<BedDef>();
         public List<SiteObjectDef> Objects = new List<SiteObjectDef>();
+        /// <summary>Hard surfaces: patio, driveway, parking, playground, gravel (levelled into the ground).</summary>
+        public List<SiteAreaDef> Areas = new List<SiteAreaDef>();
+        /// <summary>Clipped hedges along polylines.</summary>
+        public List<SiteHedgeDef> Hedges = new List<SiteHedgeDef>();
         /// <summary>Board fence along the plot: sides "north", "east", "south", "west" (empty = no fence).</summary>
         public List<string> Fence = new List<string>();
+        /// <summary>Side of the plot on the street ("north", "east", "south", "west"); null = the side the entrance faces.</summary>
+        public string Street;
+        /// <summary>"auto": a paved path from every entrance door to the street edge (unless one already leads there); "none".</summary>
+        public string Approach = "auto";
+    }
+
+    /// <summary>
+    /// A hard surface of the natural site, levelled into the ground: <c>paving</c> (patio, forecourt), <c>asphalt</c>
+    /// (driveway), <c>parking</c> (asphalt with stall markings), <c>gravel</c>, <c>deck</c>, <c>rubber</c> (playground),
+    /// <c>lawn</c> (a flat lawn, e.g. for play).
+    /// </summary>
+    public sealed class SiteAreaDef
+    {
+        public string Id;
+        public string Type = "paving";
+        public List<Vector2> Outline = new List<Vector2>();
+        /// <summary>Surface material override (any library/basic material, may be tinted).</summary>
+        public string Material;
+        /// <summary>Surface height above grade; null = 0 next to the house, else the ground at the area's centre.</summary>
+        public float? Y;
+        /// <summary>Parking: stall width and depth, metres.</summary>
+        public float[] Stall;
+    }
+
+    /// <summary>A clipped hedge along a polyline.</summary>
+    public sealed class SiteHedgeDef
+    {
+        public string Id;
+        public List<Vector2> Path = new List<Vector2>();
+        public float Height = 1.2f;
+        public float Width = 0.6f;
     }
 
     /// <summary>Relief of the natural preset. The house stands on a level pad at grade 0.</summary>
@@ -80,7 +116,10 @@ namespace House4696.Model
     /// <summary>How the natural preset plants the beds (everything that is not lawn, path, water or house).</summary>
     public sealed class PlantingDef
     {
-        /// <summary>perennial (flowering border), meadow, shade (ferns and hostas), rock (rock garden), none.</summary>
+        /// <summary>
+        /// garden (lawn with a shrub border along the fence; flowers only in explicit beds), lawn (all lawn but the beds),
+        /// perennial (flowering border everywhere off the lawn), meadow, shade (ferns and hostas), rock (rock garden), none.
+        /// </summary>
         public string Style = "perennial";
         /// <summary>Accent flowers: salvia, lavender, lupin, daisy, phlox, yellow, orange (default: the style's mix).</summary>
         public List<string> Flowers = new List<string>();
@@ -106,7 +145,7 @@ namespace House4696.Model
         public string Id;
         public List<Vector2> Path = new List<Vector2>();
         public float Width = 1f;
-        /// <summary>stepping (flat stone slabs), gravel.</summary>
+        /// <summary>stepping (flat stone slabs in the lawn), paving, gravel, asphalt, deck.</summary>
         public string Style = "stepping";
     }
 
@@ -121,7 +160,9 @@ namespace House4696.Model
 
     /// <summary>
     /// A single placed thing on the site: bridge (spans <see cref="At"/> → <see cref="To"/>), stone_lantern,
-    /// garden_lamp, boulder, tree (species oak, birch, spruce, maple_red), plant (a kit group id).
+    /// garden_lamp, bollard, bench, boulder, shrub, tree (species oak, birch, spruce, maple_red). With
+    /// <see cref="Path"/> it is a row: one every <see cref="Spacing"/> metres along the polyline (an alley, lamps
+    /// along a path).
     /// </summary>
     public sealed class SiteObjectDef
     {
@@ -132,6 +173,35 @@ namespace House4696.Model
         public float Rotation;
         public float Scale = 1f;
         public string Species;
+        public List<Vector2> Path;
+        public float Spacing = 6f;
+
+        /// <summary>The single objects: itself, or one per <see cref="Spacing"/> along <see cref="Path"/> (ids id_1, id_2, …).</summary>
+        public static List<SiteObjectDef> Expand(IEnumerable<SiteObjectDef> list)
+        {
+            var res = new List<SiteObjectDef>();
+            foreach (var o in list)
+            {
+                if (o.Path == null || o.Path.Count < 2) { res.Add(o); continue; }
+                float step = Mathf.Max(0.5f, o.Spacing), carry = 0f;
+                int n = 0;
+                for (int i = 0; i + 1 < o.Path.Count; i++)
+                {
+                    Vector2 a = o.Path[i], b = o.Path[i + 1];
+                    float len = (b - a).magnitude;
+                    for (float t = carry; t <= len + 1e-3f; t += step)
+                        res.Add(new SiteObjectDef
+                        {
+                            Id = $"{o.Id}_{++n}", Type = o.Type, At = a + (b - a) * (len > 0 ? t / len : 0f), Rotation = o.Rotation,
+                            Scale = o.Scale, Species = o.Species,
+                        });
+                    // distance into the next segment where the next one stands
+                    if (len < carry) carry -= len;
+                    else carry = step - (len - carry) % step;
+                }
+            }
+            return res;
+        }
     }
 
     /// <summary>A storey. <see cref="Elevation"/> = finished floor above grade; <see cref="Height"/> = clear floor-to-ceiling height.</summary>
