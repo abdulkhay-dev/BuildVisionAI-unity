@@ -27,7 +27,9 @@ namespace House4696.Lifts
         LiftCabin _cabin;
         string _id;
         Material _concrete, _plaster, _render, _steel, _rail, _alu, _black, _sill;
-        Vector3 _carRope, _cwRope;            // local: bottom ends of the ropes (car crosshead, counterweight top)
+        Vector3 _carRope, _cwRope;
+        /// <summary>Invisible 6 cm boxes behind the glass panes: what the walker collides with (a 0-thick pane's edges snag).</summary>
+        MeshBuilder _glassSolid;            // local: bottom ends of the ropes (car crosshead, counterweight top)
         Vector3 _copMin, _copMax;            // local box of the car operating panel
 
         public void Build(LiftGeometry g)
@@ -49,7 +51,7 @@ namespace House4696.Lifts
 
             var root = new GameObject("Lift_" + _id).transform;
             root.SetParent(_c.Shell, false);
-            var shaft = Mb(); var glass = Mb(); var car = Mb(); var decor = Mb(); var carDecor = Mb(); var lights = Mb(); var cw = Mb();
+            var shaft = Mb(); var glass = Mb(); var carGlass = Mb(); _glassSolid = Mb(); var car = Mb(); var decor = Mb(); var carDecor = Mb(); var lights = Mb(); var cw = Mb();
 
             Shaft(shaft, glass);
             MachineRoom(shaft);
@@ -58,13 +60,15 @@ namespace House4696.Lifts
             var calls = new (Vector3 min, Vector3 max)[g.Stops.Count];
             for (int i = 0; i < g.Stops.Count; i++)
             {
-                landings[i] = Landing(g.Stops[i], decor, out var cmin, out var cmax);
+                landings[i] = Landing(g.Stops[i], decor, shaft, out var cmin, out var cmax);
                 calls[i] = (cmin, cmax);
             }
-            var carLeaves = Car(car, glass, carDecor, lights);
+            var carLeaves = Car(car, carGlass, carDecor, lights);
 
             _c.W.Emit("Shell_Lift_" + _id, root, shaft);
-            _c.W.Emit("Lift_" + _id + "_Glass", root, glass, castShadows: false);
+            _c.W.Emit("Decor_Lift_" + _id + "_Glass", root, glass, castShadows: false);
+            var gs = _c.W.Emit("Lift_" + _id + "_GlassBody", root, _glassSolid, castShadows: false);
+            if (gs != null && gs.TryGetComponent<MeshRenderer>(out var gsr)) gsr.enabled = false;
             _c.W.Emit("Decor_Lift_" + _id, root, decor);
 
             // the lift at work: the car with all it carries, landing doors per stop, buttons, counterweight and ropes
@@ -84,6 +88,8 @@ namespace House4696.Lifts
             var cab = new GameObject("Lift_" + _id + "_Cab").transform;
             cab.SetParent(root, false);
             CarLayer(_c.W.Emit("Lift_" + _id + "_Car", cab, car), false);
+            // a panoramic car's glass rides with it (seen from the hall too)
+            CarLayer(_c.W.Emit("Decor_Lift_" + _id + "_CarGlass", cab, carGlass, castShadows: false), true);   // the steel dado below stops the walker
             CarLayer(_c.W.Emit("Decor_Lift_" + _id + "_Car", cab, carDecor), false);
             CarLayer(_c.W.Emit("Decor_Lift_" + _id + "_Light", cab, lights, castShadows: false), false);
             foreach (var (key, mb, slide) in carLeaves)
@@ -288,6 +294,7 @@ namespace House4696.Lifts
                 new Vector2(0, y0), new Vector2((b - a).magnitude, y0), new Vector2((b - a).magnitude, y1), new Vector2(0, y1), _c.M.Glass);
             glass.Quad(P(b, y0, -n), P(a, y0, -n), P(a, y1, -n), P(b, y1, -n), new Vector3(n.x, 0, n.y).normalized,
                 new Vector2(0, y0), new Vector2((b - a).magnitude, y0), new Vector2((b - a).magnitude, y1), new Vector2(0, y1), _c.M.Glass);
+            SolidPane(a, b, y0, y1);
             foreach (var L in _g.Stops)
                 frame.Box(new Vector3(Mathf.Min(a.x, b.x) - 0.02f, L.Elevation - 0.1f, Mathf.Min(a.y, b.y) - 0.02f),
                           new Vector3(Mathf.Max(a.x, b.x) + 0.02f, L.Elevation, Mathf.Max(a.y, b.y) + 0.02f), _steel);
@@ -324,7 +331,9 @@ namespace House4696.Lifts
             }
             foreach (var (a, b) in holes)
             {
-                Full(y, a);
+                // glass under a doorway stops just below the floor: a pane's top edge at floor level is a 0-thick lip the
+                // walker cannot step over (the sill covers the slot)
+                Full(y, g.Enclosure == "glass" ? a - 0.015f : a);
                 Split(a, b);
                 y = b;
             }
@@ -340,6 +349,19 @@ namespace House4696.Lifts
                 new Vector2(x0, y0), new Vector2(x1, y0), new Vector2(x1, y1), new Vector2(x0, y1), _c.M.Glass);
             frame.Box(new Vector3(x0 - 0.03f, y0, -0.05f), new Vector3(x0 + 0.03f, y1, 0f), _steel);
             frame.Box(new Vector3(x1 - 0.03f, y0, -0.05f), new Vector3(x1 + 0.03f, y1, 0f), _steel);
+            _glassSolid?.Box(new Vector3(x0, y0, -0.055f), new Vector3(x1, y1, 0f), _c.M.Glass);
+        }
+
+        /// <summary>A 6 cm solid along the pane a→b (local plan), centred on it.</summary>
+        void SolidPane(Vector2 a, Vector2 b, float y0, float y1)
+        {
+            if (_glassSolid == null) return;
+            var d = b - a; float len = d.magnitude;
+            if (len < 1e-3f) return;
+            var keep = _glassSolid.Transform;
+            _glassSolid.Transform = keep * Matrix4x4.TRS(new Vector3(a.x, 0f, a.y), Quaternion.LookRotation(new Vector3(d.x, 0f, d.y) / len, Vector3.up), Vector3.one);
+            _glassSolid.Box(new Vector3(-0.03f, y0, -0.01f), new Vector3(0.03f, y1, len + 0.01f), _c.M.Glass);
+            _glassSolid.Transform = keep;
         }
 
         void PitAndHead(MeshBuilder mb, bool glassy)
@@ -413,7 +435,7 @@ namespace House4696.Lifts
         }
 
         // ------------------------------------------------------------------ landings
-        List<(string key, MeshBuilder mb, Vector3 slide)> Landing(LevelDef L, MeshBuilder decor, out Vector3 callMin, out Vector3 callMax)
+        List<(string key, MeshBuilder mb, Vector3 slide)> Landing(LevelDef L, MeshBuilder decor, MeshBuilder solid, out Vector3 callMin, out Vector3 callMax)
         {
             var g = _g;
             var (dx0, dx1) = g.DoorX;
@@ -436,7 +458,9 @@ namespace House4696.Lifts
                 decor.Box(new Vector3(dx0, y + hh, -t), new Vector3(dx1, y + hh + 0.002f, 0f), portal);
             }
             // sill flush with the floor at the shaft's edge, under the leaves (the level's floor fill runs through the reveal to it)
-            decor.Box(new Vector3(dx0 - 0.03f, y - 0.012f, -t - 0.06f), new Vector3(dx1 + 0.03f, y + 0.002f, -t + 0.03f), _sill);
+            // it is walked on: solid (the shaft mesh has a collider), flush with the floor, and it runs on to the car's sill
+            // with only the 2 cm running clearance in front of the car's door leaves (a 7 cm slot with a 2 mm lip stopped the walker)
+            solid.Box(new Vector3(dx0 - 0.03f, y - 0.012f, g.CarFront + 0.065f), new Vector3(dx1 + 0.03f, y, -t + 0.03f), _sill);
             // call button panel on the hall wall beside the doors (on the right seen from the hall = −X)
             var call = Print("liftpanel_", g.Def.Call ?? _s.Model?.Call ?? (_s.Freight ? "dl100a" : "dl300"));
             var cs = PanelSize(call, 0.1f, 0.35f, 0.3f);
@@ -518,7 +542,7 @@ namespace House4696.Lifts
                 car.Quad(new Vector3(x0, y, zb), new Vector3(x1, y, zb), new Vector3(x1, y, zf), new Vector3(x0, y, zf), Vector3.up,
                     new Vector2(1, 1), new Vector2(0, 1), new Vector2(0, 0), new Vector2(1, 0), floorMat);
             else car.PlanarFace(new Vector3(x0, y, zb), new Vector3(x1, y, zb), new Vector3(x1, y, zf), new Vector3(x0, y, zf), Vector3.up, floorMat);
-            car.Box(new Vector3(dx0 - 0.03f, y - 0.012f, zf - 0.002f), new Vector3(dx1 + 0.03f, y + 0.002f, zf + 0.045f), _sill);
+            car.Box(new Vector3(dx0 - 0.03f, y - 0.012f, zf - 0.002f), new Vector3(dx1 + 0.03f, y, zf + 0.045f), _sill);
 
             // walls as panels with dark seams; panoramic cars: glass round the back above a steel dado
             if (panoramic) PanoramicWalls(car, glass, y, ch, side);

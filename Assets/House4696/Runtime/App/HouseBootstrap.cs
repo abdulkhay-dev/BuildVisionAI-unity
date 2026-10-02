@@ -16,7 +16,7 @@ namespace House4696.App
     /// </summary>
     public sealed class HouseBootstrap : MonoBehaviour
     {
-        public const string Version = "0.8.2";
+        public const string Version = "0.8.3";
 
         [SerializeField] Camera loadingCamera;
         [Tooltip("Project opened when nothing was opened before (id in the project store).")]
