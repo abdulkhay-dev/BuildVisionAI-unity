@@ -545,20 +545,29 @@ namespace House4696.Lifts
 
             Ceiling(decor, lights, y, ch, x0, x1, zb, zf);
             Handrails(decor, y, x0, x1, zb, zf);
-            // operating panel on the front return, right of the door seen from inside (+X)
+            // operating panel right of the door seen from inside (+X): on the front return when it is wide enough, else on
+            // the side wall next to the door (a 1100 mm car with a 900 mm door has 100 mm returns — real cars do the same)
             var cop = Print("liftpanel_", _g.Def.Panel ?? _s.Model?.Panel ?? (_s.Freight ? "dc1000a_freight" : "dc1000a"));
-            var ps = PanelSize(cop, 0.17f, 1.15f, Mathf.Max(0.05f, x1 - 0.05f - (dx1 + 0.08f)));
-            float px0 = dx1 + 0.08f, px1 = px0 + ps.x;
-            if (px1 - px0 > 0.04f)
+            var copMat = Fin("stainless-hairline");
+            float ret = x1 - dx1;
+            var ps = PanelSize(cop, 0.17f, 1.15f, 0.2f);
+            if (ret - 0.13f >= Mathf.Max(ps.x, 0.1f))
             {
+                float px0 = dx1 + 0.08f, px1 = px0 + ps.x;
                 _copMin = new Vector3(px0, y + 2.0f - ps.y, zf - PanelT - 0.012f); _copMax = new Vector3(px1, y + 2.0f, zf - PanelT);
-                FittedBox(decor, _copMin, _copMax, Fin("stainless-hairline"), cop, Face.ZNeg);
-                if (cop == null)
-                    for (int i = 0; i < 6; i++)
-                    {
-                        float by = y + 1.05f + i * 0.09f;
-                        decor.Box(new Vector3((px0 + px1) * 0.5f - 0.018f, by, zf - PanelT - 0.018f), new Vector3((px0 + px1) * 0.5f + 0.018f, by + 0.036f, zf - PanelT - 0.012f), _c.M.Chrome);
-                    }
+                FittedBox(decor, _copMin, _copMax, copMat, cop, Face.ZNeg);
+                if (cop == null) CopButtons(decor, (px0 + px1) * 0.5f, y, zf - PanelT);
+            }
+            else
+            {
+                // side wall: the panel's face looks to −X, into the car; its left edge (seen from inside) is towards the door
+                float xw = x1 - 0.001f, zc = zf - PanelT - 0.12f - ps.x * 0.5f;
+                var keep = decor.Transform;
+                decor.Transform = keep * Matrix4x4.TRS(new Vector3(xw, 0f, zc), Quaternion.LookRotation(Vector3.right, Vector3.up), Vector3.one);
+                FittedBox(decor, new Vector3(-ps.x * 0.5f, y + 2.0f - ps.y, -0.012f), new Vector3(ps.x * 0.5f, y + 2.0f, 0f), copMat, cop, Face.ZNeg);
+                if (cop == null) CopButtons(decor, 0f, y, 0f);
+                decor.Transform = keep;
+                _copMin = new Vector3(xw - 0.012f, y + 2.0f - ps.y, zc - ps.x * 0.5f); _copMax = new Vector3(xw, y + 2.0f, zc + ps.x * 0.5f);
             }
             // car doors in front of the car's door line
             return Leaves(y, zf + 0.03f + LeafT, +1f, Fin(_cabin.Door ?? "stainless-hairline"), null);
@@ -760,6 +769,16 @@ namespace House4696.Lifts
             p.nearClipPlane = 0.05f;
             p.farClipPlane = 20f;
             return p;
+        }
+
+        /// <summary>Buttons of a panel without a picture: a column of chrome buttons on its face (z = the face, buttons towards −Z).</summary>
+        void CopButtons(MeshBuilder mb, float cx, float y, float zFace)
+        {
+            for (int i = 0; i < 6; i++)
+            {
+                float by = y + 1.05f + i * 0.09f;
+                mb.Box(new Vector3(cx - 0.018f, by, zFace - 0.018f), new Vector3(cx + 0.018f, by + 0.036f, zFace - 0.012f), _c.M.Chrome);
+            }
         }
 
         // ------------------------------------------------------------------ the working lift
