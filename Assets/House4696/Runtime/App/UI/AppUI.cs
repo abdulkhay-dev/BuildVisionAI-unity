@@ -97,6 +97,7 @@ namespace House4696.App.UI
         // ------------------------------------------------------------------ setup
         void Awake()
         {
+            House4696.Lifts.LiftController.FloorPickRequested += OnLiftFloorPick;
             // UI Toolkit reads the Input System through an EventSystem with its UI module
             if (FindAnyObjectByType<UnityEngine.EventSystems.EventSystem>() == null)
             {
@@ -947,8 +948,30 @@ namespace House4696.App.UI
             if (HomeOpen) { CloseHome(); return; }
         }
 
+        /// <summary>The car operating panel was used: a menu of the stops in the middle of the screen (top floor first).</summary>
+        void OnLiftFloorPick(House4696.Lifts.LiftController lift)
+        {
+            if (lift == null || lift.StopNames == null) return;
+            UnityEngine.Cursor.lockState = CursorLockMode.None;
+            UnityEngine.Cursor.visible = true;
+            var items = new List<MenuItem> { MenuItem.Title("Лифт — выберите этаж") };
+            for (int i = lift.StopNames.Length - 1; i >= 0; i--)
+            {
+                int stop = i;
+                items.Add(new MenuItem
+                {
+                    Label = lift.StopNames[i], Checked = i == lift.Current,
+                    // back to walking at once: the car closes its doors and goes
+                    Action = () => { lift.Call(stop); UnityEngine.Cursor.lockState = CursorLockMode.Locked; UnityEngine.Cursor.visible = false; },
+                });
+            }
+            var size = Root.layout.size;
+            ShowMenuAt(new Vector2(size.x * 0.5f - 120f, Mathf.Max(20f, size.y * 0.5f - 18f * items.Count)), items, 240f);
+        }
+
         void OnDestroy()
         {
+            House4696.Lifts.LiftController.FloorPickRequested -= OnLiftFloorPick;
             ViewerInput.PointerBlocked = false;
             ViewerInput.KeyboardBlocked = false;
             Tooltips.Suppressed = false;

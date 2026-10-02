@@ -153,6 +153,8 @@ namespace House4696.Runtime
             var ray = locked ? new Ray(_cam.transform.position, _cam.transform.forward) : _cam.ScreenPointToRay(_doorPressAt);
             float reach = _mode == Mode.Walk ? 3f : 80f;
             if (!Physics.Raycast(ray, out var hit, reach, ~(1 << 2), QueryTriggerInteraction.Ignore)) return;
+            var use = hit.collider.GetComponentInParent<IInteractable>();
+            if (use != null && use.Prompt != null) { use.Interact(); return; }
             var door = hit.collider.GetComponentInParent<Door>();
             if (door != null) door.Toggle();
         }

@@ -37,16 +37,17 @@ namespace House4696.Runtime
         Vector3 _vel;
         bool _crouched;
         Door _lookDoor;
+        IInteractable _look;
         WalkPoint _spawn;
 
         public override string Title => "Прогулка";
         public override string[] Help => new[]
         {
             "WASD — идти, Shift — бег, Space — прыжок, C — присесть",
-            "Мышь — осмотреться, E — открыть/закрыть дверь",
+            "Мышь — осмотреться, E — открыть/закрыть дверь, вызвать лифт, выбрать этаж в кабине",
             "Esc — освободить курсор, клик — вернуть",
         };
-        public override string Prompt => _lookDoor == null ? null : _lookDoor.IsOpen ? "E — закрыть дверь" : "E — открыть дверь";
+        public override string Prompt => _look != null ? _look.Prompt : _lookDoor == null ? null : _lookDoor.IsOpen ? "E — закрыть дверь" : "E — открыть дверь";
         /// <summary>Mouse look captures the cursor, except while a pointer tool uses the left button (then the right button looks).</summary>
         public override bool CapturesCursor => !ViewerInput.PointerTool;
 
@@ -61,7 +62,7 @@ namespace House4696.Runtime
             _eye = height - eyeBelowTop;
         }
 
-        public override void Exit() => _lookDoor = null;
+        public override void Exit() { _lookDoor = null; _look = null; }
 
         public override void GoTo(WalkPoint p)
         {
@@ -166,10 +167,18 @@ namespace House4696.Runtime
         void UpdateInteraction(bool pressed)
         {
             _lookDoor = null;
+            _look = null;
             var t = Cam.transform;
             if (Physics.Raycast(t.position, t.forward, out var hit, interactDistance, ~(1 << 2), QueryTriggerInteraction.Ignore))
-                _lookDoor = hit.collider.GetComponentInParent<Door>();
-            if (pressed && _lookDoor != null) _lookDoor.Toggle();
+            {
+                // lift buttons, panels and doors first; then plain doors
+                _look = hit.collider.GetComponentInParent<IInteractable>();
+                if (_look != null && _look.Prompt == null) _look = null;
+                if (_look == null) _lookDoor = hit.collider.GetComponentInParent<Door>();
+            }
+            if (!pressed) return;
+            if (_look != null) _look.Interact();
+            else if (_lookDoor != null) _lookDoor.Toggle();
         }
     }
 }

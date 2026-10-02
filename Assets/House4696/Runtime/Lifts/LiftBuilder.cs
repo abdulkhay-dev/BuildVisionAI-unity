@@ -11,8 +11,9 @@ namespace House4696.Lifts
     /// Builds a lift from its <see cref="LiftGeometry"/>: the shaft (concrete walls plastered on the hall side, glass for
     /// panoramic lifts, or nothing when the author walls it), pit floor and head slab, the machine room of an MR drive,
     /// at every stop a landing door with its stainless portal, sill and call button panel, and the car at the parked stop
-    /// with the cabin design's walls, ceiling and light, handrails, floor, operating panel and doors. The car and landing
-    /// doors at the parked stop open together (a look and a click in walk mode, like any door).
+    /// with the cabin design's walls, ceiling and light, handrails, floor, operating panel and doors — and makes it work: a
+    /// <see cref="LiftController"/> on the lift's root moves the car (with what follows it), the counterweight, the ropes and
+    /// the doors; call buttons, the operating panel and the door leaves are what the walker uses.
     /// </summary>
     public sealed class LiftBuilder
     {
@@ -26,6 +27,8 @@ namespace House4696.Lifts
         LiftCabin _cabin;
         string _id;
         Material _concrete, _plaster, _render, _steel, _rail, _alu, _black, _sill;
+        Vector3 _carRope, _cwRope;            // local: bottom ends of the ropes (car crosshead, counterweight top)
+        Vector3 _copMin, _copMax;            // local box of the car operating panel
 
         public void Build(LiftGeometry g)
         {
@@ -46,29 +49,87 @@ namespace House4696.Lifts
 
             var root = new GameObject("Lift_" + _id).transform;
             root.SetParent(_c.Shell, false);
-            var shaft = Mb(); var glass = Mb(); var car = Mb(); var decor = Mb(); var carDecor = Mb(); var lights = Mb();
-            var leafClosed = Mb();
+            var shaft = Mb(); var glass = Mb(); var car = Mb(); var decor = Mb(); var carDecor = Mb(); var lights = Mb(); var cw = Mb();
 
             Shaft(shaft, glass);
             MachineRoom(shaft);
-            Equipment(decor);
-            var movers = new List<(string name, MeshBuilder mb, Vector3 slide)>();
-            foreach (var stop in g.Stops)
+            Equipment(decor, cw);
+            var landings = new List<(string key, MeshBuilder mb, Vector3 slide)>[g.Stops.Count];
+            var calls = new (Vector3 min, Vector3 max)[g.Stops.Count];
+            for (int i = 0; i < g.Stops.Count; i++)
             {
-                bool parked = stop == g.Parked;
-                Landing(stop, decor, parked ? null : leafClosed, parked ? movers : null);
+                landings[i] = Landing(g.Stops[i], decor, out var cmin, out var cmax);
+                calls[i] = (cmin, cmax);
             }
-            Car(car, glass, carDecor, lights, movers);
+            var carLeaves = Car(car, glass, carDecor, lights);
 
             _c.W.Emit("Shell_Lift_" + _id, root, shaft);
             _c.W.Emit("Lift_" + _id + "_Glass", root, glass, castShadows: false);
-            CarLayer(_c.W.Emit("Lift_" + _id + "_Car", root, car), false);
-            _c.W.Emit("Lift_" + _id + "_Doors", root, leafClosed);
             _c.W.Emit("Decor_Lift_" + _id, root, decor);
-            CarLayer(_c.W.Emit("Decor_Lift_" + _id + "_Car", root, carDecor), false);
-            CarLayer(_c.W.Emit("Decor_Lift_" + _id + "_Light", root, lights, castShadows: false), false);
-            foreach (var o in Movers(root, movers)) CarLayer(o, true);
-            CarLight();
+
+            // the lift at work: the car with all it carries, landing doors per stop, buttons, counterweight and ropes
+            var ctl = root.gameObject.AddComponent<LiftController>();
+            ctl.LiftId = _id;
+            ctl.StopY = g.Stops.ConvertAll(l => l.Elevation).ToArray();
+            ctl.StopNames = g.Stops.ConvertAll(l => string.IsNullOrEmpty(l.Name) ? l.Id : l.Name).ToArray();
+            ctl.ParkedY = g.Parked.Elevation;
+            ctl.Speed = Mathf.Clamp(_s.Speed, 0.25f, 2.5f);
+            ctl.OpenTime = _s.DoorType == "2s" || _s.Freight ? 2.2f : 1.6f;
+            ctl.ToLocal = g.ToWorld.inverse;
+            ctl.CarBox = new Rect(g.CarX - g.CarW * 0.5f, g.CarFront - g.CarD, g.CarW, g.CarD);
+            ctl.CarHeight = _s.CarHeight;
+            (ctl.DoorX0, ctl.DoorX1) = g.DoorX;
+            ctl.DoorZ0 = g.CarFront;
+
+            var cab = new GameObject("Lift_" + _id + "_Cab").transform;
+            cab.SetParent(root, false);
+            CarLayer(_c.W.Emit("Lift_" + _id + "_Car", cab, car), false);
+            CarLayer(_c.W.Emit("Decor_Lift_" + _id + "_Car", cab, carDecor), false);
+            CarLayer(_c.W.Emit("Decor_Lift_" + _id + "_Light", cab, lights, castShadows: false), false);
+            foreach (var (key, mb, slide) in carLeaves)
+            {
+                var o = Moving("Lift_" + _id + "_CarDoor_" + key, cab, mb);
+                if (o == null) continue;
+                CarLayer(o, true);
+                o.AddComponent<LiftCarDoor>().Lift = ctl;
+                ctl.CarLeaves.Add(new LiftController.Leaf { T = o.transform, Closed = o.transform.localPosition, Slide = g.ToWorld.MultiplyVector(slide) });
+            }
+            if (_copMax != _copMin) Button<LiftCarPanel>("Lift_" + _id + "_Panel", cab, _copMin, _copMax).Lift = ctl;
+            _c.W.MarkDynamic(cab.gameObject);
+            var cabBody = cab.gameObject.AddComponent<Rigidbody>();
+            cabBody.isKinematic = true;
+            cabBody.useGravity = false;
+            ctl.Car = cab;
+
+            ctl.Landing = new List<LiftController.Leaf>[g.Stops.Count];
+            for (int i = 0; i < g.Stops.Count; i++)
+            {
+                ctl.Landing[i] = new List<LiftController.Leaf>();
+                foreach (var (key, mb, slide) in landings[i])
+                {
+                    var o = Moving("Lift_" + _id + "_Landing_" + g.Stops[i].Id + "_" + key, root, mb);
+                    if (o == null) continue;
+                    var b = o.AddComponent<LiftCallButton>();
+                    b.Lift = ctl; b.Stop = i;
+                    ctl.Landing[i].Add(new LiftController.Leaf { T = o.transform, Closed = o.transform.localPosition, Slide = g.ToWorld.MultiplyVector(slide) });
+                }
+                var call = Button<LiftCallButton>("Lift_" + _id + "_Call_" + g.Stops[i].Id, root, calls[i].min, calls[i].max);
+                call.Lift = ctl; call.Stop = i;
+            }
+
+            var cwo = _c.W.Emit("Decor_Lift_" + _id + "_Counterweight", root, cw);
+            if (cwo != null) { _c.W.MarkDynamic(cwo); ctl.Counterweight = cwo.transform; }
+            float ropeTop = g.Top - 0.3f;
+            ctl.RopeTop = ropeTop;
+            ctl.CarRopes = Ropes(root, "Lift_" + _id + "_CarRopes", _carRope, ropeTop);
+            ctl.CwRopes = Ropes(root, "Lift_" + _id + "_CwRopes", _cwRope, ropeTop);
+            ctl.CarRopeBottom0 = _carRope.y;
+            ctl.CwRopeBottom0 = _cwRope.y;
+
+            ctl.Followers.Add(CarLight().transform);
+            ctl.Probe = CarProbe();
+            ctl.Followers.Add(ctl.Probe.transform);
+            ctl.Init(g.Stops.IndexOf(g.Parked), g.Def.Open);
         }
 
         MeshBuilder Mb() => new MeshBuilder { Transform = _g.ToWorld };
@@ -306,7 +367,7 @@ namespace House4696.Lifts
         }
 
         /// <summary>Guide rails, counterweight with its rails, ropes; the traction machine of an MRL drive in the head.</summary>
-        void Equipment(MeshBuilder mb)
+        void Equipment(MeshBuilder mb, MeshBuilder cw)
         {
             var g = _g;
             float cx = g.CarX, cz = g.CarFront - g.CarD * 0.5f;
@@ -333,15 +394,11 @@ namespace House4696.Lifts
                 float zb = -g.T - g.D;
                 c0 = new Vector3(cx - 0.4f, cwY, zb + 0.06f); c1 = new Vector3(cx + 0.4f, cwY + cwH, zb + 0.18f);
             }
-            mb.Box(c0, c1, _c.Mats.Tint(_c.M.BlackMetal, "#2c2f33"));
-            // ropes from the car's crosshead and the counterweight up to the head
-            float carTop = carY + _s.CarHeight + 0.55f;
-            for (int i = -1; i <= 1; i++)
-            {
-                mb.Box(new Vector3(cx + i * 0.03f - 0.005f, carTop, cz - 0.005f), new Vector3(cx + i * 0.03f + 0.005f, y1 - 0.3f, cz + 0.005f), _rail);
-                var cc = (c0 + c1) * 0.5f;
-                mb.Box(new Vector3(cc.x + i * 0.03f - 0.005f, c1.y, cc.z - 0.005f), new Vector3(cc.x + i * 0.03f + 0.005f, y1 - 0.3f, cc.z + 0.005f), _rail);
-            }
+            cw.Box(c0, c1, _c.Mats.Tint(_c.M.BlackMetal, "#2c2f33"));
+            // ropes from the car's crosshead and the counterweight up to the head (scalable objects, see Ropes)
+            _carRope = new Vector3(cx, carY + _s.CarHeight + 0.55f, cz);
+            var cc = (c0 + c1) * 0.5f;
+            _cwRope = new Vector3(cc.x, c1.y, cc.z);
             // MRL: the gearless machine on its beam in the head
             if (_s.MachineRoom == null && g.Enclosure != "none")
             {
@@ -356,7 +413,7 @@ namespace House4696.Lifts
         }
 
         // ------------------------------------------------------------------ landings
-        void Landing(LevelDef L, MeshBuilder decor, MeshBuilder closed, List<(string, MeshBuilder, Vector3)> movers)
+        List<(string key, MeshBuilder mb, Vector3 slide)> Landing(LevelDef L, MeshBuilder decor, out Vector3 callMin, out Vector3 callMax)
         {
             var g = _g;
             var (dx0, dx1) = g.DoorX;
@@ -384,7 +441,8 @@ namespace House4696.Lifts
             var call = Print("liftpanel_", g.Def.Call ?? _s.Model?.Call ?? (_s.Freight ? "dl100a" : "dl300"));
             var cs = PanelSize(call, 0.1f, 0.35f, 0.3f);
             float px1 = dx0 - jamb - 0.18f, px0 = px1 - cs.x;
-            FittedBox(decor, new Vector3(px0, y + 1.3f - cs.y, 0f), new Vector3(px1, y + 1.3f, 0.012f), Fin("stainless-hairline"), call, Face.ZPos);
+            callMin = new Vector3(px0, y + 1.3f - cs.y, 0f); callMax = new Vector3(px1, y + 1.3f, 0.012f);
+            FittedBox(decor, callMin, callMax, Fin("stainless-hairline"), call, Face.ZPos);
             if (call == null)
             {
                 decor.Box(new Vector3(px0 + 0.03f, y + 1.06f, 0.012f), new Vector3(px1 - 0.03f, y + 1.1f, 0.018f), _c.M.Led);
@@ -393,17 +451,15 @@ namespace House4696.Lifts
             // landing door leaves inside the shaft behind the front wall
             var face = Print("liftdoor_", doorDef?.Id);
             var leaf = Fin(doorDef?.Finish ?? "stainless-hairline");
-            Leaves(closed, movers, "Landing_" + L.Id, y, -t - 0.01f, +1f, leaf, face);
+            return Leaves(y, -t - 0.01f, +1f, leaf, face);
         }
 
         /// <summary>
         /// Door leaves over the opening dx0…dx1 at height <paramref name="y"/>, their hall-side face at <paramref name="zFace"/>
-        /// (<paramref name="faceDir"/> = which way it looks). Centre opening: two leaves part to the sides; two-speed: both
-        /// run to +X, the far one twice as far. Closed leaves go into <paramref name="closed"/>; with <paramref name="movers"/>
-        /// each leaf becomes a mover group (car and landing leaves that move alike share one).
+        /// (<paramref name="faceDir"/> = which way it looks), one mesh each with its slide when open (local). Centre opening:
+        /// two leaves part to the sides; two-speed: both run to +X, the far one twice as far.
         /// </summary>
-        void Leaves(MeshBuilder closed, List<(string name, MeshBuilder mb, Vector3 slide)> movers, string tag, float y, float zFace, float faceDir,
-                    Material m, Material face)
+        List<(string key, MeshBuilder mb, Vector3 slide)> Leaves(float y, float zFace, float faceDir, Material m, Material face)
         {
             var (dx0, dx1) = _g.DoorX;
             float jj = dx1 - dx0, hh = _s.DoorHeight + 0.02f;
@@ -419,28 +475,24 @@ namespace House4696.Lifts
                 parts.Add((dx0 - over, dx0 + jj * 0.5f, 0f, new Vector3(-jj * 0.5f, 0, 0), "left"));
                 parts.Add((dx0 + jj * 0.5f, dx1 + over, 0f, new Vector3(jj * 0.5f, 0, 0), "right"));
             }
+            var list = new List<(string, MeshBuilder, Vector3)>();
             foreach (var p in parts)
             {
                 float zf = zFace - faceDir * p.depth;
                 float zb = zf - faceDir * LeafT;
                 var mn = new Vector3(p.x0, y, Mathf.Min(zf, zb));
                 var mx = new Vector3(p.x1, y + hh, Mathf.Max(zf, zb));
-                MeshBuilder target = closed;
-                if (movers != null)
-                {
-                    int i = movers.FindIndex(q => q.name == p.key);
-                    if (i < 0) { movers.Add((p.key, Mb(), p.slide)); i = movers.Count - 1; }
-                    target = movers[i].mb;
-                }
-                if (target == null) continue;
+                var mb = Mb();
                 // the picture spans the whole closed door: each leaf shows its part of it
                 Rect uv = new Rect((p.x0 - dx0) / jj, 0f, (p.x1 - p.x0) / jj, 1f);
-                FittedBox(target, mn, mx, m, face, faceDir > 0 ? Face.ZPos : Face.ZNeg, uv);
+                FittedBox(mb, mn, mx, m, face, faceDir > 0 ? Face.ZPos : Face.ZNeg, uv);
+                list.Add((p.key, mb, p.slide));
             }
+            return list;
         }
 
         // ------------------------------------------------------------------ car
-        void Car(MeshBuilder car, MeshBuilder glass, MeshBuilder decor, MeshBuilder lights, List<(string, MeshBuilder, Vector3)> movers)
+        List<(string key, MeshBuilder mb, Vector3 slide)> Car(MeshBuilder car, MeshBuilder glass, MeshBuilder decor, MeshBuilder lights)
         {
             var g = _g;
             float y = g.Parked.Elevation, ch = _s.CarHeight, hh = _s.DoorHeight;
@@ -499,7 +551,8 @@ namespace House4696.Lifts
             float px0 = dx1 + 0.08f, px1 = px0 + ps.x;
             if (px1 - px0 > 0.04f)
             {
-                FittedBox(decor, new Vector3(px0, y + 2.0f - ps.y, zf - PanelT - 0.012f), new Vector3(px1, y + 2.0f, zf - PanelT), Fin("stainless-hairline"), cop, Face.ZNeg);
+                _copMin = new Vector3(px0, y + 2.0f - ps.y, zf - PanelT - 0.012f); _copMax = new Vector3(px1, y + 2.0f, zf - PanelT);
+                FittedBox(decor, _copMin, _copMax, Fin("stainless-hairline"), cop, Face.ZNeg);
                 if (cop == null)
                     for (int i = 0; i < 6; i++)
                     {
@@ -508,8 +561,7 @@ namespace House4696.Lifts
                     }
             }
             // car doors in front of the car's door line
-            Leaves(movers == null ? car : null, movers, "Car", y, zf + 0.03f + LeafT, +1f, Fin(_cabin.Door ?? "stainless-hairline"), null);
-            CarProbe(y, ch, x0, x1, zb, zf);
+            return Leaves(y, zf + 0.03f + LeafT, +1f, Fin(_cabin.Door ?? "stainless-hairline"), null);
         }
 
         /// <summary>The car's floor outline (local plan): a rectangle, or with a half-round / chamfered glass back.</summary>
@@ -660,7 +712,7 @@ namespace House4696.Lifts
             }
         }
 
-        void CarLight()
+        GameObject CarLight()
         {
             // a wide spot under the lit ceiling panel: a point light in mid-air burns hot spots into the metal walls
             var g = _g;
@@ -680,11 +732,13 @@ namespace House4696.Lifts
             var data = go.AddComponent<UnityEngine.Rendering.Universal.UniversalAdditionalLightData>();
             data.usePipelineSettings = true;
             data.renderingLayers = CarRenderingLayer;
+            return go;
         }
 
-        void CarProbe(float y, float ch, float x0, float x1, float zb, float zf)
+        ReflectionProbe CarProbe()
         {
             var g = _g;
+            float y = g.Parked.Elevation, ch = _s.CarHeight, x0 = g.CarX - g.CarW * 0.5f, x1 = g.CarX + g.CarW * 0.5f, zf = g.CarFront, zb = zf - g.CarD;
             var go = new GameObject("Probe_Lift_" + _id);
             go.transform.SetParent(_c.Probes, false);
             go.transform.position = g.World((x0 + x1) * 0.5f, y + 1.5f, (zb + zf) * 0.5f);
@@ -705,33 +759,45 @@ namespace House4696.Lifts
             p.hdr = true;
             p.nearClipPlane = 0.05f;
             p.farClipPlane = 20f;
+            return p;
         }
 
-        // ------------------------------------------------------------------ movers
-        List<GameObject> Movers(Transform root, List<(string name, MeshBuilder mb, Vector3 slide)> movers)
+        // ------------------------------------------------------------------ the working lift
+        /// <summary>A moving part (car door leaf, landing door leaf): its own object with a kinematic body so its collider follows.</summary>
+        GameObject Moving(string name, Transform parent, MeshBuilder mb)
         {
-            var made = new List<GameObject>();
-            House4696.Runtime.Door first = null;
-            foreach (var (name, mb, slide) in movers)
-            {
-                if (mb.IsEmpty) continue;
-                var pivot = new GameObject("Furniture_Lift_" + _id + "_" + name);
-                pivot.transform.SetParent(root, false);
-                var o = _c.W.Emit("Furniture_Lift_" + _id + "_" + name + "_Leaf", pivot.transform, mb);
-                if (o != null) { _c.W.MarkDynamic(o); made.Add(o); }
-                _c.W.MarkDynamic(pivot);
-                var door = pivot.AddComponent<House4696.Runtime.Door>();
-                door.Motion = House4696.Runtime.DoorMotion.Slide;
-                // the leaves' meshes are in world space: the slide runs along the shaft's local x
-                door.SlideBy = _g.ToWorld.MultiplyVector(slide);
-                if (first == null) first = door;
-                else { door.Partner = first; first.Partner = door; }
-                if (_g.Def.Open) door.SetOpen(true, instant: true);
-                var body = pivot.AddComponent<Rigidbody>();
-                body.isKinematic = true;
-                body.useGravity = false;
-            }
-            return made;
+            var o = _c.W.Emit(name, parent, mb);
+            if (o == null) return null;
+            _c.W.MarkDynamic(o);
+            var body = o.AddComponent<Rigidbody>();
+            body.isKinematic = true;
+            body.useGravity = false;
+            return o;
+        }
+
+        /// <summary>An invisible box the walker's look ray hits (a button panel): local box, world placement.</summary>
+        T Button<T>(string name, Transform parent, Vector3 mn, Vector3 mx) where T : Component
+        {
+            var go = new GameObject(name);
+            go.transform.SetParent(parent, false);
+            go.transform.SetPositionAndRotation(_g.World((mn.x + mx.x) * 0.5f, (mn.y + mx.y) * 0.5f, (mn.z + mx.z) * 0.5f), _g.ToWorld.rotation);
+            var box = go.AddComponent<BoxCollider>();
+            box.size = new Vector3(Mathf.Abs(mx.x - mn.x), Mathf.Abs(mx.y - mn.y), Mathf.Max(0.02f, Mathf.Abs(mx.z - mn.z)));
+            return go.AddComponent<T>();
+        }
+
+        /// <summary>Ropes hanging from the head: unit-long meshes under a pivot at their top, scaled to their length.</summary>
+        Transform Ropes(Transform parent, string name, Vector3 bottomLocal, float top)
+        {
+            var pivot = new GameObject(name).transform;
+            pivot.SetParent(parent, false);
+            pivot.SetPositionAndRotation(_g.World(bottomLocal.x, top, bottomLocal.z), _g.ToWorld.rotation);
+            var mb = new MeshBuilder();
+            for (int i = -1; i <= 1; i++) mb.Box(new Vector3(i * 0.03f - 0.005f, -1f, -0.005f), new Vector3(i * 0.03f + 0.005f, 0f, 0.005f), _rail);
+            _c.W.Emit("Decor_" + name, pivot, mb, castShadows: false);
+            _c.W.MarkDynamic(pivot.gameObject);
+            pivot.localScale = new Vector3(1f, Mathf.Max(0.01f, top - bottomLocal.y), 1f);
+            return pivot;
         }
 
         /// <summary>
