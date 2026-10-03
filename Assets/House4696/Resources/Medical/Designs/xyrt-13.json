@@ -1,0 +1,13 @@
+{"id": "xyrt-13", "size": [710, 530, 970], "mats": {"wood": "wood#c4602a", "rung": "wood#dea050", "brace": "wood#c8904e", "label": "plastic#eef2ee"}, "parts": [
+    {"id": "foot-l", "kind": "box", "mat": "wood", "box": [26, 0, 0, 74, 48, 530], "r": 10},
+    {"id": "post-l", "kind": "box", "mat": "wood", "box": [24, 46, 153, 76, 964, 197], "r": 4},
+    {"id": "post-top-l", "kind": "box", "mat": "wood", "box": [26, 960, 155, 74, 970, 195], "r": 8},
+    {"id": "brace-f-l", "kind": "slab", "mat": "brace", "plane": "side", "outline": "M 197.0 48.0 L 287.0 48.0 L 197.0 168.0 Z", "w": [36, 64], "r": 3},
+    {"id": "brace-b-l", "kind": "slab", "mat": "brace", "plane": "side", "outline": "M 153.0 48.0 L 63.0 48.0 L 153.0 168.0 Z", "w": [36, 64], "r": 3},
+    {"id": "foot-r", "kind": "box", "mat": "wood", "box": [636, 0, 0, 684, 48, 530], "r": 10},
+    {"id": "post-r", "kind": "box", "mat": "wood", "box": [634, 46, 153, 686, 964, 197], "r": 4},
+    {"id": "post-top-r", "kind": "box", "mat": "wood", "box": [636, 960, 155, 684, 970, 195], "r": 8},
+    {"id": "brace-f-r", "kind": "slab", "mat": "brace", "plane": "side", "outline": "M 197.0 48.0 L 287.0 48.0 L 197.0 168.0 Z", "w": [646, 674], "r": 3},
+    {"id": "brace-b-r", "kind": "slab", "mat": "brace", "plane": "side", "outline": "M 153.0 48.0 L 63.0 48.0 L 153.0 168.0 Z", "w": [646, 674], "r": 3},
+    {"id": "rung", "kind": "cyl", "mat": "rung", "from": [76, 158, 175], "to": [634, 158, 175], "d": 24, "repeat": {"n": 8, "step": [0, 102, 0]}},
+    {"id": "label", "kind": "box", "mat": "label", "box": [339.0, 870, 187, 371.0, 884, 189], "r": 2, "soft": true}]}

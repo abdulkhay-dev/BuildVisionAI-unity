@@ -1,0 +1,18 @@
+{"id": "xyrt-36", "size": [1200, 750, 800], "mats": {"wood": "plastic#d6a96c", "edge": "plastic#a8763e", "white": "plastic#f1f2f2", "sleeve": "metal#6b625a", "crank": "metal#5a2a22", "foot": "rubber#1c1d1f"}, "parts": [
+    {"id": "top", "kind": "box", "mat": "wood", "box": [0, 772, 0, 1200, 800, 750], "r": 6},
+    {"id": "top-edge", "kind": "box", "mat": "edge", "box": [2, 770, 2, 1198, 778, 748], "r": 4},
+    {"id": "brk-l", "kind": "box", "mat": "white", "box": [170, 730, 145.0, 260, 770, 605.0], "r": 6},
+    {"id": "col-l", "kind": "box", "mat": "white", "box": [185, 190, 347.0, 245, 730, 403.0], "r": 5},
+    {"id": "slv-l", "kind": "box", "mat": "sleeve", "box": [180, 60, 342.0, 250, 205, 408.0], "r": 4},
+    {"id": "foot-l", "kind": "box", "mat": "white", "box": [187, 18, 40, 243, 62, 710], "r": 6},
+    {"id": "fp-l", "kind": "box", "mat": "foot", "box": [189, 0, 40, 241, 18, 85], "r": 4, "copies": [[0, 0, 625]]},
+    {"id": "brk-r", "kind": "box", "mat": "white", "box": [940, 730, 145.0, 1030, 770, 605.0], "r": 6},
+    {"id": "col-r", "kind": "box", "mat": "white", "box": [955, 190, 347.0, 1015, 730, 403.0], "r": 5},
+    {"id": "slv-r", "kind": "box", "mat": "sleeve", "box": [950, 60, 342.0, 1020, 205, 408.0], "r": 4},
+    {"id": "foot-r", "kind": "box", "mat": "white", "box": [957, 18, 40, 1013, 62, 710], "r": 6},
+    {"id": "fp-r", "kind": "box", "mat": "foot", "box": [959, 0, 40, 1011, 18, 85], "r": 4, "copies": [[0, 0, 625]]},
+    {"id": "beam", "kind": "box", "mat": "white", "box": [215, 30, 353.0, 985, 74, 397.0], "r": 6},
+    {"id": "ubeam", "kind": "box", "mat": "white", "box": [215, 720, 350.0, 985, 760, 400.0], "r": 4},
+    {"id": "crank-shaft", "kind": "cyl", "mat": "crank", "from": [1030, 745, 495.0], "to": [1160, 745, 495.0], "d": 16},
+    {"id": "crank-arm", "kind": "box", "mat": "crank", "box": [1148, 640, 487.0, 1164, 755, 503.0], "r": 6},
+    {"id": "crank-grip", "kind": "cyl", "mat": "crank", "from": [1164, 650, 495.0], "to": [1200, 650, 495.0], "d": 24}]}

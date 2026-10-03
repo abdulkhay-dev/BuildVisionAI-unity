@@ -1,0 +1,17 @@
+{"id": "multi-sensory-matching-projection-system", "size": [350, 300, 120], "mats": {"black": "plastic#17181a", "silver": "metal#c8cacc", "grey": "plastic#8e9396"}, "parts": [
+    {"id": "body", "kind": "box", "mat": "black", "box": [0, 8, 0, 350, 96, 278], "r": 18},
+    {"id": "top", "kind": "box", "mat": "silver", "box": [2, 62, 2, 348, 120, 294], "r": 26},
+    {"id": "front", "kind": "box", "mat": "black", "box": [6, 10, 270, 344, 84, 296], "r": 12},
+    {"id": "panel", "kind": "decal", "mat": "grey", "at": [110, 120.2, 70], "size": [150, 70], "face": "top", "soft": true},
+    {"id": "vent", "kind": "decal", "mat": "plastic#5e6265", "at": [260, 120.2, 90], "size": [110, 40], "face": "top", "soft": true},
+    {"id": "grille", "kind": "box", "mat": "plastic#2b2d30", "box": [22, 26, 295.5, 170, 78, 297], "r": 3, "soft": true},
+    {"id": "slat", "kind": "box", "mat": "plastic#0e0f10", "box": [26, 30, 297, 166, 31.5, 297.8], "soft": true, "repeat": {"n": 11, "step": [0, 4.4, 0]}},
+    {"id": "badge", "kind": "box", "mat": "metal#bfc3c6", "box": [168, 60, 296, 200, 70, 297.5], "r": 2, "soft": true},
+    {"id": "band", "kind": "box", "mat": "metal#c8cacc", "box": [8, 8, 276, 342, 18, 298], "r": 4},
+    {"id": "label", "kind": "decal", "mat": "plastic#f2f2f2", "at": [150, 13, 298.1], "size": [40, 7], "face": "front", "soft": true},
+    {"id": "lens", "kind": "lathe", "mat": "black", "at": [255, 58, 288], "profile": [[0, 0], [55, 0], [55, 14], [52, 20], [42, 22], [40, 18], [0, 18]], "axis": "z"},
+    {"id": "lenslip", "kind": "lathe", "mat": "plastic#6a6e72", "at": [255, 58, 308], "profile": [[49, 0], [53, 0], [53, 2], [49, 3]], "axis": "z", "caps": false, "soft": true},
+    {"id": "lensring", "kind": "lathe", "mat": "chrome", "at": [255, 58, 304], "profile": [[30, 0], [40, 0], [40, 3], [30, 4]], "axis": "z", "caps": false},
+    {"id": "glass", "kind": "lathe", "mat": "gloss#9db4c4", "at": [255, 58, 302], "profile": [[0, 0], [31, 0], [26, 4], [0, 5]], "axis": "z"},
+    {"id": "glassring", "kind": "lathe", "mat": "plastic#2a3036", "at": [255, 58, 306.2], "profile": [[14, 0], [20, 0], [20, 0.8], [14, 0.8]], "axis": "z", "caps": false, "soft": true},
+    {"id": "foot", "kind": "cyl", "mat": "rubber", "from": [40, 0, 40], "to": [40, 8, 40], "d": 22, "copies": [[270, 0, 0], [0, 0, 200], [270, 0, 200]]}]}

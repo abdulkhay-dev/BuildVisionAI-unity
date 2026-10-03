@@ -1,0 +1,12 @@
+{"id": "multimedia-scenario-interactive-system", "size": [450, 350, 255], "mats": {"shell": "plastic#ebe8e2", "dark": "black#18191c"}, "parts": [
+    {"id": "plate", "kind": "loft", "mat": "shell", "sections": [{"at": 75, "w": 375, "d": 290, "r": 16, "cx": 225.0, "cz": 175.0}, {"at": 82, "w": 388, "d": 300, "r": 14, "cx": 225.0, "cz": 175.0}, {"at": 249, "w": 448, "d": 348, "r": 10, "cx": 225.0, "cz": 175.0}, {"at": 255, "w": 450, "d": 350, "r": 10, "cx": 225.0, "cz": 175.0}]},
+    {"id": "plate-mark", "kind": "lathe", "mat": "plastic#dfe2e4", "at": [225.0, 74.5, 175.0], "profile": [[46, 0], [50, 0], [50, 0.8], [46, 0.8], [46, 0]], "soft": true},
+    {"id": "front-mark", "kind": "lathe", "mat": "plastic#d6d9dc", "at": [225.0, 118, 330.4], "profile": [[15, 0], [18, 0], [18, 1.2], [15, 1.2], [15, 0]], "axis": "z", "soft": true, "rot": {"axis": "x", "deg": 8.2, "about": [225.0, 118, 330.4]}},
+    {"id": "neck", "kind": "cyl", "mat": "shell", "from": [225.0, 64, 175.0], "to": [225.0, 76, 175.0], "d": 16},
+    {"id": "neck-base", "kind": "cyl", "mat": "shell", "from": [225.0, 73, 175.0], "to": [225.0, 76, 175.0], "d": 40},
+    {"id": "projector", "kind": "box", "mat": "shell", "box": [142.0, 0, 120.0, 308.0, 66, 230.0], "r": 12},
+    {"id": "lens-ring", "kind": "cyl", "mat": "plastic#d4d6d8", "from": [229.0, 38, 228.0], "to": [229.0, 38, 233.0], "d": 34},
+    {"id": "lens", "kind": "cyl", "mat": "led", "from": [229.0, 38, 233.0], "to": [229.0, 38, 234.5], "d": 24, "soft": true},
+    {"id": "camera", "kind": "box", "mat": "dark", "box": [263.0, 9, 229.0, 287.0, 18, 231.5], "r": 2},
+    {"id": "label", "kind": "box", "mat": "plastic#a8abae", "box": [161.0, 44, 229.5, 189.0, 47, 230.6], "soft": true, "copies": [[0, -6, 0]]},
+    {"id": "vent", "kind": "box", "mat": "plastic#c6cacd", "box": [141.0, 20, 135.0, 142.0, 52, 215.0], "soft": true}]}

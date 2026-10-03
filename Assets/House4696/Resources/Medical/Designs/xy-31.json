@@ -1,0 +1,13 @@
+{"id": "xy-31", "size": [600, 290, 300], "mats": {"or": "gloss#f07a26", "ord": "gloss#d8661f", "peg": "plastic#f0d690"}, "parts": [
+    {"id": "base", "kind": "box", "mat": "or", "box": [0, 0, 0, 600, 20, 290], "r": 3},
+    {"id": "step", "kind": "box", "mat": "ord", "box": [25, 20, 40, 575, 32, 58], "r": 2, "repeat": {"n": 3, "step": [0, 0, 26]}},
+    {"id": "prop", "kind": "slab", "mat": "or", "plane": "side", "outline": "M 4.0 20.0 L 26.0 20.0 L 121.8 186.2 L 101.8 194.2 Z", "w": [14, 586], "r": 2},
+    {"id": "board", "kind": "box", "mat": "or", "box": [0, 20, 41, 600, 46, 286], "r": 4, "rot": {"axis": "x", "deg": 44, "about": [300, 20, 286]}},
+    {"id": "rib", "kind": "cyl", "mat": "or", "from": [10, 46, 60], "to": [590, 46, 60], "d": 18, "rot": {"axis": "x", "deg": 44, "about": [300, 20, 286]}, "repeat": {"n": 6, "step": [0, 0, 42], "local": true}},
+    {"id": "peg-a", "kind": "cyl", "mat": "peg", "from": [45, 40, 81], "to": [45, 126, 81], "d": 25, "rot": {"axis": "x", "deg": 44, "about": [300, 20, 286]}, "repeat": {"n": 5, "step": [0, 0, 42], "local": true}},
+    {"id": "peg-b", "kind": "cyl", "mat": "peg", "from": [128, 40, 81], "to": [128, 116, 81], "d": 25, "rot": {"axis": "x", "deg": 44, "about": [300, 20, 286]}, "repeat": {"n": 5, "step": [0, 0, 42], "local": true}},
+    {"id": "peg-c", "kind": "cyl", "mat": "peg", "from": [211, 40, 81], "to": [211, 128, 81], "d": 25, "rot": {"axis": "x", "deg": 44, "about": [300, 20, 286]}, "repeat": {"n": 5, "step": [0, 0, 42], "local": true}},
+    {"id": "peg-d", "kind": "cyl", "mat": "peg", "from": [300, 40, 81], "to": [300, 114, 81], "d": 25, "rot": {"axis": "x", "deg": 44, "about": [300, 20, 286]}, "repeat": {"n": 5, "step": [0, 0, 42], "local": true}},
+    {"id": "peg-e", "kind": "cyl", "mat": "peg", "from": [389, 40, 81], "to": [389, 126, 81], "d": 25, "rot": {"axis": "x", "deg": 44, "about": [300, 20, 286]}, "repeat": {"n": 5, "step": [0, 0, 42], "local": true}},
+    {"id": "peg-f", "kind": "cyl", "mat": "peg", "from": [472, 40, 81], "to": [472, 118, 81], "d": 25, "rot": {"axis": "x", "deg": 44, "about": [300, 20, 286]}, "repeat": {"n": 5, "step": [0, 0, 42], "local": true}},
+    {"id": "peg-g", "kind": "cyl", "mat": "peg", "from": [555, 40, 81], "to": [555, 128, 81], "d": 25, "rot": {"axis": "x", "deg": 44, "about": [300, 20, 286]}, "repeat": {"n": 5, "step": [0, 0, 42], "local": true}}]}

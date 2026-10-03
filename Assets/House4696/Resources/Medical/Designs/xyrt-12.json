@@ -1,0 +1,18 @@
+{"id": "xyrt-12", "size": [410, 650, 1000], "mats": {"wood": "wood#e6ad4c", "wood2": "wood#d99a3e", "label": "plastic#e9efe9", "seatw": "wood#ecc888"}, "parts": [
+    {"id": "runner-l", "kind": "slab", "mat": "wood2", "plane": "side", "outline": "M 0.0 0.0 L 650.0 0.0 L 612.0 36.0 L 42.0 36.0 Z", "w": [8, 50], "r": 4},
+    {"id": "upright-l", "kind": "box", "mat": "wood", "box": [9, 34, 95, 49, 1000, 135], "r": 5},
+    {"id": "leg-l", "kind": "box", "mat": "wood", "box": [10, 34, 572, 48, 418, 610], "r": 5},
+    {"id": "arm-l", "kind": "box", "mat": "wood", "box": [4, 380, 128, 54, 402, 628], "r": 6, "rot": {"axis": "x", "deg": -4.5, "about": [8, 391, 128]}},
+    {"id": "arm-roll-l", "kind": "cyl", "mat": "wood", "from": [2, 391, 630], "to": [56, 391, 630], "d": 30, "rot": {"axis": "x", "deg": -4.5, "about": [8, 391, 128]}},
+    {"id": "seat-rail-l", "kind": "box", "mat": "wood2", "box": [15, 168, 135, 43, 212, 572], "r": 3},
+    {"id": "runner-r", "kind": "slab", "mat": "wood2", "plane": "side", "outline": "M 0.0 0.0 L 650.0 0.0 L 612.0 36.0 L 42.0 36.0 Z", "w": [360, 402], "r": 4},
+    {"id": "upright-r", "kind": "box", "mat": "wood", "box": [361, 34, 95, 401, 1000, 135], "r": 5},
+    {"id": "leg-r", "kind": "box", "mat": "wood", "box": [362, 34, 572, 400, 418, 610], "r": 5},
+    {"id": "arm-r", "kind": "box", "mat": "wood", "box": [356, 380, 128, 406, 402, 628], "r": 6, "rot": {"axis": "x", "deg": -4.5, "about": [360, 391, 128]}},
+    {"id": "arm-roll-r", "kind": "cyl", "mat": "wood", "from": [354, 391, 630], "to": [408, 391, 630], "d": 30, "rot": {"axis": "x", "deg": -4.5, "about": [360, 391, 128]}},
+    {"id": "seat-rail-r", "kind": "box", "mat": "wood2", "box": [367, 168, 135, 395, 212, 572], "r": 3},
+    {"id": "seat", "kind": "box", "mat": "seatw", "box": [-37.0, 212, 209.0, 447.0, 232, 531.0], "r": 4, "rot": {"axis": "y", "deg": 90, "about": [205.0, 222.0, 370.0]}},
+    {"id": "apron-front", "kind": "box", "mat": "wood2", "box": [183.0, 35.0, 578, 227.0, 345.0, 600], "r": 3, "rot": {"axis": "z", "deg": 90, "about": [205.0, 190.0, 589.0]}},
+    {"id": "apron-back", "kind": "box", "mat": "wood2", "box": [183.0, 35.0, 100, 227.0, 345.0, 122], "r": 3, "rot": {"axis": "z", "deg": 90, "about": [205.0, 190.0, 111.0]}},
+    {"id": "rung", "kind": "cyl", "mat": "wood", "from": [50, 338, 115], "to": [360, 338, 115], "d": 22, "repeat": {"n": 7, "step": [0, 105, 0]}},
+    {"id": "label", "kind": "box", "mat": "label", "box": [191.0, 962, 126, 219.0, 974, 128], "r": 2, "soft": true}]}

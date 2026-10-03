@@ -260,6 +260,7 @@ namespace House4696.App.UI
             "hall" => IconKind.Door,
             "office" => IconKind.Pencil,
             "kitchen" => IconKind.Kitchen,
+            _ when id != null && id.StartsWith("med_") => IconKind.Plus,
             "bath" => IconKind.Bath,
             "lighting" => IconKind.Lamp,
             "decor" => IconKind.Picture,

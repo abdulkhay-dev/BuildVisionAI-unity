@@ -1,0 +1,18 @@
+{"id": "xy-36", "size": [790, 170, 660], "mats": {"wood": "wood#e8b45e", "rod": "wood#b5703a", "red": "plastic#d8291f", "yel": "plastic#f2c418", "blue": "plastic#2147b8"}, "parts": [
+    {"id": "base", "kind": "box", "mat": "wood", "box": [0, 0, 0, 790, 20, 170], "r": 3},
+    {"id": "base-top", "kind": "box", "mat": "wood", "box": [30, 20, 30, 760, 40, 140], "r": 3},
+    {"id": "groove", "kind": "box", "mat": "wood#b88d58", "box": [30, 39.6, 82, 760, 40.4, 88], "soft": true},
+    {"id": "rod0", "kind": "cyl", "mat": "rod", "from": [126, 38, 85], "to": [126, 660, 85], "d": 20},
+    {"id": "rod-top0", "kind": "sphere", "mat": "rod", "at": [126, 659, 85], "d": 19},
+    {"id": "rod1", "kind": "cyl", "mat": "rod", "from": [310, 38, 85], "to": [310, 580, 85], "d": 20},
+    {"id": "rod-top1", "kind": "sphere", "mat": "rod", "at": [310, 579, 85], "d": 19},
+    {"id": "rod2", "kind": "cyl", "mat": "rod", "from": [490, 38, 85], "to": [490, 505, 85], "d": 20},
+    {"id": "rod-top2", "kind": "sphere", "mat": "rod", "at": [490, 504, 85], "d": 19},
+    {"id": "rod3", "kind": "cyl", "mat": "rod", "from": [656, 38, 85], "to": [656, 390, 85], "d": 20},
+    {"id": "rod-top3", "kind": "sphere", "mat": "rod", "at": [656, 389, 85], "d": 19},
+    {"id": "red-a", "kind": "cyl", "mat": "red", "from": [126, 40, 85], "to": [126, 54, 85], "d": 132},
+    {"id": "red-b", "kind": "cyl", "mat": "red", "from": [130, 54, 83], "to": [130, 68, 83], "d": 128},
+    {"id": "yel-a", "kind": "box", "mat": "yel", "box": [248, 40, 23, 372, 54, 147], "r": 2},
+    {"id": "yel-b", "kind": "box", "mat": "yel", "box": [250, 54, 25, 370, 68, 145], "r": 2, "rot": {"axis": "y", "deg": 7, "about": [310, 61, 85]}},
+    {"id": "blue-a", "kind": "slab", "mat": "blue", "plane": "top", "outline": "M 712.0 20.0 L 712.0 150.0 L 585.0 85.0 Z", "w": [40, 53], "r": 1},
+    {"id": "blue-b", "kind": "slab", "mat": "blue", "plane": "top", "outline": "M 712.0 20.0 L 712.0 150.0 L 585.0 85.0 Z", "w": [53, 66], "r": 1, "rot": {"axis": "y", "deg": -5, "about": [656, 58, 85]}}]}

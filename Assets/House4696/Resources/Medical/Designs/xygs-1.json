@@ -1,0 +1,14 @@
+{"id": "xygs-1", "size": [200, 800, 310], "mats": {"wood": "wood#e6b46a", "cream": "plastic#f2ede0", "pad": "leather#3762b2", "under": "leather#33558f", "peg": "gloss#2b3f9c"}, "parts": [
+    {"id": "base", "kind": "box", "mat": "wood", "box": [0, 0, 0, 200, 20, 800], "r": 3},
+    {"id": "top-cream", "kind": "box", "mat": "cream", "box": [2, 20, 470, 198, 21.2, 798], "r": 0.5},
+    {"id": "hinge", "kind": "cyl", "mat": "chrome", "from": [8, 28, 28], "to": [192, 28, 28], "d": 14},
+    {"id": "panel-back", "kind": "box", "mat": "pad", "box": [0, 28, 28, 200, 82, 321.7], "r": 14, "puff": 3, "rot": {"axis": "x", "deg": -73.8, "about": [100.0, 28, 28]}},
+    {"id": "panel-front", "kind": "box", "mat": "pad", "box": [0, 6, 14.0, 200, 64, 470], "r": 14, "puff": 3, "rot": {"axis": "x", "deg": 34.3, "about": [100.0, 64, 470]}},
+    {"id": "stop", "kind": "box", "mat": "wood", "box": [0, 20, 472, 200, 52, 530], "r": 3},
+    {"id": "stop-top", "kind": "box", "mat": "plastic#f6f6f2", "box": [2, 52, 474, 198, 53.5, 528], "r": 1},
+    {"id": "peg-ring575", "kind": "cyl", "mat": "plastic#dde3ea", "from": [55, 20, 575], "to": [55, 21.8, 575], "d": 32, "copies": [[90, 0, 0]], "soft": true},
+    {"id": "peg575", "kind": "cyl", "mat": "peg", "from": [55, 20, 575], "to": [55, 23, 575], "d": 24, "copies": [[90, 0, 0]]},
+    {"id": "peg-ring630", "kind": "cyl", "mat": "plastic#dde3ea", "from": [55, 20, 630], "to": [55, 21.8, 630], "d": 32, "copies": [[90, 0, 0]], "soft": true},
+    {"id": "peg630", "kind": "cyl", "mat": "peg", "from": [55, 20, 630], "to": [55, 23, 630], "d": 24, "copies": [[90, 0, 0]]},
+    {"id": "level-rim", "kind": "sphere", "mat": "plastic#f4f6f6", "at": [160, 21, 765], "d": 0, "radii": [30, 3.5, 20], "soft": true},
+    {"id": "level", "kind": "sphere", "mat": "acrylic#d6eef2cc", "at": [160, 22, 765], "d": 0, "radii": [24, 3, 15], "soft": true}]}

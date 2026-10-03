@@ -1,0 +1,17 @@
+{"id": "xyrt-67", "size": [1470, 1200, 30], "mats": {"cord": "plastic#7d8ea8"}, "parts": [
+    {"id": "rod0", "kind": "cyl", "mat": "plastic#2f9e3e", "from": [15.9, 15, 917], "to": [15.9, 15, 1183], "d": 26, "sides": 14, "repeat": {"n": 48, "step": [30.6, 0, 0]}},
+    {"id": "rod0-end", "kind": "sphere", "mat": "plastic#2f9e3e", "at": [15.9, 15, 917], "d": 26, "sides": 12, "repeat": {"n": 48, "step": [30.6, 0, 0]}, "copies": [[0, 0, 266]]},
+    {"id": "cord0-0", "kind": "cyl", "mat": "cord", "from": [-29.1, 15, 982.8], "to": [1462.1, 15, 982.8], "d": 11, "sides": 10},
+    {"id": "cord0-1", "kind": "cyl", "mat": "cord", "from": [-29.1, 15, 1117.2], "to": [1462.1, 15, 1117.2], "d": 11, "sides": 10},
+    {"id": "rod1", "kind": "cyl", "mat": "plastic#e0261f", "from": [15.9, 15, 617], "to": [15.9, 15, 883], "d": 26, "sides": 14, "repeat": {"n": 48, "step": [30.6, 0, 0]}},
+    {"id": "rod1-end", "kind": "sphere", "mat": "plastic#e0261f", "at": [15.9, 15, 617], "d": 26, "sides": 12, "repeat": {"n": 48, "step": [30.6, 0, 0]}, "copies": [[0, 0, 266]]},
+    {"id": "cord1-0", "kind": "cyl", "mat": "cord", "from": [-29.1, 15, 682.8], "to": [1462.1, 15, 682.8], "d": 11, "sides": 10},
+    {"id": "cord1-1", "kind": "cyl", "mat": "cord", "from": [-29.1, 15, 817.2], "to": [1462.1, 15, 817.2], "d": 11, "sides": 10},
+    {"id": "rod2", "kind": "cyl", "mat": "plastic#f6cf18", "from": [15.9, 15, 317], "to": [15.9, 15, 583], "d": 26, "sides": 14, "repeat": {"n": 48, "step": [30.6, 0, 0]}},
+    {"id": "rod2-end", "kind": "sphere", "mat": "plastic#f6cf18", "at": [15.9, 15, 317], "d": 26, "sides": 12, "repeat": {"n": 48, "step": [30.6, 0, 0]}, "copies": [[0, 0, 266]]},
+    {"id": "cord2-0", "kind": "cyl", "mat": "cord", "from": [-29.1, 15, 382.8], "to": [1462.1, 15, 382.8], "d": 11, "sides": 10},
+    {"id": "cord2-1", "kind": "cyl", "mat": "cord", "from": [-29.1, 15, 517.2], "to": [1462.1, 15, 517.2], "d": 11, "sides": 10},
+    {"id": "rod3", "kind": "cyl", "mat": "plastic#1f4fbf", "from": [15.9, 15, 17], "to": [15.9, 15, 283], "d": 26, "sides": 14, "repeat": {"n": 48, "step": [30.6, 0, 0]}},
+    {"id": "rod3-end", "kind": "sphere", "mat": "plastic#1f4fbf", "at": [15.9, 15, 17], "d": 26, "sides": 12, "repeat": {"n": 48, "step": [30.6, 0, 0]}, "copies": [[0, 0, 266]]},
+    {"id": "cord3-0", "kind": "cyl", "mat": "cord", "from": [-29.1, 15, 82.8], "to": [1462.1, 15, 82.8], "d": 11, "sides": 10},
+    {"id": "cord3-1", "kind": "cyl", "mat": "cord", "from": [-29.1, 15, 217.2], "to": [1462.1, 15, 217.2], "d": 11, "sides": 10}]}

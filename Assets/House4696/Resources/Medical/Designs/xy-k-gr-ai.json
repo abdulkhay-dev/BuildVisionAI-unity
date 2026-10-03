@@ -1,0 +1,16 @@
+{"id": "xy-k-gr-ai", "size": [420, 360, 232], "mats": {"shell": "plastic#dcdfe3", "bezel": "plastic#c8cdd5", "blue": "plastic#8fb6e0", "slot": "plastic#c9cdd3", "dark": "plastic#2c3036", "socket": "gloss#2f5fbf"}, "parts": [
+    {"id": "foot", "kind": "cyl", "mat": "rubber#1c1d20", "from": [40, 0, 40], "to": [40, 9, 40], "d": 22, "copies": [[340, 0, 0], [0, 0, 280], [340, 0, 280]]},
+    {"id": "body", "kind": "box", "mat": "shell", "box": [4, 8, 0, 416, 228, 242], "r": 14},
+    {"id": "body-front", "kind": "slab", "mat": "shell", "plane": "side", "outline": "M 236 8 L 286 8 L 246 222 L 236 222 Z", "w": [6, 414], "r": 10},
+    {"id": "bezel", "kind": "slab", "mat": "bezel", "plane": "front", "outline": "M 40 8 L 380 8 Q 420 8 420 48 L 420 181 Q 420 221 380 221 L 40 221 Q 0 221 0 181 L 0 48 Q 0 8 40 8 Z M 56 92 L 364 92 Q 382 92 382 110 L 382 196 Q 382 214 364 214 L 56 214 Q 38 214 38 196 L 38 110 Q 38 92 56 92 Z M 59 22 L 361 22 Q 375 22 375 36 L 375 60 Q 375 74 361 74 L 59 74 Q 45 74 45 60 L 45 36 Q 45 22 59 22 Z", "w": [280, 360], "r": 16, "rot": {"axis": "x", "deg": -10, "about": [210, 8, 280]}},
+    {"id": "lining", "kind": "slab", "mat": "blue", "plane": "front", "outline": "M 56 92 L 364 92 Q 382 92 382 110 L 382 196 Q 382 214 364 214 L 56 214 Q 38 214 38 196 L 38 110 Q 38 92 56 92 Z M 58 99 L 362 99 Q 375 99 375 112 L 375 194 Q 375 207 362 207 L 58 207 Q 45 207 45 194 L 45 112 Q 45 99 58 99 Z", "w": [318, 352], "r": 1, "rot": {"axis": "x", "deg": -10, "about": [210, 8, 280]}},
+    {"id": "panel", "kind": "screen", "mat": "slot", "box": [42, 103.5, 318, 378, 221.5, 326], "r": 10, "face": "front", "bezel": 4, "print": "med_xy-k-gr-ai_screen", "rot": {"axis": "x", "deg": -18, "about": [210, 103.5, 326]}},
+    {"id": "panel-back", "kind": "box", "mat": "slot", "box": [40, 90, 290, 380, 216, 300], "rot": {"axis": "x", "deg": -10, "about": [210, 8, 280]}},
+    {"id": "slot-back", "kind": "box", "mat": "slot", "box": [44, 20, 300, 376, 76, 330], "r": 4, "rot": {"axis": "x", "deg": -10, "about": [210, 8, 280]}},
+    {"id": "company", "kind": "box", "mat": "plastic#6c7279", "box": [70, 52, 330, 210, 57, 331], "soft": true, "rot": {"axis": "x", "deg": -10, "about": [210, 8, 280]}},
+    {"id": "company2", "kind": "box", "mat": "plastic#8a9099", "box": [70, 42, 330, 230, 45, 331], "soft": true, "rot": {"axis": "x", "deg": -10, "about": [210, 8, 280]}},
+    {"id": "icon", "kind": "box", "mat": "dark", "box": [238, 40, 330, 252, 56, 331], "soft": true, "rot": {"axis": "x", "deg": -10, "about": [210, 8, 280]}},
+    {"id": "icon2", "kind": "box", "mat": "gloss#e8c22a", "box": [262, 40, 330, 276, 56, 331], "soft": true, "rot": {"axis": "x", "deg": -10, "about": [210, 8, 280]}},
+    {"id": "socket", "kind": "cyl", "mat": "socket", "from": [300, 50, 330], "to": [300, 50, 336], "d": 26, "copies": [[44, 0, 0]], "rot": {"axis": "x", "deg": -10, "about": [210, 8, 280]}},
+    {"id": "socket-in", "kind": "cyl", "mat": "dark", "from": [300, 50, 336], "to": [300, 50, 337], "d": 12, "soft": true, "copies": [[44, 0, 0]], "rot": {"axis": "x", "deg": -10, "about": [210, 8, 280]}},
+    {"id": "grip", "kind": "box", "mat": "dark", "box": [2, 140, 190, 6, 182, 290], "r": 6, "mirror": "x"}]}

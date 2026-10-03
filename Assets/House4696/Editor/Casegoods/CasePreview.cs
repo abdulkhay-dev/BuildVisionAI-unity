@@ -70,7 +70,12 @@ namespace House4696.CasegoodsEditor
                 ItemCatalog.ReloadCasegoods();
             }
             var cm = CaseCatalog.Model(model);
-            if (cm == null) return "[CasePreview] no model " + model;
+            // medical devices (Resources/Medical) render the same way
+            var mm = cm == null ? House4696.Medical.MedCatalog.Model(model) : null;
+            if (cm == null && mm == null) return "[CasePreview] no model " + model;
+            string itemId = cm != null ? cm.Id : mm.Id;
+            string mount = cm != null ? cm.Mount : mm.Mount;
+            float[] size = cm != null ? cm.Size : House4696.Medical.MedCatalog.Design(mm.Design ?? mm.Id)?.Size;
             var lib = MaterialLibrary.Create();
             var writer = new SceneWriter();
             var doc = new HouseDocument();
@@ -79,9 +84,9 @@ namespace House4696.CasegoodsEditor
             doc.Levels.Add(new LevelDef { Id = "ground", Elevation = 0f, Height = 3f, Slab = 0.2f });
             var ps = new JObject { ["open"] = open };
             if (!string.IsNullOrEmpty(finish)) ps["finish"] = finish;
-            bool wall = cm.Mount == "wall";
-            float H = cm.Size != null && cm.Size.Length > 2 ? cm.Size[2] / 1000f : 1f;
-            doc.Items.Add(new ItemDef { Id = "piece", Model = cm.Id, Level = "ground", Position = new Vector3(0f, wall ? H * 0.5f : 0f, 0f), Rotation = 0f, Params = ps });
+            bool wall = mount == "wall";
+            float H = size != null && size.Length > 2 ? size[2] / 1000f : 1f;
+            doc.Items.Add(new ItemDef { Id = "piece", Model = itemId, Level = "ground", Position = new Vector3(0f, wall ? H * 0.5f : mount == "ceiling" ? H : 0f, 0f), Rotation = 0f, Params = ps });
 
             var saved = (RenderSettings.ambientMode, RenderSettings.ambientLight, RenderSettings.ambientProbe, RenderSettings.defaultReflectionMode,
                 RenderSettings.customReflectionTexture);

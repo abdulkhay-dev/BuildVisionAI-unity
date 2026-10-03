@@ -100,6 +100,10 @@ namespace House4696.Generation
             foreach (var id in _caseIds) Models.Remove(id);
             _caseIds.Clear();
             if (_external) AddCasegoods();
+            House4696.Medical.MedCatalog.Reload();
+            foreach (var id in _medIds) Models.Remove(id);
+            _medIds.Clear();
+            if (_external) AddMedical();
         }
 
         /// <summary>Library models (scans, Blender models) join the catalogue under their ids once the content is loaded.</summary>
@@ -108,6 +112,7 @@ namespace House4696.Generation
             if (_external) return;
             _external = true;
             AddCasegoods();
+            AddMedical();
             var ext = ExternalCatalog.Load();
             if (ext == null) return;
             foreach (var e in ext.Models)
@@ -115,6 +120,26 @@ namespace House4696.Generation
                 if (string.IsNullOrEmpty(e.PrefabPath) || Models.ContainsKey(e.Id)) continue;
                 var entry = e;
                 Models[e.Id] = new ItemModel { Id = e.Id, Name = e.Name, Category = e.Category, Params = e.ParamsText(), Build = b => b.External = entry };
+            }
+        }
+
+        static readonly List<string> _medIds = new List<string>();
+
+        /// <summary>Medical equipment of the manufacturers' catalogues (Resources/Medical): parametric, built from their designs.</summary>
+        static void AddMedical()
+        {
+            foreach (var mm in House4696.Medical.MedCatalog.File.Models)
+            {
+                if (string.IsNullOrEmpty(mm.Id) || Models.ContainsKey(mm.Id)) continue;
+                // listed with the whole inventory: only devices whose design is drawn join the library
+                if (House4696.Medical.MedCatalog.Design(mm.Design ?? mm.Id) == null) continue;
+                var entry = mm;
+                Models[mm.Id] = new ItemModel
+                {
+                    Id = mm.Id, Name = $"{mm.NameRu ?? mm.Name} {mm.Code}".Trim(), Category = "med_" + (mm.Category ?? "other"), Params = "",
+                    Build = b => House4696.Medical.MedBuilder.Build(b, entry),
+                };
+                _medIds.Add(mm.Id);
             }
         }
 

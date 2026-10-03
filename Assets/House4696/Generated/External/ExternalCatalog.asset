@@ -2268,6 +2268,236 @@ MonoBehaviour:
     Category: lift
     MaterialPath: ExternalLibrary/Materials/M_liftpanel_dc1000a_freight
     Neutral: 0
+  - Id: med_xy-cryo-3_screen
+    Name: "\u042D\u043A\u0440\u0430\u043D XY-CRYO-3"
+    Category: medical
+    MaterialPath: ExternalLibrary/Materials/M_med_xy-cryo-3_screen
+    Neutral: 0
+  - Id: med_xy-dms-103a_screen
+    Name: "\u042D\u043A\u0440\u0430\u043D XY-DMS-103A"
+    Category: medical
+    MaterialPath: ExternalLibrary/Materials/M_med_xy-dms-103a_screen
+    Neutral: 0
+  - Id: med_xy-fswt-ic_screen
+    Name: "\u042D\u043A\u0440\u0430\u043D XY-FSWT-IC"
+    Category: medical
+    MaterialPath: ExternalLibrary/Materials/M_med_xy-fswt-ic_screen
+    Neutral: 0
+  - Id: med_xy-ipc-iid_screen
+    Name: "\u042D\u043A\u0440\u0430\u043D XY-IPC-IID"
+    Category: medical
+    MaterialPath: ExternalLibrary/Materials/M_med_xy-ipc-iid_screen
+    Neutral: 0
+  - Id: med_xy-jgc-iii_screen
+    Name: "\u042D\u043A\u0440\u0430\u043D XY-JGC-III"
+    Category: medical
+    MaterialPath: ExternalLibrary/Materials/M_med_xy-jgc-iii_screen
+    Neutral: 0
+  - Id: med_xy-k-cdb-ii_screen
+    Name: "\u042D\u043A\u0440\u0430\u043D XY-K-CDB-II"
+    Category: medical
+    MaterialPath: ExternalLibrary/Materials/M_med_xy-k-cdb-ii_screen
+    Neutral: 0
+  - Id: med_xy-k-csb-i_screen
+    Name: "\u042D\u043A\u0440\u0430\u043D XY-K-CSB-I"
+    Category: medical
+    MaterialPath: ExternalLibrary/Materials/M_med_xy-k-csb-i_screen
+    Neutral: 0
+  - Id: med_xy-k-csb-ii_screen
+    Name: "\u042D\u043A\u0440\u0430\u043D XY-K-CSB-II"
+    Category: medical
+    MaterialPath: ExternalLibrary/Materials/M_med_xy-k-csb-ii_screen
+    Neutral: 0
+  - Id: med_xy-k-czld-v_screen
+    Name: "\u042D\u043A\u0440\u0430\u043D XY-K-CZLD-V"
+    Category: medical
+    MaterialPath: ExternalLibrary/Materials/M_med_xy-k-czld-v_screen
+    Neutral: 0
+  - Id: med_xy-k-czr-iii_screen
+    Name: "\u042D\u043A\u0440\u0430\u043D XY-K-CZR-III"
+    Category: medical
+    MaterialPath: ExternalLibrary/Materials/M_med_xy-k-czr-iii_screen
+    Neutral: 0
+  - Id: med_xy-k-gr-ai_screen
+    Name: "\u042D\u043A\u0440\u0430\u043D XY-K-GR-AI"
+    Category: medical
+    MaterialPath: ExternalLibrary/Materials/M_med_xy-k-gr-ai_screen
+    Neutral: 0
+  - Id: med_xy-k-gr-ci_screen
+    Name: "\u042D\u043A\u0440\u0430\u043D XY-K-GR-CI"
+    Category: medical
+    MaterialPath: ExternalLibrary/Materials/M_med_xy-k-gr-ci_screen
+    Neutral: 0
+  - Id: med_xy-k-gr-cii_screen
+    Name: "\u042D\u043A\u0440\u0430\u043D XY-K-GR-CII"
+    Category: medical
+    MaterialPath: ExternalLibrary/Materials/M_med_xy-k-gr-cii_screen
+    Neutral: 0
+  - Id: med_xy-k-gr-dii_screen
+    Name: "\u042D\u043A\u0440\u0430\u043D XY-K-GR-DII"
+    Category: medical
+    MaterialPath: ExternalLibrary/Materials/M_med_xy-k-gr-dii_screen
+    Neutral: 0
+  - Id: med_xy-k-gzz-iii_screen
+    Name: "\u042D\u043A\u0440\u0430\u043D XY-K-GZZ-III"
+    Category: medical
+    MaterialPath: ExternalLibrary/Materials/M_med_xy-k-gzz-iii_screen
+    Neutral: 0
+  - Id: med_xy-k-jlc-d_screen
+    Name: "\u042D\u043A\u0440\u0430\u043D XY-K-JLC-D"
+    Category: medical
+    MaterialPath: ExternalLibrary/Materials/M_med_xy-k-jlc-d_screen
+    Neutral: 0
+  - Id: med_xy-k-jlc-j_screen
+    Name: "\u042D\u043A\u0440\u0430\u043D XY-K-JLC-J"
+    Category: medical
+    MaterialPath: ExternalLibrary/Materials/M_med_xy-k-jlc-j_screen
+    Neutral: 0
+  - Id: med_xy-k-medical_screen
+    Name: "\u042D\u043A\u0440\u0430\u043D XY-K-MEDICAL"
+    Category: medical
+    MaterialPath: ExternalLibrary/Materials/M_med_xy-k-medical_screen
+    Neutral: 0
+  - Id: med_xy-k-pdj-iv_screen
+    Name: "\u042D\u043A\u0440\u0430\u043D XY-K-PDJ-IV"
+    Category: medical
+    MaterialPath: ExternalLibrary/Materials/M_med_xy-k-pdj-iv_screen
+    Neutral: 0
+  - Id: med_xy-k-shock-master-500_screen
+    Name: "\u042D\u043A\u0440\u0430\u043D XY-K-SHOCK MASTER-500"
+    Category: medical
+    MaterialPath: ExternalLibrary/Materials/M_med_xy-k-shock-master-500_screen
+    Neutral: 0
+  - Id: med_xy-k-sjjd-ii_screen
+    Name: "\u042D\u043A\u0440\u0430\u043D XY-K-SJJD-II"
+    Category: medical
+    MaterialPath: ExternalLibrary/Materials/M_med_xy-k-sjjd-ii_screen
+    Neutral: 0
+  - Id: med_xy-k-spll-v_screen
+    Name: "\u042D\u043A\u0440\u0430\u043D XY-K-SPLL-V"
+    Category: medical
+    MaterialPath: ExternalLibrary/Materials/M_med_xy-k-spll-v_screen
+    Neutral: 0
+  - Id: med_xy-lrf-i_screen
+    Name: "\u042D\u043A\u0440\u0430\u043D XY-LRF-\u2160"
+    Category: medical
+    MaterialPath: ExternalLibrary/Materials/M_med_xy-lrf-i_screen
+    Neutral: 0
+  - Id: med_xy-scjg-ii_screen
+    Name: "\u042D\u043A\u0440\u0430\u043D XY-SCJG-II"
+    Category: medical
+    MaterialPath: ExternalLibrary/Materials/M_med_xy-scjg-ii_screen
+    Neutral: 0
+  - Id: med_xy-wb-ei_screen
+    Name: "\u042D\u043A\u0440\u0430\u043D XY-WB-EI"
+    Category: medical
+    MaterialPath: ExternalLibrary/Materials/M_med_xy-wb-ei_screen
+    Neutral: 0
+  - Id: med_xyg-500ib_screen
+    Name: "\u042D\u043A\u0440\u0430\u043D XYG-500IB"
+    Category: medical
+    MaterialPath: ExternalLibrary/Materials/M_med_xyg-500ib_screen
+    Neutral: 0
+  - Id: med_interactive-training-cart_screen
+    Name: "\u042D\u043A\u0440\u0430\u043D interactive-training-cart"
+    Category: medical
+    MaterialPath: ExternalLibrary/Materials/M_med_interactive-training-cart_screen
+    Neutral: 0
+  - Id: med_xy-101c_screen
+    Name: "\u042D\u043A\u0440\u0430\u043D XY-101C"
+    Category: medical
+    MaterialPath: ExternalLibrary/Materials/M_med_xy-101c_screen
+    Neutral: 0
+  - Id: med_xy-jzj-i_screen
+    Name: "\u042D\u043A\u0440\u0430\u043D XY-JZJ-I"
+    Category: medical
+    MaterialPath: ExternalLibrary/Materials/M_med_xy-jzj-i_screen
+    Neutral: 0
+  - Id: med_xy-jzj-ii_screen
+    Name: "\u042D\u043A\u0440\u0430\u043D XY-JZJ-II"
+    Category: medical
+    MaterialPath: ExternalLibrary/Materials/M_med_xy-jzj-ii_screen
+    Neutral: 0
+  - Id: med_xy-mcb-i-deluxe_screen
+    Name: "\u042D\u043A\u0440\u0430\u043D XY-MCB-I"
+    Category: medical
+    MaterialPath: ExternalLibrary/Materials/M_med_xy-mcb-i-deluxe_screen
+    Neutral: 0
+  - Id: med_xy-msz-i_screen
+    Name: "\u042D\u043A\u0440\u0430\u043D XY-MSZ-I"
+    Category: medical
+    MaterialPath: ExternalLibrary/Materials/M_med_xy-msz-i_screen
+    Neutral: 0
+  - Id: med_xy-qjhd-bh_screen
+    Name: "\u042D\u043A\u0440\u0430\u043D XY-QJHD-BH"
+    Category: medical
+    MaterialPath: ExternalLibrary/Materials/M_med_xy-qjhd-bh_screen
+    Neutral: 0
+  - Id: med_xy-qjhd-bv_screen
+    Name: "\u042D\u043A\u0440\u0430\u043D XY-QJHD-BV"
+    Category: medical
+    MaterialPath: ExternalLibrary/Materials/M_med_xy-qjhd-bv_screen
+    Neutral: 0
+  - Id: med_xy-zbd-iiidl_screen
+    Name: "\u042D\u043A\u0440\u0430\u043D XY-ZBD-IIIDL"
+    Category: medical
+    MaterialPath: ExternalLibrary/Materials/M_med_xy-zbd-iiidl_screen
+    Neutral: 0
+  - Id: med_xy-k-g6_screen
+    Name: "\u042D\u043A\u0440\u0430\u043D XY-K-G6"
+    Category: medical
+    MaterialPath: ExternalLibrary/Materials/M_med_xy-k-g6_screen
+    Neutral: 0
+  - Id: med_jyz-iiib_screen
+    Name: "\u042D\u043A\u0440\u0430\u043D JYZ-IIIB"
+    Category: medical
+    MaterialPath: ExternalLibrary/Materials/M_med_jyz-iiib_screen
+    Neutral: 0
+  - Id: med_xy-jzjy-iii_screen
+    Name: "\u042D\u043A\u0440\u0430\u043D XY-JZJY-III"
+    Category: medical
+    MaterialPath: ExternalLibrary/Materials/M_med_xy-jzjy-iii_screen
+    Neutral: 0
+  - Id: med_xy-sl-bii_screen
+    Name: "\u042D\u043A\u0440\u0430\u043D XY-SL-BII"
+    Category: medical
+    MaterialPath: ExternalLibrary/Materials/M_med_xy-sl-bii_screen
+    Neutral: 0
+  - Id: med_xy-sl-bvii_screen
+    Name: "\u042D\u043A\u0440\u0430\u043D XY-SL-BVII"
+    Category: medical
+    MaterialPath: ExternalLibrary/Materials/M_med_xy-sl-bvii_screen
+    Neutral: 0
+  - Id: med_xy-sl-ci_screen
+    Name: "\u042D\u043A\u0440\u0430\u043D XY-SL-CI"
+    Category: medical
+    MaterialPath: ExternalLibrary/Materials/M_med_xy-sl-ci_screen
+    Neutral: 0
+  - Id: med_xyl-viia_screen
+    Name: "\u042D\u043A\u0440\u0430\u043D XYL-VIIA"
+    Category: medical
+    MaterialPath: ExternalLibrary/Materials/M_med_xyl-viia_screen
+    Neutral: 0
+  - Id: med_xyl-viid_screen
+    Name: "\u042D\u043A\u0440\u0430\u043D XYL-VIID"
+    Category: medical
+    MaterialPath: ExternalLibrary/Materials/M_med_xyl-viid_screen
+    Neutral: 0
+  - Id: med_xdd-ii_screen
+    Name: "\u042D\u043A\u0440\u0430\u043D XDD-II"
+    Category: medical
+    MaterialPath: ExternalLibrary/Materials/M_med_xdd-ii_screen
+    Neutral: 0
+  - Id: med_xy-k-swy-ii_screen
+    Name: "\u042D\u043A\u0440\u0430\u043D XY-K-SWY-II"
+    Category: medical
+    MaterialPath: ExternalLibrary/Materials/M_med_xy-k-swy-ii_screen
+    Neutral: 0
+  - Id: med_xy-qc-i_screen
+    Name: "\u042D\u043A\u0440\u0430\u043D XY-QC-I"
+    Category: medical
+    MaterialPath: ExternalLibrary/Materials/M_med_xy-qc-i_screen
+    Neutral: 0
   Models:
   - Id: armchair_modern
     Name: "\u041A\u0440\u0435\u0441\u043B\u043E: \u043A\u043E\u0436\u0430, \u0434\u0435\u0440\u0435\u0432\u044F\u043D\u043D\u044B\u0439 \u043A\u0430\u0440\u043A\u0430\u0441"

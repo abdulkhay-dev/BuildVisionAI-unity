@@ -1,0 +1,16 @@
+{"id": "xy-k-swy-ii", "size": [770, 445, 482], "mats": {"shell": "plastic#eceef1", "glass": "gloss#18191d", "grey": "plastic#9a9fa6", "foot": "rubber#1b1c1e", "hose": "plastic#e3e5e8", "cuff": "plastic#f1f2f4"}, "parts": [
+    {"id": "body", "kind": "slab", "mat": "shell", "plane": "side", "outline": "M 40 28 L 330 28 Q 420 28 420 118 L 420 384 Q 420 406 398 406 L 70 406 Q 0 406 0 336 L 0 68 Q 0 28 40 28 Z", "w": [400, 770], "r": 14},
+    {"id": "panel-back", "kind": "box", "mat": "glass", "box": [406, 120, 416, 764, 180, 422], "r": 2},
+    {"id": "panel", "kind": "screen", "mat": "glass", "box": [406, 120, 418, 764, 400, 423], "r": 40, "face": "front", "print": "med_xy-k-swy-ii_screen", "bezel": 0},
+    {"id": "panel-corner0", "kind": "slab", "mat": "shell", "plane": "front", "outline": "M 406.0 365.0 L 406.0 401.0 L 441.0 401.0 L 440.0 400.0 L 433.4 399.3 L 427.0 397.4 L 421.1 394.3 L 416.0 390.0 L 411.7 384.9 L 408.6 379.0 L 406.7 372.6 L 406.0 366.0 Z", "w": [423, 424.5], "soft": true},
+    {"id": "panel-corner1", "kind": "slab", "mat": "shell", "plane": "front", "outline": "M 764.0 365.0 L 764.0 401.0 L 729.0 401.0 L 730.0 400.0 L 736.6 399.3 L 743.0 397.4 L 748.9 394.3 L 754.0 390.0 L 758.3 384.9 L 761.4 379.0 L 763.3 372.6 L 764.0 366.0 Z", "w": [423, 424.5], "soft": true},
+    {"id": "handle", "kind": "slab", "mat": "shell", "plane": "side", "outline": "M 70 396 L 70 404 Q 120 408 122 446 Q 124 486 165 486 L 285 486 Q 326 486 328 446 Q 330 408 380 404 L 380 396 L 300 396 L 300 434 Q 300 456 278 456 L 172 456 Q 150 456 150 434 L 150 396 Z", "w": [527.0, 643.0], "r": 12},
+    {"id": "handle-in", "kind": "slab", "mat": "grey", "plane": "side", "outline": "M 147 400 L 147 434 Q 147 459 172 459 L 278 459 Q 303 459 303 434 L 303 400 L 297 400 L 297 434 Q 297 453 278 453 L 172 453 Q 153 453 153 434 L 153 400 Z", "w": [536.0, 634.0], "soft": true},
+    {"id": "handle-well", "kind": "box", "mat": "grey", "box": [536.0, 400, 150, 634.0, 407, 300], "r": 4},
+    {"id": "foot", "kind": "cyl", "mat": "foot", "from": [446, 28, 44], "to": [446, 6, 44], "d": 40, "copies": [[278, 0, 0], [0, 0, 332], [278, 0, 332]]},
+    {"id": "foot-disc", "kind": "cyl", "mat": "plastic#6b625c", "from": [446, 8, 44], "to": [446, 0, 44], "d": 36, "d2": 46, "copies": [[278, 0, 0], [0, 0, 332], [278, 0, 332]]},
+    {"id": "coupling", "kind": "lathe", "mat": "cuff", "at": [354, 215, 210], "axis": "x", "profile": [[0, 0], [40, 0], [44, 6], [44, 40], [48, 42], [48, 46], [0, 46]]},
+    {"id": "hose", "kind": "tube", "mat": "hose", "path": [[354, 215, 210], [300, 195, 225], [200, 44, 300], [120, 48, 350]], "d": 72, "bend": 110, "rib": 4, "pitch": 13},
+    {"id": "nozzle", "kind": "cyl", "mat": "cuff", "from": [120, 48, 350], "to": [33.9, 48, 409.9], "d": 84},
+    {"id": "nozzle-ring", "kind": "cyl", "mat": "cuff", "from": [98.5, 48.0, 365.0], "to": [83.8, 48.0, 375.1], "d": 96},
+    {"id": "nozzle-end", "kind": "cyl", "mat": "plastic#55595f", "from": [33.9, 48, 409.9], "to": [31.4, 48, 411.6], "d": 70, "soft": true}]}

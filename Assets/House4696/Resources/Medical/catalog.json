@@ -1,0 +1,4266 @@
+{
+  "models": [
+    {
+      "id": "_med-test",
+      "code": "TEST",
+      "name": "Engine test cart",
+      "nameRu": "Тест движка",
+      "category": "physio",
+      "mount": "floor"
+    },
+    {
+      "id": "hyj-i",
+      "code": "HYJ-I",
+      "name": "Microwave Therapy Device (portable)",
+      "nameRu": "Аппарат микроволновой терапии портативный",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "desk",
+      "source": "极超短波 微波/Mircrowave Therapy Device.pdf"
+    },
+    {
+      "id": "hyj-ii",
+      "code": "HYJ-II",
+      "name": "Microwave Therapy Device (trolley, 50 W)",
+      "nameRu": "Аппарат микроволновой терапии",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "floor",
+      "source": "极超短波 微波/Mircrowave Therapy Device.pdf"
+    },
+    {
+      "id": "hyj-ii-enhanced",
+      "code": "HYJ-II (Enhanced Type)",
+      "name": "Microwave Therapy Device (Enhanced, round radiator)",
+      "nameRu": "Аппарат микроволновой терапии",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "floor",
+      "source": "极超短波 微波/Mircrowave Therapy Device.pdf"
+    },
+    {
+      "id": "hyj-iii",
+      "code": "HYJ-III",
+      "name": "Microwave Therapy Device (Enhanced, rectangular radiator)",
+      "nameRu": "Аппарат микроволновой терапии",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "floor",
+      "source": "极超短波 微波/Mircrowave Therapy Device.pdf"
+    },
+    {
+      "id": "hyj-iv",
+      "code": "HYJ-IV",
+      "name": "Microwave Therapy Device (Enhanced, dual radiator)",
+      "nameRu": "Аппарат микроволновой терапии (два излучателя)",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "floor",
+      "source": "极超短波 微波/Mircrowave Therapy Device.pdf"
+    },
+    {
+      "id": "pulse-magnetic-therapy-device",
+      "name": "Pulse Magnetic Therapy Device",
+      "nameRu": "Аппарат импульсной магнитотерапии, настольный",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "desk",
+      "source": "脉冲磁/Pulse Magnetic Therapy.jpg"
+    },
+    {
+      "id": "rh-jpsj-b",
+      "code": "RH-JPSJ-B",
+      "name": "TENS (trolley type)",
+      "nameRu": "Аппарат чрескожной электронейростимуляции (ЧЭНС)",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "floor",
+      "source": "电疗/TENS RH-JPSJ-B.jpg"
+    },
+    {
+      "id": "sd-pdc-2",
+      "code": "SD-PDC-2",
+      "name": "Pelvic Floor Magnetic Therapy Chair",
+      "nameRu": "Кресло магнитной стимуляции мышц тазового дна",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "floor",
+      "source": "激光磁场理疗仪-盆底磁/Pelvic Floor Magnetic Therapy Device.pdf"
+    },
+    {
+      "id": "tms-physiotherapy-device",
+      "name": "Transcranial Magnetic Stimulation Physiotherapy Device (FNS + limb ES)",
+      "nameRu": "Аппарат транскраниальной магнитной и электростимуляции мозжечка (физиотерапевтический)",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "floor",
+      "source": "经颅磁脑病/TMS.jpg"
+    },
+    {
+      "id": "xy-24",
+      "code": "XY-24",
+      "name": "Relaxation Massager (vibration belt)",
+      "nameRu": "Вибромассажёр ременной",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xy-alpha-tron-ii",
+      "code": "XY-α-TRON-II",
+      "name": "Low Frequency Electrotherapy Device",
+      "nameRu": "Аппарат низкочастотной электротерапии",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "desk",
+      "source": "电疗/低周波治疗仪/Lower Frequency Electrotherapy Device XY-α-TRON-II.pdf"
+    },
+    {
+      "id": "xy-cryo-1",
+      "code": "XY-CRYO-1",
+      "name": "Cryotherapy Device (cold air)",
+      "nameRu": "Аппарат воздушной криотерапии",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "floor",
+      "source": "冷疗/Cryotherapy  XY-CRYO-1.jpg"
+    },
+    {
+      "id": "xy-cryo-3",
+      "code": "XY-CRYO-3",
+      "name": "Cryotherapy Device (cold air)",
+      "nameRu": "Аппарат воздушной криотерапии",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "floor",
+      "source": "冷疗/Cryotherapy Device XY-CRYO-3.pdf"
+    },
+    {
+      "id": "xy-dms-102b",
+      "code": "XY-DMS-102B",
+      "name": "Deep Muscle Stimulator (Magnetic Vibration Heat Massage edition)",
+      "nameRu": "Аппарат глубокой мышечной стимуляции (перкуссионный массажёр)",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "desk",
+      "source": "罗汉锤/Deep Muscle Stimulator.pdf"
+    },
+    {
+      "id": "xy-dms-103a",
+      "code": "XY-DMS-103A",
+      "name": "Deep Muscle Stimulator",
+      "nameRu": "Аппарат глубокой мышечной стимуляции (перкуссионный молот)",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "desk",
+      "source": "雷神锤XY-DMS-103A/Deep Muscle Stimulator XY-DMS-103A.pdf"
+    },
+    {
+      "id": "xy-fswt-ic",
+      "code": "XY-FSWT-IC",
+      "name": "Piezoelectric Shock Wave Therapy Device",
+      "nameRu": "Аппарат пьезоэлектрической ударно-волновой терапии",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "desk",
+      "source": "冲击波/台式压电式冲击波治疗仪/Piezoelectric Shock Wave Therapy Device XY-FSWT-IC.pdf"
+    },
+    {
+      "id": "xy-ipc-iid",
+      "code": "XY-IPC-IID",
+      "name": "Intermittent Pneumatic Compression Device (DVT prevention)",
+      "nameRu": "Аппарат перемежающейся пневмокомпрессии для профилактики ВТЭ",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "desk",
+      "source": "空气波/间歇充气加压/Intermittent Pneumatic Compression Device.pdf"
+    },
+    {
+      "id": "xy-jgc-iii",
+      "code": "XY-JGC-III",
+      "name": "Laser Magnetic Stimulation Therapy Device",
+      "nameRu": "Аппарат лазерно-магнитной стимуляции",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "floor",
+      "source": "激光磁场理疗仪-康复科/Laser Magnetic Stimulation Therapy Device XY-JGC-III.pdf"
+    },
+    {
+      "id": "xy-k-cdb-ii",
+      "code": "XY-K-CDB-II",
+      "name": "Shortwave Therapy Device",
+      "nameRu": "Аппарат коротковолновой терапии",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "floor",
+      "source": "短波/Shortwave Therapy Device XY-K-CDB-II.pdf"
+    },
+    {
+      "id": "xy-k-cdb-iv",
+      "code": "XY-K-CDB-IV",
+      "name": "Shortwave Therapy Device",
+      "nameRu": "Аппарат коротковолновой терапии",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "floor",
+      "source": "短波/XY-K-CDB-IV.jpg"
+    },
+    {
+      "id": "xy-k-csb-i",
+      "code": "XY-K-CSB-I",
+      "name": "Ultrasound Therapy Device",
+      "nameRu": "Аппарат ультразвуковой терапии",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "desk",
+      "source": "超声波/Ultrasound Therapy Device.pdf"
+    },
+    {
+      "id": "xy-k-csb-ii",
+      "code": "XY-K-CSB-II",
+      "name": "Ultrasound Therapy Device (dual probe)",
+      "nameRu": "Аппарат ультразвуковой терапии (двухканальный)",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "desk",
+      "source": "超声波/Ultrasound Therapy Device.pdf"
+    },
+    {
+      "id": "xy-k-czld-i",
+      "code": "XY-K-CZLD-I",
+      "name": "Whole Body Sonic Vibration System (standing, with handrail)",
+      "nameRu": "Вибрационная платформа звуковой волны (стоячая)",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "floor",
+      "source": "全身音波律动/Whole Body Sonic Vibration Device.pdf"
+    },
+    {
+      "id": "xy-k-czld-ii",
+      "code": "XY-K-CZLD-II",
+      "name": "Whole Body Sonic Vibration System (low platform)",
+      "nameRu": "Вибрационная платформа звуковой волны (низкая, напольная)",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "floor",
+      "source": "全身音波律动/Whole Body Sonic Vibration Device.pdf"
+    },
+    {
+      "id": "xy-k-czld-v",
+      "code": "XY-K-CZLD-V",
+      "name": "Whole Body Sonic Vibration System (curved column, chrome handrail)",
+      "nameRu": "Вибрационная платформа звуковой волны (стоячая, с изогнутой стойкой)",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "floor",
+      "source": "全身音波律动/Whole Body Sonic Vibration Device.pdf"
+    },
+    {
+      "id": "xy-k-czr-ii",
+      "code": "XY-K-CZR-II",
+      "name": "Magnetic Vibration and Heating Device",
+      "nameRu": "Аппарат магнито-вибро-термотерапии",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "floor",
+      "source": "磁振热/XY-K-CZR-II.jpg"
+    },
+    {
+      "id": "xy-k-czr-iii",
+      "code": "XY-K-CZR-III",
+      "name": "Magnetic Vibration and Heat Therapy Unit",
+      "nameRu": "Аппарат магнито-вибро-термотерапии с сенсорным экраном",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "floor",
+      "source": "磁振热/XY-K-CZR-III.jpg"
+    },
+    {
+      "id": "xy-k-gnhw-ii",
+      "code": "XY-K-GNHW-II",
+      "name": "High Power Infrared Therapy Device",
+      "nameRu": "Аппарат высокоинтенсивной инфракрасной терапии",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "floor",
+      "source": "光疗/高能红外治疗仪/High Power Infrared Therapy Device.pdf"
+    },
+    {
+      "id": "xy-k-gr-ai",
+      "code": "XY-K-GR-AI",
+      "name": "Interferential Current Therapy Device",
+      "nameRu": "Аппарат интерференционной терапии",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "desk",
+      "source": "电疗/XY-K-GR-AI.jpg"
+    },
+    {
+      "id": "xy-k-gr-ai-trolley",
+      "code": "XY-K-GR-AI",
+      "name": "Interferential Current Therapy Device (trolley type)",
+      "nameRu": "Аппарат интерференционной терапии (на тележке)",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "floor",
+      "source": "电疗/干扰电治疗仪/Interferential Current Therapy Device.pdf"
+    },
+    {
+      "id": "xy-k-gr-ai-v2",
+      "code": "XY-K-GR-AI",
+      "name": "Interferential Current Therapy Device (new white desktop)",
+      "nameRu": "Аппарат интерференционной терапии",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "desk",
+      "source": "电疗/干扰电治疗仪/Interferential Current Therapy Device.pdf"
+    },
+    {
+      "id": "xy-k-gr-bii",
+      "code": "XY-K-GR-BII",
+      "name": "Interferential Current Therapy Device",
+      "nameRu": "Аппарат интерференционной терапии",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "floor",
+      "source": "电疗/Interferential therapy XY-K-GR-BII.jpg"
+    },
+    {
+      "id": "xy-k-gr-ci",
+      "code": "XY-K-GR-CI",
+      "name": "Interferential Current Therapy Device",
+      "nameRu": "Аппарат интерференционной терапии",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "desk",
+      "source": "电疗/XY-K-GR-CI.jpg"
+    },
+    {
+      "id": "xy-k-gr-ci-v2",
+      "code": "XY-K-GR-CI",
+      "name": "Interferential Current Therapy Device (new design)",
+      "nameRu": "Аппарат интерференционной терапии",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "desk",
+      "source": "电疗/干扰电治疗仪/Interferential Current Therapy Device.pdf"
+    },
+    {
+      "id": "xy-k-gr-cii",
+      "code": "XY-K-GR-CII",
+      "name": "Interferential Current Therapy Device (E-series trolley)",
+      "nameRu": "Аппарат интерференционной терапии (на тележке)",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "floor",
+      "source": "电疗/干扰电治疗仪/Interferential Current Therapy Device.pdf"
+    },
+    {
+      "id": "xy-k-gr-dii",
+      "code": "XY-K-GR-DII",
+      "name": "Interferential Current Therapy Device (touch-screen trolley)",
+      "nameRu": "Аппарат интерференционной терапии (на тележке, сенсорный экран)",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "floor",
+      "source": "电疗/干扰电治疗仪/Interferential Current Therapy Device.pdf"
+    },
+    {
+      "id": "xy-k-gr-eii",
+      "code": "XY-K-GR-EII",
+      "name": "Interferential Current Therapy Device (portable)",
+      "nameRu": "Аппарат интерференционной терапии (портативный)",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "desk",
+      "source": "电疗/干扰电治疗仪/Interferential Current Therapy Device.pdf"
+    },
+    {
+      "id": "xy-k-gzz-iii",
+      "code": "XY-K-GZZ-III",
+      "name": "Integrated Physiotherapy System (10 factors)",
+      "nameRu": "Комплексная физиотерапевтическая система (10 факторов)",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "floor",
+      "source": "综合物理治疗系统/Integrated Physiotherapy System.pdf"
+    },
+    {
+      "id": "xy-k-jlc-d",
+      "code": "XY-K-JLC-D",
+      "name": "Transcranial Magnetic Stimulator",
+      "nameRu": "Транскраниальный магнитный стимулятор (ТМС)",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "floor",
+      "source": "经颅磁刺激器/Transcranial magnetic stimulator.pdf"
+    },
+    {
+      "id": "xy-k-jlc-j",
+      "code": "XY-K-JLC-J",
+      "name": "Transcranial Magnetic Stimulator (dual-channel)",
+      "nameRu": "Транскраниальный магнитный стимулятор двухканальный",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "floor",
+      "source": "经颅磁刺激器/经颅磁刺激器+经颅磁导航机器人/Transcranial Magnetic Stimulator.pdf"
+    },
+    {
+      "id": "xy-k-lc-2",
+      "code": "XY-K-LC-2",
+      "name": "Pneumatic Compression Therapy System (box chassis)",
+      "nameRu": "Аппарат прессотерапии многокамерный (корпус-ящик)",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "desk",
+      "source": "空气波/老款/Air Compression Therapy.pdf"
+    },
+    {
+      "id": "xy-k-lc-5",
+      "code": "XY-K-LC-5",
+      "name": "Pneumatic Compression Therapy System (cart)",
+      "nameRu": "Аппарат прессотерапии на тележке",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "floor",
+      "source": "空气波/老款/Air Compression Therapy.pdf"
+    },
+    {
+      "id": "xy-k-medical",
+      "code": "XY-K-MEDICAL",
+      "name": "Extracorporeal Shock Wave Therapy Device (desktop)",
+      "nameRu": "Аппарат ударно-волновой терапии настольный",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "desk",
+      "source": "冲击波/XY-K-MEDICAL.jpg"
+    },
+    {
+      "id": "xy-k-pdj-ii",
+      "code": "XY-K-PDJ-II",
+      "name": "Pelvic Floor Muscle Trainer",
+      "nameRu": "Аппарат для тренировки мышц тазового дна с ЭМГ-БОС",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "floor",
+      "source": "电疗/盆底肌XY-K-PDJ-II-外购/Pelvic Floor Muscle Trainer XY-K-PDJ-II.pdf"
+    },
+    {
+      "id": "xy-k-pdj-iv",
+      "code": "XY-K-PDJ-IV",
+      "name": "Pelvic Floor Muscle Training Device",
+      "nameRu": "Аппарат для тренировки мышц тазового дна с ЭМГ-БОС",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "desk",
+      "source": "电疗/盆底肌训练仪XY-K-PDJ-IV/Pelvic Floor Muscle Training Device.pdf"
+    },
+    {
+      "id": "xy-k-shock-master-500",
+      "code": "XY-K-SHOCK MASTER-500",
+      "name": "Extracorporeal Shock Wave Therapy Device (trolley)",
+      "nameRu": "Аппарат ударно-волновой терапии на тележке",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "floor",
+      "source": "冲击波/德款自制冲击波/Shock Wave Therapy.pdf"
+    },
+    {
+      "id": "xy-k-siss-a-table",
+      "code": "XY-K-SISS-A",
+      "name": "Neuromuscular Electrical Stimulation Device (table type)",
+      "nameRu": "Аппарат нейромышечной электростимуляции (настольный)",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "desk",
+      "source": "电疗/神经肌肉低频电刺激仪/NMES.pdf"
+    },
+    {
+      "id": "xy-k-siss-c",
+      "code": "XY-K-SISS-C",
+      "name": "Neuromuscular Electrical Stimulation Device (trolley)",
+      "nameRu": "Аппарат нейромышечной электростимуляции (на тележке)",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "floor",
+      "source": "电疗/神经肌肉低频电刺激仪/NMES.pdf"
+    },
+    {
+      "id": "xy-k-sjd-a-table",
+      "code": "XY-K-SJD-A",
+      "name": "TENS (table type)",
+      "nameRu": "Аппарат чрескожной электронейростимуляции (ЧЭНС) (настольный)",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "desk",
+      "source": "电疗/经皮神经电刺激仪/TENS.pdf"
+    },
+    {
+      "id": "xy-k-sjd-c",
+      "code": "XY-K-SJD-C",
+      "name": "TENS (trolley)",
+      "nameRu": "Аппарат чрескожной электронейростимуляции (ЧЭНС) (на тележке)",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "floor",
+      "source": "电疗/经皮神经电刺激仪/TENS.pdf"
+    },
+    {
+      "id": "xy-k-sjjd-ii",
+      "code": "XY-K-SJJD-II",
+      "name": "Neurorehabilitation EMG Biofeedback Treatment System",
+      "nameRu": "Система нейрореабилитации с ЭМГ-биологической обратной связью",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "floor",
+      "source": "电疗/神经康复肌电生物反馈治疗系统/Neurorehabilitation EMG Biofeedback Treatment System XY-K-SJJD-II.pdf"
+    },
+    {
+      "id": "xy-k-spll-v",
+      "code": "XY-K-SPLL-V",
+      "name": "Radio Frequency Therapy Device (TECAR)",
+      "nameRu": "Аппарат радиочастотной (TECAR) терапии",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "floor",
+      "source": "射频理疗仪XY-K-SPLL-V/Radio Frequency Therapy Device XY-K-SPLL-V.pdf"
+    },
+    {
+      "id": "xy-k-srd-i",
+      "code": "XY-K-SRD-I",
+      "name": "Hand Electrical Stimulator",
+      "nameRu": "Электростимулятор кисти с термотерапией",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "desk",
+      "source": "电疗/手功能温热电刺激仪/Hand Electrical Stimulator.pdf"
+    },
+    {
+      "id": "xy-k-wic-1",
+      "code": "XY-K-WIC-1",
+      "name": "Pneumatic Compression Therapy System (2 knobs)",
+      "nameRu": "Аппарат прессотерапии (лимфодренажа), настольный",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "desk",
+      "source": "空气波/老款/Air Compression Therapy.pdf"
+    },
+    {
+      "id": "xy-k-wic-2",
+      "code": "XY-K-WIC-2",
+      "name": "Pneumatic Compression Therapy System (LED, dome panel)",
+      "nameRu": "Аппарат прессотерапии, настольный (LED-панель)",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "desk",
+      "source": "空气波/老款/Air Compression Therapy.pdf"
+    },
+    {
+      "id": "xy-k-zpjz-ii",
+      "code": "XY-K-ZPJZ-II",
+      "name": "Spine Stimulator",
+      "nameRu": "Аппарат среднечастотной электростимуляции позвоночника с термотерапией",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "floor",
+      "source": "电疗/中频脊柱/XY-K-ZPJZ-II brochure.pdf"
+    },
+    {
+      "id": "xy-k-zwx-ii",
+      "code": "XY-K-ZWX-II",
+      "name": "Ultraviolet Radiation Therapy Device",
+      "nameRu": "Аппарат ультрафиолетового облучения (УФО), настольный",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "desk",
+      "source": "光疗/紫外线/Ultraviolet Radiation Therapy Device.pdf"
+    },
+    {
+      "id": "xy-lrf-i",
+      "code": "XY-LRF-Ⅰ",
+      "name": "Hot and Cold Compression Therapy Device",
+      "nameRu": "Аппарат компрессионной тепло-холодотерапии",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "floor",
+      "source": "物理加压冷热敷治疗仪/Hot and Cold Compression Therapy Device.pdf"
+    },
+    {
+      "id": "xy-ppzl-ii",
+      "code": "XY-PPZL-II",
+      "name": "Spectrum Therapy Device",
+      "nameRu": "Аппарат спектральной (ТДП) терапии, напольный",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "floor",
+      "source": "光疗/频谱治疗仪/Spectrum Therapy Device.pdf"
+    },
+    {
+      "id": "xy-scjg-ii",
+      "code": "XY-SCJG-II",
+      "name": "High Power Laser Therapy Device",
+      "nameRu": "Аппарат высокоинтенсивной лазерной терапии",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "floor",
+      "source": "光疗/深层组织激光治疗仪/High Power Laser Therapy Device  XY-SCJG-II.pdf"
+    },
+    {
+      "id": "xy-wb-ei",
+      "code": "XY-WB-EI",
+      "name": "Microwave Therapy Device",
+      "nameRu": "Аппарат микроволновой терапии",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "floor",
+      "source": "极超短波 微波/微波治疗仪XY-WB-EI/Microwave Therapy Device XY-WB-EI.pdf"
+    },
+    {
+      "id": "xyd-ii",
+      "code": "XYD-II",
+      "name": "Electroacupuncture Therapy Device",
+      "nameRu": "Аппарат электроакупунктуры",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "desk",
+      "source": "电疗/电针治疗仪/Electroacupuncture Therapy Device.jpg"
+    },
+    {
+      "id": "xyd-iii",
+      "code": "XYD-III",
+      "name": "Electroacupuncture Therapy Device",
+      "nameRu": "Аппарат электроакупунктуры",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "desk",
+      "source": "电疗/电针治疗仪/Electroacupuncture Therapy Device.jpg"
+    },
+    {
+      "id": "xyg-500ib",
+      "code": "XYG-500IB",
+      "name": "Infrared Light (Intelligent Pain Therapy Apparatus)",
+      "nameRu": "Аппарат инфракрасной светотерапии (ИК-облучатель на штативе)",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "floor",
+      "source": "光疗/智能疼痛/Infrared therapy.jpg"
+    },
+    {
+      "id": "xyzp-ib",
+      "code": "XYZP-IB",
+      "name": "Medium Frequency Electrotherapy Device (portable)",
+      "nameRu": "Аппарат среднечастотной электротерапии (портативный)",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "desk",
+      "source": "电疗/电脑中频治疗仪/Medium Frequency Electrotherapy Device.pdf"
+    },
+    {
+      "id": "xyzp-ic",
+      "code": "XYZP-IC",
+      "name": "Medium Frequency Electrotherapy Device",
+      "nameRu": "Аппарат среднечастотной электротерапии",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "desk",
+      "source": "电疗/电脑中频治疗仪/Medium Frequency Electrotherapy Device.pdf"
+    },
+    {
+      "id": "xyzp-id-table",
+      "code": "XYZP-ID",
+      "name": "Medium Frequency Electrotherapy Device (table type)",
+      "nameRu": "Аппарат среднечастотной электротерапии (настольный)",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "desk",
+      "source": "电疗/电脑中频治疗仪/Medium Frequency Electrotherapy Device.pdf"
+    },
+    {
+      "id": "xyzp-ie",
+      "code": "XYZP-IE",
+      "name": "Medium Frequency Electrotherapy Device (trolley)",
+      "nameRu": "Аппарат среднечастотной электротерапии (на тележке)",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "floor",
+      "source": "电疗/电脑中频治疗仪/Medium Frequency Electrotherapy Device.pdf"
+    },
+    {
+      "id": "xyzp-ii",
+      "code": "XYZP-II",
+      "name": "Medium Frequency Electrotherapy Device (computer trolley)",
+      "nameRu": "Аппарат среднечастотной электротерапии (компьютерная тележка)",
+      "brand": "Xiangyu Medical",
+      "category": "physio",
+      "mount": "floor",
+      "source": "电疗/电脑中频治疗仪/Medium Frequency Electrotherapy Device.pdf"
+    },
+    {
+      "id": "gait-obstacle-treadmill",
+      "name": "Gait Training Treadmill with Handrails and Obstacle Boards",
+      "nameRu": "Беговая дорожка для тренировки ходьбы с поручнями и препятствиями",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "减重步态/Gait Training Device.pdf"
+    },
+    {
+      "id": "interactive-training-cart",
+      "name": "Scenario Interactive Training Station (display cart)",
+      "nameRu": "Мобильная стойка интерактивной сценарной тренировки (монитор + ПК)",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "四肢联动/Exercise Equipment 1.jpg"
+    },
+    {
+      "id": "jy-ct-ii",
+      "code": "JY-CT-II",
+      "name": "Hand Rehabilitation Training System (pediatric)",
+      "nameRu": "Многофункциональный стол для реабилитации кисти детский (на 4 пациента)",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "手功能综合康复训练平台XY-101C/儿童手功能/Hand Rehabilitation Training System JY-CT-II.pdf"
+    },
+    {
+      "id": "recumbent-cross-trainer-interactive",
+      "name": "Recumbent Cross Trainer + Scenario Interactive Mode",
+      "nameRu": "Горизонтальный тренажёр для синхронной тренировки четырёх конечностей с интерактивной сценарной системой",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "四肢联动/Exercise Equipment 1.jpg"
+    },
+    {
+      "id": "upright-exercise-bike",
+      "name": "Upright Exercise Bike",
+      "nameRu": "Велотренажёр вертикальный",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "减重步态/Gait Training Device.pdf"
+    },
+    {
+      "id": "xy-1",
+      "code": "XY-1",
+      "name": "Static Bike (upright, magnetic)",
+      "nameRu": "Велотренажёр вертикальный",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/单独产品/Static Bike.jpg"
+    },
+    {
+      "id": "xy-10",
+      "code": "XY-10",
+      "name": "Chest and Back Straightener",
+      "nameRu": "Тренажёр для выпрямления спины и груди",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xy-101c",
+      "code": "XY-101C",
+      "name": "Hand Rehabilitation Training System",
+      "nameRu": "Многофункциональный стол для реабилитации кисти (на 4 пациента)",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "手功能综合康复训练平台XY-101C/Hand Rehabilitation Training System.pdf"
+    },
+    {
+      "id": "xy-11",
+      "code": "XY-11",
+      "name": "Chest and Back Straightener with wall spring exerciser",
+      "nameRu": "Тренажёр для спины с пружинным эспандером",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xy-12",
+      "code": "XY-12",
+      "name": "Pulley Weight (wall pulley station)",
+      "nameRu": "Блочный тренажёр с грузами",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xy-13",
+      "code": "XY-13",
+      "name": "Multifunctional Trainer (four-piece)",
+      "nameRu": "Многофункциональный тренажёр (4 модуля)",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xy-14",
+      "code": "XY-14",
+      "name": "Multifunctional Trainer (seven-piece)",
+      "nameRu": "Многофункциональный тренажёр (7 модулей)",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xy-14-8a",
+      "code": "XY-14-8A",
+      "name": "Multifunctional Trainer (eight-piece, A)",
+      "nameRu": "Многофункциональный тренажёр (8 модулей, вариант A)",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xy-14-8b",
+      "code": "XY-14-8B",
+      "name": "Multifunctional Trainer (eight-piece, B, with table)",
+      "nameRu": "Многофункциональный тренажёр (8 модулей, с кушеткой)",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xy-15",
+      "code": "XY-15",
+      "name": "Sandbag Rack (with sandbags)",
+      "nameRu": "Стеллаж с мешками-утяжелителями",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xy-16",
+      "code": "XY-16",
+      "name": "Sandbag (binding) Rack",
+      "nameRu": "Стеллаж с утяжелителями на липучках",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xy-1a",
+      "code": "XY-1A",
+      "name": "Static Bike (upright, commercial)",
+      "nameRu": "Велотренажёр вертикальный коммерческий",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xy-2",
+      "code": "XY-2",
+      "name": "Static Bike (upright)",
+      "nameRu": "Велотренажёр вертикальный",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xy-20",
+      "code": "XY-20",
+      "name": "Posture Mirror",
+      "nameRu": "Зеркало для коррекции осанки",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xy-21",
+      "code": "XY-21",
+      "name": "Posture Mirror with grid",
+      "nameRu": "Зеркало для коррекции осанки с сеткой",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xy-23",
+      "code": "XY-23",
+      "name": "Exercise Device (mini basketball stand)",
+      "nameRu": "Баскетбольная стойка для тренировки",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xy-2a",
+      "code": "XY-2A",
+      "name": "Static Bike (recumbent)",
+      "nameRu": "Велотренажёр горизонтальный",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xy-2b",
+      "code": "XY-2B",
+      "name": "Static Bike (recumbent, commercial)",
+      "nameRu": "Велотренажёр горизонтальный коммерческий",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xy-3",
+      "code": "XY-3",
+      "name": "Boating Exerciser (rowing machine)",
+      "nameRu": "Гребной тренажёр",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xy-31",
+      "code": "XY-31",
+      "name": "Wooden Peg Board (angle adjustable)",
+      "nameRu": "Доска со штырями с регулируемым наклоном",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "desk",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xy-32",
+      "code": "XY-32",
+      "name": "Quoits (vertical ring tree)",
+      "nameRu": "Кольцеброс вертикальный",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "desk",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xy-33",
+      "code": "XY-33",
+      "name": "OT Board (tilting OT table)",
+      "nameRu": "Наклонный стол для эрготерапии",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xy-36",
+      "code": "XY-36",
+      "name": "Hitch Color Plates",
+      "nameRu": "Стойка с цветными фигурами",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "desk",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xy-39",
+      "code": "XY-39",
+      "name": "Traction Net Frame (wall/ceiling)",
+      "nameRu": "Сетчатая рама для подвесной терапии (настенная)",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "wall",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xy-4",
+      "code": "XY-4",
+      "name": "Horse Riding Trainer",
+      "nameRu": "Тренажёр «верховая езда»",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xy-40",
+      "code": "XY-40",
+      "name": "Traction Net Frame with table",
+      "nameRu": "Сетчатая рама с кушеткой (подвесная терапия)",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xy-41",
+      "code": "XY-41",
+      "name": "Fingers Ladder (wooden step board)",
+      "nameRu": "Пальцевая лесенка деревянная",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "desk",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xy-43",
+      "code": "XY-43",
+      "name": "Shoulder Lifting Exerciser",
+      "nameRu": "Тренажёр для подъёма плеча",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xy-44",
+      "code": "XY-44",
+      "name": "Upper Limbs Lifting Exerciser",
+      "nameRu": "Тренажёр для подъёма руки (наклонная направляющая)",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xy-45",
+      "code": "XY-45",
+      "name": "Occupational Training Device (shelf + tablets)",
+      "nameRu": "Набор для эрготерапии (стойка и панели)",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "desk",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xy-47",
+      "code": "XY-47",
+      "name": "Balance Board (rocker)",
+      "nameRu": "Балансировочная доска",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xy-49",
+      "code": "XY-49",
+      "name": "Balance Board with handle",
+      "nameRu": "Балансировочная доска с поручнем",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xy-5",
+      "code": "XY-5",
+      "name": "Arc Abnormal Muscle Exercise (arched sit-up bench)",
+      "nameRu": "Скамья с дугообразной поверхностью",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xy-51",
+      "code": "XY-51",
+      "name": "Upper Limbs Hanging Frame",
+      "nameRu": "Стойка для подвешивания рук",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xy-54",
+      "code": "XY-54",
+      "name": "OT Table (OT workstation cabinet)",
+      "nameRu": "Стол-шкаф для эрготерапии с набором",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xy-6",
+      "code": "XY-6",
+      "name": "Hemiplegia Rehabilitation Device",
+      "nameRu": "Тренажёр для пассивной разработки при гемиплегии",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xy-6a",
+      "code": "XY-6A",
+      "name": "Limbs Passive Trainer",
+      "nameRu": "Тренажёр пассивной тренировки конечностей",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xy-7",
+      "code": "XY-7",
+      "name": "Wall Bar",
+      "nameRu": "Гимнастическая стенка",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xy-8",
+      "code": "XY-8",
+      "name": "Wall Bar (with pull-up bar)",
+      "nameRu": "Гимнастическая стенка с турником",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xy-cpm-ia",
+      "code": "XY-CPM-IA",
+      "name": "Upper Limb CPM (wrist; leaflet says 'waist')",
+      "nameRu": "Аппарат CPM для лучезапястного сустава",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "desk",
+      "source": "CPM系列/CPM.pdf"
+    },
+    {
+      "id": "xy-cpm-ib",
+      "code": "XY-CPM-IB",
+      "name": "Upper Limb CPM (finger)",
+      "nameRu": "Аппарат CPM для суставов пальцев кисти",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "desk",
+      "source": "CPM系列/CPM.pdf"
+    },
+    {
+      "id": "xy-cpm-ic",
+      "code": "XY-CPM-IC",
+      "name": "Upper Limb CPM (elbow)",
+      "nameRu": "Аппарат CPM для локтевого сустава",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "desk",
+      "source": "CPM系列/CPM.pdf"
+    },
+    {
+      "id": "xy-cpm-id",
+      "code": "XY-CPM-ID",
+      "name": "Upper Limb CPM (shoulder and elbow)",
+      "nameRu": "Аппарат CPM для плечевого и локтевого суставов",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "CPM系列/CPM.pdf"
+    },
+    {
+      "id": "xy-cpm-iib",
+      "code": "XY-CPM-IIB",
+      "name": "Lower Limb CPM (knee, ankle and hip)",
+      "nameRu": "Аппарат CPM для нижней конечности (коленный, голеностопный, тазобедренный суставы)",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "desk",
+      "source": "CPM系列/CPM.pdf"
+    },
+    {
+      "id": "xy-ct-iii",
+      "code": "XY-CT-III",
+      "name": "Upper Limb Rehabilitation Training System (without central screen)",
+      "nameRu": "Комплекс для тренировки функций верхней конечности и бытовых навыков (ADL) с поворотным столом, без встроенного экрана",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "上肢综合康复训练系统/Upper Limb Rehabilitation Training System.pdf"
+    },
+    {
+      "id": "xy-ct-iv",
+      "code": "XY-CT-IV",
+      "name": "Upper Limb Rehabilitation Training System",
+      "nameRu": "Комплекс для тренировки функций верхней конечности и бытовых навыков (ADL) с поворотным столом",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "上肢综合康复训练系统/Upper Limb Rehabilitation Training System.pdf"
+    },
+    {
+      "id": "xy-dgdx-i",
+      "code": "XY-DGDX-I",
+      "name": "Multi-Joint Isokinetic Strength Testing and Training System",
+      "nameRu": "Многосуставная изокинетическая система тестирования и тренировки силы",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "多关节等速力量测试训练系统XY-DGDX-I/Multi-Joint Isokinetic Strength Testing and Training System XY-DGDX-I.pdf"
+    },
+    {
+      "id": "xy-dssz-01a",
+      "code": "XY-DSSZ-01A",
+      "name": "Shoulder Press (hydraulic exerciser)",
+      "nameRu": "Тренажёр для жима от плеч",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "等速/Isokinetic Series.pdf"
+    },
+    {
+      "id": "xy-dssz-02a",
+      "code": "XY-DSSZ-02A",
+      "name": "Pec Dec / Fly (hydraulic exerciser)",
+      "nameRu": "Тренажёр «Баттерфляй» (сведение рук)",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "等速/Isokinetic Series.pdf"
+    },
+    {
+      "id": "xy-dssz-03a",
+      "code": "XY-DSSZ-03A",
+      "name": "Biceps / Triceps (hydraulic exerciser)",
+      "nameRu": "Тренажёр для бицепса/трицепса",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "等速/Isokinetic Series.pdf"
+    },
+    {
+      "id": "xy-dsxb-01a",
+      "code": "XY-DSXB-01A",
+      "name": "Abdominal / Back (hydraulic exerciser)",
+      "nameRu": "Тренажёр для мышц живота/спины",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "等速/Isokinetic Series.pdf"
+    },
+    {
+      "id": "xy-dsxb-02a",
+      "code": "XY-DSXB-02A",
+      "name": "Chest / Back (hydraulic exerciser)",
+      "nameRu": "Тренажёр для мышц груди/спины (жим/тяга)",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "等速/Isokinetic Series.pdf"
+    },
+    {
+      "id": "xy-dsxb-03a",
+      "code": "XY-DSXB-03A",
+      "name": "Back Extension (hydraulic exerciser)",
+      "nameRu": "Тренажёр для разгибания спины",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "等速/Isokinetic Series.pdf"
+    },
+    {
+      "id": "xy-dsxz-01a",
+      "code": "XY-DSXZ-01A",
+      "name": "Leg Press (hydraulic exerciser)",
+      "nameRu": "Тренажёр для жима ногами",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "等速/Isokinetic Series.pdf"
+    },
+    {
+      "id": "xy-dsxz-02a",
+      "code": "XY-DSXZ-02A",
+      "name": "Abductor / Hip Adductor (hydraulic exerciser)",
+      "nameRu": "Тренажёр для отведения/приведения бедра",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "等速/Isokinetic Series.pdf"
+    },
+    {
+      "id": "xy-dsxz-03a",
+      "code": "XY-DSXZ-03A",
+      "name": "Leg Extension / Leg Curl (hydraulic exerciser)",
+      "nameRu": "Тренажёр для разгибания/сгибания ног",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "等速/Isokinetic Series.pdf"
+    },
+    {
+      "id": "xy-jzj-i",
+      "code": "XY-JZJ-I",
+      "name": "Smart Posture Mirror (Rehabilitation Magic Mirror)",
+      "nameRu": "Интеллектуальное зеркало для коррекции осанки",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "智能矫正镜/Smart Posture Mirror XY-JZJ-I.pdf"
+    },
+    {
+      "id": "xy-jzj-ii",
+      "code": "XY-JZJ-II",
+      "name": "Smart Posture Mirror pro",
+      "nameRu": "Интеллектуальное зеркало для коррекции осанки Pro",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "智能矫正镜/智能矫正镜Pro/Smart Posture Mirror pro.pdf"
+    },
+    {
+      "id": "xy-k-czld-vii",
+      "code": "XY-K-CZLD-VII",
+      "name": "Whole Body Sonic Vibration Walkway with Parallel Bars",
+      "nameRu": "Вибрационная дорожка звуковой волны с параллельными брусьями",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "全身音波律动/Whole Body Sonic Vibration Device.pdf"
+    },
+    {
+      "id": "xy-k-e1",
+      "code": "XY-K-E1",
+      "name": "Gait Training Device (manual)",
+      "nameRu": "Тренажёр для ходьбы с разгрузкой веса механический",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "减重步态/Gait Training Device.pdf"
+    },
+    {
+      "id": "xy-k-g1",
+      "code": "XY-K-G1",
+      "name": "Gait Training Device (manual)",
+      "nameRu": "Тренажёр для ходьбы с разгрузкой веса механический",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "减重步态/Gait Training Device.pdf"
+    },
+    {
+      "id": "xy-kgj-1",
+      "code": "XY-KGJ-1",
+      "name": "Hip Joint Rotation Training Device",
+      "nameRu": "Тренажёр для ротации тазобедренного сустава",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xy-mcb-i",
+      "code": "XY-MCB-I",
+      "name": "Smart Peg Board (standard type)",
+      "nameRu": "Интеллектуальная доска с колышками (стандартная)",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "desk",
+      "source": "智能木插板/Smart peg board.jpg"
+    },
+    {
+      "id": "xy-mcb-i-deluxe",
+      "code": "XY-MCB-I",
+      "name": "Smart Peg Board (deluxe type)",
+      "nameRu": "Интеллектуальная доска с колышками (расширенная, с монитором 27\")",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "desk",
+      "source": "智能木插板/Smart peg board.jpg"
+    },
+    {
+      "id": "xy-msz-i",
+      "code": "XY-MSZ-I",
+      "name": "Smart OT Table (smart sanding table)",
+      "nameRu": "Интеллектуальный шлифовальный стол для эрготерапии",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "智能磨砂桌/Smart OT table.jpg"
+    },
+    {
+      "id": "xy-ph-iv",
+      "code": "XY-PH-IV",
+      "name": "Balance Training and Evaluation System (seated)",
+      "nameRu": "Стабилометрическая платформа для тренировки баланса сидя",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "平衡/Balance Training and Evaluation System.pdf"
+    },
+    {
+      "id": "xy-ph-v",
+      "code": "XY-PH-V",
+      "name": "Balance Training and Evaluation System (standing)",
+      "nameRu": "Стабилометрическая платформа для тренировки баланса стоя",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "平衡/Balance Training and Evaluation System.pdf"
+    },
+    {
+      "id": "xy-ph-workstation",
+      "name": "Balance System Computer Trolley",
+      "nameRu": "Компьютерная стойка стабилометрического комплекса",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "平衡/Balance Training and Evaluation System.pdf"
+    },
+    {
+      "id": "xy-qjhd-bh",
+      "code": "XY-QJHD-BH",
+      "name": "Interactive Evaluation System (landscape screen)",
+      "nameRu": "Интерактивная система оценки и тренировки движений с 3D-камерой (горизонтальный экран)",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "情景互动/Interactive Evaluation System.pdf"
+    },
+    {
+      "id": "xy-qjhd-bv",
+      "code": "XY-QJHD-BV",
+      "name": "Interactive Evaluation System (portrait screen, dual monitor)",
+      "nameRu": "Интерактивная система оценки и тренировки движений с 3D-камерой (вертикальный экран, два монитора)",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "情景互动/Interactive Evaluation System.pdf"
+    },
+    {
+      "id": "xy-szld-ia",
+      "code": "XY-SZLD-IA",
+      "name": "Recumbent Cross Trainer",
+      "nameRu": "Горизонтальный тренажёр для синхронной тренировки четырёх конечностей",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "四肢联动/Recumbent cross trainer.jpg"
+    },
+    {
+      "id": "xy-zbd-ib",
+      "code": "XY-ZBD-IB",
+      "name": "Passive and Active Exerciser (upper limb, rotary disc)",
+      "nameRu": "Аппарат для активно-пассивной механотерапии верхних конечностей (с поворотным диском)",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "四肢联动/Exercise Equipment 2.jpg"
+    },
+    {
+      "id": "xy-zbd-ic",
+      "code": "XY-ZBD-IC",
+      "name": "Passive and Active Exerciser (bedside, lower limb)",
+      "nameRu": "Аппарат для активно-пассивной механотерапии нижних конечностей (прикроватный)",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "多关节主被动/XY-ZBD-IC.jpg"
+    },
+    {
+      "id": "xy-zbd-id",
+      "code": "XY-ZBD-ID",
+      "name": "Passive and Active Exerciser (upper limb)",
+      "nameRu": "Аппарат для активно-пассивной механотерапии верхних конечностей",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "多关节主被动/XY-ZBD-ID.jpg"
+    },
+    {
+      "id": "xy-zbd-idl",
+      "code": "XY-ZBD-IDL",
+      "name": "Passive and Active Rehabilitation Training System for Upper Limbs",
+      "nameRu": "Тренажёр активно-пассивный для верхних конечностей",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "上下肢主被动康复训练仪/Passive and Active Rehabilitation Training System for Upper and Lower Limbs.pdf"
+    },
+    {
+      "id": "xy-zbd-iid",
+      "code": "XY-ZBD-IID",
+      "name": "Passive and Active Exerciser (lower limb)",
+      "nameRu": "Аппарат для активно-пассивной механотерапии нижних конечностей",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "多关节主被动/XY-ZBD-IID.jpg"
+    },
+    {
+      "id": "xy-zbd-iidl",
+      "code": "XY-ZBD-IIDL",
+      "name": "Passive and Active Rehabilitation Training System for Lower Limbs",
+      "nameRu": "Тренажёр активно-пассивный для нижних конечностей",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "上下肢主被动康复训练仪/Passive and Active Rehabilitation Training System for Upper and Lower Limbs.pdf"
+    },
+    {
+      "id": "xy-zbd-iie",
+      "code": "XY-ZBD-IIE",
+      "name": "Passive and Active Exerciser (bedside, lower limb, inclined boom)",
+      "nameRu": "Аппарат для активно-пассивной механотерапии нижних конечностей (прикроватный, наклонная штанга)",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "多关节主被动/XY-ZBD-IIE.jpg"
+    },
+    {
+      "id": "xy-zbd-iiid",
+      "code": "XY-ZBD-IIID",
+      "name": "Passive and Active Exerciser (upper and lower limb)",
+      "nameRu": "Аппарат для активно-пассивной механотерапии верхних и нижних конечностей",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "多关节主被动/XY-ZBD-IIID.jpg"
+    },
+    {
+      "id": "xy-zbd-iiidl",
+      "code": "XY-ZBD-IIIDL",
+      "name": "Passive and Active Rehabilitation Training System for Upper and Lower Limbs",
+      "nameRu": "Тренажёр активно-пассивный для верхних и нижних конечностей",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "上下肢主被动康复训练仪/Passive and Active Rehabilitation Training System for Upper and Lower Limbs.pdf"
+    },
+    {
+      "id": "xy-zh-1",
+      "code": "XY-ZH-1",
+      "name": "Progressive Muscle Training System (four-piece combo)",
+      "nameRu": "Комплекс прогрессивной мышечной тренировки (4 модуля)",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xy-zh-2",
+      "code": "XY-ZH-2",
+      "name": "Progressive Muscle Training System (six-piece combo)",
+      "nameRu": "Комплекс прогрессивной мышечной тренировки (6 модулей)",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xyc-t1",
+      "code": "XYC-T1",
+      "name": "Rehab Wooden Ramp (steps + slope)",
+      "nameRu": "Реабилитационная платформа-пандус со ступенями",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xyc-t2",
+      "code": "XYC-T2",
+      "name": "Staircase (nesting step boxes)",
+      "nameRu": "Набор вкладывающихся ступеней-боксов",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xyd-1",
+      "code": "XYD-1",
+      "name": "Electric Lifting Standing Frame",
+      "nameRu": "Вертикализатор электрический",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xyf-t1",
+      "code": "XYF-T1",
+      "name": "Training Stair (two-way)",
+      "nameRu": "Тренировочная лестница двусторонняя",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xyf-t2",
+      "code": "XYF-T2",
+      "name": "Training Stair (three-way)",
+      "nameRu": "Тренировочная лестница трёхсторонняя",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xyf-t3",
+      "code": "XYF-T3",
+      "name": "Training Ladder (two-way, steel)",
+      "nameRu": "Тренировочная лестница двусторонняя (металлическая)",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xyf-t4",
+      "code": "XYF-T4",
+      "name": "Training Ladder (three-way, steel)",
+      "nameRu": "Тренировочная лестница трёхсторонняя (металлическая)",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xyf-z1",
+      "code": "XYF-Z1",
+      "name": "Walking Training Aid (forearm-support walker)",
+      "nameRu": "Ходунки-опора с подлокотной поддержкой",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xyf-z2",
+      "code": "XYF-Z2",
+      "name": "Walking Training Aid with brake and seat",
+      "nameRu": "Ходунки-опора с тормозом и сиденьем",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xyf-z3",
+      "code": "XYF-Z3",
+      "name": "Walking Training Aid (wooden armrests)",
+      "nameRu": "Ходунки-опора с деревянными подлокотниками",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xyf-z4",
+      "code": "XYF-Z4",
+      "name": "Walking Training Aid (frame + seat unit)",
+      "nameRu": "Ходунки-опора с сиденьем-седлом",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xyg-1",
+      "code": "XYG-1",
+      "name": "Parallel Bar with correction board",
+      "nameRu": "Брусья параллельные с корригирующей доской",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xyg-2",
+      "code": "XYG-2",
+      "name": "Parallel Bar",
+      "nameRu": "Брусья параллельные",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xyg-3",
+      "code": "XYG-3",
+      "name": "Electrical Parallel Bar",
+      "nameRu": "Брусья параллельные с электроприводом",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/单独产品/XYG-3.jpg"
+    },
+    {
+      "id": "xygs-1",
+      "code": "XYGS-1",
+      "name": "Quadriceps Board",
+      "nameRu": "Доска для тренировки четырёхглавой мышцы",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xyh-1",
+      "code": "XYH-1",
+      "name": "Ankle Exerciser (seated)",
+      "nameRu": "Тренажёр для голеностопа (сидячий)",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xyh-2",
+      "code": "XYH-2",
+      "name": "Ankle Exerciser (spring board)",
+      "nameRu": "Тренажёр для голеностопа пружинный",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xyhj-1",
+      "code": "XYHJ-1",
+      "name": "Anklebone Rectification Trainer",
+      "nameRu": "Тренажёр-корректор голеностопа (наклонная платформа)",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xyhj-2",
+      "code": "XYHJ-2",
+      "name": "Anklebone Trainer (tilt standing board)",
+      "nameRu": "Тренажёр для голеностопа (наклонный стол-стойка)",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xyhj-4",
+      "code": "XYHJ-4",
+      "name": "Multifunctional Anklebone Rectification Board",
+      "nameRu": "Многофункциональная корригирующая доска для голеностопа",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xyj-1",
+      "code": "XYJ-1",
+      "name": "Shoulder Rotation Exerciser",
+      "nameRu": "Тренажёр для вращения плеча (настенный)",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "wall",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xyj-2",
+      "code": "XYJ-2",
+      "name": "Shoulder Wheel",
+      "nameRu": "Плечевое колесо (настенное)",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "wall",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xyj-3",
+      "code": "XYJ-3",
+      "name": "Forearm and Wrist Exerciser",
+      "nameRu": "Тренажёр для предплечья и запястья",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "desk",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xyj-4",
+      "code": "XYJ-4",
+      "name": "Forearm Rotation Exerciser",
+      "nameRu": "Тренажёр для пронации/супинации предплечья (настенный)",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "wall",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xyj-5",
+      "code": "XYJ-5",
+      "name": "Wrist Extension Flexion Exerciser",
+      "nameRu": "Тренажёр сгибания-разгибания запястья (настенный)",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "wall",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xyj-6",
+      "code": "XYJ-6",
+      "name": "Shoulder Ladder (finger ladder)",
+      "nameRu": "Пальцевая лестница для плеча (настенная)",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "wall",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xyj-7",
+      "code": "XYJ-7",
+      "name": "Wrist Rotation Exerciser",
+      "nameRu": "Тренажёр вращения запястья",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "desk",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xyj-j9",
+      "code": "XYJ-J9",
+      "name": "Medical Treadmill",
+      "nameRu": "Медицинская беговая дорожка с параллельными поручнями",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "跑台/Treadmill XYJ-J9.jpg"
+    },
+    {
+      "id": "xym-1",
+      "code": "XYM-1",
+      "name": "Gym Rods and Throwing Balls (round rack)",
+      "nameRu": "Стойка с гимнастическими палками и мячами (круглая)",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xym-2",
+      "code": "XYM-2",
+      "name": "Gym Rods and Throwing Balls (wall rack)",
+      "nameRu": "Настенная полка с гимнастическими палками и мячами",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "wall",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xym-3",
+      "code": "XYM-3",
+      "name": "Fingers Strength Exerciser",
+      "nameRu": "Тренажёр силы пальцев (с грузами)",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xym-4",
+      "code": "XYM-4",
+      "name": "Pedal Exerciser (upper limb ergometer)",
+      "nameRu": "Педальный тренажёр для рук",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xym-6",
+      "code": "XYM-6",
+      "name": "Pedal Exerciser (mechanical)",
+      "nameRu": "Педальный тренажёр механический",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xyn-2",
+      "code": "XYN-2",
+      "name": "Upper Limbs Exerciser (wrist, arc)",
+      "nameRu": "Тренажёр для запястья (дуга)",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "desk",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xyn-3",
+      "code": "XYN-3",
+      "name": "Upper Limbs Exerciser (wrist, zig-zag)",
+      "nameRu": "Тренажёр для запястья (зигзаг)",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "desk",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xyn-4",
+      "code": "XYN-4",
+      "name": "Pulley Exerciser (wall)",
+      "nameRu": "Блочный тренажёр настенный",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "wall",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xyn-6",
+      "code": "XYN-6",
+      "name": "Elastic Fingers Exerciser",
+      "nameRu": "Тренажёр для пальцев с эластичной сеткой",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "desk",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xyn-7",
+      "code": "XYN-7",
+      "name": "Pulley Exerciser (over-door)",
+      "nameRu": "Блочный тренажёр навесной",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "wall",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xyql-1",
+      "code": "XYQL-1",
+      "name": "Multifunctional Standing Frame",
+      "nameRu": "Многофункциональный вертикализатор",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xyt-2",
+      "code": "XYT-2",
+      "name": "Hydraulic Step Trainer",
+      "nameRu": "Степпер гидравлический с поручнями",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xyt-3",
+      "code": "XYT-3",
+      "name": "Step Trainer with twister",
+      "nameRu": "Степпер с поворотным диском",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xyx-1",
+      "code": "XYX-1",
+      "name": "Lower Limb Exerciser (seated)",
+      "nameRu": "Тренажёр для нижних конечностей (сидячий)",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xyyl-1",
+      "code": "XYYL-1",
+      "name": "Dumbbell Rack with dumbbells",
+      "nameRu": "Стойка с гантелями",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xyz-5",
+      "code": "XYZ-5",
+      "name": "Walking Frame (folding, with front wheels)",
+      "nameRu": "Ходунки складные с передними колёсами",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xyz-6",
+      "code": "XYZ-6",
+      "name": "Walking Frame with seat",
+      "nameRu": "Ходунки с сиденьем",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xyzl-1",
+      "code": "XYZL-1",
+      "name": "Standing Frame (four-person)",
+      "nameRu": "Стол-вертикализатор на четверых",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xyzl-2",
+      "code": "XYZL-2",
+      "name": "Standing Frame (single)",
+      "nameRu": "Вертикализатор (одноместный)",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xyzl-3",
+      "code": "XYZL-3",
+      "name": "Standing Frame (two-person)",
+      "nameRu": "Вертикализатор на двоих",
+      "brand": "Xiangyu Medical",
+      "category": "kinesio",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "lower-limb-rehab-system",
+      "name": "Lower Limb Rehabilitation System (tilt table with stepping)",
+      "nameRu": "Роботизированный поворотный стол с шагающим механизмом для нижних конечностей",
+      "brand": "Xiangyu Medical",
+      "category": "robot",
+      "mount": "floor",
+      "source": "上下肢机器人K-1 K-9/Lower Limb Rehabilitation System.jpg"
+    },
+    {
+      "id": "smart-sky-track",
+      "name": "Gait Weightloss Balance Training System (Smart Sky Track, ceiling rail)",
+      "nameRu": "Потолочная рельсовая система динамической разгрузки веса (Smart Sky Track)",
+      "brand": "Xiangyu Medical",
+      "category": "robot",
+      "mount": "ceiling",
+      "source": "天轨步态减重平衡训练系统/Gait Weightloss Blance Training System.pdf"
+    },
+    {
+      "id": "tms-navigation-robot",
+      "name": "Transcranial Magnetic AI Intelligent Navigation System (robotic arm)",
+      "nameRu": "Роботизированная навигационная система для ТМС",
+      "brand": "Xiangyu Medical",
+      "category": "robot",
+      "mount": "floor",
+      "source": "经颅磁刺激器/经颅磁刺激器+经颅磁导航机器人/Transcranial Magnetic Stimulator.pdf"
+    },
+    {
+      "id": "upper-limb-rehab-robot",
+      "name": "Upper Limb Rehabilitation System (exoskeleton robot with chair)",
+      "nameRu": "Роботизированный комплекс реабилитации верхней конечности (экзоскелет с креслом)",
+      "brand": "Xiangyu Medical",
+      "category": "robot",
+      "mount": "floor",
+      "source": "上下肢机器人K-1 K-9/Upper Limb Rehabilitation System.jpg"
+    },
+    {
+      "id": "upper-limb-rehab-workstation",
+      "name": "Upper Limb Rehabilitation System — computer workstation",
+      "nameRu": "Рабочая станция (компьютерная стойка) комплекса реабилитации верхней конечности",
+      "brand": "Xiangyu Medical",
+      "category": "robot",
+      "mount": "floor",
+      "source": "上下肢机器人K-1 K-9/Upper Limb Rehabilitation System.jpg"
+    },
+    {
+      "id": "xy-k-e2",
+      "code": "XY-K-E2",
+      "name": "Gait Training Device (electric)",
+      "nameRu": "Тренажёр для ходьбы с разгрузкой веса электрический",
+      "brand": "Xiangyu Medical",
+      "category": "robot",
+      "mount": "floor",
+      "source": "减重步态/Gait Training Device.pdf"
+    },
+    {
+      "id": "xy-k-e3",
+      "code": "XY-K-E3",
+      "name": "Gait Training Device with Medical Treadmill",
+      "nameRu": "Система разгрузки веса с медицинской беговой дорожкой",
+      "brand": "Xiangyu Medical",
+      "category": "robot",
+      "mount": "floor",
+      "source": "减重步态/Gait Training Device.pdf"
+    },
+    {
+      "id": "xy-k-g2",
+      "code": "XY-K-G2",
+      "name": "Gait Training Device (electric)",
+      "nameRu": "Тренажёр для ходьбы с разгрузкой веса электрический",
+      "brand": "Xiangyu Medical",
+      "category": "robot",
+      "mount": "floor",
+      "source": "减重步态/Gait Training Device.pdf"
+    },
+    {
+      "id": "xy-k-g3",
+      "code": "XY-K-G3",
+      "name": "Gait Training Device with Medical Treadmill",
+      "nameRu": "Система разгрузки веса с медицинской беговой дорожкой",
+      "brand": "Xiangyu Medical",
+      "category": "robot",
+      "mount": "floor",
+      "source": "减重步态/Gait Training Device.pdf"
+    },
+    {
+      "id": "xy-k-g6",
+      "code": "XY-K-G6",
+      "name": "Gait Training Device (dual-side)",
+      "nameRu": "Тренажёр для ходьбы с двусторонней разгрузкой веса",
+      "brand": "Xiangyu Medical",
+      "category": "robot",
+      "mount": "floor",
+      "source": "减重步态/Gait Training Device.pdf"
+    },
+    {
+      "id": "xy-k-g7",
+      "code": "XY-K-G7",
+      "name": "Gait Training Device (dual-side)",
+      "nameRu": "Тренажёр для ходьбы с двусторонней разгрузкой веса",
+      "brand": "Xiangyu Medical",
+      "category": "robot",
+      "mount": "floor",
+      "source": "减重步态/Gait Training Device.pdf"
+    },
+    {
+      "id": "xy-k-m1",
+      "code": "XY-K-M1",
+      "name": "Gait Training Device (two-station portal)",
+      "nameRu": "Двухпостовая портальная система разгрузки веса для ходьбы",
+      "brand": "Xiangyu Medical",
+      "category": "robot",
+      "mount": "floor",
+      "source": "减重步态/Gait Training Device.pdf"
+    },
+    {
+      "id": "xy-k-m2",
+      "code": "XY-K-M2",
+      "name": "Gait Training Device (two-station portal) with treadmill and bike",
+      "nameRu": "Двухпостовая портальная система разгрузки веса с беговой дорожкой и велотренажёром",
+      "brand": "Xiangyu Medical",
+      "category": "robot",
+      "mount": "floor",
+      "source": "减重步态/Gait Training Device.pdf"
+    },
+    {
+      "id": "xy-k-m3",
+      "code": "XY-K-M3",
+      "name": "Gait Training Device (single portal)",
+      "nameRu": "Портальная система разгрузки веса для ходьбы",
+      "brand": "Xiangyu Medical",
+      "category": "robot",
+      "mount": "floor",
+      "source": "减重步态/Gait Training Device.pdf"
+    },
+    {
+      "id": "xy-k-m4",
+      "code": "XY-K-M4",
+      "name": "Gait Training Device (pneumatic)",
+      "nameRu": "Тренажёр для ходьбы с пневматической разгрузкой веса",
+      "brand": "Xiangyu Medical",
+      "category": "robot",
+      "mount": "floor",
+      "source": "减重步态/Gait Training Device.pdf"
+    },
+    {
+      "id": "xy-r-sdk-i",
+      "code": "XY-R-SDK-I",
+      "name": "Smart Assisted Walking Robot (2-DOF)",
+      "nameRu": "Робот-ассистент ходьбы с динамической разгрузкой веса (2 степени свободы)",
+      "brand": "Xiangyu Medical",
+      "category": "robot",
+      "mount": "floor",
+      "source": "智能辅助行走机器人/Smart Assisted Walking Robot.pdf"
+    },
+    {
+      "id": "xy-r-sdk-iv",
+      "code": "XY-R-SDK-IV",
+      "name": "Smart Assisted Walking Robot (4-DOF, VR)",
+      "nameRu": "Робот-ассистент ходьбы с динамической разгрузкой веса (4 степени свободы, VR)",
+      "brand": "Xiangyu Medical",
+      "category": "robot",
+      "mount": "floor",
+      "source": "智能辅助行走机器人/Smart Assisted Walking Robot.pdf"
+    },
+    {
+      "id": "xy-szgjk-ii",
+      "code": "XY-SZGJK-II",
+      "name": "Upper Limb Training Robot",
+      "nameRu": "Роботизированный тренажёр для верхней конечности (двухзвенный манипулятор)",
+      "brand": "Xiangyu Medical",
+      "category": "robot",
+      "mount": "floor",
+      "source": "上肢运动机器人/Upper Limb Training Robot XY-SZGJK-II.pdf"
+    },
+    {
+      "id": "alc-1",
+      "code": "ALC-1",
+      "name": "Far Infrared Massage Bed",
+      "nameRu": "Массажная кровать с дальним ИК-прогревом",
+      "brand": "Xiangyu Medical",
+      "category": "table",
+      "mount": "floor",
+      "source": "按摩/Massage Table.jpg"
+    },
+    {
+      "id": "alc-2",
+      "code": "ALC-2",
+      "name": "Far Infrared Massage Bed with heat cabin",
+      "nameRu": "Массажная кровать с ИК-прогревом и термокапсулой",
+      "brand": "Xiangyu Medical",
+      "category": "table",
+      "mount": "floor",
+      "source": "按摩/Massage Table.jpg"
+    },
+    {
+      "id": "alc-3",
+      "code": "ALC-3",
+      "name": "Far Infrared Massage Bed with lumbar traction",
+      "nameRu": "Массажная кровать с ИК-прогревом и поясничным вытяжением",
+      "brand": "Xiangyu Medical",
+      "category": "table",
+      "mount": "floor",
+      "source": "按摩/ALC-3.jpg"
+    },
+    {
+      "id": "jyz-ib",
+      "code": "JYZ-IB",
+      "name": "Multifunctional Traction Table for Cervical and Lumbar (double motor)",
+      "nameRu": "Стол для шейного и поясничного вытяжения (два мотора)",
+      "brand": "Xiangyu Medical",
+      "category": "table",
+      "mount": "floor",
+      "source": "牵引/Traction Table.pdf"
+    },
+    {
+      "id": "jyz-iib",
+      "code": "JYZ-IIB",
+      "name": "Multifunctional Traction Table for Cervical and Lumbar",
+      "nameRu": "Стол для шейного и поясничного вытяжения",
+      "brand": "Xiangyu Medical",
+      "category": "table",
+      "mount": "floor",
+      "source": "牵引/Traction Table.pdf"
+    },
+    {
+      "id": "jyz-iiia",
+      "code": "JYZ-IIIA",
+      "name": "Multifunctional Traction Table for Cervical and Lumbar",
+      "nameRu": "Стол многофункциональный для шейного и поясничного вытяжения",
+      "brand": "Xiangyu Medical",
+      "category": "table",
+      "mount": "floor",
+      "source": "牵引/Traction Table.pdf"
+    },
+    {
+      "id": "jyz-iiib",
+      "code": "JYZ-IIIB",
+      "name": "Multifunctional Traction Table for Cervical and Lumbar (four-dimensional)",
+      "nameRu": "Стол многофункциональный для шейного и поясничного вытяжения (4D)",
+      "brand": "Xiangyu Medical",
+      "category": "table",
+      "mount": "floor",
+      "source": "牵引/Traction Table.pdf"
+    },
+    {
+      "id": "rh-qyc-b",
+      "code": "RH-QYC-B",
+      "name": "Multifunctional Traction Table (Rehamaster)",
+      "nameRu": "Стол тракционный многофункциональный (Rehamaster)",
+      "brand": "Xiangyu Medical",
+      "category": "table",
+      "mount": "floor",
+      "source": "牵引/Traction Table.pdf"
+    },
+    {
+      "id": "tms-special-bed",
+      "name": "TMS Special Bed (electric couch)",
+      "nameRu": "Кушетка-кресло для ТМС с электроприводом",
+      "brand": "Xiangyu Medical",
+      "category": "table",
+      "mount": "floor",
+      "source": "经颅磁刺激器/经颅磁刺激器+经颅磁导航机器人/Transcranial Magnetic Stimulator.pdf"
+    },
+    {
+      "id": "tms-treatment-chair",
+      "name": "TMS Treatment Chair (electric)",
+      "nameRu": "Кресло для процедур ТМС с электрорегулировкой",
+      "brand": "Xiangyu Medical",
+      "category": "table",
+      "mount": "floor",
+      "source": "经颅磁刺激器/经颅磁刺激器+经颅磁导航机器人/Transcranial Magnetic Stimulator.pdf"
+    },
+    {
+      "id": "xy-100",
+      "code": "XY-100",
+      "name": "Cervical Traction Chair (multifunction)",
+      "nameRu": "Кресло для шейной тракции многофункциональное",
+      "brand": "Xiangyu Medical",
+      "category": "table",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xy-46",
+      "code": "XY-46",
+      "name": "OT Desk (height adjustable)",
+      "nameRu": "Стол для эрготерапии регулируемый",
+      "brand": "Xiangyu Medical",
+      "category": "table",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xy-70",
+      "code": "XY-70",
+      "name": "Training Table (traction, with straps)",
+      "nameRu": "Стол тренировочный с фиксирующими ремнями",
+      "brand": "Xiangyu Medical",
+      "category": "table",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xy-71",
+      "code": "XY-71",
+      "name": "PT Training Table (mat platform)",
+      "nameRu": "Стол для ЛФК (мат-платформа)",
+      "brand": "Xiangyu Medical",
+      "category": "table",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xy-72",
+      "code": "XY-72",
+      "name": "PT Training Table (electric, 2-section)",
+      "nameRu": "Стол для ЛФК электрический двухсекционный",
+      "brand": "Xiangyu Medical",
+      "category": "table",
+      "mount": "floor",
+      "source": "成人康复/单独产品/XY-72 PT Table.jpg"
+    },
+    {
+      "id": "xy-73",
+      "code": "XY-73",
+      "name": "PT Training Table (electric, single section)",
+      "nameRu": "Стол для ЛФК электрический",
+      "brand": "Xiangyu Medical",
+      "category": "table",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xy-80",
+      "code": "XY-80",
+      "name": "Series Stools (nesting set of 5)",
+      "nameRu": "Табуреты комплект из 5 (вкладывающиеся)",
+      "brand": "Xiangyu Medical",
+      "category": "table",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xy-81",
+      "code": "XY-81",
+      "name": "PT Stool",
+      "nameRu": "Табурет врача ЛФК на колёсах",
+      "brand": "Xiangyu Medical",
+      "category": "table",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xy-83",
+      "code": "XY-83",
+      "name": "Sickbed (overbed) Table",
+      "nameRu": "Прикроватный столик",
+      "brand": "Xiangyu Medical",
+      "category": "table",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xy-jzjy-iii",
+      "code": "XY-JZJY-III",
+      "name": "Spinal Decompression Traction System",
+      "nameRu": "Система декомпрессионного вытяжения позвоночника",
+      "brand": "Xiangyu Medical",
+      "category": "table",
+      "mount": "floor",
+      "source": "牵引/脊柱减压牵引系统/Spinal Decompression Traction System.pdf"
+    },
+    {
+      "id": "xy-k-czld-iii",
+      "code": "XY-K-CZLD-III",
+      "name": "Whole Body Sonic Vibration Bed",
+      "nameRu": "Вибрационная кушетка звуковой волны с регулировкой высоты",
+      "brand": "Xiangyu Medical",
+      "category": "table",
+      "mount": "floor",
+      "source": "全身音波律动/Whole Body Sonic Vibration Device.pdf"
+    },
+    {
+      "id": "xy-k-rxqy-iii",
+      "code": "XY-K-RXQY-III",
+      "name": "Spinal Decompression Traction Table",
+      "nameRu": "Стол декомпрессионного вытяжения позвоночника",
+      "brand": "Xiangyu Medical",
+      "category": "table",
+      "mount": "floor",
+      "source": "牵引/脊柱减压牵引床/Spinal Decompression Traction Table.pdf"
+    },
+    {
+      "id": "xy-k-sf-1",
+      "code": "XY-K-SF-1",
+      "name": "Treatment Table (fixed height)",
+      "nameRu": "Кушетка массажная/процедурная (фиксированной высоты)",
+      "brand": "Xiangyu Medical",
+      "category": "table",
+      "mount": "floor",
+      "source": "多体位医用诊疗床/Treatment Table.pdf"
+    },
+    {
+      "id": "xy-k-sf-1-new",
+      "code": "XY-K-SF-1 (new model)",
+      "name": "Electric Treatment Table, 1 section (new model)",
+      "nameRu": "Кушетка массажная с электроприводом, 1 секция (новая модель)",
+      "brand": "Xiangyu Medical",
+      "category": "table",
+      "mount": "floor",
+      "source": "多体位医用诊疗床/Treatment Table.pdf"
+    },
+    {
+      "id": "xy-k-sf-1b",
+      "code": "XY-K-SF-1B",
+      "name": "Electric Treatment Table (scissor lift)",
+      "nameRu": "Кушетка массажная с электроприводом (ножничный подъём)",
+      "brand": "Xiangyu Medical",
+      "category": "table",
+      "mount": "floor",
+      "source": "多体位医用诊疗床/Treatment Table.pdf"
+    },
+    {
+      "id": "xy-k-sf-2",
+      "code": "XY-K-SF-2",
+      "name": "Electric Treatment Table, 2 sections",
+      "nameRu": "Кушетка с электроприводом, 2 секции",
+      "brand": "Xiangyu Medical",
+      "category": "table",
+      "mount": "floor",
+      "source": "多体位医用诊疗床/Treatment Table.pdf"
+    },
+    {
+      "id": "xy-k-sf-2-new",
+      "code": "XY-K-SF-2 (new model)",
+      "name": "Electric Treatment Table, 2 sections (new model)",
+      "nameRu": "Кушетка с электроприводом, 2 секции (новая модель)",
+      "brand": "Xiangyu Medical",
+      "category": "table",
+      "mount": "floor",
+      "source": "多体位医用诊疗床/Treatment Table.pdf"
+    },
+    {
+      "id": "xy-k-sf-3",
+      "code": "XY-K-SF-3",
+      "name": "Electric Treatment Table, 3 sections",
+      "nameRu": "Кушетка с электроприводом, 3 секции",
+      "brand": "Xiangyu Medical",
+      "category": "table",
+      "mount": "floor",
+      "source": "多体位医用诊疗床/Treatment Table.pdf"
+    },
+    {
+      "id": "xy-k-sf-3-new",
+      "code": "XY-K-SF-3 (new model)",
+      "name": "Electric Treatment Table, 3 sections (new model)",
+      "nameRu": "Кушетка с электроприводом, 3 секции (новая модель)",
+      "brand": "Xiangyu Medical",
+      "category": "table",
+      "mount": "floor",
+      "source": "多体位医用诊疗床/Treatment Table.pdf"
+    },
+    {
+      "id": "xy-k-sf-4",
+      "code": "XY-K-SF-4",
+      "name": "Electric Treatment Table with split legs",
+      "nameRu": "Кушетка с электроприводом с раздельными ногами",
+      "brand": "Xiangyu Medical",
+      "category": "table",
+      "mount": "floor",
+      "source": "多体位医用诊疗床/Treatment Table.pdf"
+    },
+    {
+      "id": "xy-k-sf-4-new",
+      "code": "XY-K-SF-4 (new model)",
+      "name": "Multi-position Treatment Chair-Table (new model)",
+      "nameRu": "Кресло-кушетка многопозиционная (новая модель)",
+      "brand": "Xiangyu Medical",
+      "category": "table",
+      "mount": "floor",
+      "source": "多体位医用诊疗床/Treatment Table.pdf"
+    },
+    {
+      "id": "xy-k-sf-4b",
+      "code": "XY-K-SF-4B",
+      "name": "Electric Treatment Table with split leg sections",
+      "nameRu": "Кушетка с электроприводом с раздельными ножными секциями",
+      "brand": "Xiangyu Medical",
+      "category": "table",
+      "mount": "floor",
+      "source": "多体位医用诊疗床/Treatment Table.pdf"
+    },
+    {
+      "id": "xy-k-sf-4c",
+      "code": "XY-K-SF-4C",
+      "name": "Electric Treatment Table, 4 sections",
+      "nameRu": "Кушетка с электроприводом, 4 секции",
+      "brand": "Xiangyu Medical",
+      "category": "table",
+      "mount": "floor",
+      "source": "多体位医用诊疗床/Treatment Table.pdf"
+    },
+    {
+      "id": "xy-k-sf-4d",
+      "code": "XY-K-SF-4D",
+      "name": "Electric Treatment Table, 4 sections (flexion)",
+      "nameRu": "Кушетка с электроприводом, 4 секции (флексионная)",
+      "brand": "Xiangyu Medical",
+      "category": "table",
+      "mount": "floor",
+      "source": "多体位医用诊疗床/Treatment Table.pdf"
+    },
+    {
+      "id": "xy-k-sf-5",
+      "code": "XY-K-SF-5",
+      "name": "Electric Treatment Table, 5 sections with split legs",
+      "nameRu": "Кушетка с электроприводом, 5 секций, раздельные ноги",
+      "brand": "Xiangyu Medical",
+      "category": "table",
+      "mount": "floor",
+      "source": "多体位医用诊疗床/Treatment Table.pdf"
+    },
+    {
+      "id": "xy-k-sf-5-new",
+      "code": "XY-K-SF-5 (new model)",
+      "name": "Electric Treatment Table, 5 sections (new model)",
+      "nameRu": "Кушетка с электроприводом, 5 секций (новая модель)",
+      "brand": "Xiangyu Medical",
+      "category": "table",
+      "mount": "floor",
+      "source": "多体位医用诊疗床/Treatment Table.pdf"
+    },
+    {
+      "id": "xy-k-sf-6",
+      "code": "XY-K-SF-6",
+      "name": "Electric Treatment Table with split legs",
+      "nameRu": "Кушетка с электроприводом с раздельными ногами",
+      "brand": "Xiangyu Medical",
+      "category": "table",
+      "mount": "floor",
+      "source": "多体位医用诊疗床/Treatment Table.pdf"
+    },
+    {
+      "id": "xy-k-sf-6b",
+      "code": "XY-K-SF-6B",
+      "name": "Electric Bobath Treatment Table, multi-section",
+      "nameRu": "Кушетка Бобат с электроприводом, многосекционная",
+      "brand": "Xiangyu Medical",
+      "category": "table",
+      "mount": "floor",
+      "source": "多体位医用诊疗床/Treatment Table.pdf"
+    },
+    {
+      "id": "xy-k-sf-7",
+      "code": "XY-K-SF-7",
+      "name": "Electric Treatment Table, multi-section",
+      "nameRu": "Кушетка с электроприводом, многосекционная",
+      "brand": "Xiangyu Medical",
+      "category": "table",
+      "mount": "floor",
+      "source": "多体位医用诊疗床/Treatment Table.pdf"
+    },
+    {
+      "id": "xy-k-sf-7-new",
+      "code": "XY-K-SF-7 (new model)",
+      "name": "Electric Treatment Table, multi-section (new model)",
+      "nameRu": "Кушетка с электроприводом, многосекционная (новая модель)",
+      "brand": "Xiangyu Medical",
+      "category": "table",
+      "mount": "floor",
+      "source": "多体位医用诊疗床/Treatment Table.pdf"
+    },
+    {
+      "id": "xy-k-sf-8",
+      "code": "XY-K-SF-8",
+      "name": "Electric Treatment Table, split head and legs",
+      "nameRu": "Кушетка с электроприводом, раздельные головная и ножные секции",
+      "brand": "Xiangyu Medical",
+      "category": "table",
+      "mount": "floor",
+      "source": "多体位医用诊疗床/Treatment Table.pdf"
+    },
+    {
+      "id": "xy-k-sf-8b",
+      "code": "XY-K-SF-8B",
+      "name": "Electric Treatment Chair-Table",
+      "nameRu": "Кресло-кушетка с электроприводом",
+      "brand": "Xiangyu Medical",
+      "category": "table",
+      "mount": "floor",
+      "source": "多体位医用诊疗床/Treatment Table.pdf"
+    },
+    {
+      "id": "xy-k-sf-9",
+      "code": "XY-K-SF-9",
+      "name": "Electric Treatment Table, 4 folds 9 sections",
+      "nameRu": "Кушетка с электроприводом, 4 сгиба 9 секций",
+      "brand": "Xiangyu Medical",
+      "category": "table",
+      "mount": "floor",
+      "source": "多体位医用诊疗床/Treatment Table.pdf"
+    },
+    {
+      "id": "xy-k-sf-9-new",
+      "code": "XY-K-SF-9 (new model)",
+      "name": "Electric Treatment Chair-Table, 4 folds (new model)",
+      "nameRu": "Кресло-кушетка с электроприводом, 4 сгиба (новая модель)",
+      "brand": "Xiangyu Medical",
+      "category": "table",
+      "mount": "floor",
+      "source": "多体位医用诊疗床/Treatment Table.pdf"
+    },
+    {
+      "id": "xy-k-sf-9b",
+      "code": "XY-K-SF-9B",
+      "name": "Lumbar Treatment Table with swinging lower body section",
+      "nameRu": "Кушетка для лечения поясницы с качающейся нижней секцией",
+      "brand": "Xiangyu Medical",
+      "category": "table",
+      "mount": "floor",
+      "source": "多体位医用诊疗床/Treatment Table.pdf"
+    },
+    {
+      "id": "xy-kgj-2",
+      "code": "XY-KGJ-2",
+      "name": "Hip Joint Training Device (chair)",
+      "nameRu": "Кресло-тренажёр для тазобедренного сустава",
+      "brand": "Xiangyu Medical",
+      "category": "table",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xygs-2",
+      "code": "XYGS-2",
+      "name": "Quadriceps Chair",
+      "nameRu": "Кресло-тренажёр для четырёхглавой мышцы",
+      "brand": "Xiangyu Medical",
+      "category": "table",
+      "mount": "floor",
+      "source": "成人康复/单独产品/XYGS-2.jpg"
+    },
+    {
+      "id": "xyq-1",
+      "code": "XYQ-1",
+      "name": "Tilting Table",
+      "nameRu": "Стол-вертикализатор",
+      "brand": "Xiangyu Medical",
+      "category": "table",
+      "mount": "floor",
+      "source": "直立床/Tilt Table.pdf"
+    },
+    {
+      "id": "xyq-2",
+      "code": "XYQ-2",
+      "name": "Tilting Table (enlarged base)",
+      "nameRu": "Стол-вертикализатор (усиленная база)",
+      "brand": "Xiangyu Medical",
+      "category": "table",
+      "mount": "floor",
+      "source": "直立床/Tilt Table.pdf"
+    },
+    {
+      "id": "xyq-3",
+      "code": "XYQ-3",
+      "name": "Electric Tilting Table, 5 motors (computer control)",
+      "nameRu": "Стол-вертикализатор электрический, 5 моторов",
+      "brand": "Xiangyu Medical",
+      "category": "table",
+      "mount": "floor",
+      "source": "直立床/Tilt Table.pdf"
+    },
+    {
+      "id": "xyq-5",
+      "code": "XYQ-5",
+      "name": "Electric Tilting Table, 6 motors (handhold switch)",
+      "nameRu": "Стол-вертикализатор электрический, 6 моторов (пульт)",
+      "brand": "Xiangyu Medical",
+      "category": "table",
+      "mount": "floor",
+      "source": "直立床/Tilt Table.pdf"
+    },
+    {
+      "id": "xyq-6",
+      "code": "XYQ-6",
+      "name": "Electric Tilting Table, 6 motors (computer control)",
+      "nameRu": "Стол-вертикализатор электрический, 6 моторов",
+      "brand": "Xiangyu Medical",
+      "category": "table",
+      "mount": "floor",
+      "source": "直立床/Tilt Table.pdf"
+    },
+    {
+      "id": "xyzg-1",
+      "code": "XYZG-1",
+      "name": "Electrical Elbow Traction Chair",
+      "nameRu": "Кресло для электротракции локтевого сустава",
+      "brand": "Xiangyu Medical",
+      "category": "table",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "yhz-iaj",
+      "code": "YHZ-IAJ",
+      "name": "Multifunctional Traction Table (micro-switch)",
+      "nameRu": "Стол тракционный многофункциональный (микропереключатель)",
+      "brand": "Xiangyu Medical",
+      "category": "table",
+      "mount": "floor",
+      "source": "牵引/Traction Table.pdf"
+    },
+    {
+      "id": "yhz-ii",
+      "code": "YHZ-II",
+      "name": "Multifunctional Traction Table",
+      "nameRu": "Стол тракционный многофункциональный",
+      "brand": "Xiangyu Medical",
+      "category": "table",
+      "mount": "floor",
+      "source": "牵引/Traction Table.pdf"
+    },
+    {
+      "id": "yhz-ii-microwave",
+      "code": "YHZ-II (microwave therapy)",
+      "name": "Multifunctional Traction Bed with microwave therapy",
+      "nameRu": "Кровать тракционная многофункциональная с СВЧ-терапией",
+      "brand": "Xiangyu Medical",
+      "category": "table",
+      "mount": "floor",
+      "source": "牵引/Traction Table.pdf"
+    },
+    {
+      "id": "yhz-iv",
+      "code": "YHZ-IV",
+      "name": "Multifunctional Traction Table",
+      "nameRu": "Стол тракционный многофункциональный",
+      "brand": "Xiangyu Medical",
+      "category": "table",
+      "mount": "floor",
+      "source": "牵引/Traction Table.pdf"
+    },
+    {
+      "id": "yz-2a",
+      "code": "YZ-2A",
+      "name": "Cervical Traction Chair",
+      "nameRu": "Кресло для шейного вытяжения",
+      "brand": "Xiangyu Medical",
+      "category": "table",
+      "mount": "floor",
+      "source": "牵引/Traction Table.pdf"
+    },
+    {
+      "id": "yz-3",
+      "code": "YZ-3",
+      "name": "Cervical Traction Chair (microcomputer)",
+      "nameRu": "Кресло для шейного вытяжения (микрокомпьютер)",
+      "brand": "Xiangyu Medical",
+      "category": "table",
+      "mount": "floor",
+      "source": "牵引/Traction Table.pdf"
+    },
+    {
+      "id": "yz-4",
+      "code": "YZ-4",
+      "name": "Cervical Traction Chair (luxury)",
+      "nameRu": "Кресло для шейного вытяжения (люкс)",
+      "brand": "Xiangyu Medical",
+      "category": "table",
+      "mount": "floor",
+      "source": "牵引/Traction Table.pdf"
+    },
+    {
+      "id": "aquatic-underwater-treadmill",
+      "name": "Aquatic Underwater Treadmill",
+      "nameRu": "Подводная беговая дорожка (гидробеговая дорожка)",
+      "brand": "Xiangyu Medical",
+      "category": "hydro",
+      "mount": "floor",
+      "source": "水疗/Aquatic Underwater Treadmill.pdf"
+    },
+    {
+      "id": "baby-hydrotherapy-station",
+      "name": "Infant Hydrotherapy Station (4 modules)",
+      "nameRu": "Станция гидротерапии для младенцев (4 модуля)",
+      "brand": "Xiangyu Medical",
+      "category": "hydro",
+      "mount": "floor",
+      "source": "水疗/Hydrotherapy.pdf"
+    },
+    {
+      "id": "hyz-ia",
+      "code": "HYZ-IA",
+      "name": "Steam Therapy Bed (steel)",
+      "nameRu": "Ложе паровое (металлическое)",
+      "brand": "Xiangyu Medical",
+      "category": "hydro",
+      "mount": "floor",
+      "source": "熏蒸/6.jpg"
+    },
+    {
+      "id": "hyz-ib",
+      "code": "HYZ-IB",
+      "name": "Local Fumigation Device (two heads)",
+      "nameRu": "Аппарат локальной фумигации (две головки)",
+      "brand": "Xiangyu Medical",
+      "category": "hydro",
+      "mount": "floor",
+      "source": "熏蒸/7.jpg"
+    },
+    {
+      "id": "hyz-ic",
+      "code": "HYZ-IC",
+      "name": "Local Fumigation Device",
+      "nameRu": "Аппарат локальной фумигации",
+      "brand": "Xiangyu Medical",
+      "category": "hydro",
+      "mount": "floor",
+      "source": "熏蒸/7.jpg"
+    },
+    {
+      "id": "hyz-iib",
+      "code": "HYZ-IIB",
+      "name": "Steam Therapy Bed (fabric tunnel)",
+      "nameRu": "Ложе паровое с тканевым тоннелем",
+      "brand": "Xiangyu Medical",
+      "category": "hydro",
+      "mount": "floor",
+      "source": "熏蒸/5.jpg"
+    },
+    {
+      "id": "hyz-iic",
+      "code": "HYZ-IIC",
+      "name": "Steam Therapy Device (with trolley)",
+      "nameRu": "Аппарат паровой терапии (с тележкой)",
+      "brand": "Xiangyu Medical",
+      "category": "hydro",
+      "mount": "floor",
+      "source": "熏蒸/HYZ-IIC.jpg"
+    },
+    {
+      "id": "hyz-iid",
+      "code": "HYZ-IID",
+      "name": "Hand-Foot Fumigation Unit (3 persons)",
+      "nameRu": "Установка фумигационная для рук и стоп (3 места)",
+      "brand": "Xiangyu Medical",
+      "category": "hydro",
+      "mount": "floor",
+      "source": "熏蒸/7.jpg"
+    },
+    {
+      "id": "hyz-iie",
+      "code": "HYZ-IIE",
+      "name": "Hand-Foot Fumigation Unit (2 persons)",
+      "nameRu": "Установка фумигационная для рук и стоп (2 места)",
+      "brand": "Xiangyu Medical",
+      "category": "hydro",
+      "mount": "floor",
+      "source": "熏蒸/7.jpg"
+    },
+    {
+      "id": "hyz-iif",
+      "code": "HYZ-IIF",
+      "name": "Steam Therapy Bed (no trolley)",
+      "nameRu": "Ложе паровое (без тележки)",
+      "brand": "Xiangyu Medical",
+      "category": "hydro",
+      "mount": "floor",
+      "source": "熏蒸/6.jpg"
+    },
+    {
+      "id": "hyz-iiia",
+      "code": "HYZ-IIIA",
+      "name": "Steam Therapy Cabin (seated)",
+      "nameRu": "Капсула паровая (сидячая)",
+      "brand": "Xiangyu Medical",
+      "category": "hydro",
+      "mount": "floor",
+      "source": "熏蒸/熏蒸HYZ-IIIA.jpg"
+    },
+    {
+      "id": "hyz-iiib",
+      "code": "HYZ-IIIB",
+      "name": "Steam Therapy Machine (swing cabin)",
+      "nameRu": "Аппарат паровой терапии (качающаяся капсула)",
+      "brand": "Xiangyu Medical",
+      "category": "hydro",
+      "mount": "floor",
+      "source": "熏蒸/HYZ-IIIB.pdf"
+    },
+    {
+      "id": "hyz-iiic",
+      "code": "HYZ-IIIC",
+      "name": "Steam Therapy Capsule (horizontal)",
+      "nameRu": "Капсула паровая горизонтальная",
+      "brand": "Xiangyu Medical",
+      "category": "hydro",
+      "mount": "floor",
+      "source": "熏蒸/3.jpg"
+    },
+    {
+      "id": "hyz-iiid",
+      "code": "HYZ-IIID",
+      "name": "Steam Therapy Capsule",
+      "nameRu": "Капсула паровая",
+      "brand": "Xiangyu Medical",
+      "category": "hydro",
+      "mount": "floor",
+      "source": "熏蒸/4.jpg"
+    },
+    {
+      "id": "hyz-iiie",
+      "code": "HYZ-IIIE",
+      "name": "Steam Therapy Cabin (swing, LCD trolley)",
+      "nameRu": "Капсула паровая (качающаяся, с LCD-тележкой)",
+      "brand": "Xiangyu Medical",
+      "category": "hydro",
+      "mount": "floor",
+      "source": "熏蒸/3.jpg"
+    },
+    {
+      "id": "hyz-iik",
+      "code": "HYZ-IIK",
+      "name": "Steam Therapy Bed (horizontal)",
+      "nameRu": "Ложе паровое горизонтальное",
+      "brand": "Xiangyu Medical",
+      "category": "hydro",
+      "mount": "floor",
+      "source": "熏蒸/5.jpg"
+    },
+    {
+      "id": "hyz-iiy",
+      "code": "HYZ-IIY (2012)",
+      "name": "Multi-function Perianal Fumigation Chair",
+      "nameRu": "Кресло для фумигации промежности",
+      "brand": "Xiangyu Medical",
+      "category": "hydro",
+      "mount": "floor",
+      "source": "熏蒸/2.jpg"
+    },
+    {
+      "id": "limb-whirlpool-bath-prototype",
+      "name": "Whirlpool Limb Bath (under design)",
+      "nameRu": "Ванна вихревая для конечностей (в разработке)",
+      "brand": "Xiangyu Medical",
+      "category": "hydro",
+      "mount": "floor",
+      "source": "水疗/Hydrotherapy.pdf"
+    },
+    {
+      "id": "oval-hydromassage-bathtub",
+      "name": "Oval Hydromassage Bathtub",
+      "nameRu": "Ванна гидромассажная овальная",
+      "brand": "Xiangyu Medical",
+      "category": "hydro",
+      "mount": "floor",
+      "source": "水疗/Hydrotherapy.pdf"
+    },
+    {
+      "id": "rh-sr-ii",
+      "code": "RH-SR-II",
+      "name": "Hydrocollator (compact)",
+      "nameRu": "Гидроколлятор компактный",
+      "brand": "Xiangyu Medical",
+      "category": "hydro",
+      "mount": "floor",
+      "source": "湿热敷/XY-SRF-I and RH-SR-II.jpg"
+    },
+    {
+      "id": "xy-90",
+      "code": "XY-90",
+      "name": "Hydrotherapy Lifting Device (pool hoist)",
+      "nameRu": "Подъёмник для гидротерапии",
+      "brand": "Xiangyu Medical",
+      "category": "hydro",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xy-sl-bi",
+      "code": "XY-SL-BI",
+      "name": "Lower Limb Hydrotherapy Tub (seated)",
+      "nameRu": "Ванна гидромассажная для нижних конечностей (сидячая)",
+      "brand": "Xiangyu Medical",
+      "category": "hydro",
+      "mount": "floor",
+      "source": "水疗/Hydrotherapy.pdf"
+    },
+    {
+      "id": "xy-sl-bii",
+      "code": "XY-SL-BII",
+      "name": "Lower Limb Hydrotherapy Tub",
+      "nameRu": "Ванна гидромассажная для нижних конечностей",
+      "brand": "Xiangyu Medical",
+      "category": "hydro",
+      "mount": "floor",
+      "source": "水疗/Hydrotherapy.pdf"
+    },
+    {
+      "id": "xy-sl-biii",
+      "code": "XY-SL-BIII",
+      "name": "Lower Limb Hydrotherapy Tub (deep)",
+      "nameRu": "Ванна гидромассажная глубокая для нижних конечностей",
+      "brand": "Xiangyu Medical",
+      "category": "hydro",
+      "mount": "floor",
+      "source": "水疗/Hydrotherapy.pdf"
+    },
+    {
+      "id": "xy-sl-biv",
+      "code": "XY-SL-BIV",
+      "name": "Lower Limb and Spine Hydrotherapy Tub",
+      "nameRu": "Ванна гидромассажная для нижних конечностей и позвоночника",
+      "brand": "Xiangyu Medical",
+      "category": "hydro",
+      "mount": "floor",
+      "source": "水疗/Hydrotherapy.pdf"
+    },
+    {
+      "id": "xy-sl-bvii",
+      "code": "XY-SL-BVII",
+      "name": "Hydrotherapy and Electrotherapy Bathtub (four limbs)",
+      "nameRu": "Ванна гидро-электротерапевтическая для четырёх конечностей",
+      "brand": "Xiangyu Medical",
+      "category": "hydro",
+      "mount": "floor",
+      "source": "水疗/Hydrotherapy.pdf"
+    },
+    {
+      "id": "xy-sl-ci",
+      "code": "XY-SL-CI",
+      "name": "Butterfly (Hubbard) Bathtub",
+      "nameRu": "Ванна Хаббарда («бабочка»)",
+      "brand": "Xiangyu Medical",
+      "category": "hydro",
+      "mount": "floor",
+      "source": "水疗/Hydrotherapy.pdf"
+    },
+    {
+      "id": "xy-sl-ciii",
+      "code": "XY-SL-CIII",
+      "name": "Full Body Massage Bathtub",
+      "nameRu": "Ванна гидромассажная для всего тела",
+      "brand": "Xiangyu Medical",
+      "category": "hydro",
+      "mount": "floor",
+      "source": "水疗/Hydrotherapy.pdf"
+    },
+    {
+      "id": "xy-sl-cix",
+      "code": "XY-SL-CIX",
+      "name": "Ozone Hydrotherapy Bathtub",
+      "nameRu": "Ванна гидромассажная с озонированием",
+      "brand": "Xiangyu Medical",
+      "category": "hydro",
+      "mount": "floor",
+      "source": "水疗/Hydrotherapy.pdf"
+    },
+    {
+      "id": "xy-sl-cv",
+      "code": "XY-SL-CV",
+      "name": "Rehabilitation Walk-in Water Tank",
+      "nameRu": "Ванна реабилитационная с дверцей",
+      "brand": "Xiangyu Medical",
+      "category": "hydro",
+      "mount": "floor",
+      "source": "水疗/Hydrotherapy.pdf"
+    },
+    {
+      "id": "xy-sl-cvi",
+      "code": "XY-SL-CVI",
+      "name": "Adult Hydrotherapy Walk-in Tub with transfer lift",
+      "nameRu": "Ванна гидромассажная с дверцей и подъёмником",
+      "brand": "Xiangyu Medical",
+      "category": "hydro",
+      "mount": "floor",
+      "source": "水疗/Hydrotherapy.pdf"
+    },
+    {
+      "id": "xy-sl-cviii",
+      "code": "XY-SL-CVIII (standard mode)",
+      "name": "Dry Water Massage Table",
+      "nameRu": "Стол «сухой» гидромассажный",
+      "brand": "Xiangyu Medical",
+      "category": "hydro",
+      "mount": "floor",
+      "source": "水疗/Hydrotherapy.pdf"
+    },
+    {
+      "id": "xy-sl-cviii-luxury",
+      "code": "XY-SL-CVIII (luxury mode)",
+      "name": "Dry Water Massage Table with hood",
+      "nameRu": "Стол «сухой» гидромассажный с колпаком",
+      "brand": "Xiangyu Medical",
+      "category": "hydro",
+      "mount": "floor",
+      "source": "水疗/Hydrotherapy.pdf"
+    },
+    {
+      "id": "xy-sl-cxi",
+      "code": "XY-SL-CXI",
+      "name": "Ozone Hydrotherapy Spa Bath",
+      "nameRu": "Ванна гидромассажная с озонированием",
+      "brand": "Xiangyu Medical",
+      "category": "hydro",
+      "mount": "floor",
+      "source": "水疗/Hydrotherapy.pdf"
+    },
+    {
+      "id": "xy-sl-ri",
+      "code": "XY-SL-RI",
+      "name": "Children Hydrotherapy Tub",
+      "nameRu": "Ванна гидромассажная детская",
+      "brand": "Xiangyu Medical",
+      "category": "hydro",
+      "mount": "floor",
+      "source": "水疗/Hydrotherapy.pdf"
+    },
+    {
+      "id": "xy-sl-rii",
+      "code": "XY-SL-RII",
+      "name": "Children Hydrotherapy Tub (LCD)",
+      "nameRu": "Ванна гидромассажная детская (LCD)",
+      "brand": "Xiangyu Medical",
+      "category": "hydro",
+      "mount": "floor",
+      "source": "水疗/Hydrotherapy.pdf"
+    },
+    {
+      "id": "xy-sl-riii",
+      "code": "XY-SL-RIII",
+      "name": "Children Hydrotherapy Pool (gait)",
+      "nameRu": "Бассейн гидромассажный детский (с окном для ходьбы)",
+      "brand": "Xiangyu Medical",
+      "category": "hydro",
+      "mount": "floor",
+      "source": "水疗/Hydrotherapy.pdf"
+    },
+    {
+      "id": "xy-sl-riv",
+      "code": "XY-SL-RIV",
+      "name": "Baby Hydrotherapy Tub (microcomputer)",
+      "nameRu": "Ванна гидромассажная для младенцев (микрокомпьютер)",
+      "brand": "Xiangyu Medical",
+      "category": "hydro",
+      "mount": "floor",
+      "source": "水疗/Hydrotherapy.pdf"
+    },
+    {
+      "id": "xy-sl-rv",
+      "code": "XY-SL-RV",
+      "name": "Mobile Baby Swimming Tub",
+      "nameRu": "Ванна для купания младенцев мобильная",
+      "brand": "Xiangyu Medical",
+      "category": "hydro",
+      "mount": "floor",
+      "source": "水疗/Hydrotherapy.pdf"
+    },
+    {
+      "id": "xy-srf-i",
+      "code": "XY-SRF-I",
+      "name": "Hydrocollator (moist heat pack heater)",
+      "nameRu": "Гидроколлятор (нагреватель термопакетов)",
+      "brand": "Xiangyu Medical",
+      "category": "hydro",
+      "mount": "floor",
+      "source": "湿热敷/XY-SRF-I.jpg"
+    },
+    {
+      "id": "xy-srf-iv",
+      "code": "XY-SRF-IV",
+      "name": "Hydrocollator (large)",
+      "nameRu": "Гидроколлятор большой",
+      "brand": "Xiangyu Medical",
+      "category": "hydro",
+      "mount": "floor",
+      "source": "湿热敷/XY-SRF-IV.jpg"
+    },
+    {
+      "id": "xyl-i",
+      "code": "XYL-I",
+      "name": "Paraffin Wax Heater (semi-automatic, dry)",
+      "nameRu": "Парафинонагреватель (полуавтоматический)",
+      "brand": "Xiangyu Medical",
+      "category": "hydro",
+      "mount": "desk",
+      "source": "蜡疗/Paraffin Wax Therapy Device.pdf"
+    },
+    {
+      "id": "xyl-ii",
+      "code": "XYL-II",
+      "name": "Paraffin Wax Heater (semi-automatic, water bath)",
+      "nameRu": "Парафинонагреватель (водяная баня)",
+      "brand": "Xiangyu Medical",
+      "category": "hydro",
+      "mount": "floor",
+      "source": "蜡疗/Paraffin Wax Therapy Device.pdf"
+    },
+    {
+      "id": "xyl-v",
+      "code": "XYL-V",
+      "name": "Paraffin Wax Heater (semi-automatic, liftable)",
+      "nameRu": "Парафинонагреватель с электроподъёмом",
+      "brand": "Xiangyu Medical",
+      "category": "hydro",
+      "mount": "floor",
+      "source": "蜡疗/Paraffin Wax Therapy Device.pdf"
+    },
+    {
+      "id": "xyl-viia",
+      "code": "XYL-VIIA",
+      "name": "Automatic Paraffin Wax Therapy Device (single cabinet)",
+      "nameRu": "Автоматический аппарат парафинотерапии (шкаф)",
+      "brand": "Xiangyu Medical",
+      "category": "hydro",
+      "mount": "floor",
+      "source": "蜡疗/Paraffin Wax Therapy Device.pdf"
+    },
+    {
+      "id": "xyl-viid",
+      "code": "XYL-VIID",
+      "name": "Automatic Paraffin Wax Therapy Device (double cabinet)",
+      "nameRu": "Автоматический аппарат парафинотерапии (двойной шкаф)",
+      "brand": "Xiangyu Medical",
+      "category": "hydro",
+      "mount": "floor",
+      "source": "蜡疗/Paraffin Wax Therapy Device.pdf"
+    },
+    {
+      "id": "xyl-viiib",
+      "code": "XYL-VIIIB",
+      "name": "Automatic Paraffin Wax Therapy Device (compact)",
+      "nameRu": "Автоматический аппарат парафинотерапии",
+      "brand": "Xiangyu Medical",
+      "category": "hydro",
+      "mount": "floor",
+      "source": "蜡疗/Paraffin Wax Therapy Device.pdf"
+    },
+    {
+      "id": "circular-walking",
+      "name": "Circular Walking (soft S-path)",
+      "nameRu": "Мягкая змейка для ходьбы",
+      "brand": "Xiangyu Medical",
+      "category": "pediatric",
+      "mount": "floor",
+      "source": "儿童康复/Pediatric rehabilitation series.pdf"
+    },
+    {
+      "id": "hyz-iir",
+      "code": "HYZ-IIR",
+      "name": "Pediatric Fumigation Machine",
+      "nameRu": "Аппарат фумигационный детский",
+      "brand": "Xiangyu Medical",
+      "category": "pediatric",
+      "mount": "floor",
+      "source": "熏蒸/Steam therapy.jpg"
+    },
+    {
+      "id": "soft-building-blocks",
+      "name": "Soft Package of Building Blocks (large soft blocks set)",
+      "nameRu": "Мягкие модули-конструктор (набор)",
+      "brand": "Xiangyu Medical",
+      "category": "pediatric",
+      "mount": "floor",
+      "source": "儿童康复/Pediatric rehabilitation series.pdf"
+    },
+    {
+      "id": "square-combined-training-frame",
+      "name": "Square Combined Training Frame and Background Protection",
+      "nameRu": "Комбинированная тренировочная рама (сенсорная интеграция)",
+      "brand": "Xiangyu Medical",
+      "category": "pediatric",
+      "mount": "floor",
+      "source": "儿童康复/Pediatric rehabilitation series.pdf"
+    },
+    {
+      "id": "triangle-ball-pool",
+      "name": "Triangle Ball Pool",
+      "nameRu": "Сухой бассейн треугольный (мягкий)",
+      "brand": "Xiangyu Medical",
+      "category": "pediatric",
+      "mount": "floor",
+      "source": "儿童康复/Pediatric rehabilitation series.pdf"
+    },
+    {
+      "id": "xyrt-10",
+      "code": "XYRT-10",
+      "name": "Children Standing Frame (with tray, on casters)",
+      "nameRu": "Вертикализатор детский с столиком",
+      "brand": "Xiangyu Medical",
+      "category": "pediatric",
+      "mount": "floor",
+      "source": "儿童康复/Pediatric rehabilitation series.pdf"
+    },
+    {
+      "id": "xyrt-100",
+      "code": "XYRT-100",
+      "name": "Big Drawing Board (double easel)",
+      "nameRu": "Мольберт большой (доска для рисования)",
+      "brand": "Xiangyu Medical",
+      "category": "pediatric",
+      "mount": "floor",
+      "source": "儿童康复/Pediatric rehabilitation series.pdf"
+    },
+    {
+      "id": "xyrt-101",
+      "code": "XYRT-101",
+      "name": "Colourful Drawing Board (easel)",
+      "nameRu": "Мольберт детский цветной (маркерная доска)",
+      "brand": "Xiangyu Medical",
+      "category": "pediatric",
+      "mount": "floor",
+      "source": "儿童康复/Pediatric rehabilitation series.pdf"
+    },
+    {
+      "id": "xyrt-103",
+      "code": "XYRT-103",
+      "name": "Multifunctional Cognitive Assembly (table with stools)",
+      "nameRu": "Детский столик с табуретами (когнитивный набор)",
+      "brand": "Xiangyu Medical",
+      "category": "pediatric",
+      "mount": "floor",
+      "source": "儿童康复/Pediatric rehabilitation series.pdf"
+    },
+    {
+      "id": "xyrt-106",
+      "code": "XYRT-106",
+      "name": "Standing Board",
+      "nameRu": "Стойка-вертикализатор (стоячая доска)",
+      "brand": "Xiangyu Medical",
+      "category": "pediatric",
+      "mount": "floor",
+      "source": "儿童康复/Pediatric rehabilitation series.pdf"
+    },
+    {
+      "id": "xyrt-107",
+      "code": "XYRT-107",
+      "name": "Inclined Standing Frame",
+      "nameRu": "Наклонная стойка-вертикализатор (для живота)",
+      "brand": "Xiangyu Medical",
+      "category": "pediatric",
+      "mount": "floor",
+      "source": "儿童康复/Pediatric rehabilitation series.pdf"
+    },
+    {
+      "id": "xyrt-108",
+      "code": "XYRT-108",
+      "name": "Upper Limb Pushing Board",
+      "nameRu": "Тренажёр для верхних конечностей (наклонная доска со скольжением)",
+      "brand": "Xiangyu Medical",
+      "category": "pediatric",
+      "mount": "desk",
+      "source": "儿童康复/Pediatric rehabilitation series.pdf"
+    },
+    {
+      "id": "xyrt-11",
+      "code": "XYRT-11",
+      "name": "Children Wall Bars",
+      "nameRu": "Шведская стенка детская",
+      "brand": "Xiangyu Medical",
+      "category": "pediatric",
+      "mount": "floor",
+      "source": "儿童康复/Pediatric rehabilitation series.pdf"
+    },
+    {
+      "id": "xyrt-116",
+      "code": "XYRT-116",
+      "name": "Horse Riding Machine (children)",
+      "nameRu": "Тренажёр «наездник» детский",
+      "brand": "Xiangyu Medical",
+      "category": "pediatric",
+      "mount": "floor",
+      "source": "儿童康复/Pediatric rehabilitation series.pdf"
+    },
+    {
+      "id": "xyrt-117",
+      "code": "XYRT-117",
+      "name": "Boating Exerciser (children rowing machine)",
+      "nameRu": "Гребной тренажёр детский",
+      "brand": "Xiangyu Medical",
+      "category": "pediatric",
+      "mount": "floor",
+      "source": "儿童康复/Pediatric rehabilitation series.pdf"
+    },
+    {
+      "id": "xyrt-118",
+      "code": "XYRT-118",
+      "name": "Waist Twisting Machine (children)",
+      "nameRu": "Тренажёр «твистер» детский",
+      "brand": "Xiangyu Medical",
+      "category": "pediatric",
+      "mount": "floor",
+      "source": "儿童康复/Pediatric rehabilitation series.pdf"
+    },
+    {
+      "id": "xyrt-119",
+      "code": "XYRT-119",
+      "name": "Exercise Bicycle (children)",
+      "nameRu": "Велотренажёр детский",
+      "brand": "Xiangyu Medical",
+      "category": "pediatric",
+      "mount": "floor",
+      "source": "儿童康复/Pediatric rehabilitation series.pdf"
+    },
+    {
+      "id": "xyrt-12",
+      "code": "XYRT-12",
+      "name": "Child Ladder Chair",
+      "nameRu": "Стул-лестница детский",
+      "brand": "Xiangyu Medical",
+      "category": "pediatric",
+      "mount": "floor",
+      "source": "儿童康复/Pediatric rehabilitation series.pdf"
+    },
+    {
+      "id": "xyrt-120",
+      "code": "XYRT-120",
+      "name": "Space Walker (children air walker)",
+      "nameRu": "Тренажёр «космический ходок» детский",
+      "brand": "Xiangyu Medical",
+      "category": "pediatric",
+      "mount": "floor",
+      "source": "儿童康复/Pediatric rehabilitation series.pdf"
+    },
+    {
+      "id": "xyrt-121",
+      "code": "XYRT-121",
+      "name": "Treadmill (children, manual)",
+      "nameRu": "Беговая дорожка детская (механическая)",
+      "brand": "Xiangyu Medical",
+      "category": "pediatric",
+      "mount": "floor",
+      "source": "儿童康复/Pediatric rehabilitation series.pdf"
+    },
+    {
+      "id": "xyrt-122",
+      "code": "XYRT-122",
+      "name": "Medical Treadmill (children, with parallel bars)",
+      "nameRu": "Медицинская беговая дорожка детская с параллельными брусьями",
+      "brand": "Xiangyu Medical",
+      "category": "pediatric",
+      "mount": "floor",
+      "source": "儿童康复/Pediatric rehabilitation series.pdf"
+    },
+    {
+      "id": "xyrt-13",
+      "code": "XYRT-13",
+      "name": "Ladder Chair / Free-standing Ladder",
+      "nameRu": "Лестница-стойка тренировочная",
+      "brand": "Xiangyu Medical",
+      "category": "pediatric",
+      "mount": "floor",
+      "source": "儿童康复/Pediatric rehabilitation series.pdf"
+    },
+    {
+      "id": "xyrt-14",
+      "code": "XYRT-14",
+      "name": "Adjustable Sanding Board (OT table)",
+      "nameRu": "Стол для шлифования регулируемый (трудотерапия)",
+      "brand": "Xiangyu Medical",
+      "category": "pediatric",
+      "mount": "floor",
+      "source": "儿童康复/Pediatric rehabilitation series.pdf"
+    },
+    {
+      "id": "xyrt-15",
+      "code": "XYRT-15",
+      "name": "Trampoline with Handrail",
+      "nameRu": "Батут с поручнем",
+      "brand": "Xiangyu Medical",
+      "category": "pediatric",
+      "mount": "floor",
+      "source": "儿童康复/Pediatric rehabilitation series.pdf"
+    },
+    {
+      "id": "xyrt-16",
+      "code": "XYRT-16",
+      "name": "Trampoline",
+      "nameRu": "Батут",
+      "brand": "Xiangyu Medical",
+      "category": "pediatric",
+      "mount": "floor",
+      "source": "儿童康复/Pediatric rehabilitation series.pdf"
+    },
+    {
+      "id": "xyrt-17",
+      "code": "XYRT-17",
+      "name": "Wooden Bed (balance bench)",
+      "nameRu": "Деревянная скамья-кушетка (для равновесия)",
+      "brand": "Xiangyu Medical",
+      "category": "pediatric",
+      "mount": "floor",
+      "source": "儿童康复/Pediatric rehabilitation series.pdf"
+    },
+    {
+      "id": "xyrt-18",
+      "code": "XYRT-18",
+      "name": "Guided Training Set (bench + boxes + ladder chair)",
+      "nameRu": "Набор для направленной тренировки (скамья, ящики, стул-лестница)",
+      "brand": "Xiangyu Medical",
+      "category": "pediatric",
+      "mount": "floor",
+      "source": "儿童康复/Pediatric rehabilitation series.pdf"
+    },
+    {
+      "id": "xyrt-19",
+      "code": "XYRT-19",
+      "name": "Children Safety Chair (with tray, on casters)",
+      "nameRu": "Кресло безопасности для детей-инвалидов (со столиком)",
+      "brand": "Xiangyu Medical",
+      "category": "pediatric",
+      "mount": "floor",
+      "source": "儿童康复/Pediatric rehabilitation series.pdf"
+    },
+    {
+      "id": "xyrt-21",
+      "code": "XYRT-21",
+      "name": "Children PT Stool (adjustable)",
+      "nameRu": "Табурет для ЛФК детский регулируемый",
+      "brand": "Xiangyu Medical",
+      "category": "pediatric",
+      "mount": "floor",
+      "source": "儿童康复/Pediatric rehabilitation series.pdf"
+    },
+    {
+      "id": "xyrt-25",
+      "code": "XYRT-25",
+      "name": "Two-castor Walking Assistant (children, rear-wheel)",
+      "nameRu": "Ходунки-каталка детские на двух колёсах",
+      "brand": "Xiangyu Medical",
+      "category": "pediatric",
+      "mount": "floor",
+      "source": "儿童康复/Pediatric rehabilitation series.pdf"
+    },
+    {
+      "id": "xyrt-26",
+      "code": "XYRT-26",
+      "name": "Extremities Recovery Device (children pedal walker chair)",
+      "nameRu": "Тренажёр для нижних конечностей детский (кресло-ходунки с педалями)",
+      "brand": "Xiangyu Medical",
+      "category": "pediatric",
+      "mount": "floor",
+      "source": "儿童康复/Pediatric rehabilitation series.pdf"
+    },
+    {
+      "id": "xyrt-27",
+      "code": "XYRT-27",
+      "name": "Two-castor Walking Assistant (children, front-open)",
+      "nameRu": "Ходунки детские на двух колёсах",
+      "brand": "Xiangyu Medical",
+      "category": "pediatric",
+      "mount": "floor",
+      "source": "儿童康复/Pediatric rehabilitation series.pdf"
+    },
+    {
+      "id": "xyrt-28",
+      "code": "XYRT-28",
+      "name": "Hydraulic Children Treadle (stepper)",
+      "nameRu": "Гидравлический степпер детский",
+      "brand": "Xiangyu Medical",
+      "category": "pediatric",
+      "mount": "floor",
+      "source": "儿童康复/Pediatric rehabilitation series.pdf"
+    },
+    {
+      "id": "xyrt-29",
+      "code": "XYRT-29",
+      "name": "Tumbling Barrel (soft roll)",
+      "nameRu": "Мягкая бочка-тоннель для кувырков",
+      "brand": "Xiangyu Medical",
+      "category": "pediatric",
+      "mount": "floor",
+      "source": "儿童康复/Pediatric rehabilitation series.pdf"
+    },
+    {
+      "id": "xyrt-30",
+      "code": "XYRT-30",
+      "name": "Drilling Cage (crawl tunnel, printed fabric)",
+      "nameRu": "Тоннель для пролезания (тканевый)",
+      "brand": "Xiangyu Medical",
+      "category": "pediatric",
+      "mount": "floor",
+      "source": "儿童康复/Pediatric rehabilitation series.pdf"
+    },
+    {
+      "id": "xyrt-31",
+      "code": "XYRT-31",
+      "name": "Drilling Cage (crawl tunnel, striped with mesh)",
+      "nameRu": "Тоннель для пролезания (полосатый, с сеткой)",
+      "brand": "Xiangyu Medical",
+      "category": "pediatric",
+      "mount": "floor",
+      "source": "儿童康复/Pediatric rehabilitation series.pdf"
+    },
+    {
+      "id": "xyrt-36",
+      "code": "XYRT-36",
+      "name": "Children OT Table (height adjustable)",
+      "nameRu": "Стол для трудотерапии детский регулируемый",
+      "brand": "Xiangyu Medical",
+      "category": "pediatric",
+      "mount": "floor",
+      "source": "儿童康复/Pediatric rehabilitation series.pdf"
+    },
+    {
+      "id": "xyrt-36a",
+      "code": "XYRT-36A",
+      "name": "OT Desk (group table with 3 chairs)",
+      "nameRu": "Стол групповой для трудотерапии (с 3 стульями)",
+      "brand": "Xiangyu Medical",
+      "category": "pediatric",
+      "mount": "floor",
+      "source": "儿童康复/Pediatric rehabilitation series.pdf"
+    },
+    {
+      "id": "xyrt-38",
+      "code": "XYRT-38",
+      "name": "Hip-joint Training Device (children)",
+      "nameRu": "Тренажёр для тазобедренного сустава детский (отведение/приведение)",
+      "brand": "Xiangyu Medical",
+      "category": "pediatric",
+      "mount": "floor",
+      "source": "儿童康复/Pediatric rehabilitation series.pdf"
+    },
+    {
+      "id": "xyrt-39",
+      "code": "XYRT-39",
+      "name": "Children Quadriceps Chair",
+      "nameRu": "Тренажёр для четырёхглавой мышцы бедра детский",
+      "brand": "Xiangyu Medical",
+      "category": "pediatric",
+      "mount": "floor",
+      "source": "儿童康复/Pediatric rehabilitation series.pdf"
+    },
+    {
+      "id": "xyrt-4",
+      "code": "XYRT-4",
+      "name": "Training Swing Device (A-frame with 3 swings)",
+      "nameRu": "Тренировочные качели (А-образная рама, 3 подвеса)",
+      "brand": "Xiangyu Medical",
+      "category": "pediatric",
+      "mount": "floor",
+      "source": "儿童康复/Pediatric rehabilitation series.pdf"
+    },
+    {
+      "id": "xyrt-40",
+      "code": "XYRT-40",
+      "name": "Ankle Joint Training Device (children)",
+      "nameRu": "Тренажёр для голеностопного сустава детский",
+      "brand": "Xiangyu Medical",
+      "category": "pediatric",
+      "mount": "floor",
+      "source": "儿童康复/Pediatric rehabilitation series.pdf"
+    },
+    {
+      "id": "xyrt-41",
+      "code": "XYRT-41",
+      "name": "Pediatric Tilting Table",
+      "nameRu": "Стол-вертикализатор детский",
+      "brand": "Xiangyu Medical",
+      "category": "pediatric",
+      "mount": "floor",
+      "source": "直立床/Tilt Table.pdf"
+    },
+    {
+      "id": "xyrt-43",
+      "code": "XYRT-43",
+      "name": "Sliding Board (stairs + slide)",
+      "nameRu": "Горка-скат с лестницей",
+      "brand": "Xiangyu Medical",
+      "category": "pediatric",
+      "mount": "floor",
+      "source": "儿童康复/Pediatric rehabilitation series.pdf"
+    },
+    {
+      "id": "xyrt-44",
+      "code": "XYRT-44",
+      "name": "Ball Bath (octagonal soft ball pool)",
+      "nameRu": "Сухой бассейн (восьмиугольный мягкий)",
+      "brand": "Xiangyu Medical",
+      "category": "pediatric",
+      "mount": "floor",
+      "source": "儿童康复/Pediatric rehabilitation series.pdf"
+    },
+    {
+      "id": "xyrt-45",
+      "code": "XYRT-45",
+      "name": "Children Sand Bag Cart (bandage type)",
+      "nameRu": "Стойка-тележка с утяжелителями (манжетного типа) детская",
+      "brand": "Xiangyu Medical",
+      "category": "pediatric",
+      "mount": "floor",
+      "source": "儿童康复/Pediatric rehabilitation series.pdf"
+    },
+    {
+      "id": "xyrt-46",
+      "code": "XYRT-46",
+      "name": "Children Sand Bag Cart (lifting type)",
+      "nameRu": "Стойка-тележка с утяжелителями (с ручками) детская",
+      "brand": "Xiangyu Medical",
+      "category": "pediatric",
+      "mount": "floor",
+      "source": "儿童康复/Pediatric rehabilitation series.pdf"
+    },
+    {
+      "id": "xyrt-5",
+      "code": "XYRT-5",
+      "name": "Training Swing Device (double horse swing)",
+      "nameRu": "Тренировочные качели (двойная качалка-лошадка)",
+      "brand": "Xiangyu Medical",
+      "category": "pediatric",
+      "mount": "floor",
+      "source": "儿童康复/Pediatric rehabilitation series.pdf"
+    },
+    {
+      "id": "xyrt-50",
+      "code": "XYRT-50",
+      "name": "Creeping Frame (crawling support)",
+      "nameRu": "Рама для ползания",
+      "brand": "Xiangyu Medical",
+      "category": "pediatric",
+      "mount": "floor",
+      "source": "儿童康复/Pediatric rehabilitation series.pdf"
+    },
+    {
+      "id": "xyrt-6",
+      "code": "XYRT-6",
+      "name": "Children Parallel Bars with correction plate",
+      "nameRu": "Брусья параллельные детские с корригирующей доской",
+      "brand": "Xiangyu Medical",
+      "category": "pediatric",
+      "mount": "floor",
+      "source": "儿童康复/Pediatric rehabilitation series.pdf"
+    },
+    {
+      "id": "xyrt-65",
+      "code": "XYRT-65",
+      "name": "Manifold Assembly (balance bridge & hoop set)",
+      "nameRu": "Набор для полосы препятствий (мостики, блоки, кольца)",
+      "brand": "Xiangyu Medical",
+      "category": "pediatric",
+      "mount": "floor",
+      "source": "儿童康复/Pediatric rehabilitation series.pdf"
+    },
+    {
+      "id": "xyrt-66",
+      "code": "XYRT-66",
+      "name": "Balance Pedal (pedal go-cart)",
+      "nameRu": "Педальная тележка для равновесия",
+      "brand": "Xiangyu Medical",
+      "category": "pediatric",
+      "mount": "floor",
+      "source": "儿童康复/Pediatric rehabilitation series.pdf"
+    },
+    {
+      "id": "xyrt-67",
+      "code": "XYRT-67",
+      "name": "Balance Footpath (4-colour roller mats)",
+      "nameRu": "Сенсорная дорожка-коврик (4 цвета)",
+      "brand": "Xiangyu Medical",
+      "category": "pediatric",
+      "mount": "floor",
+      "source": "儿童康复/Pediatric rehabilitation series.pdf"
+    },
+    {
+      "id": "xyrt-7",
+      "code": "XYRT-7",
+      "name": "Children Training Stairs (with ramp side)",
+      "nameRu": "Лестница тренировочная детская",
+      "brand": "Xiangyu Medical",
+      "category": "pediatric",
+      "mount": "floor",
+      "source": "儿童康复/Pediatric rehabilitation series.pdf"
+    },
+    {
+      "id": "xyrt-79",
+      "code": "XYRT-79",
+      "name": "Round Trochlea (balance disc)",
+      "nameRu": "Балансировочный диск круглый",
+      "brand": "Xiangyu Medical",
+      "category": "pediatric",
+      "mount": "floor",
+      "source": "儿童康复/Pediatric rehabilitation series.pdf"
+    },
+    {
+      "id": "xyrt-8",
+      "code": "XYRT-8",
+      "name": "Children Standing Frame (wooden base, knee pads)",
+      "nameRu": "Вертикализатор детский (на деревянном основании)",
+      "brand": "Xiangyu Medical",
+      "category": "pediatric",
+      "mount": "floor",
+      "source": "儿童康复/Pediatric rehabilitation series.pdf"
+    },
+    {
+      "id": "xyrt-80",
+      "code": "XYRT-80",
+      "name": "Round Rotary Table (spinning disc)",
+      "nameRu": "Вращающийся диск для вестибулярной тренировки",
+      "brand": "Xiangyu Medical",
+      "category": "pediatric",
+      "mount": "floor",
+      "source": "儿童康复/Pediatric rehabilitation series.pdf"
+    },
+    {
+      "id": "xyrt-83",
+      "code": "XYRT-83",
+      "name": "Balance Lines (curved & straight beam set)",
+      "nameRu": "Балансировочные дорожки (набор)",
+      "brand": "Xiangyu Medical",
+      "category": "pediatric",
+      "mount": "floor",
+      "source": "儿童康复/Pediatric rehabilitation series.pdf"
+    },
+    {
+      "id": "xyrt-87",
+      "code": "XYRT-87",
+      "name": "Kid's Heaven (soft play: training stairs XYRT-87 + drill tube tunnel XYRT-88)",
+      "nameRu": "Мягкий игровой комплекс «Детский рай» (лестница + тоннель)",
+      "brand": "Xiangyu Medical",
+      "category": "pediatric",
+      "mount": "floor",
+      "source": "儿童康复/Pediatric rehabilitation series.pdf"
+    },
+    {
+      "id": "xyrt-9",
+      "code": "XYRT-9",
+      "name": "Children Sitting Posture Correction Chair",
+      "nameRu": "Кресло для коррекции позы сидения детское",
+      "brand": "Xiangyu Medical",
+      "category": "pediatric",
+      "mount": "floor",
+      "source": "儿童康复/Pediatric rehabilitation series.pdf"
+    },
+    {
+      "id": "xyrt-93",
+      "code": "XYRT-93",
+      "name": "Rock Climbing Equipment (ring frame)",
+      "nameRu": "Кольцевой тренажёр для лазания",
+      "brand": "Xiangyu Medical",
+      "category": "pediatric",
+      "mount": "floor",
+      "source": "儿童康复/Pediatric rehabilitation series.pdf"
+    },
+    {
+      "id": "bean-bag",
+      "name": "Bean Bag",
+      "nameRu": "Кресло-мешок",
+      "brand": "Xiangyu Medical",
+      "category": "sensory",
+      "mount": "floor",
+      "source": "多感官房间/Multi-sensory Training Room.pdf"
+    },
+    {
+      "id": "butterfly-fiber-falls",
+      "name": "Butterfly Fiber Falls",
+      "nameRu": "Оптоволоконный «водопад» «Бабочка»",
+      "brand": "Xiangyu Medical",
+      "category": "sensory",
+      "mount": "floor",
+      "source": "多感官房间/Multi-sensory Training Room.pdf"
+    },
+    {
+      "id": "cognitive-training-board",
+      "name": "Cognitive Training Board (touch screen panel)",
+      "nameRu": "Настенная панель когнитивной тренировки (сенсорный экран)",
+      "brand": "Xiangyu Medical",
+      "category": "sensory",
+      "mount": "wall",
+      "source": "多感官房间/Multi-sensory Training Room.pdf"
+    },
+    {
+      "id": "color-conversion-control-panel",
+      "name": "Color Conversion Control Panel",
+      "nameRu": "Настенная панель переключения цветов",
+      "brand": "Xiangyu Medical",
+      "category": "sensory",
+      "mount": "wall",
+      "source": "多感官房间/Multi-sensory Training Room.pdf"
+    },
+    {
+      "id": "color-led-ball",
+      "name": "Color LED Ball (mirror/LED ball)",
+      "nameRu": "Цветной светодиодный шар (зеркальный)",
+      "brand": "Xiangyu Medical",
+      "category": "sensory",
+      "mount": "ceiling",
+      "source": "多感官房间/Multi-sensory Training Room.pdf"
+    },
+    {
+      "id": "colorful-fluorescent-drawing-board",
+      "name": "Colorful Fluorescent Drawing Board",
+      "nameRu": "Флуоресцентная доска для рисования светом",
+      "brand": "Xiangyu Medical",
+      "category": "sensory",
+      "mount": "wall",
+      "source": "多感官房间/Multi-sensory Training Room.pdf"
+    },
+    {
+      "id": "dynamic-color-wheel",
+      "name": "Dynamic Color Wheel (wall panel)",
+      "nameRu": "Настенная панель «Динамическое цветовое колесо»",
+      "brand": "Xiangyu Medical",
+      "category": "sensory",
+      "mount": "wall",
+      "source": "多感官房间/Multi-sensory Training Room.pdf"
+    },
+    {
+      "id": "endless-depth-light-mirror",
+      "name": "Endless Depth Light Mirror (infinity mirror panel)",
+      "nameRu": "Настенная панель «Бесконечное зеркало»",
+      "brand": "Xiangyu Medical",
+      "category": "sensory",
+      "mount": "wall",
+      "source": "多感官房间/Multi-sensory Training Room.pdf"
+    },
+    {
+      "id": "fiber-optic-curtain-wall",
+      "name": "Fiber Optic Curtain Wall (panel)",
+      "nameRu": "Настенная панель с оптоволоконным полотном",
+      "brand": "Xiangyu Medical",
+      "category": "sensory",
+      "mount": "wall",
+      "source": "多感官房间/Multi-sensory Training Room.pdf"
+    },
+    {
+      "id": "jy-tyhd-i",
+      "code": "JY-TYHD-Ⅰ",
+      "name": "Multimedia Scenario Interactive Training System",
+      "nameRu": "Мультимедийная интерактивная система сценарной тренировки (напольная проекция)",
+      "brand": "Xiangyu Medical",
+      "category": "sensory",
+      "mount": "floor",
+      "source": "多感官房间/Multi-sensory Training Room.pdf"
+    },
+    {
+      "id": "led-piano-pedals",
+      "name": "LED Piano Pedals (floor piano)",
+      "nameRu": "Светодиодные напольные клавиши-пианино",
+      "brand": "Xiangyu Medical",
+      "category": "sensory",
+      "mount": "floor",
+      "source": "多感官房间/Multi-sensory Training Room.pdf"
+    },
+    {
+      "id": "lighting-color-changing-puzzle-table",
+      "name": "Lighting Color Changing Puzzle Table",
+      "nameRu": "Световой стол-пазл с изменением цвета",
+      "brand": "Xiangyu Medical",
+      "category": "sensory",
+      "mount": "floor",
+      "source": "多感官房间/Multi-sensory Training Room.pdf"
+    },
+    {
+      "id": "multi-sensory-master-control-machine",
+      "name": "Multi-sensory Master Control Machine",
+      "nameRu": "Главный пульт управления мультисенсорной комнатой",
+      "brand": "Xiangyu Medical",
+      "category": "sensory",
+      "mount": "floor",
+      "source": "多感官房间/Multi-sensory Training Room.pdf"
+    },
+    {
+      "id": "multi-sensory-matching-projection-system",
+      "name": "Multi-sensory Matching Projection System (projector)",
+      "nameRu": "Проекционная система мультисенсорной комнаты (проектор)",
+      "brand": "Xiangyu Medical",
+      "category": "sensory",
+      "mount": "ceiling",
+      "source": "多感官房间/Multi-sensory Training Room.pdf"
+    },
+    {
+      "id": "multimedia-scenario-interactive-system",
+      "name": "Multimedia Scenario Interactive System (ceiling projection)",
+      "nameRu": "Мультимедийная интерактивная система (потолочная проекция на пол)",
+      "brand": "Xiangyu Medical",
+      "category": "sensory",
+      "mount": "ceiling",
+      "source": "多感官房间/Multi-sensory Training Room.pdf"
+    },
+    {
+      "id": "music-training-device",
+      "name": "Music Training Device",
+      "nameRu": "Музыкальный тренажёр (интерактивный куб)",
+      "brand": "Xiangyu Medical",
+      "category": "sensory",
+      "mount": "floor",
+      "source": "多感官房间/Multi-sensory Training Room.pdf"
+    },
+    {
+      "id": "piano-water-column",
+      "name": "Piano Water Column",
+      "nameRu": "Пузырьковые колонны «пианино» (водные колонны с клавишами)",
+      "brand": "Xiangyu Medical",
+      "category": "sensory",
+      "mount": "floor",
+      "source": "多感官房间/Multi-sensory Training Room.pdf"
+    },
+    {
+      "id": "sensory-soft-ball-pool",
+      "name": "Soft Ball Pool (room scene)",
+      "nameRu": "Сухой бассейн мягкий (из сцены комнаты)",
+      "brand": "Xiangyu Medical",
+      "category": "sensory",
+      "mount": "floor",
+      "source": "多感官房间/Multi-sensory Training Room.pdf"
+    },
+    {
+      "id": "smell-perception-game-box",
+      "name": "Smell Perception Game Box",
+      "nameRu": "Игровая панель обонятельного восприятия",
+      "brand": "Xiangyu Medical",
+      "category": "sensory",
+      "mount": "wall",
+      "source": "多感官房间/Multi-sensory Training Room.pdf"
+    },
+    {
+      "id": "sound-amplifier",
+      "name": "Sound Amplifier (with 2 speakers)",
+      "nameRu": "Звуковой усилитель с колонками",
+      "brand": "Xiangyu Medical",
+      "category": "sensory",
+      "mount": "desk",
+      "source": "多感官房间/Multi-sensory Training Room.pdf"
+    },
+    {
+      "id": "sound-and-light-wall-panel",
+      "name": "Sound and Light Wall Panel",
+      "nameRu": "Настенная звуко-световая панель",
+      "brand": "Xiangyu Medical",
+      "category": "sensory",
+      "mount": "wall",
+      "source": "多感官房间/Multi-sensory Training Room.pdf"
+    },
+    {
+      "id": "symphony-hemisphere-light",
+      "name": "Symphony Hemisphere Light (LED magic ball)",
+      "nameRu": "Светодиодный проектор-полусфера",
+      "brand": "Xiangyu Medical",
+      "category": "sensory",
+      "mount": "desk",
+      "source": "多感官房间/Multi-sensory Training Room.pdf"
+    },
+    {
+      "id": "variable-speed-fan-game-box",
+      "name": "Variable Speed Fan Game Box",
+      "nameRu": "Игровая панель «Вентилятор с регулировкой скорости»",
+      "brand": "Xiangyu Medical",
+      "category": "sensory",
+      "mount": "wall",
+      "source": "多感官房间/Multi-sensory Training Room.pdf"
+    },
+    {
+      "id": "visual-perceptual-trainer",
+      "name": "Visual Perceptual Trainer (bubble tubes)",
+      "nameRu": "Визуально-перцептивный тренажёр (пузырьковые колонны)",
+      "brand": "Xiangyu Medical",
+      "category": "sensory",
+      "mount": "floor",
+      "source": "多感官房间/Multi-sensory Training Room.pdf"
+    },
+    {
+      "id": "wall-of-blisters",
+      "name": "Wall of Blisters (bubble wall panel)",
+      "nameRu": "Настенная панель «Стена пузырей»",
+      "brand": "Xiangyu Medical",
+      "category": "sensory",
+      "mount": "wall",
+      "source": "多感官房间/Multi-sensory Training Room.pdf"
+    },
+    {
+      "id": "xdd-i",
+      "code": "XDD-I",
+      "name": "UV Sterilization Lamp (mobile, X-base)",
+      "nameRu": "Облучатель бактерицидный ультрафиолетовый передвижной",
+      "brand": "Xiangyu Medical",
+      "category": "other",
+      "mount": "floor",
+      "source": "光疗/紫外线消毒器/UV sterilizer 1.jpg"
+    },
+    {
+      "id": "xdd-ii",
+      "code": "XDD-II",
+      "name": "UV Sterilizer (tower trolley)",
+      "nameRu": "Облучатель-рециркулятор бактерицидный УФ (колонна)",
+      "brand": "Xiangyu Medical",
+      "category": "other",
+      "mount": "floor",
+      "source": "光疗/紫外线消毒器/UV sterilizer 1.jpg"
+    },
+    {
+      "id": "xy-78",
+      "code": "XY-78",
+      "name": "Electric Lifting Toilet Chair",
+      "nameRu": "Кресло-туалет с электроподъёмом",
+      "brand": "Xiangyu Medical",
+      "category": "other",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xy-79",
+      "code": "XY-79",
+      "name": "Potty Chair (folding commode)",
+      "nameRu": "Кресло-туалет складное",
+      "brand": "Xiangyu Medical",
+      "category": "other",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xy-82",
+      "code": "XY-82",
+      "name": "Wheelchair with tray",
+      "nameRu": "Кресло-коляска со столиком",
+      "brand": "Xiangyu Medical",
+      "category": "other",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xy-84",
+      "code": "XY-84",
+      "name": "Shower Chair",
+      "nameRu": "Стул для душа",
+      "brand": "Xiangyu Medical",
+      "category": "other",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xy-85",
+      "code": "XY-85",
+      "name": "Shower Chair (with castors)",
+      "nameRu": "Стул для душа на колёсах",
+      "brand": "Xiangyu Medical",
+      "category": "other",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xy-87",
+      "code": "XY-87",
+      "name": "Electric Patient Lift (hoist)",
+      "nameRu": "Подъёмник для пациента электрический",
+      "brand": "Xiangyu Medical",
+      "category": "other",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xy-88",
+      "code": "XY-88",
+      "name": "Kitchen Set (ADL, wheelchair-accessible)",
+      "nameRu": "Кухонный модуль для тренировки бытовых навыков",
+      "brand": "Xiangyu Medical",
+      "category": "other",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xy-89",
+      "code": "XY-89",
+      "name": "Kitchen Set (ADL, full kitchen)",
+      "nameRu": "Кухонный гарнитур для тренировки бытовых навыков",
+      "brand": "Xiangyu Medical",
+      "category": "other",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xy-92",
+      "code": "XY-92",
+      "name": "Vertical Platform Lifting Machine",
+      "nameRu": "Вертикальный подъёмник-платформа для колясок",
+      "brand": "Xiangyu Medical",
+      "category": "other",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xy-96",
+      "code": "XY-96",
+      "name": "Lifting Wardrobe Rail",
+      "nameRu": "Подъёмная штанга для гардероба",
+      "brand": "Xiangyu Medical",
+      "category": "other",
+      "mount": "wall",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xy-97",
+      "code": "XY-97",
+      "name": "Lifting Wash Basin (commode)",
+      "nameRu": "Раковина с электроподъёмом",
+      "brand": "Xiangyu Medical",
+      "category": "other",
+      "mount": "floor",
+      "source": "成人康复/Adult Rehabilitation Items.pdf"
+    },
+    {
+      "id": "xy-k-swy-ii",
+      "code": "XY-K-SWY-II",
+      "name": "Pneumatic Medical Warming Unit (forced-air patient warmer)",
+      "nameRu": "Аппарат конвекционного обогрева пациента",
+      "brand": "Xiangyu Medical",
+      "category": "other",
+      "mount": "desk",
+      "source": "充气式医用升温仪XY-K-SWY-II/Pneumatic Medical Warming Unit XY-K-SWY-II.pdf"
+    },
+    {
+      "id": "xy-qc-i",
+      "code": "XY-QC-I",
+      "name": "Multifunctional Debridement Device",
+      "nameRu": "Аппарат ультразвуковой обработки (дебридмента) ран",
+      "brand": "Xiangyu Medical",
+      "category": "other",
+      "mount": "floor",
+      "source": "多功能清创仪/Multifunctional Debridement XY-QC-I.pdf"
+    }
+  ]
+}

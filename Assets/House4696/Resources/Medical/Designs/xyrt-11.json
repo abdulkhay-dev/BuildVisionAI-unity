@@ -1,0 +1,13 @@
+{"id": "xyrt-11", "size": [850, 200, 1680], "mats": {"oak": "wood#c8883e", "rung": "wood#c07a38", "white": "plastic#f2f2f0", "steel": "metal#e8e8e8"}, "parts": [
+    {"id": "rail", "kind": "sweep", "mat": "oak", "path": [[50.0, 0, 177.5], [50.0, 1650.0, 177.5], [800.0, 1650.0, 177.5], [800.0, 0, 177.5]], "section": [60, 45], "shape": "rect", "r": 3, "bend": 230},
+    {"id": "rung0", "kind": "cyl", "mat": "white", "from": [40.0, 221, 177.5], "to": [810.0, 221, 177.5], "d": 32},
+    {"id": "rung1", "kind": "cyl", "mat": "rung", "from": [40.0, 363, 177.5], "to": [810.0, 363, 177.5], "d": 25},
+    {"id": "rung2", "kind": "cyl", "mat": "rung", "from": [40.0, 513, 177.5], "to": [810.0, 513, 177.5], "d": 25},
+    {"id": "rung3", "kind": "cyl", "mat": "rung", "from": [40.0, 664, 177.5], "to": [810.0, 664, 177.5], "d": 25},
+    {"id": "rung4", "kind": "cyl", "mat": "rung", "from": [40.0, 814, 177.5], "to": [810.0, 814, 177.5], "d": 25},
+    {"id": "rung5", "kind": "cyl", "mat": "rung", "from": [40.0, 965, 177.5], "to": [810.0, 965, 177.5], "d": 25},
+    {"id": "rung6", "kind": "cyl", "mat": "rung", "from": [40.0, 1115, 177.5], "to": [810.0, 1115, 177.5], "d": 25},
+    {"id": "rung7", "kind": "cyl", "mat": "rung", "from": [40.0, 1274, 177.5], "to": [810.0, 1274, 177.5], "d": 25},
+    {"id": "rung8", "kind": "cyl", "mat": "white", "from": [40.0, 1425, 177.5], "to": [810.0, 1425, 177.5], "d": 32},
+    {"id": "br-l", "kind": "box", "mat": "white", "box": [12, 1440, 6, 20, 1490, 189.5], "r": 1, "mirror": "x"},
+    {"id": "brw-l", "kind": "box", "mat": "white", "box": [0, 1440, 0, 20, 1490, 6], "r": 1, "mirror": "x"}]}

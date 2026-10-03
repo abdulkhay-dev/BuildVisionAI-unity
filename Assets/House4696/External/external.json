@@ -7980,6 +7980,834 @@
     "mask": "liftpanel_dc1000a_freight_mask.png"
    },
    "maskSize": 512
+  },
+  {
+   "id": "med_xy-cryo-3_screen",
+   "name": "Экран XY-CRYO-3",
+   "category": "medical",
+   "source": "tools/medical/reference/xy-cryo-3_screen.jpg",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/med_xy-cryo-3_screen",
+   "textures": {
+    "albedo": "med_xy-cryo-3_screen_albedo.jpg",
+    "normal": "med_xy-cryo-3_screen_normal.jpg",
+    "mask": "med_xy-cryo-3_screen_mask.png"
+   }
+  },
+  {
+   "id": "med_xy-dms-103a_screen",
+   "name": "Экран XY-DMS-103A",
+   "category": "medical",
+   "source": "tools/medical/reference/xy-dms-103a_screen.jpg",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/med_xy-dms-103a_screen",
+   "textures": {
+    "albedo": "med_xy-dms-103a_screen_albedo.jpg",
+    "normal": "med_xy-dms-103a_screen_normal.jpg",
+    "mask": "med_xy-dms-103a_screen_mask.png"
+   }
+  },
+  {
+   "id": "med_xy-fswt-ic_screen",
+   "name": "Экран XY-FSWT-IC",
+   "category": "medical",
+   "source": "tools/medical/reference/xy-fswt-ic_screen.jpg",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/med_xy-fswt-ic_screen",
+   "textures": {
+    "albedo": "med_xy-fswt-ic_screen_albedo.jpg",
+    "normal": "med_xy-fswt-ic_screen_normal.jpg",
+    "mask": "med_xy-fswt-ic_screen_mask.png"
+   }
+  },
+  {
+   "id": "med_xy-ipc-iid_screen",
+   "name": "Экран XY-IPC-IID",
+   "category": "medical",
+   "source": "tools/medical/reference/xy-ipc-iid_screen.jpg",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/med_xy-ipc-iid_screen",
+   "textures": {
+    "albedo": "med_xy-ipc-iid_screen_albedo.jpg",
+    "normal": "med_xy-ipc-iid_screen_normal.jpg",
+    "mask": "med_xy-ipc-iid_screen_mask.png"
+   }
+  },
+  {
+   "id": "med_xy-jgc-iii_screen",
+   "name": "Экран XY-JGC-III",
+   "category": "medical",
+   "source": "tools/medical/reference/xy-jgc-iii_screen.jpg",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/med_xy-jgc-iii_screen",
+   "textures": {
+    "albedo": "med_xy-jgc-iii_screen_albedo.jpg",
+    "normal": "med_xy-jgc-iii_screen_normal.jpg",
+    "mask": "med_xy-jgc-iii_screen_mask.png"
+   }
+  },
+  {
+   "id": "med_xy-k-cdb-ii_screen",
+   "name": "Экран XY-K-CDB-II",
+   "category": "medical",
+   "source": "tools/medical/reference/xy-k-cdb-ii_screen.jpg",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/med_xy-k-cdb-ii_screen",
+   "textures": {
+    "albedo": "med_xy-k-cdb-ii_screen_albedo.jpg",
+    "normal": "med_xy-k-cdb-ii_screen_normal.jpg",
+    "mask": "med_xy-k-cdb-ii_screen_mask.png"
+   }
+  },
+  {
+   "id": "med_xy-k-csb-i_screen",
+   "name": "Экран XY-K-CSB-I",
+   "category": "medical",
+   "source": "tools/medical/reference/xy-k-csb-i_screen.jpg",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/med_xy-k-csb-i_screen",
+   "textures": {
+    "albedo": "med_xy-k-csb-i_screen_albedo.jpg",
+    "normal": "med_xy-k-csb-i_screen_normal.jpg",
+    "mask": "med_xy-k-csb-i_screen_mask.png"
+   }
+  },
+  {
+   "id": "med_xy-k-csb-ii_screen",
+   "name": "Экран XY-K-CSB-II",
+   "category": "medical",
+   "source": "tools/medical/reference/xy-k-csb-ii_screen.jpg",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/med_xy-k-csb-ii_screen",
+   "textures": {
+    "albedo": "med_xy-k-csb-ii_screen_albedo.jpg",
+    "normal": "med_xy-k-csb-ii_screen_normal.jpg",
+    "mask": "med_xy-k-csb-ii_screen_mask.png"
+   }
+  },
+  {
+   "id": "med_xy-k-czld-v_screen",
+   "name": "Экран XY-K-CZLD-V",
+   "category": "medical",
+   "source": "tools/medical/reference/xy-k-czld-v_screen.jpg",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/med_xy-k-czld-v_screen",
+   "textures": {
+    "albedo": "med_xy-k-czld-v_screen_albedo.jpg",
+    "normal": "med_xy-k-czld-v_screen_normal.jpg",
+    "mask": "med_xy-k-czld-v_screen_mask.png"
+   }
+  },
+  {
+   "id": "med_xy-k-czr-iii_screen",
+   "name": "Экран XY-K-CZR-III",
+   "category": "medical",
+   "source": "tools/medical/reference/xy-k-czr-iii_screen.jpg",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/med_xy-k-czr-iii_screen",
+   "textures": {
+    "albedo": "med_xy-k-czr-iii_screen_albedo.jpg",
+    "normal": "med_xy-k-czr-iii_screen_normal.jpg",
+    "mask": "med_xy-k-czr-iii_screen_mask.png"
+   }
+  },
+  {
+   "id": "med_xy-k-gr-ai_screen",
+   "name": "Экран XY-K-GR-AI",
+   "category": "medical",
+   "source": "tools/medical/reference/xy-k-gr-ai_screen.jpg",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/med_xy-k-gr-ai_screen",
+   "textures": {
+    "albedo": "med_xy-k-gr-ai_screen_albedo.jpg",
+    "normal": "med_xy-k-gr-ai_screen_normal.jpg",
+    "mask": "med_xy-k-gr-ai_screen_mask.png"
+   }
+  },
+  {
+   "id": "med_xy-k-gr-ci_screen",
+   "name": "Экран XY-K-GR-CI",
+   "category": "medical",
+   "source": "tools/medical/reference/xy-k-gr-ci_screen.jpg",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/med_xy-k-gr-ci_screen",
+   "textures": {
+    "albedo": "med_xy-k-gr-ci_screen_albedo.jpg",
+    "normal": "med_xy-k-gr-ci_screen_normal.jpg",
+    "mask": "med_xy-k-gr-ci_screen_mask.png"
+   }
+  },
+  {
+   "id": "med_xy-k-gr-cii_screen",
+   "name": "Экран XY-K-GR-CII",
+   "category": "medical",
+   "source": "tools/medical/reference/xy-k-gr-cii_screen.jpg",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/med_xy-k-gr-cii_screen",
+   "textures": {
+    "albedo": "med_xy-k-gr-cii_screen_albedo.jpg",
+    "normal": "med_xy-k-gr-cii_screen_normal.jpg",
+    "mask": "med_xy-k-gr-cii_screen_mask.png"
+   }
+  },
+  {
+   "id": "med_xy-k-gr-dii_screen",
+   "name": "Экран XY-K-GR-DII",
+   "category": "medical",
+   "source": "tools/medical/reference/xy-k-gr-dii_screen.jpg",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/med_xy-k-gr-dii_screen",
+   "textures": {
+    "albedo": "med_xy-k-gr-dii_screen_albedo.jpg",
+    "normal": "med_xy-k-gr-dii_screen_normal.jpg",
+    "mask": "med_xy-k-gr-dii_screen_mask.png"
+   }
+  },
+  {
+   "id": "med_xy-k-gzz-iii_screen",
+   "name": "Экран XY-K-GZZ-III",
+   "category": "medical",
+   "source": "tools/medical/reference/xy-k-gzz-iii_screen.jpg",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/med_xy-k-gzz-iii_screen",
+   "textures": {
+    "albedo": "med_xy-k-gzz-iii_screen_albedo.jpg",
+    "normal": "med_xy-k-gzz-iii_screen_normal.jpg",
+    "mask": "med_xy-k-gzz-iii_screen_mask.png"
+   }
+  },
+  {
+   "id": "med_xy-k-jlc-d_screen",
+   "name": "Экран XY-K-JLC-D",
+   "category": "medical",
+   "source": "tools/medical/reference/xy-k-jlc-d_screen.jpg",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/med_xy-k-jlc-d_screen",
+   "textures": {
+    "albedo": "med_xy-k-jlc-d_screen_albedo.jpg",
+    "normal": "med_xy-k-jlc-d_screen_normal.jpg",
+    "mask": "med_xy-k-jlc-d_screen_mask.png"
+   }
+  },
+  {
+   "id": "med_xy-k-jlc-j_screen",
+   "name": "Экран XY-K-JLC-J",
+   "category": "medical",
+   "source": "tools/medical/reference/xy-k-jlc-j_screen.jpg",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/med_xy-k-jlc-j_screen",
+   "textures": {
+    "albedo": "med_xy-k-jlc-j_screen_albedo.jpg",
+    "normal": "med_xy-k-jlc-j_screen_normal.jpg",
+    "mask": "med_xy-k-jlc-j_screen_mask.png"
+   }
+  },
+  {
+   "id": "med_xy-k-medical_screen",
+   "name": "Экран XY-K-MEDICAL",
+   "category": "medical",
+   "source": "tools/medical/reference/xy-k-medical_screen.jpg",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/med_xy-k-medical_screen",
+   "textures": {
+    "albedo": "med_xy-k-medical_screen_albedo.jpg",
+    "normal": "med_xy-k-medical_screen_normal.jpg",
+    "mask": "med_xy-k-medical_screen_mask.png"
+   }
+  },
+  {
+   "id": "med_xy-k-pdj-iv_screen",
+   "name": "Экран XY-K-PDJ-IV",
+   "category": "medical",
+   "source": "tools/medical/reference/xy-k-pdj-iv_screen.jpg",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/med_xy-k-pdj-iv_screen",
+   "textures": {
+    "albedo": "med_xy-k-pdj-iv_screen_albedo.jpg",
+    "normal": "med_xy-k-pdj-iv_screen_normal.jpg",
+    "mask": "med_xy-k-pdj-iv_screen_mask.png"
+   }
+  },
+  {
+   "id": "med_xy-k-shock-master-500_screen",
+   "name": "Экран XY-K-SHOCK MASTER-500",
+   "category": "medical",
+   "source": "tools/medical/reference/xy-k-shock-master-500_screen.jpg",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/med_xy-k-shock-master-500_screen",
+   "textures": {
+    "albedo": "med_xy-k-shock-master-500_screen_albedo.jpg",
+    "normal": "med_xy-k-shock-master-500_screen_normal.jpg",
+    "mask": "med_xy-k-shock-master-500_screen_mask.png"
+   }
+  },
+  {
+   "id": "med_xy-k-sjjd-ii_screen",
+   "name": "Экран XY-K-SJJD-II",
+   "category": "medical",
+   "source": "tools/medical/reference/xy-k-sjjd-ii_screen.jpg",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/med_xy-k-sjjd-ii_screen",
+   "textures": {
+    "albedo": "med_xy-k-sjjd-ii_screen_albedo.jpg",
+    "normal": "med_xy-k-sjjd-ii_screen_normal.jpg",
+    "mask": "med_xy-k-sjjd-ii_screen_mask.png"
+   }
+  },
+  {
+   "id": "med_xy-k-spll-v_screen",
+   "name": "Экран XY-K-SPLL-V",
+   "category": "medical",
+   "source": "tools/medical/reference/xy-k-spll-v_screen.jpg",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/med_xy-k-spll-v_screen",
+   "textures": {
+    "albedo": "med_xy-k-spll-v_screen_albedo.jpg",
+    "normal": "med_xy-k-spll-v_screen_normal.jpg",
+    "mask": "med_xy-k-spll-v_screen_mask.png"
+   }
+  },
+  {
+   "id": "med_xy-lrf-i_screen",
+   "name": "Экран XY-LRF-Ⅰ",
+   "category": "medical",
+   "source": "tools/medical/reference/xy-lrf-i_screen.jpg",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/med_xy-lrf-i_screen",
+   "textures": {
+    "albedo": "med_xy-lrf-i_screen_albedo.jpg",
+    "normal": "med_xy-lrf-i_screen_normal.jpg",
+    "mask": "med_xy-lrf-i_screen_mask.png"
+   }
+  },
+  {
+   "id": "med_xy-scjg-ii_screen",
+   "name": "Экран XY-SCJG-II",
+   "category": "medical",
+   "source": "tools/medical/reference/xy-scjg-ii_screen.jpg",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/med_xy-scjg-ii_screen",
+   "textures": {
+    "albedo": "med_xy-scjg-ii_screen_albedo.jpg",
+    "normal": "med_xy-scjg-ii_screen_normal.jpg",
+    "mask": "med_xy-scjg-ii_screen_mask.png"
+   }
+  },
+  {
+   "id": "med_xy-wb-ei_screen",
+   "name": "Экран XY-WB-EI",
+   "category": "medical",
+   "source": "tools/medical/reference/xy-wb-ei_screen.jpg",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/med_xy-wb-ei_screen",
+   "textures": {
+    "albedo": "med_xy-wb-ei_screen_albedo.jpg",
+    "normal": "med_xy-wb-ei_screen_normal.jpg",
+    "mask": "med_xy-wb-ei_screen_mask.png"
+   }
+  },
+  {
+   "id": "med_xyg-500ib_screen",
+   "name": "Экран XYG-500IB",
+   "category": "medical",
+   "source": "tools/medical/reference/xyg-500ib_screen.jpg",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/med_xyg-500ib_screen",
+   "textures": {
+    "albedo": "med_xyg-500ib_screen_albedo.jpg",
+    "normal": "med_xyg-500ib_screen_normal.jpg",
+    "mask": "med_xyg-500ib_screen_mask.png"
+   }
+  },
+  {
+   "id": "med_interactive-training-cart_screen",
+   "name": "Экран interactive-training-cart",
+   "category": "medical",
+   "source": "tools/medical/reference/interactive-training-cart_screen.jpg",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/med_interactive-training-cart_screen",
+   "textures": {
+    "albedo": "med_interactive-training-cart_screen_albedo.jpg",
+    "normal": "med_interactive-training-cart_screen_normal.jpg",
+    "mask": "med_interactive-training-cart_screen_mask.png"
+   }
+  },
+  {
+   "id": "med_xy-101c_screen",
+   "name": "Экран XY-101C",
+   "category": "medical",
+   "source": "tools/medical/reference/xy-101c_screen.jpg",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/med_xy-101c_screen",
+   "textures": {
+    "albedo": "med_xy-101c_screen_albedo.jpg",
+    "normal": "med_xy-101c_screen_normal.jpg",
+    "mask": "med_xy-101c_screen_mask.png"
+   }
+  },
+  {
+   "id": "med_xy-jzj-i_screen",
+   "name": "Экран XY-JZJ-I",
+   "category": "medical",
+   "source": "tools/medical/reference/xy-jzj-i_screen.jpg",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/med_xy-jzj-i_screen",
+   "textures": {
+    "albedo": "med_xy-jzj-i_screen_albedo.jpg",
+    "normal": "med_xy-jzj-i_screen_normal.jpg",
+    "mask": "med_xy-jzj-i_screen_mask.png"
+   }
+  },
+  {
+   "id": "med_xy-jzj-ii_screen",
+   "name": "Экран XY-JZJ-II",
+   "category": "medical",
+   "source": "tools/medical/reference/xy-jzj-ii_screen.jpg",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/med_xy-jzj-ii_screen",
+   "textures": {
+    "albedo": "med_xy-jzj-ii_screen_albedo.jpg",
+    "normal": "med_xy-jzj-ii_screen_normal.jpg",
+    "mask": "med_xy-jzj-ii_screen_mask.png"
+   }
+  },
+  {
+   "id": "med_xy-mcb-i-deluxe_screen",
+   "name": "Экран XY-MCB-I",
+   "category": "medical",
+   "source": "tools/medical/reference/xy-mcb-i-deluxe_screen.jpg",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/med_xy-mcb-i-deluxe_screen",
+   "textures": {
+    "albedo": "med_xy-mcb-i-deluxe_screen_albedo.jpg",
+    "normal": "med_xy-mcb-i-deluxe_screen_normal.jpg",
+    "mask": "med_xy-mcb-i-deluxe_screen_mask.png"
+   }
+  },
+  {
+   "id": "med_xy-msz-i_screen",
+   "name": "Экран XY-MSZ-I",
+   "category": "medical",
+   "source": "tools/medical/reference/xy-msz-i_screen.jpg",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/med_xy-msz-i_screen",
+   "textures": {
+    "albedo": "med_xy-msz-i_screen_albedo.jpg",
+    "normal": "med_xy-msz-i_screen_normal.jpg",
+    "mask": "med_xy-msz-i_screen_mask.png"
+   }
+  },
+  {
+   "id": "med_xy-qjhd-bh_screen",
+   "name": "Экран XY-QJHD-BH",
+   "category": "medical",
+   "source": "tools/medical/reference/xy-qjhd-bh_screen.jpg",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/med_xy-qjhd-bh_screen",
+   "textures": {
+    "albedo": "med_xy-qjhd-bh_screen_albedo.jpg",
+    "normal": "med_xy-qjhd-bh_screen_normal.jpg",
+    "mask": "med_xy-qjhd-bh_screen_mask.png"
+   }
+  },
+  {
+   "id": "med_xy-qjhd-bv_screen",
+   "name": "Экран XY-QJHD-BV",
+   "category": "medical",
+   "source": "tools/medical/reference/xy-qjhd-bv_screen.jpg",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/med_xy-qjhd-bv_screen",
+   "textures": {
+    "albedo": "med_xy-qjhd-bv_screen_albedo.jpg",
+    "normal": "med_xy-qjhd-bv_screen_normal.jpg",
+    "mask": "med_xy-qjhd-bv_screen_mask.png"
+   }
+  },
+  {
+   "id": "med_xy-zbd-iiidl_screen",
+   "name": "Экран XY-ZBD-IIIDL",
+   "category": "medical",
+   "source": "tools/medical/reference/xy-zbd-iiidl_screen.jpg",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/med_xy-zbd-iiidl_screen",
+   "textures": {
+    "albedo": "med_xy-zbd-iiidl_screen_albedo.jpg",
+    "normal": "med_xy-zbd-iiidl_screen_normal.jpg",
+    "mask": "med_xy-zbd-iiidl_screen_mask.png"
+   }
+  },
+  {
+   "id": "med_xy-k-g6_screen",
+   "name": "Экран XY-K-G6",
+   "category": "medical",
+   "source": "tools/medical/reference/xy-k-g6_screen.jpg",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/med_xy-k-g6_screen",
+   "textures": {
+    "albedo": "med_xy-k-g6_screen_albedo.jpg",
+    "normal": "med_xy-k-g6_screen_normal.jpg",
+    "mask": "med_xy-k-g6_screen_mask.png"
+   }
+  },
+  {
+   "id": "med_jyz-iiib_screen",
+   "name": "Экран JYZ-IIIB",
+   "category": "medical",
+   "source": "tools/medical/reference/jyz-iiib_screen.jpg",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/med_jyz-iiib_screen",
+   "textures": {
+    "albedo": "med_jyz-iiib_screen_albedo.jpg",
+    "normal": "med_jyz-iiib_screen_normal.jpg",
+    "mask": "med_jyz-iiib_screen_mask.png"
+   }
+  },
+  {
+   "id": "med_xy-jzjy-iii_screen",
+   "name": "Экран XY-JZJY-III",
+   "category": "medical",
+   "source": "tools/medical/reference/xy-jzjy-iii_screen.jpg",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/med_xy-jzjy-iii_screen",
+   "textures": {
+    "albedo": "med_xy-jzjy-iii_screen_albedo.jpg",
+    "normal": "med_xy-jzjy-iii_screen_normal.jpg",
+    "mask": "med_xy-jzjy-iii_screen_mask.png"
+   }
+  },
+  {
+   "id": "med_xy-sl-bii_screen",
+   "name": "Экран XY-SL-BII",
+   "category": "medical",
+   "source": "tools/medical/reference/xy-sl-bii_screen.jpg",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/med_xy-sl-bii_screen",
+   "textures": {
+    "albedo": "med_xy-sl-bii_screen_albedo.jpg",
+    "normal": "med_xy-sl-bii_screen_normal.jpg",
+    "mask": "med_xy-sl-bii_screen_mask.png"
+   }
+  },
+  {
+   "id": "med_xy-sl-bvii_screen",
+   "name": "Экран XY-SL-BVII",
+   "category": "medical",
+   "source": "tools/medical/reference/xy-sl-bvii_screen.jpg",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/med_xy-sl-bvii_screen",
+   "textures": {
+    "albedo": "med_xy-sl-bvii_screen_albedo.jpg",
+    "normal": "med_xy-sl-bvii_screen_normal.jpg",
+    "mask": "med_xy-sl-bvii_screen_mask.png"
+   }
+  },
+  {
+   "id": "med_xy-sl-ci_screen",
+   "name": "Экран XY-SL-CI",
+   "category": "medical",
+   "source": "tools/medical/reference/xy-sl-ci_screen.jpg",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/med_xy-sl-ci_screen",
+   "textures": {
+    "albedo": "med_xy-sl-ci_screen_albedo.jpg",
+    "normal": "med_xy-sl-ci_screen_normal.jpg",
+    "mask": "med_xy-sl-ci_screen_mask.png"
+   }
+  },
+  {
+   "id": "med_xyl-viia_screen",
+   "name": "Экран XYL-VIIA",
+   "category": "medical",
+   "source": "tools/medical/reference/xyl-viia_screen.jpg",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/med_xyl-viia_screen",
+   "textures": {
+    "albedo": "med_xyl-viia_screen_albedo.jpg",
+    "normal": "med_xyl-viia_screen_normal.jpg",
+    "mask": "med_xyl-viia_screen_mask.png"
+   }
+  },
+  {
+   "id": "med_xyl-viid_screen",
+   "name": "Экран XYL-VIID",
+   "category": "medical",
+   "source": "tools/medical/reference/xyl-viid_screen.jpg",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/med_xyl-viid_screen",
+   "textures": {
+    "albedo": "med_xyl-viid_screen_albedo.jpg",
+    "normal": "med_xyl-viid_screen_normal.jpg",
+    "mask": "med_xyl-viid_screen_mask.png"
+   }
+  },
+  {
+   "id": "med_xdd-ii_screen",
+   "name": "Экран XDD-II",
+   "category": "medical",
+   "source": "tools/medical/reference/xdd-ii_screen.jpg",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/med_xdd-ii_screen",
+   "textures": {
+    "albedo": "med_xdd-ii_screen_albedo.jpg",
+    "normal": "med_xdd-ii_screen_normal.jpg",
+    "mask": "med_xdd-ii_screen_mask.png"
+   }
+  },
+  {
+   "id": "med_xy-k-swy-ii_screen",
+   "name": "Экран XY-K-SWY-II",
+   "category": "medical",
+   "source": "tools/medical/reference/xy-k-swy-ii_screen.jpg",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/med_xy-k-swy-ii_screen",
+   "textures": {
+    "albedo": "med_xy-k-swy-ii_screen_albedo.jpg",
+    "normal": "med_xy-k-swy-ii_screen_normal.jpg",
+    "mask": "med_xy-k-swy-ii_screen_mask.png"
+   }
+  },
+  {
+   "id": "med_xy-qc-i_screen",
+   "name": "Экран XY-QC-I",
+   "category": "medical",
+   "source": "tools/medical/reference/xy-qc-i_screen.jpg",
+   "neutral": false,
+   "metersPerTile": [
+    1.0,
+    1.0
+   ],
+   "maxSize": 1024,
+   "folder": "Materials/med_xy-qc-i_screen",
+   "textures": {
+    "albedo": "med_xy-qc-i_screen_albedo.jpg",
+    "normal": "med_xy-qc-i_screen_normal.jpg",
+    "mask": "med_xy-qc-i_screen_mask.png"
+   }
   }
  ],
  "models": [

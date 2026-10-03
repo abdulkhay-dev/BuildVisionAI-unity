@@ -1,0 +1,17 @@
+{"id": "xyh-2", "size": [400, 250, 900], "mats": {"wood": "wood#e8b860", "black": "rubber#26282b", "navy": "gloss#26388c", "spring": "chrome"}, "parts": [
+    {"id": "base", "kind": "box", "mat": "wood", "box": [0, 8, 0, 400, 33, 250], "r": 4},
+    {"id": "foot", "kind": "cyl", "mat": "black", "from": [25, 0, 25], "to": [25, 8, 25], "d": 22, "copies": [[350, 0, 0], [0, 0, 200], [350, 0, 200]]},
+    {"id": "spring80", "kind": "coil", "mat": "spring", "from": [80, 33, 125.0], "to": [80, 140, 125.0], "d": 56, "d2": 6, "turns": 9},
+    {"id": "seat80", "kind": "cyl", "mat": "plastic#3a3d42", "from": [80, 33, 125.0], "to": [80, 38, 125.0], "d": 60},
+    {"id": "spring320", "kind": "coil", "mat": "spring", "from": [320, 33, 125.0], "to": [320, 140, 125.0], "d": 56, "d2": 6, "turns": 9},
+    {"id": "seat320", "kind": "cyl", "mat": "plastic#3a3d42", "from": [320, 33, 125.0], "to": [320, 38, 125.0], "d": 60},
+    {"id": "sticker", "kind": "cyl", "mat": "plastic#f4f4f0", "from": [42, 33, 220], "to": [42, 33.6, 220], "d": 26, "soft": true},
+    {"id": "plate", "kind": "box", "mat": "black", "box": [14, 140, 22, 172, 170, 232], "r": 10, "mirror": "x"},
+    {"id": "plate-lip", "kind": "box", "mat": "black", "box": [14, 162, 22, 40, 190, 80], "r": 8, "mirror": "x"},
+    {"id": "plate-tread", "kind": "box", "mat": "rubber#33363a", "box": [50, 170, 40, 160, 172, 214], "r": 1, "mirror": "x", "soft": true},
+    {"id": "centre", "kind": "box", "mat": "black", "box": [168, 144, 34, 232, 168, 224], "r": 8},
+    {"id": "hinge", "kind": "box", "mat": "navy", "box": [162.0, 33, 85, 238.0, 146, 175], "r": 4},
+    {"id": "hinge-slot", "kind": "box", "mat": "plastic#16204f", "box": [180.0, 60, 174, 220.0, 130, 176], "r": 2},
+    {"id": "bolt", "kind": "cyl", "mat": "chrome", "from": [218.0, 120, 175], "to": [218.0, 120, 186], "d": 18},
+    {"id": "rod", "kind": "cyl", "mat": "chrome", "from": [200.0, 170, 90], "to": [200.0, 862, 90], "d": 18},
+    {"id": "ball", "kind": "sphere", "mat": "plastic#1d1f22", "at": [200.0, 878, 90], "d": 44}]}

@@ -1,0 +1,612 @@
+[
+ {
+  "name": "pilot-fix",
+  "ids": [
+   "hyz-iiia",
+   "xy-72",
+   "xy-cryo-3",
+   "xy-k-cdb-ii",
+   "xy-k-e1",
+   "xy-szgjk-ii",
+   "xy-zbd-ic",
+   "xyg-3",
+   "xygs-2",
+   "xyj-j9"
+  ]
+ },
+ {
+  "name": "physio-1",
+  "ids": [
+   "xyg-500ib",
+   "xy-scjg-ii",
+   "xy-k-zwx-ii",
+   "xy-ppzl-ii",
+   "xy-k-gnhw-ii",
+   "xy-k-czld-i",
+   "xy-k-czld-ii",
+   "xy-k-czld-v",
+   "xy-k-medical",
+   "xy-fswt-ic",
+   "xy-k-shock-master-500",
+   "xy-cryo-1",
+   "xy-k-spll-v",
+   "xy-24"
+  ]
+ },
+ {
+  "name": "physio-2",
+  "ids": [
+   "hyj-i",
+   "hyj-ii",
+   "hyj-ii-enhanced",
+   "hyj-iii",
+   "hyj-iv",
+   "xy-wb-ei",
+   "xy-jgc-iii",
+   "sd-pdc-2",
+   "xy-lrf-i",
+   "xy-k-gr-bii",
+   "rh-jpsj-b",
+   "xy-k-gr-ai",
+   "xy-k-gr-ci",
+   "xy-k-zpjz-ii"
+  ]
+ },
+ {
+  "name": "physio-3",
+  "ids": [
+   "xy-alpha-tron-ii",
+   "xy-k-gr-ai-trolley",
+   "xy-k-gr-ai-v2",
+   "xy-k-gr-ci-v2",
+   "xy-k-gr-cii",
+   "xy-k-gr-dii",
+   "xy-k-gr-eii",
+   "xy-k-srd-i",
+   "xyzp-ib",
+   "xyzp-ic",
+   "xyzp-id-table",
+   "xyzp-ie",
+   "xyzp-ii",
+   "xyd-ii"
+  ]
+ },
+ {
+  "name": "physio-4",
+  "ids": [
+   "xyd-iii",
+   "xy-k-pdj-ii",
+   "xy-k-pdj-iv",
+   "xy-k-sjjd-ii",
+   "xy-k-siss-a-table",
+   "xy-k-siss-c",
+   "xy-k-sjd-a-table",
+   "xy-k-sjd-c",
+   "xy-k-cdb-iv",
+   "xy-k-czr-ii",
+   "xy-k-czr-iii",
+   "xy-k-lc-2",
+   "xy-k-lc-5",
+   "xy-k-wic-1"
+  ]
+ },
+ {
+  "name": "physio-5",
+  "ids": [
+   "xy-k-wic-2",
+   "xy-ipc-iid",
+   "xy-k-jlc-d",
+   "xy-k-jlc-j",
+   "tms-physiotherapy-device",
+   "xy-k-gzz-iii",
+   "xy-dms-102b",
+   "pulse-magnetic-therapy-device",
+   "xy-k-csb-i",
+   "xy-k-csb-ii",
+   "xy-dms-103a"
+  ]
+ },
+ {
+  "name": "table-1",
+  "ids": [
+   "xy-k-czld-iii",
+   "xy-k-sf-1",
+   "xy-k-sf-1-new",
+   "xy-k-sf-1b",
+   "xy-k-sf-2",
+   "xy-k-sf-2-new",
+   "xy-k-sf-3",
+   "xy-k-sf-3-new",
+   "xy-k-sf-4",
+   "xy-k-sf-4-new",
+   "xy-k-sf-4b",
+   "xy-k-sf-4c",
+   "xy-k-sf-4d",
+   "xy-k-sf-5"
+  ]
+ },
+ {
+  "name": "table-2",
+  "ids": [
+   "xy-k-sf-5-new",
+   "xy-k-sf-6",
+   "xy-k-sf-6b",
+   "xy-k-sf-7",
+   "xy-k-sf-7-new",
+   "xy-k-sf-8",
+   "xy-k-sf-8b",
+   "xy-k-sf-9",
+   "xy-k-sf-9-new",
+   "xy-k-sf-9b",
+   "xy-100",
+   "xy-46",
+   "xy-70",
+   "xy-71"
+  ]
+ },
+ {
+  "name": "table-3",
+  "ids": [
+   "xy-73",
+   "xy-80",
+   "xy-81",
+   "xy-83",
+   "xy-kgj-2",
+   "xyzg-1",
+   "alc-3",
+   "alc-1",
+   "alc-2",
+   "jyz-ib",
+   "jyz-iib",
+   "jyz-iiia",
+   "jyz-iiib",
+   "rh-qyc-b"
+  ]
+ },
+ {
+  "name": "table-4",
+  "ids": [
+   "yhz-iaj",
+   "yhz-ii",
+   "yhz-ii-microwave",
+   "yhz-iv",
+   "yz-2a",
+   "yz-3",
+   "yz-4",
+   "xy-k-rxqy-iii",
+   "xy-jzjy-iii",
+   "xyq-1",
+   "xyq-2",
+   "xyq-3",
+   "xyq-5",
+   "xyq-6"
+  ]
+ },
+ {
+  "name": "table-5",
+  "ids": [
+   "tms-special-bed",
+   "tms-treatment-chair"
+  ]
+ },
+ {
+  "name": "hydro-1",
+  "ids": [
+   "xy-90",
+   "aquatic-underwater-treadmill",
+   "baby-hydrotherapy-station",
+   "limb-whirlpool-bath-prototype",
+   "oval-hydromassage-bathtub",
+   "xy-sl-bi",
+   "xy-sl-bii",
+   "xy-sl-biii",
+   "xy-sl-biv",
+   "xy-sl-bvii",
+   "xy-sl-ci",
+   "xy-sl-ciii",
+   "xy-sl-cix",
+   "xy-sl-cv"
+  ]
+ },
+ {
+  "name": "hydro-2",
+  "ids": [
+   "xy-sl-cvi",
+   "xy-sl-cviii",
+   "xy-sl-cviii-luxury",
+   "xy-sl-cxi",
+   "xy-sl-ri",
+   "xy-sl-rii",
+   "xy-sl-riii",
+   "xy-sl-riv",
+   "xy-sl-rv",
+   "rh-sr-ii",
+   "xy-srf-i",
+   "xy-srf-iv",
+   "hyz-iiy",
+   "hyz-iiic"
+  ]
+ },
+ {
+  "name": "hydro-3",
+  "ids": [
+   "hyz-iiie",
+   "hyz-iiid",
+   "hyz-iib",
+   "hyz-iik",
+   "hyz-ia",
+   "hyz-iif",
+   "hyz-ib",
+   "hyz-ic",
+   "hyz-iid",
+   "hyz-iie",
+   "hyz-iic",
+   "hyz-iiib",
+   "xyl-i",
+   "xyl-ii"
+  ]
+ },
+ {
+  "name": "hydro-4",
+  "ids": [
+   "xyl-v",
+   "xyl-viia",
+   "xyl-viid",
+   "xyl-viiib"
+  ]
+ },
+ {
+  "name": "kinesio-1",
+  "ids": [
+   "xy-cpm-ia",
+   "xy-cpm-ib",
+   "xy-cpm-ic",
+   "xy-cpm-id",
+   "xy-cpm-iib",
+   "xy-zbd-idl",
+   "xy-zbd-iidl",
+   "xy-zbd-iiidl",
+   "xy-ct-iii",
+   "xy-ct-iv",
+   "xy-k-czld-vii",
+   "gait-obstacle-treadmill",
+   "upright-exercise-bike",
+   "xy-k-g1"
+  ]
+ },
+ {
+  "name": "kinesio-2",
+  "ids": [
+   "interactive-training-cart",
+   "recumbent-cross-trainer-interactive",
+   "xy-zbd-ib",
+   "xy-szld-ia",
+   "xy-zbd-id",
+   "xy-zbd-iid",
+   "xy-zbd-iie",
+   "xy-zbd-iiid",
+   "xy-dgdx-i",
+   "xy-ph-iv",
+   "xy-ph-v",
+   "xy-ph-workstation",
+   "xy-qjhd-bh",
+   "xy-qjhd-bv"
+  ]
+ },
+ {
+  "name": "kinesio-3",
+  "ids": [
+   "xy-10",
+   "xy-11",
+   "xy-12",
+   "xy-13",
+   "xy-14",
+   "xy-14-8a",
+   "xy-14-8b",
+   "xy-15",
+   "xy-16",
+   "xy-1a",
+   "xy-2",
+   "xy-20",
+   "xy-21",
+   "xy-23"
+  ]
+ },
+ {
+  "name": "kinesio-4",
+  "ids": [
+   "xy-2a",
+   "xy-2b",
+   "xy-3",
+   "xy-31",
+   "xy-32",
+   "xy-33",
+   "xy-36",
+   "xy-39",
+   "xy-4",
+   "xy-40",
+   "xy-41",
+   "xy-43",
+   "xy-44",
+   "xy-45"
+  ]
+ },
+ {
+  "name": "kinesio-5",
+  "ids": [
+   "xy-47",
+   "xy-49",
+   "xy-5",
+   "xy-51",
+   "xy-54",
+   "xy-6",
+   "xy-6a",
+   "xy-7",
+   "xy-8",
+   "xy-kgj-1",
+   "xy-zh-1",
+   "xy-zh-2",
+   "xyc-t1",
+   "xyc-t2"
+  ]
+ },
+ {
+  "name": "kinesio-6",
+  "ids": [
+   "xyd-1",
+   "xyf-t1",
+   "xyf-t2",
+   "xyf-t3",
+   "xyf-t4",
+   "xyf-z1",
+   "xyf-z2",
+   "xyf-z3",
+   "xyf-z4",
+   "xyg-1",
+   "xyg-2",
+   "xygs-1",
+   "xyh-1",
+   "xyh-2"
+  ]
+ },
+ {
+  "name": "kinesio-7",
+  "ids": [
+   "xyhj-1",
+   "xyhj-2",
+   "xyhj-4",
+   "xyj-1",
+   "xyj-2",
+   "xyj-3",
+   "xyj-4",
+   "xyj-5",
+   "xyj-6",
+   "xyj-7",
+   "xym-1",
+   "xym-2",
+   "xym-3",
+   "xym-4"
+  ]
+ },
+ {
+  "name": "kinesio-8",
+  "ids": [
+   "xym-6",
+   "xyn-2",
+   "xyn-3",
+   "xyn-4",
+   "xyn-6",
+   "xyn-7",
+   "xyql-1",
+   "xyt-2",
+   "xyt-3",
+   "xyx-1",
+   "xyyl-1",
+   "xyz-5",
+   "xyz-6",
+   "xyzl-1"
+  ]
+ },
+ {
+  "name": "kinesio-9",
+  "ids": [
+   "xyzl-2",
+   "xyzl-3",
+   "xy-1",
+   "xy-101c",
+   "jy-ct-ii",
+   "xy-mcb-i",
+   "xy-mcb-i-deluxe",
+   "xy-jzj-i",
+   "xy-jzj-ii",
+   "xy-msz-i",
+   "xy-dssz-01a",
+   "xy-dssz-02a",
+   "xy-dssz-03a",
+   "xy-dsxb-01a"
+  ]
+ },
+ {
+  "name": "kinesio-10",
+  "ids": [
+   "xy-dsxb-02a",
+   "xy-dsxb-03a",
+   "xy-dsxz-01a",
+   "xy-dsxz-02a",
+   "xy-dsxz-03a"
+  ]
+ },
+ {
+  "name": "robot-1",
+  "ids": [
+   "lower-limb-rehab-system",
+   "upper-limb-rehab-robot",
+   "upper-limb-rehab-workstation",
+   "xy-k-e2",
+   "xy-k-e3",
+   "xy-k-g2",
+   "xy-k-g3",
+   "xy-k-g6",
+   "xy-k-g7",
+   "xy-k-m1",
+   "xy-k-m2",
+   "xy-k-m3",
+   "xy-k-m4",
+   "smart-sky-track"
+  ]
+ },
+ {
+  "name": "robot-2",
+  "ids": [
+   "xy-r-sdk-i",
+   "xy-r-sdk-iv",
+   "tms-navigation-robot"
+  ]
+ },
+ {
+  "name": "pediatric-1",
+  "ids": [
+   "circular-walking",
+   "soft-building-blocks",
+   "square-combined-training-frame",
+   "triangle-ball-pool",
+   "xyrt-10",
+   "xyrt-100",
+   "xyrt-101",
+   "xyrt-103",
+   "xyrt-106",
+   "xyrt-107",
+   "xyrt-108",
+   "xyrt-11",
+   "xyrt-116",
+   "xyrt-117"
+  ]
+ },
+ {
+  "name": "pediatric-2",
+  "ids": [
+   "xyrt-118",
+   "xyrt-119",
+   "xyrt-12",
+   "xyrt-120",
+   "xyrt-121",
+   "xyrt-122",
+   "xyrt-13",
+   "xyrt-14",
+   "xyrt-15",
+   "xyrt-16",
+   "xyrt-17",
+   "xyrt-18",
+   "xyrt-19",
+   "xyrt-21"
+  ]
+ },
+ {
+  "name": "pediatric-3",
+  "ids": [
+   "xyrt-25",
+   "xyrt-26",
+   "xyrt-27",
+   "xyrt-28",
+   "xyrt-29",
+   "xyrt-30",
+   "xyrt-31",
+   "xyrt-36",
+   "xyrt-36a",
+   "xyrt-38",
+   "xyrt-39",
+   "xyrt-4",
+   "xyrt-40",
+   "xyrt-43"
+  ]
+ },
+ {
+  "name": "pediatric-4",
+  "ids": [
+   "xyrt-44",
+   "xyrt-45",
+   "xyrt-46",
+   "xyrt-5",
+   "xyrt-50",
+   "xyrt-6",
+   "xyrt-65",
+   "xyrt-66",
+   "xyrt-67",
+   "xyrt-7",
+   "xyrt-79",
+   "xyrt-8",
+   "xyrt-80",
+   "xyrt-83"
+  ]
+ },
+ {
+  "name": "pediatric-5",
+  "ids": [
+   "xyrt-87",
+   "xyrt-9",
+   "xyrt-93",
+   "hyz-iir",
+   "xyrt-41"
+  ]
+ },
+ {
+  "name": "sensory-1",
+  "ids": [
+   "bean-bag",
+   "butterfly-fiber-falls",
+   "cognitive-training-board",
+   "color-conversion-control-panel",
+   "color-led-ball",
+   "colorful-fluorescent-drawing-board",
+   "dynamic-color-wheel",
+   "endless-depth-light-mirror",
+   "fiber-optic-curtain-wall",
+   "jy-tyhd-i",
+   "led-piano-pedals",
+   "lighting-color-changing-puzzle-table",
+   "multi-sensory-master-control-machine",
+   "multi-sensory-matching-projection-system"
+  ]
+ },
+ {
+  "name": "sensory-2",
+  "ids": [
+   "multimedia-scenario-interactive-system",
+   "music-training-device",
+   "piano-water-column",
+   "sensory-soft-ball-pool",
+   "smell-perception-game-box",
+   "sound-amplifier",
+   "sound-and-light-wall-panel",
+   "symphony-hemisphere-light",
+   "variable-speed-fan-game-box",
+   "visual-perceptual-trainer",
+   "wall-of-blisters"
+  ]
+ },
+ {
+  "name": "other-1",
+  "ids": [
+   "xy-k-swy-ii",
+   "xdd-i",
+   "xdd-ii",
+   "xy-qc-i",
+   "xy-78",
+   "xy-79",
+   "xy-82",
+   "xy-84",
+   "xy-85",
+   "xy-87",
+   "xy-88",
+   "xy-89",
+   "xy-92",
+   "xy-96"
+  ]
+ },
+ {
+  "name": "other-2",
+  "ids": [
+   "xy-97"
+  ]
+ }
+]

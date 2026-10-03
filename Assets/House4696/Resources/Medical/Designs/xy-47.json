@@ -1,0 +1,8 @@
+{"id": "xy-47", "size": [900, 700, 90], "mats": {"board": "plastic#ea8c10", "rocker": "plastic#e0531a", "badge": "gloss#f4f4f2", "ring": "gloss#2a2d33"}, "parts": [
+    {"id": "board", "kind": "box", "mat": "board", "box": [0, 70, 0, 900, 90, 700], "r": 4},
+    {"id": "board-under", "kind": "box", "mat": "plastic#d06a12", "box": [8, 64, 8, 892, 71, 692], "r": 2},
+    {"id": "rocker", "kind": "slab", "mat": "rocker", "plane": "front", "outline": "M 30.0 66.0 L 870.0 66.0 L 870.0 66.0 L 836.0 55.5 L 801.7 45.9 L 767.3 37.3 L 732.5 29.5 L 697.6 22.6 L 662.6 16.6 L 627.4 11.5 L 592.0 7.4 L 556.6 4.2 L 521.1 1.8 L 485.6 0.5 L 450.0 0.0 L 414.4 0.5 L 378.9 1.8 L 343.4 4.2 L 308.0 7.4 L 272.6 11.5 L 237.4 16.6 L 202.4 22.6 L 167.5 29.5 L 132.7 37.3 L 98.3 45.9 L 64.0 55.5 L 30.0 66.0 Z", "w": [25, 675], "r": 6},
+    {"id": "badge", "kind": "lathe", "mat": "ring", "at": [450, 32, 675], "profile": [[0, 0], [31, 0], [31, 3], [0, 4]], "axis": "z", "soft": true},
+    {"id": "badge-in", "kind": "lathe", "mat": "badge", "at": [450, 32, 678], "profile": [[0, 0], [26, 0], [26, 2], [0, 2.5]], "axis": "z", "soft": true},
+    {"id": "badge-mark", "kind": "box", "mat": "ring", "box": [436, 30, 680.2, 466, 36, 681.2], "soft": true, "rot": {"axis": "z", "deg": 25, "about": [451, 33, 680.7]}},
+    {"id": "badge-line", "kind": "box", "mat": "ring", "box": [432, 20, 680.2, 468, 23, 681.2], "soft": true}]}
