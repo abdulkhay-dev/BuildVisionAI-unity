@@ -88,6 +88,9 @@ namespace House4696.Core
 
         int Push(Vector3 p, Vector3 n, Vector2 uv)
         {
+            // a zero normal (degenerate part) becomes NaN in the shader's normalize and blackens the whole frame through
+            // bloom, TAA and the GI cache
+            if (!(n.sqrMagnitude > 1e-6f)) n = Vector3.up;
             _v.Add(p);
             _n.Add(n);
             _uv.Add(uv);

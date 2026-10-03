@@ -249,6 +249,8 @@ namespace House4696.Lighting
             {
                 instances = 0;
                 var materials = new Dictionary<Material, MaterialHandle>();
+                int texturedCount = 0;
+                var flatByColour = new Dictionary<int, MaterialHandle>();
                 MaterialHandle fallback = MaterialHandle.Invalid;
                 var bounds = new Bounds();
                 bool any = false;
@@ -279,7 +281,19 @@ namespace House4696.Lighting
                         }
                         if (!materials.TryGetValue(m, out var h))
                         {
-                            h = AddMaterial(m.FindPass("Meta") >= 0 ? m : FallbackMaterial(m));
+                            // every textured material takes room in the integrator's texture atlas: past a budget (catalogue
+                            // devices bring dozens of tinted copies) the atlas overflows and the bake turns to NaN, which
+                            // blackens every frame — further materials bounce as their flat colour instead
+                            bool textured = m.FindPass("Meta") >= 0 && (HasTex(m, "_BaseMap") || HasTex(m, "_MainTex") || HasTex(m, "_EmissionMap"));
+                            bool flat = m.FindPass("Meta") < 0 || (textured && ++texturedCount > TexturedBudget) || materials.Count >= MaterialBudget;
+                            if (flat)
+                            {
+                                // flat stand-ins are shared by colour (quantised), so the pool stays small
+                                var c = m.HasColor("_BaseColor") ? m.GetColor("_BaseColor") : m.HasColor("_Color") ? m.GetColor("_Color") : new Color(0.5f, 0.5f, 0.5f);
+                                int key = Mathf.RoundToInt(c.r * 15f) * 256 + Mathf.RoundToInt(c.g * 15f) * 16 + Mathf.RoundToInt(c.b * 15f);
+                                if (!flatByColour.TryGetValue(key, out h)) flatByColour[key] = h = AddMaterial(FallbackMaterial(m));
+                            }
+                            else h = AddMaterial(m);
                             materials[m] = h;
                         }
                         handles[s] = h;
@@ -292,8 +306,16 @@ namespace House4696.Lighting
                     instances++;
                     if (any) bounds.Encapsulate(r.bounds); else { bounds = r.bounds; any = true; }
                 }
+                if (flatByColour.Count > 0) Debug.Log($"[BakedGI] {materials.Count} materials: {flatByColour.Count} flat stand-ins past the budget");
                 return bounds;
             }
+
+            /// <summary>Textured materials sent to the integrator as themselves; the rest bounce as their flat colour.</summary>
+            const int TexturedBudget = 128;
+            /// <summary>Distinct materials sent to the integrator; past it every material bounces as a shared flat colour.</summary>
+            const int MaterialBudget = 192;
+
+            static bool HasTex(Material m, string prop) => m.HasTexture(prop) && m.GetTexture(prop) != null;
 
             MaterialHandle AddMaterial(Material m)
             {
